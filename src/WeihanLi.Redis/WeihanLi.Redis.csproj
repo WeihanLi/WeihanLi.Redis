@@ -1,22 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>RedisExtensions for StackExchange.Redis</Description>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>redis StackExchange</PackageTags>
-    <PackageReleaseNotes>init</PackageReleaseNotes>
-    <PackageProjectUrl>https://github.com/WeihanLi/WeihanLi.Redis</PackageProjectUrl>
-    <PackageIconUrl></PackageIconUrl>
-    <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
-    <Copyright>MIT</Copyright>
-    <PackageLicenseUrl>https://github.com/WeihanLi/WeihanLi.Redis/blob/master/LICENSE</PackageLicenseUrl>
-    <Version>1.0.0-alpha</Version>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>RedisExtensions for StackExchange.Redis</Description>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>redis StackExchange</PackageTags>
+        <PackageReleaseNotes>init</PackageReleaseNotes>
+        <PackageProjectUrl>https://github.com/WeihanLi/WeihanLi.Redis</PackageProjectUrl>
+        <PackageIconUrl></PackageIconUrl>
+        <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
+        <Copyright>MIT</Copyright>
+        <PackageLicenseUrl>https://github.com/WeihanLi/WeihanLi.Redis/blob/master/LICENSE</PackageLicenseUrl>
+        <Version>1.0.0-alpha-1</Version>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="StackExchange.Redis" Version="1.2.6" />
-    <PackageReference Include="WeihanLi.Common" Version="1.0.7.4" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="StackExchange.Redis" Version="1.2.6" />
+        <PackageReference Include="WeihanLi.Common" Version="1.0.7.4" />
+    </ItemGroup>
 </Project>

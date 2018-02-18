@@ -42,26 +42,6 @@ namespace WeihanLi.Redis
             return new CounterClient(counterName, baseCount, expiresIn);
         }
 
-        public static ICounterClient GetHashCounterClient(string counterName)
-        {
-            return new HashCounterClient(counterName);
-        }
-
-        public static ICounterClient GetHashCounterClient(string counterName, long baseCount)
-        {
-            return new HashCounterClient(counterName, baseCount);
-        }
-
-        public static ICounterClient GetHashCounterClient(string counterName, TimeSpan? expiresIn)
-        {
-            return new HashCounterClient(counterName, expiresIn);
-        }
-
-        public static ICounterClient GetHashCounterClient(string counterName, long baseCount, TimeSpan? expiresIn)
-        {
-            return new HashCounterClient(counterName, baseCount, expiresIn);
-        }
-
         #endregion Counter
 
         #region Firewall
@@ -74,16 +54,6 @@ namespace WeihanLi.Redis
         public static IFirewallClient GetFirewallClient(long limit)
         {
             return new FirewallClient(limit);
-        }
-
-        public static IFirewallClient GetHashFirewallClient()
-        {
-            return new HashFirewallClient();
-        }
-
-        public static IFirewallClient GetHashFirewallClient(long limit)
-        {
-            return new HashFirewallClient(limit);
         }
 
         #endregion Firewall

@@ -41,9 +41,9 @@ namespace WeihanLi.Redis.UnitTest
         {
             var firewallName = "firewallTest";
             var firewallClient = RedisManager.GetFirewallClient();
-            Assert.True(firewallClient.Hit(firewallName, TimeSpan.FromSeconds(1)));
-            Assert.False(firewallClient.Hit(firewallName, TimeSpan.FromSeconds(1)));
-            await Task.Delay(TimeSpan.FromSeconds(1));
+            Assert.True(firewallClient.Hit(firewallName, TimeSpan.FromSeconds(10)));
+            Assert.False(firewallClient.Hit(firewallName, TimeSpan.FromSeconds(10)));
+            await Task.Delay(TimeSpan.FromSeconds(10));
             Assert.True(firewallClient.Hit(firewallName, TimeSpan.FromSeconds(1)));
         }
     }

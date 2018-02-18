@@ -52,13 +52,13 @@ namespace WeihanLi.Redis
         public T Wrap<T>(Func<RedisValue> func)
         {
             var result = func();
-            return result.HasValue ? (typeof(T).IsPrimitiveType() ? result.ToString().To<T>() : result.ToString().JsonToEntity<T>()) : default(T);
+            return result.HasValue ? result.ToString().StringToType<T>() : default(T);
         }
 
         public async Task<T> WrapAsync<T>(Func<Task<RedisValue>> func)
         {
             var result = await func();
-            return result.HasValue ? (typeof(T).IsPrimitiveType() ? result.To<T>() : result.ToString().JsonToEntity<T>()) : default(T);
+            return result.HasValue ? result.ToString().StringToType<T>() : default(T);
         }
     }
 }

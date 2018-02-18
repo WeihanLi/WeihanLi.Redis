@@ -38,7 +38,7 @@ namespace WeihanLi.Redis
 
         private readonly TimeSpan? _expiresIn;
 
-        public CounterClient(string counterName, long baseCount, TimeSpan? expiresIn) : base(LogHelper.GetLogHelper<CounterClient>(), new RedisWrapper("String/Counter"))
+        public CounterClient(string counterName, long baseCount, TimeSpan? expiresIn) : base(LogHelper.GetLogHelper<CounterClient>(), new RedisWrapper("String/Counter/"))
         {
             _keyName = $"String/Counter/{counterName}";
             Base = baseCount;

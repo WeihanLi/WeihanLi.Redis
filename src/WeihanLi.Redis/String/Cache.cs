@@ -71,7 +71,7 @@ namespace WeihanLi.Redis
 
     internal class CacheClient : BaseRedisClient, ICacheClient
     {
-        public CacheClient() : base(LogHelper.GetLogHelper<CacheClient>(), new RedisWrapper("String/Cache"))
+        public CacheClient() : base(LogHelper.GetLogHelper<CacheClient>(), new RedisWrapper("String/Cache/"))
         {
         }
 
@@ -148,7 +148,7 @@ namespace WeihanLi.Redis
 
         public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
         {
-            return Wrapper.Database.StringSet(Wrapper.KeyPrefix + key, value.ToJson(), expiresIn, when, commandFlags);
+            return Wrapper.Database.StringSet(Wrapper.KeyPrefix + key, value.ToJsonOrString(), expiresIn, when, commandFlags);
         }
 
         public Task<bool> SetAsync<T>(string key, T value)
@@ -168,7 +168,7 @@ namespace WeihanLi.Redis
 
         public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
         {
-            return Wrapper.Database.StringSetAsync(Wrapper.KeyPrefix + key, value.ToJson(), expiresIn, when, commandFlags);
+            return Wrapper.Database.StringSetAsync(Wrapper.KeyPrefix + key, value.ToJsonOrString(), expiresIn, when, commandFlags);
         }
     }
 }

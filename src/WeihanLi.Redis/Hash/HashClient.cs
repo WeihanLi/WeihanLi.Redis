@@ -68,46 +68,46 @@ namespace WeihanLi.Redis
     /// </summary>
     internal class HashClient : BaseRedisClient, IHashClient
     {
-        public HashClient() : base(LogHelper.GetLogHelper<HashClient>(), new RedisWrapper("Hash/"))
+        public HashClient() : base(LogHelper.GetLogHelper<HashClient>(), new RedisWrapper("Hash/Cache/"))
         {
         }
 
-        public bool Exists(string key, string fieldName) => Wrapper.Database.HashExists(key, fieldName);
+        public bool Exists(string key, string fieldName) => Wrapper.Database.HashExists(Wrapper.KeyPrefix + key, fieldName);
 
-        public Task<bool> ExistsAsync(string key, string fieldName) => Wrapper.Database.HashExistsAsync(key, fieldName);
+        public Task<bool> ExistsAsync(string key, string fieldName) => Wrapper.Database.HashExistsAsync(Wrapper.KeyPrefix + key, fieldName);
 
         public bool Expire(string key, TimeSpan? expiresIn)
         {
-            return Wrapper.Database.KeyExpire(key, expiresIn);
+            return Wrapper.Database.KeyExpire(Wrapper.KeyPrefix + key, expiresIn);
         }
 
         public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn)
         {
-            return Wrapper.Database.KeyExpireAsync(key, expiresIn);
+            return Wrapper.Database.KeyExpireAsync(Wrapper.KeyPrefix + key, expiresIn);
         }
 
-        public string Get(string key, string fieldName) => Wrapper.Database.HashGet(key, fieldName);
+        public string Get(string key, string fieldName) => Wrapper.Wrap<string>(() => Wrapper.Database.HashGet(Wrapper.KeyPrefix + key, fieldName));
 
-        public T Get<T>(string key, string fieldName) => Wrapper.Wrap<T>(() => Wrapper.Database.HashGet(key, fieldName));
+        public T Get<T>(string key, string fieldName) => Wrapper.Wrap<T>(() => Wrapper.Database.HashGet(Wrapper.KeyPrefix + key, fieldName));
 
-        public Task<string> GetAsync(string key, string fieldName) => Wrapper.WrapAsync<string>(() => Wrapper.Database.HashGetAsync(key, fieldName));
+        public Task<string> GetAsync(string key, string fieldName) => Wrapper.WrapAsync<string>(() => Wrapper.Database.HashGetAsync(Wrapper.KeyPrefix + key, fieldName));
 
-        public Task<T> GetAsync<T>(string key, string fieldName) => Wrapper.WrapAsync<T>(() => Wrapper.Database.HashGetAsync(key, fieldName));
+        public Task<T> GetAsync<T>(string key, string fieldName) => Wrapper.WrapAsync<T>(() => Wrapper.Database.HashGetAsync(Wrapper.KeyPrefix + key, fieldName));
 
-        public bool Remove(string key, string fieldName) => Wrapper.Database.HashDelete(key, fieldName);
+        public bool Remove(string key, string fieldName) => Wrapper.Database.HashDelete(Wrapper.KeyPrefix + key, fieldName);
 
-        public Task<bool> RemoveAsync(string key, string fieldName) => Wrapper.Database.HashDeleteAsync(key, fieldName);
+        public Task<bool> RemoveAsync(string key, string fieldName) => Wrapper.Database.HashDeleteAsync(Wrapper.KeyPrefix + key, fieldName);
 
-        public bool Set<T>(string key, string fieldName, T value) => Wrapper.Database.HashSet(key, fieldName, value.ToJsonOrString());
+        public bool Set<T>(string key, string fieldName, T value) => Wrapper.Database.HashSet(Wrapper.KeyPrefix + key, fieldName, value.ToJsonOrString());
 
-        public bool Set<T>(string key, string fieldName, T value, When when) => Wrapper.Database.HashSet(key, fieldName, value.ToJsonOrString(), when);
+        public bool Set<T>(string key, string fieldName, T value, When when) => Wrapper.Database.HashSet(Wrapper.KeyPrefix + key, fieldName, value.ToJsonOrString(), when);
 
-        public bool Set<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags) => Wrapper.Database.HashSet(key, fieldName, value.ToJsonOrString(), when, commandFlags);
+        public bool Set<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags) => Wrapper.Database.HashSet(Wrapper.KeyPrefix + key, fieldName, value.ToJsonOrString(), when, commandFlags);
 
-        public Task<bool> SetAsync<T>(string key, string fieldName, T value) => Wrapper.Database.HashSetAsync(key, fieldName, value.ToJsonOrString());
+        public Task<bool> SetAsync<T>(string key, string fieldName, T value) => Wrapper.Database.HashSetAsync(Wrapper.KeyPrefix + key, fieldName, value.ToJsonOrString());
 
-        public Task<bool> SetAsync<T>(string key, string fieldName, T value, When when) => Wrapper.Database.HashSetAsync(key, fieldName, value.ToJsonOrString(), when);
+        public Task<bool> SetAsync<T>(string key, string fieldName, T value, When when) => Wrapper.Database.HashSetAsync(Wrapper.KeyPrefix + key, fieldName, value.ToJsonOrString(), when);
 
-        public Task<bool> SetAsync<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags) => Wrapper.Database.HashSetAsync(key, fieldName, value.ToJsonOrString(), when, commandFlags);
+        public Task<bool> SetAsync<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags) => Wrapper.Database.HashSetAsync(Wrapper.KeyPrefix + key, fieldName, value.ToJsonOrString(), when, commandFlags);
     }
 }

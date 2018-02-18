@@ -77,15 +77,9 @@ namespace WeihanLi.Redis
 
         #region Exists
 
-        public bool Exists(string key)
-        {
-            return Wrapper.Database.KeyExists(Wrapper.KeyPrefix + key);
-        }
+        public bool Exists(string key) => Wrapper.Database.KeyExists(Wrapper.KeyPrefix + key);
 
-        public Task<bool> ExistsAsync(string key)
-        {
-            return Wrapper.Database.KeyExistsAsync(Wrapper.KeyPrefix + key);
-        }
+        public Task<bool> ExistsAsync(string key) => Wrapper.Database.KeyExistsAsync(Wrapper.KeyPrefix + key);
 
         #endregion Exists
 

@@ -11,53 +11,45 @@ namespace WeihanLi.Redis
     {
         #region Expire
 
-        bool Expire(string key, TimeSpan? expiresIn);
+        bool Expire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None);
 
-        Task<bool> ExpireAsync(string key, TimeSpan? expiresIn);
+        Task<bool> ExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None);
 
         #endregion Expire
 
         #region Exists
 
-        bool Exists(string key, string fieldName);
+        bool Exists(string key, string fieldName, CommandFlags flags = CommandFlags.None);
 
-        Task<bool> ExistsAsync(string key, string fieldName);
+        Task<bool> ExistsAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None);
 
         #endregion Exists
 
         #region Get
 
-        string Get(string key, string fieldName);
+        string Get(string key, string fieldName, CommandFlags flags = CommandFlags.None);
 
-        Task<string> GetAsync(string key, string fieldName);
+        Task<string> GetAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None);
 
-        T Get<T>(string key, string fieldName);
+        T Get<T>(string key, string fieldName, CommandFlags flags = CommandFlags.None);
 
-        Task<T> GetAsync<T>(string key, string fieldName);
+        Task<T> GetAsync<T>(string key, string fieldName, CommandFlags flags = CommandFlags.None);
 
         #endregion Get
 
         #region Set
 
-        bool Set<T>(string key, string fieldName, T value);
+        bool Set<T>(string key, string fieldName, T value, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
 
-        bool Set<T>(string key, string fieldName, T value, When when);
-
-        bool Set<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags);
-
-        Task<bool> SetAsync<T>(string key, string fieldName, T value);
-
-        Task<bool> SetAsync<T>(string key, string fieldName, T value, When when);
-
-        Task<bool> SetAsync<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags);
+        Task<bool> SetAsync<T>(string key, string fieldName, T value, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
 
         #endregion Set
 
         #region Remove
 
-        bool Remove(string key, string fieldName);
+        bool Remove(string key, string fieldName, CommandFlags flags = CommandFlags.None);
 
-        Task<bool> RemoveAsync(string key, string fieldName);
+        Task<bool> RemoveAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None);
 
         #endregion Remove
     }
@@ -72,31 +64,31 @@ namespace WeihanLi.Redis
         {
         }
 
-        public bool Exists(string key, string fieldName) => Wrapper.Database.HashExists(Wrapper.KeyPrefix + key, fieldName);
+        public bool Exists(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashExists(Wrapper.KeyPrefix + key, fieldName, flags);
 
-        public Task<bool> ExistsAsync(string key, string fieldName) => Wrapper.Database.HashExistsAsync(Wrapper.KeyPrefix + key, fieldName);
+        public Task<bool> ExistsAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashExistsAsync(Wrapper.KeyPrefix + key, fieldName, flags);
 
-        public bool Expire(string key, TimeSpan? expiresIn)
+        public bool Expire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Database.KeyExpire(Wrapper.KeyPrefix + key, expiresIn);
+            return Wrapper.Database.KeyExpire(Wrapper.KeyPrefix + key, expiresIn, flags);
         }
 
-        public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn)
+        public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Database.KeyExpireAsync(Wrapper.KeyPrefix + key, expiresIn);
+            return Wrapper.Database.KeyExpireAsync(Wrapper.KeyPrefix + key, expiresIn, flags);
         }
 
-        public string Get(string key, string fieldName) => Wrapper.Wrap<string>(() => Wrapper.Database.HashGet(Wrapper.KeyPrefix + key, fieldName));
+        public string Get(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Wrap<string>(() => Wrapper.Database.HashGet(Wrapper.KeyPrefix + key, fieldName, flags));
 
-        public T Get<T>(string key, string fieldName) => Wrapper.Wrap<T>(() => Wrapper.Database.HashGet(Wrapper.KeyPrefix + key, fieldName));
+        public T Get<T>(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Wrap<T>(() => Wrapper.Database.HashGet(Wrapper.KeyPrefix + key, fieldName, flags));
 
-        public Task<string> GetAsync(string key, string fieldName) => Wrapper.WrapAsync<string>(() => Wrapper.Database.HashGetAsync(Wrapper.KeyPrefix + key, fieldName));
+        public Task<string> GetAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.WrapAsync<string>(() => Wrapper.Database.HashGetAsync(Wrapper.KeyPrefix + key, fieldName, flags));
 
-        public Task<T> GetAsync<T>(string key, string fieldName) => Wrapper.WrapAsync<T>(() => Wrapper.Database.HashGetAsync(Wrapper.KeyPrefix + key, fieldName));
+        public Task<T> GetAsync<T>(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.WrapAsync<T>(() => Wrapper.Database.HashGetAsync(Wrapper.KeyPrefix + key, fieldName, flags));
 
-        public bool Remove(string key, string fieldName) => Wrapper.Database.HashDelete(Wrapper.KeyPrefix + key, fieldName);
+        public bool Remove(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashDelete(Wrapper.KeyPrefix + key, fieldName, flags);
 
-        public Task<bool> RemoveAsync(string key, string fieldName) => Wrapper.Database.HashDeleteAsync(Wrapper.KeyPrefix + key, fieldName);
+        public Task<bool> RemoveAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashDeleteAsync(Wrapper.KeyPrefix + key, fieldName, flags);
 
         public bool Set<T>(string key, string fieldName, T value) => Wrapper.Database.HashSet(Wrapper.KeyPrefix + key, fieldName, value.ToJsonOrString());
 

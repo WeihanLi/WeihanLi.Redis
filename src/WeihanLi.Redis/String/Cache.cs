@@ -14,29 +14,29 @@ namespace WeihanLi.Redis
     {
         #region Expire
 
-        bool Expire(string key, TimeSpan? expiresIn);
+        bool Expire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None);
 
-        Task<bool> ExpireAsync(string key, TimeSpan? expiresIn);
+        Task<bool> ExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None);
 
         #endregion Expire
 
         #region Exists
 
-        bool Exists(string key);
+        bool Exists(string key, CommandFlags flags = CommandFlags.None);
 
-        Task<bool> ExistsAsync(string key);
+        Task<bool> ExistsAsync(string key, CommandFlags flags = CommandFlags.None);
 
         #endregion Exists
 
         #region Get
 
-        string Get(string key);
+        string Get(string key, CommandFlags commandFlags = CommandFlags.None);
 
-        Task<string> GetAsync(string key);
+        Task<string> GetAsync(string key, CommandFlags commandFlags = CommandFlags.None);
 
-        T Get<T>(string key);
+        T Get<T>(string key, CommandFlags commandFlags = CommandFlags.None);
 
-        Task<T> GetAsync<T>(string key);
+        Task<T> GetAsync<T>(string key, CommandFlags commandFlags = CommandFlags.None);
 
         #endregion Get
 
@@ -44,27 +44,19 @@ namespace WeihanLi.Redis
 
         bool Set<T>(string key, T value);
 
-        bool Set<T>(string key, T value, TimeSpan? expiresIn);
-
-        bool Set<T>(string key, T value, TimeSpan? expiresIn, When when);
-
-        bool Set<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags);
+        bool Set<T>(string key, T value, TimeSpan? expiresIn, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
 
         Task<bool> SetAsync<T>(string key, T value);
 
-        Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn);
-
-        Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when);
-
-        Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags);
+        Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
 
         #endregion Set
 
         #region Remove
 
-        bool Remove(string key);
+        bool Remove(string key, CommandFlags commandFlags = CommandFlags.None);
 
-        Task<bool> RemoveAsync(string key);
+        Task<bool> RemoveAsync(string key, CommandFlags commandFlags = CommandFlags.None);
 
         #endregion Remove
     }
@@ -77,52 +69,52 @@ namespace WeihanLi.Redis
 
         #region Exists
 
-        public bool Exists(string key) => Wrapper.Database.KeyExists(Wrapper.KeyPrefix + key);
+        public bool Exists(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExists(Wrapper.KeyPrefix + key, flags);
 
-        public Task<bool> ExistsAsync(string key) => Wrapper.Database.KeyExistsAsync(Wrapper.KeyPrefix + key);
+        public Task<bool> ExistsAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExistsAsync(Wrapper.KeyPrefix + key, flags);
 
         #endregion Exists
 
         #region Expire
 
-        public bool Expire(string key, TimeSpan? expiresIn) => Wrapper.Database.KeyExpire(Wrapper.KeyPrefix + key, expiresIn);
+        public bool Expire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExpire(Wrapper.KeyPrefix + key, expiresIn, flags);
 
-        public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn) => Wrapper.Database.KeyExpireAsync(Wrapper.KeyPrefix + key, expiresIn);
+        public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExpireAsync(Wrapper.KeyPrefix + key, expiresIn, flags);
 
         #endregion Expire
 
         #region Get
 
-        public T Get<T>(string key)
+        public T Get<T>(string key, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Wrap<T>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGet(k));
+            return Wrapper.Wrap<T>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGet(k, flags));
         }
 
-        public string Get(string key)
+        public string Get(string key, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Wrap<string>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGet(k));
+            return Wrapper.Wrap<string>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGet(k, flags));
         }
 
-        public Task<T> GetAsync<T>(string key)
+        public Task<T> GetAsync<T>(string key, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.WrapAsync<T>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGetAsync(k));
+            return Wrapper.WrapAsync<T>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGetAsync(k, flags));
         }
 
-        public Task<string> GetAsync(string key)
+        public Task<string> GetAsync(string key, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.WrapAsync<string>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGetAsync(k));
+            return Wrapper.WrapAsync<string>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGetAsync(k, flags));
         }
 
         #endregion Get
 
-        public bool Remove(string key)
+        public bool Remove(string key, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Database.KeyDelete(Wrapper.KeyPrefix + key);
+            return Wrapper.Database.KeyDelete(Wrapper.KeyPrefix + key, flags);
         }
 
-        public Task<bool> RemoveAsync(string key)
+        public Task<bool> RemoveAsync(string key, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Database.KeyDeleteAsync(Wrapper.KeyPrefix + key);
+            return Wrapper.Database.KeyDeleteAsync(Wrapper.KeyPrefix + key, flags);
         }
 
         public bool Set<T>(string key, T value)

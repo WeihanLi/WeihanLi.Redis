@@ -7,7 +7,7 @@ namespace WeihanLi.Redis
 {
     public interface ICounterClient
     {
-        long Count { get; }
+        long Count();
 
         long Base { get; }
 
@@ -58,7 +58,7 @@ namespace WeihanLi.Redis
         {
         }
 
-        public long Count => Wrapper.Wrap<int>(_keyName, k => Wrapper.Database.StringGet(_keyName));
+        public long Count() => Wrapper.Wrap<long>(_keyName, k => Wrapper.Database.StringGet(_keyName));
 
         public long Base { get; }
 

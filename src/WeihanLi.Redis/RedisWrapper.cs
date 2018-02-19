@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Extensions;
@@ -20,6 +21,10 @@ namespace WeihanLi.Redis
         T Wrap<T>(Func<RedisValue> func);
 
         Task<T> WrapAsync<T>(Func<Task<RedisValue>> func);
+
+        T[] Wrap<T>(Func<RedisValue[]> func);
+
+        Task<T[]> WrapAsync<T>(Func<Task<RedisValue[]>> func);
 
         T Wrap<T>(string key, Func<string, RedisValue> func);
 
@@ -59,6 +64,18 @@ namespace WeihanLi.Redis
         {
             var result = await func();
             return result.HasValue ? result.ToString().StringToType<T>() : default(T);
+        }
+
+        public T[] Wrap<T>(Func<RedisValue[]> func)
+        {
+            var result = func();
+            return result.Select(_ => _.HasValue ? result.ToString().StringToType<T>() : default(T)).ToArray();
+        }
+
+        public async Task<T[]> WrapAsync<T>(Func<Task<RedisValue[]>> func)
+        {
+            var result = await func();
+            return result.Select(_ => _.HasValue ? result.ToString().StringToType<T>() : default(T)).ToArray();
         }
     }
 }

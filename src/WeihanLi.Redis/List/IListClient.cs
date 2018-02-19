@@ -1,16 +1,325 @@
 ﻿// ReSharper disable once CheckNamespace
+using System.Linq;
+using System.Threading.Tasks;
+using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
+using WeihanLi.Extensions;
 
 namespace WeihanLi.Redis
 {
-    public interface IListClient
+    public interface IListClient<T>
     {
+        //
+        // 摘要:
+        //     Returns the element at index index in the list stored at key. The index is zero-based,
+        //     so 0 means the first element, 1 the second element and so on. Negative indices
+        //     can be used to designate elements starting at the tail of the list. Here, -1
+        //     means the last element, -2 means the penultimate and so forth.
+        //
+        // 返回结果:
+        //     the requested element, or nil when index is out of range.
+        //
+        // 备注:
+        //     http://redis.io/commands/lindex
+        T Get(long index, CommandFlags flags = CommandFlags.None);
+
+        Task<T> GetAsync(long index, CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Inserts value in the list stored at key either before or after the reference
+        //     value pivot. When key does not exist, it is considered an empty list and no operation
+        //     is performed.
+        //
+        // 返回结果:
+        //     the length of the list after the insert operation, or -1 when the value pivot
+        //     was not found.
+        //
+        // 备注:
+        //     http://redis.io/commands/linsert
+        long InsertAfter(T pivot, T value, CommandFlags flags = CommandFlags.None);
+
+        Task<long> InsertAfterAsync(T pivot, T value, CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Inserts value in the list stored at key either before or after the reference
+        //     value pivot. When key does not exist, it is considered an empty list and no operation
+        //     is performed.
+        //
+        // 返回结果:
+        //     the length of the list after the insert operation, or -1 when the value pivot
+        //     was not found.
+        //
+        // 备注:
+        //     http://redis.io/commands/linsert
+        long InsertBefore(T pivot, T value, CommandFlags flags = CommandFlags.None);
+
+        Task<long> InsertBeforeAsync(T pivot, T value, CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Removes and returns the first element of the list stored at key.
+        //
+        // 返回结果:
+        //     the value of the first element, or nil when key does not exist.
+        //
+        // 备注:
+        //     http://redis.io/commands/lpop
+        T LeftPop(CommandFlags flags = CommandFlags.None);
+
+        Task<T> LeftPopAsync(CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Insert all the specified values at the head of the list stored at key. If key
+        //     does not exist, it is created as empty list before performing the push operations.
+        //     Elements are inserted one after the other to the head of the list, from the leftmost
+        //     element to the rightmost element. So for instance the command LPUSH mylist a
+        //     b c will result into a list containing c as first element, b as second element
+        //     and a as third element.
+        //
+        // 返回结果:
+        //     the length of the list after the push operations.
+        //
+        // 备注:
+        //     http://redis.io/commands/lpush
+        long LeftPush(T[] values, CommandFlags flags = CommandFlags.None);
+
+        Task<long> LeftPushAsync(T[] values, CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Insert the specified value at the head of the list stored at key. If key does
+        //     not exist, it is created as empty list before performing the push operations.
+        //
+        // 返回结果:
+        //     the length of the list after the push operations.
+        //
+        // 备注:
+        //     http://redis.io/commands/lpush
+        long LeftPush(T value, When when = When.Always, CommandFlags flags = CommandFlags.None);
+
+        Task<long> LeftPushAsync(T value, When when = When.Always, CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Returns the length of the list stored at key. If key does not exist, it is interpreted
+        //     as an empty list and 0 is returned.
+        //
+        // 返回结果:
+        //     the length of the list at key.
+        //
+        // 备注:
+        //     http://redis.io/commands/llen
+        long Count(CommandFlags flags = CommandFlags.None);
+
+        Task<long> CountAsync(CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Returns the specified elements of the list stored at key. The offsets start and
+        //     stop are zero-based indexes, with 0 being the first element of the list (the
+        //     head of the list), 1 being the next element and so on. These offsets can also
+        //     be negative numbers indicating offsets starting at the end of the list.For example,
+        //     -1 is the last element of the list, -2 the penultimate, and so on. Note that
+        //     if you have a list of numbers from 0 to 100, LRANGE list 0 10 will return 11
+        //     elements, that is, the rightmost item is included.
+        //
+        // 返回结果:
+        //     list of elements in the specified range.
+        //
+        // 备注:
+        //     http://redis.io/commands/lrange
+        T[] ListRange(long start = 0, long stop = -1, CommandFlags flags = CommandFlags.None);
+
+        Task<T[]> ListRangeAsync(long start = 0, long stop = -1, CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Removes the first count occurrences of elements equal to value from the list
+        //     stored at key. The count argument influences the operation in the following ways:
+        //     count > 0: Remove elements equal to value moving from head to tail. count < 0:
+        //     Remove elements equal to value moving from tail to head. count = 0: Remove all
+        //     elements equal to value.
+        //
+        // 返回结果:
+        //     the number of removed elements.
+        //
+        // 备注:
+        //     http://redis.io/commands/lrem
+        long Remove(T value, long count = 0, CommandFlags flags = CommandFlags.None);
+
+        Task<long> RemoveAsync(T value, long count = 0, CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Removes and returns the last element of the list stored at key.
+        //
+        // 备注:
+        //     http://redis.io/commands/rpop
+        T Pop(CommandFlags flags = CommandFlags.None);
+
+        Task<T> PopAsync(CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Atomically returns and removes the last element (tail) of the list stored at
+        //     source, and pushes the element at the first element (head) of the list stored
+        //     at destination.
+        //
+        // 返回结果:
+        //     the element being popped and pushed.
+        //
+        // 备注:
+        //     http://redis.io/commands/rpoplpush
+        T RightPopLeftPush(string destination, CommandFlags flags = CommandFlags.None);
+
+        Task<T> RightPopLeftPushAsync(string destination, CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Insert the specified value at the tail of the list stored at key. If key does
+        //     not exist, it is created as empty list before performing the push operation.
+        //
+        // 返回结果:
+        //     the length of the list after the push operation.
+        //
+        // 备注:
+        //     http://redis.io/commands/rpush
+        long Push(T value, When when = When.Always, CommandFlags flags = CommandFlags.None);
+
+        Task<long> PushAsync(T value, When when = When.Always, CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Insert all the specified values at the tail of the list stored at key. If key
+        //     does not exist, it is created as empty list before performing the push operation.
+        //     Elements are inserted one after the other to the tail of the list, from the leftmost
+        //     element to the rightmost element. So for instance the command RPUSH mylist a
+        //     b c will result into a list containing a as first element, b as second element
+        //     and c as third element.
+        //
+        // 返回结果:
+        //     the length of the list after the push operation.
+        //
+        // 备注:
+        //     http://redis.io/commands/rpush
+        long Push(T[] values, CommandFlags flags = CommandFlags.None);
+
+        Task<long> PushAsync(T[] values, CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Sets the list element at index to value. For more information on the index argument,
+        //     see ListGetByIndex. An error is returned for out of range indexes.
+        //
+        // 备注:
+        //     http://redis.io/commands/lset
+        bool Set(long index, T value, CommandFlags flags = CommandFlags.None);
+
+        Task<bool> SetAsync(long index, T value, CommandFlags flags = CommandFlags.None);
+
+        //
+        // 摘要:
+        //     Trim an existing list so that it will contain only the specified range of elements
+        //     specified. Both start and stop are zero-based indexes, where 0 is the first element
+        //     of the list (the head), 1 the next element and so on. For example: LTRIM foobar
+        //     0 2 will modify the list stored at foobar so that only the first three elements
+        //     of the list will remain. start and end can also be negative numbers indicating
+        //     offsets from the end of the list, where -1 is the last element of the list, -2
+        //     the penultimate element and so on.
+        //
+        // 备注:
+        //     http://redis.io/commands/ltrim
+        bool Trim(long start, long stop, CommandFlags flags = CommandFlags.None);
+
+        Task<bool> TrimAsync(long start, long stop, CommandFlags flags = CommandFlags.None);
     }
 
-    internal class ListClient : BaseRedisClient, IListClient
+    internal class ListClient<T> : BaseRedisClient, IListClient<T>
     {
-        public ListClient() : base(LogHelper.GetLogHelper<ListClient>(), new RedisWrapper("List/"))
+        private readonly string _realKey;
+
+        public ListClient(string keyName) : base(LogHelper.GetLogHelper<ListClient<T>>(), new RedisWrapper("List/"))
         {
+            _realKey = Wrapper.KeyPrefix + keyName;
+        }
+
+        public long Count(CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLength(_realKey, flags);
+
+        public Task<long> CountAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLengthAsync(_realKey, flags);
+
+        public T Get(long index, CommandFlags flags = CommandFlags.None) => Wrapper.Wrap<T>(() => Wrapper.Database.ListGetByIndex(_realKey, index, flags));
+
+        public Task<T> GetAsync(long index, CommandFlags flags = CommandFlags.None) => Wrapper.WrapAsync<T>(() => Wrapper.Database.ListGetByIndexAsync(_realKey, index, flags));
+
+        public long InsertAfter(T pivot, T value, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListInsertAfter(_realKey, pivot.ToJsonOrString(), value.ToJsonOrString(), flags);
+
+        public Task<long> InsertAfterAsync(T pivot, T value, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListInsertAfterAsync(_realKey, pivot.ToJsonOrString(), value.ToJsonOrString(), flags);
+
+        public long InsertBefore(T pivot, T value, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListInsertBefore(_realKey, pivot.ToJsonOrString(), value.ToJsonOrString(), flags);
+
+        public Task<long> InsertBeforeAsync(T pivot, T value, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListInsertBeforeAsync(_realKey, pivot.ToJsonOrString(), value.ToJsonOrString(), flags);
+
+        public T LeftPop(CommandFlags flags = CommandFlags.None) => Wrapper.Wrap<T>(() => Wrapper.Database.ListLeftPop(_realKey, flags));
+
+        public Task<T> LeftPopAsync(CommandFlags flags = CommandFlags.None) => Wrapper.WrapAsync<T>(() => Wrapper.Database.ListLeftPopAsync(_realKey, flags));
+
+        public long LeftPush(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLeftPush(_realKey, values.Select(_ => _.ToJsonOrString()).Cast<RedisValue>().ToArray(), flags);
+
+        public long LeftPush(T value, When when = When.Always, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLeftPush(_realKey, value.ToJsonOrString(), when, flags);
+
+        public Task<long> LeftPushAsync(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLeftPushAsync(_realKey, values.Select(_ => _.ToJsonOrString()).Cast<RedisValue>().ToArray(), flags);
+
+        public Task<long> LeftPushAsync(T value, When when = When.Always, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLeftPushAsync(_realKey, value.ToJsonOrString(), when, flags);
+
+        public T[] ListRange(long start = 0, long stop = -1, CommandFlags flags = CommandFlags.None) => Wrapper.Wrap<T>(() => Wrapper.Database.ListRange(_realKey, start, stop, flags));
+
+        public Task<T[]> ListRangeAsync(long start = 0, long stop = -1, CommandFlags flags = CommandFlags.None) => Wrapper.WrapAsync<T>(() => Wrapper.Database.ListRangeAsync(_realKey, start, stop, flags));
+
+        public T Pop(CommandFlags flags = CommandFlags.None) => Wrapper.Wrap<T>(() => Wrapper.Database.ListRightPop(_realKey, flags));
+
+        public Task<T> PopAsync(CommandFlags flags = CommandFlags.None) => Wrapper.WrapAsync<T>(() => Wrapper.Database.ListRightPopAsync(_realKey, flags));
+
+        public long Push(T value, When when = When.Always, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRightPush(_realKey, value.ToJsonOrString(), when, flags);
+
+        public long Push(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRightPush(_realKey, values.Select(_ => _.ToJsonOrString()).Cast<RedisValue>().ToArray(), flags);
+
+        public Task<long> PushAsync(T value, When when = When.Always, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRightPushAsync(_realKey, value.ToJsonOrString(), when, flags);
+
+        public Task<long> PushAsync(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRightPushAsync(_realKey, values.Select(_ => _.ToJsonOrString()).Cast<RedisValue>().ToArray(), flags);
+
+        public long Remove(T value, long count = 0, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRemove(_realKey, value.ToJsonOrString(), count, flags);
+
+        public Task<long> RemoveAsync(T value, long count = 0, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRemoveAsync(_realKey, value.ToJsonOrString(), count, flags);
+
+        public T RightPopLeftPush(string destination, CommandFlags flags = CommandFlags.None) => Wrapper.Wrap<T>(() => Wrapper.Database.ListRightPopLeftPush(_realKey, Wrapper.KeyPrefix + destination, flags));
+
+        public Task<T> RightPopLeftPushAsync(string destination, CommandFlags flags = CommandFlags.None) => Wrapper.WrapAsync<T>(() => Wrapper.Database.ListRightPopLeftPushAsync(_realKey, Wrapper.KeyPrefix + destination, flags));
+
+        public bool Set(long index, T value, CommandFlags flags = CommandFlags.None)
+        {
+            Wrapper.Database.ListSetByIndex(_realKey, index, value.ToJsonOrString(), flags);
+            return true;
+        }
+
+        public async Task<bool> SetAsync(long index, T value, CommandFlags flags = CommandFlags.None)
+        {
+            await Wrapper.Database.ListSetByIndexAsync(_realKey, index, value.ToJsonOrString(), flags);
+            return true;
+        }
+
+        public bool Trim(long start, long stop, CommandFlags flags = CommandFlags.None)
+        {
+            Wrapper.Database.ListTrim(_realKey, start, stop, flags);
+            return true;
+        }
+
+        public async Task<bool> TrimAsync(long start, long stop, CommandFlags flags = CommandFlags.None)
+        {
+            await Wrapper.Database.ListTrimAsync(_realKey, start, stop, flags);
+            return true;
         }
     }
 }

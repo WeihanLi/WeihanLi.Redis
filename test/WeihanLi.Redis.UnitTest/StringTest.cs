@@ -25,26 +25,26 @@ namespace WeihanLi.Redis.UnitTest
             var counterName = "counterTest";
             var counterClient = RedisManager.GetCounterClient(counterName, TimeSpan.FromSeconds(60));
             Assert.Equal(0, counterClient.Base);
-            Assert.Equal(0, counterClient.Count);
+            Assert.Equal(0, counterClient.Count());
             counterClient.Increase();
-            Assert.Equal(1, counterClient.Count);
+            Assert.Equal(1, counterClient.Count());
             counterClient.Increase(5);
-            Assert.Equal(6, counterClient.Count);
+            Assert.Equal(6, counterClient.Count());
             counterClient.Decrease(3);
-            Assert.Equal(3, counterClient.Count);
+            Assert.Equal(3, counterClient.Count());
             Assert.True(counterClient.Reset());
-            Assert.Equal(0, counterClient.Count);
+            Assert.Equal(0, counterClient.Count());
         }
 
         [Fact]
         public async Task StringFirewallTest()
         {
             var firewallName = "firewallTest";
-            var firewallClient = RedisManager.GetFirewallClient();
-            Assert.True(firewallClient.Hit(firewallName, TimeSpan.FromSeconds(3)));
-            Assert.False(firewallClient.Hit(firewallName, TimeSpan.FromSeconds(3)));
+            var firewallClient = RedisManager.GetFirewallClient(firewallName, TimeSpan.FromSeconds(3));
+            Assert.True(firewallClient.Hit());
+            Assert.False(firewallClient.Hit());
             await Task.Delay(TimeSpan.FromSeconds(3));
-            Assert.True(firewallClient.Hit(firewallName, TimeSpan.FromSeconds(1)));
+            Assert.True(firewallClient.Hit());
         }
     }
 }

@@ -12,65 +12,67 @@ namespace WeihanLi.Redis
     {
         long Limit { get; }
 
-        bool Hit(string firewallName);
+        bool Hit();
 
-        bool Hit(string firewallName, TimeSpan? expiresIn);
-
-        Task<bool> HitAsync(string firewallName);
-
-        Task<bool> HitAsync(string firewallName, TimeSpan? expiresIn);
+        Task<bool> HitAsync();
     }
 
     internal class FirewallClient : BaseRedisClient, IFirewallClient
     {
-        internal FirewallClient(long limit) : base(LogHelper.GetLogHelper<FirewallClient>(), new RedisWrapper("String/Firewall/"))
+        private readonly TimeSpan? _expiresIn;
+        private readonly string _firewallName;
+
+        internal FirewallClient(string firewallName, long limit, TimeSpan? expiresIn) : base(LogHelper.GetLogHelper<FirewallClient>(), new RedisWrapper("String/Firewall/"))
         {
+            _firewallName = Wrapper.KeyPrefix + firewallName;
+            _expiresIn = expiresIn;
             Limit = limit;
         }
 
-        internal FirewallClient() : this(1)
+        internal FirewallClient(string firewallName, TimeSpan? expiresIn) : this(firewallName, 1, expiresIn)
+        {
+        }
+
+        internal FirewallClient(string firewallName, long limit) : this(firewallName, limit, null)
+        {
+        }
+
+        internal FirewallClient(string firewallName) : this(firewallName, 1)
         {
         }
 
         public long Limit { get; }
 
-        public bool Hit(string firewallName) => Hit(firewallName, null);
-
-        public bool Hit(string firewallName, TimeSpan? expiresIn)
+        public bool Hit()
         {
-            var realKey = Wrapper.KeyPrefix + firewallName;
-            if (Wrapper.Database.KeyExists(realKey))
+            if (Wrapper.Database.KeyExists(_firewallName))
             {
-                if (Wrapper.Wrap<long>(realKey, k => Wrapper.Database.StringGet(k)) >= Limit)
+                if (Wrapper.Wrap<long>(_firewallName, k => Wrapper.Database.StringGet(k)) >= Limit)
                 {
                     return false;
                 }
-                Wrapper.Database.StringIncrement(realKey, 1);
+                Wrapper.Database.StringIncrement(_firewallName, 1);
             }
             else
             {
-                Wrapper.Database.StringSet(realKey, 1, expiresIn, when: StackExchange.Redis.When.NotExists);
+                Wrapper.Database.StringSet(_firewallName, 1, _expiresIn, when: StackExchange.Redis.When.NotExists);
             }
             return true;
         }
 
-        public Task<bool> HitAsync(string firewallName)
-        => HitAsync(firewallName, null);
-
-        public async Task<bool> HitAsync(string firewallName, TimeSpan? expiresIn)
+        public async Task<bool> HitAsync()
         {
-            var realKey = Wrapper.KeyPrefix + firewallName;
-            if (await Wrapper.Database.KeyExistsAsync(realKey))
+            if (await Wrapper.Database.KeyExistsAsync(_firewallName))
             {
-                if (await Wrapper.WrapAsync<long>(realKey, k => Wrapper.Database.StringGetAsync(k)) >= Limit)
+                if (await Wrapper.WrapAsync<long>(_firewallName, k => Wrapper.Database.StringGetAsync(k)) >= Limit)
                 {
                     return false;
                 }
-                await Wrapper.Database.StringIncrementAsync(realKey);
+                await Wrapper.Database.StringIncrementAsync(_firewallName);
             }
             else
             {
-                await Wrapper.Database.StringSetAsync(realKey, 1, expiresIn);
+                await Wrapper.Database.StringSetAsync(_firewallName, 1, _expiresIn);
             }
             return true;
         }

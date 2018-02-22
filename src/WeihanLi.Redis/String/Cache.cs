@@ -52,6 +52,14 @@ namespace WeihanLi.Redis
 
         #endregion Set
 
+        #region GetOrSet
+
+        T GetOrSet<T>(string key, Func<T> func, TimeSpan expiresIn, CommandFlags flags = CommandFlags.None);
+
+        Task<T> GetOrSetAsync<T>(string key, Func<Task<T>> func, TimeSpan expiresIn, CommandFlags flags = CommandFlags.None);
+
+        #endregion GetOrSet
+
         #region Remove
 
         bool Remove(string key, CommandFlags commandFlags = CommandFlags.None);
@@ -106,6 +114,28 @@ namespace WeihanLi.Redis
         }
 
         #endregion Get
+
+        public T GetOrSet<T>(string key, Func<T> func, TimeSpan expiresIn, CommandFlags flags = CommandFlags.None)
+        {
+            if (Exists(key, flags))
+            {
+                return Get<T>(key, flags);
+            }
+            var val = func();
+            Set(key, val, expiresIn, When.NotExists, flags);
+            return val;
+        }
+
+        public async Task<T> GetOrSetAsync<T>(string key, Func<Task<T>> func, TimeSpan expiresIn, CommandFlags flags = CommandFlags.None)
+        {
+            if (await ExistsAsync(key, flags))
+            {
+                return await GetAsync<T>(key, flags);
+            }
+            var val = await func();
+            await SetAsync(key, val, expiresIn, When.NotExists, flags);
+            return val;
+        }
 
         public bool Remove(string key, CommandFlags flags = CommandFlags.None)
         {

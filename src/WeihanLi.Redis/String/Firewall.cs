@@ -22,9 +22,9 @@ namespace WeihanLi.Redis
         private readonly TimeSpan? _expiresIn;
         private readonly string _firewallName;
 
-        internal FirewallClient(string firewallName, long limit, TimeSpan? expiresIn) : base(LogHelper.GetLogHelper<FirewallClient>(), new RedisWrapper("String/Firewall/"))
+        internal FirewallClient(string firewallName, long limit, TimeSpan? expiresIn) : base(LogHelper.GetLogHelper<FirewallClient>(), new RedisWrapper("String/Firewall"))
         {
-            _firewallName = Wrapper.KeyPrefix + firewallName;
+            _firewallName = $"{Wrapper.KeyPrefix}/{firewallName}";
             _expiresIn = expiresIn;
             Limit = limit;
         }
@@ -47,15 +47,15 @@ namespace WeihanLi.Redis
         {
             if (Wrapper.Database.KeyExists(_firewallName))
             {
-                if (Wrapper.Wrap<long>(_firewallName, k => Wrapper.Database.StringGet(k)) >= Limit)
+                if (Convert.ToInt64(Wrapper.Database.StringGet(_firewallName)) >= Limit)
                 {
                     return false;
                 }
-                Wrapper.Database.StringIncrement(_firewallName, 1);
+                Wrapper.Database.StringIncrement(_firewallName);
             }
             else
             {
-                Wrapper.Database.StringSet(_firewallName, 1, _expiresIn, when: StackExchange.Redis.When.NotExists);
+                Wrapper.Database.StringSet(_firewallName, 1, _expiresIn, StackExchange.Redis.When.NotExists);
             }
             return true;
         }
@@ -64,7 +64,7 @@ namespace WeihanLi.Redis
         {
             if (await Wrapper.Database.KeyExistsAsync(_firewallName))
             {
-                if (await Wrapper.WrapAsync<long>(_firewallName, k => Wrapper.Database.StringGetAsync(k)) >= Limit)
+                if (Convert.ToInt64(await Wrapper.Database.StringGetAsync(_firewallName)) >= Limit)
                 {
                     return false;
                 }

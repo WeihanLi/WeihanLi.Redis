@@ -8,6 +8,10 @@ namespace WeihanLi.Redis
 
         #region RedisConfig
 
+        /// <summary>
+        /// 设置Redis配置
+        /// </summary>
+        /// <param name="configAction">configAction</param>
         public static void AddRedisConfig(Action<RedisConfigurationOption> configAction) => configAction(RedisConfiguration);
 
         #endregion RedisConfig
@@ -71,5 +75,11 @@ namespace WeihanLi.Redis
         public static ISortedSetClient GetSortedSetClient() => new SortedSetClient();
 
         #endregion SortedSet
+
+        #region PubSub
+
+        public static IPubSubClient GetPubSubClient() => new PubSubClient();
+
+        #endregion PubSub
     }
 }

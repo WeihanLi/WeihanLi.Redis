@@ -7,6 +7,10 @@ namespace WeihanLi.Redis.UnitTest
         static BaseUnitTest()
         {
             LogHelper.LogInit();
+            RedisManager.AddRedisConfig(config =>
+            {
+                config.CachePrefix = "WeihanLi.Redis.UnitTest";
+            });
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿// ReSharper disable once CheckNamespace
-using WeihanLi.Common.Helpers;
+﻿using WeihanLi.Common.Helpers;
 
+// ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
     public interface IRankClient
@@ -9,7 +9,7 @@ namespace WeihanLi.Redis
 
     internal class RankClient : BaseRedisClient, IRankClient
     {
-        public RankClient() : base(LogHelper.GetLogHelper<RankClient>(), new RedisWrapper("SortedSet/Rank/"))
+        public RankClient() : base(LogHelper.GetLogHelper<RankClient>(), new RedisWrapper("SortedSet/Rank"))
         {
         }
     }

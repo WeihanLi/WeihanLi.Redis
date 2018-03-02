@@ -1,22 +1,39 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Description>RedisExtensions for StackExchange.Redis</Description>
+        <Product>WeihanLi.Redis</Product>
+        <PackageIconUrl>https://avatars3.githubusercontent.com/u/7604648</PackageIconUrl>
+        <PackageId>WeihanLi.Redis</PackageId>
+        <Version>1.0.0-alpha-4</Version>
         <RepositoryType>git</RepositoryType>
         <PackageTags>redis StackExchange</PackageTags>
+        <Description>RedisExtensions for StackExchange.Redis</Description>
         <PackageReleaseNotes>init</PackageReleaseNotes>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageProjectUrl>https://github.com/WeihanLi/WeihanLi.Redis</PackageProjectUrl>
         <PackageIconUrl></PackageIconUrl>
         <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
         <Copyright>MIT</Copyright>
         <PackageLicenseUrl>https://github.com/WeihanLi/WeihanLi.Redis/blob/master/LICENSE</PackageLicenseUrl>
-        <Version>1.0.0-alpha-3</Version>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="StackExchange.Redis" Version="1.2.6" />
-        <PackageReference Include="WeihanLi.Common" Version="1.0.7.7" />
+        <PackageReference Include="WeihanLi.Common" Version="1.0.7.12" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="Resource.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>Resource.resx</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Update="Resource.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
     </ItemGroup>
 </Project>

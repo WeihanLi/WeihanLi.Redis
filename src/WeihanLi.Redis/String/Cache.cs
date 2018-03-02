@@ -1,10 +1,9 @@
-﻿// ReSharper disable once CheckNamespace
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
-using WeihanLi.Extensions;
 
+// ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
     /// <summary>
@@ -71,47 +70,42 @@ namespace WeihanLi.Redis
 
     internal class CacheClient : BaseRedisClient, ICacheClient
     {
-        public CacheClient() : base(LogHelper.GetLogHelper<CacheClient>(), new RedisWrapper("String/Cache/"))
+        private readonly string _prefix;
+
+        public CacheClient() : this(null)
         {
+        }
+
+        public CacheClient(string prefix) : base(LogHelper.GetLogHelper<CacheClient>(), new RedisWrapper("String/Cache"))
+        {
+            _prefix = string.IsNullOrWhiteSpace(prefix) ? "Default" : prefix;
         }
 
         #region Exists
 
-        public bool Exists(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExists(Wrapper.KeyPrefix + key, flags);
+        public bool Exists(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExists($"{_prefix}/{key}", flags);
 
-        public Task<bool> ExistsAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExistsAsync(Wrapper.KeyPrefix + key, flags);
+        public Task<bool> ExistsAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExistsAsync($"{_prefix}/{key}", flags);
 
         #endregion Exists
 
         #region Expire
 
-        public bool Expire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExpire(Wrapper.KeyPrefix + key, expiresIn, flags);
+        public bool Expire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExpire($"{_prefix}/{key}", expiresIn, flags);
 
-        public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExpireAsync(Wrapper.KeyPrefix + key, expiresIn, flags);
+        public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExpireAsync($"{_prefix}/{key}", expiresIn, flags);
 
         #endregion Expire
 
         #region Get
 
-        public T Get<T>(string key, CommandFlags flags = CommandFlags.None)
-        {
-            return Wrapper.Wrap<T>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGet(k, flags));
-        }
+        public T Get<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(() => Wrapper.Database.StringGet($"{Wrapper.KeyPrefix}/{_prefix}/{key}", flags));
 
-        public string Get(string key, CommandFlags flags = CommandFlags.None)
-        {
-            return Wrapper.Wrap<string>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGet(k, flags));
-        }
+        public string Get(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<string>(() => Wrapper.Database.StringGet($"{Wrapper.KeyPrefix}/{_prefix}/{key}", flags));
 
-        public Task<T> GetAsync<T>(string key, CommandFlags flags = CommandFlags.None)
-        {
-            return Wrapper.WrapAsync<T>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGetAsync(k, flags));
-        }
+        public Task<T> GetAsync<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<T>(() => Wrapper.Database.StringGetAsync($"{Wrapper.KeyPrefix}/{_prefix}/{key}", flags));
 
-        public Task<string> GetAsync(string key, CommandFlags flags = CommandFlags.None)
-        {
-            return Wrapper.WrapAsync<string>(Wrapper.KeyPrefix + key, (k) => Wrapper.Database.StringGetAsync(k, flags));
-        }
+        public Task<string> GetAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<string>(() => Wrapper.Database.StringGetAsync($"{Wrapper.KeyPrefix}/{_prefix}/{key}", flags));
 
         #endregion Get
 
@@ -137,54 +131,24 @@ namespace WeihanLi.Redis
             return val;
         }
 
-        public bool Remove(string key, CommandFlags flags = CommandFlags.None)
-        {
-            return Wrapper.Database.KeyDelete(Wrapper.KeyPrefix + key, flags);
-        }
+        public bool Remove(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyDelete($"{_prefix}/{key}", flags);
 
-        public Task<bool> RemoveAsync(string key, CommandFlags flags = CommandFlags.None)
-        {
-            return Wrapper.Database.KeyDeleteAsync(Wrapper.KeyPrefix + key, flags);
-        }
+        public Task<bool> RemoveAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDeleteAsync($"{_prefix}/{key}", flags);
 
-        public bool Set<T>(string key, T value)
-        {
-            return Set(key, value, null);
-        }
+        public bool Set<T>(string key, T value) => Set(key, value, null);
 
-        public bool Set<T>(string key, T value, TimeSpan? expiresIn)
-        {
-            return Set(key, value, expiresIn, When.Always);
-        }
+        public bool Set<T>(string key, T value, TimeSpan? expiresIn) => Set(key, value, expiresIn, When.Always);
 
-        public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when)
-        {
-            return Set(key, value, expiresIn, when, CommandFlags.None);
-        }
+        public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when) => Set(key, value, expiresIn, when, CommandFlags.None);
 
-        public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
-        {
-            return Wrapper.Database.StringSet(Wrapper.KeyPrefix + key, value.ToJsonOrString(), expiresIn, when, commandFlags);
-        }
+        public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSet($"{Wrapper.KeyPrefix}/{_prefix}/{key}", Wrapper.Wrap(value), expiresIn, when, commandFlags);
 
-        public Task<bool> SetAsync<T>(string key, T value)
-        {
-            return SetAsync(key, value, null);
-        }
+        public Task<bool> SetAsync<T>(string key, T value) => SetAsync(key, value, null);
 
-        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn)
-        {
-            return SetAsync(key, value, expiresIn, When.Always);
-        }
+        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn) => SetAsync(key, value, expiresIn, When.Always);
 
-        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when)
-        {
-            return SetAsync(key, value, expiresIn, when, CommandFlags.None);
-        }
+        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when) => SetAsync(key, value, expiresIn, when, CommandFlags.None);
 
-        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
-        {
-            return Wrapper.Database.StringSetAsync(Wrapper.KeyPrefix + key, value.ToJsonOrString(), expiresIn, when, commandFlags);
-        }
+        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSetAsync($"{Wrapper.KeyPrefix}/{_prefix}/{key}", Wrapper.Wrap(value), expiresIn, when, commandFlags);
     }
 }

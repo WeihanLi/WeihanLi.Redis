@@ -13,6 +13,7 @@ namespace WeihanLi.Redis.UnitTest
             var value = "Hello WeihanLi.Redis";
             var hashClient = RedisManager.GetHashClient();
             var result = hashClient.Set(key, fieldName, value);
+            Assert.True(result);
             Assert.True(hashClient.Expire(key, TimeSpan.FromSeconds(10)));
             Assert.True(hashClient.Exists(key, fieldName));
             Assert.Equal(value, hashClient.Get(key, fieldName));

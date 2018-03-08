@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using StackExchange.Redis;
 using WeihanLi.Extensions;
 
@@ -10,14 +11,32 @@ namespace WeihanLi.Redis
     /// </summary>
     public class RedisConfigurationOption
     {
-        public IReadOnlyList<RedisServerConfiguration> RedisServers { get; set; } = new[]
+        private IReadOnlyList<RedisServerConfiguration> _redisServers = new[]
         {
             new RedisServerConfiguration()
         };
 
+        private int _defaultDatabase;
+
+        public IReadOnlyList<RedisServerConfiguration> RedisServers
+        {
+            get => _redisServers;
+            set => _redisServers = value.Distinct(new RedisServerConfigurationComparer()).ToArray();
+        }
+
         public string Password { get; set; }
 
-        public int DefaultDatabase { get; set; }
+        public int DefaultDatabase
+        {
+            get => _defaultDatabase;
+            set
+            {
+                if (value >= 0 && value <= 15)
+                {
+                    _defaultDatabase = value;
+                }
+            }
+        }
 
         public bool Ssl { get; set; }
 

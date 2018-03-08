@@ -46,6 +46,17 @@ namespace WeihanLi.Redis
 
         #endregion Firewall
 
+        #region RedisLock
+
+        /// <summary>
+        /// RedisLock
+        /// </summary>
+        /// <param name="key">key</param>
+        /// <returns></returns>
+        public static IRedLockClient GetRedLockClient(string key) => new RedLockClient(key);
+
+        #endregion RedisLock
+
         #region Hash
 
         public static IHashClient GetHashClient() => new HashClient();
@@ -54,7 +65,7 @@ namespace WeihanLi.Redis
 
         #region List
 
-        public static IListClient<T> GetListClient<T>(string listName) => new ListClient<T>(listName);
+        public static IListClient<T> GetListClient<T>(string keyName) => new ListClient<T>(keyName);
 
         #endregion List
 
@@ -66,13 +77,13 @@ namespace WeihanLi.Redis
 
         #region Set
 
-        public static ISetClient GetSetClient() => new SetClient();
+        public static ISetClient<T> GetSetClient<T>(string keyName) => new SetClient<T>(keyName);
 
         #endregion Set
 
         #region SortedSet
 
-        public static ISortedSetClient GetSortedSetClient() => new SortedSetClient();
+        public static ISortedSetClient<T> GetSortedSetClient<T>(string keyName) => new SortedSetClient<T>(keyName);
 
         #endregion SortedSet
 

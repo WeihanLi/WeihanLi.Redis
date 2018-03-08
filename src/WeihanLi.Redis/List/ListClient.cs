@@ -36,11 +36,11 @@ namespace WeihanLi.Redis
 
         public Task<T> LeftPopAsync(CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<T>(() => Wrapper.Database.ListLeftPopAsync(_realKey, flags));
 
-        public long LeftPush(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLeftPush(_realKey, values.Select(_ => (RedisValue)_.ToJsonOrString()).ToArray(), flags);
+        public long LeftPush(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLeftPush(_realKey, Wrapper.Wrap(values), flags);
 
         public long LeftPush(T value, When when = When.Always, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLeftPush(_realKey, Wrapper.Wrap(value), when, flags);
 
-        public Task<long> LeftPushAsync(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLeftPushAsync(_realKey, values.Select(_ => (RedisValue)_.ToJsonOrString()).ToArray(), flags);
+        public Task<long> LeftPushAsync(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLeftPushAsync(_realKey, Wrapper.Wrap(values), flags);
 
         public Task<long> LeftPushAsync(T value, When when = When.Always, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLeftPushAsync(_realKey, Wrapper.Wrap(value), when, flags);
 
@@ -54,11 +54,11 @@ namespace WeihanLi.Redis
 
         public long Push(T value, When when = When.Always, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRightPush(_realKey, Wrapper.Wrap(value), when, flags);
 
-        public long Push(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRightPush(_realKey, values.Select(_ => (RedisValue)_.ToJsonOrString()).ToArray(), flags);
+        public long Push(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRightPush(_realKey, Wrapper.Wrap(values), flags);
 
         public Task<long> PushAsync(T value, When when = When.Always, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRightPushAsync(_realKey, Wrapper.Wrap(value), when, flags);
 
-        public Task<long> PushAsync(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRightPushAsync(_realKey, values.Select(_ => (RedisValue)_.ToJsonOrString()).ToArray(), flags);
+        public Task<long> PushAsync(T[] values, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRightPushAsync(_realKey, Wrapper.Wrap(values), flags);
 
         public long Remove(T value, long count = 0, CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListRemove(_realKey, Wrapper.Wrap(value), count, flags);
 
@@ -79,6 +79,15 @@ namespace WeihanLi.Redis
             await Wrapper.Database.ListSetByIndexAsync(_realKey, index, Wrapper.Wrap(value), flags);
             return true;
         }
+
+        public T[] Sort(long skip = 0, long take = -1, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = default(T), T[] get = null, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(
+            () => Wrapper.Database
+                .Sort(_realKey, skip, take, order, sortType, Wrapper.Wrap(by),
+                    get?.Select(_ => Wrapper.Wrap(_)).ToArray(), flags)
+        );
+
+        public long SortAndStore(string destination, long skip = 0, long take = -1, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = default(T), T[] get = null, CommandFlags flags = CommandFlags.None) => Wrapper.Database.SortAndStore($"{Wrapper.KeyPrefix}/{destination}", _realKey, skip, take, order, sortType,
+            Wrapper.Wrap(by), get?.Select(_ => Wrapper.Wrap(_)).ToArray(), flags);
 
         public bool Trim(long start, long stop, CommandFlags flags = CommandFlags.None)
         {

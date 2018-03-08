@@ -2,16 +2,16 @@
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
         <Product>WeihanLi.Redis</Product>
-        <PackageIconUrl>https://avatars3.githubusercontent.com/u/7604648</PackageIconUrl>
+        <Title>WeihanLi.Redis</Title>
         <PackageId>WeihanLi.Redis</PackageId>
-        <Version>1.0.0-alpha-4</Version>
+        <Authors>WeihanLi</Authors>
+        <Version>1.0.0-beta</Version>
         <RepositoryType>git</RepositoryType>
         <PackageTags>redis StackExchange</PackageTags>
+        <PackageIconUrl>https://avatars3.githubusercontent.com/u/7604648</PackageIconUrl>
         <Description>RedisExtensions for StackExchange.Redis</Description>
-        <PackageReleaseNotes>init</PackageReleaseNotes>
+        <PackageReleaseNotes>add RedLock/SetClient/SortedSetClient</PackageReleaseNotes>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageProjectUrl>https://github.com/WeihanLi/WeihanLi.Redis</PackageProjectUrl>
-        <PackageIconUrl></PackageIconUrl>
         <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
         <Copyright>MIT</Copyright>
         <PackageLicenseUrl>https://github.com/WeihanLi/WeihanLi.Redis/blob/master/LICENSE</PackageLicenseUrl>

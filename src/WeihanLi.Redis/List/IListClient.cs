@@ -232,5 +232,27 @@ namespace WeihanLi.Redis
         bool Trim(long start, long stop, CommandFlags flags = CommandFlags.None);
 
         Task<bool> TrimAsync(long start, long stop, CommandFlags flags = CommandFlags.None);
+
+        /// <summary>
+        /// Sorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be
+        /// used to perform external key-lookups using the <c>by</c> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can
+        /// be performed instead by specifying the <c>get</c> parameter (note that <c>#</c> specifies the element itself, when used in <c>get</c>).
+        /// Referring to the <a href="http://redis.io/commands/sort">redis SORT documentation </a> for examples is recommended. When used in hashes, <c>by</c> and <c>get</c>
+        /// can be used to specify fields using <c>-&gt;</c> notation (again, refer to redis documentation).
+        /// </summary>
+        /// <remarks>http://redis.io/commands/sort</remarks>
+        /// <returns>Returns the sorted elements, or the external values if <c>get</c> is specified</returns>
+        T[] Sort(long skip = 0, long take = -1, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = default(T), T[] get = null, CommandFlags flags = CommandFlags.None);
+
+        /// <summary>
+        /// Sorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be
+        /// used to perform external key-lookups using the <c>by</c> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can
+        /// be performed instead by specifying the <c>get</c> parameter (note that <c>#</c> specifies the element itself, when used in <c>get</c>).
+        /// Referring to the <a href="http://redis.io/commands/sort">redis SORT documentation </a> for examples is recommended. When used in hashes, <c>by</c> and <c>get</c>
+        /// can be used to specify fields using <c>-&gt;</c> notation (again, refer to redis documentation).
+        /// </summary>
+        /// <remarks>http://redis.io/commands/sort</remarks>
+        /// <returns>Returns the number of elements stored in the new list</returns>
+        long SortAndStore(string destination, long skip = 0, long take = -1, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = default(T), T[] get = null, CommandFlags flags = CommandFlags.None);
     }
 }

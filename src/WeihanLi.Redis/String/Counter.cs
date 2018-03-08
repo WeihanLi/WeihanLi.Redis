@@ -1,8 +1,8 @@
-﻿// ReSharper disable once CheckNamespace
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using WeihanLi.Common.Helpers;
 
+// ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
     public interface ICounterClient

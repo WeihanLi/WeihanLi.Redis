@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
+using WeihanLi.Extensions;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
@@ -33,25 +34,13 @@ namespace WeihanLi.Redis
         {
         }
 
-        public bool IsConnected(string channelName)
-        {
-            return Wrapper.Subscriber.IsConnected($"{Wrapper.ChannelPrefix}/{channelName}");
-        }
+        public bool IsConnected(string channelName) => channelName.IsNullOrWhiteSpace() ? Wrapper.Subscriber.IsConnected() : Wrapper.Subscriber.IsConnected($"{Wrapper.ChannelPrefix}/{channelName}");
 
-        public long Publish(string channelName, string message, CommandFlags flags = CommandFlags.None)
-        {
-            return Wrapper.Subscriber.Publish($"{Wrapper.ChannelPrefix}/{channelName}", Wrapper.Wrap(message), flags);
-        }
+        public long Publish(string channelName, string message, CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.Publish($"{Wrapper.ChannelPrefix}/{channelName}", Wrapper.Wrap(message), flags);
 
-        public Task<long> PublishAsync(string channelName, string message, CommandFlags flags = CommandFlags.None)
-        {
-            return Wrapper.Subscriber.PublishAsync($"{Wrapper.ChannelPrefix}/{channelName}", Wrapper.Wrap(message), flags);
-        }
+        public Task<long> PublishAsync(string channelName, string message, CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.PublishAsync($"{Wrapper.ChannelPrefix}/{channelName}", Wrapper.Wrap(message), flags);
 
-        public void Subscribe(string channelName, string type, Action<IPubSubMessage> action, CommandFlags flag = CommandFlags.None)
-        {
-            Wrapper.Subscriber.Subscribe($"{Wrapper.ChannelPrefix}/{channelName}", (c, v) => action(Wrapper.Unwrap<PubSubMessageModel>(v)));
-        }
+        public void Subscribe(string channelName, string type, Action<IPubSubMessage> action, CommandFlags flag = CommandFlags.None) => Wrapper.Subscriber.Subscribe($"{Wrapper.ChannelPrefix}/{channelName}", (c, v) => action(Wrapper.Unwrap<PubSubMessageModel>(v)));
 
         public Task SubscribeAsync(string channelName, string type, Action<IPubSubMessage> action, CommandFlags flag = CommandFlags.None) => Wrapper.Subscriber.SubscribeAsync($"{Wrapper.ChannelPrefix}/{channelName}", (c, v) => action(Wrapper.Unwrap<PubSubMessageModel>(v)));
 
@@ -79,14 +68,8 @@ namespace WeihanLi.Redis
             }
         }
 
-        public void UnsubscribeAll(CommandFlags flags = CommandFlags.None)
-        {
-            Wrapper.Subscriber.UnsubscribeAll(flags);
-        }
+        public void UnsubscribeAll(CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.UnsubscribeAll(flags);
 
-        public async Task UnsubscribeAllAsync(CommandFlags flags = CommandFlags.None)
-        {
-            await Wrapper.Subscriber.UnsubscribeAllAsync(flags);
-        }
+        public Task UnsubscribeAllAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.UnsubscribeAllAsync(flags);
     }
 }

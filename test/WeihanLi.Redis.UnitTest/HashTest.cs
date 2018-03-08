@@ -20,5 +20,19 @@ namespace WeihanLi.Redis.UnitTest
             Assert.True(hashClient.Remove(key, fieldName));
             Assert.False(hashClient.Exists(key, fieldName));
         }
+
+        [Fact]
+        public void DictionaryTest()
+        {
+            var dictionary = RedisManager.GetDictionaryClient<string, int>("testDictionary", TimeSpan.FromMinutes(1));
+            Assert.Equal(0, dictionary.Count());
+            Assert.False(dictionary.Exists("chinese"));
+            dictionary.Add("math", 80);
+            dictionary.Add("English", 60);
+            Assert.True(dictionary.Exists("math"));
+            Assert.Equal(2, dictionary.Count());
+            Assert.False(dictionary.Exists("chinese"));
+            Assert.True(dictionary.Remove("English"));
+        }
     }
 }

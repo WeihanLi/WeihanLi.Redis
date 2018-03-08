@@ -11,14 +11,14 @@ namespace WeihanLi.Redis
     /// </summary>
     public class RedisConfigurationOption
     {
-        private IReadOnlyList<RedisServerConfiguration> _redisServers = new[]
+        private IReadOnlyCollection<RedisServerConfiguration> _redisServers = new[]
         {
             new RedisServerConfiguration()
         };
 
         private int _defaultDatabase;
 
-        public IReadOnlyList<RedisServerConfiguration> RedisServers
+        public IReadOnlyCollection<RedisServerConfiguration> RedisServers
         {
             get => _redisServers;
             set => _redisServers = value.Distinct(new RedisServerConfigurationComparer()).ToArray();
@@ -41,6 +41,10 @@ namespace WeihanLi.Redis
         public bool Ssl { get; set; }
 
         public bool AllowAdmin { get; set; }
+
+        public bool AbortOnConnectFail { get; set; } = true;
+
+        public int SyncTimeout { get; set; } = 1000;
 
         public int ConnectRetry { get; set; } = 3;
 

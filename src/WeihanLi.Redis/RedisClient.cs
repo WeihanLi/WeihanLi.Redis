@@ -2,6 +2,7 @@
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
+using WeihanLi.Redis.Internals;
 
 namespace WeihanLi.Redis
 {
@@ -23,8 +24,21 @@ namespace WeihanLi.Redis
 
         static BaseRedisClient()
         {
-            // TODO:ValidateRedisConfig
-            Connection = ConnectionMultiplexer.Connect($"{string.Join(",", RedisManager.RedisConfiguration.RedisServers.Select(_ => $"{_.Host}:{_.Port}"))},password={RedisManager.RedisConfiguration.Password},defaultDatabase={RedisManager.RedisConfiguration.DefaultDatabase},ssl={RedisManager.RedisConfiguration.Ssl},connectRetry={RedisManager.RedisConfiguration.ConnectRetry},connectTimeout={RedisManager.RedisConfiguration.ConnectTimeout},proxy={RedisManager.RedisConfiguration.Proxy}");
+            var configurationOptions = new ConfigurationOptions()
+            {
+                Password = RedisManager.RedisConfiguration.Password,
+                DefaultDatabase = RedisManager.RedisConfiguration.DefaultDatabase,
+                ConnectRetry = RedisManager.RedisConfiguration.ConnectRetry,
+                ConnectTimeout = RedisManager.RedisConfiguration.ConnectTimeout,
+                AllowAdmin = RedisManager.RedisConfiguration.AllowAdmin,
+                Ssl = RedisManager.RedisConfiguration.Ssl,
+                Proxy = RedisManager.RedisConfiguration.Proxy,
+                AbortOnConnectFail = RedisManager.RedisConfiguration.AbortOnConnectFail,
+                SyncTimeout = RedisManager.RedisConfiguration.SyncTimeout
+            };
+            configurationOptions.EndPoints.AddRange(RedisManager.RedisConfiguration.RedisServers.Select(s => Helpers.ConvertToEndPoint(s.Host, s.Port)).ToArray());
+
+            Connection = ConnectionMultiplexer.Connect(configurationOptions);
         }
 
         protected BaseRedisClient(LogHelper logger, IRedisWrapper redisWrapper)

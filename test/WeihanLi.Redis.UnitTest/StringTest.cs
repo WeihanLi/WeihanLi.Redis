@@ -46,5 +46,32 @@ namespace WeihanLi.Redis.UnitTest
             await Task.Delay(TimeSpan.FromSeconds(3));
             Assert.True(firewallClient.Hit());
         }
+
+        [Fact]
+        public void RedisLock()
+        {
+            using (var client = RedisManager.GetRedLockClient("redLockTest"))
+            {
+                Assert.True(client.TryLock(TimeSpan.FromSeconds(10)));
+                using (var client1 = RedisManager.GetRedLockClient("redLockTest"))
+                {
+                    Assert.False(client.TryLock(TimeSpan.FromSeconds(10)));
+                    Assert.False(client1.Release());
+                }
+                Assert.True(client.Release());
+            }
+
+            var key = Guid.NewGuid().ToString("N");
+            using (var client = RedisManager.GetRedLockClient(key))
+            {
+                Assert.True(client.TryLock(TimeSpan.FromSeconds(20)));
+            }
+
+            using (var client = RedisManager.GetRedLockClient(key))
+            {
+                Assert.True(client.TryLock(TimeSpan.FromMinutes(3)));
+                Assert.True(client.Release());
+            }
+        }
     }
 }

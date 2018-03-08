@@ -82,6 +82,8 @@ namespace WeihanLi.Redis
         /// <remarks>http://redis.io/commands/type</remarks>
         RedisType KeyType(string key, CommandFlags flags = CommandFlags.None);
 
+        #region Wrap
+
         RedisValue Wrap<T>(T t);
 
         RedisValue[] Wrap<T>(T[] ts);
@@ -89,6 +91,10 @@ namespace WeihanLi.Redis
         RedisValue Wrap<T>(Func<T> func);
 
         Task<RedisValue> WrapAsync<T>(Func<Task<T>> func);
+
+        #endregion Wrap
+
+        #region Unwrap
 
         T Unwrap<T>(RedisValue redisValue);
 
@@ -101,6 +107,8 @@ namespace WeihanLi.Redis
         T[] Unwrap<T>(Func<RedisValue[]> func);
 
         Task<T[]> UnwrapAsync<T>(Func<Task<RedisValue[]>> func);
+
+        #endregion Unwrap
     }
 
     internal class RedisWrapper : IRedisWrapper

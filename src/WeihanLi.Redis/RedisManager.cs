@@ -63,6 +63,31 @@ namespace WeihanLi.Redis
 
         #endregion Hash
 
+        #region Dictionary
+
+        /// <summary>
+        /// 获取一个 DictionaryClient
+        /// 默认过期时间滑动过期一天
+        /// </summary>
+        /// <typeparam name="TKey">TKey</typeparam>
+        /// <typeparam name="TValue">TValue</typeparam>
+        /// <param name="keyName">keyName</param>
+        /// <returns></returns>
+        public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName)
+            => GetDictionaryClient<TKey, TValue>(keyName, TimeSpan.FromDays(1));
+
+        /// <summary>
+        /// 获取一个 DictionaryClient
+        /// </summary>
+        /// <typeparam name="TKey">Key Type</typeparam>
+        /// <typeparam name="TValue">Value Type</typeparam>
+        /// <param name="keyName">keyName</param>
+        /// <param name="expiry">过期时间(滑动过期)</param>
+        /// <returns></returns>
+        public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, TimeSpan? expiry) => new DictionaryClient<TKey, TValue>(keyName, expiry);
+
+        #endregion Dictionary
+
         #region List
 
         public static IListClient<T> GetListClient<T>(string keyName) => new ListClient<T>(keyName);

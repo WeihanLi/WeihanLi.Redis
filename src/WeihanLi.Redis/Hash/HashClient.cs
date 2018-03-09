@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
+using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
@@ -13,7 +14,7 @@ namespace WeihanLi.Redis
     /// </summary>
     internal class HashClient : BaseRedisClient, IHashClient
     {
-        public HashClient() : base(LogHelper.GetLogHelper<HashClient>(), new RedisWrapper("Hash/Cache"))
+        public HashClient() : base(LogHelper.GetLogHelper<HashClient>(), new RedisWrapper(RedisConstants.HashPrefix))
         {
         }
 

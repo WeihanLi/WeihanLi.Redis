@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
+using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
@@ -12,7 +13,7 @@ namespace WeihanLi.Redis
     {
         private readonly string _realKey;
 
-        public SortedSetClient(string keyName) : base(LogHelper.GetLogHelper<SortedSetClient<T>>(), new RedisWrapper("SortedSet"))
+        public SortedSetClient(string keyName) : base(LogHelper.GetLogHelper<SortedSetClient<T>>(), new RedisWrapper(RedisConstants.SortedSetPrefix))
         {
             _realKey = $"{Wrapper.KeyPrefix}/{keyName}";
         }

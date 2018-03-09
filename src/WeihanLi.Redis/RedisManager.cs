@@ -1,10 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace WeihanLi.Redis
 {
     public static class RedisManager
     {
         internal static RedisConfigurationOption RedisConfiguration { get; set; } = new RedisConfigurationOption();
+
+        private static readonly Lazy<IReadOnlyDictionary<RedisDataType, CommonRedisClient>> CommonRedisClients = new Lazy<IReadOnlyDictionary<RedisDataType, CommonRedisClient>>(() => new Dictionary<RedisDataType, CommonRedisClient>
+        {
+            { RedisDataType.Cache, new CommonRedisClient(RedisDataType.Cache) },
+            { RedisDataType.Counter, new CommonRedisClient(RedisDataType.Counter) },
+            { RedisDataType.Firewall, new CommonRedisClient(RedisDataType.Firewall) },
+            { RedisDataType.RedLock, new CommonRedisClient(RedisDataType.RedLock) },
+
+            { RedisDataType.Hash, new CommonRedisClient(RedisDataType.Hash) },
+            { RedisDataType.Dictionary, new CommonRedisClient(RedisDataType.Dictionary) },
+
+            { RedisDataType.List, new CommonRedisClient(RedisDataType.List) },
+            { RedisDataType.Set, new CommonRedisClient(RedisDataType.Set) },
+            { RedisDataType.SortedSet, new CommonRedisClient(RedisDataType.SortedSet) },
+            { RedisDataType.Rank, new CommonRedisClient(RedisDataType.Rank) }
+        }, LazyThreadSafetyMode.PublicationOnly);
 
         #region RedisConfig
 
@@ -15,6 +33,17 @@ namespace WeihanLi.Redis
         public static void AddRedisConfig(Action<RedisConfigurationOption> configAction) => configAction(RedisConfiguration);
 
         #endregion RedisConfig
+
+        #region Common
+
+        /// <summary>
+        /// GetCommonRedisClient
+        /// </summary>
+        /// <param name="redisDataType">redisDataType</param>
+        /// <returns></returns>
+        public static ICommonRedisClient GetCommonRedisClient(RedisDataType redisDataType) => CommonRedisClients.Value[redisDataType];
+
+        #endregion Common
 
         #region Cache
 
@@ -85,6 +114,27 @@ namespace WeihanLi.Redis
         /// <param name="expiry">过期时间(滑动过期)</param>
         /// <returns></returns>
         public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, TimeSpan? expiry) => new DictionaryClient<TKey, TValue>(keyName, expiry);
+
+        /// <summary>
+        /// 获取一个 DictionaryClient
+        /// </summary>
+        /// <typeparam name="TKey">Key Type</typeparam>
+        /// <typeparam name="TValue">Value Type</typeparam>
+        /// <param name="keyName">keyName</param>
+        /// <param name="expiry">过期时间</param>
+        /// <param name="isSlidingExpiry">滑动过期时间</param>
+        /// <returns></returns>
+        public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, TimeSpan? expiry, bool isSlidingExpiry) => new DictionaryClient<TKey, TValue>(keyName, expiry, isSlidingExpiry);
+
+        /// <summary>
+        /// 获取一个 DictionaryClient
+        /// </summary>
+        /// <typeparam name="TKey">Key Type</typeparam>
+        /// <typeparam name="TValue">Value Type</typeparam>
+        /// <param name="keyName">keyName</param>
+        /// <param name="expiry">绝对过期时间</param>
+        /// <returns></returns>
+        public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, DateTime? expiry) => new DictionaryClient<TKey, TValue>(keyName, expiry);
 
         #endregion Dictionary
 

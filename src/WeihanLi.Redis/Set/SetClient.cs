@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
+using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
@@ -11,7 +12,7 @@ namespace WeihanLi.Redis
     {
         private readonly string _keyName;
 
-        public SetClient(string setName) : base(LogHelper.GetLogHelper<SetClient<T>>(), new RedisWrapper("Set"))
+        public SetClient(string setName) : base(LogHelper.GetLogHelper<SetClient<T>>(), new RedisWrapper(RedisConstants.SetPrefix))
         {
             _keyName = $"{Wrapper.KeyPrefix}/{setName}";
         }

@@ -1,7 +1,7 @@
 ﻿// ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
-    public interface IRankClient
+    public interface IRankClient : IRedisClient
     {
     }
 }

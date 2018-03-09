@@ -4,7 +4,7 @@ using StackExchange.Redis;
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
-    public interface IDictionaryClient<TKey, TValue>
+    public interface IDictionaryClient<TKey, TValue> : IRedisClient
     {
         #region Exists
 
@@ -41,6 +41,14 @@ namespace WeihanLi.Redis
         Task<bool> RemoveAsync(TKey fieldName, CommandFlags flags = CommandFlags.None);
 
         #endregion Remove
+
+        #region Clear
+
+        bool Clear(CommandFlags flags = CommandFlags.None);
+
+        Task<bool> ClearAsync(CommandFlags flags = CommandFlags.None);
+
+        #endregion Clear
 
         #region KeysValues
 

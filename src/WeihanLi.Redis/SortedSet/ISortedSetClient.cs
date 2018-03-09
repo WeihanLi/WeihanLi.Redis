@@ -5,7 +5,7 @@ using StackExchange.Redis;
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
-    public interface ISortedSetClient<T>
+    public interface ISortedSetClient<T> : IRedisClient
     {
         /// <summary>
         /// Adds the specified member with the specified score to the sorted set stored at key. If the specified member is already a member of the sorted set, the score is updated and the element reinserted at the right position to ensure the correct ordering.

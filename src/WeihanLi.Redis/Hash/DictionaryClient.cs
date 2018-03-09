@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
+using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
@@ -11,6 +12,7 @@ namespace WeihanLi.Redis
         private readonly string _realKey;
         private readonly bool _isSlidingExpired;
         private readonly TimeSpan? _expiry;
+        private readonly DateTime? _expiresAt;
 
         /// <summary>
         /// 创建 DictionaryClient，默认滑动过期
@@ -21,19 +23,39 @@ namespace WeihanLi.Redis
         {
         }
 
+        /// <summary>
+        /// 创建 DictionaryClient，绝对过期时间
+        /// </summary>
+        /// <param name="keyName">keyName</param>
+        /// <param name="expiry">过期时间</param>
+        public DictionaryClient(string keyName, DateTime? expiry) : base(LogHelper.GetLogHelper<DictionaryClient<TKey, TValue>>(), new RedisWrapper(RedisConstants.DictionaryPrefix))
+        {
+            _realKey = Wrapper.GetRealKey(keyName);
+            _isSlidingExpired = false;
+            _expiresAt = expiry;
+        }
+
         public DictionaryClient(string keyName, TimeSpan? expiry, bool isSlidingExpired) : base(LogHelper.GetLogHelper<DictionaryClient<TKey, TValue>>(), new RedisWrapper("Hash/Dictionary"))
         {
             _realKey = Wrapper.GetRealKey(keyName);
-            _expiry = expiry;
+
             _isSlidingExpired = isSlidingExpired;
+            if (isSlidingExpired)
+            {
+                _expiry = expiry;
+            }
+            else
+            {
+                _expiresAt = expiry.HasValue ? DateTime.Now.Add(expiry.Value) : (DateTime?)null;
+            }
         }
 
         public bool Add(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None)
         {
             var result = Wrapper.Database.HashSet(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), When.NotExists, flags);
-            if (result && _isSlidingExpired)
+            if (result)
             {
-                Wrapper.Database.KeyExpire(_realKey, _expiry, flags);
+                Expire(flags);
             }
             return result;
         }
@@ -41,12 +63,16 @@ namespace WeihanLi.Redis
         public async Task<bool> AddAsync(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None)
         {
             var result = await Wrapper.Database.HashSetAsync(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), When.NotExists, flags);
-            if (result && _isSlidingExpired)
+            if (result)
             {
-                await Wrapper.Database.KeyExpireAsync(_realKey, _expiry, flags).ConfigureAwait(false);
+                await ExpireAsync(flags);
             }
             return result;
         }
+
+        public bool Clear(CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDelete(_realKey, flags);
+
+        public Task<bool> ClearAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDeleteAsync(_realKey, flags);
 
         public long Count(CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashLength(_realKey, flags);
 
@@ -64,16 +90,32 @@ namespace WeihanLi.Redis
 
         public async Task<TKey[]> KeysAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TKey>(await Wrapper.Database.HashValuesAsync(_realKey, flags));
 
-        public bool Remove(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashDelete(_realKey, Wrapper.Wrap(fieldName), flags);
+        public bool Remove(TKey fieldName, CommandFlags flags = CommandFlags.None)
+        {
+            var result = Wrapper.Database.HashDelete(_realKey, Wrapper.Wrap(fieldName), flags);
+            if (result)
+            {
+                Expire(flags, false);
+            }
+            return result;
+        }
 
-        public Task<bool> RemoveAsync(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashDeleteAsync(_realKey, Wrapper.Wrap(fieldName), flags);
+        public async Task<bool> RemoveAsync(TKey fieldName, CommandFlags flags = CommandFlags.None)
+        {
+            var result = await Wrapper.Database.HashDeleteAsync(_realKey, Wrapper.Wrap(fieldName), flags);
+            if (result)
+            {
+                await ExpireAsync(flags, false);
+            }
+            return result;
+        }
 
         public bool Set(TKey fieldName, TValue value, When when = When.Always, CommandFlags flags = CommandFlags.None)
         {
             var result = Wrapper.Database.HashSet(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), when, flags);
-            if (result && _isSlidingExpired)
+            if (result)
             {
-                Wrapper.Database.KeyExpire(_realKey, _expiry, flags);
+                Expire(flags);
             }
             return result;
         }
@@ -81,9 +123,9 @@ namespace WeihanLi.Redis
         public async Task<bool> SetAsync(TKey fieldName, TValue value, When when = When.Always, CommandFlags flags = CommandFlags.None)
         {
             var result = await Wrapper.Database.HashSetAsync(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), when, flags);
-            if (result && _isSlidingExpired)
+            if (result)
             {
-                await Wrapper.Database.KeyExpireAsync(_realKey, _expiry, flags).ConfigureAwait(false);
+                await ExpireAsync(flags);
             }
             return result;
         }
@@ -91,5 +133,43 @@ namespace WeihanLi.Redis
         public TValue[] Values<T>(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(Wrapper.Database.HashValues(_realKey, flags));
 
         public async Task<TValue[]> ValuesAsync<T>(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(await Wrapper.Database.HashValuesAsync(_realKey, flags));
+
+        #region Expire
+
+        private void Expire(CommandFlags flags) => Expire(flags, true);
+
+        private void Expire(CommandFlags flags, bool isSet)
+        {
+            if (_isSlidingExpired && _expiry.HasValue)
+            {
+                Wrapper.Database.KeyExpire(_realKey, _expiry, flags);
+            }
+            else
+            {
+                if (isSet && _expiresAt.HasValue && null == Wrapper.Database.KeyTimeToLive(_realKey, flags))
+                {
+                    Wrapper.Database.KeyExpire(_realKey, _expiresAt, flags);
+                }
+            }
+        }
+
+        private Task ExpireAsync(CommandFlags flags) => ExpireAsync(flags, true);
+
+        private async Task ExpireAsync(CommandFlags flags, bool isSet)
+        {
+            if (_isSlidingExpired && _expiry.HasValue)
+            {
+                await Wrapper.Database.KeyExpireAsync(_realKey, _expiry, flags);
+            }
+            else
+            {
+                if (isSet && _expiresAt.HasValue && null == Wrapper.Database.KeyTimeToLive(_realKey, flags))
+                {
+                    await Wrapper.Database.KeyExpireAsync(_realKey, _expiresAt, flags);
+                }
+            }
+        }
+
+        #endregion Expire
     }
 }

@@ -2,11 +2,12 @@
 using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
+using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
-    public interface IRedLockClient : IDisposable
+    public interface IRedLockClient : IDisposable, IRedisClient
     {
         /// <summary>
         /// TryGetLock
@@ -40,7 +41,7 @@ namespace WeihanLi.Redis
         private readonly string _realKey;
         private readonly Guid _lockId;
 
-        public RedLockClient(string key) : base(LogHelper.GetLogHelper<RedLockClient>(), new RedisWrapper("String/RedLock"))
+        public RedLockClient(string key) : base(LogHelper.GetLogHelper<RedLockClient>(), new RedisWrapper(RedisConstants.RedLockPrefix))
         {
             _realKey = Wrapper.GetRealKey(key);
             _lockId = Guid.NewGuid();
@@ -76,14 +77,14 @@ namespace WeihanLi.Redis
 
         #region IDisposable Support
 
-        private bool disposed; // 要检测冗余调用
+        private bool _disposed; // 要检测冗余调用
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposed)
+            if (!_disposed)
             {
                 Release();
-                disposed = true;
+                _disposed = true;
             }
         }
 

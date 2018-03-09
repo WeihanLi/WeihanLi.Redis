@@ -5,7 +5,7 @@ using StackExchange.Redis;
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
-    public interface IHashClient
+    public interface IHashClient : IRedisClient
     {
         #region Expire
 

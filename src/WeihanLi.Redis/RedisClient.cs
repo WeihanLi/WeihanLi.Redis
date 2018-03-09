@@ -6,12 +6,11 @@ using WeihanLi.Redis.Internals;
 
 namespace WeihanLi.Redis
 {
-    internal interface IRedisClient
+    public interface IRedisClient
     {
-        IRedisWrapper Wrapper { get; }
     }
 
-    internal abstract class BaseRedisClient : IRedisClient
+    internal abstract class BaseRedisClient
     {
         private static readonly ConnectionMultiplexer Connection;
 

@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
+using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
@@ -9,7 +10,7 @@ namespace WeihanLi.Redis
     /// <summary>
     /// CacheClient
     /// </summary>
-    public interface ICacheClient
+    public interface ICacheClient : IRedisClient
     {
         #region Expire
 
@@ -70,42 +71,35 @@ namespace WeihanLi.Redis
 
     internal class CacheClient : BaseRedisClient, ICacheClient
     {
-        private readonly string _prefix;
-
-        public CacheClient() : this(null)
+        public CacheClient() : base(LogHelper.GetLogHelper<CacheClient>(), new RedisWrapper(RedisConstants.CachePrefix))
         {
-        }
-
-        public CacheClient(string prefix) : base(LogHelper.GetLogHelper<CacheClient>(), new RedisWrapper("String/Cache"))
-        {
-            _prefix = string.IsNullOrWhiteSpace(prefix) ? "Default" : prefix;
         }
 
         #region Exists
 
-        public bool Exists(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExists($"{_prefix}/{key}", flags);
+        public bool Exists(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExists(key, flags);
 
-        public Task<bool> ExistsAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExistsAsync($"{_prefix}/{key}", flags);
+        public Task<bool> ExistsAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExistsAsync(key, flags);
 
         #endregion Exists
 
         #region Expire
 
-        public bool Expire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExpire($"{_prefix}/{key}", expiresIn, flags);
+        public bool Expire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExpire(key, expiresIn, flags);
 
-        public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExpireAsync($"{_prefix}/{key}", expiresIn, flags);
+        public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExpireAsync(key, expiresIn, flags);
 
         #endregion Expire
 
         #region Get
 
-        public T Get<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(() => Wrapper.Database.StringGet($"{Wrapper.KeyPrefix}/{_prefix}/{key}", flags));
+        public T Get<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(() => Wrapper.Database.StringGet($"{Wrapper.KeyPrefix}/{key}", flags));
 
-        public string Get(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<string>(() => Wrapper.Database.StringGet($"{Wrapper.KeyPrefix}/{_prefix}/{key}", flags));
+        public string Get(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<string>(() => Wrapper.Database.StringGet($"{Wrapper.KeyPrefix}/{key}", flags));
 
-        public Task<T> GetAsync<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<T>(() => Wrapper.Database.StringGetAsync($"{Wrapper.KeyPrefix}/{_prefix}/{key}", flags));
+        public Task<T> GetAsync<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<T>(() => Wrapper.Database.StringGetAsync($"{Wrapper.KeyPrefix}/{key}", flags));
 
-        public Task<string> GetAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<string>(() => Wrapper.Database.StringGetAsync($"{Wrapper.KeyPrefix}/{_prefix}/{key}", flags));
+        public Task<string> GetAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<string>(() => Wrapper.Database.StringGetAsync($"{Wrapper.KeyPrefix}/{key}", flags));
 
         #endregion Get
 
@@ -131,9 +125,9 @@ namespace WeihanLi.Redis
             return val;
         }
 
-        public bool Remove(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyDelete($"{_prefix}/{key}", flags);
+        public bool Remove(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyDelete(key, flags);
 
-        public Task<bool> RemoveAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDeleteAsync($"{_prefix}/{key}", flags);
+        public Task<bool> RemoveAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDeleteAsync(key, flags);
 
         public bool Set<T>(string key, T value) => Set(key, value, null);
 
@@ -141,7 +135,7 @@ namespace WeihanLi.Redis
 
         public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when) => Set(key, value, expiresIn, when, CommandFlags.None);
 
-        public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSet($"{Wrapper.KeyPrefix}/{_prefix}/{key}", Wrapper.Wrap(value), expiresIn, when, commandFlags);
+        public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSet($"{Wrapper.KeyPrefix}/{key}", Wrapper.Wrap(value), expiresIn, when, commandFlags);
 
         public Task<bool> SetAsync<T>(string key, T value) => SetAsync(key, value, null);
 
@@ -149,6 +143,6 @@ namespace WeihanLi.Redis
 
         public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when) => SetAsync(key, value, expiresIn, when, CommandFlags.None);
 
-        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSetAsync($"{Wrapper.KeyPrefix}/{_prefix}/{key}", Wrapper.Wrap(value), expiresIn, when, commandFlags);
+        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSetAsync($"{Wrapper.KeyPrefix}/{key}", Wrapper.Wrap(value), expiresIn, when, commandFlags);
     }
 }

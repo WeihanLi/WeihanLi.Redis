@@ -5,7 +5,7 @@ using StackExchange.Redis;
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
-    public interface IPubSubClient
+    public interface IPubSubClient : IRedisClient
     {
         /// <summary>
         /// Indicates whether the instance can communicate with the server;

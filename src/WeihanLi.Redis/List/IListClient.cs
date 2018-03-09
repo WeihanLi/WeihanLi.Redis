@@ -4,7 +4,7 @@ using StackExchange.Redis;
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
-    public interface IListClient<T>
+    public interface IListClient<T> : IRedisClient
     {
         //
         // 摘要:

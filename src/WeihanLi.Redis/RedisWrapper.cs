@@ -82,6 +82,16 @@ namespace WeihanLi.Redis
         /// <remarks>http://redis.io/commands/type</remarks>
         RedisType KeyType(string key, CommandFlags flags = CommandFlags.None);
 
+        #region Script
+
+        RedisResult ScriptEvaluate<TValue>(string script, string[] keys = null, TValue[] values = null,
+            CommandFlags flags = CommandFlags.None);
+
+        Task<RedisResult> ScriptEvaluateAsync<TValue>(string script, string[] keys = null, TValue[] values = null,
+            CommandFlags flags = CommandFlags.None);
+
+        #endregion Script
+
         #region Wrap
 
         RedisValue Wrap<T>(T t);
@@ -199,5 +209,11 @@ namespace WeihanLi.Redis
         public TimeSpan? KeyTimeToLive(string key, CommandFlags flags = CommandFlags.None) => Database.KeyTimeToLive(GetRealKey(key), flags);
 
         public RedisType KeyType(string key, CommandFlags flags = CommandFlags.None) => Database.KeyType(GetRealKey(key), flags);
+
+        public RedisResult ScriptEvaluate<TValue>(string script, string[] keys = null, TValue[] values = null, CommandFlags flags = CommandFlags.None) => Database.ScriptEvaluate(script, keys?.Select(_ => (RedisKey)GetRealKey(_)).ToArray(),
+            null == values ? null : Wrap(values), flags);
+
+        public Task<RedisResult> ScriptEvaluateAsync<TValue>(string script, string[] keys = null, TValue[] values = null, CommandFlags flags = CommandFlags.None) => Database.ScriptEvaluateAsync(script, keys?.Select(_ => (RedisKey)GetRealKey(_)).ToArray(),
+            null == values ? null : Wrap(values), flags);
     }
 }

@@ -41,39 +41,34 @@ namespace WeihanLi.Redis
         private readonly string _realKey;
         private readonly Guid _lockId;
 
+        /// <summary>
+        /// String containing the Lua unlock script.
+        /// http://redis.cn/topics/distlock
+        /// </summary>
+        private const string UnlockScript = @"
+            if redis.call(""get"",KEYS[1]) == ARGV[1] then
+                return redis.call(""del"",KEYS[1])
+            else
+                return 0
+            end";
+
         public RedLockClient(string key) : base(LogHelper.GetLogHelper<RedLockClient>(), new RedisWrapper(RedisConstants.RedLockPrefix))
         {
             _realKey = Wrapper.GetRealKey(key);
             _lockId = Guid.NewGuid();
         }
 
-        public bool Release()
-        {
-            if (Wrapper.Database.KeyExists(_realKey) && Wrapper.Unwrap<Guid>(Wrapper.Database.StringGet(_realKey)) == _lockId)
-            {
-                return Wrapper.Database.KeyDelete(_realKey);
-            }
-            return false;
-        }
+        public bool Release() => (int)Wrapper.Database.ScriptEvaluate(UnlockScript,
+                                     new RedisKey[] { _realKey },
+                                     new[] { Wrapper.Wrap(_lockId) }) == 1;
 
-        public async Task<bool> ReleaseAsync()
-        {
-            if (await Wrapper.Database.KeyExistsAsync(_realKey) && Wrapper.Unwrap<Guid>(await Wrapper.Database.StringGetAsync(_realKey)) == _lockId)
-            {
-                return await Wrapper.Database.KeyDeleteAsync(_realKey);
-            }
-            return false;
-        }
+        public async Task<bool> ReleaseAsync() => (int)await Wrapper.Database.ScriptEvaluateAsync(UnlockScript,
+                                                      new RedisKey[] { _realKey },
+                                                      new[] { Wrapper.Wrap(_lockId) }) == 1;
 
-        public bool TryLock(TimeSpan? expiry)
-        {
-            return Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry, When.NotExists);
-        }
+        public bool TryLock(TimeSpan? expiry) => Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry, When.NotExists);
 
-        public Task<bool> TryLockAsync(TimeSpan? expiry)
-        {
-            return Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId), expiry, When.NotExists);
-        }
+        public Task<bool> TryLockAsync(TimeSpan? expiry) => Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId), expiry, When.NotExists);
 
         #region IDisposable Support
 

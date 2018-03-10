@@ -20,6 +20,8 @@ namespace WeihanLi.Redis.UnitTest
             Assert.True(commonClient.KeyExists(key));
             commonClient.KeyExpireAsync(key, DateTime.Now.AddMinutes(2));
             Assert.NotNull(commonClient.KeyTimeToLive(key));
+            Assert.True(commonClient.KeyPersist(key));
+            Assert.Null(commonClient.KeyTimeToLive(key));
             Assert.True(commonClient.KeyDelete(key));
             Assert.False(cacheClient.Exists(key));
         }

@@ -6,7 +6,7 @@ namespace WeihanLi.Redis
 {
     public static class RedisManager
     {
-        internal static RedisConfigurationOption RedisConfiguration { get; set; } = new RedisConfigurationOption();
+        internal static RedisConfigurationOption RedisConfiguration { get; } = new RedisConfigurationOption();
 
         private static readonly Lazy<IReadOnlyDictionary<RedisDataType, CommonRedisClient>> CommonRedisClients = new Lazy<IReadOnlyDictionary<RedisDataType, CommonRedisClient>>(() => new Dictionary<RedisDataType, CommonRedisClient>
         {

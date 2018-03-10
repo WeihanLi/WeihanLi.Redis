@@ -56,6 +56,14 @@ namespace WeihanLi.Redis
 
         #endregion KeyExpire
 
+        #region KeyPersist
+
+        bool KeyPersist(string key, CommandFlags flags = CommandFlags.None);
+
+        Task<bool> KeyPersistAsync(string key, CommandFlags flags = CommandFlags.None);
+
+        #endregion KeyPersist
+
         #region KeyDelete
 
         bool KeyDelete(string key, CommandFlags flags = CommandFlags.None);
@@ -197,6 +205,10 @@ namespace WeihanLi.Redis
         public bool KeyExpire(string key, DateTime? expiry, CommandFlags flags = CommandFlags.None) => Database.KeyExpire(GetRealKey(key), expiry, flags);
 
         public Task<bool> KeyExpireAsync(string key, DateTime? expiry, CommandFlags flags = CommandFlags.None) => Database.KeyExpireAsync(GetRealKey(key), expiry, flags);
+
+        public bool KeyPersist(string key, CommandFlags flags = CommandFlags.None) => Database.KeyPersist(GetRealKey(key), flags);
+
+        public Task<bool> KeyPersistAsync(string key, CommandFlags flags = CommandFlags.None) => Database.KeyPersistAsync(GetRealKey(key), flags);
 
         public bool KeyDelete(string key, CommandFlags flags = CommandFlags.None) => Database.KeyDelete(GetRealKey(key), flags);
 

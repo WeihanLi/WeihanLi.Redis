@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
+using WeihanLi.Common.Log;
 using WeihanLi.Extensions;
 using WeihanLi.Redis.Internals;
 
@@ -19,7 +20,7 @@ namespace WeihanLi.Redis
         /// <summary>
         /// logger
         /// </summary>
-        protected LogHelper Logger { get; }
+        protected ILogHelper Logger { get; }
 
         static BaseRedisClient()
         {
@@ -40,7 +41,7 @@ namespace WeihanLi.Redis
             Connection = ConnectionMultiplexer.Connect(configurationOptions);
         }
 
-        protected BaseRedisClient(LogHelper logger, IRedisWrapper redisWrapper)
+        protected BaseRedisClient(ILogHelper logger, IRedisWrapper redisWrapper)
         {
             Logger = logger;
             Wrapper = redisWrapper;

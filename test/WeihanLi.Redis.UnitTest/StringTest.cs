@@ -11,8 +11,8 @@ namespace WeihanLi.Redis.UnitTest
         {
             var key = "test111";
             var value = "Hello WeihanLi.Redis";
-            var cacheClient = RedisManager.GetCacheClient();
-            Assert.True(cacheClient.Set(key, value));
+            var cacheClient = RedisManager.CacheClient;
+            var result = cacheClient.Set(key, value);
             Assert.True(cacheClient.Exists(key));
             Assert.Equal(value, cacheClient.Get(key));
             Assert.True(cacheClient.Remove(key));

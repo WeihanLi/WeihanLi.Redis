@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading;
+using System.Collections.Concurrent;
 
 namespace WeihanLi.Redis
 {
@@ -8,21 +7,9 @@ namespace WeihanLi.Redis
     {
         internal static RedisConfigurationOption RedisConfiguration { get; } = new RedisConfigurationOption();
 
-        private static readonly Lazy<IReadOnlyDictionary<RedisDataType, CommonRedisClient>> CommonRedisClients = new Lazy<IReadOnlyDictionary<RedisDataType, CommonRedisClient>>(() => new Dictionary<RedisDataType, CommonRedisClient>
-        {
-            { RedisDataType.Cache, new CommonRedisClient(RedisDataType.Cache) },
-            { RedisDataType.Counter, new CommonRedisClient(RedisDataType.Counter) },
-            { RedisDataType.Firewall, new CommonRedisClient(RedisDataType.Firewall) },
-            { RedisDataType.RedLock, new CommonRedisClient(RedisDataType.RedLock) },
+        private static readonly ConcurrentDictionary<RedisDataType, CommonRedisClient> CommonRedisClients = new ConcurrentDictionary<RedisDataType, CommonRedisClient>();
 
-            { RedisDataType.Hash, new CommonRedisClient(RedisDataType.Hash) },
-            { RedisDataType.Dictionary, new CommonRedisClient(RedisDataType.Dictionary) },
-
-            { RedisDataType.List, new CommonRedisClient(RedisDataType.List) },
-            { RedisDataType.Set, new CommonRedisClient(RedisDataType.Set) },
-            { RedisDataType.SortedSet, new CommonRedisClient(RedisDataType.SortedSet) },
-            { RedisDataType.Rank, new CommonRedisClient(RedisDataType.Rank) }
-        }, LazyThreadSafetyMode.PublicationOnly);
+        private static readonly ConcurrentDictionary<Type, IRedisClient> SingletonRedisClients = new ConcurrentDictionary<Type, IRedisClient>();
 
         #region RedisConfig
 
@@ -41,12 +28,15 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <param name="redisDataType">redisDataType</param>
         /// <returns></returns>
-        public static ICommonRedisClient GetCommonRedisClient(RedisDataType redisDataType) => CommonRedisClients.Value[redisDataType];
+        public static ICommonRedisClient GetCommonRedisClient(RedisDataType redisDataType) => CommonRedisClients.GetOrAdd(redisDataType, type => new CommonRedisClient(type));
 
         #endregion Common
 
         #region Cache
 
+        public static ICacheClient CacheClient => SingletonRedisClients.GetOrAdd(typeof(ICacheClient), (t) => new CacheClient()) as ICacheClient;
+
+        [Obsolete("Please use RedisManager.CacheClient", true)]
         public static ICacheClient GetCacheClient() => new CacheClient();
 
         #endregion Cache
@@ -88,6 +78,9 @@ namespace WeihanLi.Redis
 
         #region Hash
 
+        public static IHashClient HashClient => SingletonRedisClients.GetOrAdd(typeof(IHashClient), (t) => new HashClient()) as IHashClient;
+
+        [Obsolete("Please use RedisManager.HashClient", true)]
         public static IHashClient GetHashClient() => new HashClient();
 
         #endregion Hash
@@ -164,6 +157,9 @@ namespace WeihanLi.Redis
 
         #region PubSub
 
+        public static IPubSubClient PubSubClient => SingletonRedisClients.GetOrAdd(typeof(IPubSubClient), (t) => new PubSubClient()) as IPubSubClient;
+
+        [Obsolete("Please use RedisManager.PubSubClient", true)]
         public static IPubSubClient GetPubSubClient() => new PubSubClient();
 
         #endregion PubSub

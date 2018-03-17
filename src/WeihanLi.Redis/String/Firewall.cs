@@ -25,7 +25,7 @@ namespace WeihanLi.Redis
 
         internal FirewallClient(string firewallName, long limit, TimeSpan? expiresIn) : base(LogHelper.GetLogHelper<FirewallClient>(), new RedisWrapper(RedisConstants.FirewallPrefix))
         {
-            _firewallName = $"{Wrapper.KeyPrefix}/{firewallName}";
+            _firewallName = Wrapper.GetRealKey(firewallName);
             _expiresIn = expiresIn;
             Limit = limit;
         }
@@ -73,7 +73,7 @@ namespace WeihanLi.Redis
             }
             else
             {
-                await Wrapper.Database.StringSetAsync(_firewallName, 1, _expiresIn);
+                await Wrapper.Database.StringSetAsync(_firewallName, 1, _expiresIn, StackExchange.Redis.When.NotExists);
             }
             return true;
         }

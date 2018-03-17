@@ -14,7 +14,7 @@ namespace WeihanLi.Redis
 
         public SetClient(string setName) : base(LogHelper.GetLogHelper<SetClient<T>>(), new RedisWrapper(RedisConstants.SetPrefix))
         {
-            _keyName = $"{Wrapper.KeyPrefix}/{setName}";
+            _keyName = Wrapper.GetRealKey(setName);
         }
 
         public bool Add(T value, CommandFlags flags = CommandFlags.None) => Wrapper.Database.SetAdd(_keyName, Wrapper.Wrap(value), flags);

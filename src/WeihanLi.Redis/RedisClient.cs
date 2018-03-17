@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using StackExchange.Redis;
-using WeihanLi.Common.Helpers;
 using WeihanLi.Common.Log;
 using WeihanLi.Extensions;
 using WeihanLi.Redis.Internals;

@@ -139,7 +139,7 @@ namespace WeihanLi.Redis
 
         #region Rank
 
-        public static IRankClient GetRankClient() => new RankClient();
+        public static IRankClient<T> GetRankClient<T>(string rankName) => new RankClient<T>(rankName);
 
         #endregion Rank
 

@@ -14,7 +14,7 @@ namespace WeihanLi.Redis
 
         public ListClient(string keyName) : base(LogHelper.GetLogHelper<ListClient<T>>(), new RedisWrapper(RedisConstants.ListPrefix))
         {
-            _realKey = $"{Wrapper.KeyPrefix}/{keyName}";
+            _realKey = Wrapper.GetRealKey(keyName);
         }
 
         public long Count(CommandFlags flags = CommandFlags.None) => Wrapper.Database.ListLength(_realKey, flags);

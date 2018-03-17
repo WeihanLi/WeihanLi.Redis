@@ -41,7 +41,7 @@ namespace WeihanLi.Redis
 
         public CounterClient(string counterName, long baseCount, TimeSpan? expiresIn) : base(LogHelper.GetLogHelper<CounterClient>(), new RedisWrapper(RedisConstants.CounterPrefix))
         {
-            _keyName = $"{Wrapper.KeyPrefix}/{counterName}";
+            _keyName = Wrapper.GetRealKey(counterName);
             Base = baseCount;
             _expiresIn = expiresIn;
             Reset();

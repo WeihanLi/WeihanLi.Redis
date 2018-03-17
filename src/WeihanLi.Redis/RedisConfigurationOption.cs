@@ -17,6 +17,7 @@ namespace WeihanLi.Redis
         };
 
         private int _defaultDatabase;
+        private string _keySeparator = ":";
 
         public IReadOnlyCollection<RedisServerConfiguration> RedisServers
         {
@@ -25,6 +26,23 @@ namespace WeihanLi.Redis
         }
 
         public string Password { get; set; }
+
+        /// <summary>
+        /// KeySeparator
+        /// </summary>
+        public string KeySeparator
+        {
+            get => _keySeparator;
+            set
+            {
+                if (value.IsNotNullOrWhiteSpace())
+                {
+                    _keySeparator = value;
+                }
+            }
+        }
+
+        public bool EnableCompress { get; set; } = true;
 
         public int DefaultDatabase
         {
@@ -61,7 +79,7 @@ namespace WeihanLi.Redis
         /// <summary>
         /// Optional channel prefix for all pub/sub operations
         /// </summary>
-        public string ChannelPrefix { get; set; } = "DefaultChannel";
+        public string ChannelPrefix { get; set; } = "DefaultProject";
 
         /// <summary>
         /// CachePrefix

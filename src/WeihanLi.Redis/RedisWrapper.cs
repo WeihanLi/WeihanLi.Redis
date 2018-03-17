@@ -29,11 +29,6 @@ namespace WeihanLi.Redis
         /// </summary>
         string KeyPrefix { get; }
 
-        /// <summary>
-        /// ChannelPrefix
-        /// </summary>
-        string ChannelPrefix { get; }
-
         string GetRealKey(string key);
 
         #region KeyExists
@@ -137,15 +132,14 @@ namespace WeihanLi.Redis
 
         public string KeyPrefix { get; }
 
-        public string ChannelPrefix { get; }
-
         public ISubscriber Subscriber { get; set; }
 
         public RedisWrapper(string keyPrefix)
         {
-            KeyPrefix = $"{RedisManager.RedisConfiguration.CachePrefix}/{keyPrefix}";
-            ChannelPrefix = $"{RedisManager.RedisConfiguration.ChannelPrefix}/{keyPrefix}";
-            DataSerializer = new CompressGZipSerilizer(new JsonDataSerializer());
+            KeyPrefix = $"{RedisManager.RedisConfiguration.CachePrefix}{RedisManager.RedisConfiguration.KeySeparator}{keyPrefix}";
+            DataSerializer = RedisManager.RedisConfiguration.EnableCompress ?
+                new CompressGZipSerilizer(new JsonDataSerializer()) :
+                (IDataSerializer)new JsonDataSerializer();
         }
 
         public RedisValue Wrap<T>(T t)
@@ -192,7 +186,7 @@ namespace WeihanLi.Redis
 
         public async Task<T[]> UnwrapAsync<T>(Func<Task<RedisValue[]>> func) => Unwrap<T>(await func());
 
-        public string GetRealKey(string key) => $"{KeyPrefix}/{key}";
+        public string GetRealKey(string key) => $"{KeyPrefix}{RedisManager.RedisConfiguration.KeySeparator}{key}";
 
         public bool KeyExists(string key, CommandFlags flags = CommandFlags.None) => Database.KeyExists(GetRealKey(key), flags);
 

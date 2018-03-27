@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using Autofac;
 using StackExchange.Redis;
+using WeihanLi.Common;
 using WeihanLi.Common.Log;
 using WeihanLi.Extensions;
 using WeihanLi.Redis.Internals;
@@ -12,8 +14,6 @@ namespace WeihanLi.Redis
 
     internal abstract class BaseRedisClient
     {
-        private static readonly ConnectionMultiplexer Connection;
-
         public IRedisWrapper Wrapper { get; }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace WeihanLi.Redis
 
         static BaseRedisClient()
         {
-            var configurationOptions = new ConfigurationOptions()
+            var configurationOptions = new ConfigurationOptions
             {
                 Password = RedisManager.RedisConfiguration.Password,
                 DefaultDatabase = RedisManager.RedisConfiguration.DefaultDatabase,
@@ -37,15 +37,18 @@ namespace WeihanLi.Redis
             };
             configurationOptions.EndPoints.AddRange(RedisManager.RedisConfiguration.RedisServers.Select(s => Helpers.ConvertToEndPoint(s.Host, s.Port)).ToArray());
 
-            Connection = ConnectionMultiplexer.Connect(configurationOptions);
+            var container = new ContainerBuilder();
+            container.RegisterInstance(ConnectionMultiplexer.Connect(configurationOptions));
+            DependencyResolver.SetDependencyResolver(new AutofacDependencyResolver(container.Build()));
         }
 
         protected BaseRedisClient(ILogHelper logger, IRedisWrapper redisWrapper)
         {
             Logger = logger;
             Wrapper = redisWrapper;
-            Wrapper.Database = Connection.GetDatabase();
-            Wrapper.Subscriber = Connection.GetSubscriber();
+            var connection = DependencyResolver.Current.GetService<ConnectionMultiplexer>();
+            Wrapper.Database = connection.GetDatabase();
+            Wrapper.Subscriber = connection.GetSubscriber();
         }
     }
 }

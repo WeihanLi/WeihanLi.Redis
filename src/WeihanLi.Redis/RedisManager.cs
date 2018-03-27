@@ -1,6 +1,12 @@
 ﻿using System;
 using System.Collections.Concurrent;
 
+#if NETSTANDARD2_0
+
+using Microsoft.Extensions.DependencyInjection;
+
+#endif
+
 namespace WeihanLi.Redis
 {
     public static class RedisManager
@@ -18,6 +24,18 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <param name="configAction">configAction</param>
         public static void AddRedisConfig(Action<RedisConfigurationOption> configAction) => configAction(RedisConfiguration);
+
+#if NETSTANDARD2_0
+
+        public static ServiceCollection AddRedisConfig(this ServiceCollection serviceCollection, Action<RedisConfigurationOption> configAction)
+        {
+            configAction(RedisConfiguration);
+            serviceCollection.AddSingleton(RedisConfiguration);
+            return serviceCollection;
+        }
+
+#else
+#endif
 
         #endregion RedisConfig
 

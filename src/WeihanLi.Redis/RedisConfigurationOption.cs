@@ -85,6 +85,23 @@ namespace WeihanLi.Redis
         /// CachePrefix
         /// </summary>
         public string CachePrefix { get; set; } = "DefaultProject";
+
+        private class RedisServerConfigurationComparer : IEqualityComparer<RedisServerConfiguration>
+        {
+            public bool Equals(RedisServerConfiguration x, RedisServerConfiguration y)
+            {
+                if (null == x || null == y)
+                {
+                    return false;
+                }
+                return x.Host.EqualsIgnoreCase(y.Host) && x.Port == y.Port;
+            }
+
+            public int GetHashCode(RedisServerConfiguration obj)
+            {
+                return $"{obj.Host}:{obj.Port}".GetHashCode();
+            }
+        }
     }
 
     public class RedisServerConfiguration
@@ -110,23 +127,6 @@ namespace WeihanLi.Redis
 
             Host = host;
             Port = port;
-        }
-    }
-
-    internal class RedisServerConfigurationComparer : IEqualityComparer<RedisServerConfiguration>
-    {
-        public bool Equals(RedisServerConfiguration x, RedisServerConfiguration y)
-        {
-            if (null == x || null == y)
-            {
-                return false;
-            }
-            return x.Host.EqualsIgnoreCase(y.Host) && x.Port == y.Port;
-        }
-
-        public int GetHashCode(RedisServerConfiguration obj)
-        {
-            return $"{obj.Host}:{obj.Port}".GetHashCode();
         }
     }
 }

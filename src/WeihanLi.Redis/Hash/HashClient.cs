@@ -34,6 +34,28 @@ namespace WeihanLi.Redis
 
         public Task<T> GetAsync<T>(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<T>(() => Wrapper.Database.HashGetAsync(Wrapper.GetRealKey(key), fieldName, flags));
 
+        public T GetOrSet<T>(string key, string fieldName, Func<T> func, CommandFlags flags = CommandFlags.None)
+        {
+            if (Exists(key, fieldName, flags))
+            {
+                return Get<T>(key, fieldName, flags);
+            }
+            var val = func();
+            Set(key, fieldName, val, When.NotExists, flags);
+            return val;
+        }
+
+        public async Task<T> GetOrSetAsync<T>(string key, string fieldName, Func<Task<T>> func, CommandFlags flags = CommandFlags.None)
+        {
+            if (await ExistsAsync(key, fieldName, flags))
+            {
+                return await GetAsync<T>(key, fieldName, flags);
+            }
+            var val = await func();
+            await SetAsync(key, fieldName, val, When.NotExists, flags);
+            return val;
+        }
+
         public string[] Keys(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashKeys(Wrapper.GetRealKey(key), flags).Select(_ => (string)_).ToArray();
 
         public Task<string[]> KeysAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashKeysAsync(Wrapper.GetRealKey(key), flags).ContinueWith(r => r.Result.Select(_ => (string)_).ToArray());

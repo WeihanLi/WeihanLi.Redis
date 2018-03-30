@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using Autofac;
 using StackExchange.Redis;
 using WeihanLi.Common.Log;
 using WeihanLi.Extensions;
@@ -36,11 +35,7 @@ namespace WeihanLi.Redis
                 SyncTimeout = RedisManager.RedisConfiguration.SyncTimeout
             };
             configurationOptions.EndPoints.AddRange(RedisManager.RedisConfiguration.RedisServers.Select(s => Helpers.ConvertToEndPoint(s.Host, s.Port)).ToArray());
-
-            var containerBuilder = new ContainerBuilder();
-            containerBuilder.Register(c => ConnectionMultiplexer.Connect(configurationOptions)).SingleInstance();
-            var container = containerBuilder.Build();
-            Connection = container.Resolve<ConnectionMultiplexer>();
+            Connection = ConnectionMultiplexer.Connect(configurationOptions);
         }
 
         protected BaseRedisClient(ILogHelper logger, IRedisWrapper redisWrapper)

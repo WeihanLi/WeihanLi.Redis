@@ -43,6 +43,14 @@ namespace WeihanLi.Redis
 
         #endregion Set
 
+        #region GetOrSet
+
+        T GetOrSet<T>(string key, string fieldName, Func<T> func, CommandFlags flags = CommandFlags.None);
+
+        Task<T> GetOrSetAsync<T>(string key, string fieldName, Func<Task<T>> func, CommandFlags flags = CommandFlags.None);
+
+        #endregion GetOrSet
+
         #region Remove
 
         bool Remove(string key, string fieldName, CommandFlags flags = CommandFlags.None);

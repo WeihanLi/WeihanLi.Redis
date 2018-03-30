@@ -35,7 +35,7 @@ namespace WeihanLi.Redis
             _expiresAt = expiry;
         }
 
-        public DictionaryClient(string keyName, TimeSpan? expiry, bool isSlidingExpired) : base(LogHelper.GetLogHelper<DictionaryClient<TKey, TValue>>(), new RedisWrapper("Hash/Dictionary"))
+        public DictionaryClient(string keyName, TimeSpan? expiry, bool isSlidingExpired) : base(LogHelper.GetLogHelper<DictionaryClient<TKey, TValue>>(), new RedisWrapper(RedisConstants.DictionaryPrefix))
         {
             _realKey = Wrapper.GetRealKey(keyName);
 
@@ -85,6 +85,49 @@ namespace WeihanLi.Redis
         public TValue Get(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(Wrapper.Database.HashGet(_realKey, Wrapper.Wrap(fieldName), flags));
 
         public async Task<TValue> GetAsync(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(await Wrapper.Database.HashGetAsync(_realKey, Wrapper.Wrap(fieldName), flags));
+
+        public TValue GetOrAdd(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None)
+        {
+            if (Exists(fieldName, flags))
+            {
+                return Get(fieldName, flags);
+            }
+            Set(fieldName, value, When.NotExists, flags);
+            return value;
+        }
+
+        public async Task<TValue> GetOrAddAsync(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None)
+        {
+            if (await ExistsAsync(fieldName, flags))
+            {
+                return await GetAsync(fieldName, flags);
+            }
+            await SetAsync(fieldName, value, When.NotExists, flags);
+            return value;
+        }
+
+        public TValue GetOrAdd(TKey fieldName, Func<TKey, TValue> func, CommandFlags flags = CommandFlags.None)
+        {
+            if (Exists(fieldName, flags))
+            {
+                return Get(fieldName, flags);
+            }
+            var value = func(fieldName);
+            Set(fieldName, value, When.NotExists, flags);
+            return value;
+        }
+
+        public async Task<TValue> GetOrAddAsync(TKey fieldName, Func<TKey, Task<TValue>> func, CommandFlags flags = CommandFlags.None)
+        {
+            if (await ExistsAsync(fieldName, flags))
+            {
+                return await GetAsync(fieldName, flags);
+            }
+
+            var value = await func(fieldName);
+            await SetAsync(fieldName, value, When.NotExists, flags);
+            return value;
+        }
 
         public TKey[] Keys(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TKey>(Wrapper.Database.HashValues(_realKey, flags));
 

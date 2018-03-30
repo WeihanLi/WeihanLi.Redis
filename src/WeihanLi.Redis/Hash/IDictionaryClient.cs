@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using StackExchange.Redis;
 
 // ReSharper disable once CheckNamespace
@@ -21,6 +22,18 @@ namespace WeihanLi.Redis
         Task<TValue> GetAsync(TKey fieldName, CommandFlags flags = CommandFlags.None);
 
         #endregion Get
+
+        #region GetOrAdd
+
+        TValue GetOrAdd(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None);
+
+        Task<TValue> GetOrAddAsync(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None);
+
+        TValue GetOrAdd(TKey fieldName, Func<TKey, TValue> func, CommandFlags flags = CommandFlags.None);
+
+        Task<TValue> GetOrAddAsync(TKey fieldName, Func<TKey, Task<TValue>> func, CommandFlags flags = CommandFlags.None);
+
+        #endregion GetOrAdd
 
         #region Set
 

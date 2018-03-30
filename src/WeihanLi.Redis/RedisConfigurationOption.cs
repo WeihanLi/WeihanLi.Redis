@@ -49,7 +49,8 @@ namespace WeihanLi.Redis
             get => _defaultDatabase;
             set
             {
-                if (value >= 0 && value <= 15)
+                //数据库默认是从0到15，可配置，这里允许的最大值为63
+                if (value >= 0 && value <= 63)
                 {
                     _defaultDatabase = value;
                 }

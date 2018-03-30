@@ -30,6 +30,7 @@ namespace WeihanLi.Redis.UnitTest
             dictionary.Add("math", 80);
             dictionary.Add("English", 60);
             Assert.True(dictionary.Exists("math"));
+            Assert.Equal(80, dictionary.GetOrAdd("math", 20));
             Assert.Equal(2, dictionary.Count());
             Assert.False(dictionary.Exists("chinese"));
             Assert.True(dictionary.Remove("English"));

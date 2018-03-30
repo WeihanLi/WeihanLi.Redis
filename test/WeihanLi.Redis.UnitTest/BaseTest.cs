@@ -10,6 +10,7 @@ namespace WeihanLi.Redis.UnitTest
             RedisManager.AddRedisConfig(config =>
             {
                 config.CachePrefix = "WeihanLi.Redis.UnitTest";
+                config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
                 config.EnableCompress = false;
             });
         }

@@ -35,6 +35,12 @@ StackExchange.Redis 扩展，更简单的泛型操作，并提供一些的适用
 
 ## GetStarted
 
+### Installation 安装
+
+Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
+
+通过 Nuget 安装 `WeihanLi.Redis`
+
 ### Configuration 配置
 
 ``` csharp

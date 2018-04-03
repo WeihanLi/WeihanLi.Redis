@@ -31,10 +31,12 @@ namespace WeihanLi.Redis
         {
             configAction(RedisConfiguration);
             serviceCollection.AddSingleton(RedisConfiguration);
+            serviceCollection.AddSingleton<ICacheClient, CacheClient>();
+            serviceCollection.AddSingleton<IHashClient, HashClient>();
+            serviceCollection.AddSingleton<IPubSubClient, PubSubClient>();
             return serviceCollection;
         }
 
-#else
 #endif
 
         #endregion RedisConfig
@@ -52,7 +54,8 @@ namespace WeihanLi.Redis
 
         #region Cache
 
-        public static ICacheClient CacheClient => SingletonRedisClients.GetOrAdd(typeof(ICacheClient), (t) => new CacheClient()) as ICacheClient;
+        public static ICacheClient CacheClient =>
+            SingletonRedisClients.GetOrAdd(typeof(ICacheClient), t => new CacheClient()) as ICacheClient;
 
         [Obsolete("Please use RedisManager.CacheClient", true)]
         public static ICacheClient GetCacheClient() => new CacheClient();
@@ -175,7 +178,7 @@ namespace WeihanLi.Redis
 
         #region PubSub
 
-        public static IPubSubClient PubSubClient => SingletonRedisClients.GetOrAdd(typeof(IPubSubClient), (t) => new PubSubClient()) as IPubSubClient;
+        public static IPubSubClient PubSubClient => SingletonRedisClients.GetOrAdd(typeof(IPubSubClient), t => new PubSubClient()) as IPubSubClient;
 
         [Obsolete("Please use RedisManager.PubSubClient", true)]
         public static IPubSubClient GetPubSubClient() => new PubSubClient();

@@ -18,26 +18,26 @@ namespace WeihanLi.Redis
         /// <summary>Posts a message to the given channel.</summary>
         /// <returns>the number of clients that received the message.</returns>
         /// <remarks>http://redis.io/commands/publish</remarks>
-        long Publish(string channelName, string message, CommandFlags flags = CommandFlags.None);
+        long Publish(string channelName, IPubSubMessage message, CommandFlags flags = CommandFlags.None);
 
         /// <summary>Posts a message to the given channel.</summary>
         /// <returns>the number of clients that received the message.</returns>
         /// <remarks>http://redis.io/commands/publish</remarks>
-        Task<long> PublishAsync(string channelName, string message, CommandFlags flags = CommandFlags.None);
+        Task<long> PublishAsync(string channelName, IPubSubMessage message, CommandFlags flags = CommandFlags.None);
 
         /// <summary>
         /// Subscribe to perform some operation when a change to the preferred/active node is broadcast.
         /// </summary>
         /// <remarks>http://redis.io/commands/subscribe</remarks>
         /// <remarks>http://redis.io/commands/psubscribe</remarks>
-        void Subscribe(string channelName, string type, Action<IPubSubMessage> action, CommandFlags flags = CommandFlags.None);
+        void Subscribe(string channelName, Action<IPubSubMessage> action, CommandFlags flags = CommandFlags.None);
 
         /// <summary>
         /// Subscribe to perform some operation when a change to the preferred/active node is broadcast.
         /// </summary>
         /// <remarks>http://redis.io/commands/subscribe</remarks>
         /// <remarks>http://redis.io/commands/psubscribe</remarks>
-        Task SubscribeAsync(string channelName, string type, Action<IPubSubMessage> action, CommandFlags flags = CommandFlags.None);
+        Task SubscribeAsync(string channelName, Action<IPubSubMessage> action, CommandFlags flags = CommandFlags.None);
 
         /// <summary>
         /// Unsubscribe from a specified message channel; note; if no handler is specified, the subscription is cancelled regardless
@@ -46,7 +46,7 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <remarks>http://redis.io/commands/unsubscribe</remarks>
         /// <remarks>http://redis.io/commands/punsubscribe</remarks>
-        void Unsubscribe(string channelName, Action<IPubSubMessage> handler = null, CommandFlags flags = CommandFlags.None);
+        void Unsubscribe(string channelName, CommandFlags flags = CommandFlags.None);
 
         /// <summary>
         /// Unsubscribe from a specified message channel; note; if no handler is specified, the subscription is cancelled regardless
@@ -55,7 +55,7 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <remarks>http://redis.io/commands/unsubscribe</remarks>
         /// <remarks>http://redis.io/commands/punsubscribe</remarks>
-        Task UnsubscribeAsync(string channelName, Action<IPubSubMessage> handler = null, CommandFlags flags = CommandFlags.None);
+        Task UnsubscribeAsync(string channelName, CommandFlags flags = CommandFlags.None);
 
         /// <summary>Unsubscribe all subscriptions on this instance</summary>
         /// <remarks>http://redis.io/commands/unsubscribe</remarks>
@@ -70,11 +70,6 @@ namespace WeihanLi.Redis
 
     public interface IPubSubMessage
     {
-        /// <summary>
-        /// channel
-        /// </summary>
-        string Channnel { get; set; }
-
         /// <summary>
         /// 订阅类型
         /// </summary>

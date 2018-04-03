@@ -93,13 +93,13 @@ namespace WeihanLi.Redis
 
         #region Get
 
-        public T Get<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(() => Wrapper.Database.StringGet($"{Wrapper.KeyPrefix}/{key}", flags));
+        public T Get<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(() => Wrapper.Database.StringGet(Wrapper.GetRealKey(key), flags));
 
-        public string Get(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<string>(() => Wrapper.Database.StringGet($"{Wrapper.KeyPrefix}/{key}", flags));
+        public string Get(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<string>(() => Wrapper.Database.StringGet(Wrapper.GetRealKey(key), flags));
 
-        public Task<T> GetAsync<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<T>(() => Wrapper.Database.StringGetAsync($"{Wrapper.KeyPrefix}/{key}", flags));
+        public Task<T> GetAsync<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<T>(() => Wrapper.Database.StringGetAsync(Wrapper.GetRealKey(key), flags));
 
-        public Task<string> GetAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<string>(() => Wrapper.Database.StringGetAsync($"{Wrapper.KeyPrefix}/{key}", flags));
+        public Task<string> GetAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<string>(() => Wrapper.Database.StringGetAsync(Wrapper.GetRealKey(key), flags));
 
         #endregion Get
 
@@ -135,7 +135,7 @@ namespace WeihanLi.Redis
 
         public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when) => Set(key, value, expiresIn, when, CommandFlags.None);
 
-        public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSet($"{Wrapper.KeyPrefix}/{key}", Wrapper.Wrap(value), expiresIn, when, commandFlags);
+        public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSet(Wrapper.GetRealKey(key), Wrapper.Wrap(value), expiresIn, when, commandFlags);
 
         public Task<bool> SetAsync<T>(string key, T value) => SetAsync(key, value, null);
 
@@ -143,6 +143,6 @@ namespace WeihanLi.Redis
 
         public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when) => SetAsync(key, value, expiresIn, when, CommandFlags.None);
 
-        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSetAsync($"{Wrapper.KeyPrefix}/{key}", Wrapper.Wrap(value), expiresIn, when, commandFlags);
+        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSetAsync(Wrapper.GetRealKey(key), Wrapper.Wrap(value), expiresIn, when, commandFlags);
     }
 }

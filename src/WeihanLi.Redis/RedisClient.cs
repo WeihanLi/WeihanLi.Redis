@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using StackExchange.Redis;
-using WeihanLi.Common.Helpers;
+using WeihanLi.Common.Log;
 using WeihanLi.Extensions;
 using WeihanLi.Redis.Internals;
 
@@ -13,17 +13,16 @@ namespace WeihanLi.Redis
     internal abstract class BaseRedisClient
     {
         private static readonly ConnectionMultiplexer Connection;
-
         public IRedisWrapper Wrapper { get; }
 
         /// <summary>
         /// logger
         /// </summary>
-        protected LogHelper Logger { get; }
+        protected ILogHelper Logger { get; }
 
         static BaseRedisClient()
         {
-            var configurationOptions = new ConfigurationOptions()
+            var configurationOptions = new ConfigurationOptions
             {
                 Password = RedisManager.RedisConfiguration.Password,
                 DefaultDatabase = RedisManager.RedisConfiguration.DefaultDatabase,
@@ -36,11 +35,10 @@ namespace WeihanLi.Redis
                 SyncTimeout = RedisManager.RedisConfiguration.SyncTimeout
             };
             configurationOptions.EndPoints.AddRange(RedisManager.RedisConfiguration.RedisServers.Select(s => Helpers.ConvertToEndPoint(s.Host, s.Port)).ToArray());
-
             Connection = ConnectionMultiplexer.Connect(configurationOptions);
         }
 
-        protected BaseRedisClient(LogHelper logger, IRedisWrapper redisWrapper)
+        protected BaseRedisClient(ILogHelper logger, IRedisWrapper redisWrapper)
         {
             Logger = logger;
             Wrapper = redisWrapper;

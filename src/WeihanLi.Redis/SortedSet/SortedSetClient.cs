@@ -15,7 +15,7 @@ namespace WeihanLi.Redis
 
         public SortedSetClient(string keyName) : base(LogHelper.GetLogHelper<SortedSetClient<T>>(), new RedisWrapper(RedisConstants.SortedSetPrefix))
         {
-            _realKey = $"{Wrapper.KeyPrefix}/{keyName}";
+            _realKey = $"{Wrapper.KeyPrefix}:{keyName}";
         }
 
         public bool Add(T member, double score, CommandFlags flags) => Wrapper.Database.SortedSetAdd(_realKey, Wrapper.Wrap(member), score, flags);

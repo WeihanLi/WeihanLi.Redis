@@ -27,6 +27,14 @@ namespace WeihanLi.Redis
 
         #endregion KeyExpire
 
+        #region KeyPersist
+
+        bool KeyPersist(string key, CommandFlags flags = CommandFlags.None);
+
+        Task<bool> KeyPersistAsync(string key, CommandFlags flags = CommandFlags.None);
+
+        #endregion KeyPersist
+
         #region KeyDelete
 
         bool KeyDelete(string key, CommandFlags flags = CommandFlags.None);
@@ -60,5 +68,15 @@ namespace WeihanLi.Redis
         RedisType KeyType(string key, CommandFlags flags = CommandFlags.None);
 
         #endregion KeyType
+
+        #region Script
+
+        RedisResult ScriptEvaluate<TValue>(string script, string[] keys = null, TValue[] values = null,
+            CommandFlags flags = CommandFlags.None);
+
+        Task<RedisResult> ScriptEvaluateAsync<TValue>(string script, string[] keys = null, TValue[] values = null,
+            CommandFlags flags = CommandFlags.None);
+
+        #endregion Script
     }
 }

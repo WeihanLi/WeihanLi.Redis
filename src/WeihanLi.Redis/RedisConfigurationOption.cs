@@ -17,6 +17,7 @@ namespace WeihanLi.Redis
         };
 
         private int _defaultDatabase;
+        private string _keySeparator = ":";
 
         public IReadOnlyCollection<RedisServerConfiguration> RedisServers
         {
@@ -26,12 +27,30 @@ namespace WeihanLi.Redis
 
         public string Password { get; set; }
 
+        /// <summary>
+        /// KeySeparator
+        /// </summary>
+        public string KeySeparator
+        {
+            get => _keySeparator;
+            set
+            {
+                if (value.IsNotNullOrWhiteSpace())
+                {
+                    _keySeparator = value;
+                }
+            }
+        }
+
+        public bool EnableCompress { get; set; } = true;
+
         public int DefaultDatabase
         {
             get => _defaultDatabase;
             set
             {
-                if (value >= 0 && value <= 15)
+                //数据库默认是从0到15，可配置，这里允许的最大值为63
+                if (value >= 0 && value <= 63)
                 {
                     _defaultDatabase = value;
                 }
@@ -61,12 +80,29 @@ namespace WeihanLi.Redis
         /// <summary>
         /// Optional channel prefix for all pub/sub operations
         /// </summary>
-        public string ChannelPrefix { get; set; } = "DefaultChannel";
+        public string ChannelPrefix { get; set; } = "DefaultProject";
 
         /// <summary>
         /// CachePrefix
         /// </summary>
         public string CachePrefix { get; set; } = "DefaultProject";
+
+        private class RedisServerConfigurationComparer : IEqualityComparer<RedisServerConfiguration>
+        {
+            public bool Equals(RedisServerConfiguration x, RedisServerConfiguration y)
+            {
+                if (null == x || null == y)
+                {
+                    return false;
+                }
+                return x.Host.EqualsIgnoreCase(y.Host) && x.Port == y.Port;
+            }
+
+            public int GetHashCode(RedisServerConfiguration obj)
+            {
+                return $"{obj.Host}:{obj.Port}".GetHashCode();
+            }
+        }
     }
 
     public class RedisServerConfiguration
@@ -92,23 +128,6 @@ namespace WeihanLi.Redis
 
             Host = host;
             Port = port;
-        }
-    }
-
-    internal class RedisServerConfigurationComparer : IEqualityComparer<RedisServerConfiguration>
-    {
-        public bool Equals(RedisServerConfiguration x, RedisServerConfiguration y)
-        {
-            if (null == x || null == y)
-            {
-                return false;
-            }
-            return x.Host.EqualsIgnoreCase(y.Host) && x.Port == y.Port;
-        }
-
-        public int GetHashCode(RedisServerConfiguration obj)
-        {
-            return $"{obj.Host}:{obj.Port}".GetHashCode();
         }
     }
 }

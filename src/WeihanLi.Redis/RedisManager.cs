@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Concurrent;
 
+#if NETSTANDARD2_0
+
+using Microsoft.Extensions.DependencyInjection;
+
+#endif
+
 namespace WeihanLi.Redis
 {
     public static class RedisManager
     {
-        internal static RedisConfigurationOption RedisConfiguration { get; set; } = new RedisConfigurationOption();
+        internal static readonly RedisConfigurationOption RedisConfiguration = new RedisConfigurationOption();
 
         private static readonly ConcurrentDictionary<RedisDataType, CommonRedisClient> CommonRedisClients = new ConcurrentDictionary<RedisDataType, CommonRedisClient>();
 
@@ -18,6 +24,20 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <param name="configAction">configAction</param>
         public static void AddRedisConfig(Action<RedisConfigurationOption> configAction) => configAction(RedisConfiguration);
+
+#if NETSTANDARD2_0
+
+        public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, Action<RedisConfigurationOption> configAction)
+        {
+            configAction(RedisConfiguration);
+            serviceCollection.AddSingleton(RedisConfiguration);
+            serviceCollection.AddSingleton<ICacheClient, CacheClient>();
+            serviceCollection.AddSingleton<IHashClient, HashClient>();
+            serviceCollection.AddSingleton<IPubSubClient, PubSubClient>();
+            return serviceCollection;
+        }
+
+#endif
 
         #endregion RedisConfig
 
@@ -34,7 +54,8 @@ namespace WeihanLi.Redis
 
         #region Cache
 
-        public static ICacheClient CacheClient => SingletonRedisClients.GetOrAdd(typeof(ICacheClient), (t) => new CacheClient()) as ICacheClient;
+        public static ICacheClient CacheClient =>
+            SingletonRedisClients.GetOrAdd(typeof(ICacheClient), t => new CacheClient()) as ICacheClient;
 
         [Obsolete("Please use RedisManager.CacheClient", true)]
         public static ICacheClient GetCacheClient() => new CacheClient();
@@ -139,7 +160,7 @@ namespace WeihanLi.Redis
 
         #region Rank
 
-        public static IRankClient GetRankClient() => new RankClient();
+        public static IRankClient<T> GetRankClient<T>(string rankName) => new RankClient<T>(rankName);
 
         #endregion Rank
 
@@ -157,7 +178,7 @@ namespace WeihanLi.Redis
 
         #region PubSub
 
-        public static IPubSubClient PubSubClient => SingletonRedisClients.GetOrAdd(typeof(IPubSubClient), (t) => new PubSubClient()) as IPubSubClient;
+        public static IPubSubClient PubSubClient => SingletonRedisClients.GetOrAdd(typeof(IPubSubClient), t => new PubSubClient()) as IPubSubClient;
 
         [Obsolete("Please use RedisManager.PubSubClient", true)]
         public static IPubSubClient GetPubSubClient() => new PubSubClient();

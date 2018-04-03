@@ -40,6 +40,16 @@ namespace WeihanLi.Redis
 
         public RedisType KeyType(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyType(key, flags);
 
+        public RedisResult ScriptEvaluate<TValue>(string script, string[] keys = null, TValue[] values = null,
+            CommandFlags flags = CommandFlags.None) => Wrapper.ScriptEvaluate(script, keys, values, flags);
+
+        public Task<RedisResult> ScriptEvaluateAsync<TValue>(string script, string[] keys = null, TValue[] values = null,
+            CommandFlags flags = CommandFlags.None) => Wrapper.ScriptEvaluateAsync(script, keys, values, flags);
+
+        public bool KeyPersist(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyPersist(key, flags);
+
+        public Task<bool> KeyPersistAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyPersistAsync(key, flags);
+
         public CommonRedisClient(RedisDataType dataType) : base(LogHelper.GetLogHelper<CommonRedisClient>(), new RedisWrapper(Helpers.GetCachePrefix(dataType)))
         {
         }

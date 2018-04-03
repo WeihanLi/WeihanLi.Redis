@@ -105,50 +105,50 @@ serviceCollection.AddRedisConfig(config =>
 
 1. RedLock Redis分布式锁
 
-``` csharp
-using (var client = RedisManager.GetRedLockClient("redLockTest"))
-{
-    Assert.True(client.TryLock(TimeSpan.FromSeconds(10)));
-    using (var client1 = RedisManager.GetRedLockClient("redLockTest"))
+    ``` csharp
+    using (var client = RedisManager.GetRedLockClient("redLockTest"))
     {
-        Assert.False(client.TryLock(TimeSpan.FromSeconds(10)));
-        Assert.False(client1.Release());
+        Assert.True(client.TryLock(TimeSpan.FromSeconds(10)));
+        using (var client1 = RedisManager.GetRedLockClient("redLockTest"))
+        {
+            Assert.False(client.TryLock(TimeSpan.FromSeconds(10)));
+            Assert.False(client1.Release());
+        }
+        Assert.True(client.Release());
     }
-    Assert.True(client.Release());
-}
 
-var key = Guid.NewGuid().ToString("N");
-using (var client = RedisManager.GetRedLockClient(key))
-{
-    Assert.True(client.TryLock(TimeSpan.FromSeconds(20)));
-}
+    var key = Guid.NewGuid().ToString("N");
+    using (var client = RedisManager.GetRedLockClient(key))
+    {
+        Assert.True(client.TryLock(TimeSpan.FromSeconds(20)));
+    }
 
-using (var client = RedisManager.GetRedLockClient(key))
-{
-    Assert.True(client.TryLock(TimeSpan.FromMinutes(3)));
-    Assert.True(client.Release());
-}
-```
+    using (var client = RedisManager.GetRedLockClient(key))
+    {
+        Assert.True(client.TryLock(TimeSpan.FromMinutes(3)));
+        Assert.True(client.Release());
+    }
+    ```
 
 1. Rank 排行榜
 
-``` csharp
-var rankClient = RedisManager.GetRankClient<string>("testRank");
-Assert.Equal(0, rankClient.Length());
-rankClient.Add("xiaoming", 100);
-rankClient.Add("xiaohong", 95);
-rankClient.Add("xiaowang", 96);
-Assert.Equal(3, rankClient.Length());
-Assert.Equal(100, rankClient.Score("xiaoming"));
-var rank = rankClient.RangeByScore();
-Assert.Equal("xiaohong", rank[0]);
-rank = rankClient.RangeByScore(order: Order.Descending);
-Assert.Equal("xiaoming", rank[0]);
-var common = RedisManager.GetCommonRedisClient(RedisDataType.Rank);
-Assert.True(common.KeyDelete("testRank"));
-```
+    ``` csharp
+    var rankClient = RedisManager.GetRankClient<string>("testRank");
+    Assert.Equal(0, rankClient.Length());
+    rankClient.Add("xiaoming", 100);
+    rankClient.Add("xiaohong", 95);
+    rankClient.Add("xiaowang", 96);
+    Assert.Equal(3, rankClient.Length());
+    Assert.Equal(100, rankClient.Score("xiaoming"));
+    var rank = rankClient.RangeByScore();
+    Assert.Equal("xiaohong", rank[0]);
+    rank = rankClient.RangeByScore(order: Order.Descending);
+    Assert.Equal("xiaoming", rank[0]);
+    var common = RedisManager.GetCommonRedisClient(RedisDataType.Rank);
+    Assert.True(common.KeyDelete("testRank"));
+    ```
 
-1. ...
+1. 更多用法等你来发现...
 
 ## Conatct
 

@@ -27,7 +27,7 @@ namespace WeihanLi.Redis
 
 #if NETSTANDARD2_0
 
-        public static ServiceCollection AddRedisConfig(this ServiceCollection serviceCollection, Action<RedisConfigurationOption> configAction)
+        public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, Action<RedisConfigurationOption> configAction)
         {
             configAction(RedisConfiguration);
             serviceCollection.AddSingleton(RedisConfiguration);

@@ -9,13 +9,13 @@ namespace WeihanLi.Redis.UnitTest
         [Fact]
         public void Test()
         {
-            var cacheClient = DependencyResolver.Current.GetService<ICacheClient>();
+            var cacheClient = DependencyResolver.Current.ResolveService<ICacheClient>();
             Assert.NotNull(cacheClient);
             Assert.Equal("abcaaa", cacheClient.GetOrSet("abc", () => "abcaaa", TimeSpan.FromSeconds(10)));
 
-            var hashClient = DependencyResolver.Current.GetService<IHashClient>();
+            var hashClient = DependencyResolver.Current.ResolveService<IHashClient>();
             Assert.NotNull(hashClient);
-            var pubsubClient = DependencyResolver.Current.GetService<IPubSubClient>();
+            var pubsubClient = DependencyResolver.Current.ResolveService<IPubSubClient>();
             Assert.NotNull(pubsubClient);
         }
     }

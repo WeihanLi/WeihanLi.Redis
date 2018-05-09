@@ -48,17 +48,21 @@ namespace WeihanLi.Redis.UnitTest
         }
 
         [Fact]
-        public void RedisLock()
+        public void RedisLockTest()
         {
             using (var client = RedisManager.GetRedLockClient("redLockTest"))
             {
                 Assert.True(client.TryLock(TimeSpan.FromSeconds(10)));
                 using (var client1 = RedisManager.GetRedLockClient("redLockTest"))
                 {
-                    Assert.False(client.TryLock(TimeSpan.FromSeconds(10)));
+                    Assert.False(client1.TryLock(TimeSpan.FromSeconds(10)));
                     Assert.False(client1.Release());
                 }
                 Assert.True(client.Release());
+                using (var client1 = RedisManager.GetRedLockClient("redLockTest"))
+                {
+                    Assert.True(client1.TryLock(TimeSpan.FromSeconds(10)));
+                }
             }
 
             var key = Guid.NewGuid().ToString("N");

@@ -40,6 +40,7 @@ namespace WeihanLi.Redis
     {
         private readonly string _realKey;
         private readonly Guid _lockId;
+        private bool _released;
 
         /// <summary>
         /// String containing the Lua unlock script.
@@ -58,13 +59,21 @@ namespace WeihanLi.Redis
             _lockId = Guid.NewGuid();
         }
 
-        public bool Release() => (int)Wrapper.Database.ScriptEvaluate(UnlockScript,
-                                     new RedisKey[] { _realKey },
-                                     new[] { Wrapper.Wrap(_lockId) }) == 1;
+        public bool Release()
+        {
+            _released = true;
+            return (int)Wrapper.Database.ScriptEvaluate(UnlockScript,
+                  new RedisKey[] { _realKey },
+                  new[] { Wrapper.Wrap(_lockId) }) == 1;
+        }
 
-        public async Task<bool> ReleaseAsync() => (int)await Wrapper.Database.ScriptEvaluateAsync(UnlockScript,
-                                                      new RedisKey[] { _realKey },
-                                                      new[] { Wrapper.Wrap(_lockId) }) == 1;
+        public async Task<bool> ReleaseAsync()
+        {
+            _released = true;
+            return (int)await Wrapper.Database.ScriptEvaluateAsync(UnlockScript,
+                  new RedisKey[] { _realKey },
+                  new[] { Wrapper.Wrap(_lockId) }) == 1;
+        }
 
         public bool TryLock(TimeSpan? expiry) => Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry, When.NotExists);
 
@@ -78,7 +87,10 @@ namespace WeihanLi.Redis
         {
             if (!_disposed)
             {
-                Release();
+                if (!_released)
+                {
+                    Release();
+                }
                 _disposed = true;
             }
         }

@@ -148,9 +148,9 @@ namespace WeihanLi.Redis
             return result ? value : await GetAsync(fieldName, flags);
         }
 
-        public TKey[] Keys(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TKey>(Wrapper.Database.HashValues(_realKey, flags));
+        public TKey[] Keys(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TKey>(Wrapper.Database.HashKeys(_realKey, flags));
 
-        public async Task<TKey[]> KeysAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TKey>(await Wrapper.Database.HashValuesAsync(_realKey, flags));
+        public async Task<TKey[]> KeysAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TKey>(await Wrapper.Database.HashKeysAsync(_realKey, flags));
 
         public bool Remove(TKey fieldName, CommandFlags flags = CommandFlags.None)
         {

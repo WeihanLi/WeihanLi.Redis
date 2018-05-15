@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Redis.Internals;
@@ -18,6 +20,12 @@ namespace WeihanLi.Redis
         public bool Add(T member, double score, When when = When.Always) => Wrapper.Database.SortedSetAdd(_realKey, Wrapper.Wrap(member), score, when);
 
         public Task<bool> AddAsync(T member, double score, When when = When.Always) => Wrapper.Database.SortedSetAddAsync(_realKey, Wrapper.Wrap(member), score, when);
+
+        public long Add(IDictionary<T, double> values, When when = When.Always)
+            => Wrapper.Database.SortedSetAdd(_realKey, values.Select(_=>new SortedSetEntry(Wrapper.Wrap(_.Key), _.Value)).ToArray(), when);
+
+        public Task<long> AddAsync(IDictionary<T, double> values, When when = When.Always)
+            => Wrapper.Database.SortedSetAddAsync(_realKey, values.Select(_ => new SortedSetEntry(Wrapper.Wrap(_.Key), _.Value)).ToArray(), when);
 
         public double Decrement(T member, double value) => Wrapper.Database.SortedSetDecrement(_realKey, Wrapper.Wrap(member), value);
 

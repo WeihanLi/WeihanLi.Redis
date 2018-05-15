@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
@@ -70,6 +72,23 @@ namespace WeihanLi.Redis
             return result;
         }
 
+
+        public bool Add(IDictionary<TKey, TValue> values, CommandFlags flags = CommandFlags.None)
+        {
+            Wrapper.Database.HashSet(_realKey, values.Select(_ => new HashEntry(Wrapper.Wrap(_.Key), Wrapper.Wrap(_.Value))).ToArray(), flags);
+            Expire(flags);
+            return true;
+        }
+
+        public async Task<bool> AddAsync(IDictionary<TKey, TValue> values, CommandFlags flags = CommandFlags.None)
+        {
+            await Wrapper.Database
+                .HashSetAsync(_realKey,
+                    values.Select(_ => new HashEntry(Wrapper.Wrap(_.Key), Wrapper.Wrap(_.Value))).ToArray(), flags)
+                .ContinueWith(_ => ExpireAsync(flags));
+            return true;
+        }
+
         public bool Clear(CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDelete(_realKey, flags);
 
         public Task<bool> ClearAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDeleteAsync(_realKey, flags);
@@ -92,8 +111,8 @@ namespace WeihanLi.Redis
             {
                 return Get(fieldName, flags);
             }
-            Set(fieldName, value, When.NotExists, flags);
-            return value;
+            var result = Set(fieldName, value, When.NotExists, flags);
+            return result? value: Get(fieldName, flags);
         }
 
         public async Task<TValue> GetOrAddAsync(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None)
@@ -102,8 +121,8 @@ namespace WeihanLi.Redis
             {
                 return await GetAsync(fieldName, flags);
             }
-            await SetAsync(fieldName, value, When.NotExists, flags);
-            return value;
+            var result = await SetAsync(fieldName, value, When.NotExists, flags);
+            return result ? value : await GetAsync(fieldName, flags);
         }
 
         public TValue GetOrAdd(TKey fieldName, Func<TKey, TValue> func, CommandFlags flags = CommandFlags.None)
@@ -113,8 +132,8 @@ namespace WeihanLi.Redis
                 return Get(fieldName, flags);
             }
             var value = func(fieldName);
-            Set(fieldName, value, When.NotExists, flags);
-            return value;
+            var result = Set(fieldName, value, When.NotExists, flags);
+            return result ? value : Get(fieldName, flags);
         }
 
         public async Task<TValue> GetOrAddAsync(TKey fieldName, Func<TKey, Task<TValue>> func, CommandFlags flags = CommandFlags.None)
@@ -125,8 +144,8 @@ namespace WeihanLi.Redis
             }
 
             var value = await func(fieldName);
-            await SetAsync(fieldName, value, When.NotExists, flags);
-            return value;
+            var result = await SetAsync(fieldName, value, When.NotExists, flags);
+            return result ? value : await GetAsync(fieldName, flags);
         }
 
         public TKey[] Keys(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TKey>(Wrapper.Database.HashValues(_realKey, flags));
@@ -173,9 +192,9 @@ namespace WeihanLi.Redis
             return result;
         }
 
-        public TValue[] Values<T>(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(Wrapper.Database.HashValues(_realKey, flags));
+        public TValue[] Values(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(Wrapper.Database.HashValues(_realKey, flags));
 
-        public async Task<TValue[]> ValuesAsync<T>(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(await Wrapper.Database.HashValuesAsync(_realKey, flags));
+        public async Task<TValue[]> ValuesAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(await Wrapper.Database.HashValuesAsync(_realKey, flags));
 
         #region Expire
 
@@ -212,7 +231,6 @@ namespace WeihanLi.Redis
                 }
             }
         }
-
         #endregion Expire
     }
 }

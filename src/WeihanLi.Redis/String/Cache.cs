@@ -110,8 +110,8 @@ namespace WeihanLi.Redis
                 return Get<T>(key, flags);
             }
             var val = func();
-            Set(key, val, expiresIn, When.NotExists, flags);
-            return val;
+            var result = Set(key, val, expiresIn, When.NotExists, flags);
+            return result ? val : Get<T>(key, flags);
         }
 
         public async Task<T> GetOrSetAsync<T>(string key, Func<Task<T>> func, TimeSpan expiresIn, CommandFlags flags = CommandFlags.None)
@@ -121,8 +121,8 @@ namespace WeihanLi.Redis
                 return await GetAsync<T>(key, flags);
             }
             var val = await func();
-            await SetAsync(key, val, expiresIn, When.NotExists, flags);
-            return val;
+            var result = await SetAsync(key, val, expiresIn, When.NotExists, flags);
+            return result ? val : await GetAsync<T>(key, flags);
         }
 
         public bool Remove(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyDelete(key, flags);

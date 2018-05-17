@@ -12,6 +12,8 @@ namespace WeihanLi.Redis.UnitTest
             var key = "test111";
             var value = "Hello WeihanLi.Redis";
             var cacheClient = RedisManager.CacheClient;
+            Assert.False(cacheClient.Exists(key));
+            Assert.Null(cacheClient.Get(key));
             Assert.True(cacheClient.Set(key, value));
             Assert.True(cacheClient.Exists(key));
             Assert.Equal(value, cacheClient.Get(key));
@@ -48,17 +50,21 @@ namespace WeihanLi.Redis.UnitTest
         }
 
         [Fact]
-        public void RedisLock()
+        public void RedisLockTest()
         {
             using (var client = RedisManager.GetRedLockClient("redLockTest"))
             {
                 Assert.True(client.TryLock(TimeSpan.FromSeconds(10)));
                 using (var client1 = RedisManager.GetRedLockClient("redLockTest"))
                 {
-                    Assert.False(client.TryLock(TimeSpan.FromSeconds(10)));
+                    Assert.False(client1.TryLock(TimeSpan.FromSeconds(10)));
                     Assert.False(client1.Release());
                 }
                 Assert.True(client.Release());
+                using (var client1 = RedisManager.GetRedLockClient("redLockTest"))
+                {
+                    Assert.True(client1.TryLock(TimeSpan.FromSeconds(10)));
+                }
             }
 
             var key = Guid.NewGuid().ToString("N");

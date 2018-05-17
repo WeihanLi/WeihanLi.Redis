@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using StackExchange.Redis;
 
 // ReSharper disable once CheckNamespace
@@ -19,6 +20,21 @@ namespace WeihanLi.Redis
         /// <returns>True if the value was added, False if it already existed (the score is still updated)</returns>
         /// <remarks>http://redis.io/commands/zadd</remarks>
         Task<bool> AddAsync(T member, double score, When when = When.Always);
+
+        /// <summary>
+        /// Adds all the specified members with the specified scores to the sorted set stored at key. If a specified member is already a member of the sorted set, the score is updated and the element reinserted at the right position to ensure the correct ordering.
+        /// </summary>
+        /// <returns>The number of elements added to the sorted sets, not including elements already existing for which the score was updated.</returns>
+        /// <remarks>http://redis.io/commands/zadd</remarks>
+        long Add(IDictionary<T, double> values, When when = When.Always);
+
+        /// <summary>
+        /// Adds all the specified members with the specified scores to the sorted set stored at key. If a specified member is already a member of the sorted set, the score is updated and the element reinserted at the right position to ensure the correct ordering.
+        /// </summary>
+        /// <returns>The number of elements added to the sorted sets, not including elements already existing for which the score was updated.</returns>
+        /// <remarks>http://redis.io/commands/zadd</remarks>
+        Task<long> AddAsync(IDictionary<T, double> values, When when = When.Always);
+
 
         /// <summary>
         /// Decrements the score of member in the sorted set stored at key by decrement. If member does not exist in the sorted set, it is added with -decrement as its score (as if its previous score was 0.0).

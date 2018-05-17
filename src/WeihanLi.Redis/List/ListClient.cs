@@ -87,7 +87,7 @@ namespace WeihanLi.Redis
                     get?.Select(_ => Wrapper.Wrap(_)).ToArray(), flags)
         );
 
-        public long SortAndStore(string destination, long skip = 0, long take = -1, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = default(T), T[] get = null, CommandFlags flags = CommandFlags.None) => Wrapper.Database.SortAndStore($"{Wrapper.KeyPrefix}/{destination}", _realKey, skip, take, order, sortType,
+        public long SortAndStore(string destination, long skip = 0, long take = -1, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = default(T), T[] get = null, CommandFlags flags = CommandFlags.None) => Wrapper.Database.SortAndStore($"{Wrapper.KeyPrefix}{RedisManager.RedisConfiguration.KeySeparator}{destination}", _realKey, skip, take, order, sortType,
             Wrapper.Wrap(by), get?.Select(_ => Wrapper.Wrap(_)).ToArray(), flags);
 
         public bool Trim(long start, long stop, CommandFlags flags = CommandFlags.None)

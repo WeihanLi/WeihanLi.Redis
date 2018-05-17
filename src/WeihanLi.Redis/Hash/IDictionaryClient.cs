@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using StackExchange.Redis;
 
@@ -41,6 +42,10 @@ namespace WeihanLi.Redis
 
         Task<bool> AddAsync(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None);
 
+        bool Add(IDictionary<TKey,TValue> values, CommandFlags flags = CommandFlags.None);
+
+        Task<bool> AddAsync(IDictionary<TKey, TValue> values, CommandFlags flags = CommandFlags.None);
+
         bool Set(TKey fieldName, TValue value, When when = When.Always, CommandFlags flags = CommandFlags.None);
 
         Task<bool> SetAsync(TKey fieldName, TValue value, When when = When.Always, CommandFlags flags = CommandFlags.None);
@@ -73,7 +78,7 @@ namespace WeihanLi.Redis
         /// <summary>Returns all values in the hash stored at key.</summary>
         /// <returns>list of values in the hash, or an empty list when key does not exist.</returns>
         /// <remarks>http://redis.io/commands/hvals</remarks>
-        TValue[] Values<T>(CommandFlags flags = CommandFlags.None);
+        TValue[] Values(CommandFlags flags = CommandFlags.None);
 
         /// <summary>
         /// Returns the number of fields contained in the hash stored at key.
@@ -97,7 +102,7 @@ namespace WeihanLi.Redis
         /// <summary>Returns all values in the hash stored at key.</summary>
         /// <returns>list of values in the hash, or an empty list when key does not exist.</returns>
         /// <remarks>http://redis.io/commands/hvals</remarks>
-        Task<TValue[]> ValuesAsync<T>(CommandFlags flags = CommandFlags.None);
+        Task<TValue[]> ValuesAsync(CommandFlags flags = CommandFlags.None);
 
         #endregion KeysValues
     }

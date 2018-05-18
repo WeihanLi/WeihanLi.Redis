@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using StackExchange.Redis;
+using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 
 namespace WeihanLi.Redis
@@ -80,12 +81,12 @@ namespace WeihanLi.Redis
         /// <summary>
         /// Optional channel prefix for all pub/sub operations
         /// </summary>
-        public string ChannelPrefix { get; set; } = "DefaultProject";
+        public string ChannelPrefix { get; set; } = ApplicationHelper.ApplicationName;
 
         /// <summary>
         /// CachePrefix
         /// </summary>
-        public string CachePrefix { get; set; } = "DefaultProject";
+        public string CachePrefix { get; set; } = ApplicationHelper.ApplicationName;
 
         private class RedisServerConfigurationComparer : IEqualityComparer<RedisServerConfiguration>
         {

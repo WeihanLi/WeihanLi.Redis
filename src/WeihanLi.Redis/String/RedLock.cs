@@ -12,9 +12,21 @@ namespace WeihanLi.Redis
         /// <summary>
         /// TryGetLock
         /// </summary>
+        /// <returns></returns>
+        bool TryLock();
+
+        /// <summary>
+        /// TryGetLock
+        /// </summary>
         /// <param name="expiry">lock expiry</param>
         /// <returns></returns>
         bool TryLock(TimeSpan? expiry);
+
+        /// <summary>
+        /// TryGetLockAsync
+        /// </summary>
+        /// <returns></returns>
+        Task<bool> TryLockAsync();
 
         /// <summary>
         /// TryGetLockAsync
@@ -75,7 +87,11 @@ namespace WeihanLi.Redis
                   new[] { Wrapper.Wrap(_lockId) }) == 1;
         }
 
+        public bool TryLock() => TryLock(null);
+
         public bool TryLock(TimeSpan? expiry) => Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry, When.NotExists);
+
+        public Task<bool> TryLockAsync() => TryLockAsync(null);
 
         public Task<bool> TryLockAsync(TimeSpan? expiry) => Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId), expiry, When.NotExists);
 

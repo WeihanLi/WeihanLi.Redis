@@ -8,6 +8,7 @@ using WeihanLi.Extensions;
 namespace WeihanLi.Redis
 {
     /// <summary>
+    /// RedisConfigurationOption
     /// https://weihanli.github.io/StackExchange.Redis-docs-cn/Configuration.html
     /// </summary>
     public class RedisConfigurationOption
@@ -17,7 +18,6 @@ namespace WeihanLi.Redis
             new RedisServerConfiguration()
         };
 
-        private int _defaultDatabase;
         private string _keySeparator = ":";
 
         public IReadOnlyCollection<RedisServerConfiguration> RedisServers
@@ -45,18 +45,7 @@ namespace WeihanLi.Redis
 
         public bool EnableCompress { get; set; } = true;
 
-        public int DefaultDatabase
-        {
-            get => _defaultDatabase;
-            set
-            {
-                //数据库默认是从0到15，可配置，这里允许的最大值为63
-                if (value >= 0 && value <= 63)
-                {
-                    _defaultDatabase = value;
-                }
-            }
-        }
+        public int DefaultDatabase { get; set; }
 
         public bool Ssl { get; set; }
 
@@ -87,6 +76,12 @@ namespace WeihanLi.Redis
         /// CachePrefix
         /// </summary>
         public string CachePrefix { get; set; } = ApplicationHelper.ApplicationName;
+
+        /// <summary>
+        /// MaxRandomCacheExpiry(seconds)
+        /// 最多随机缓存过期时间(缓存雪崩)秒
+        /// </summary>
+        public int MaxRandomCacheExpiry { get; set; } = 10;
 
         private class RedisServerConfigurationComparer : IEqualityComparer<RedisServerConfiguration>
         {

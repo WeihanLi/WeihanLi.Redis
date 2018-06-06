@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using StackExchange.Redis;
 using WeihanLi.Common.Log;
 using WeihanLi.Extensions;
@@ -13,6 +14,12 @@ namespace WeihanLi.Redis
     internal abstract class BaseRedisClient
     {
         private static readonly ConnectionMultiplexer Connection;
+
+        /// <summary>
+        /// 随机数生成器
+        /// </summary>
+        protected readonly Random Random = new Random();
+
         public IRedisWrapper Wrapper { get; }
 
         /// <summary>
@@ -37,6 +44,16 @@ namespace WeihanLi.Redis
             configurationOptions.EndPoints.AddRange(RedisManager.RedisConfiguration.RedisServers.Select(s => Helpers.ConvertToEndPoint(s.Host, s.Port)).ToArray());
             Connection = ConnectionMultiplexer.Connect(configurationOptions);
         }
+
+        #region GetRandomCacheExpiry
+
+        protected TimeSpan GetRandomCacheExpiry() => GetRandomCacheExpiry(RedisManager.RedisConfiguration.MaxRandomCacheExpiry);
+
+        protected TimeSpan GetRandomCacheExpiry(int max) => TimeSpan.FromSeconds(Random.Next(max));
+
+        protected TimeSpan GetRandomCacheExpiry(int min, int max) => TimeSpan.FromSeconds(Random.Next(min, max));
+
+        #endregion GetRandomCacheExpiry
 
         protected BaseRedisClient(ILogHelper logger, IRedisWrapper redisWrapper)
         {

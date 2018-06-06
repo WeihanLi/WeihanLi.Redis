@@ -30,7 +30,7 @@ namespace WeihanLi.Redis
         public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, Action<RedisConfigurationOption> configAction)
         {
             configAction(RedisConfiguration);
-            serviceCollection.AddSingleton(RedisConfiguration);
+            serviceCollection.Configure(configAction);
             serviceCollection.AddSingleton<ICacheClient, CacheClient>();
             serviceCollection.AddSingleton<IHashClient, HashClient>();
             serviceCollection.AddSingleton<IPubSubClient, PubSubClient>();
@@ -117,7 +117,7 @@ namespace WeihanLi.Redis
         /// <param name="keyName">keyName</param>
         /// <returns></returns>
         public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName)
-            => GetDictionaryClient<TKey, TValue>(keyName, TimeSpan.FromDays(1));
+            => GetDictionaryClient<TKey, TValue>(keyName, (TimeSpan?)null);
 
         /// <summary>
         /// 获取一个 DictionaryClient
@@ -136,7 +136,7 @@ namespace WeihanLi.Redis
         /// <typeparam name="TValue">Value Type</typeparam>
         /// <param name="keyName">keyName</param>
         /// <param name="expiry">过期时间</param>
-        /// <param name="isSlidingExpiry">滑动过期时间</param>
+        /// <param name="isSlidingExpiry">更新是否重置过期时间</param>
         /// <returns></returns>
         public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, TimeSpan? expiry, bool isSlidingExpiry) => new DictionaryClient<TKey, TValue>(keyName, expiry, isSlidingExpiry);
 

@@ -19,6 +19,7 @@ namespace WeihanLi.Redis.UnitTest
             Assert.Equal(value, cacheClient.Get(key));
             Assert.True(cacheClient.Remove(key));
             Assert.False(cacheClient.Exists(key));
+            Assert.Null(cacheClient.GetOrSet("testGetOrSet", () => (string)null, TimeSpan.FromSeconds(20)));
         }
 
         [Fact]
@@ -75,7 +76,7 @@ namespace WeihanLi.Redis.UnitTest
 
             using (var client = RedisManager.GetRedLockClient(key))
             {
-                Assert.True(client.TryLock(TimeSpan.FromMinutes(3)));
+                Assert.True(client.TryLock());
                 Assert.True(client.Release());
             }
         }

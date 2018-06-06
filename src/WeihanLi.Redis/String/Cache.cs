@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
+using WeihanLi.Common.Log;
 using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
@@ -46,9 +47,15 @@ namespace WeihanLi.Redis
 
         bool Set<T>(string key, T value, TimeSpan? expiresIn, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
 
+        bool Set<T>(string key, Func<T> func, TimeSpan? expiresIn, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
+
         Task<bool> SetAsync<T>(string key, T value);
 
         Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
+
+        Task<bool> SetAsync<T>(string key, Func<T> func, TimeSpan? expiresIn, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
+
+        Task<bool> SetAsync<T>(string key, Func<Task<T>> func, TimeSpan? expiresIn, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
 
         #endregion Set
 
@@ -105,24 +112,20 @@ namespace WeihanLi.Redis
 
         public T GetOrSet<T>(string key, Func<T> func, TimeSpan expiresIn, CommandFlags flags = CommandFlags.None)
         {
-            if (Exists(key, flags))
+            if (!Exists(key, flags))
             {
-                return Get<T>(key, flags);
+                Set(key, func, expiresIn, When.NotExists, flags);
             }
-            var val = func();
-            var result = Set(key, val, expiresIn, When.NotExists, flags);
-            return result ? val : Get<T>(key, flags);
+            return Get<T>(key, flags);
         }
 
         public async Task<T> GetOrSetAsync<T>(string key, Func<Task<T>> func, TimeSpan expiresIn, CommandFlags flags = CommandFlags.None)
         {
-            if (await ExistsAsync(key, flags))
+            if (!await ExistsAsync(key, flags))
             {
-                return await GetAsync<T>(key, flags);
+                await SetAsync(key, func, expiresIn, When.NotExists, flags);
             }
-            var val = await func();
-            var result = await SetAsync(key, val, expiresIn, When.NotExists, flags);
-            return result ? val : await GetAsync<T>(key, flags);
+            return await GetAsync<T>(key, flags);
         }
 
         public bool Remove(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyDelete(key, flags);
@@ -135,7 +138,23 @@ namespace WeihanLi.Redis
 
         public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when) => Set(key, value, expiresIn, when, CommandFlags.None);
 
-        public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSet(Wrapper.GetRealKey(key), Wrapper.Wrap(value), expiresIn, when, commandFlags);
+        public bool Set<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) =>
+            Set(key, () => value, expiresIn, when, commandFlags);
+
+        public bool Set<T>(string key, Func<T> func, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
+        {
+            var realKey = Wrapper.GetRealKey(key);
+            using (var locker = new RedLockClient(HashHelper.GetHashedString(HashType.MD5, realKey)))
+            {
+                if (locker.TryLock())
+                {
+                    return Wrapper.Database.StringSet(realKey, Wrapper.Wrap(func()), expiresIn?.Add(GetRandomCacheExpiry()), when,
+                        commandFlags);
+                }
+                Logger.Info($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");
+                return false;
+            }
+        }
 
         public Task<bool> SetAsync<T>(string key, T value) => SetAsync(key, value, null);
 
@@ -143,6 +162,37 @@ namespace WeihanLi.Redis
 
         public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when) => SetAsync(key, value, expiresIn, when, CommandFlags.None);
 
-        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when, CommandFlags commandFlags) => Wrapper.Database.StringSetAsync(Wrapper.GetRealKey(key), Wrapper.Wrap(value), expiresIn, when, commandFlags);
+        public Task<bool> SetAsync<T>(string key, T value, TimeSpan? expiresIn, When when,
+            CommandFlags commandFlags) => SetAsync(key, () => value, expiresIn, when, commandFlags);
+
+        public async Task<bool> SetAsync<T>(string key, Func<T> func, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
+        {
+            var realKey = Wrapper.GetRealKey(key);
+            using (var locker = new RedLockClient(HashHelper.GetHashedString(HashType.MD5, realKey)))
+            {
+                if (await locker.TryLockAsync())
+                {
+                    return await Wrapper.Database.StringSetAsync(realKey, Wrapper.Wrap(func()), expiresIn?.Add(GetRandomCacheExpiry()), when,
+                        commandFlags);
+                }
+                Logger.Info($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");
+                return false;
+            }
+        }
+
+        public async Task<bool> SetAsync<T>(string key, Func<Task<T>> func, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
+        {
+            var realKey = Wrapper.GetRealKey(key);
+            using (var locker = new RedLockClient(HashHelper.GetHashedString(HashType.MD5, realKey)))
+            {
+                if (await locker.TryLockAsync())
+                {
+                    return await Wrapper.Database.StringSetAsync(realKey, Wrapper.Wrap(await func()), expiresIn?.Add(GetRandomCacheExpiry()), when,
+                        commandFlags);
+                }
+                Logger.Info($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");
+                return false;
+            }
+        }
     }
 }

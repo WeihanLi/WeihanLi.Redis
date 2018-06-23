@@ -17,6 +17,11 @@ namespace WeihanLi.Redis
 
         private static readonly ConcurrentDictionary<Type, IRedisClient> SingletonRedisClients = new ConcurrentDictionary<Type, IRedisClient>();
 
+        /// <summary>
+        /// Version of WeihanLi.Redis
+        /// </summary>
+        public static Version Version => typeof(RedisManager).Assembly.GetName().Version;
+
         #region RedisConfig
 
         /// <summary>

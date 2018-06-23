@@ -83,6 +83,18 @@ namespace WeihanLi.Redis
         /// </summary>
         public int MaxRandomCacheExpiry { get; set; } = 10;
 
+        /// <summary>
+        /// LockRetryDelay in seconds
+        /// 锁重试延迟时间（毫秒）
+        /// </summary>
+        public int LockRetryDelay { get; set; } = 400;
+
+        /// <summary>
+        /// MaxLockCacheExpiry in seconds
+        /// 最多锁过期时间（秒），默认 30min
+        /// </summary>
+        public int MaxLockExpiry { get; set; } = 30 * 60;
+
         private class RedisServerConfigurationComparer : IEqualityComparer<RedisServerConfiguration>
         {
             public bool Equals(RedisServerConfiguration x, RedisServerConfiguration y)

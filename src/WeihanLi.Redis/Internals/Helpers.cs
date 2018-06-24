@@ -30,6 +30,12 @@ namespace WeihanLi.Redis.Internals
                 case RedisDataType.List:
                     return RedisConstants.ListPrefix;
 
+                case RedisDataType.Queue:
+                    return RedisConstants.QueuePrefix;
+
+                case RedisDataType.Stack:
+                    return RedisConstants.StackPrefix;
+
                 case RedisDataType.Set:
                     return RedisConstants.SetPrefix;
 

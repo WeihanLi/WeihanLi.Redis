@@ -12,6 +12,8 @@
         Hash,
         Dictionary,
         List,
+        Queue,
+        Stack,
         Set,
         SortedSet,
         Rank

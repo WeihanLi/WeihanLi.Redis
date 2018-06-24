@@ -5,13 +5,14 @@
     <Title>WeihanLi.Redis</Title>
     <PackageId>WeihanLi.Redis</PackageId>
     <Authors>WeihanLi</Authors>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <RepositoryType>git</RepositoryType>
     <PackageTags>redis StackExchange</PackageTags>
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/7604648</PackageIconUrl>
     <Description>RedisExtensions for StackExchange.Redis</Description>
     <PackageReleaseNotes>
-      optimize code and add more config
+      optimize RedLock 优化 RedLock
+      add QueueClient/StackClient 增加 QueueClient/StackClient
     </PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>

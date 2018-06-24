@@ -18,6 +18,10 @@
 
         internal const string ListPrefix = "List:Cache";
 
+        internal const string QueuePrefix = "List:Queue";
+
+        internal const string StackPrefix = "List:Stack";
+
         internal const string SetPrefix = "Set:Cache";
 
         internal const string SortedSetPrefix = "SortedSet:Cache";

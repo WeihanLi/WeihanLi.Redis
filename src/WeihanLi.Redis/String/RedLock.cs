@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
@@ -54,6 +55,8 @@ namespace WeihanLi.Redis
         private readonly Guid _lockId;
         private bool _released;
 
+        private readonly int _maxRetryCount;
+
         /// <summary>
         /// String containing the Lua unlock script.
         /// http://redis.cn/topics/distlock
@@ -65,10 +68,15 @@ namespace WeihanLi.Redis
                 return 0
             end";
 
-        public RedLockClient(string key) : base(LogHelper.GetLogHelper<RedLockClient>(), new RedisWrapper(RedisConstants.RedLockPrefix))
+        public RedLockClient(string key) : this(key, 0)
+        {
+        }
+
+        public RedLockClient(string key, int maxRetryCount) : base(LogHelper.GetLogHelper<RedLockClient>(), new RedisWrapper(RedisConstants.RedLockPrefix))
         {
             _realKey = Wrapper.GetRealKey(key);
             _lockId = Guid.NewGuid();
+            _maxRetryCount = maxRetryCount;
         }
 
         public bool Release()
@@ -89,11 +97,45 @@ namespace WeihanLi.Redis
 
         public bool TryLock() => TryLock(null);
 
-        public bool TryLock(TimeSpan? expiry) => Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry, When.NotExists);
+        public bool TryLock(TimeSpan? expiry)
+        {
+            var result = Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry, When.NotExists);
+
+            if (!result && _maxRetryCount > 0)
+            {
+                result = RetryHelper.TryInvoke(
+                    () =>
+                    {
+                        Thread.Sleep(RedisManager.RedisConfiguration.LockRetryDelay);
+                        return Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId),
+                            expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
+                            When.NotExists);
+                    }, r => r, _maxRetryCount);
+            }
+
+            return result;
+        }
 
         public Task<bool> TryLockAsync() => TryLockAsync(null);
 
-        public Task<bool> TryLockAsync(TimeSpan? expiry) => Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId), expiry, When.NotExists);
+        public async Task<bool> TryLockAsync(TimeSpan? expiry)
+        {
+            var result = await Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId), expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry), When.NotExists).ConfigureAwait(false);
+
+            if (!result && _maxRetryCount > 0)
+            {
+                result = await RetryHelper.TryInvokeAsync(
+                    async () =>
+                    {
+                        await Task.Delay(RedisManager.RedisConfiguration.LockRetryDelay);
+                        return await Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId),
+                            expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
+                            When.NotExists);
+                    }, r => r, _maxRetryCount);
+            }
+
+            return result;
+        }
 
         #region IDisposable Support
 

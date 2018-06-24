@@ -3,7 +3,7 @@
     /// <summary>
     /// Redis 数据类型
     /// </summary>
-    public enum RedisDataType
+    public enum RedisDataType : byte
     {
         Cache,
         Counter,
@@ -12,6 +12,8 @@
         Hash,
         Dictionary,
         List,
+        Queue,
+        Stack,
         Set,
         SortedSet,
         Rank

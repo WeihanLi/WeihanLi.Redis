@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using WeihanLi.Redis.List;
 
 #if NETSTANDARD2_0
 
@@ -16,6 +17,11 @@ namespace WeihanLi.Redis
         private static readonly ConcurrentDictionary<RedisDataType, CommonRedisClient> CommonRedisClients = new ConcurrentDictionary<RedisDataType, CommonRedisClient>();
 
         private static readonly ConcurrentDictionary<Type, IRedisClient> SingletonRedisClients = new ConcurrentDictionary<Type, IRedisClient>();
+
+        /// <summary>
+        /// Version of WeihanLi.Redis
+        /// </summary>
+        public static Version Version => typeof(RedisManager).Assembly.GetName().Version;
 
         #region RedisConfig
 
@@ -157,6 +163,18 @@ namespace WeihanLi.Redis
         public static IListClient<T> GetListClient<T>(string keyName) => new ListClient<T>(keyName);
 
         #endregion List
+
+        #region Queue
+
+        public static IQueueClient<T> GetQueueClient<T>(string keyName) => new QueueClient<T>(keyName);
+
+        #endregion Queue
+
+        #region Stack
+
+        public static IStackClient<T> GetStackClient<T>(string keyName) => new StackClient<T>(keyName);
+
+        #endregion Stack
 
         #region Rank
 

@@ -55,10 +55,10 @@ namespace WeihanLi.Redis.UnitTest
         {
             using (var client = RedisManager.GetRedLockClient("redLockTest"))
             {
-                Assert.True(client.TryLock(TimeSpan.FromSeconds(10)));
+                Assert.True(client.TryLock());
                 using (var client1 = RedisManager.GetRedLockClient("redLockTest"))
                 {
-                    Assert.False(client1.TryLock(TimeSpan.FromSeconds(10)));
+                    Assert.False(client1.TryLock());
                     Assert.False(client1.Release());
                 }
                 Assert.True(client.Release());
@@ -78,6 +78,13 @@ namespace WeihanLi.Redis.UnitTest
             {
                 Assert.True(client.TryLock());
                 Assert.True(client.Release());
+            }
+
+            using (var client = RedisManager.GetRedLockClient(key, 3))
+            {
+                Assert.True(client.TryLock(TimeSpan.FromSeconds(1)));
+                Assert.True(client.TryLock());
+                Assert.False(client.TryLock());
             }
         }
     }

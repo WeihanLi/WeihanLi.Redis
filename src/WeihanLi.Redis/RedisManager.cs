@@ -101,6 +101,14 @@ namespace WeihanLi.Redis
         /// <returns></returns>
         public static IRedLockClient GetRedLockClient(string key) => new RedLockClient(key);
 
+        /// <summary>
+        /// RedisLock
+        /// </summary>
+        /// <param name="key">key</param>
+        /// <param name="maxRetryCount">maxRetryCount</param>
+        /// <returns></returns>
+        public static IRedLockClient GetRedLockClient(string key, int maxRetryCount) => new RedLockClient(key, maxRetryCount);
+
         #endregion RedisLock
 
         #region Hash

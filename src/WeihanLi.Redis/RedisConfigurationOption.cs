@@ -93,7 +93,7 @@ namespace WeihanLi.Redis
         /// MaxLockCacheExpiry in seconds
         /// 最多锁过期时间（秒），默认 30min
         /// </summary>
-        public int MaxLockExpiry { get; set; } = 30 * 60;
+        public int MaxLockExpiry { get; set; } = 1800;
 
         private class RedisServerConfigurationComparer : IEqualityComparer<RedisServerConfiguration>
         {

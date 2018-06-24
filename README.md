@@ -6,7 +6,7 @@ RedisExtensions for StackExchange.Redis, much more easier for generic opeartions
 
 StackExchange.Redis 扩展，更简单的泛型操作，并提供一些的适用于业务场景中的扩展
 
-基于 Redis 的五种数据类型扩展出了一些应用：
+基于 Redis 的五种数据类型做了一些扩展：
 
 1. String
 
@@ -23,6 +23,8 @@ StackExchange.Redis 扩展，更简单的泛型操作，并提供一些的适用
 1. List
 
     - List
+    - Queue
+    - Stack
 
 1. Set
 

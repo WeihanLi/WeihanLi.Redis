@@ -99,7 +99,7 @@ namespace WeihanLi.Redis
 
         public bool TryLock(TimeSpan? expiry)
         {
-            var result = Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry, When.NotExists);
+            var result = Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry), When.NotExists);
 
             if (!result && _maxRetryCount > 0)
             {
@@ -120,7 +120,7 @@ namespace WeihanLi.Redis
 
         public async Task<bool> TryLockAsync(TimeSpan? expiry)
         {
-            var result = await Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId), expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry), When.NotExists).ConfigureAwait(false);
+            var result = await Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId), expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry), When.NotExists);
 
             if (!result && _maxRetryCount > 0)
             {

@@ -1,4 +1,8 @@
-# WeihanLi.Redis
+# WeihanLi.Redis[![WeihanLi.Redis](https://img.shields.io/nuget/v/WeihanLi.Redis.svg)](https://www.nuget.org/packages/WeihanLi.Redis/)
+
+## Build
+
+[![Build Status](https://travis-ci.org/WeihanLi/WeihanLi.Redis.svg?branch=dev)](https://travis-ci.org/WeihanLi/WeihanLi.Redis)
 
 ## Intro
 

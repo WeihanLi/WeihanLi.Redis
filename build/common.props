@@ -12,14 +12,13 @@
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/7604648</PackageIconUrl>
     <Description>RedisExtensions for StackExchange.Redis</Description>
     <PackageReleaseNotes>
-      Update StackExchange.Redis to 2.*,
       Update logging
+      StrongNaming package
     </PackageReleaseNotes>
     <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
     <Copyright>MIT</Copyright>
     <PackageProjectUrl>https://github.com/WeihanLi/WeihanLi.Redis</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/WeihanLi/WeihanLi.Redis/blob/master/LICENSE</PackageLicenseUrl>
     <GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">True</GeneratePackageOnBuild>
-    <NoWarn>$(NoWarn);CS8002</NoWarn>
   </PropertyGroup>
 </Project>

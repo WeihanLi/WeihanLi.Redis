@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using WeihanLi.Common;
-using WeihanLi.Common.Helpers;
 
 namespace WeihanLi.Redis.UnitTest
 {
@@ -8,7 +7,6 @@ namespace WeihanLi.Redis.UnitTest
     {
         static BaseDependencyTest()
         {
-            LogHelper.LogInit();
             IServiceCollection serviceCollection = new ServiceCollection();
             serviceCollection.AddRedisConfig(config =>
             {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using WeihanLi.Common.Helpers;
 using WeihanLi.Redis.List;
 
 #if NETSTANDARD2_0
@@ -29,12 +30,17 @@ namespace WeihanLi.Redis
         /// 设置Redis配置
         /// </summary>
         /// <param name="configAction">configAction</param>
-        public static void AddRedisConfig(Action<RedisConfigurationOption> configAction) => configAction(RedisConfiguration);
+        public static void AddRedisConfig(Action<RedisConfigurationOption> configAction)
+        {
+            configAction(RedisConfiguration);
+            LogHelper.LogInit();
+        }
 
 #if NETSTANDARD2_0
 
         public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, Action<RedisConfigurationOption> configAction)
         {
+            LogHelper.LogInit();
             configAction(RedisConfiguration);
             serviceCollection.Configure(configAction);
             serviceCollection.AddSingleton<ICacheClient, CacheClient>();

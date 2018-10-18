@@ -1,4 +1,8 @@
-# WeihanLi.Redis
+# WeihanLi.Redis[![WeihanLi.Redis](https://img.shields.io/nuget/v/WeihanLi.Redis.svg)](https://www.nuget.org/packages/WeihanLi.Redis/)
+
+## Build
+
+[![Build Status](https://travis-ci.org/WeihanLi/WeihanLi.Redis.svg?branch=dev)](https://travis-ci.org/WeihanLi/WeihanLi.Redis)
 
 ## Intro
 
@@ -45,24 +49,29 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
 
 ### Configuration 配置
 
-``` csharp
-RedisManager.AddRedisConfig(config =>
-    {
-        config.CachePrefix = "WeihanLi.Redis.UnitTest";
-        config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
-    });
-```
+1. 日志配置，日志基于 log4net 的配置，可以参考单元测试中的 `log4net.config` 的配置，将 `log4net.config` 放在项目根目录下【推荐】
+   如果不在项目根目录下或者文件名发生修改则需要自己手动调用 `LogHelper.LogInit("log4net.config");`
 
-.net core 应用，还可以这样配置
+2. Redis 配置
 
-``` csharp
-serviceCollection.AddRedisConfig(config =>
-    {
-        config.CachePrefix = "WeihanLi.Redis.UnitTest";
-        config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
-        config.EnableCompress = false;// disable compress
-    });
-```
+  ``` csharp
+  RedisManager.AddRedisConfig(config =>
+      {
+          config.CachePrefix = "WeihanLi.Redis.UnitTest";
+          config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
+      });
+  ```
+
+  .net core 应用，还可以这样配置
+
+  ``` csharp
+  serviceCollection.AddRedisConfig(config =>
+      {
+          config.CachePrefix = "WeihanLi.Redis.UnitTest";
+          config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
+          config.EnableCompress = false;// disable compress
+      });
+  ```
 
 ### Basic usage 基本用法
 

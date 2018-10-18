@@ -1,12 +1,9 @@
-﻿using WeihanLi.Common.Helpers;
-
-namespace WeihanLi.Redis.UnitTest
+﻿namespace WeihanLi.Redis.UnitTest
 {
     public class BaseUnitTest
     {
         static BaseUnitTest()
         {
-            LogHelper.LogInit();
             RedisManager.AddRedisConfig(config =>
             {
                 config.CachePrefix = "WeihanLi.Redis.UnitTest";

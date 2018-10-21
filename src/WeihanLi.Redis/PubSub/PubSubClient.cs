@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 
 // ReSharper disable once CheckNamespace
@@ -27,7 +27,7 @@ namespace WeihanLi.Redis
     {
         private static string GetRealChannelName(string channelName) => $"{RedisManager.RedisConfiguration.ChannelPrefix}{RedisManager.RedisConfiguration.KeySeparator}{channelName}";
 
-        public PubSubClient() : base(LogHelper.GetLogHelper<PubSubClient>(), new RedisWrapper("PubSub"))
+        public PubSubClient(ILogger<PubSubClient> logger) : base(logger, new RedisWrapper("PubSub"))
         {
         }
 

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Common.Helpers;
 using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
@@ -10,7 +10,7 @@ namespace WeihanLi.Redis
     {
         private readonly string _realKey;
 
-        public StackClient(string keyName) : base(LogHelper.GetLogHelper<StackClient<T>>(), new RedisWrapper(RedisConstants.StackPrefix))
+        public StackClient(string keyName, ILogger<StackClient<T>> logger) : base(logger, new RedisWrapper(RedisConstants.StackPrefix))
         {
             _realKey = Wrapper.GetRealKey(keyName);
         }

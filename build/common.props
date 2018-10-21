@@ -2,7 +2,7 @@
   <Import Project="sign.props" />
   <Import Project="version.props" />
   <PropertyGroup>        
-    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;</TargetFrameworks>
     <Product>WeihanLi.Redis</Product>
     <Title>WeihanLi.Redis</Title>
     <PackageId>WeihanLi.Redis</PackageId>
@@ -13,7 +13,8 @@
     <Description>RedisExtensions for StackExchange.Redis</Description>
     <PackageReleaseNotes>
       Update logging
-      StrongNaming package
+      Remove support for net45
+      Update StackExchange.Redis to 2.*
     </PackageReleaseNotes>
     <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
     <Copyright>MIT</Copyright>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Common.Log;
 using WeihanLi.Extensions;
 using WeihanLi.Redis.Internals;
 
@@ -25,7 +25,7 @@ namespace WeihanLi.Redis
         /// <summary>
         /// logger
         /// </summary>
-        protected ILogHelper Logger { get; }
+        protected ILogger Logger { get; }
 
         static BaseRedisClient()
         {
@@ -55,7 +55,7 @@ namespace WeihanLi.Redis
 
         #endregion GetRandomCacheExpiry
 
-        protected BaseRedisClient(ILogHelper logger, IRedisWrapper redisWrapper)
+        protected BaseRedisClient(ILogger logger, IRedisWrapper redisWrapper)
         {
             Logger = logger;
             Wrapper = redisWrapper;

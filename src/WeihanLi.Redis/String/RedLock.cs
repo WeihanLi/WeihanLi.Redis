@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Redis.Internals;
@@ -68,11 +69,11 @@ namespace WeihanLi.Redis
                 return 0
             end";
 
-        public RedLockClient(string key) : this(key, 0)
+        public RedLockClient(string key, ILogger<RedLockClient> logger) : this(key, 0, logger)
         {
         }
 
-        public RedLockClient(string key, int maxRetryCount) : base(LogHelper.GetLogHelper<RedLockClient>(), new RedisWrapper(RedisConstants.RedLockPrefix))
+        public RedLockClient(string key, int maxRetryCount, ILogger<RedLockClient> logger) : base(logger, new RedisWrapper(RedisConstants.RedLockPrefix))
         {
             _realKey = Wrapper.GetRealKey(key);
             _lockId = Guid.NewGuid();

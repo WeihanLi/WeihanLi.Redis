@@ -4,7 +4,7 @@ using Xunit;
 
 namespace WeihanLi.Redis.UnitTest
 {
-    public class DependencyInjectionTest : BaseDependencyTest
+    public class DependencyInjectionTest : BaseUnitTest
     {
         [Fact]
         public void Test()

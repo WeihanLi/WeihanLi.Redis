@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Common.Helpers;
 using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
@@ -21,7 +21,7 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <param name="keyName">keyName</param>
         /// <param name="expiry">过期时间</param>
-        public DictionaryClient(string keyName, TimeSpan? expiry) : this(keyName, expiry, true)
+        public DictionaryClient(string keyName, TimeSpan? expiry, ILogger<DictionaryClient<TKey, TValue>> logger) : this(keyName, expiry, true, logger)
         {
         }
 
@@ -30,14 +30,14 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <param name="keyName">keyName</param>
         /// <param name="expiry">过期时间</param>
-        public DictionaryClient(string keyName, DateTime? expiry) : base(LogHelper.GetLogHelper<DictionaryClient<TKey, TValue>>(), new RedisWrapper(RedisConstants.DictionaryPrefix))
+        public DictionaryClient(string keyName, DateTime? expiry, ILogger<DictionaryClient<TKey, TValue>> logger) : base(logger, new RedisWrapper(RedisConstants.DictionaryPrefix))
         {
             _realKey = Wrapper.GetRealKey(keyName);
             _isSlidingExpired = false;
             _expiresAt = expiry;
         }
 
-        public DictionaryClient(string keyName, TimeSpan? expiry, bool isSlidingExpired) : base(LogHelper.GetLogHelper<DictionaryClient<TKey, TValue>>(), new RedisWrapper(RedisConstants.DictionaryPrefix))
+        public DictionaryClient(string keyName, TimeSpan? expiry, bool isSlidingExpired, ILogger<DictionaryClient<TKey, TValue>> logger) : base(logger, new RedisWrapper(RedisConstants.DictionaryPrefix))
         {
             _realKey = Wrapper.GetRealKey(keyName);
 
@@ -71,7 +71,6 @@ namespace WeihanLi.Redis
             }
             return result;
         }
-
 
         public bool Add(IDictionary<TKey, TValue> values, CommandFlags flags = CommandFlags.None)
         {
@@ -112,7 +111,7 @@ namespace WeihanLi.Redis
                 return Get(fieldName, flags);
             }
             var result = Set(fieldName, value, When.NotExists, flags);
-            return result? value: Get(fieldName, flags);
+            return result ? value : Get(fieldName, flags);
         }
 
         public async Task<TValue> GetOrAddAsync(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None)
@@ -231,6 +230,7 @@ namespace WeihanLi.Redis
                 }
             }
         }
+
         #endregion Expire
     }
 }

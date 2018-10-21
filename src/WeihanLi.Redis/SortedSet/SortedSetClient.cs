@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 using WeihanLi.Redis.Internals;
 
@@ -13,7 +13,7 @@ namespace WeihanLi.Redis
     {
         private readonly string _realKey;
 
-        public SortedSetClient(string keyName) : base(LogHelper.GetLogHelper<SortedSetClient<T>>(), new RedisWrapper(RedisConstants.SortedSetPrefix))
+        public SortedSetClient(string keyName, ILogger<SortedSetClient<T>> logger) : base(logger, new RedisWrapper(RedisConstants.SortedSetPrefix))
         {
             _realKey = $"{Wrapper.KeyPrefix}{RedisManager.RedisConfiguration.KeySeparator}{keyName}";
         }

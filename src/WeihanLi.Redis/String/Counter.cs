@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using WeihanLi.Common.Helpers;
+using Microsoft.Extensions.Logging;
 using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
@@ -39,7 +39,7 @@ namespace WeihanLi.Redis
 
         private readonly TimeSpan? _expiresIn;
 
-        public CounterClient(string counterName, long baseCount, TimeSpan? expiresIn) : base(LogHelper.GetLogHelper<CounterClient>(), new RedisWrapper(RedisConstants.CounterPrefix))
+        public CounterClient(string counterName, long baseCount, TimeSpan? expiresIn, ILogger<CounterClient> logger) : base(logger, new RedisWrapper(RedisConstants.CounterPrefix))
         {
             _keyName = Wrapper.GetRealKey(counterName);
             Base = baseCount;
@@ -47,15 +47,15 @@ namespace WeihanLi.Redis
             Reset();
         }
 
-        public CounterClient(string counterName, TimeSpan? expiresIn) : this(counterName, 0, expiresIn)
+        public CounterClient(string counterName, TimeSpan? expiresIn, ILogger<CounterClient> logger) : this(counterName, 0, expiresIn, logger)
         {
         }
 
-        public CounterClient(string counterName, long baseCount) : this(counterName, baseCount, null)
+        public CounterClient(string counterName, long baseCount, ILogger<CounterClient> logger) : this(counterName, baseCount, null, logger)
         {
         }
 
-        public CounterClient(string counterName) : this(counterName, 0, null)
+        public CounterClient(string counterName, ILogger<CounterClient> logger) : this(counterName, 0, null, logger)
         {
         }
 

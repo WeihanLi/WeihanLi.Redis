@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using WeihanLi.Common.Helpers;
+using Microsoft.Extensions.Logging;
 using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
@@ -23,22 +23,22 @@ namespace WeihanLi.Redis
         private readonly TimeSpan? _expiresIn;
         private readonly string _firewallName;
 
-        internal FirewallClient(string firewallName, long limit, TimeSpan? expiresIn) : base(LogHelper.GetLogHelper<FirewallClient>(), new RedisWrapper(RedisConstants.FirewallPrefix))
+        internal FirewallClient(string firewallName, long limit, TimeSpan? expiresIn, ILogger<FirewallClient> logger) : base(logger, new RedisWrapper(RedisConstants.FirewallPrefix))
         {
             _firewallName = Wrapper.GetRealKey(firewallName);
             _expiresIn = expiresIn;
             Limit = limit;
         }
 
-        internal FirewallClient(string firewallName, TimeSpan? expiresIn) : this(firewallName, 1, expiresIn)
+        internal FirewallClient(string firewallName, TimeSpan? expiresIn, ILogger<FirewallClient> logger) : this(firewallName, 1, expiresIn, logger)
         {
         }
 
-        internal FirewallClient(string firewallName, long limit) : this(firewallName, limit, null)
+        internal FirewallClient(string firewallName, long limit, ILogger<FirewallClient> logger) : this(firewallName, limit, null, logger)
         {
         }
 
-        internal FirewallClient(string firewallName) : this(firewallName, 1)
+        internal FirewallClient(string firewallName, ILogger<FirewallClient> logger) : this(firewallName, 1, logger)
         {
         }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Common.Helpers;
 using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
@@ -50,7 +50,7 @@ namespace WeihanLi.Redis
 
         public Task<bool> KeyPersistAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyPersistAsync(key, flags);
 
-        public CommonRedisClient(RedisDataType dataType) : base(LogHelper.GetLogHelper<CommonRedisClient>(), new RedisWrapper(Helpers.GetCachePrefix(dataType)))
+        public CommonRedisClient(RedisDataType dataType, ILogger<CommonRedisClient> logger) : base(logger, new RedisWrapper(Helpers.GetCachePrefix(dataType)))
         {
         }
     }

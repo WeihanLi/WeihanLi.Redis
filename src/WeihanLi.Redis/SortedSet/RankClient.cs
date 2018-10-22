@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Common.Helpers;
 using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
@@ -12,7 +12,7 @@ namespace WeihanLi.Redis
     {
         private readonly string _realKey;
 
-        public RankClient(string rankName) : base(LogHelper.GetLogHelper<RankClient<T>>(), new RedisWrapper(RedisConstants.RankPrefix))
+        public RankClient(string rankName, ILogger<RankClient<T>> logger) : base(logger, new RedisWrapper(RedisConstants.RankPrefix))
         {
             _realKey = Wrapper.GetRealKey(rankName);
         }
@@ -22,7 +22,7 @@ namespace WeihanLi.Redis
         public Task<bool> AddAsync(T member, double score, When when = When.Always) => Wrapper.Database.SortedSetAddAsync(_realKey, Wrapper.Wrap(member), score, when);
 
         public long Add(IDictionary<T, double> values, When when = When.Always)
-            => Wrapper.Database.SortedSetAdd(_realKey, values.Select(_=>new SortedSetEntry(Wrapper.Wrap(_.Key), _.Value)).ToArray(), when);
+            => Wrapper.Database.SortedSetAdd(_realKey, values.Select(_ => new SortedSetEntry(Wrapper.Wrap(_.Key), _.Value)).ToArray(), when);
 
         public Task<long> AddAsync(IDictionary<T, double> values, When when = When.Always)
             => Wrapper.Database.SortedSetAddAsync(_realKey, values.Select(_ => new SortedSetEntry(Wrapper.Wrap(_.Key), _.Value)).ToArray(), when);

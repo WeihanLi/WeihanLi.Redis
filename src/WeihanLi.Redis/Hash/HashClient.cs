@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Common.Helpers;
 using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
@@ -14,7 +14,7 @@ namespace WeihanLi.Redis
     /// </summary>
     internal class HashClient : BaseRedisClient, IHashClient
     {
-        public HashClient() : base(LogHelper.GetLogHelper<HashClient>(), new RedisWrapper(RedisConstants.HashPrefix))
+        public HashClient(ILogger<HashClient> logger) : base(logger, new RedisWrapper(RedisConstants.HashPrefix))
         {
         }
 
@@ -42,7 +42,7 @@ namespace WeihanLi.Redis
             }
             var val = func();
             var result = Set(key, fieldName, val, When.NotExists, flags);
-            return result? val: Get<T>(key, fieldName, flags);
+            return result ? val : Get<T>(key, fieldName, flags);
         }
 
         public async Task<T> GetOrSetAsync<T>(string key, string fieldName, Func<Task<T>> func, CommandFlags flags = CommandFlags.None)

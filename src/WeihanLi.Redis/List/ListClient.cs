@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 using WeihanLi.Redis.Internals;
 
@@ -12,7 +12,7 @@ namespace WeihanLi.Redis
     {
         private readonly string _realKey;
 
-        public ListClient(string keyName) : base(LogHelper.GetLogHelper<ListClient<T>>(), new RedisWrapper(RedisConstants.ListPrefix))
+        public ListClient(string keyName, ILogger<ListClient<T>> logger) : base(logger, new RedisWrapper(RedisConstants.ListPrefix))
         {
             _realKey = Wrapper.GetRealKey(keyName);
         }

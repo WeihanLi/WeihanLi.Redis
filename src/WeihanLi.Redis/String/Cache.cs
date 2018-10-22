@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
+using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
-using WeihanLi.Common.Log;
 using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
@@ -78,7 +79,7 @@ namespace WeihanLi.Redis
 
     internal class CacheClient : BaseRedisClient, ICacheClient
     {
-        public CacheClient() : base(LogHelper.GetLogHelper<CacheClient>(), new RedisWrapper(RedisConstants.CachePrefix))
+        public CacheClient(ILogger<CacheClient> logger) : base(logger, new RedisWrapper(RedisConstants.CachePrefix))
         {
         }
 
@@ -144,14 +145,14 @@ namespace WeihanLi.Redis
         public bool Set<T>(string key, Func<T> func, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
         {
             var realKey = Wrapper.GetRealKey(key);
-            using (var locker = new RedLockClient(HashHelper.GetHashedString(HashType.MD5, realKey)))
+            using (var locker = new RedLockClient(HashHelper.GetHashedString(HashType.MD5, realKey), DependencyResolver.Current.ResolveService<ILogger<RedLockClient>>()))
             {
                 if (locker.TryLock())
                 {
                     return Wrapper.Database.StringSet(realKey, Wrapper.Wrap(func()), expiresIn?.Add(GetRandomCacheExpiry()), when,
                         commandFlags);
                 }
-                Logger.Info($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");
+                Logger.LogInformation($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");
                 return false;
             }
         }
@@ -168,14 +169,14 @@ namespace WeihanLi.Redis
         public async Task<bool> SetAsync<T>(string key, Func<T> func, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
         {
             var realKey = Wrapper.GetRealKey(key);
-            using (var locker = new RedLockClient(HashHelper.GetHashedString(HashType.MD5, realKey)))
+            using (var locker = new RedLockClient(HashHelper.GetHashedString(HashType.MD5, realKey), DependencyResolver.Current.ResolveService<ILogger<RedLockClient>>()))
             {
                 if (await locker.TryLockAsync())
                 {
                     return await Wrapper.Database.StringSetAsync(realKey, Wrapper.Wrap(func()), expiresIn?.Add(GetRandomCacheExpiry()), when,
                         commandFlags);
                 }
-                Logger.Info($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");
+                Logger.LogInformation($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");
                 return false;
             }
         }
@@ -183,14 +184,14 @@ namespace WeihanLi.Redis
         public async Task<bool> SetAsync<T>(string key, Func<Task<T>> func, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
         {
             var realKey = Wrapper.GetRealKey(key);
-            using (var locker = new RedLockClient(HashHelper.GetHashedString(HashType.MD5, realKey)))
+            using (var locker = new RedLockClient(HashHelper.GetHashedString(HashType.MD5, realKey), DependencyResolver.Current.ResolveService<ILogger<RedLockClient>>()))
             {
                 if (await locker.TryLockAsync())
                 {
                     return await Wrapper.Database.StringSetAsync(realKey, Wrapper.Wrap(await func()), expiresIn?.Add(GetRandomCacheExpiry()), when,
                         commandFlags);
                 }
-                Logger.Info($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");
+                Logger.LogInformation($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");
                 return false;
             }
         }

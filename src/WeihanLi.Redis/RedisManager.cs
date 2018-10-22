@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using WeihanLi.Common;
 using WeihanLi.Redis.List;
@@ -26,9 +27,9 @@ namespace WeihanLi.Redis
         {
             configAction(RedisConfiguration);
             serviceCollection.Configure(configAction);
-            serviceCollection.AddSingleton<ICacheClient, CacheClient>();
-            serviceCollection.AddSingleton<IHashClient, HashClient>();
-            serviceCollection.AddSingleton<IPubSubClient, PubSubClient>();
+            serviceCollection.TryAddSingleton<ICacheClient, CacheClient>();
+            serviceCollection.TryAddSingleton<IHashClient, HashClient>();
+            serviceCollection.TryAddSingleton<IPubSubClient, PubSubClient>();
 
             serviceCollection.AddLogging();
 

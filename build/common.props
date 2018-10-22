@@ -11,6 +11,7 @@
     <PackageTags>redis StackExchange</PackageTags>
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/7604648</PackageIconUrl>
     <Description>RedisExtensions for StackExchange.Redis</Description>
+    <Summary>RedisExtensions for StackExchange.Redis</Summary>
     <PackageReleaseNotes>
       Update logging
       Remove support for net45

@@ -49,10 +49,12 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
 
 ### Configuration 配置
 
-1. 日志配置，日志基于 log4net 的配置，可以参考单元测试中的 `log4net.config` 的配置，将 `log4net.config` 放在项目根目录下【推荐】
-   如果不在项目根目录下或者文件名发生修改则需要自己手动调用 `LogHelper.LogInit("log4net.config");`
+对于 V1.0.6 及以下版本支持 .netframework4.5 配置参考：
 
-2. Redis 配置
+  1. 日志配置，日志基于 log4net 的配置，可以参考单元测试中的 `log4net.config` 的配置，将 `log4net.config` 放在项目根目录下【推荐】
+  如果不在项目根目录下或者文件名发生修改则需要自己手动调用 `LogHelper.LogInit("log4net.config");`
+  
+  2. Redis 配置
 
   ``` csharp
   RedisManager.AddRedisConfig(config =>
@@ -65,6 +67,19 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
   .net core 应用，还可以这样配置
 
   ``` csharp
+  serviceCollection.AddRedisConfig(config =>
+      {
+          config.CachePrefix = "WeihanLi.Redis.UnitTest";
+          config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
+          config.EnableCompress = false;// disable compress
+      });
+  ```
+
+对于 1.1* 及以上版本不再支持 dotnet framework，配置方式如下：
+
+  ``` csharp
+  // IServiceCollection serviceCollection = new ServiceCollection();
+
   serviceCollection.AddRedisConfig(config =>
       {
           config.CachePrefix = "WeihanLi.Redis.UnitTest";

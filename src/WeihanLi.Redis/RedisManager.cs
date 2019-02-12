@@ -33,7 +33,6 @@ namespace WeihanLi.Redis
 
             serviceCollection.AddLogging();
 
-            DependencyResolver.SetDependencyResolver(serviceCollection.BuildServiceProvider());
             return serviceCollection;
         }
 

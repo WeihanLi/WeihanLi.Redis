@@ -5,17 +5,17 @@
     /// </summary>
     public enum RedisDataType : byte
     {
-        Cache,
-        Counter,
-        Firewall,
-        RedLock,
-        Hash,
-        Dictionary,
-        List,
-        Queue,
-        Stack,
-        Set,
-        SortedSet,
-        Rank
+        Cache = 0,
+        Counter = 1,
+        Firewall = 2,
+        RedLock = 3,
+        Hash = 4,
+        Dictionary = 5,
+        List = 6,
+        Queue = 7,
+        Stack = 8,
+        Set = 9,
+        SortedSet = 10,
+        Rank = 11
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using StackExchange.Redis;
 
@@ -39,7 +40,11 @@ namespace WeihanLi.Redis
 
         bool Set<T>(string key, string fieldName, T value, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
 
+        bool Set<T>(string key, IEnumerable<KeyValuePair<string, T>> entries, CommandFlags commandFlags = CommandFlags.None);
+
         Task<bool> SetAsync<T>(string key, string fieldName, T value, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
+
+        Task<bool> SetAsync<T>(string key, IEnumerable<KeyValuePair<string, T>> entries, CommandFlags commandFlags = CommandFlags.None);
 
         #endregion Set
 

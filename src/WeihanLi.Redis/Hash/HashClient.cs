@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
@@ -70,7 +71,19 @@ namespace WeihanLi.Redis
 
         public bool Set<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags) => Wrapper.Database.HashSet(Wrapper.GetRealKey(key), fieldName, Wrapper.Wrap(value), when, commandFlags);
 
+        public bool Set<T>(string key, IEnumerable<KeyValuePair<string, T>> entries, CommandFlags commandFlags = CommandFlags.None)
+        {
+            Wrapper.Database.HashSet(Wrapper.GetRealKey(key), entries.Select(_ => new HashEntry(_.Key, Wrapper.Wrap(_.Value))).ToArray(), commandFlags);
+            return true;
+        }
+
         public Task<bool> SetAsync<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags) => Wrapper.Database.HashSetAsync(Wrapper.GetRealKey(key), fieldName, Wrapper.Wrap(value), when, commandFlags);
+
+        public Task<bool> SetAsync<T>(string key, IEnumerable<KeyValuePair<string, T>> entries,
+            CommandFlags commandFlags = CommandFlags.None)
+        {
+            return Wrapper.Database.HashSetAsync(Wrapper.GetRealKey(key), entries.Select(_ => new HashEntry(_.Key, Wrapper.Wrap(_.Value))).ToArray(), commandFlags).ContinueWith(r => true);
+        }
 
         public T[] Values<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(Wrapper.Database.HashValues(Wrapper.GetRealKey(key), flags));
 

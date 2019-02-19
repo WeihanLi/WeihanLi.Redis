@@ -13,7 +13,7 @@
     <Description>RedisExtensions for StackExchange.Redis</Description>
     <Summary>RedisExtensions for StackExchange.Redis</Summary>
     <PackageReleaseNotes>
-      Update StackExchange.Redis to 2.*
+      Add multi entry for IHashClient
     </PackageReleaseNotes>
     <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
     <Copyright>MIT</Copyright>

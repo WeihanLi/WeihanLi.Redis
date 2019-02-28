@@ -13,14 +13,12 @@
     <Description>RedisExtensions for StackExchange.Redis</Description>
     <Summary>RedisExtensions for StackExchange.Redis</Summary>
     <PackageReleaseNotes>
-      Update logging
-      Remove support for net45
-      Update StackExchange.Redis to 2.*
+      Add multi entry for IHashClient
     </PackageReleaseNotes>
     <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
     <Copyright>MIT</Copyright>
     <PackageProjectUrl>https://github.com/WeihanLi/WeihanLi.Redis</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/WeihanLi/WeihanLi.Redis/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">True</GeneratePackageOnBuild>
   </PropertyGroup>
 </Project>

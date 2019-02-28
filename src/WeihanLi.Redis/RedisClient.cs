@@ -13,7 +13,7 @@ namespace WeihanLi.Redis
 
     internal abstract class BaseRedisClient
     {
-        private static readonly ConnectionMultiplexer Connection;
+        private static readonly Lazy<ConnectionMultiplexer> Connection;
 
         /// <summary>
         /// 随机数生成器
@@ -42,7 +42,7 @@ namespace WeihanLi.Redis
                 SyncTimeout = RedisManager.RedisConfiguration.SyncTimeout
             };
             configurationOptions.EndPoints.AddRange(RedisManager.RedisConfiguration.RedisServers.Select(s => Helpers.ConvertToEndPoint(s.Host, s.Port)).ToArray());
-            Connection = ConnectionMultiplexer.Connect(configurationOptions);
+            Connection = new Lazy<ConnectionMultiplexer>(() => ConnectionMultiplexer.Connect(configurationOptions));
         }
 
         #region GetRandomCacheExpiry
@@ -59,8 +59,8 @@ namespace WeihanLi.Redis
         {
             Logger = logger;
             Wrapper = redisWrapper;
-            Wrapper.Database = Connection.GetDatabase();
-            Wrapper.Subscriber = Connection.GetSubscriber();
+            Wrapper.Database = Connection.Value.GetDatabase();
+            Wrapper.Subscriber = Connection.Value.GetSubscriber();
         }
     }
 }

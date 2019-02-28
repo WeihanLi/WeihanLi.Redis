@@ -43,7 +43,7 @@ namespace WeihanLi.Redis
             }
         }
 
-        public bool EnableCompress { get; set; } = true;
+        public bool EnableCompress { get; set; }
 
         public int DefaultDatabase { get; set; }
 
@@ -131,7 +131,7 @@ namespace WeihanLi.Redis
         {
             if (string.IsNullOrWhiteSpace(host))
             {
-                throw new ArgumentException(Resource.InvalidParameter, nameof(host));
+                throw new ArgumentNullException(Resource.InvalidParameter, nameof(host));
             }
 
             Host = host;

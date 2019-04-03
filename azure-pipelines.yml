@@ -20,6 +20,9 @@ steps:
     targetType: filePath
     filePath: ./build/applyVersionSuffix.sh
 
+- script: dotnet --info
+  displayName: 'dotnet info'
+
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 

@@ -11,11 +11,11 @@ namespace WeihanLi.Redis.UnitTest
             var key = "commonCacheTest11";
             var commonClient = RedisManager.GetCommonRedisClient(RedisDataType.Cache);
             var cacheClient = RedisManager.CacheClient;
-            var ttl = commonClient.KeyTimeToLive(key);
-            Assert.Null(ttl);
+            var exists = commonClient.KeyExists(key);
+            Assert.False(exists);
             Assert.False(commonClient.KeyExists(key));
             Assert.True(cacheClient.Set(key, Guid.NewGuid()));
-            ttl = commonClient.KeyTimeToLive(key);
+            var ttl = commonClient.KeyTimeToLive(key);
             Assert.Null(ttl);
             Assert.True(commonClient.KeyExists(key));
             commonClient.KeyExpireAsync(key, DateTime.Now.AddMinutes(2));

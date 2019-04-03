@@ -11,7 +11,7 @@ namespace WeihanLi.Redis
     /// RedisConfigurationOption
     /// https://weihanli.github.io/StackExchange.Redis-docs-cn/Configuration.html
     /// </summary>
-    public class RedisConfigurationOption
+    public class RedisConfigurationOptions
     {
         private IReadOnlyCollection<RedisServerConfiguration> _redisServers = new[]
         {
@@ -76,6 +76,18 @@ namespace WeihanLi.Redis
         /// CachePrefix
         /// </summary>
         public string CachePrefix { get; set; } = ApplicationHelper.ApplicationName;
+
+        /// <summary>
+        /// AllowNoExpiry
+        /// 是否允许永不过期
+        /// </summary>
+        public bool AllowNoExpiry { get; set; } = true;
+
+        /// <summary>
+        /// MaxCacheExpiry
+        /// 缓存最长过期时间，默认30天
+        /// </summary>
+        public TimeSpan MaxCacheExpiry { get; set; } = TimeSpan.FromDays(30);
 
         /// <summary>
         /// MaxRandomCacheExpiry(seconds)

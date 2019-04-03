@@ -10,7 +10,7 @@ namespace WeihanLi.Redis
 {
     public static class RedisManager
     {
-        internal static readonly RedisConfigurationOption RedisConfiguration = new RedisConfigurationOption();
+        internal static readonly RedisConfigurationOptions RedisConfiguration = new RedisConfigurationOptions();
 
         private static readonly ConcurrentDictionary<RedisDataType, CommonRedisClient> CommonRedisClients = new ConcurrentDictionary<RedisDataType, CommonRedisClient>();
 
@@ -23,7 +23,7 @@ namespace WeihanLi.Redis
 
         #region RedisConfig
 
-        public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, Action<RedisConfigurationOption> configAction)
+        public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, Action<RedisConfigurationOptions> configAction)
         {
             configAction(RedisConfiguration);
             serviceCollection.Configure(configAction);

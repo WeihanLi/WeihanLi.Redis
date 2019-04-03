@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
+using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 using WeihanLi.Redis.Internals;
 
@@ -41,7 +42,7 @@ namespace WeihanLi.Redis
                 AbortOnConnectFail = RedisManager.RedisConfiguration.AbortOnConnectFail,
                 SyncTimeout = RedisManager.RedisConfiguration.SyncTimeout
             };
-            configurationOptions.EndPoints.AddRange(RedisManager.RedisConfiguration.RedisServers.Select(s => Helpers.ConvertToEndPoint(s.Host, s.Port)).ToArray());
+            configurationOptions.EndPoints.AddRange(RedisManager.RedisConfiguration.RedisServers.Select(s => ConvertHelper.ToEndPoint(s.Host, s.Port)).ToArray());
             Connection = new Lazy<ConnectionMultiplexer>(() => ConnectionMultiplexer.Connect(configurationOptions));
         }
 

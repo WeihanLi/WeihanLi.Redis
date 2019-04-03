@@ -5,7 +5,9 @@
 
 trigger:
 - master
-- previewpool:
+- preview
+
+pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:

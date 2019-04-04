@@ -29,8 +29,8 @@ steps:
 - script: dotnet build -c $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
-- script: dotnet pack -c $(buildConfiguration) ./src/WeihanLi.Redis/WeihanLi.Redis.csproj
+- script: dotnet pack -c $(buildConfiguration) src/WeihanLi.Redis/WeihanLi.Redis.csproj
   displayName: 'dotnet pack $(buildConfiguration)' 
 
-- script: dotnet nuget push $(BUILD_SOURCESDIRECTORY)/src/WeihanLi.Redis/bin/Release/*.nupkg -k $(nugetApiKey) -s $(nugetSourceUrl)
+- script: dotnet nuget push src/WeihanLi.Redis/bin/Release/*.nupkg -k $(nugetApiKey) -s $(nugetSourceUrl)
   displayName: 'dotnet nuget push'

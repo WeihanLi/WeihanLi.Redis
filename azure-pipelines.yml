@@ -32,5 +32,5 @@ steps:
 - script: dotnet pack -c $(buildConfiguration) src/WeihanLi.Redis/WeihanLi.Redis.csproj -o $(Build.ArtifactStagingDirectory)
   displayName: 'dotnet pack $(buildConfiguration)' 
 
-- script: dotnet nuget push $(Build.ArtifactStagingDirectory)\WeihanLi.Redis-*.nupkg -k $(nugetApiKey) -s $(nugetSourceUrl)
+- script: dotnet nuget push $(Build.ArtifactStagingDirectory)\*.nupkg -k $(nugetApiKey) -s $(nugetSourceUrl)
   displayName: 'dotnet nuget push'

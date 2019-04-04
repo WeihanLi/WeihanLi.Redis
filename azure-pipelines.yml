@@ -4,9 +4,8 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-  branch:
-    - master
-    - preview
+- master
+- preview
 
 # no PR builds
 pr: none

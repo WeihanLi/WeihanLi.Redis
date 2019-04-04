@@ -5,12 +5,16 @@
 # and then apply it to the assemblies
 $VersionSuffixRegex = "<VersionSuffix(.*)>(.*)</VersionSuffix>"
 
-$VersionSuffix = "<VersionSuffix>preview-$((Get-Date).ToUniversalTime().ToString("yyyyMMdd-HHmmss"))</VersionSuffix>"
+$VersionSuffix = "preview-$((Get-Date).ToUniversalTime().ToString("yyyyMMdd-HHmmss"))"
+
+if("$env:BUILD_SOURCEBRANCHNAME" -eq "master"){
+    $VersionSuffix = ""
+}
 
 Write-Verbose "VersionSuffix: $VersionSuffix"
 
 $file = Get-Item("$Env:BUILD_SOURCESDIRECTORY/build/version.props")
 $filecontent = Get-Content($file)
-$filecontent -replace $VersionSuffixRegex, $VersionSuffix | Out-File $file
+$filecontent -replace $VersionSuffixRegex, "<VersionSuffix>$VersionSuffix</VersionSuffix>" | Out-File $file
 
 Write-Verbose "$file.FullName - version applied"

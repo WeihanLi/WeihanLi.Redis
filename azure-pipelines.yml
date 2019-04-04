@@ -7,6 +7,9 @@ trigger:
 - master
 - preview
 
+# no PR builds
+pr: none
+
 pool:
   vmImage: 'Ubuntu-16.04'
 
@@ -14,11 +17,11 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: Bash@3
-  displayName: 'Bash Script'
+- task: PowerShell@2
+  displayName: 'Powershell Script'
   inputs:
     targetType: filePath
-    filePath: ./build/applyVersionSuffix.sh
+    filePath: ./build/applyVersionSuffix.ps1
 
 - script: dotnet --info
   displayName: 'dotnet info'

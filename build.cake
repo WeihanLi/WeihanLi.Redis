@@ -5,9 +5,14 @@
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
-var solution = "./WeihanLi.Redis.sln";
-var srcProjects = "./src/**/*.csproj";
-var testProjects = "./test/**/*.csproj";
+var solutionPath = "./WeihanLi.Redis.sln";
+var srcProjects  = GetFiles("./src/**/*.csproj");
+var testProjects  = GetFiles("./test/**/*.csproj");
+
+var artifacts = "./artifacts/packages";
+var isPr = int.TryParse(EnvironmentVariable("System.PullRequest.PullRequestNumber"), out var prId) && prId > 0;
+var isWindowsAgent = (EnvironmentVariable("Agent_OS") ?? "Windows_NT") == "Windows_NT";
+var branchName = EnvironmentVariable("BUILD_SOURCEBRANCHNAME") ?? "local";
 
 ///////////////////////////////////////////////////////////////////////////////
 // SETUP / TEARDOWN
@@ -17,6 +22,7 @@ Setup(ctx =>
 {
    // Executed BEFORE the first task.
    Information("Running tasks...");
+   PrintBuildInfo();
 });
 
 Teardown(ctx =>
@@ -24,18 +30,6 @@ Teardown(ctx =>
    // Executed AFTER the last task.
    Information("Finished running tasks.");
 });
-
-// TaskSetup(setupContext =>
-// {
-//     var message = string.Format("Task: {0}", setupContext.Task.Name);
-//     // custom logging
-// });
-
-// TaskTeardown(teardownContext =>
-// {
-//     var message = string.Format("Task: {0}", teardownContext.Task.Name);
-//     // custom logging
-// });
 
 ///////////////////////////////////////////////////////////////////////////////
 // TASKS
@@ -45,9 +39,14 @@ Task("clean")
     .Description("Clean")
     .Does(() =>
     {
-      if (DirectoryExists("./artifacts"))
+       var deleteSetting = new DeleteDirectorySettings()
+       {
+          Force = true,
+          Recursive = true
+       };
+      if (DirectoryExists(artifacts))
       {
-         DeleteDirectory("./artifacts", true);
+         DeleteDirectory(artifacts, deleteSetting);
       }
     });
 
@@ -55,7 +54,10 @@ Task("restore")
     .Description("Restore")
     .Does(() => 
     {
-       DotNetCoreRestore(solutionPath);
+      foreach(var project in srcProjects)
+      {
+         DotNetCoreRestore(project.FullPath);
+      }
     });
 
 Task("build")    
@@ -64,18 +66,29 @@ Task("build")
     .IsDependentOn("restore")
     .Does(() =>
     {
-      DotNetCoreRestore(solutionPath);
+      var buildSetting = new DotNetCoreBuildSettings{
+         NoRestore = true,
+         Configuration = configuration
+      };
+      foreach(var project in srcProjects)
+      {
+         DotNetCoreBuild(project.FullPath, buildSetting);
+      }
     });
 
 Task("test")    
-    .Description("Build")
+    .Description("Test")
     .IsDependentOn("build")
     .Does(() =>
     {
-        foreach (var project in testProjects)
-        {
-            DotNetCoreTest(project.FullPath);
-        }
+      var testSettings = new DotNetCoreTestSettings{
+         NoRestore = true,
+         Configuration = configuration
+      };
+      foreach(var project in testProjects)
+      {
+         DotNetCoreTest(project.FullPath, testSettings);
+      }
     });
 
 
@@ -87,15 +100,42 @@ Task("pack")
       var settings = new DotNetCorePackSettings
       {
          Configuration = configuration,
-         OutputDirectory = "./artifacts/packages"
+         OutputDirectory = artifacts,
+         VersionSuffix = "",
+         NoRestore = true,
+         NoBuild = true
       };
+      if(branchName != "master"){
+         settings.VersionSuffix = $"preview-{DateTime.UtcNow:yyyyMMdd-HHmmss}";
+      }
       foreach (var project in srcProjects)
       {
          DotNetCorePack(project.FullPath, settings);
       }
+      PublishArtifacts();
     });
 
+bool PublishArtifacts(){
+   if(isPr || !isWindowsAgent){
+      return false;
+   }
+   if(branchName == "master" || branchName == "preview"){
+      var pushSetting =new DotNetCoreNuGetPushSettings
+      {
+         Source = EnvironmentVariable("nugetSourceUrl") ?? "https://api.nuget.org/v3/index.json",
+         ApiKey = EnvironmentVariable("nugetApiKey")
+      };
+      DotNetCoreNuGetPush($"{artifacts}/*.nupkg", pushSetting);
+      return true;
+   }
+   return false;
+}
+
+void PrintBuildInfo(){
+   Information($"branch:{branchName}, isPr:{isPr}, isWindows={isWindowsAgent}");
+}
+
 Task("Default")
-    .IsDependentOn("test");
+    .IsDependentOn("pack");
 
 RunTarget(target);

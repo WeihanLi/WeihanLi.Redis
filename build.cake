@@ -124,7 +124,11 @@ bool PublishArtifacts(){
          Source = EnvironmentVariable("nugetSourceUrl") ?? "https://api.nuget.org/v3/index.json",
          ApiKey = EnvironmentVariable("nugetApiKey")
       };
-      DotNetCoreNuGetPush($"{artifacts}/*.nupkg", pushSetting);
+      var packages = GetFiles($"{artifacts}/*.nupkg");
+      foreach(var package in packages)
+      {
+         DotNetCoreNuGetPush(package.FullPath, pushSetting);
+      }
       return true;
    }
    return false;

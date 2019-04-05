@@ -114,15 +114,18 @@ Task("pack")
       PublishArtifacts();
     });
 
-bool PublishArtifacts(){
-   if(!isWindowsAgent){
+bool PublishArtifacts()
+{
+   if(!isWindowsAgent)
+   {
       return false;
    }
-   if(branchName == "master" || branchName == "preview"){
+   if(branchName == "master" || branchName == "preview")
+   {
       var pushSetting =new DotNetCoreNuGetPushSettings
       {
-         Source = EnvironmentVariable("nugetSourceUrl") ?? "https://api.nuget.org/v3/index.json",
-         ApiKey = EnvironmentVariable("nugetApiKey")
+         Source = EnvironmentVariable("Nuget__SourceUrl") ?? "https://api.nuget.org/v3/index.json",
+         ApiKey = EnvironmentVariable("Nuget__ApiKey")
       };
       var packages = GetFiles($"{artifacts}/*.nupkg");
       foreach(var package in packages)

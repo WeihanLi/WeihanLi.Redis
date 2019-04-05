@@ -10,7 +10,9 @@ pool:
   vmImage: 'vs2017-win2016'
 
 variables:
-  buildConfiguration: 'Release'
+env:
+  Nuget__ApiKey: $(nugetApiKey)
+  Nuget__SourceUrl: $(nugetSourceUrl)
 
 steps:
 - script: dotnet --info

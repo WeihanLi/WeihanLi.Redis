@@ -10,7 +10,6 @@ var srcProjects  = GetFiles("./src/**/*.csproj");
 var testProjects  = GetFiles("./test/**/*.csproj");
 
 var artifacts = "./artifacts/packages";
-var isPr = int.TryParse(EnvironmentVariable("System.PullRequest.PullRequestNumber"), out var prId) && prId > 0;
 var isWindowsAgent = (EnvironmentVariable("Agent_OS") ?? "Windows_NT") == "Windows_NT";
 var branchName = EnvironmentVariable("BUILD_SOURCEBRANCHNAME") ?? "local";
 
@@ -116,7 +115,7 @@ Task("pack")
     });
 
 bool PublishArtifacts(){
-   if(isPr || !isWindowsAgent){
+   if(!isWindowsAgent){
       return false;
    }
    if(branchName == "master" || branchName == "preview"){
@@ -132,7 +131,9 @@ bool PublishArtifacts(){
 }
 
 void PrintBuildInfo(){
-   Information($"branch:{branchName}, isPr:{isPr}, isWindows={isWindowsAgent}");
+   Information($@"branch:{branchName}, agentOs={EnvironmentVariable("Agent_OS")}
+   BuildID:{EnvironmentVariable("BUILD_BUILDID")},BuildNumber:{EnvironmentVariable("BUILD_BUILDNUMBER")},BuildReason:{EnvironmentVariable("BUILD_REASON")}
+   ");
 }
 
 Task("Default")

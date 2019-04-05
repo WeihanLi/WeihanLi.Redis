@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Linq;
 using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Common.Helpers;
-using WeihanLi.Extensions;
-using WeihanLi.Redis.Internals;
+using WeihanLi.Common;
 
 namespace WeihanLi.Redis
 {
@@ -14,8 +11,6 @@ namespace WeihanLi.Redis
 
     internal abstract class BaseRedisClient
     {
-        private static readonly Lazy<ConnectionMultiplexer> Connection;
-
         /// <summary>
         /// 随机数生成器
         /// </summary>
@@ -27,24 +22,6 @@ namespace WeihanLi.Redis
         /// logger
         /// </summary>
         protected ILogger Logger { get; }
-
-        static BaseRedisClient()
-        {
-            var configurationOptions = new ConfigurationOptions
-            {
-                Password = RedisManager.RedisConfiguration.Password,
-                DefaultDatabase = RedisManager.RedisConfiguration.DefaultDatabase,
-                ConnectRetry = RedisManager.RedisConfiguration.ConnectRetry,
-                ConnectTimeout = RedisManager.RedisConfiguration.ConnectTimeout,
-                AllowAdmin = RedisManager.RedisConfiguration.AllowAdmin,
-                Ssl = RedisManager.RedisConfiguration.Ssl,
-                Proxy = RedisManager.RedisConfiguration.Proxy,
-                AbortOnConnectFail = RedisManager.RedisConfiguration.AbortOnConnectFail,
-                SyncTimeout = RedisManager.RedisConfiguration.SyncTimeout
-            };
-            configurationOptions.EndPoints.AddRange(RedisManager.RedisConfiguration.RedisServers.Select(s => ConvertHelper.ToEndPoint(s.Host, s.Port)).ToArray());
-            Connection = new Lazy<ConnectionMultiplexer>(() => ConnectionMultiplexer.Connect(configurationOptions));
-        }
 
         #region GetRandomCacheExpiry
 
@@ -60,8 +37,8 @@ namespace WeihanLi.Redis
         {
             Logger = logger;
             Wrapper = redisWrapper;
-            Wrapper.Database = Connection.Value.GetDatabase();
-            Wrapper.Subscriber = Connection.Value.GetSubscriber();
+            Wrapper.Database = new Lazy<IDatabase>(() => DependencyResolver.Current.ResolveService<IConnectionMultiplexer>().GetDatabase());
+            Wrapper.Subscriber = new Lazy<ISubscriber>(() => DependencyResolver.Current.ResolveService<IConnectionMultiplexer>().GetSubscriber());
         }
     }
 }

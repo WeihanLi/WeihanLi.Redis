@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using StackExchange.Redis;
+using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 
@@ -17,12 +18,12 @@ namespace WeihanLi.Redis
         /// <summary>
         /// Database
         /// </summary>
-        IDatabase Database { get; set; }
+        Lazy<IDatabase> Database { get; set; }
 
         /// <summary>
         /// Subscriber
         /// </summary>
-        ISubscriber Subscriber { get; set; }
+        Lazy<ISubscriber> Subscriber { get; set; }
 
         /// <summary>
         /// KeyPrefix
@@ -128,29 +129,33 @@ namespace WeihanLi.Redis
     {
         public IDataSerializer DataSerializer { get; }
 
-        public IDatabase Database { get; set; }
+        public Lazy<IDatabase> Database { get; set; }
 
         public string KeyPrefix { get; }
 
-        public ISubscriber Subscriber { get; set; }
+        public Lazy<ISubscriber> Subscriber { get; set; }
 
         public RedisWrapper(string keyPrefix)
         {
             KeyPrefix = $"{RedisManager.RedisConfiguration.CachePrefix}{RedisManager.RedisConfiguration.KeySeparator}{keyPrefix}";
             DataSerializer = RedisManager.RedisConfiguration.EnableCompress ?
-                new CompressGZipSerilizer(new JsonDataSerializer()) :
-                (IDataSerializer)new JsonDataSerializer();
+                (IDataSerializer)DependencyResolver.Current.ResolveService<ICompressSerializer>() :
+                DependencyResolver.Current.ResolveService<IDataSerializer>();
         }
 
         public RedisValue Wrap<T>(T t)
         {
-            try
+            if (t == null)
             {
-                return DataSerializer.Serialize(t);
+                return RedisValue.Null;
             }
-            catch
+            if (t.IsBasicType())
             {
                 return t.ToJsonOrString();
+            }
+            else
+            {
+                return DataSerializer.Serialize(t);
             }
         }
 
@@ -162,15 +167,15 @@ namespace WeihanLi.Redis
 
         public T Unwrap<T>(RedisValue redisValue)
         {
-            if (redisValue.HasValue)
+            if (!redisValue.IsNull)
             {
-                try
-                {
-                    return DataSerializer.Deserializer<T>(redisValue);
-                }
-                catch
+                if (typeof(T).IsBasicType())
                 {
                     return redisValue.ToString().StringToType<T>();
+                }
+                else
+                {
+                    return DataSerializer.Deserializer<T>(redisValue);
                 }
             }
             return default(T);
@@ -188,38 +193,38 @@ namespace WeihanLi.Redis
 
         public string GetRealKey(string key) => $"{KeyPrefix}{RedisManager.RedisConfiguration.KeySeparator}{key}";
 
-        public bool KeyExists(string key, CommandFlags flags = CommandFlags.None) => Database.KeyExists(GetRealKey(key), flags);
+        public bool KeyExists(string key, CommandFlags flags = CommandFlags.None) => Database.Value.KeyExists(GetRealKey(key), flags);
 
-        public Task<bool> KeyExistsAsync(string key, CommandFlags flags = CommandFlags.None) => Database.KeyExistsAsync(GetRealKey(key), flags);
+        public Task<bool> KeyExistsAsync(string key, CommandFlags flags = CommandFlags.None) => Database.Value.KeyExistsAsync(GetRealKey(key), flags);
 
-        public bool KeyExpire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Database.KeyExpire(GetRealKey(key), expiresIn, flags);
+        public bool KeyExpire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Database.Value.KeyExpire(GetRealKey(key), expiresIn, flags);
 
-        public Task<bool> KeyExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Database.KeyExpireAsync(GetRealKey(key), expiresIn, flags);
+        public Task<bool> KeyExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Database.Value.KeyExpireAsync(GetRealKey(key), expiresIn, flags);
 
-        public bool KeyExpire(string key, DateTime? expiry, CommandFlags flags = CommandFlags.None) => Database.KeyExpire(GetRealKey(key), expiry, flags);
+        public bool KeyExpire(string key, DateTime? expiry, CommandFlags flags = CommandFlags.None) => Database.Value.KeyExpire(GetRealKey(key), expiry, flags);
 
-        public Task<bool> KeyExpireAsync(string key, DateTime? expiry, CommandFlags flags = CommandFlags.None) => Database.KeyExpireAsync(GetRealKey(key), expiry, flags);
+        public Task<bool> KeyExpireAsync(string key, DateTime? expiry, CommandFlags flags = CommandFlags.None) => Database.Value.KeyExpireAsync(GetRealKey(key), expiry, flags);
 
-        public bool KeyPersist(string key, CommandFlags flags = CommandFlags.None) => Database.KeyPersist(GetRealKey(key), flags);
+        public bool KeyPersist(string key, CommandFlags flags = CommandFlags.None) => Database.Value.KeyPersist(GetRealKey(key), flags);
 
-        public Task<bool> KeyPersistAsync(string key, CommandFlags flags = CommandFlags.None) => Database.KeyPersistAsync(GetRealKey(key), flags);
+        public Task<bool> KeyPersistAsync(string key, CommandFlags flags = CommandFlags.None) => Database.Value.KeyPersistAsync(GetRealKey(key), flags);
 
-        public bool KeyDelete(string key, CommandFlags flags = CommandFlags.None) => Database.KeyDelete(GetRealKey(key), flags);
+        public bool KeyDelete(string key, CommandFlags flags = CommandFlags.None) => Database.Value.KeyDelete(GetRealKey(key), flags);
 
-        public Task<bool> KeyDeleteAsync(string key, CommandFlags flags = CommandFlags.None) => Database.KeyDeleteAsync(GetRealKey(key), flags);
+        public Task<bool> KeyDeleteAsync(string key, CommandFlags flags = CommandFlags.None) => Database.Value.KeyDeleteAsync(GetRealKey(key), flags);
 
-        public long KeyDelete(string[] key, CommandFlags flags = CommandFlags.None) => Database.KeyDelete(key.Select(_ => (RedisKey)GetRealKey(_)).ToArray(), flags);
+        public long KeyDelete(string[] key, CommandFlags flags = CommandFlags.None) => Database.Value.KeyDelete(key.Select(_ => (RedisKey)GetRealKey(_)).ToArray(), flags);
 
-        public Task<long> KeyDeleteAsync(string[] key, CommandFlags flags = CommandFlags.None) => Database.KeyDeleteAsync(key.Select(_ => (RedisKey)GetRealKey(_)).ToArray(), flags);
+        public Task<long> KeyDeleteAsync(string[] key, CommandFlags flags = CommandFlags.None) => Database.Value.KeyDeleteAsync(key.Select(_ => (RedisKey)GetRealKey(_)).ToArray(), flags);
 
-        public TimeSpan? KeyTimeToLive(string key, CommandFlags flags = CommandFlags.None) => Database.KeyTimeToLive(GetRealKey(key), flags);
+        public TimeSpan? KeyTimeToLive(string key, CommandFlags flags = CommandFlags.None) => Database.Value.KeyTimeToLive(GetRealKey(key), flags);
 
-        public RedisType KeyType(string key, CommandFlags flags = CommandFlags.None) => Database.KeyType(GetRealKey(key), flags);
+        public RedisType KeyType(string key, CommandFlags flags = CommandFlags.None) => Database.Value.KeyType(GetRealKey(key), flags);
 
-        public RedisResult ScriptEvaluate<TValue>(string script, string[] keys = null, TValue[] values = null, CommandFlags flags = CommandFlags.None) => Database.ScriptEvaluate(script, keys?.Select(_ => (RedisKey)GetRealKey(_)).ToArray(),
+        public RedisResult ScriptEvaluate<TValue>(string script, string[] keys = null, TValue[] values = null, CommandFlags flags = CommandFlags.None) => Database.Value.ScriptEvaluate(script, keys?.Select(_ => (RedisKey)GetRealKey(_)).ToArray(),
             null == values ? null : Wrap(values), flags);
 
-        public Task<RedisResult> ScriptEvaluateAsync<TValue>(string script, string[] keys = null, TValue[] values = null, CommandFlags flags = CommandFlags.None) => Database.ScriptEvaluateAsync(script, keys?.Select(_ => (RedisKey)GetRealKey(_)).ToArray(),
+        public Task<RedisResult> ScriptEvaluateAsync<TValue>(string script, string[] keys = null, TValue[] values = null, CommandFlags flags = CommandFlags.None) => Database.Value.ScriptEvaluateAsync(script, keys?.Select(_ => (RedisKey)GetRealKey(_)).ToArray(),
             null == values ? null : Wrap(values), flags);
     }
 }

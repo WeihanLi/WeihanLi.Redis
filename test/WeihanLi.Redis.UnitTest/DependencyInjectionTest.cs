@@ -11,8 +11,9 @@ namespace WeihanLi.Redis.UnitTest
         {
             var cacheClient = DependencyResolver.Current.ResolveService<ICacheClient>();
             Assert.NotNull(cacheClient);
-            Assert.Equal("abcaaa", cacheClient.GetOrSet("abc", () => "abcaaa", TimeSpan.FromSeconds(10)));
-
+            var key = Guid.NewGuid().ToString("N");
+            Assert.Equal("abcaaa", cacheClient.GetOrSet(key, () => "abcaaa", TimeSpan.FromMinutes(10)));
+            cacheClient.Remove(key);
             var hashClient = DependencyResolver.Current.ResolveService<IHashClient>();
             Assert.NotNull(hashClient);
             var pubsubClient = DependencyResolver.Current.ResolveService<IPubSubClient>();

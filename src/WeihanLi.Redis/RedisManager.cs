@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
+using StackExchange.Redis;
 using WeihanLi.Common;
+using WeihanLi.Common.Helpers;
+using WeihanLi.Extensions;
 using WeihanLi.Redis.List;
 
 namespace WeihanLi.Redis
@@ -13,8 +17,6 @@ namespace WeihanLi.Redis
         internal static readonly RedisConfigurationOptions RedisConfiguration = new RedisConfigurationOptions();
 
         private static readonly ConcurrentDictionary<RedisDataType, CommonRedisClient> CommonRedisClients = new ConcurrentDictionary<RedisDataType, CommonRedisClient>();
-
-        private static readonly ConcurrentDictionary<Type, IRedisClient> SingletonRedisClients = new ConcurrentDictionary<Type, IRedisClient>();
 
         /// <summary>
         /// Version of WeihanLi.Redis
@@ -27,9 +29,28 @@ namespace WeihanLi.Redis
         {
             configAction(RedisConfiguration);
             serviceCollection.Configure(configAction);
+
+            var configurationOptions = new ConfigurationOptions
+            {
+                Password = RedisManager.RedisConfiguration.Password,
+                DefaultDatabase = RedisManager.RedisConfiguration.DefaultDatabase,
+                ConnectRetry = RedisManager.RedisConfiguration.ConnectRetry,
+                ConnectTimeout = RedisManager.RedisConfiguration.ConnectTimeout,
+                AllowAdmin = RedisManager.RedisConfiguration.AllowAdmin,
+                Ssl = RedisManager.RedisConfiguration.Ssl,
+                Proxy = RedisManager.RedisConfiguration.Proxy,
+                AbortOnConnectFail = RedisManager.RedisConfiguration.AbortOnConnectFail,
+                SyncTimeout = RedisConfiguration.SyncTimeout
+            };
+            configurationOptions.EndPoints.AddRange(RedisConfiguration.RedisServers.Select(s => ConvertHelper.ToEndPoint(s.Host, s.Port)).ToArray());
+
+            serviceCollection.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(configurationOptions));
+
             serviceCollection.TryAddSingleton<ICacheClient, CacheClient>();
             serviceCollection.TryAddSingleton<IHashClient, HashClient>();
             serviceCollection.TryAddSingleton<IPubSubClient, PubSubClient>();
+            serviceCollection.AddSingleton<IDataSerializer, JsonDataSerializer>();
+            serviceCollection.AddSingleton<ICompressSerializer, CompressGZipSerilizer>();
 
             serviceCollection.AddLogging();
 
@@ -52,8 +73,7 @@ namespace WeihanLi.Redis
 
         #region Cache
 
-        public static ICacheClient CacheClient =>
-            SingletonRedisClients.GetOrAdd(typeof(ICacheClient), t => new CacheClient(DependencyResolver.Current.ResolveService<ILogger<CacheClient>>())) as ICacheClient;
+        public static ICacheClient CacheClient => DependencyResolver.Current.GetRequiredService<ICacheClient>();
 
         #endregion Cache
 
@@ -102,7 +122,8 @@ namespace WeihanLi.Redis
 
         #region Hash
 
-        public static IHashClient HashClient => SingletonRedisClients.GetOrAdd(typeof(IHashClient), (t) => new HashClient(DependencyResolver.Current.ResolveService<ILogger<HashClient>>())) as IHashClient;
+        public static IHashClient HashClient
+            => DependencyResolver.Current.GetRequiredService<IHashClient>();
 
         #endregion Hash
 
@@ -190,7 +211,8 @@ namespace WeihanLi.Redis
 
         #region PubSub
 
-        public static IPubSubClient PubSubClient => SingletonRedisClients.GetOrAdd(typeof(IPubSubClient), t => new PubSubClient(DependencyResolver.Current.ResolveService<ILogger<PubSubClient>>())) as IPubSubClient;
+        public static IPubSubClient PubSubClient
+            => DependencyResolver.Current.GetRequiredService<IPubSubClient>();
 
         #endregion PubSub
     }

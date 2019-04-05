@@ -4,11 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- master
-- preview
-
-# no PR builds
-pr: none
+- '*'
 
 pool:
   vmImage: 'vs2017-win2016'
@@ -17,20 +13,11 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- script: dotnet --info
+  displayName: 'dotnet info'
+
 - task: PowerShell@2
   displayName: 'Powershell Script'
   inputs:
     targetType: filePath
-    filePath: ./build/applyVersionSuffix.ps1
-
-- script: dotnet --info
-  displayName: 'dotnet info'
-
-- script: dotnet build -c $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
-
-- script: dotnet pack -c $(buildConfiguration) src/WeihanLi.Redis/WeihanLi.Redis.csproj -o $(Build.ArtifactStagingDirectory)
-  displayName: 'dotnet pack $(buildConfiguration)' 
-
-- script: dotnet nuget push $(Build.ArtifactStagingDirectory)\*.nupkg -k $(nugetApiKey) -s $(nugetSourceUrl)
-  displayName: 'dotnet nuget push'
+    filePath: ./build.ps1

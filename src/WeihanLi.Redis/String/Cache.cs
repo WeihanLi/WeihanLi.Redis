@@ -62,9 +62,9 @@ namespace WeihanLi.Redis
 
         #region GetOrSet
 
-        T GetOrSet<T>(string key, Func<T> func, TimeSpan expiresIn, CommandFlags flags = CommandFlags.None);
+        T GetOrSet<T>(string key, Func<T> func, TimeSpan? expiresIn = null, CommandFlags flags = CommandFlags.None);
 
-        Task<T> GetOrSetAsync<T>(string key, Func<Task<T>> func, TimeSpan expiresIn, CommandFlags flags = CommandFlags.None);
+        Task<T> GetOrSetAsync<T>(string key, Func<Task<T>> func, TimeSpan? expiresIn = null, CommandFlags flags = CommandFlags.None);
 
         #endregion GetOrSet
 
@@ -101,17 +101,17 @@ namespace WeihanLi.Redis
 
         #region Get
 
-        public T Get<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(() => Wrapper.Database.StringGet(Wrapper.GetRealKey(key), flags));
+        public T Get<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(() => Wrapper.Database.Value.StringGet(Wrapper.GetRealKey(key), flags));
 
-        public string Get(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<string>(() => Wrapper.Database.StringGet(Wrapper.GetRealKey(key), flags));
+        public string Get(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<string>(() => Wrapper.Database.Value.StringGet(Wrapper.GetRealKey(key), flags));
 
-        public Task<T> GetAsync<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<T>(() => Wrapper.Database.StringGetAsync(Wrapper.GetRealKey(key), flags));
+        public Task<T> GetAsync<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<T>(() => Wrapper.Database.Value.StringGetAsync(Wrapper.GetRealKey(key), flags));
 
-        public Task<string> GetAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<string>(() => Wrapper.Database.StringGetAsync(Wrapper.GetRealKey(key), flags));
+        public Task<string> GetAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<string>(() => Wrapper.Database.Value.StringGetAsync(Wrapper.GetRealKey(key), flags));
 
         #endregion Get
 
-        public T GetOrSet<T>(string key, Func<T> func, TimeSpan expiresIn, CommandFlags flags = CommandFlags.None)
+        public T GetOrSet<T>(string key, Func<T> func, TimeSpan? expiresIn = null, CommandFlags flags = CommandFlags.None)
         {
             if (!Exists(key, flags))
             {
@@ -120,7 +120,7 @@ namespace WeihanLi.Redis
             return Get<T>(key, flags);
         }
 
-        public async Task<T> GetOrSetAsync<T>(string key, Func<Task<T>> func, TimeSpan expiresIn, CommandFlags flags = CommandFlags.None)
+        public async Task<T> GetOrSetAsync<T>(string key, Func<Task<T>> func, TimeSpan? expiresIn = null, CommandFlags flags = CommandFlags.None)
         {
             if (!await ExistsAsync(key, flags))
             {
@@ -131,7 +131,7 @@ namespace WeihanLi.Redis
 
         public bool Remove(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyDelete(key, flags);
 
-        public Task<bool> RemoveAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDeleteAsync(key, flags);
+        public Task<bool> RemoveAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.KeyDeleteAsync(key, flags);
 
         public bool Set<T>(string key, T value) => Set(key, value, null);
 
@@ -149,7 +149,10 @@ namespace WeihanLi.Redis
             {
                 if (locker.TryLock())
                 {
-                    return Wrapper.Database.StringSet(realKey, Wrapper.Wrap(func()), expiresIn?.Add(GetRandomCacheExpiry()), when,
+                    return Wrapper.Database.Value.StringSet(realKey,
+                        Wrapper.Wrap(func()),
+                        (expiresIn ?? (RedisManager.RedisConfiguration.AllowNoExpiry ? null : (TimeSpan?)RedisManager.RedisConfiguration.MaxCacheExpiry))?.Add(GetRandomCacheExpiry()),
+                        when,
                         commandFlags);
                 }
                 Logger.LogInformation($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");
@@ -173,7 +176,10 @@ namespace WeihanLi.Redis
             {
                 if (await locker.TryLockAsync())
                 {
-                    return await Wrapper.Database.StringSetAsync(realKey, Wrapper.Wrap(func()), expiresIn?.Add(GetRandomCacheExpiry()), when,
+                    return await Wrapper.Database.Value.StringSetAsync(realKey,
+                        Wrapper.Wrap(func()),
+                        (expiresIn ?? (RedisManager.RedisConfiguration.AllowNoExpiry ? null : (TimeSpan?)RedisManager.RedisConfiguration.MaxCacheExpiry))?.Add(GetRandomCacheExpiry()),
+                        when,
                         commandFlags);
                 }
                 Logger.LogInformation($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");
@@ -188,7 +194,7 @@ namespace WeihanLi.Redis
             {
                 if (await locker.TryLockAsync())
                 {
-                    return await Wrapper.Database.StringSetAsync(realKey, Wrapper.Wrap(await func()), expiresIn?.Add(GetRandomCacheExpiry()), when,
+                    return await Wrapper.Database.Value.StringSetAsync(realKey, Wrapper.Wrap(await func()), expiresIn?.Add(GetRandomCacheExpiry()), when,
                         commandFlags);
                 }
                 Logger.LogInformation($"get lock failed,update cache fail,cache key:{realKey},current time:{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffffff}");

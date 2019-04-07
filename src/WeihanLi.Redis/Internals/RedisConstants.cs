@@ -1,32 +1,32 @@
 ﻿namespace WeihanLi.Redis.Internals
 {
-    public static class RedisConstants
+    internal static class RedisConstants
     {
         #region KeyPrefix
 
-        internal const string CachePrefix = "String:Cache";
+        public const string CachePrefix = "String:Cache";
 
-        internal const string CounterPrefix = "String:Counter";
+        public const string CounterPrefix = "String:Counter";
 
-        internal const string FirewallPrefix = "String:Firewall";
+        public const string FirewallPrefix = "String:Firewall";
 
-        internal const string RedLockPrefix = "String:RedLock";
+        public const string RedLockPrefix = "String:RedLock";
 
-        internal const string HashPrefix = "Hash:Cache";
+        public const string HashPrefix = "Hash:Cache";
 
-        internal const string DictionaryPrefix = "Hash:Dictionary";
+        public const string DictionaryPrefix = "Hash:Dictionary";
 
-        internal const string ListPrefix = "List:Cache";
+        public const string ListPrefix = "List:Cache";
 
-        internal const string QueuePrefix = "List:Queue";
+        public const string QueuePrefix = "List:Queue";
 
-        internal const string StackPrefix = "List:Stack";
+        public const string StackPrefix = "List:Stack";
 
-        internal const string SetPrefix = "Set:Cache";
+        public const string SetPrefix = "Set:Cache";
 
-        internal const string SortedSetPrefix = "SortedSet:Cache";
+        public const string SortedSetPrefix = "SortedSet:Cache";
 
-        internal const string RankPrefix = "SortedSet:Rank";
+        public const string RankPrefix = "SortedSet:Rank";
 
         #endregion KeyPrefix
     }

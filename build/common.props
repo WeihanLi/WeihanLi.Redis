@@ -13,12 +13,11 @@
     <Description>RedisExtensions for StackExchange.Redis</Description>
     <Summary>RedisExtensions for StackExchange.Redis</Summary>
     <PackageReleaseNotes>
-      Add multi entry for IHashClient
+      Add MaxCacheExpiry, you can set AllowNoExpiry false to avoid never expired keys
     </PackageReleaseNotes>
     <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
     <Copyright>MIT</Copyright>
     <PackageProjectUrl>https://github.com/WeihanLi/WeihanLi.Redis</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">True</GeneratePackageOnBuild>
   </PropertyGroup>
 </Project>

@@ -83,7 +83,7 @@ namespace WeihanLi.Redis
         public bool Release()
         {
             _released = true;
-            return (int)Wrapper.Database.ScriptEvaluate(UnlockScript,
+            return (int)Wrapper.Database.Value.ScriptEvaluate(UnlockScript,
                   new RedisKey[] { _realKey },
                   new[] { Wrapper.Wrap(_lockId) }) == 1;
         }
@@ -91,7 +91,7 @@ namespace WeihanLi.Redis
         public async Task<bool> ReleaseAsync()
         {
             _released = true;
-            return (int)await Wrapper.Database.ScriptEvaluateAsync(UnlockScript,
+            return (int)await Wrapper.Database.Value.ScriptEvaluateAsync(UnlockScript,
                   new RedisKey[] { _realKey },
                   new[] { Wrapper.Wrap(_lockId) }) == 1;
         }
@@ -100,7 +100,7 @@ namespace WeihanLi.Redis
 
         public bool TryLock(TimeSpan? expiry)
         {
-            var result = Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry), When.NotExists);
+            var result = Wrapper.Database.Value.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry), When.NotExists);
 
             if (!result && _maxRetryCount > 0)
             {
@@ -108,7 +108,7 @@ namespace WeihanLi.Redis
                     () =>
                     {
                         Thread.Sleep(RedisManager.RedisConfiguration.LockRetryDelay);
-                        return Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId),
+                        return Wrapper.Database.Value.StringSet(_realKey, Wrapper.Wrap(_lockId),
                             expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
                             When.NotExists);
                     }, r => r, _maxRetryCount);
@@ -121,7 +121,7 @@ namespace WeihanLi.Redis
 
         public async Task<bool> TryLockAsync(TimeSpan? expiry)
         {
-            var result = await Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId), expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry), When.NotExists);
+            var result = await Wrapper.Database.Value.StringSetAsync(_realKey, Wrapper.Wrap(_lockId), expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry), When.NotExists);
 
             if (!result && _maxRetryCount > 0)
             {
@@ -129,7 +129,7 @@ namespace WeihanLi.Redis
                     async () =>
                     {
                         await Task.Delay(RedisManager.RedisConfiguration.LockRetryDelay);
-                        return await Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId),
+                        return await Wrapper.Database.Value.StringSetAsync(_realKey, Wrapper.Wrap(_lockId),
                             expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
                             When.NotExists);
                     }, r => r, _maxRetryCount);

@@ -10,11 +10,16 @@ namespace WeihanLi.Redis.UnitTest
             IServiceCollection serviceCollection = new ServiceCollection();
             serviceCollection.AddRedisConfig(config =>
             {
+                //
+                //config.RedisServers = new[]
+                //{
+                //    new RedisServerConfiguration("127.0.0.1", 6379),
+                //};
                 config.CachePrefix = "WeihanLi.Redis.UnitTest";
                 config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
                 config.EnableCompress = false;
             });
-            DependencyResolver.SetDependencyResolver(serviceCollection.BuildServiceProvider());
+            DependencyResolver.SetDependencyResolver(serviceCollection);
         }
     }
 }

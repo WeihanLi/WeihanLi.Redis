@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using StackExchange.Redis;
@@ -128,11 +127,6 @@ namespace WeihanLi.Redis
 
     internal class RedisWrapper : IRedisWrapper
     {
-        /// <summary>
-        /// RedisValueTypeConverter
-        /// </summary>
-        private static readonly TypeConverter RedisValueTypeConverter = TypeDescriptor.GetConverter(typeof(RedisValue));
-
         public IDataSerializer DataSerializer { get; }
 
         public Lazy<IDatabase> Database { get; set; }
@@ -156,12 +150,7 @@ namespace WeihanLi.Redis
                 return RedisValue.Null;
             }
             var type = typeof(T);
-            if (RedisValueTypeConverter.CanConvertFrom(type))
-            {
-                // ReSharper disable once PossibleNullReferenceException
-                return (RedisValue)RedisValueTypeConverter.ConvertFrom(t);
-            }
-            else if (type.IsBasicType())
+            if (type.IsBasicType())
             {
                 return t.ToOrDefault<string>();
             }
@@ -184,11 +173,7 @@ namespace WeihanLi.Redis
                 return default(T);
             }
             var type = typeof(T);
-            if (RedisValueTypeConverter.CanConvertTo(type))
-            {
-                return (T)RedisValueTypeConverter.ConvertTo(redisValue, type);
-            }
-            else if (type.IsBasicType())
+            if (type.IsBasicType())
             {
                 return ((string)redisValue).StringToType<T>();
             }

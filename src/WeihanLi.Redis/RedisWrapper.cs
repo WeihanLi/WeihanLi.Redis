@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using StackExchange.Redis;
@@ -127,6 +128,11 @@ namespace WeihanLi.Redis
 
     internal class RedisWrapper : IRedisWrapper
     {
+        /// <summary>
+        /// RedisValueTypeConverter
+        /// </summary>
+        private static readonly TypeConverter RedisValueTypeConverter = TypeDescriptor.GetConverter(typeof(RedisValue));
+
         public IDataSerializer DataSerializer { get; }
 
         public Lazy<IDatabase> Database { get; set; }
@@ -149,9 +155,15 @@ namespace WeihanLi.Redis
             {
                 return RedisValue.Null;
             }
-            if (t.IsBasicType())
+            var type = typeof(T);
+            if (RedisValueTypeConverter.CanConvertFrom(type))
             {
-                return t.ToJsonOrString();
+                // ReSharper disable once PossibleNullReferenceException
+                return (RedisValue)RedisValueTypeConverter.ConvertFrom(t);
+            }
+            else if (type.IsBasicType())
+            {
+                return t.ToOrDefault<string>();
             }
             else
             {
@@ -167,18 +179,23 @@ namespace WeihanLi.Redis
 
         public T Unwrap<T>(RedisValue redisValue)
         {
-            if (!redisValue.IsNull)
+            if (redisValue.IsNull)
             {
-                if (typeof(T).IsBasicType())
-                {
-                    return redisValue.ToString().StringToType<T>();
-                }
-                else
-                {
-                    return DataSerializer.Deserializer<T>(redisValue);
-                }
+                return default(T);
             }
-            return default(T);
+            var type = typeof(T);
+            if (RedisValueTypeConverter.CanConvertTo(type))
+            {
+                return (T)RedisValueTypeConverter.ConvertTo(redisValue, type);
+            }
+            else if (type.IsBasicType())
+            {
+                return ((string)redisValue).StringToType<T>();
+            }
+            else
+            {
+                return DataSerializer.Deserializer<T>(redisValue);
+            }
         }
 
         public T Unwrap<T>(Func<RedisValue> func) => Unwrap<T>(func());

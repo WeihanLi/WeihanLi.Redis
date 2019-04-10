@@ -145,8 +145,8 @@ namespace WeihanLi.Redis
         {
             KeyPrefix = $"{RedisManager.RedisConfiguration.CachePrefix}{RedisManager.RedisConfiguration.KeySeparator}{keyPrefix}";
             DataSerializer = RedisManager.RedisConfiguration.EnableCompress ?
-                (IDataSerializer)DependencyResolver.Current.ResolveService<ICompressSerializer>() :
-                DependencyResolver.Current.ResolveService<IDataSerializer>();
+                DependencyResolver.Current.ResolveService<CompressDataSerilizer>()
+                : DependencyResolver.Current.ResolveService<IDataSerializer>();
         }
 
         public RedisValue Wrap<T>(T t)

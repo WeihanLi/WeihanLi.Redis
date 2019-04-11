@@ -25,32 +25,40 @@ namespace WeihanLi.Redis
 
         #region RedisConfig
 
+        public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection) => AddRedisConfig(serviceCollection, null);
+
+        /// <summary>
+        /// AddRedisServices
+        /// </summary>
+        /// <param name="serviceCollection">services</param>
+        /// <param name="configAction">config RedisConfigurationOptions</param>
+        /// <returns></returns>
         public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, Action<RedisConfigurationOptions> configAction)
         {
-            configAction(RedisConfiguration);
-            serviceCollection.Configure(configAction);
+            configAction?.Invoke(RedisConfiguration);
 
             var configurationOptions = new ConfigurationOptions
             {
-                Password = RedisManager.RedisConfiguration.Password,
-                DefaultDatabase = RedisManager.RedisConfiguration.DefaultDatabase,
-                ConnectRetry = RedisManager.RedisConfiguration.ConnectRetry,
-                ConnectTimeout = RedisManager.RedisConfiguration.ConnectTimeout,
-                AllowAdmin = RedisManager.RedisConfiguration.AllowAdmin,
-                Ssl = RedisManager.RedisConfiguration.Ssl,
-                Proxy = RedisManager.RedisConfiguration.Proxy,
-                AbortOnConnectFail = RedisManager.RedisConfiguration.AbortOnConnectFail,
+                Password = RedisConfiguration.Password,
+                DefaultDatabase = RedisConfiguration.DefaultDatabase,
+                ConnectRetry = RedisConfiguration.ConnectRetry,
+                ConnectTimeout = RedisConfiguration.ConnectTimeout,
+                AllowAdmin = RedisConfiguration.AllowAdmin,
+                Ssl = RedisConfiguration.Ssl,
+                Proxy = RedisConfiguration.Proxy,
+                AbortOnConnectFail = RedisConfiguration.AbortOnConnectFail,
                 SyncTimeout = RedisConfiguration.SyncTimeout
             };
             configurationOptions.EndPoints.AddRange(RedisConfiguration.RedisServers.Select(s => ConvertHelper.ToEndPoint(s.Host, s.Port)).ToArray());
-
             serviceCollection.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(configurationOptions));
 
             serviceCollection.TryAddSingleton<ICacheClient, CacheClient>();
             serviceCollection.TryAddSingleton<IHashClient, HashClient>();
             serviceCollection.TryAddSingleton<IPubSubClient, PubSubClient>();
+
             serviceCollection.AddSingleton<IDataSerializer, JsonDataSerializer>();
-            serviceCollection.AddSingleton<ICompressSerializer, CompressGZipSerilizer>();
+            serviceCollection.AddSingleton<IDataCompressor, GZipDataCompressor>();
+            serviceCollection.AddSingleton<CompressDataSerilizer>();
 
             serviceCollection.AddLogging();
 

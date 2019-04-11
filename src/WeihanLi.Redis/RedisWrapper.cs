@@ -139,8 +139,8 @@ namespace WeihanLi.Redis
         {
             KeyPrefix = $"{RedisManager.RedisConfiguration.CachePrefix}{RedisManager.RedisConfiguration.KeySeparator}{keyPrefix}";
             DataSerializer = RedisManager.RedisConfiguration.EnableCompress ?
-                (IDataSerializer)DependencyResolver.Current.ResolveService<ICompressSerializer>() :
-                DependencyResolver.Current.ResolveService<IDataSerializer>();
+                DependencyResolver.Current.ResolveService<CompressDataSerilizer>()
+                : DependencyResolver.Current.ResolveService<IDataSerializer>();
         }
 
         public RedisValue Wrap<T>(T t)
@@ -149,9 +149,10 @@ namespace WeihanLi.Redis
             {
                 return RedisValue.Null;
             }
-            if (t.IsBasicType())
+            var type = typeof(T);
+            if (type.IsBasicType())
             {
-                return t.ToJsonOrString();
+                return t.ToOrDefault<string>();
             }
             else
             {
@@ -167,18 +168,19 @@ namespace WeihanLi.Redis
 
         public T Unwrap<T>(RedisValue redisValue)
         {
-            if (!redisValue.IsNull)
+            if (redisValue.IsNull)
             {
-                if (typeof(T).IsBasicType())
-                {
-                    return redisValue.ToString().StringToType<T>();
-                }
-                else
-                {
-                    return DataSerializer.Deserializer<T>(redisValue);
-                }
+                return default(T);
             }
-            return default(T);
+            var type = typeof(T);
+            if (type.IsBasicType())
+            {
+                return ((string)redisValue).StringToType<T>();
+            }
+            else
+            {
+                return DataSerializer.Deserializer<T>(redisValue);
+            }
         }
 
         public T Unwrap<T>(Func<RedisValue> func) => Unwrap<T>(func());

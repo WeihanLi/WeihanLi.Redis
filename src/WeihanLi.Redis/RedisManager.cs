@@ -25,10 +25,17 @@ namespace WeihanLi.Redis
 
         #region RedisConfig
 
+        public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection) => AddRedisConfig(serviceCollection, null);
+
+        /// <summary>
+        /// AddRedisServices
+        /// </summary>
+        /// <param name="serviceCollection">services</param>
+        /// <param name="configAction">config RedisConfigurationOptions</param>
+        /// <returns></returns>
         public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, Action<RedisConfigurationOptions> configAction)
         {
-            configAction(RedisConfiguration);
-            serviceCollection.Configure(configAction);
+            configAction?.Invoke(RedisConfiguration);
 
             var configurationOptions = new ConfigurationOptions
             {

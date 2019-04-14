@@ -10,7 +10,7 @@ RedisExtensions for StackExchange.Redis, much more easier for generic opeartions
 
 StackExchange.Redis 扩展，更简单的泛型操作，并提供一些的适用于业务场景中的扩展
 
-基于 Redis 的五种数据类型做了一些扩展：
+基于 Redis 的五种主要的数据类型做了一些扩展：
 
 1. String
 
@@ -178,6 +178,21 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
     Assert.Equal("xiaoming", rank[0]);
     var common = RedisManager.GetCommonRedisClient(RedisDataType.Rank);
     Assert.True(common.KeyDelete("testRank"));
+    ```
+
+1. 依赖注入
+
+    ``` csharp
+    // 在 asp.net core 中可以直接从构造器注入，这里使用的一个 ServiceLocator 模式获取注入的服务
+    var cacheClient = DependencyResolver.Current.ResolveService<ICacheClient>();
+    Assert.NotNull(cacheClient);
+    var key = Guid.NewGuid().ToString("N");
+    Assert.Equal("abcaaa", cacheClient.GetOrSet(key, () => "abcaaa", TimeSpan.FromMinutes(10)));
+    cacheClient.Remove(key);
+    var hashClient = DependencyResolver.Current.ResolveService<IHashClient>();
+    Assert.NotNull(hashClient);
+    var pubsubClient = DependencyResolver.Current.ResolveService<IPubSubClient>();
+    Assert.NotNull(pubsubClient);
     ```
 
 1. 更多用法等你来发现...

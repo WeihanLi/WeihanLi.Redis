@@ -139,7 +139,7 @@ namespace WeihanLi.Redis
         {
             KeyPrefix = $"{RedisManager.RedisConfiguration.CachePrefix}{RedisManager.RedisConfiguration.KeySeparator}{keyPrefix}";
             DataSerializer = RedisManager.RedisConfiguration.EnableCompress ?
-                DependencyResolver.Current.ResolveService<CompressDataSerilizer>()
+                DependencyResolver.Current.ResolveService<CompressDataSerializer>()
                 : DependencyResolver.Current.ResolveService<IDataSerializer>();
         }
 

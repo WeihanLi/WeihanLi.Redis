@@ -6,6 +6,26 @@ namespace WeihanLi.Redis.UnitTest
     public class HashTest : BaseUnitTest
     {
         [Fact]
+        public void HashCounterTest()
+        {
+            var key = "hashTest";
+            var fieldName = "testField1";
+            var hashClient = RedisManager.GetHashCounterClient(key);
+            var commonClient = RedisManager.GetCommonRedisClient(RedisDataType.HashCounter);
+
+            var result = hashClient.Increase(fieldName);
+            Assert.True(1 == result);
+            result = hashClient.Increase(fieldName, 12);
+            Assert.True(13 == result);
+            result = hashClient.Decrease(fieldName, 2);
+            Assert.True(11 == result);
+            result = hashClient.Decrease(fieldName);
+            Assert.True(10 == result);
+            Assert.True(commonClient.KeyDelete(key));
+            Assert.False(commonClient.KeyExists(key));
+        }
+
+        [Fact]
         public void HashCacheTest()
         {
             var key = "hashTest";

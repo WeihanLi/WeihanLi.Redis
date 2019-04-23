@@ -44,6 +44,9 @@ namespace WeihanLi.Redis.Internals
                 case RedisDataType.Rank:
                     return RedisConstants.RankPrefix;
 
+                case RedisDataType.HashCounter:
+                    return RedisConstants.HashCounterPrefix;
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(redisDataType), redisDataType, null);
             }

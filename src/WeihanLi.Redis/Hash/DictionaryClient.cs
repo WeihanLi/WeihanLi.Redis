@@ -21,6 +21,7 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <param name="keyName">keyName</param>
         /// <param name="expiry">过期时间</param>
+        /// <param name="logger"></param>
         public DictionaryClient(string keyName, TimeSpan? expiry, ILogger<DictionaryClient<TKey, TValue>> logger) : this(keyName, expiry, true, logger)
         {
         }
@@ -30,6 +31,7 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <param name="keyName">keyName</param>
         /// <param name="expiry">过期时间</param>
+        /// <param name="logger"></param>
         public DictionaryClient(string keyName, DateTime? expiry, ILogger<DictionaryClient<TKey, TValue>> logger) : base(logger, new RedisWrapper(RedisConstants.DictionaryPrefix))
         {
             _realKey = Wrapper.GetRealKey(keyName);

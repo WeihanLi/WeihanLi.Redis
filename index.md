@@ -196,7 +196,3 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
     ```
 
 1. 更多用法等你来发现...
-
-## Conatct
-
-Contact me: <weihanli@outlook.com>

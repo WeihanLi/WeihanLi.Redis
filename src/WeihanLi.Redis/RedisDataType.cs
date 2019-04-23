@@ -16,6 +16,7 @@
         Stack = 8,
         Set = 9,
         SortedSet = 10,
-        Rank = 11
+        Rank = 11,
+        HashCounter = 12,
     }
 }

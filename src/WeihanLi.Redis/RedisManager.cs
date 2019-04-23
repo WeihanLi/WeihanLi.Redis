@@ -8,6 +8,7 @@ using StackExchange.Redis;
 using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
+using WeihanLi.Redis.Internals;
 using WeihanLi.Redis.List;
 
 namespace WeihanLi.Redis
@@ -58,7 +59,7 @@ namespace WeihanLi.Redis
 
             serviceCollection.AddSingleton<IDataSerializer, JsonDataSerializer>();
             serviceCollection.AddSingleton<IDataCompressor, GZipDataCompressor>();
-            serviceCollection.AddSingleton<CompressDataSerilizer>();
+            serviceCollection.AddSingleton<CompressDataSerializer>();
 
             serviceCollection.AddLogging();
 
@@ -134,6 +135,20 @@ namespace WeihanLi.Redis
             => DependencyResolver.Current.GetRequiredService<IHashClient>();
 
         #endregion Hash
+
+        #region HashCounter
+
+        public static IHashCounterClient GetHashCounterClient(string hashCounterName)
+            => GetHashCounterClient(hashCounterName, 0);
+
+        public static IHashCounterClient GetHashCounterClient(string hashCounterName, long @base)
+            => new HashCounterClient(
+                DependencyResolver.Current.ResolveService<ILogger<HashCounterClient>>(),
+                new RedisWrapper(RedisConstants.HashCounterPrefix),
+                hashCounterName,
+                @base);
+
+        #endregion HashCounter
 
         #region Dictionary
 

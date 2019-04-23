@@ -3,9 +3,6 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# Cutom files
-localBuild/
-
 # User-specific files
 *.suo
 *.user
@@ -289,3 +286,9 @@ tools/**
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# docfx
+_site
+/**/DROP/
+/**/TEMP/
+docs/api/*

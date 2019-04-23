@@ -13,7 +13,7 @@
     <Description>RedisExtensions for StackExchange.Redis</Description>
     <Summary>RedisExtensions for StackExchange.Redis</Summary>
     <PackageReleaseNotes>
-      Refact code for dependency injection
+      Add HashCounterClient
     </PackageReleaseNotes>
     <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
     <Copyright>MIT</Copyright>

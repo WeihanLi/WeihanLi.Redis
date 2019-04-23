@@ -145,7 +145,7 @@ namespace WeihanLi.Redis
             => new HashCounterClient(
                 DependencyResolver.Current.ResolveService<ILogger<HashCounterClient>>(),
                 new RedisWrapper(RedisConstants.HashCounterPrefix),
-                key: hashCounterName,
+                hashCounterName,
                 @base);
 
         #endregion HashCounter

@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>WeihanLi.Redis </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="WeihanLi.Redis ">
+    <meta name="generator" content="docfx 2.40.10.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="weihanliredisweihanliredis">WeihanLi.Redis<a href="https://www.nuget.org/packages/WeihanLi.Redis/"><img src="https://img.shields.io/nuget/v/WeihanLi.Redis.svg" alt="WeihanLi.Redis"></a></h1>
+
+<h2 id="build">Build</h2>
+<p><a href="https://travis-ci.org/WeihanLi/WeihanLi.Redis"><img src="https://travis-ci.org/WeihanLi/WeihanLi.Redis.svg?branch=dev" alt="Build Status"></a></p>
+<h2 id="intro">Intro</h2>
+<p>RedisExtensions for StackExchange.Redis, much more easier for generic opeartions,and supply some extensions for your business logics.</p>
+<p>StackExchange.Redis 扩展，更简单的泛型操作，并提供一些的适用于业务场景中的扩展</p>
+<p>基于 Redis 的五种主要的数据类型做了一些扩展：</p>
+<ol>
+<li><p>String</p>
+<ul>
+<li>Cache</li>
+<li>Counter</li>
+<li>Firewall</li>
+<li>RedLock</li>
+</ul>
+</li>
+<li><p>Hash</p>
+<ul>
+<li>Hash</li>
+<li>Dictonary</li>
+</ul>
+</li>
+<li><p>List</p>
+<ul>
+<li>List</li>
+<li>Queue</li>
+<li>Stack</li>
+</ul>
+</li>
+<li><p>Set</p>
+<ul>
+<li>Set</li>
+</ul>
+</li>
+<li><p>SortedSet</p>
+<ul>
+<li>SortedSet</li>
+<li>Rank</li>
+</ul>
+</li>
+</ol>
+<h2 id="getstarted">GetStarted</h2>
+<h3 id="installation-安装">Installation 安装</h3>
+<p>Install from <a href="https://www.nuget.org/packages/WeihanLi.Redis/">Nuget</a></p>
+<p>通过 Nuget 安装 <code>WeihanLi.Redis</code></p>
+<h3 id="configuration-配置">Configuration 配置</h3>
+<p>对于 V1.0.6 及以下版本支持 .netframework4.5 配置参考：</p>
+<ol>
+<li><p>日志配置，日志基于 log4net 的配置，可以参考单元测试中的 <code>log4net.config</code> 的配置，将 <code>log4net.config</code> 放在项目根目录下【推荐】
+如果不在项目根目录下或者文件名发生修改则需要自己手动调用 <code>LogHelper.LogInit(&quot;log4net.config&quot;);</code></p>
+</li>
+<li><p>Redis 配置</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">RedisManager.AddRedisConfig(config =&gt;
+    {
+        config.CachePrefix = &quot;WeihanLi.Redis.UnitTest&quot;;
+        config.ChannelPrefix = &quot;WeihanLi.Redis.UnitTest&quot;;
+    });
+</code></pre>
+<p>.net core 应用，还可以这样配置</p>
+<pre><code class="lang-csharp">serviceCollection.AddRedisConfig(config =&gt;
+    {
+        config.CachePrefix = &quot;WeihanLi.Redis.UnitTest&quot;;
+        config.ChannelPrefix = &quot;WeihanLi.Redis.UnitTest&quot;;
+        config.EnableCompress = false;// disable compress
+    });
+</code></pre>
+<p>对于 1.1* 及以上版本不再支持 dotnet framework，配置方式如下：</p>
+<pre><code class="lang-csharp">// IServiceCollection serviceCollection = new ServiceCollection();
+
+serviceCollection.AddRedisConfig(config =&gt;
+    {
+        config.CachePrefix = &quot;WeihanLi.Redis.UnitTest&quot;;
+        config.ChannelPrefix = &quot;WeihanLi.Redis.UnitTest&quot;;
+        config.EnableCompress = false;// disable compress
+    });
+</code></pre>
+<h3 id="basic-usage-基本用法">Basic usage 基本用法</h3>
+<ol>
+<li><p>Cache 缓存</p>
+<p>缓存的基本操作主要是基于 <code>RedisManager.CacheClient</code></p>
+<p>缓存的基本操作定义在 <code>ICacheClient</code> 中，基本操作如下：</p>
+<pre><code class="lang-csharp">var key = &quot;test111&quot;;
+var value = &quot;Hello WeihanLi.Redis&quot;;
+Assert.True(RedisManager.CacheClient.Set(key, value));
+Assert.True(RedisManager.CacheClient.Exists(key));
+Assert.Equal(value, RedisManager.CacheClient.Get(key));
+Assert.True(RedisManager.CacheClient.Remove(key));
+Assert.False(RedisManager.CacheClient.Exists(key));
+RedisManager.CacheClient.GetOrSet(key, () =&gt; value, TimeSpan.FromSeconds(10));
+</code></pre>
+</li>
+<li><p>Counter 计数器</p>
+<pre><code class="lang-csharp">var counterName = &quot;counterTest&quot;;
+var counterClient = RedisManager.GetCounterClient(counterName, TimeSpan.FromSeconds(60));
+Assert.Equal(0, counterClient.Base);
+Assert.Equal(0, counterClient.Count());
+counterClient.Increase();
+Assert.Equal(1, counterClient.Count());
+counterClient.Increase(5);
+Assert.Equal(6, counterClient.Count());
+counterClient.Decrease(3);
+Assert.Equal(3, counterClient.Count());
+Assert.True(counterClient.Reset());
+Assert.Equal(0, counterClient.Count());
+</code></pre>
+</li>
+<li><p>Firewall 防火墙</p>
+<pre><code class="lang-csharp">var firewallName = &quot;firewallTest&quot;;
+var firewallClient = RedisManager.GetFirewallClient(firewallName, TimeSpan.FromSeconds(3));
+Assert.True(firewallClient.Hit());
+Assert.False(firewallClient.Hit());
+await Task.Delay(TimeSpan.FromSeconds(3));
+Assert.True(firewallClient.Hit());
+</code></pre>
+</li>
+<li><p>RedLock Redis分布式锁</p>
+<pre><code class="lang-csharp">using (var client = RedisManager.GetRedLockClient(&quot;redLockTest&quot;))
+{
+    Assert.True(client.TryLock(TimeSpan.FromSeconds(10)));
+    using (var client1 = RedisManager.GetRedLockClient(&quot;redLockTest&quot;))
+    {
+        Assert.False(client.TryLock(TimeSpan.FromSeconds(10)));
+        Assert.False(client1.Release());
+    }
+    Assert.True(client.Release());
+}
+
+var key = Guid.NewGuid().ToString(&quot;N&quot;);
+using (var client = RedisManager.GetRedLockClient(key))
+{
+    Assert.True(client.TryLock(TimeSpan.FromSeconds(20)));
+}
+
+using (var client = RedisManager.GetRedLockClient(key))
+{
+    Assert.True(client.TryLock(TimeSpan.FromMinutes(3)));
+    Assert.True(client.Release());
+}
+</code></pre>
+</li>
+<li><p>Rank 排行榜</p>
+<pre><code class="lang-csharp">var rankClient = RedisManager.GetRankClient&lt;string&gt;(&quot;testRank&quot;);
+Assert.Equal(0, rankClient.Length());
+rankClient.Add(&quot;xiaoming&quot;, 100);
+rankClient.Add(&quot;xiaohong&quot;, 95);
+rankClient.Add(&quot;xiaowang&quot;, 96);
+Assert.Equal(3, rankClient.Length());
+Assert.Equal(100, rankClient.Score(&quot;xiaoming&quot;));
+var rank = rankClient.RangeByScore();
+Assert.Equal(&quot;xiaohong&quot;, rank[0]);
+rank = rankClient.RangeByScore(order: Order.Descending);
+Assert.Equal(&quot;xiaoming&quot;, rank[0]);
+var common = RedisManager.GetCommonRedisClient(RedisDataType.Rank);
+Assert.True(common.KeyDelete(&quot;testRank&quot;));
+</code></pre>
+</li>
+<li><p>依赖注入</p>
+<pre><code class="lang-csharp">// 在 asp.net core 中可以直接从构造器注入，这里使用的一个 ServiceLocator 模式获取注入的服务
+var cacheClient = DependencyResolver.Current.ResolveService&lt;ICacheClient&gt;();
+Assert.NotNull(cacheClient);
+var key = Guid.NewGuid().ToString(&quot;N&quot;);
+Assert.Equal(&quot;abcaaa&quot;, cacheClient.GetOrSet(key, () =&gt; &quot;abcaaa&quot;, TimeSpan.FromMinutes(10)));
+cacheClient.Remove(key);
+var hashClient = DependencyResolver.Current.ResolveService&lt;IHashClient&gt;();
+Assert.NotNull(hashClient);
+var pubsubClient = DependencyResolver.Current.ResolveService&lt;IPubSubClient&gt;();
+Assert.NotNull(pubsubClient);
+</code></pre>
+</li>
+<li><p>更多用法等你来发现...</p>
+</li>
+</ol>
+<h2 id="conatct">Conatct</h2>
+<p>Contact me: <a href="mailto:weihanli@outlook.com">weihanli@outlook.com</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/README.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

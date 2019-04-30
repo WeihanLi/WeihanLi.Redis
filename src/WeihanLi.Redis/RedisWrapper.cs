@@ -152,7 +152,7 @@ namespace WeihanLi.Redis
             var type = typeof(T);
             if (type.IsBasicType())
             {
-                return t.ToOrDefault<string>();
+                return t.ToString();
             }
             else
             {
@@ -175,11 +175,11 @@ namespace WeihanLi.Redis
             var type = typeof(T);
             if (type.IsBasicType())
             {
-                return ((string)redisValue).StringToType<T>();
+                return ((string)redisValue).To<T>();
             }
             else
             {
-                return DataSerializer.Deserializer<T>(redisValue);
+                return DataSerializer.Deserialize<T>(redisValue);
             }
         }
 

@@ -6,7 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="WeihanLi.Common.Logging.Log4Net" Version="1.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\WeihanLi.Redis\WeihanLi.Redis.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="C:\Users\liweihan\.nuget\packages\weihanli.common.logging.log4net\1.0.17\contentFiles\any\netstandard2.0\log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

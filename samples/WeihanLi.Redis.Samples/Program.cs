@@ -19,9 +19,8 @@ namespace WeihanLi.Redis.Samples
                 options.EnableCompress = true;
                 options.RedisServers = new[]
                 {
-                    new RedisServerConfiguration("127.0.0.1"),
+                    //new RedisServerConfiguration("127.0.0.1"),
                     new RedisServerConfiguration("127.0.0.1", 16379),
-                    new RedisServerConfiguration("127.0.0.1", 26379),
                 };
             });
             // custom serializer

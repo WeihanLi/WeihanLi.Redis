@@ -1,5 +1,5 @@
 <Project>  
-  <Import Project="analyzer.props">
+  <Import Project="analyzer.props" />
   <Import Project="sign.props" />
   <Import Project="version.props" />
   <PropertyGroup>        
@@ -17,7 +17,7 @@
       Add HashCounterClient
     </PackageReleaseNotes>
     <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
-    <Copyright>MIT</Copyright>
+    <Copyright>WeihanLi</Copyright>
     <PackageProjectUrl>https://github.com/WeihanLi/WeihanLi.Redis</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>

@@ -46,34 +46,34 @@ namespace WeihanLi.Redis
 
         public bool Hit()
         {
-            if (Wrapper.Database.Value.KeyExists(_firewallName))
+            if (Wrapper.Database.KeyExists(_firewallName))
             {
-                if (Convert.ToInt64(Wrapper.Database.Value.StringGet(_firewallName)) >= Limit)
+                if (Convert.ToInt64(Wrapper.Database.StringGet(_firewallName)) >= Limit)
                 {
                     return false;
                 }
-                Wrapper.Database.Value.StringIncrement(_firewallName);
+                Wrapper.Database.StringIncrement(_firewallName);
             }
             else
             {
-                Wrapper.Database.Value.StringSet(_firewallName, 1, _expiresIn, StackExchange.Redis.When.NotExists);
+                Wrapper.Database.StringSet(_firewallName, 1, _expiresIn, StackExchange.Redis.When.NotExists);
             }
             return true;
         }
 
         public async Task<bool> HitAsync()
         {
-            if (await Wrapper.Database.Value.KeyExistsAsync(_firewallName))
+            if (await Wrapper.Database.KeyExistsAsync(_firewallName))
             {
-                if (Convert.ToInt64(await Wrapper.Database.Value.StringGetAsync(_firewallName)) >= Limit)
+                if (Convert.ToInt64(await Wrapper.Database.StringGetAsync(_firewallName)) >= Limit)
                 {
                     return false;
                 }
-                await Wrapper.Database.Value.StringIncrementAsync(_firewallName);
+                await Wrapper.Database.StringIncrementAsync(_firewallName);
             }
             else
             {
-                await Wrapper.Database.Value.StringSetAsync(_firewallName, 1, _expiresIn, StackExchange.Redis.When.NotExists);
+                await Wrapper.Database.StringSetAsync(_firewallName, 1, _expiresIn, StackExchange.Redis.When.NotExists);
             }
             return true;
         }

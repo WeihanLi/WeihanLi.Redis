@@ -59,28 +59,28 @@ namespace WeihanLi.Redis
         {
         }
 
-        public long Count() => Convert.ToInt64(Wrapper.Database.Value.StringGet(_keyName));
+        public long Count() => Convert.ToInt64(Wrapper.Database.StringGet(_keyName));
 
         public long Base { get; }
 
         public long Decrease() => Decrease(1);
 
-        public long Decrease(int step) => Wrapper.Database.Value.StringDecrement(_keyName, step);
+        public long Decrease(int step) => Wrapper.Database.StringDecrement(_keyName, step);
 
         public long Increase() => Increase(1);
 
-        public long Increase(int step) => Wrapper.Database.Value.StringIncrement(_keyName, step);
+        public long Increase(int step) => Wrapper.Database.StringIncrement(_keyName, step);
 
-        public bool Reset() => Wrapper.Database.Value.StringSet(_keyName, Base, _expiresIn);
+        public bool Reset() => Wrapper.Database.StringSet(_keyName, Base, _expiresIn);
 
-        public Task<bool> ResetAsync() => Wrapper.Database.Value.StringSetAsync(_keyName, Base, _expiresIn);
+        public Task<bool> ResetAsync() => Wrapper.Database.StringSetAsync(_keyName, Base, _expiresIn);
 
         public Task<long> IncreaseAsync() => IncreaseAsync(1);
 
         public Task<long> DecreaseAsync() => DecreaseAsync(1);
 
-        public Task<long> IncreaseAsync(int step) => Wrapper.Database.Value.StringIncrementAsync(_keyName, step);
+        public Task<long> IncreaseAsync(int step) => Wrapper.Database.StringIncrementAsync(_keyName, step);
 
-        public Task<long> DecreaseAsync(int step) => Wrapper.Database.Value.StringDecrementAsync(_keyName, step);
+        public Task<long> DecreaseAsync(int step) => Wrapper.Database.StringDecrementAsync(_keyName, step);
     }
 }

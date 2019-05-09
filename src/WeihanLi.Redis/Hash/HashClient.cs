@@ -19,21 +19,21 @@ namespace WeihanLi.Redis
         {
         }
 
-        public bool Exists(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashExists(Wrapper.GetRealKey(key), fieldName, flags);
+        public bool Exists(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashExists(Wrapper.GetRealKey(key), fieldName, flags);
 
-        public Task<bool> ExistsAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashExistsAsync(Wrapper.GetRealKey(key), fieldName, flags);
+        public Task<bool> ExistsAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashExistsAsync(Wrapper.GetRealKey(key), fieldName, flags);
 
         public bool Expire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExpire(key, expiresIn, flags);
 
         public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExpireAsync(key, expiresIn, flags);
 
-        public string Get(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<string>(() => Wrapper.Database.Value.HashGet(Wrapper.GetRealKey(key), fieldName, flags));
+        public string Get(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<string>(() => Wrapper.Database.HashGet(Wrapper.GetRealKey(key), fieldName, flags));
 
-        public T Get<T>(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(() => Wrapper.Database.Value.HashGet(Wrapper.GetRealKey(key), fieldName, flags));
+        public T Get<T>(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(() => Wrapper.Database.HashGet(Wrapper.GetRealKey(key), fieldName, flags));
 
-        public Task<string> GetAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<string>(() => Wrapper.Database.Value.HashGetAsync(Wrapper.GetRealKey(key), fieldName, flags));
+        public Task<string> GetAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<string>(() => Wrapper.Database.HashGetAsync(Wrapper.GetRealKey(key), fieldName, flags));
 
-        public Task<T> GetAsync<T>(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<T>(() => Wrapper.Database.Value.HashGetAsync(Wrapper.GetRealKey(key), fieldName, flags));
+        public Task<T> GetAsync<T>(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.UnwrapAsync<T>(() => Wrapper.Database.HashGetAsync(Wrapper.GetRealKey(key), fieldName, flags));
 
         public T GetOrSet<T>(string key, string fieldName, Func<T> func, CommandFlags flags = CommandFlags.None)
         {
@@ -57,36 +57,36 @@ namespace WeihanLi.Redis
             return result ? value : await GetAsync<T>(key, fieldName, flags);
         }
 
-        public string[] Keys(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashKeys(Wrapper.GetRealKey(key), flags).Select(_ => (string)_).ToArray();
+        public string[] Keys(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashKeys(Wrapper.GetRealKey(key), flags).Select(_ => (string)_).ToArray();
 
-        public Task<string[]> KeysAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashKeysAsync(Wrapper.GetRealKey(key), flags).ContinueWith(r => r.Result.Select(_ => (string)_).ToArray());
+        public Task<string[]> KeysAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashKeysAsync(Wrapper.GetRealKey(key), flags).ContinueWith(r => r.Result.Select(_ => (string)_).ToArray());
 
-        public long Length(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashLength(Wrapper.GetRealKey(key), flags);
+        public long Length(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashLength(Wrapper.GetRealKey(key), flags);
 
-        public Task<long> LengthAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashLengthAsync(Wrapper.GetRealKey(key), flags);
+        public Task<long> LengthAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashLengthAsync(Wrapper.GetRealKey(key), flags);
 
-        public bool Remove(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashDelete(Wrapper.GetRealKey(key), fieldName, flags);
+        public bool Remove(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashDelete(Wrapper.GetRealKey(key), fieldName, flags);
 
-        public Task<bool> RemoveAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashDeleteAsync(Wrapper.GetRealKey(key), fieldName, flags);
+        public Task<bool> RemoveAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashDeleteAsync(Wrapper.GetRealKey(key), fieldName, flags);
 
-        public bool Set<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags) => Wrapper.Database.Value.HashSet(Wrapper.GetRealKey(key), fieldName, Wrapper.Wrap(value), when, commandFlags);
+        public bool Set<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags) => Wrapper.Database.HashSet(Wrapper.GetRealKey(key), fieldName, Wrapper.Wrap(value), when, commandFlags);
 
         public bool Set<T>(string key, IEnumerable<KeyValuePair<string, T>> entries, CommandFlags commandFlags = CommandFlags.None)
         {
-            Wrapper.Database.Value.HashSet(Wrapper.GetRealKey(key), entries.Select(_ => new HashEntry(_.Key, Wrapper.Wrap(_.Value))).ToArray(), commandFlags);
+            Wrapper.Database.HashSet(Wrapper.GetRealKey(key), entries.Select(_ => new HashEntry(_.Key, Wrapper.Wrap(_.Value))).ToArray(), commandFlags);
             return true;
         }
 
-        public Task<bool> SetAsync<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags) => Wrapper.Database.Value.HashSetAsync(Wrapper.GetRealKey(key), fieldName, Wrapper.Wrap(value), when, commandFlags);
+        public Task<bool> SetAsync<T>(string key, string fieldName, T value, When when, CommandFlags commandFlags) => Wrapper.Database.HashSetAsync(Wrapper.GetRealKey(key), fieldName, Wrapper.Wrap(value), when, commandFlags);
 
         public Task<bool> SetAsync<T>(string key, IEnumerable<KeyValuePair<string, T>> entries,
             CommandFlags commandFlags = CommandFlags.None)
         {
-            return Wrapper.Database.Value.HashSetAsync(Wrapper.GetRealKey(key), entries.Select(_ => new HashEntry(_.Key, Wrapper.Wrap(_.Value))).ToArray(), commandFlags).ContinueWith(r => true);
+            return Wrapper.Database.HashSetAsync(Wrapper.GetRealKey(key), entries.Select(_ => new HashEntry(_.Key, Wrapper.Wrap(_.Value))).ToArray(), commandFlags).ContinueWith(r => true);
         }
 
-        public T[] Values<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(Wrapper.Database.Value.HashValues(Wrapper.GetRealKey(key), flags));
+        public T[] Values<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(Wrapper.Database.HashValues(Wrapper.GetRealKey(key), flags));
 
-        public async Task<T[]> ValuesAsync<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(await Wrapper.Database.Value.HashValuesAsync(Wrapper.GetRealKey(key), flags));
+        public async Task<T[]> ValuesAsync<T>(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<T>(await Wrapper.Database.HashValuesAsync(Wrapper.GetRealKey(key), flags));
     }
 }

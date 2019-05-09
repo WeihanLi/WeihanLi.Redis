@@ -1,7 +1,5 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
-using StackExchange.Redis;
-using WeihanLi.Common;
 
 namespace WeihanLi.Redis
 {
@@ -37,8 +35,6 @@ namespace WeihanLi.Redis
         {
             Logger = logger;
             Wrapper = redisWrapper;
-            Wrapper.Database = new Lazy<IDatabase>(() => DependencyResolver.Current.ResolveService<IConnectionMultiplexer>().GetDatabase());
-            Wrapper.Subscriber = new Lazy<ISubscriber>(() => DependencyResolver.Current.ResolveService<IConnectionMultiplexer>().GetSubscriber());
         }
     }
 }

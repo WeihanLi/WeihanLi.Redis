@@ -23,19 +23,19 @@ namespace WeihanLi.Redis
 
         public long Count(RedisValue field, CommandFlags flags = CommandFlags.None)
         {
-            return long.TryParse(Wrapper.Database.Value.HashGet(_realKey, field, flags).ToString(), out var count)
+            return long.TryParse(Wrapper.Database.HashGet(_realKey, field, flags).ToString(), out var count)
                 ? count
                 : 0L;
         }
 
         public bool Reset(RedisValue field, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Database.Value.HashSet(_realKey, field, Base, flags: flags);
+            return Wrapper.Database.HashSet(_realKey, field, Base, flags: flags);
         }
 
         public Task<bool> ResetAsync(RedisValue field, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Database.Value.HashSetAsync(_realKey, field, Base, flags: flags);
+            return Wrapper.Database.HashSetAsync(_realKey, field, Base, flags: flags);
         }
 
         public long Increase(RedisValue field, CommandFlags flags = CommandFlags.None)
@@ -50,12 +50,12 @@ namespace WeihanLi.Redis
 
         public long Increase(RedisValue field, int step, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Database.Value.HashIncrement(_realKey, field, step, flags);
+            return Wrapper.Database.HashIncrement(_realKey, field, step, flags);
         }
 
         public long Decrease(RedisValue field, int step, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Database.Value.HashDecrement(_realKey, field, step, flags);
+            return Wrapper.Database.HashDecrement(_realKey, field, step, flags);
         }
 
         public Task<long> IncreaseAsync(RedisValue field, CommandFlags flags = CommandFlags.None)
@@ -70,12 +70,12 @@ namespace WeihanLi.Redis
 
         public Task<long> IncreaseAsync(RedisValue field, int step, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Database.Value.HashIncrementAsync(_realKey, field, step, flags);
+            return Wrapper.Database.HashIncrementAsync(_realKey, field, step, flags);
         }
 
         public Task<long> DecreaseAsync(RedisValue field, int step, CommandFlags flags = CommandFlags.None)
         {
-            return Wrapper.Database.Value.HashDecrementAsync(_realKey, field, step, flags);
+            return Wrapper.Database.HashDecrementAsync(_realKey, field, step, flags);
         }
     }
 }

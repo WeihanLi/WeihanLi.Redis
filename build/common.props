@@ -15,6 +15,7 @@
     <Summary>RedisExtensions for StackExchange.Redis</Summary>
     <PackageReleaseNotes>
       Add HashCounterClient
+      Add support for custom IDataSerializer and custom compress
     </PackageReleaseNotes>
     <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
     <Copyright>WeihanLi</Copyright>

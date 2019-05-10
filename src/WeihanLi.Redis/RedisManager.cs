@@ -2,7 +2,6 @@
 using System.Collections.Concurrent;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
 using WeihanLi.Common;
@@ -48,20 +47,29 @@ namespace WeihanLi.Redis
                 Ssl = RedisConfiguration.Ssl,
                 Proxy = RedisConfiguration.Proxy,
                 AbortOnConnectFail = RedisConfiguration.AbortOnConnectFail,
-                SyncTimeout = RedisConfiguration.SyncTimeout
+                SyncTimeout = RedisConfiguration.SyncTimeout,
+                AsyncTimeout = RedisConfiguration.AsyncTimeout,
+                ChannelPrefix = RedisConfiguration.ChannelPrefix,
+                ClientName = RedisConfiguration.ClientName,
             };
+            if (RedisConfiguration.CommandMap != null)
+            {
+                configurationOptions.CommandMap = CommandMap.Create(RedisConfiguration.CommandMap);
+            }
             configurationOptions.EndPoints.AddRange(RedisConfiguration.RedisServers.Select(s => ConvertHelper.ToEndPoint(s.Host, s.Port)).ToArray());
+
             serviceCollection.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(configurationOptions));
 
-            serviceCollection.TryAddSingleton<ICacheClient, CacheClient>();
-            serviceCollection.TryAddSingleton<IHashClient, HashClient>();
-            serviceCollection.TryAddSingleton<IPubSubClient, PubSubClient>();
-
+            serviceCollection.AddSingleton<ICacheClient, CacheClient>();
+            serviceCollection.AddSingleton<IHashClient, HashClient>();
+            serviceCollection.AddSingleton<IPubSubClient, PubSubClient>();
             serviceCollection.AddSingleton<IDataSerializer, JsonDataSerializer>();
             serviceCollection.AddSingleton<IDataCompressor, GZipDataCompressor>();
             serviceCollection.AddSingleton<CompressDataSerializer>();
 
             serviceCollection.AddLogging();
+
+            DependencyResolver.SetDependencyResolver(serviceCollection);
 
             return serviceCollection;
         }

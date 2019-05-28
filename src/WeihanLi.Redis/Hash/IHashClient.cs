@@ -18,31 +18,39 @@ namespace WeihanLi.Redis
 
         #region Exists
 
-        bool Exists(string key, string fieldName, CommandFlags flags = CommandFlags.None);
+        bool Exists(string key, RedisValue fieldName, CommandFlags flags = CommandFlags.None);
 
-        Task<bool> ExistsAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None);
+        Task<bool> ExistsAsync(string key, RedisValue fieldName, CommandFlags flags = CommandFlags.None);
 
         #endregion Exists
 
         #region Get
 
-        string Get(string key, string fieldName, CommandFlags flags = CommandFlags.None);
+        string Get(string key, RedisValue fieldName, CommandFlags flags = CommandFlags.None);
 
-        Task<string> GetAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None);
+        Task<string> GetAsync(string key, RedisValue fieldName, CommandFlags flags = CommandFlags.None);
 
-        T Get<T>(string key, string fieldName, CommandFlags flags = CommandFlags.None);
+        T Get<T>(string key, RedisValue fieldName, CommandFlags flags = CommandFlags.None);
 
-        Task<T> GetAsync<T>(string key, string fieldName, CommandFlags flags = CommandFlags.None);
+        Task<T> GetAsync<T>(string key, RedisValue fieldName, CommandFlags flags = CommandFlags.None);
+
+        string[] Get(string key, RedisValue[] fieldNames, CommandFlags flags = CommandFlags.None);
+
+        T[] Get<T>(string key, RedisValue[] fieldNames, CommandFlags flags = CommandFlags.None);
+
+        Task<string[]> GetAsync(string key, RedisValue[] fieldNames, CommandFlags flags = CommandFlags.None);
+
+        Task<T[]> GetAsync<T>(string key, RedisValue[] fieldNames, CommandFlags flags = CommandFlags.None);
 
         #endregion Get
 
         #region Set
 
-        bool Set<T>(string key, string fieldName, T value, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
+        bool Set<T>(string key, RedisValue fieldName, T value, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
 
         bool Set<T>(string key, IEnumerable<KeyValuePair<string, T>> entries, CommandFlags commandFlags = CommandFlags.None);
 
-        Task<bool> SetAsync<T>(string key, string fieldName, T value, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
+        Task<bool> SetAsync<T>(string key, RedisValue fieldName, T value, When when = When.Always, CommandFlags commandFlags = CommandFlags.None);
 
         Task<bool> SetAsync<T>(string key, IEnumerable<KeyValuePair<string, T>> entries, CommandFlags commandFlags = CommandFlags.None);
 
@@ -50,17 +58,17 @@ namespace WeihanLi.Redis
 
         #region GetOrSet
 
-        T GetOrSet<T>(string key, string fieldName, Func<T> func, CommandFlags flags = CommandFlags.None);
+        T GetOrSet<T>(string key, RedisValue fieldName, Func<T> func, CommandFlags flags = CommandFlags.None);
 
-        Task<T> GetOrSetAsync<T>(string key, string fieldName, Func<Task<T>> func, CommandFlags flags = CommandFlags.None);
+        Task<T> GetOrSetAsync<T>(string key, RedisValue fieldName, Func<Task<T>> func, CommandFlags flags = CommandFlags.None);
 
         #endregion GetOrSet
 
         #region Remove
 
-        bool Remove(string key, string fieldName, CommandFlags flags = CommandFlags.None);
+        bool Remove(string key, RedisValue fieldName, CommandFlags flags = CommandFlags.None);
 
-        Task<bool> RemoveAsync(string key, string fieldName, CommandFlags flags = CommandFlags.None);
+        Task<bool> RemoveAsync(string key, RedisValue fieldName, CommandFlags flags = CommandFlags.None);
 
         #endregion Remove
 

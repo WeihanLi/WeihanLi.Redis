@@ -1,4 +1,5 @@
 ﻿using System;
+using StackExchange.Redis;
 using Xunit;
 
 namespace WeihanLi.Redis.UnitTest
@@ -34,6 +35,10 @@ namespace WeihanLi.Redis.UnitTest
             var hashClient = RedisManager.HashClient;
             var result = hashClient.Set(key, fieldName, value);
             Assert.True(result);
+            hashClient.Set(key, fieldName + "1", value);
+            var vals = hashClient.Get(key, new RedisValue[] { fieldName, "gfhjkghjgh", fieldName + "1" });
+            Assert.Equal(3, vals.Length);
+            Assert.Null(vals[1]);
             Assert.True(hashClient.Expire(key, TimeSpan.FromSeconds(10)));
             Assert.True(hashClient.Exists(key, fieldName));
             Assert.Equal(value, hashClient.Get(key, fieldName));

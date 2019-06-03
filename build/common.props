@@ -2,7 +2,8 @@
   <Import Project="analyzer.props" />
   <Import Project="sign.props" />
   <Import Project="version.props" />
-  <PropertyGroup>        
+  <Import Project="document.props" />
+  <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Product>WeihanLi.Redis</Product>
     <Title>WeihanLi.Redis</Title>

@@ -20,6 +20,7 @@
     "content": [    
       {
         "files": [
+          "docs/ReleaseNotes.md",
           "docs/api/**.md",
           "docs/api/**.yml",
           "docs/api/**/toc.yml",

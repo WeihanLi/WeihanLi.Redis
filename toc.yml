@@ -1,5 +1,6 @@
 - name: Home
   href: index.md
 - name: API Documentation
-  href: docs/api
-
+  href: docs/api/WeihanLi.Redis.yml
+- name: Release Notes
+  href: docs/ReleaseNotes.md

@@ -23,6 +23,7 @@ StackExchange.Redis 扩展，更简单的泛型操作，并提供一些的适用
 
     - Hash
     - Dictonary
+    - HashCounter
 
 1. List
 

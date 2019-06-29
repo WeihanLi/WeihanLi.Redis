@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface ISetClient&lt;T&gt;
    ">
-    <meta name="generator" content="docfx 2.40.10.0">
+    <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -76,7 +76,7 @@
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WeihanLi.Redis.html">WeihanLi.Redis</a></h6>
-  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h6><strong>Assembly</strong>: WeihanLi.Redis.dll</h6>
   <h5 id="WeihanLi_Redis_ISetClient_1_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface ISetClient&lt;T&gt; : IRedisClient</code></pre>
@@ -98,16 +98,21 @@
   </table>
   <h3 id="methods">Methods
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Add__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Add(%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L14">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Add_" data-uid="WeihanLi.Redis.ISetClient`1.Add*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Add__0_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Add(`0,CommandFlags)">Add(T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Add__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Add(`0,StackExchange.Redis.CommandFlags)">Add(T, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Add the specified member to the set stored at key. Specified members that are already a member of this set are ignored. If key does not exist, a new set is created before adding the specified members.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool Add(T value, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">bool Add(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -125,7 +130,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -147,19 +152,24 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Add__0_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Add__0_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sadd">http://redis.io/commands/sadd</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Add__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Add(%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L21">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Add_" data-uid="WeihanLi.Redis.ISetClient`1.Add*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Add__0___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Add(`0[],CommandFlags)">Add(T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Add__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Add(`0[],StackExchange.Redis.CommandFlags)">Add(T[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Add the specified members to the set stored at key. Specified members that are already a member of this set are ignored. If key does not exist, a new set is created before adding the specified members.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long Add(T[] values, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">long Add(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -177,7 +187,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -199,19 +209,24 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Add__0___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Add__0___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sadd">http://redis.io/commands/sadd</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_AddAsync__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.AddAsync(%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L165">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_AddAsync_" data-uid="WeihanLi.Redis.ISetClient`1.AddAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_AddAsync__0_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.AddAsync(`0,CommandFlags)">AddAsync(T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_AddAsync__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.AddAsync(`0,StackExchange.Redis.CommandFlags)">AddAsync(T, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Add the specified member to the set stored at key. Specified members that are already a member of this set are ignored. If key does not exist, a new set is created before adding the specified members.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; AddAsync(T value, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; AddAsync(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -229,7 +244,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -245,25 +260,30 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td><p>True if the specified member was not already present in the set, else False</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_AddAsync__0_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_AddAsync__0_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sadd">http://redis.io/commands/sadd</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_AddAsync__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.AddAsync(%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L172">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_AddAsync_" data-uid="WeihanLi.Redis.ISetClient`1.AddAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_AddAsync__0___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.AddAsync(`0[],CommandFlags)">AddAsync(T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_AddAsync__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.AddAsync(`0[],StackExchange.Redis.CommandFlags)">AddAsync(T[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Add the specified members to the set stored at key. Specified members that are already a member of this set are ignored. If key does not exist, a new set is created before adding the specified members.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; AddAsync(T[] values, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; AddAsync(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -281,7 +301,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -297,25 +317,30 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td><p>the number of elements that were added to the set, not including all the elements already present into the set.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_AddAsync__0___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_AddAsync__0___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sadd">http://redis.io/commands/sadd</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Combine_StackExchange_Redis_SetOperation_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Combine(StackExchange.Redis.SetOperation%2CSystem.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L30">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Combine_" data-uid="WeihanLi.Redis.ISetClient`1.Combine*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Combine_SetOperation_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Combine(SetOperation,System.String,CommandFlags)">Combine(SetOperation, String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Combine_StackExchange_Redis_SetOperation_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Combine(StackExchange.Redis.SetOperation,System.String,StackExchange.Redis.CommandFlags)">Combine(SetOperation, String, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns the members of the set resulting from the specified operation against the given sets.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T[] Combine(SetOperation operation, string another, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">T[] Combine(SetOperation operation, string another, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -328,7 +353,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SetOperation</span></td>
+        <td><span class="xref">StackExchange.Redis.SetOperation</span></td>
         <td><span class="parametername">operation</span></td>
         <td></td>
       </tr>
@@ -338,7 +363,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -360,19 +385,24 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Combine_SetOperation_System_String_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Combine_StackExchange_Redis_SetOperation_System_String_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sunion">http://redis.io/commands/sunion</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Combine_StackExchange_Redis_SetOperation_System_String___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Combine(StackExchange.Redis.SetOperation%2CSystem.String%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L39">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Combine_" data-uid="WeihanLi.Redis.ISetClient`1.Combine*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Combine_SetOperation_System_String___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Combine(SetOperation,System.String[],CommandFlags)">Combine(SetOperation, String[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Combine_StackExchange_Redis_SetOperation_System_String___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Combine(StackExchange.Redis.SetOperation,System.String[],StackExchange.Redis.CommandFlags)">Combine(SetOperation, String[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns the members of the set resulting from the specified operation against the given sets.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T[] Combine(SetOperation operation, string[] keys, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">T[] Combine(SetOperation operation, string[] keys, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -385,7 +415,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SetOperation</span></td>
+        <td><span class="xref">StackExchange.Redis.SetOperation</span></td>
         <td><span class="parametername">operation</span></td>
         <td></td>
       </tr>
@@ -395,7 +425,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -417,19 +447,24 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Combine_SetOperation_System_String___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Combine_StackExchange_Redis_SetOperation_System_String___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sunion">http://redis.io/commands/sunion</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_CombineAndStore_StackExchange_Redis_SetOperation_System_String_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.CombineAndStore(StackExchange.Redis.SetOperation%2CSystem.String%2CSystem.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L48">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_CombineAndStore_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStore*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAndStore_SetOperation_System_String_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStore(SetOperation,System.String,System.String,CommandFlags)">CombineAndStore(SetOperation, String, String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAndStore_StackExchange_Redis_SetOperation_System_String_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStore(StackExchange.Redis.SetOperation,System.String,System.String,StackExchange.Redis.CommandFlags)">CombineAndStore(SetOperation, String, String, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>This command is equal to SetCombine, but instead of returning the resulting set, it is stored in destination. If destination already exists, it is overwritten.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long CombineAndStore(SetOperation operation, string destination, string another, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">long CombineAndStore(SetOperation operation, string destination, string another, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -442,7 +477,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SetOperation</span></td>
+        <td><span class="xref">StackExchange.Redis.SetOperation</span></td>
         <td><span class="parametername">operation</span></td>
         <td></td>
       </tr>
@@ -457,7 +492,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -479,19 +514,24 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAndStore_SetOperation_System_String_System_String_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAndStore_StackExchange_Redis_SetOperation_System_String_System_String_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sunionstore">http://redis.io/commands/sunionstore</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_CombineAndStore_StackExchange_Redis_SetOperation_System_String_System_String___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.CombineAndStore(StackExchange.Redis.SetOperation%2CSystem.String%2CSystem.String%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L57">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_CombineAndStore_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStore*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAndStore_SetOperation_System_String_System_String___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStore(SetOperation,System.String,System.String[],CommandFlags)">CombineAndStore(SetOperation, String, String[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAndStore_StackExchange_Redis_SetOperation_System_String_System_String___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStore(StackExchange.Redis.SetOperation,System.String,System.String[],StackExchange.Redis.CommandFlags)">CombineAndStore(SetOperation, String, String[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>This command is equal to SetCombine, but instead of returning the resulting set, it is stored in destination. If destination already exists, it is overwritten.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long CombineAndStore(SetOperation operation, string destination, string[] keys, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">long CombineAndStore(SetOperation operation, string destination, string[] keys, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -504,7 +544,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SetOperation</span></td>
+        <td><span class="xref">StackExchange.Redis.SetOperation</span></td>
         <td><span class="parametername">operation</span></td>
         <td></td>
       </tr>
@@ -519,7 +559,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -541,19 +581,24 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAndStore_SetOperation_System_String_System_String___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAndStore_StackExchange_Redis_SetOperation_System_String_System_String___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sunionstore">http://redis.io/commands/sunionstore</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_StackExchange_Redis_SetOperation_System_String_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.CombineAndStoreAsync(StackExchange.Redis.SetOperation%2CSystem.String%2CSystem.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L181">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_SetOperation_System_String_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync(SetOperation,System.String,System.String,CommandFlags)">CombineAndStoreAsync(SetOperation, String, String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_StackExchange_Redis_SetOperation_System_String_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync(StackExchange.Redis.SetOperation,System.String,System.String,StackExchange.Redis.CommandFlags)">CombineAndStoreAsync(SetOperation, String, String, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>This command is equal to SetCombine, but instead of returning the resulting set, it is stored in destination. If destination already exists, it is overwritten.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; CombineAndStoreAsync(SetOperation operation, string destination, string another, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; CombineAndStoreAsync(SetOperation operation, string destination, string another, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -566,7 +611,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SetOperation</span></td>
+        <td><span class="xref">StackExchange.Redis.SetOperation</span></td>
         <td><span class="parametername">operation</span></td>
         <td></td>
       </tr>
@@ -581,7 +626,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -597,25 +642,30 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td><p>the number of elements in the resulting set.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_SetOperation_System_String_System_String_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_StackExchange_Redis_SetOperation_System_String_System_String_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sunionstore">http://redis.io/commands/sunionstore</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_StackExchange_Redis_SetOperation_System_String_System_String___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.CombineAndStoreAsync(StackExchange.Redis.SetOperation%2CSystem.String%2CSystem.String%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L190">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_SetOperation_System_String_System_String___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync(SetOperation,System.String,System.String[],CommandFlags)">CombineAndStoreAsync(SetOperation, String, String[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_StackExchange_Redis_SetOperation_System_String_System_String___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync(StackExchange.Redis.SetOperation,System.String,System.String[],StackExchange.Redis.CommandFlags)">CombineAndStoreAsync(SetOperation, String, String[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>This command is equal to SetCombine, but instead of returning the resulting set, it is stored in destination. If destination already exists, it is overwritten.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; CombineAndStoreAsync(SetOperation operation, string destination, string[] keys, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; CombineAndStoreAsync(SetOperation operation, string destination, string[] keys, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -628,7 +678,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SetOperation</span></td>
+        <td><span class="xref">StackExchange.Redis.SetOperation</span></td>
         <td><span class="parametername">operation</span></td>
         <td></td>
       </tr>
@@ -643,7 +693,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -659,25 +709,30 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td><p>the number of elements in the resulting set.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_SetOperation_System_String_System_String___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAndStoreAsync_StackExchange_Redis_SetOperation_System_String_System_String___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sunionstore">http://redis.io/commands/sunionstore</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_CombineAsync_StackExchange_Redis_SetOperation_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.CombineAsync(StackExchange.Redis.SetOperation%2CSystem.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L199">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_CombineAsync_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAsync_SetOperation_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAsync(SetOperation,System.String,CommandFlags)">CombineAsync(SetOperation, String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAsync_StackExchange_Redis_SetOperation_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAsync(StackExchange.Redis.SetOperation,System.String,StackExchange.Redis.CommandFlags)">CombineAsync(SetOperation, String, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns the members of the set resulting from the specified operation against the given sets.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; CombineAsync(SetOperation operation, string another, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; CombineAsync(SetOperation operation, string another, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -690,7 +745,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SetOperation</span></td>
+        <td><span class="xref">StackExchange.Redis.SetOperation</span></td>
         <td><span class="parametername">operation</span></td>
         <td></td>
       </tr>
@@ -700,7 +755,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -716,25 +771,30 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T[]&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T[]&gt;</td>
         <td><p>list with members of the resulting set.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAsync_SetOperation_System_String_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAsync_StackExchange_Redis_SetOperation_System_String_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sunion">http://redis.io/commands/sunion</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_CombineAsync_StackExchange_Redis_SetOperation_System_String___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.CombineAsync(StackExchange.Redis.SetOperation%2CSystem.String%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L208">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_CombineAsync_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAsync_SetOperation_System_String___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAsync(SetOperation,System.String[],CommandFlags)">CombineAsync(SetOperation, String[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_CombineAsync_StackExchange_Redis_SetOperation_System_String___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.CombineAsync(StackExchange.Redis.SetOperation,System.String[],StackExchange.Redis.CommandFlags)">CombineAsync(SetOperation, String[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns the members of the set resulting from the specified operation against the given sets.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; CombineAsync(SetOperation operation, string[] keys, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; CombineAsync(SetOperation operation, string[] keys, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -747,7 +807,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">SetOperation</span></td>
+        <td><span class="xref">StackExchange.Redis.SetOperation</span></td>
         <td><span class="parametername">operation</span></td>
         <td></td>
       </tr>
@@ -757,7 +817,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -773,25 +833,30 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T[]&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T[]&gt;</td>
         <td><p>list with members of the resulting set.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAsync_SetOperation_System_String___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_CombineAsync_StackExchange_Redis_SetOperation_System_String___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sunion">http://redis.io/commands/sunion</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Contains__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Contains(%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L64">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Contains_" data-uid="WeihanLi.Redis.ISetClient`1.Contains*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Contains__0_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Contains(`0,CommandFlags)">Contains(T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Contains__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Contains(`0,StackExchange.Redis.CommandFlags)">Contains(T, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns if member is a member of the set stored at key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool Contains(T value, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">bool Contains(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -809,7 +874,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -831,19 +896,24 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Contains__0_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Contains__0_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sismember">http://redis.io/commands/sismember</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_ContainsAsync__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.ContainsAsync(%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L215">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_ContainsAsync_" data-uid="WeihanLi.Redis.ISetClient`1.ContainsAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_ContainsAsync__0_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.ContainsAsync(`0,CommandFlags)">ContainsAsync(T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_ContainsAsync__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.ContainsAsync(`0,StackExchange.Redis.CommandFlags)">ContainsAsync(T, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns if member is a member of the set stored at key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; ContainsAsync(T value, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; ContainsAsync(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -861,7 +931,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -877,25 +947,30 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td><p>1 if the element is a member of the set. 0 if the element is not a member of the set, or if key does not exist.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_ContainsAsync__0_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_ContainsAsync__0_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sismember">http://redis.io/commands/sismember</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Length_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Length(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L71">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Length_" data-uid="WeihanLi.Redis.ISetClient`1.Length*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Length_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Length(CommandFlags)">Length(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Length_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Length(StackExchange.Redis.CommandFlags)">Length(CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns the set cardinality (number of elements) of the set stored at key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long Length(CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">long Length(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -908,7 +983,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -930,19 +1005,24 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Length_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Length_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/scard">http://redis.io/commands/scard</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_LengthAsync_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.LengthAsync(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L222">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_LengthAsync_" data-uid="WeihanLi.Redis.ISetClient`1.LengthAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_LengthAsync_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.LengthAsync(CommandFlags)">LengthAsync(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_LengthAsync_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.LengthAsync(StackExchange.Redis.CommandFlags)">LengthAsync(CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns the set cardinality (number of elements) of the set stored at key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; LengthAsync(CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; LengthAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -955,7 +1035,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -971,25 +1051,30 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td><p>the cardinality (number of elements) of the set, or 0 if key does not exist.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_LengthAsync_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_LengthAsync_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/scard">http://redis.io/commands/scard</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Members_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Members(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L78">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Members_" data-uid="WeihanLi.Redis.ISetClient`1.Members*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Members_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Members(CommandFlags)">Members(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Members_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Members(StackExchange.Redis.CommandFlags)">Members(CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns all the members of the set value stored at key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T[] Members(CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">T[] Members(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1002,7 +1087,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1024,19 +1109,24 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Members_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Members_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/smembers">http://redis.io/commands/smembers</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_MembersAsync_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.MembersAsync(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L229">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_MembersAsync_" data-uid="WeihanLi.Redis.ISetClient`1.MembersAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_MembersAsync_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.MembersAsync(CommandFlags)">MembersAsync(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_MembersAsync_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.MembersAsync(StackExchange.Redis.CommandFlags)">MembersAsync(CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns all the members of the set value stored at key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; MembersAsync(CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; MembersAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1049,7 +1139,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1065,26 +1155,31 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T[]&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T[]&gt;</td>
         <td><p>all elements of the set.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_MembersAsync_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_MembersAsync_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/smembers">http://redis.io/commands/smembers</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Move_System_String__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Move(System.String%2C%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L86">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Move_" data-uid="WeihanLi.Redis.ISetClient`1.Move*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Move_System_String__0_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Move(System.String,`0,CommandFlags)">Move(String, T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Move_System_String__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Move(System.String,`0,StackExchange.Redis.CommandFlags)">Move(String, T, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Move member from the set at source to the set at destination. This operation is atomic. In every given moment the element will appear to be a member of source or destination for other clients.
 When the specified element already exists in the destination set, it is only removed from the source set.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool Move(string destination, T value, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">bool Move(string destination, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1107,7 +1202,7 @@ When the specified element already exists in the destination set, it is only rem
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1129,20 +1224,25 @@ When the specified element already exists in the destination set, it is only rem
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Move_System_String__0_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Move_System_String__0_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/smove">http://redis.io/commands/smove</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_MoveAsync_System_String__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.MoveAsync(System.String%2C%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L237">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_MoveAsync_" data-uid="WeihanLi.Redis.ISetClient`1.MoveAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_MoveAsync_System_String__0_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.MoveAsync(System.String,`0,CommandFlags)">MoveAsync(String, T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_MoveAsync_System_String__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.MoveAsync(System.String,`0,StackExchange.Redis.CommandFlags)">MoveAsync(String, T, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Move member from the set at source to the set at destination. This operation is atomic. In every given moment the element will appear to be a member of source or destination for other clients.
 When the specified element already exists in the destination set, it is only removed from the source set.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; MoveAsync(string destination, T value, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; MoveAsync(string destination, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1165,7 +1265,7 @@ When the specified element already exists in the destination set, it is only rem
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1181,25 +1281,30 @@ When the specified element already exists in the destination set, it is only rem
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td><p>1 if the element is moved. 0 if the element is not a member of source and no operation was performed.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_MoveAsync_System_String__0_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_MoveAsync_System_String__0_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/smove">http://redis.io/commands/smove</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Pop_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Pop(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L93">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Pop_" data-uid="WeihanLi.Redis.ISetClient`1.Pop*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Pop_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Pop(CommandFlags)">Pop(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Pop_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Pop(StackExchange.Redis.CommandFlags)">Pop(CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Removes and returns a random element from the set value stored at key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T Pop(CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">T Pop(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1212,7 +1317,7 @@ When the specified element already exists in the destination set, it is only rem
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1234,19 +1339,24 @@ When the specified element already exists in the destination set, it is only rem
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Pop_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Pop_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/spop">http://redis.io/commands/spop</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_PopAsync_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.PopAsync(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L244">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_PopAsync_" data-uid="WeihanLi.Redis.ISetClient`1.PopAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_PopAsync_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.PopAsync(CommandFlags)">PopAsync(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_PopAsync_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.PopAsync(StackExchange.Redis.CommandFlags)">PopAsync(CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Removes and returns a random element from the set value stored at key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T&gt; PopAsync(CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; PopAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1259,7 +1369,7 @@ When the specified element already exists in the destination set, it is only rem
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1275,25 +1385,30 @@ When the specified element already exists in the destination set, it is only rem
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
         <td><p>the removed element, or nil when key does not exist.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_PopAsync_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_PopAsync_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/spop">http://redis.io/commands/spop</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_RandomMember_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.RandomMember(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L100">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_RandomMember_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMember*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_RandomMember_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMember(CommandFlags)">RandomMember(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_RandomMember_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMember(StackExchange.Redis.CommandFlags)">RandomMember(CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Return a random element from the set value stored at key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T RandomMember(CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">T RandomMember(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1306,7 +1421,7 @@ When the specified element already exists in the destination set, it is only rem
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1328,19 +1443,24 @@ When the specified element already exists in the destination set, it is only rem
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_RandomMember_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_RandomMember_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/srandmember">http://redis.io/commands/srandmember</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_RandomMemberAsync_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.RandomMemberAsync(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L251">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_RandomMemberAsync_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMemberAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_RandomMemberAsync_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMemberAsync(CommandFlags)">RandomMemberAsync(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_RandomMemberAsync_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMemberAsync(StackExchange.Redis.CommandFlags)">RandomMemberAsync(CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Return a random element from the set value stored at key.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T&gt; RandomMemberAsync(CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; RandomMemberAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1353,7 +1473,7 @@ When the specified element already exists in the destination set, it is only rem
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1369,26 +1489,31 @@ When the specified element already exists in the destination set, it is only rem
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
         <td><p>the randomly selected element, or nil when key does not exist</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_RandomMemberAsync_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_RandomMemberAsync_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/srandmember">http://redis.io/commands/srandmember</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_RandomMembers_System_Int64_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.RandomMembers(System.Int64%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L108">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_RandomMembers_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMembers*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_RandomMembers_System_Int64_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMembers(System.Int64,CommandFlags)">RandomMembers(Int64, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_RandomMembers_System_Int64_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMembers(System.Int64,StackExchange.Redis.CommandFlags)">RandomMembers(Int64, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Return an array of count distinct elements if count is positive. If called with a negative count the behavior changes and the command is allowed to return the same element multiple times.
 In this case the numer of returned elements is the absolute value of the specified count.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T[] RandomMembers(long count, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">T[] RandomMembers(long count, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1406,7 +1531,7 @@ In this case the numer of returned elements is the absolute value of the specifi
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1428,20 +1553,25 @@ In this case the numer of returned elements is the absolute value of the specifi
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_RandomMembers_System_Int64_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_RandomMembers_System_Int64_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/srandmember">http://redis.io/commands/srandmember</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_RandomMembersAsync_System_Int64_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.RandomMembersAsync(System.Int64%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L259">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_RandomMembersAsync_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMembersAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_RandomMembersAsync_System_Int64_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMembersAsync(System.Int64,CommandFlags)">RandomMembersAsync(Int64, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_RandomMembersAsync_System_Int64_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RandomMembersAsync(System.Int64,StackExchange.Redis.CommandFlags)">RandomMembersAsync(Int64, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Return an array of count distinct elements if count is positive. If called with a negative count the behavior changes and the command is allowed to return the same element multiple times.
 In this case the numer of returned elements is the absolute value of the specified count.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; RandomMembersAsync(long count, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; RandomMembersAsync(long count, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1459,7 +1589,7 @@ In this case the numer of returned elements is the absolute value of the specifi
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1475,25 +1605,30 @@ In this case the numer of returned elements is the absolute value of the specifi
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T[]&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T[]&gt;</td>
         <td><p>an array of elements, or an empty array when key does not exist</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_RandomMembersAsync_System_Int64_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_RandomMembersAsync_System_Int64_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/srandmember">http://redis.io/commands/srandmember</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Remove__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Remove(%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L115">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Remove_" data-uid="WeihanLi.Redis.ISetClient`1.Remove*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Remove__0_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Remove(`0,CommandFlags)">Remove(T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Remove__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Remove(`0,StackExchange.Redis.CommandFlags)">Remove(T, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Remove the specified member from the set stored at key.  Specified members that are not a member of this set are ignored.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool Remove(T value, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">bool Remove(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1511,7 +1646,7 @@ In this case the numer of returned elements is the absolute value of the specifi
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1533,19 +1668,24 @@ In this case the numer of returned elements is the absolute value of the specifi
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Remove__0_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Remove__0_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/srem">http://redis.io/commands/srem</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Remove__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Remove(%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L122">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Remove_" data-uid="WeihanLi.Redis.ISetClient`1.Remove*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Remove__0___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Remove(`0[],CommandFlags)">Remove(T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Remove__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Remove(`0[],StackExchange.Redis.CommandFlags)">Remove(T[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Remove the specified members from the set stored at key. Specified members that are not a member of this set are ignored.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long Remove(T[] values, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">long Remove(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1563,7 +1703,7 @@ In this case the numer of returned elements is the absolute value of the specifi
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1585,19 +1725,24 @@ In this case the numer of returned elements is the absolute value of the specifi
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Remove__0___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Remove__0___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/srem">http://redis.io/commands/srem</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_RemoveAsync__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.RemoveAsync(%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L266">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_RemoveAsync_" data-uid="WeihanLi.Redis.ISetClient`1.RemoveAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_RemoveAsync__0_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RemoveAsync(`0,CommandFlags)">RemoveAsync(T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_RemoveAsync__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RemoveAsync(`0,StackExchange.Redis.CommandFlags)">RemoveAsync(T, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Remove the specified member from the set stored at key.  Specified members that are not a member of this set are ignored.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; RemoveAsync(T value, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; RemoveAsync(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1615,7 +1760,7 @@ In this case the numer of returned elements is the absolute value of the specifi
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1631,25 +1776,30 @@ In this case the numer of returned elements is the absolute value of the specifi
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td><p>True if the specified member was already present in the set, else False</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_RemoveAsync__0_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_RemoveAsync__0_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/srem">http://redis.io/commands/srem</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_RemoveAsync__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.RemoveAsync(%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L273">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_RemoveAsync_" data-uid="WeihanLi.Redis.ISetClient`1.RemoveAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_RemoveAsync__0___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RemoveAsync(`0[],CommandFlags)">RemoveAsync(T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_RemoveAsync__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.RemoveAsync(`0[],StackExchange.Redis.CommandFlags)">RemoveAsync(T[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Remove the specified members from the set stored at key. Specified members that are not a member of this set are ignored.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; RemoveAsync(T[] values, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; RemoveAsync(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1667,7 +1817,7 @@ In this case the numer of returned elements is the absolute value of the specifi
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1683,19 +1833,24 @@ In this case the numer of returned elements is the absolute value of the specifi
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td><p>the number of members that were removed from the set, not including non existing members.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_RemoveAsync__0___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_RemoveAsync__0___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/srem">http://redis.io/commands/srem</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Scan__0_System_Int32_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Scan(%600%2CSystem.Int32%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L129">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Scan_" data-uid="WeihanLi.Redis.ISetClient`1.Scan*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Scan__0_System_Int32_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Scan(`0,System.Int32,CommandFlags)">Scan(T, Int32, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Scan__0_System_Int32_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Scan(`0,System.Int32,StackExchange.Redis.CommandFlags)">Scan(T, Int32, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>The SSCAN command is used to incrementally iterate over set</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1724,7 +1879,7 @@ In this case the numer of returned elements is the absolute value of the specifi
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1746,19 +1901,24 @@ In this case the numer of returned elements is the absolute value of the specifi
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Scan__0_System_Int32_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Scan__0_System_Int32_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sscan">http://redis.io/commands/sscan</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Scan__0_System_Int32_System_Int64_System_Int32_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Scan(%600%2CSystem.Int32%2CSystem.Int64%2CSystem.Int32%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L136">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Scan_" data-uid="WeihanLi.Redis.ISetClient`1.Scan*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Scan__0_System_Int32_System_Int64_System_Int32_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Scan(`0,System.Int32,System.Int64,System.Int32,CommandFlags)">Scan(T, Int32, Int64, Int32, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Scan__0_System_Int32_System_Int64_System_Int32_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Scan(`0,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)">Scan(T, Int32, Int64, Int32, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>The SSCAN command is used to incrementally iterate over set; note: to resume an iteration via <em>cursor</em>, cast the original enumerable or enumerator to <em>IScanningCursor</em>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T[] Scan(T pattern = null, int pageSize = 10, long cursor = 0L, int pageOffset = 0, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">T[] Scan(T pattern = null, int pageSize = 10, long cursor = 0L, int pageOffset = 0, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1791,7 +1951,7 @@ In this case the numer of returned elements is the absolute value of the specifi
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1813,13 +1973,18 @@ In this case the numer of returned elements is the absolute value of the specifi
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Scan__0_System_Int32_System_Int64_System_Int32_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Scan__0_System_Int32_System_Int64_System_Int32_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sscan">http://redis.io/commands/sscan</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_Sort_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.Sort(System.Int64%2CSystem.Int64%2CStackExchange.Redis.Order%2CStackExchange.Redis.SortType%2C%600%2C%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L147">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_Sort_" data-uid="WeihanLi.Redis.ISetClient`1.Sort*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_Sort_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Sort(System.Int64,System.Int64,Order,SortType,`0,`0[],CommandFlags)">Sort(Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_Sort_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.Sort(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)">Sort(Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Sorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be
 used to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can
 be performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).
@@ -1829,7 +1994,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T[] Sort(long skip = 0L, long take = -1L, Order order = null, SortType sortType = null, T by = null, T[] get = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">T[] Sort(long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1852,12 +2017,12 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Order</span></td>
+        <td><span class="xref">StackExchange.Redis.Order</span></td>
         <td><span class="parametername">order</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">SortType</span></td>
+        <td><span class="xref">StackExchange.Redis.SortType</span></td>
         <td><span class="parametername">sortType</span></td>
         <td></td>
       </tr>
@@ -1872,7 +2037,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1894,13 +2059,18 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_Sort_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_Sort_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sort">http://redis.io/commands/sort</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_SortAndStore_System_String_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.SortAndStore(System.String%2CSystem.Int64%2CSystem.Int64%2CStackExchange.Redis.Order%2CStackExchange.Redis.SortType%2C%600%2C%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L158">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_SortAndStore_" data-uid="WeihanLi.Redis.ISetClient`1.SortAndStore*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_SortAndStore_System_String_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.SortAndStore(System.String,System.Int64,System.Int64,Order,SortType,`0,`0[],CommandFlags)">SortAndStore(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_SortAndStore_System_String_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.SortAndStore(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)">SortAndStore(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Sorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be
 used to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can
 be performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).
@@ -1910,7 +2080,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long SortAndStore(string destination, long skip = 0L, long take = -1L, Order order = null, SortType sortType = null, T by = null, T[] get = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">long SortAndStore(string destination, long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1938,12 +2108,12 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Order</span></td>
+        <td><span class="xref">StackExchange.Redis.Order</span></td>
         <td><span class="parametername">order</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">SortType</span></td>
+        <td><span class="xref">StackExchange.Redis.SortType</span></td>
         <td><span class="parametername">sortType</span></td>
         <td></td>
       </tr>
@@ -1958,7 +2128,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1980,13 +2150,18 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_SortAndStore_System_String_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_SortAndStore_System_String_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sort">http://redis.io/commands/sort</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_SortAndStoreAsync_System_String_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.SortAndStoreAsync(System.String%2CSystem.Int64%2CSystem.Int64%2CStackExchange.Redis.Order%2CStackExchange.Redis.SortType%2C%600%2C%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L284">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_SortAndStoreAsync_" data-uid="WeihanLi.Redis.ISetClient`1.SortAndStoreAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_SortAndStoreAsync_System_String_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.SortAndStoreAsync(System.String,System.Int64,System.Int64,Order,SortType,`0,`0[],CommandFlags)">SortAndStoreAsync(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_SortAndStoreAsync_System_String_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.SortAndStoreAsync(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)">SortAndStoreAsync(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Sorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be
 used to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can
 be performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).
@@ -1996,7 +2171,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; SortAndStoreAsync(string destination, long skip = 0L, long take = -1L, Order order = null, SortType sortType = null, T by = null, T[] get = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; SortAndStoreAsync(string destination, long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2024,12 +2199,12 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Order</span></td>
+        <td><span class="xref">StackExchange.Redis.Order</span></td>
         <td><span class="parametername">order</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">SortType</span></td>
+        <td><span class="xref">StackExchange.Redis.SortType</span></td>
         <td><span class="parametername">sortType</span></td>
         <td></td>
       </tr>
@@ -2044,7 +2219,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -2060,19 +2235,24 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td><p>Returns the number of elements stored in the new list</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_SortAndStoreAsync_System_String_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_SortAndStoreAsync_System_String_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sort">http://redis.io/commands/sort</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1_SortAsync_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601.SortAsync(System.Int64%2CSystem.Int64%2CStackExchange.Redis.Order%2CStackExchange.Redis.SortType%2C%600%2C%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L295">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ISetClient_1_SortAsync_" data-uid="WeihanLi.Redis.ISetClient`1.SortAsync*"></a>
-  <h4 id="WeihanLi_Redis_ISetClient_1_SortAsync_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.SortAsync(System.Int64,System.Int64,Order,SortType,`0,`0[],CommandFlags)">SortAsync(Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ISetClient_1_SortAsync_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ISetClient`1.SortAsync(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)">SortAsync(Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Sorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be
 used to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can
 be performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).
@@ -2082,7 +2262,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; SortAsync(long skip = 0L, long take = -1L, Order order = null, SortType sortType = null, T by = null, T[] get = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; SortAsync(long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2105,12 +2285,12 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Order</span></td>
+        <td><span class="xref">StackExchange.Redis.Order</span></td>
         <td><span class="parametername">order</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">SortType</span></td>
+        <td><span class="xref">StackExchange.Redis.SortType</span></td>
         <td><span class="parametername">sortType</span></td>
         <td></td>
       </tr>
@@ -2125,7 +2305,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -2141,13 +2321,13 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T[]&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T[]&gt;</td>
         <td><p>Returns the sorted elements, or the external values if <code>get</code> is specified</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ISetClient_1_SortAsync_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ISetClient_1_SortAsync_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sort">http://redis.io/commands/sort</a></p>
 </div>
 </article>
@@ -2157,6 +2337,12 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ISetClient_1.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ISetClient%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Set/ISetClient.cs/#L7" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

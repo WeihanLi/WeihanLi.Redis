@@ -1,0 +1,2097 @@
+### YamlMime:ManagedReference
+items:
+- uid: WeihanLi.Redis.ISetClient`1
+  commentId: T:WeihanLi.Redis.ISetClient`1
+  id: ISetClient`1
+  parent: WeihanLi.Redis
+  children:
+  - WeihanLi.Redis.ISetClient`1.Add(`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Add(`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.AddAsync(`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.AddAsync(`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Combine(StackExchange.Redis.SetOperation,System.String,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Combine(StackExchange.Redis.SetOperation,System.String[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.CombineAndStore(StackExchange.Redis.SetOperation,System.String,System.String,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.CombineAndStore(StackExchange.Redis.SetOperation,System.String,System.String[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync(StackExchange.Redis.SetOperation,System.String,System.String,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync(StackExchange.Redis.SetOperation,System.String,System.String[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.CombineAsync(StackExchange.Redis.SetOperation,System.String,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.CombineAsync(StackExchange.Redis.SetOperation,System.String[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Contains(`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.ContainsAsync(`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Length(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.LengthAsync(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Members(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.MembersAsync(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Move(System.String,`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.MoveAsync(System.String,`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Pop(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.PopAsync(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.RandomMember(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.RandomMemberAsync(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.RandomMembers(System.Int64,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.RandomMembersAsync(System.Int64,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Remove(`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Remove(`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.RemoveAsync(`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.RemoveAsync(`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Scan(`0,System.Int32,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Scan(`0,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.Sort(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.SortAndStore(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.SortAndStoreAsync(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.ISetClient`1.SortAsync(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  langs:
+  - csharp
+  - vb
+  name: ISetClient<T>
+  nameWithType: ISetClient<T>
+  fullName: WeihanLi.Redis.ISetClient<T>
+  type: Interface
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: ISetClient
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 6
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: 'public interface ISetClient<T> : IRedisClient'
+    typeParameters:
+    - id: T
+    content.vb: >-
+      Public Interface ISetClient(Of T)
+          Inherits IRedisClient
+  nameWithType.vb: ISetClient(Of T)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T)
+  name.vb: ISetClient(Of T)
+- uid: WeihanLi.Redis.ISetClient`1.Add(`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Add(`0,StackExchange.Redis.CommandFlags)
+  id: Add(`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Add(T, CommandFlags)
+  nameWithType: ISetClient<T>.Add(T, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Add(T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Add
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 13
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nAdd the specified member to the set stored at key. Specified members that are already a member of this set are ignored. If key does not exist, a new set is created before adding the specified members.\n"
+  remarks: http://redis.io/commands/sadd
+  example: []
+  syntax:
+    content: bool Add(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Boolean
+      description: True if the specified member was not already present in the set, else False
+    content.vb: Function Add(value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Boolean
+  overload: WeihanLi.Redis.ISetClient`1.Add*
+  nameWithType.vb: ISetClient(Of T).Add(T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Add(T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Add(`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Add(`0[],StackExchange.Redis.CommandFlags)
+  id: Add(`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Add(T[], CommandFlags)
+  nameWithType: ISetClient<T>.Add(T[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Add(T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Add
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 20
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nAdd the specified members to the set stored at key. Specified members that are already a member of this set are ignored. If key does not exist, a new set is created before adding the specified members.\n"
+  remarks: http://redis.io/commands/sadd
+  example: []
+  syntax:
+    content: long Add(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: values
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+      description: the number of elements that were added to the set, not including all the elements already present into the set.
+    content.vb: Function Add(values As T(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.ISetClient`1.Add*
+  nameWithType.vb: ISetClient(Of T).Add(T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Add(T(), StackExchange.Redis.CommandFlags)
+  name.vb: Add(T(), CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Combine(StackExchange.Redis.SetOperation,System.String,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Combine(StackExchange.Redis.SetOperation,System.String,StackExchange.Redis.CommandFlags)
+  id: Combine(StackExchange.Redis.SetOperation,System.String,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Combine(SetOperation, String, CommandFlags)
+  nameWithType: ISetClient<T>.Combine(SetOperation, String, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Combine(StackExchange.Redis.SetOperation, System.String, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Combine
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 29
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the members of the set resulting from the specified operation against the given sets.\n"
+  remarks: http://redis.io/commands/sunion
+  example: []
+  syntax:
+    content: T[] Combine(SetOperation operation, string another, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: operation
+      type: StackExchange.Redis.SetOperation
+    - id: another
+      type: System.String
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}[]'
+      description: list with members of the resulting set.
+    content.vb: Function Combine(operation As SetOperation, another As String, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T()
+  overload: WeihanLi.Redis.ISetClient`1.Combine*
+  nameWithType.vb: ISetClient(Of T).Combine(SetOperation, String, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Combine(StackExchange.Redis.SetOperation, System.String, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Combine(StackExchange.Redis.SetOperation,System.String[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Combine(StackExchange.Redis.SetOperation,System.String[],StackExchange.Redis.CommandFlags)
+  id: Combine(StackExchange.Redis.SetOperation,System.String[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Combine(SetOperation, String[], CommandFlags)
+  nameWithType: ISetClient<T>.Combine(SetOperation, String[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Combine(StackExchange.Redis.SetOperation, System.String[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Combine
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 38
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the members of the set resulting from the specified operation against the given sets.\n"
+  remarks: http://redis.io/commands/sunion
+  example: []
+  syntax:
+    content: T[] Combine(SetOperation operation, string[] keys, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: operation
+      type: StackExchange.Redis.SetOperation
+    - id: keys
+      type: System.String[]
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}[]'
+      description: list with members of the resulting set.
+    content.vb: Function Combine(operation As SetOperation, keys As String(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T()
+  overload: WeihanLi.Redis.ISetClient`1.Combine*
+  nameWithType.vb: ISetClient(Of T).Combine(SetOperation, String(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Combine(StackExchange.Redis.SetOperation, System.String(), StackExchange.Redis.CommandFlags)
+  name.vb: Combine(SetOperation, String(), CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.CombineAndStore(StackExchange.Redis.SetOperation,System.String,System.String,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.CombineAndStore(StackExchange.Redis.SetOperation,System.String,System.String,StackExchange.Redis.CommandFlags)
+  id: CombineAndStore(StackExchange.Redis.SetOperation,System.String,System.String,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: CombineAndStore(SetOperation, String, String, CommandFlags)
+  nameWithType: ISetClient<T>.CombineAndStore(SetOperation, String, String, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.CombineAndStore(StackExchange.Redis.SetOperation, System.String, System.String, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: CombineAndStore
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 47
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nThis command is equal to SetCombine, but instead of returning the resulting set, it is stored in destination. If destination already exists, it is overwritten.\n"
+  remarks: http://redis.io/commands/sunionstore
+  example: []
+  syntax:
+    content: long CombineAndStore(SetOperation operation, string destination, string another, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: operation
+      type: StackExchange.Redis.SetOperation
+    - id: destination
+      type: System.String
+    - id: another
+      type: System.String
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+      description: the number of elements in the resulting set.
+    content.vb: Function CombineAndStore(operation As SetOperation, destination As String, another As String, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.ISetClient`1.CombineAndStore*
+  nameWithType.vb: ISetClient(Of T).CombineAndStore(SetOperation, String, String, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).CombineAndStore(StackExchange.Redis.SetOperation, System.String, System.String, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.CombineAndStore(StackExchange.Redis.SetOperation,System.String,System.String[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.CombineAndStore(StackExchange.Redis.SetOperation,System.String,System.String[],StackExchange.Redis.CommandFlags)
+  id: CombineAndStore(StackExchange.Redis.SetOperation,System.String,System.String[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: CombineAndStore(SetOperation, String, String[], CommandFlags)
+  nameWithType: ISetClient<T>.CombineAndStore(SetOperation, String, String[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.CombineAndStore(StackExchange.Redis.SetOperation, System.String, System.String[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: CombineAndStore
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 56
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nThis command is equal to SetCombine, but instead of returning the resulting set, it is stored in destination. If destination already exists, it is overwritten.\n"
+  remarks: http://redis.io/commands/sunionstore
+  example: []
+  syntax:
+    content: long CombineAndStore(SetOperation operation, string destination, string[] keys, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: operation
+      type: StackExchange.Redis.SetOperation
+    - id: destination
+      type: System.String
+    - id: keys
+      type: System.String[]
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+      description: the number of elements in the resulting set.
+    content.vb: Function CombineAndStore(operation As SetOperation, destination As String, keys As String(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.ISetClient`1.CombineAndStore*
+  nameWithType.vb: ISetClient(Of T).CombineAndStore(SetOperation, String, String(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).CombineAndStore(StackExchange.Redis.SetOperation, System.String, System.String(), StackExchange.Redis.CommandFlags)
+  name.vb: CombineAndStore(SetOperation, String, String(), CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Contains(`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Contains(`0,StackExchange.Redis.CommandFlags)
+  id: Contains(`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Contains(T, CommandFlags)
+  nameWithType: ISetClient<T>.Contains(T, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Contains(T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Contains
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 63
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns if member is a member of the set stored at key.\n"
+  remarks: http://redis.io/commands/sismember
+  example: []
+  syntax:
+    content: bool Contains(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Boolean
+      description: 1 if the element is a member of the set. 0 if the element is not a member of the set, or if key does not exist.
+    content.vb: Function Contains(value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Boolean
+  overload: WeihanLi.Redis.ISetClient`1.Contains*
+  nameWithType.vb: ISetClient(Of T).Contains(T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Contains(T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Length(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Length(StackExchange.Redis.CommandFlags)
+  id: Length(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Length(CommandFlags)
+  nameWithType: ISetClient<T>.Length(CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Length(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Length
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 70
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the set cardinality (number of elements) of the set stored at key.\n"
+  remarks: http://redis.io/commands/scard
+  example: []
+  syntax:
+    content: long Length(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+      description: the cardinality (number of elements) of the set, or 0 if key does not exist.
+    content.vb: Function Length(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.ISetClient`1.Length*
+  nameWithType.vb: ISetClient(Of T).Length(CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Length(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Members(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Members(StackExchange.Redis.CommandFlags)
+  id: Members(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Members(CommandFlags)
+  nameWithType: ISetClient<T>.Members(CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Members(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Members
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 77
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns all the members of the set value stored at key.\n"
+  remarks: http://redis.io/commands/smembers
+  example: []
+  syntax:
+    content: T[] Members(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}[]'
+      description: all elements of the set.
+    content.vb: Function Members(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T()
+  overload: WeihanLi.Redis.ISetClient`1.Members*
+  nameWithType.vb: ISetClient(Of T).Members(CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Members(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Move(System.String,`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Move(System.String,`0,StackExchange.Redis.CommandFlags)
+  id: Move(System.String,`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Move(String, T, CommandFlags)
+  nameWithType: ISetClient<T>.Move(String, T, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Move(System.String, T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Move
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 85
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nMove member from the set at source to the set at destination. This operation is atomic. In every given moment the element will appear to be a member of source or destination for other clients.\nWhen the specified element already exists in the destination set, it is only removed from the source set.\n"
+  remarks: http://redis.io/commands/smove
+  example: []
+  syntax:
+    content: bool Move(string destination, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: destination
+      type: System.String
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Boolean
+      description: 1 if the element is moved. 0 if the element is not a member of source and no operation was performed.
+    content.vb: Function Move(destination As String, value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Boolean
+  overload: WeihanLi.Redis.ISetClient`1.Move*
+  nameWithType.vb: ISetClient(Of T).Move(String, T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Move(System.String, T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Pop(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Pop(StackExchange.Redis.CommandFlags)
+  id: Pop(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Pop(CommandFlags)
+  nameWithType: ISetClient<T>.Pop(CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Pop(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Pop
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 92
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemoves and returns a random element from the set value stored at key.\n"
+  remarks: http://redis.io/commands/spop
+  example: []
+  syntax:
+    content: T Pop(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}'
+      description: the removed element, or nil when key does not exist.
+    content.vb: Function Pop(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T
+  overload: WeihanLi.Redis.ISetClient`1.Pop*
+  nameWithType.vb: ISetClient(Of T).Pop(CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Pop(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.RandomMember(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.RandomMember(StackExchange.Redis.CommandFlags)
+  id: RandomMember(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: RandomMember(CommandFlags)
+  nameWithType: ISetClient<T>.RandomMember(CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.RandomMember(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RandomMember
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 99
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturn a random element from the set value stored at key.\n"
+  remarks: http://redis.io/commands/srandmember
+  example: []
+  syntax:
+    content: T RandomMember(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}'
+      description: the randomly selected element, or nil when key does not exist
+    content.vb: Function RandomMember(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T
+  overload: WeihanLi.Redis.ISetClient`1.RandomMember*
+  nameWithType.vb: ISetClient(Of T).RandomMember(CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).RandomMember(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.RandomMembers(System.Int64,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.RandomMembers(System.Int64,StackExchange.Redis.CommandFlags)
+  id: RandomMembers(System.Int64,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: RandomMembers(Int64, CommandFlags)
+  nameWithType: ISetClient<T>.RandomMembers(Int64, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.RandomMembers(System.Int64, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RandomMembers
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 107
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturn an array of count distinct elements if count is positive. If called with a negative count the behavior changes and the command is allowed to return the same element multiple times.\nIn this case the numer of returned elements is the absolute value of the specified count.\n"
+  remarks: http://redis.io/commands/srandmember
+  example: []
+  syntax:
+    content: T[] RandomMembers(long count, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: count
+      type: System.Int64
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}[]'
+      description: an array of elements, or an empty array when key does not exist
+    content.vb: Function RandomMembers(count As Long, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T()
+  overload: WeihanLi.Redis.ISetClient`1.RandomMembers*
+  nameWithType.vb: ISetClient(Of T).RandomMembers(Int64, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).RandomMembers(System.Int64, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Remove(`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Remove(`0,StackExchange.Redis.CommandFlags)
+  id: Remove(`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T, CommandFlags)
+  nameWithType: ISetClient<T>.Remove(T, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Remove(T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Remove
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 114
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemove the specified member from the set stored at key.  Specified members that are not a member of this set are ignored.\n"
+  remarks: http://redis.io/commands/srem
+  example: []
+  syntax:
+    content: bool Remove(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Boolean
+      description: True if the specified member was already present in the set, else False
+    content.vb: Function Remove(value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Boolean
+  overload: WeihanLi.Redis.ISetClient`1.Remove*
+  nameWithType.vb: ISetClient(Of T).Remove(T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Remove(T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Remove(`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Remove(`0[],StackExchange.Redis.CommandFlags)
+  id: Remove(`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T[], CommandFlags)
+  nameWithType: ISetClient<T>.Remove(T[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Remove(T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Remove
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 121
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemove the specified members from the set stored at key. Specified members that are not a member of this set are ignored.\n"
+  remarks: http://redis.io/commands/srem
+  example: []
+  syntax:
+    content: long Remove(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: values
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+      description: the number of members that were removed from the set, not including non existing members.
+    content.vb: Function Remove(values As T(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.ISetClient`1.Remove*
+  nameWithType.vb: ISetClient(Of T).Remove(T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Remove(T(), StackExchange.Redis.CommandFlags)
+  name.vb: Remove(T(), CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Scan(`0,System.Int32,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Scan(`0,System.Int32,StackExchange.Redis.CommandFlags)
+  id: Scan(`0,System.Int32,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Scan(T, Int32, CommandFlags)
+  nameWithType: ISetClient<T>.Scan(T, Int32, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Scan(T, System.Int32, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Scan
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 128
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nThe SSCAN command is used to incrementally iterate over set\n"
+  remarks: http://redis.io/commands/sscan
+  example: []
+  syntax:
+    content: T[] Scan(T pattern, int pageSize, CommandFlags flags)
+    parameters:
+    - id: pattern
+      type: '{T}'
+    - id: pageSize
+      type: System.Int32
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}[]'
+      description: yields all elements of the set.
+    content.vb: Function Scan(pattern As T, pageSize As Integer, flags As CommandFlags) As T()
+  overload: WeihanLi.Redis.ISetClient`1.Scan*
+  nameWithType.vb: ISetClient(Of T).Scan(T, Int32, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Scan(T, System.Int32, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Scan(`0,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Scan(`0,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)
+  id: Scan(`0,System.Int32,System.Int64,System.Int32,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Scan(T, Int32, Int64, Int32, CommandFlags)
+  nameWithType: ISetClient<T>.Scan(T, Int32, Int64, Int32, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Scan(T, System.Int32, System.Int64, System.Int32, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Scan
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 135
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nThe SSCAN command is used to incrementally iterate over set; note: to resume an iteration via <em>cursor</em>, cast the original enumerable or enumerator to <em>IScanningCursor</em>.\n"
+  remarks: http://redis.io/commands/sscan
+  example: []
+  syntax:
+    content: T[] Scan(T pattern = null, int pageSize = 10, long cursor = 0L, int pageOffset = 0, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: pattern
+      type: '{T}'
+    - id: pageSize
+      type: System.Int32
+    - id: cursor
+      type: System.Int64
+    - id: pageOffset
+      type: System.Int32
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}[]'
+      description: yields all elements of the set.
+    content.vb: Function Scan(pattern As T = Nothing, pageSize As Integer = 10, cursor As Long = 0L, pageOffset As Integer = 0, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T()
+  overload: WeihanLi.Redis.ISetClient`1.Scan*
+  nameWithType.vb: ISetClient(Of T).Scan(T, Int32, Int64, Int32, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Scan(T, System.Int32, System.Int64, System.Int32, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.Sort(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.Sort(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  id: Sort(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: Sort(Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  nameWithType: ISetClient<T>.Sort(Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.Sort(System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Sort
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 146
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nSorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be\nused to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can\nbe performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).\nReferring to the <a href=\"http://redis.io/commands/sort\">redis SORT documentation </a> for examples is recommended. When used in hashes, <code>by</code> and <code>get</code>\ncan be used to specify fields using <code>-></code> notation (again, refer to redis documentation).\n"
+  remarks: http://redis.io/commands/sort
+  example: []
+  syntax:
+    content: T[] Sort(long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: skip
+      type: System.Int64
+    - id: take
+      type: System.Int64
+    - id: order
+      type: StackExchange.Redis.Order
+    - id: sortType
+      type: StackExchange.Redis.SortType
+    - id: by
+      type: '{T}'
+    - id: get
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}[]'
+      description: Returns the sorted elements, or the external values if <code>get</code> is specified
+    content.vb: Function Sort(skip As Long = 0L, take As Long = -1L, order As Order = Order.Ascending, sortType As SortType = SortType.Numeric, by As T = Nothing, get As T() = Nothing, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T()
+  overload: WeihanLi.Redis.ISetClient`1.Sort*
+  nameWithType.vb: ISetClient(Of T).Sort(Int64, Int64, Order, SortType, T, T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Sort(System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T(), StackExchange.Redis.CommandFlags)
+  name.vb: Sort(Int64, Int64, Order, SortType, T, T(), CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.SortAndStore(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.SortAndStore(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  id: SortAndStore(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: SortAndStore(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  nameWithType: ISetClient<T>.SortAndStore(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.SortAndStore(System.String, System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: SortAndStore
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 157
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nSorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be\nused to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can\nbe performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).\nReferring to the <a href=\"http://redis.io/commands/sort\">redis SORT documentation </a> for examples is recommended. When used in hashes, <code>by</code> and <code>get</code>\ncan be used to specify fields using <code>-></code> notation (again, refer to redis documentation).\n"
+  remarks: http://redis.io/commands/sort
+  example: []
+  syntax:
+    content: long SortAndStore(string destination, long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: destination
+      type: System.String
+    - id: skip
+      type: System.Int64
+    - id: take
+      type: System.Int64
+    - id: order
+      type: StackExchange.Redis.Order
+    - id: sortType
+      type: StackExchange.Redis.SortType
+    - id: by
+      type: '{T}'
+    - id: get
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+      description: Returns the number of elements stored in the new list
+    content.vb: Function SortAndStore(destination As String, skip As Long = 0L, take As Long = -1L, order As Order = Order.Ascending, sortType As SortType = SortType.Numeric, by As T = Nothing, get As T() = Nothing, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.ISetClient`1.SortAndStore*
+  nameWithType.vb: ISetClient(Of T).SortAndStore(String, Int64, Int64, Order, SortType, T, T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).SortAndStore(System.String, System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T(), StackExchange.Redis.CommandFlags)
+  name.vb: SortAndStore(String, Int64, Int64, Order, SortType, T, T(), CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.AddAsync(`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.AddAsync(`0,StackExchange.Redis.CommandFlags)
+  id: AddAsync(`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: AddAsync(T, CommandFlags)
+  nameWithType: ISetClient<T>.AddAsync(T, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.AddAsync(T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: AddAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 164
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nAdd the specified member to the set stored at key. Specified members that are already a member of this set are ignored. If key does not exist, a new set is created before adding the specified members.\n"
+  remarks: http://redis.io/commands/sadd
+  example: []
+  syntax:
+    content: Task<bool> AddAsync(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: True if the specified member was not already present in the set, else False
+    content.vb: Function AddAsync(value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Boolean)
+  overload: WeihanLi.Redis.ISetClient`1.AddAsync*
+  nameWithType.vb: ISetClient(Of T).AddAsync(T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).AddAsync(T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.AddAsync(`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.AddAsync(`0[],StackExchange.Redis.CommandFlags)
+  id: AddAsync(`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: AddAsync(T[], CommandFlags)
+  nameWithType: ISetClient<T>.AddAsync(T[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.AddAsync(T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: AddAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 171
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nAdd the specified members to the set stored at key. Specified members that are already a member of this set are ignored. If key does not exist, a new set is created before adding the specified members.\n"
+  remarks: http://redis.io/commands/sadd
+  example: []
+  syntax:
+    content: Task<long> AddAsync(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: values
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: the number of elements that were added to the set, not including all the elements already present into the set.
+    content.vb: Function AddAsync(values As T(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.ISetClient`1.AddAsync*
+  nameWithType.vb: ISetClient(Of T).AddAsync(T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).AddAsync(T(), StackExchange.Redis.CommandFlags)
+  name.vb: AddAsync(T(), CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync(StackExchange.Redis.SetOperation,System.String,System.String,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync(StackExchange.Redis.SetOperation,System.String,System.String,StackExchange.Redis.CommandFlags)
+  id: CombineAndStoreAsync(StackExchange.Redis.SetOperation,System.String,System.String,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: CombineAndStoreAsync(SetOperation, String, String, CommandFlags)
+  nameWithType: ISetClient<T>.CombineAndStoreAsync(SetOperation, String, String, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.CombineAndStoreAsync(StackExchange.Redis.SetOperation, System.String, System.String, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: CombineAndStoreAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 180
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nThis command is equal to SetCombine, but instead of returning the resulting set, it is stored in destination. If destination already exists, it is overwritten.\n"
+  remarks: http://redis.io/commands/sunionstore
+  example: []
+  syntax:
+    content: Task<long> CombineAndStoreAsync(SetOperation operation, string destination, string another, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: operation
+      type: StackExchange.Redis.SetOperation
+    - id: destination
+      type: System.String
+    - id: another
+      type: System.String
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: the number of elements in the resulting set.
+    content.vb: Function CombineAndStoreAsync(operation As SetOperation, destination As String, another As String, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync*
+  nameWithType.vb: ISetClient(Of T).CombineAndStoreAsync(SetOperation, String, String, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).CombineAndStoreAsync(StackExchange.Redis.SetOperation, System.String, System.String, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync(StackExchange.Redis.SetOperation,System.String,System.String[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync(StackExchange.Redis.SetOperation,System.String,System.String[],StackExchange.Redis.CommandFlags)
+  id: CombineAndStoreAsync(StackExchange.Redis.SetOperation,System.String,System.String[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: CombineAndStoreAsync(SetOperation, String, String[], CommandFlags)
+  nameWithType: ISetClient<T>.CombineAndStoreAsync(SetOperation, String, String[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.CombineAndStoreAsync(StackExchange.Redis.SetOperation, System.String, System.String[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: CombineAndStoreAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 189
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nThis command is equal to SetCombine, but instead of returning the resulting set, it is stored in destination. If destination already exists, it is overwritten.\n"
+  remarks: http://redis.io/commands/sunionstore
+  example: []
+  syntax:
+    content: Task<long> CombineAndStoreAsync(SetOperation operation, string destination, string[] keys, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: operation
+      type: StackExchange.Redis.SetOperation
+    - id: destination
+      type: System.String
+    - id: keys
+      type: System.String[]
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: the number of elements in the resulting set.
+    content.vb: Function CombineAndStoreAsync(operation As SetOperation, destination As String, keys As String(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync*
+  nameWithType.vb: ISetClient(Of T).CombineAndStoreAsync(SetOperation, String, String(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).CombineAndStoreAsync(StackExchange.Redis.SetOperation, System.String, System.String(), StackExchange.Redis.CommandFlags)
+  name.vb: CombineAndStoreAsync(SetOperation, String, String(), CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.CombineAsync(StackExchange.Redis.SetOperation,System.String,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.CombineAsync(StackExchange.Redis.SetOperation,System.String,StackExchange.Redis.CommandFlags)
+  id: CombineAsync(StackExchange.Redis.SetOperation,System.String,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: CombineAsync(SetOperation, String, CommandFlags)
+  nameWithType: ISetClient<T>.CombineAsync(SetOperation, String, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.CombineAsync(StackExchange.Redis.SetOperation, System.String, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: CombineAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 198
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the members of the set resulting from the specified operation against the given sets.\n"
+  remarks: http://redis.io/commands/sunion
+  example: []
+  syntax:
+    content: Task<T[]> CombineAsync(SetOperation operation, string another, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: operation
+      type: StackExchange.Redis.SetOperation
+    - id: another
+      type: System.String
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+      description: list with members of the resulting set.
+    content.vb: Function CombineAsync(operation As SetOperation, another As String, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T())
+  overload: WeihanLi.Redis.ISetClient`1.CombineAsync*
+  nameWithType.vb: ISetClient(Of T).CombineAsync(SetOperation, String, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).CombineAsync(StackExchange.Redis.SetOperation, System.String, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.CombineAsync(StackExchange.Redis.SetOperation,System.String[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.CombineAsync(StackExchange.Redis.SetOperation,System.String[],StackExchange.Redis.CommandFlags)
+  id: CombineAsync(StackExchange.Redis.SetOperation,System.String[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: CombineAsync(SetOperation, String[], CommandFlags)
+  nameWithType: ISetClient<T>.CombineAsync(SetOperation, String[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.CombineAsync(StackExchange.Redis.SetOperation, System.String[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: CombineAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 207
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the members of the set resulting from the specified operation against the given sets.\n"
+  remarks: http://redis.io/commands/sunion
+  example: []
+  syntax:
+    content: Task<T[]> CombineAsync(SetOperation operation, string[] keys, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: operation
+      type: StackExchange.Redis.SetOperation
+    - id: keys
+      type: System.String[]
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+      description: list with members of the resulting set.
+    content.vb: Function CombineAsync(operation As SetOperation, keys As String(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T())
+  overload: WeihanLi.Redis.ISetClient`1.CombineAsync*
+  nameWithType.vb: ISetClient(Of T).CombineAsync(SetOperation, String(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).CombineAsync(StackExchange.Redis.SetOperation, System.String(), StackExchange.Redis.CommandFlags)
+  name.vb: CombineAsync(SetOperation, String(), CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.ContainsAsync(`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.ContainsAsync(`0,StackExchange.Redis.CommandFlags)
+  id: ContainsAsync(`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: ContainsAsync(T, CommandFlags)
+  nameWithType: ISetClient<T>.ContainsAsync(T, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.ContainsAsync(T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: ContainsAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 214
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns if member is a member of the set stored at key.\n"
+  remarks: http://redis.io/commands/sismember
+  example: []
+  syntax:
+    content: Task<bool> ContainsAsync(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: 1 if the element is a member of the set. 0 if the element is not a member of the set, or if key does not exist.
+    content.vb: Function ContainsAsync(value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Boolean)
+  overload: WeihanLi.Redis.ISetClient`1.ContainsAsync*
+  nameWithType.vb: ISetClient(Of T).ContainsAsync(T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).ContainsAsync(T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.LengthAsync(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.LengthAsync(StackExchange.Redis.CommandFlags)
+  id: LengthAsync(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: LengthAsync(CommandFlags)
+  nameWithType: ISetClient<T>.LengthAsync(CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.LengthAsync(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: LengthAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 221
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the set cardinality (number of elements) of the set stored at key.\n"
+  remarks: http://redis.io/commands/scard
+  example: []
+  syntax:
+    content: Task<long> LengthAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: the cardinality (number of elements) of the set, or 0 if key does not exist.
+    content.vb: Function LengthAsync(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.ISetClient`1.LengthAsync*
+  nameWithType.vb: ISetClient(Of T).LengthAsync(CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).LengthAsync(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.MembersAsync(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.MembersAsync(StackExchange.Redis.CommandFlags)
+  id: MembersAsync(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: MembersAsync(CommandFlags)
+  nameWithType: ISetClient<T>.MembersAsync(CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.MembersAsync(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: MembersAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 228
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns all the members of the set value stored at key.\n"
+  remarks: http://redis.io/commands/smembers
+  example: []
+  syntax:
+    content: Task<T[]> MembersAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+      description: all elements of the set.
+    content.vb: Function MembersAsync(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T())
+  overload: WeihanLi.Redis.ISetClient`1.MembersAsync*
+  nameWithType.vb: ISetClient(Of T).MembersAsync(CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).MembersAsync(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.MoveAsync(System.String,`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.MoveAsync(System.String,`0,StackExchange.Redis.CommandFlags)
+  id: MoveAsync(System.String,`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: MoveAsync(String, T, CommandFlags)
+  nameWithType: ISetClient<T>.MoveAsync(String, T, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.MoveAsync(System.String, T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: MoveAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 236
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nMove member from the set at source to the set at destination. This operation is atomic. In every given moment the element will appear to be a member of source or destination for other clients.\nWhen the specified element already exists in the destination set, it is only removed from the source set.\n"
+  remarks: http://redis.io/commands/smove
+  example: []
+  syntax:
+    content: Task<bool> MoveAsync(string destination, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: destination
+      type: System.String
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: 1 if the element is moved. 0 if the element is not a member of source and no operation was performed.
+    content.vb: Function MoveAsync(destination As String, value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Boolean)
+  overload: WeihanLi.Redis.ISetClient`1.MoveAsync*
+  nameWithType.vb: ISetClient(Of T).MoveAsync(String, T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).MoveAsync(System.String, T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.PopAsync(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.PopAsync(StackExchange.Redis.CommandFlags)
+  id: PopAsync(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: PopAsync(CommandFlags)
+  nameWithType: ISetClient<T>.PopAsync(CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.PopAsync(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: PopAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 243
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemoves and returns a random element from the set value stored at key.\n"
+  remarks: http://redis.io/commands/spop
+  example: []
+  syntax:
+    content: Task<T> PopAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: the removed element, or nil when key does not exist.
+    content.vb: Function PopAsync(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T)
+  overload: WeihanLi.Redis.ISetClient`1.PopAsync*
+  nameWithType.vb: ISetClient(Of T).PopAsync(CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).PopAsync(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.RandomMemberAsync(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.RandomMemberAsync(StackExchange.Redis.CommandFlags)
+  id: RandomMemberAsync(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: RandomMemberAsync(CommandFlags)
+  nameWithType: ISetClient<T>.RandomMemberAsync(CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.RandomMemberAsync(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RandomMemberAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 250
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturn a random element from the set value stored at key.\n"
+  remarks: http://redis.io/commands/srandmember
+  example: []
+  syntax:
+    content: Task<T> RandomMemberAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: the randomly selected element, or nil when key does not exist
+    content.vb: Function RandomMemberAsync(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T)
+  overload: WeihanLi.Redis.ISetClient`1.RandomMemberAsync*
+  nameWithType.vb: ISetClient(Of T).RandomMemberAsync(CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).RandomMemberAsync(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.RandomMembersAsync(System.Int64,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.RandomMembersAsync(System.Int64,StackExchange.Redis.CommandFlags)
+  id: RandomMembersAsync(System.Int64,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: RandomMembersAsync(Int64, CommandFlags)
+  nameWithType: ISetClient<T>.RandomMembersAsync(Int64, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.RandomMembersAsync(System.Int64, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RandomMembersAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 258
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturn an array of count distinct elements if count is positive. If called with a negative count the behavior changes and the command is allowed to return the same element multiple times.\nIn this case the numer of returned elements is the absolute value of the specified count.\n"
+  remarks: http://redis.io/commands/srandmember
+  example: []
+  syntax:
+    content: Task<T[]> RandomMembersAsync(long count, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: count
+      type: System.Int64
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+      description: an array of elements, or an empty array when key does not exist
+    content.vb: Function RandomMembersAsync(count As Long, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T())
+  overload: WeihanLi.Redis.ISetClient`1.RandomMembersAsync*
+  nameWithType.vb: ISetClient(Of T).RandomMembersAsync(Int64, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).RandomMembersAsync(System.Int64, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.RemoveAsync(`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.RemoveAsync(`0,StackExchange.Redis.CommandFlags)
+  id: RemoveAsync(`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAsync(T, CommandFlags)
+  nameWithType: ISetClient<T>.RemoveAsync(T, CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.RemoveAsync(T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RemoveAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 265
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemove the specified member from the set stored at key.  Specified members that are not a member of this set are ignored.\n"
+  remarks: http://redis.io/commands/srem
+  example: []
+  syntax:
+    content: Task<bool> RemoveAsync(T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: True if the specified member was already present in the set, else False
+    content.vb: Function RemoveAsync(value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Boolean)
+  overload: WeihanLi.Redis.ISetClient`1.RemoveAsync*
+  nameWithType.vb: ISetClient(Of T).RemoveAsync(T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).RemoveAsync(T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.RemoveAsync(`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.RemoveAsync(`0[],StackExchange.Redis.CommandFlags)
+  id: RemoveAsync(`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAsync(T[], CommandFlags)
+  nameWithType: ISetClient<T>.RemoveAsync(T[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.RemoveAsync(T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RemoveAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 272
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemove the specified members from the set stored at key. Specified members that are not a member of this set are ignored.\n"
+  remarks: http://redis.io/commands/srem
+  example: []
+  syntax:
+    content: Task<long> RemoveAsync(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: values
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: the number of members that were removed from the set, not including non existing members.
+    content.vb: Function RemoveAsync(values As T(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.ISetClient`1.RemoveAsync*
+  nameWithType.vb: ISetClient(Of T).RemoveAsync(T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).RemoveAsync(T(), StackExchange.Redis.CommandFlags)
+  name.vb: RemoveAsync(T(), CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.SortAndStoreAsync(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.SortAndStoreAsync(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  id: SortAndStoreAsync(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: SortAndStoreAsync(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  nameWithType: ISetClient<T>.SortAndStoreAsync(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.SortAndStoreAsync(System.String, System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: SortAndStoreAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 283
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nSorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be\nused to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can\nbe performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).\nReferring to the <a href=\"http://redis.io/commands/sort\">redis SORT documentation </a> for examples is recommended. When used in hashes, <code>by</code> and <code>get</code>\ncan be used to specify fields using <code>-></code> notation (again, refer to redis documentation).\n"
+  remarks: http://redis.io/commands/sort
+  example: []
+  syntax:
+    content: Task<long> SortAndStoreAsync(string destination, long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: destination
+      type: System.String
+    - id: skip
+      type: System.Int64
+    - id: take
+      type: System.Int64
+    - id: order
+      type: StackExchange.Redis.Order
+    - id: sortType
+      type: StackExchange.Redis.SortType
+    - id: by
+      type: '{T}'
+    - id: get
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: Returns the number of elements stored in the new list
+    content.vb: Function SortAndStoreAsync(destination As String, skip As Long = 0L, take As Long = -1L, order As Order = Order.Ascending, sortType As SortType = SortType.Numeric, by As T = Nothing, get As T() = Nothing, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.ISetClient`1.SortAndStoreAsync*
+  nameWithType.vb: ISetClient(Of T).SortAndStoreAsync(String, Int64, Int64, Order, SortType, T, T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).SortAndStoreAsync(System.String, System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T(), StackExchange.Redis.CommandFlags)
+  name.vb: SortAndStoreAsync(String, Int64, Int64, Order, SortType, T, T(), CommandFlags)
+- uid: WeihanLi.Redis.ISetClient`1.SortAsync(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.ISetClient`1.SortAsync(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  id: SortAsync(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.ISetClient`1
+  langs:
+  - csharp
+  - vb
+  name: SortAsync(Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  nameWithType: ISetClient<T>.SortAsync(Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  fullName: WeihanLi.Redis.ISetClient<T>.SortAsync(System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Set/ISetClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: SortAsync
+    path: src/WeihanLi.Redis/Set/ISetClient.cs
+    startLine: 294
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nSorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be\nused to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can\nbe performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).\nReferring to the <a href=\"http://redis.io/commands/sort\">redis SORT documentation </a> for examples is recommended. When used in hashes, <code>by</code> and <code>get</code>\ncan be used to specify fields using <code>-></code> notation (again, refer to redis documentation).\n"
+  remarks: http://redis.io/commands/sort
+  example: []
+  syntax:
+    content: Task<T[]> SortAsync(long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: skip
+      type: System.Int64
+    - id: take
+      type: System.Int64
+    - id: order
+      type: StackExchange.Redis.Order
+    - id: sortType
+      type: StackExchange.Redis.SortType
+    - id: by
+      type: '{T}'
+    - id: get
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+      description: Returns the sorted elements, or the external values if <code>get</code> is specified
+    content.vb: Function SortAsync(skip As Long = 0L, take As Long = -1L, order As Order = Order.Ascending, sortType As SortType = SortType.Numeric, by As T = Nothing, get As T() = Nothing, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T())
+  overload: WeihanLi.Redis.ISetClient`1.SortAsync*
+  nameWithType.vb: ISetClient(Of T).SortAsync(Int64, Int64, Order, SortType, T, T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).SortAsync(System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T(), StackExchange.Redis.CommandFlags)
+  name.vb: SortAsync(Int64, Int64, Order, SortType, T, T(), CommandFlags)
+references:
+- uid: WeihanLi.Redis
+  commentId: N:WeihanLi.Redis
+  name: WeihanLi.Redis
+  nameWithType: WeihanLi.Redis
+  fullName: WeihanLi.Redis
+- uid: WeihanLi.Redis.ISetClient`1.Add*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.Add
+  name: Add
+  nameWithType: ISetClient<T>.Add
+  fullName: WeihanLi.Redis.ISetClient<T>.Add
+  nameWithType.vb: ISetClient(Of T).Add
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Add
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: StackExchange.Redis.CommandFlags
+  commentId: T:StackExchange.Redis.CommandFlags
+  parent: StackExchange.Redis
+  isExternal: true
+  name: CommandFlags
+  nameWithType: CommandFlags
+  fullName: StackExchange.Redis.CommandFlags
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: StackExchange.Redis
+  commentId: N:StackExchange.Redis
+  isExternal: true
+  name: StackExchange.Redis
+  nameWithType: StackExchange.Redis
+  fullName: StackExchange.Redis
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: '{T}[]'
+  isExternal: true
+  name: T[]
+  nameWithType: T[]
+  fullName: T[]
+  nameWithType.vb: T()
+  fullName.vb: T()
+  name.vb: T()
+  spec.csharp:
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: WeihanLi.Redis.ISetClient`1.Combine*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.Combine
+  name: Combine
+  nameWithType: ISetClient<T>.Combine
+  fullName: WeihanLi.Redis.ISetClient<T>.Combine
+  nameWithType.vb: ISetClient(Of T).Combine
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Combine
+- uid: StackExchange.Redis.SetOperation
+  commentId: T:StackExchange.Redis.SetOperation
+  parent: StackExchange.Redis
+  isExternal: true
+  name: SetOperation
+  nameWithType: SetOperation
+  fullName: StackExchange.Redis.SetOperation
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: WeihanLi.Redis.ISetClient`1.CombineAndStore*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.CombineAndStore
+  name: CombineAndStore
+  nameWithType: ISetClient<T>.CombineAndStore
+  fullName: WeihanLi.Redis.ISetClient<T>.CombineAndStore
+  nameWithType.vb: ISetClient(Of T).CombineAndStore
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).CombineAndStore
+- uid: WeihanLi.Redis.ISetClient`1.Contains*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.Contains
+  name: Contains
+  nameWithType: ISetClient<T>.Contains
+  fullName: WeihanLi.Redis.ISetClient<T>.Contains
+  nameWithType.vb: ISetClient(Of T).Contains
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Contains
+- uid: WeihanLi.Redis.ISetClient`1.Length*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.Length
+  name: Length
+  nameWithType: ISetClient<T>.Length
+  fullName: WeihanLi.Redis.ISetClient<T>.Length
+  nameWithType.vb: ISetClient(Of T).Length
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Length
+- uid: WeihanLi.Redis.ISetClient`1.Members*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.Members
+  name: Members
+  nameWithType: ISetClient<T>.Members
+  fullName: WeihanLi.Redis.ISetClient<T>.Members
+  nameWithType.vb: ISetClient(Of T).Members
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Members
+- uid: WeihanLi.Redis.ISetClient`1.Move*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.Move
+  name: Move
+  nameWithType: ISetClient<T>.Move
+  fullName: WeihanLi.Redis.ISetClient<T>.Move
+  nameWithType.vb: ISetClient(Of T).Move
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Move
+- uid: WeihanLi.Redis.ISetClient`1.Pop*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.Pop
+  name: Pop
+  nameWithType: ISetClient<T>.Pop
+  fullName: WeihanLi.Redis.ISetClient<T>.Pop
+  nameWithType.vb: ISetClient(Of T).Pop
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Pop
+- uid: WeihanLi.Redis.ISetClient`1.RandomMember*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.RandomMember
+  name: RandomMember
+  nameWithType: ISetClient<T>.RandomMember
+  fullName: WeihanLi.Redis.ISetClient<T>.RandomMember
+  nameWithType.vb: ISetClient(Of T).RandomMember
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).RandomMember
+- uid: WeihanLi.Redis.ISetClient`1.RandomMembers*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.RandomMembers
+  name: RandomMembers
+  nameWithType: ISetClient<T>.RandomMembers
+  fullName: WeihanLi.Redis.ISetClient<T>.RandomMembers
+  nameWithType.vb: ISetClient(Of T).RandomMembers
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).RandomMembers
+- uid: WeihanLi.Redis.ISetClient`1.Remove*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.Remove
+  name: Remove
+  nameWithType: ISetClient<T>.Remove
+  fullName: WeihanLi.Redis.ISetClient<T>.Remove
+  nameWithType.vb: ISetClient(Of T).Remove
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Remove
+- uid: WeihanLi.Redis.ISetClient`1.Scan*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.Scan
+  name: Scan
+  nameWithType: ISetClient<T>.Scan
+  fullName: WeihanLi.Redis.ISetClient<T>.Scan
+  nameWithType.vb: ISetClient(Of T).Scan
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Scan
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: WeihanLi.Redis.ISetClient`1.Sort*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.Sort
+  name: Sort
+  nameWithType: ISetClient<T>.Sort
+  fullName: WeihanLi.Redis.ISetClient<T>.Sort
+  nameWithType.vb: ISetClient(Of T).Sort
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).Sort
+- uid: StackExchange.Redis.Order
+  commentId: T:StackExchange.Redis.Order
+  parent: StackExchange.Redis
+  isExternal: true
+  name: Order
+  nameWithType: Order
+  fullName: StackExchange.Redis.Order
+- uid: StackExchange.Redis.SortType
+  commentId: T:StackExchange.Redis.SortType
+  parent: StackExchange.Redis
+  isExternal: true
+  name: SortType
+  nameWithType: SortType
+  fullName: StackExchange.Redis.SortType
+- uid: WeihanLi.Redis.ISetClient`1.SortAndStore*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.SortAndStore
+  name: SortAndStore
+  nameWithType: ISetClient<T>.SortAndStore
+  fullName: WeihanLi.Redis.ISetClient<T>.SortAndStore
+  nameWithType.vb: ISetClient(Of T).SortAndStore
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).SortAndStore
+- uid: WeihanLi.Redis.ISetClient`1.AddAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.AddAsync
+  name: AddAsync
+  nameWithType: ISetClient<T>.AddAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.AddAsync
+  nameWithType.vb: ISetClient(Of T).AddAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).AddAsync
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Boolean>
+  nameWithType: Task<Boolean>
+  fullName: System.Threading.Tasks.Task<System.Boolean>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: System.Threading.Tasks.Task{System.Int64}
+  commentId: T:System.Threading.Tasks.Task{System.Int64}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Int64>
+  nameWithType: Task<Int64>
+  fullName: System.Threading.Tasks.Task<System.Int64>
+  nameWithType.vb: Task(Of Int64)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Int64)
+  name.vb: Task(Of Int64)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.CombineAndStoreAsync
+  name: CombineAndStoreAsync
+  nameWithType: ISetClient<T>.CombineAndStoreAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.CombineAndStoreAsync
+  nameWithType.vb: ISetClient(Of T).CombineAndStoreAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).CombineAndStoreAsync
+- uid: WeihanLi.Redis.ISetClient`1.CombineAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.CombineAsync
+  name: CombineAsync
+  nameWithType: ISetClient<T>.CombineAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.CombineAsync
+  nameWithType.vb: ISetClient(Of T).CombineAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).CombineAsync
+- uid: System.Threading.Tasks.Task{{T}[]}
+  commentId: T:System.Threading.Tasks.Task{``0[]}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<T[]>
+  nameWithType: Task<T[]>
+  fullName: System.Threading.Tasks.Task<T[]>
+  nameWithType.vb: Task(Of T())
+  fullName.vb: System.Threading.Tasks.Task(Of T())
+  name.vb: Task(Of T())
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.ISetClient`1.ContainsAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.ContainsAsync
+  name: ContainsAsync
+  nameWithType: ISetClient<T>.ContainsAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.ContainsAsync
+  nameWithType.vb: ISetClient(Of T).ContainsAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).ContainsAsync
+- uid: WeihanLi.Redis.ISetClient`1.LengthAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.LengthAsync
+  name: LengthAsync
+  nameWithType: ISetClient<T>.LengthAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.LengthAsync
+  nameWithType.vb: ISetClient(Of T).LengthAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).LengthAsync
+- uid: WeihanLi.Redis.ISetClient`1.MembersAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.MembersAsync
+  name: MembersAsync
+  nameWithType: ISetClient<T>.MembersAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.MembersAsync
+  nameWithType.vb: ISetClient(Of T).MembersAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).MembersAsync
+- uid: WeihanLi.Redis.ISetClient`1.MoveAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.MoveAsync
+  name: MoveAsync
+  nameWithType: ISetClient<T>.MoveAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.MoveAsync
+  nameWithType.vb: ISetClient(Of T).MoveAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).MoveAsync
+- uid: WeihanLi.Redis.ISetClient`1.PopAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.PopAsync
+  name: PopAsync
+  nameWithType: ISetClient<T>.PopAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.PopAsync
+  nameWithType.vb: ISetClient(Of T).PopAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).PopAsync
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.ISetClient`1.RandomMemberAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.RandomMemberAsync
+  name: RandomMemberAsync
+  nameWithType: ISetClient<T>.RandomMemberAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.RandomMemberAsync
+  nameWithType.vb: ISetClient(Of T).RandomMemberAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).RandomMemberAsync
+- uid: WeihanLi.Redis.ISetClient`1.RandomMembersAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.RandomMembersAsync
+  name: RandomMembersAsync
+  nameWithType: ISetClient<T>.RandomMembersAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.RandomMembersAsync
+  nameWithType.vb: ISetClient(Of T).RandomMembersAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).RandomMembersAsync
+- uid: WeihanLi.Redis.ISetClient`1.RemoveAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.RemoveAsync
+  name: RemoveAsync
+  nameWithType: ISetClient<T>.RemoveAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.RemoveAsync
+  nameWithType.vb: ISetClient(Of T).RemoveAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).RemoveAsync
+- uid: WeihanLi.Redis.ISetClient`1.SortAndStoreAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.SortAndStoreAsync
+  name: SortAndStoreAsync
+  nameWithType: ISetClient<T>.SortAndStoreAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.SortAndStoreAsync
+  nameWithType.vb: ISetClient(Of T).SortAndStoreAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).SortAndStoreAsync
+- uid: WeihanLi.Redis.ISetClient`1.SortAsync*
+  commentId: Overload:WeihanLi.Redis.ISetClient`1.SortAsync
+  name: SortAsync
+  nameWithType: ISetClient<T>.SortAsync
+  fullName: WeihanLi.Redis.ISetClient<T>.SortAsync
+  nameWithType.vb: ISetClient(Of T).SortAsync
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T).SortAsync

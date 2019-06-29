@@ -1,0 +1,2537 @@
+### YamlMime:ManagedReference
+items:
+- uid: WeihanLi.Redis.RedisManager
+  commentId: T:WeihanLi.Redis.RedisManager
+  id: RedisManager
+  parent: WeihanLi.Redis
+  children:
+  - WeihanLi.Redis.RedisManager.AddRedisConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  - WeihanLi.Redis.RedisManager.AddRedisConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{WeihanLi.Redis.RedisConfigurationOptions})
+  - WeihanLi.Redis.RedisManager.CacheClient
+  - WeihanLi.Redis.RedisManager.GetCommonRedisClient(WeihanLi.Redis.RedisDataType)
+  - WeihanLi.Redis.RedisManager.GetCounterClient(System.String)
+  - WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Int64)
+  - WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
+  - WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Nullable{System.TimeSpan})
+  - WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String)
+  - WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.DateTime})
+  - WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan})
+  - WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan},System.Boolean)
+  - WeihanLi.Redis.RedisManager.GetFirewallClient(System.String)
+  - WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Int64)
+  - WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
+  - WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Nullable{System.TimeSpan})
+  - WeihanLi.Redis.RedisManager.GetHashCounterClient(System.String)
+  - WeihanLi.Redis.RedisManager.GetHashCounterClient(System.String,System.Int64)
+  - WeihanLi.Redis.RedisManager.GetListClient``1(System.String)
+  - WeihanLi.Redis.RedisManager.GetQueueClient``1(System.String)
+  - WeihanLi.Redis.RedisManager.GetRankClient``1(System.String)
+  - WeihanLi.Redis.RedisManager.GetRedLockClient(System.String)
+  - WeihanLi.Redis.RedisManager.GetRedLockClient(System.String,System.Int32)
+  - WeihanLi.Redis.RedisManager.GetSetClient``1(System.String)
+  - WeihanLi.Redis.RedisManager.GetSortedSetClient``1(System.String)
+  - WeihanLi.Redis.RedisManager.GetStackClient``1(System.String)
+  - WeihanLi.Redis.RedisManager.HashClient
+  - WeihanLi.Redis.RedisManager.PubSubClient
+  - WeihanLi.Redis.RedisManager.Version
+  langs:
+  - csharp
+  - vb
+  name: RedisManager
+  nameWithType: RedisManager
+  fullName: WeihanLi.Redis.RedisManager
+  type: Class
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RedisManager
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 14
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static class RedisManager
+    content.vb: Public Module RedisManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: WeihanLi.Redis.RedisManager.Version
+  commentId: P:WeihanLi.Redis.RedisManager.Version
+  id: Version
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: Version
+  nameWithType: RedisManager.Version
+  fullName: WeihanLi.Redis.RedisManager.Version
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Version
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 23
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nVersion of WeihanLi.Redis\n"
+  example: []
+  syntax:
+    content: public static Version Version { get; }
+    parameters: []
+    return:
+      type: System.Version
+    content.vb: Public Shared ReadOnly Property Version As Version
+  overload: WeihanLi.Redis.RedisManager.Version*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: WeihanLi.Redis.RedisManager.AddRedisConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  commentId: M:WeihanLi.Redis.RedisManager.AddRedisConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  id: AddRedisConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  isExtensionMethod: true
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: AddRedisConfig(IServiceCollection)
+  nameWithType: RedisManager.AddRedisConfig(IServiceCollection)
+  fullName: WeihanLi.Redis.RedisManager.AddRedisConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: AddRedisConfig
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 27
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection)
+    parameters:
+    - id: serviceCollection
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddRedisConfig(serviceCollection As IServiceCollection) As IServiceCollection
+  overload: WeihanLi.Redis.RedisManager.AddRedisConfig*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: WeihanLi.Redis.RedisManager.AddRedisConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{WeihanLi.Redis.RedisConfigurationOptions})
+  commentId: M:WeihanLi.Redis.RedisManager.AddRedisConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{WeihanLi.Redis.RedisConfigurationOptions})
+  id: AddRedisConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{WeihanLi.Redis.RedisConfigurationOptions})
+  isExtensionMethod: true
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: AddRedisConfig(IServiceCollection, Action<RedisConfigurationOptions>)
+  nameWithType: RedisManager.AddRedisConfig(IServiceCollection, Action<RedisConfigurationOptions>)
+  fullName: WeihanLi.Redis.RedisManager.AddRedisConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action<WeihanLi.Redis.RedisConfigurationOptions>)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: AddRedisConfig
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 35
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nAddRedisServices\n"
+  example: []
+  syntax:
+    content: public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, Action<RedisConfigurationOptions> configAction)
+    parameters:
+    - id: serviceCollection
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: services
+    - id: configAction
+      type: System.Action{WeihanLi.Redis.RedisConfigurationOptions}
+      description: config RedisConfigurationOptions
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddRedisConfig(serviceCollection As IServiceCollection, configAction As Action(Of RedisConfigurationOptions)) As IServiceCollection
+  overload: WeihanLi.Redis.RedisManager.AddRedisConfig*
+  nameWithType.vb: RedisManager.AddRedisConfig(IServiceCollection, Action(Of RedisConfigurationOptions))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.AddRedisConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action(Of WeihanLi.Redis.RedisConfigurationOptions))
+  name.vb: AddRedisConfig(IServiceCollection, Action(Of RedisConfigurationOptions))
+- uid: WeihanLi.Redis.RedisManager.GetCommonRedisClient(WeihanLi.Redis.RedisDataType)
+  commentId: M:WeihanLi.Redis.RedisManager.GetCommonRedisClient(WeihanLi.Redis.RedisDataType)
+  id: GetCommonRedisClient(WeihanLi.Redis.RedisDataType)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetCommonRedisClient(RedisDataType)
+  nameWithType: RedisManager.GetCommonRedisClient(RedisDataType)
+  fullName: WeihanLi.Redis.RedisManager.GetCommonRedisClient(WeihanLi.Redis.RedisDataType)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetCommonRedisClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 85
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nGetCommonRedisClient\n"
+  example: []
+  syntax:
+    content: public static ICommonRedisClient GetCommonRedisClient(RedisDataType redisDataType)
+    parameters:
+    - id: redisDataType
+      type: WeihanLi.Redis.RedisDataType
+      description: redisDataType
+    return:
+      type: WeihanLi.Redis.ICommonRedisClient
+      description: ''
+    content.vb: Public Shared Function GetCommonRedisClient(redisDataType As RedisDataType) As ICommonRedisClient
+  overload: WeihanLi.Redis.RedisManager.GetCommonRedisClient*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: WeihanLi.Redis.RedisManager.CacheClient
+  commentId: P:WeihanLi.Redis.RedisManager.CacheClient
+  id: CacheClient
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: CacheClient
+  nameWithType: RedisManager.CacheClient
+  fullName: WeihanLi.Redis.RedisManager.CacheClient
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: CacheClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 92
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static ICacheClient CacheClient { get; }
+    parameters: []
+    return:
+      type: WeihanLi.Redis.ICacheClient
+    content.vb: Public Shared ReadOnly Property CacheClient As ICacheClient
+  overload: WeihanLi.Redis.RedisManager.CacheClient*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: WeihanLi.Redis.RedisManager.GetCounterClient(System.String)
+  commentId: M:WeihanLi.Redis.RedisManager.GetCounterClient(System.String)
+  id: GetCounterClient(System.String)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetCounterClient(String)
+  nameWithType: RedisManager.GetCounterClient(String)
+  fullName: WeihanLi.Redis.RedisManager.GetCounterClient(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetCounterClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 98
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static ICounterClient GetCounterClient(string counterName)
+    parameters:
+    - id: counterName
+      type: System.String
+    return:
+      type: WeihanLi.Redis.ICounterClient
+    content.vb: Public Shared Function GetCounterClient(counterName As String) As ICounterClient
+  overload: WeihanLi.Redis.RedisManager.GetCounterClient*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Int64)
+  commentId: M:WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Int64)
+  id: GetCounterClient(System.String,System.Int64)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetCounterClient(String, Int64)
+  nameWithType: RedisManager.GetCounterClient(String, Int64)
+  fullName: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetCounterClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 100
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static ICounterClient GetCounterClient(string counterName, long baseCount)
+    parameters:
+    - id: counterName
+      type: System.String
+    - id: baseCount
+      type: System.Int64
+    return:
+      type: WeihanLi.Redis.ICounterClient
+    content.vb: Public Shared Function GetCounterClient(counterName As String, baseCount As Long) As ICounterClient
+  overload: WeihanLi.Redis.RedisManager.GetCounterClient*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Nullable{System.TimeSpan})
+  commentId: M:WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Nullable{System.TimeSpan})
+  id: GetCounterClient(System.String,System.Nullable{System.TimeSpan})
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetCounterClient(String, Nullable<TimeSpan>)
+  nameWithType: RedisManager.GetCounterClient(String, Nullable<TimeSpan>)
+  fullName: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Nullable<System.TimeSpan>)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetCounterClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 102
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static ICounterClient GetCounterClient(string counterName, TimeSpan? expiresIn)
+    parameters:
+    - id: counterName
+      type: System.String
+    - id: expiresIn
+      type: System.Nullable{System.TimeSpan}
+    return:
+      type: WeihanLi.Redis.ICounterClient
+    content.vb: Public Shared Function GetCounterClient(counterName As String, expiresIn As TimeSpan?) As ICounterClient
+  overload: WeihanLi.Redis.RedisManager.GetCounterClient*
+  nameWithType.vb: RedisManager.GetCounterClient(String, Nullable(Of TimeSpan))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Nullable(Of System.TimeSpan))
+  name.vb: GetCounterClient(String, Nullable(Of TimeSpan))
+- uid: WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
+  commentId: M:WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
+  id: GetCounterClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetCounterClient(String, Int64, Nullable<TimeSpan>)
+  nameWithType: RedisManager.GetCounterClient(String, Int64, Nullable<TimeSpan>)
+  fullName: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Int64, System.Nullable<System.TimeSpan>)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetCounterClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 104
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static ICounterClient GetCounterClient(string counterName, long baseCount, TimeSpan? expiresIn)
+    parameters:
+    - id: counterName
+      type: System.String
+    - id: baseCount
+      type: System.Int64
+    - id: expiresIn
+      type: System.Nullable{System.TimeSpan}
+    return:
+      type: WeihanLi.Redis.ICounterClient
+    content.vb: Public Shared Function GetCounterClient(counterName As String, baseCount As Long, expiresIn As TimeSpan?) As ICounterClient
+  overload: WeihanLi.Redis.RedisManager.GetCounterClient*
+  nameWithType.vb: RedisManager.GetCounterClient(String, Int64, Nullable(Of TimeSpan))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Int64, System.Nullable(Of System.TimeSpan))
+  name.vb: GetCounterClient(String, Int64, Nullable(Of TimeSpan))
+- uid: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String)
+  commentId: M:WeihanLi.Redis.RedisManager.GetFirewallClient(System.String)
+  id: GetFirewallClient(System.String)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetFirewallClient(String)
+  nameWithType: RedisManager.GetFirewallClient(String)
+  fullName: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetFirewallClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 110
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IFirewallClient GetFirewallClient(string firewallName)
+    parameters:
+    - id: firewallName
+      type: System.String
+    return:
+      type: WeihanLi.Redis.IFirewallClient
+    content.vb: Public Shared Function GetFirewallClient(firewallName As String) As IFirewallClient
+  overload: WeihanLi.Redis.RedisManager.GetFirewallClient*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Int64)
+  commentId: M:WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Int64)
+  id: GetFirewallClient(System.String,System.Int64)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetFirewallClient(String, Int64)
+  nameWithType: RedisManager.GetFirewallClient(String, Int64)
+  fullName: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetFirewallClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 112
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IFirewallClient GetFirewallClient(string firewallName, long limit)
+    parameters:
+    - id: firewallName
+      type: System.String
+    - id: limit
+      type: System.Int64
+    return:
+      type: WeihanLi.Redis.IFirewallClient
+    content.vb: Public Shared Function GetFirewallClient(firewallName As String, limit As Long) As IFirewallClient
+  overload: WeihanLi.Redis.RedisManager.GetFirewallClient*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Nullable{System.TimeSpan})
+  commentId: M:WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Nullable{System.TimeSpan})
+  id: GetFirewallClient(System.String,System.Nullable{System.TimeSpan})
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetFirewallClient(String, Nullable<TimeSpan>)
+  nameWithType: RedisManager.GetFirewallClient(String, Nullable<TimeSpan>)
+  fullName: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Nullable<System.TimeSpan>)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetFirewallClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 114
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IFirewallClient GetFirewallClient(string firewallName, TimeSpan? expiresIn)
+    parameters:
+    - id: firewallName
+      type: System.String
+    - id: expiresIn
+      type: System.Nullable{System.TimeSpan}
+    return:
+      type: WeihanLi.Redis.IFirewallClient
+    content.vb: Public Shared Function GetFirewallClient(firewallName As String, expiresIn As TimeSpan?) As IFirewallClient
+  overload: WeihanLi.Redis.RedisManager.GetFirewallClient*
+  nameWithType.vb: RedisManager.GetFirewallClient(String, Nullable(Of TimeSpan))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Nullable(Of System.TimeSpan))
+  name.vb: GetFirewallClient(String, Nullable(Of TimeSpan))
+- uid: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
+  commentId: M:WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
+  id: GetFirewallClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetFirewallClient(String, Int64, Nullable<TimeSpan>)
+  nameWithType: RedisManager.GetFirewallClient(String, Int64, Nullable<TimeSpan>)
+  fullName: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Int64, System.Nullable<System.TimeSpan>)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetFirewallClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 116
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IFirewallClient GetFirewallClient(string firewallName, long limit, TimeSpan? expiresIn)
+    parameters:
+    - id: firewallName
+      type: System.String
+    - id: limit
+      type: System.Int64
+    - id: expiresIn
+      type: System.Nullable{System.TimeSpan}
+    return:
+      type: WeihanLi.Redis.IFirewallClient
+    content.vb: Public Shared Function GetFirewallClient(firewallName As String, limit As Long, expiresIn As TimeSpan?) As IFirewallClient
+  overload: WeihanLi.Redis.RedisManager.GetFirewallClient*
+  nameWithType.vb: RedisManager.GetFirewallClient(String, Int64, Nullable(Of TimeSpan))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Int64, System.Nullable(Of System.TimeSpan))
+  name.vb: GetFirewallClient(String, Int64, Nullable(Of TimeSpan))
+- uid: WeihanLi.Redis.RedisManager.GetRedLockClient(System.String)
+  commentId: M:WeihanLi.Redis.RedisManager.GetRedLockClient(System.String)
+  id: GetRedLockClient(System.String)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetRedLockClient(String)
+  nameWithType: RedisManager.GetRedLockClient(String)
+  fullName: WeihanLi.Redis.RedisManager.GetRedLockClient(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetRedLockClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 127
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRedisLock\n"
+  example: []
+  syntax:
+    content: public static IRedLockClient GetRedLockClient(string key)
+    parameters:
+    - id: key
+      type: System.String
+      description: key
+    return:
+      type: WeihanLi.Redis.IRedLockClient
+      description: ''
+    content.vb: Public Shared Function GetRedLockClient(key As String) As IRedLockClient
+  overload: WeihanLi.Redis.RedisManager.GetRedLockClient*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: WeihanLi.Redis.RedisManager.GetRedLockClient(System.String,System.Int32)
+  commentId: M:WeihanLi.Redis.RedisManager.GetRedLockClient(System.String,System.Int32)
+  id: GetRedLockClient(System.String,System.Int32)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetRedLockClient(String, Int32)
+  nameWithType: RedisManager.GetRedLockClient(String, Int32)
+  fullName: WeihanLi.Redis.RedisManager.GetRedLockClient(System.String, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetRedLockClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 135
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRedisLock\n"
+  example: []
+  syntax:
+    content: public static IRedLockClient GetRedLockClient(string key, int maxRetryCount)
+    parameters:
+    - id: key
+      type: System.String
+      description: key
+    - id: maxRetryCount
+      type: System.Int32
+      description: maxRetryCount
+    return:
+      type: WeihanLi.Redis.IRedLockClient
+      description: ''
+    content.vb: Public Shared Function GetRedLockClient(key As String, maxRetryCount As Integer) As IRedLockClient
+  overload: WeihanLi.Redis.RedisManager.GetRedLockClient*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: WeihanLi.Redis.RedisManager.HashClient
+  commentId: P:WeihanLi.Redis.RedisManager.HashClient
+  id: HashClient
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: HashClient
+  nameWithType: RedisManager.HashClient
+  fullName: WeihanLi.Redis.RedisManager.HashClient
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: HashClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 141
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IHashClient HashClient { get; }
+    parameters: []
+    return:
+      type: WeihanLi.Redis.IHashClient
+    content.vb: Public Shared ReadOnly Property HashClient As IHashClient
+  overload: WeihanLi.Redis.RedisManager.HashClient*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: WeihanLi.Redis.RedisManager.GetHashCounterClient(System.String)
+  commentId: M:WeihanLi.Redis.RedisManager.GetHashCounterClient(System.String)
+  id: GetHashCounterClient(System.String)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetHashCounterClient(String)
+  nameWithType: RedisManager.GetHashCounterClient(String)
+  fullName: WeihanLi.Redis.RedisManager.GetHashCounterClient(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetHashCounterClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 148
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IHashCounterClient GetHashCounterClient(string hashCounterName)
+    parameters:
+    - id: hashCounterName
+      type: System.String
+    return:
+      type: WeihanLi.Redis.IHashCounterClient
+    content.vb: Public Shared Function GetHashCounterClient(hashCounterName As String) As IHashCounterClient
+  overload: WeihanLi.Redis.RedisManager.GetHashCounterClient*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: WeihanLi.Redis.RedisManager.GetHashCounterClient(System.String,System.Int64)
+  commentId: M:WeihanLi.Redis.RedisManager.GetHashCounterClient(System.String,System.Int64)
+  id: GetHashCounterClient(System.String,System.Int64)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetHashCounterClient(String, Int64)
+  nameWithType: RedisManager.GetHashCounterClient(String, Int64)
+  fullName: WeihanLi.Redis.RedisManager.GetHashCounterClient(System.String, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetHashCounterClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 151
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IHashCounterClient GetHashCounterClient(string hashCounterName, long base)
+    parameters:
+    - id: hashCounterName
+      type: System.String
+    - id: base
+      type: System.Int64
+    return:
+      type: WeihanLi.Redis.IHashCounterClient
+    content.vb: Public Shared Function GetHashCounterClient(hashCounterName As String, base As Long) As IHashCounterClient
+  overload: WeihanLi.Redis.RedisManager.GetHashCounterClient*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String)
+  commentId: M:WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String)
+  id: GetDictionaryClient``2(System.String)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetDictionaryClient<TKey, TValue>(String)
+  nameWithType: RedisManager.GetDictionaryClient<TKey, TValue>(String)
+  fullName: WeihanLi.Redis.RedisManager.GetDictionaryClient<TKey, TValue>(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetDictionaryClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 170
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\n获取一个 DictionaryClient\n默认过期时间滑动过期一天\n"
+  example: []
+  syntax:
+    content: public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName)
+    parameters:
+    - id: keyName
+      type: System.String
+      description: keyName
+    typeParameters:
+    - id: TKey
+      description: TKey
+    - id: TValue
+      description: TValue
+    return:
+      type: WeihanLi.Redis.IDictionaryClient{{TKey},{TValue}}
+      description: ''
+    content.vb: Public Shared Function GetDictionaryClient(Of TKey, TValue)(keyName As String) As IDictionaryClient(Of TKey, TValue)
+  overload: WeihanLi.Redis.RedisManager.GetDictionaryClient*
+  nameWithType.vb: RedisManager.GetDictionaryClient(Of TKey, TValue)(String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetDictionaryClient(Of TKey, TValue)(System.String)
+  name.vb: GetDictionaryClient(Of TKey, TValue)(String)
+- uid: WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan})
+  commentId: M:WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan})
+  id: GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan})
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetDictionaryClient<TKey, TValue>(String, Nullable<TimeSpan>)
+  nameWithType: RedisManager.GetDictionaryClient<TKey, TValue>(String, Nullable<TimeSpan>)
+  fullName: WeihanLi.Redis.RedisManager.GetDictionaryClient<TKey, TValue>(System.String, System.Nullable<System.TimeSpan>)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetDictionaryClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 181
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\n获取一个 DictionaryClient\n"
+  example: []
+  syntax:
+    content: public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, TimeSpan? expiry)
+    parameters:
+    - id: keyName
+      type: System.String
+      description: keyName
+    - id: expiry
+      type: System.Nullable{System.TimeSpan}
+      description: 过期时间(滑动过期)
+    typeParameters:
+    - id: TKey
+      description: Key Type
+    - id: TValue
+      description: Value Type
+    return:
+      type: WeihanLi.Redis.IDictionaryClient{{TKey},{TValue}}
+      description: ''
+    content.vb: Public Shared Function GetDictionaryClient(Of TKey, TValue)(keyName As String, expiry As TimeSpan?) As IDictionaryClient(Of TKey, TValue)
+  overload: WeihanLi.Redis.RedisManager.GetDictionaryClient*
+  nameWithType.vb: RedisManager.GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of TimeSpan))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetDictionaryClient(Of TKey, TValue)(System.String, System.Nullable(Of System.TimeSpan))
+  name.vb: GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of TimeSpan))
+- uid: WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan},System.Boolean)
+  commentId: M:WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan},System.Boolean)
+  id: GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan},System.Boolean)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetDictionaryClient<TKey, TValue>(String, Nullable<TimeSpan>, Boolean)
+  nameWithType: RedisManager.GetDictionaryClient<TKey, TValue>(String, Nullable<TimeSpan>, Boolean)
+  fullName: WeihanLi.Redis.RedisManager.GetDictionaryClient<TKey, TValue>(System.String, System.Nullable<System.TimeSpan>, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetDictionaryClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 192
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\n获取一个 DictionaryClient\n"
+  example: []
+  syntax:
+    content: public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, TimeSpan? expiry, bool isSlidingExpiry)
+    parameters:
+    - id: keyName
+      type: System.String
+      description: keyName
+    - id: expiry
+      type: System.Nullable{System.TimeSpan}
+      description: 过期时间
+    - id: isSlidingExpiry
+      type: System.Boolean
+      description: 更新是否重置过期时间
+    typeParameters:
+    - id: TKey
+      description: Key Type
+    - id: TValue
+      description: Value Type
+    return:
+      type: WeihanLi.Redis.IDictionaryClient{{TKey},{TValue}}
+      description: ''
+    content.vb: Public Shared Function GetDictionaryClient(Of TKey, TValue)(keyName As String, expiry As TimeSpan?, isSlidingExpiry As Boolean) As IDictionaryClient(Of TKey, TValue)
+  overload: WeihanLi.Redis.RedisManager.GetDictionaryClient*
+  nameWithType.vb: RedisManager.GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of TimeSpan), Boolean)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetDictionaryClient(Of TKey, TValue)(System.String, System.Nullable(Of System.TimeSpan), System.Boolean)
+  name.vb: GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of TimeSpan), Boolean)
+- uid: WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.DateTime})
+  commentId: M:WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.DateTime})
+  id: GetDictionaryClient``2(System.String,System.Nullable{System.DateTime})
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetDictionaryClient<TKey, TValue>(String, Nullable<DateTime>)
+  nameWithType: RedisManager.GetDictionaryClient<TKey, TValue>(String, Nullable<DateTime>)
+  fullName: WeihanLi.Redis.RedisManager.GetDictionaryClient<TKey, TValue>(System.String, System.Nullable<System.DateTime>)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetDictionaryClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 202
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\n获取一个 DictionaryClient\n"
+  example: []
+  syntax:
+    content: public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, DateTime? expiry)
+    parameters:
+    - id: keyName
+      type: System.String
+      description: keyName
+    - id: expiry
+      type: System.Nullable{System.DateTime}
+      description: 绝对过期时间
+    typeParameters:
+    - id: TKey
+      description: Key Type
+    - id: TValue
+      description: Value Type
+    return:
+      type: WeihanLi.Redis.IDictionaryClient{{TKey},{TValue}}
+      description: ''
+    content.vb: Public Shared Function GetDictionaryClient(Of TKey, TValue)(keyName As String, expiry As Date?) As IDictionaryClient(Of TKey, TValue)
+  overload: WeihanLi.Redis.RedisManager.GetDictionaryClient*
+  nameWithType.vb: RedisManager.GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of DateTime))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetDictionaryClient(Of TKey, TValue)(System.String, System.Nullable(Of System.DateTime))
+  name.vb: GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of DateTime))
+- uid: WeihanLi.Redis.RedisManager.GetListClient``1(System.String)
+  commentId: M:WeihanLi.Redis.RedisManager.GetListClient``1(System.String)
+  id: GetListClient``1(System.String)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetListClient<T>(String)
+  nameWithType: RedisManager.GetListClient<T>(String)
+  fullName: WeihanLi.Redis.RedisManager.GetListClient<T>(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetListClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 208
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IListClient<T> GetListClient<T>(string keyName)
+    parameters:
+    - id: keyName
+      type: System.String
+    typeParameters:
+    - id: T
+    return:
+      type: WeihanLi.Redis.IListClient{{T}}
+    content.vb: Public Shared Function GetListClient(Of T)(keyName As String) As IListClient(Of T)
+  overload: WeihanLi.Redis.RedisManager.GetListClient*
+  nameWithType.vb: RedisManager.GetListClient(Of T)(String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetListClient(Of T)(System.String)
+  name.vb: GetListClient(Of T)(String)
+- uid: WeihanLi.Redis.RedisManager.GetQueueClient``1(System.String)
+  commentId: M:WeihanLi.Redis.RedisManager.GetQueueClient``1(System.String)
+  id: GetQueueClient``1(System.String)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetQueueClient<T>(String)
+  nameWithType: RedisManager.GetQueueClient<T>(String)
+  fullName: WeihanLi.Redis.RedisManager.GetQueueClient<T>(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetQueueClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 214
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IQueueClient<T> GetQueueClient<T>(string keyName)
+    parameters:
+    - id: keyName
+      type: System.String
+    typeParameters:
+    - id: T
+    return:
+      type: WeihanLi.Redis.IQueueClient{{T}}
+    content.vb: Public Shared Function GetQueueClient(Of T)(keyName As String) As IQueueClient(Of T)
+  overload: WeihanLi.Redis.RedisManager.GetQueueClient*
+  nameWithType.vb: RedisManager.GetQueueClient(Of T)(String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetQueueClient(Of T)(System.String)
+  name.vb: GetQueueClient(Of T)(String)
+- uid: WeihanLi.Redis.RedisManager.GetStackClient``1(System.String)
+  commentId: M:WeihanLi.Redis.RedisManager.GetStackClient``1(System.String)
+  id: GetStackClient``1(System.String)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetStackClient<T>(String)
+  nameWithType: RedisManager.GetStackClient<T>(String)
+  fullName: WeihanLi.Redis.RedisManager.GetStackClient<T>(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetStackClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 220
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IStackClient<T> GetStackClient<T>(string keyName)
+    parameters:
+    - id: keyName
+      type: System.String
+    typeParameters:
+    - id: T
+    return:
+      type: WeihanLi.Redis.IStackClient{{T}}
+    content.vb: Public Shared Function GetStackClient(Of T)(keyName As String) As IStackClient(Of T)
+  overload: WeihanLi.Redis.RedisManager.GetStackClient*
+  nameWithType.vb: RedisManager.GetStackClient(Of T)(String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetStackClient(Of T)(System.String)
+  name.vb: GetStackClient(Of T)(String)
+- uid: WeihanLi.Redis.RedisManager.GetRankClient``1(System.String)
+  commentId: M:WeihanLi.Redis.RedisManager.GetRankClient``1(System.String)
+  id: GetRankClient``1(System.String)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetRankClient<T>(String)
+  nameWithType: RedisManager.GetRankClient<T>(String)
+  fullName: WeihanLi.Redis.RedisManager.GetRankClient<T>(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetRankClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 226
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IRankClient<T> GetRankClient<T>(string rankName)
+    parameters:
+    - id: rankName
+      type: System.String
+    typeParameters:
+    - id: T
+    return:
+      type: WeihanLi.Redis.IRankClient{{T}}
+    content.vb: Public Shared Function GetRankClient(Of T)(rankName As String) As IRankClient(Of T)
+  overload: WeihanLi.Redis.RedisManager.GetRankClient*
+  nameWithType.vb: RedisManager.GetRankClient(Of T)(String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetRankClient(Of T)(System.String)
+  name.vb: GetRankClient(Of T)(String)
+- uid: WeihanLi.Redis.RedisManager.GetSetClient``1(System.String)
+  commentId: M:WeihanLi.Redis.RedisManager.GetSetClient``1(System.String)
+  id: GetSetClient``1(System.String)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetSetClient<T>(String)
+  nameWithType: RedisManager.GetSetClient<T>(String)
+  fullName: WeihanLi.Redis.RedisManager.GetSetClient<T>(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetSetClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 232
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static ISetClient<T> GetSetClient<T>(string keyName)
+    parameters:
+    - id: keyName
+      type: System.String
+    typeParameters:
+    - id: T
+    return:
+      type: WeihanLi.Redis.ISetClient{{T}}
+    content.vb: Public Shared Function GetSetClient(Of T)(keyName As String) As ISetClient(Of T)
+  overload: WeihanLi.Redis.RedisManager.GetSetClient*
+  nameWithType.vb: RedisManager.GetSetClient(Of T)(String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetSetClient(Of T)(System.String)
+  name.vb: GetSetClient(Of T)(String)
+- uid: WeihanLi.Redis.RedisManager.GetSortedSetClient``1(System.String)
+  commentId: M:WeihanLi.Redis.RedisManager.GetSortedSetClient``1(System.String)
+  id: GetSortedSetClient``1(System.String)
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: GetSortedSetClient<T>(String)
+  nameWithType: RedisManager.GetSortedSetClient<T>(String)
+  fullName: WeihanLi.Redis.RedisManager.GetSortedSetClient<T>(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetSortedSetClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 238
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static ISortedSetClient<T> GetSortedSetClient<T>(string keyName)
+    parameters:
+    - id: keyName
+      type: System.String
+    typeParameters:
+    - id: T
+    return:
+      type: WeihanLi.Redis.ISortedSetClient{{T}}
+    content.vb: Public Shared Function GetSortedSetClient(Of T)(keyName As String) As ISortedSetClient(Of T)
+  overload: WeihanLi.Redis.RedisManager.GetSortedSetClient*
+  nameWithType.vb: RedisManager.GetSortedSetClient(Of T)(String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: WeihanLi.Redis.RedisManager.GetSortedSetClient(Of T)(System.String)
+  name.vb: GetSortedSetClient(Of T)(String)
+- uid: WeihanLi.Redis.RedisManager.PubSubClient
+  commentId: P:WeihanLi.Redis.RedisManager.PubSubClient
+  id: PubSubClient
+  parent: WeihanLi.Redis.RedisManager
+  langs:
+  - csharp
+  - vb
+  name: PubSubClient
+  nameWithType: RedisManager.PubSubClient
+  fullName: WeihanLi.Redis.RedisManager.PubSubClient
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisManager.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: PubSubClient
+    path: src/WeihanLi.Redis/RedisManager.cs
+    startLine: 244
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public static IPubSubClient PubSubClient { get; }
+    parameters: []
+    return:
+      type: WeihanLi.Redis.IPubSubClient
+    content.vb: Public Shared ReadOnly Property PubSubClient As IPubSubClient
+  overload: WeihanLi.Redis.RedisManager.PubSubClient*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: WeihanLi.Redis
+  commentId: N:WeihanLi.Redis
+  name: WeihanLi.Redis
+  nameWithType: WeihanLi.Redis
+  fullName: WeihanLi.Redis
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: WeihanLi.Redis.RedisManager.Version*
+  commentId: Overload:WeihanLi.Redis.RedisManager.Version
+  name: Version
+  nameWithType: RedisManager.Version
+  fullName: WeihanLi.Redis.RedisManager.Version
+- uid: System.Version
+  commentId: T:System.Version
+  parent: System
+  isExternal: true
+  name: Version
+  nameWithType: Version
+  fullName: System.Version
+- uid: WeihanLi.Redis.RedisManager.AddRedisConfig*
+  commentId: Overload:WeihanLi.Redis.RedisManager.AddRedisConfig
+  name: AddRedisConfig
+  nameWithType: RedisManager.AddRedisConfig
+  fullName: WeihanLi.Redis.RedisManager.AddRedisConfig
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+- uid: System.Action{WeihanLi.Redis.RedisConfigurationOptions}
+  commentId: T:System.Action{WeihanLi.Redis.RedisConfigurationOptions}
+  parent: System
+  definition: System.Action`1
+  name: Action<RedisConfigurationOptions>
+  nameWithType: Action<RedisConfigurationOptions>
+  fullName: System.Action<WeihanLi.Redis.RedisConfigurationOptions>
+  nameWithType.vb: Action(Of RedisConfigurationOptions)
+  fullName.vb: System.Action(Of WeihanLi.Redis.RedisConfigurationOptions)
+  name.vb: Action(Of RedisConfigurationOptions)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: WeihanLi.Redis.RedisConfigurationOptions
+    name: RedisConfigurationOptions
+    nameWithType: RedisConfigurationOptions
+    fullName: WeihanLi.Redis.RedisConfigurationOptions
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: WeihanLi.Redis.RedisConfigurationOptions
+    name: RedisConfigurationOptions
+    nameWithType: RedisConfigurationOptions
+    fullName: WeihanLi.Redis.RedisConfigurationOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.RedisManager.GetCommonRedisClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetCommonRedisClient
+  name: GetCommonRedisClient
+  nameWithType: RedisManager.GetCommonRedisClient
+  fullName: WeihanLi.Redis.RedisManager.GetCommonRedisClient
+- uid: WeihanLi.Redis.RedisDataType
+  commentId: T:WeihanLi.Redis.RedisDataType
+  parent: WeihanLi.Redis
+  name: RedisDataType
+  nameWithType: RedisDataType
+  fullName: WeihanLi.Redis.RedisDataType
+- uid: WeihanLi.Redis.ICommonRedisClient
+  commentId: T:WeihanLi.Redis.ICommonRedisClient
+  parent: WeihanLi.Redis
+  name: ICommonRedisClient
+  nameWithType: ICommonRedisClient
+  fullName: WeihanLi.Redis.ICommonRedisClient
+- uid: WeihanLi.Redis.RedisManager.CacheClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.CacheClient
+  name: CacheClient
+  nameWithType: RedisManager.CacheClient
+  fullName: WeihanLi.Redis.RedisManager.CacheClient
+- uid: WeihanLi.Redis.ICacheClient
+  commentId: T:WeihanLi.Redis.ICacheClient
+  parent: WeihanLi.Redis
+  name: ICacheClient
+  nameWithType: ICacheClient
+  fullName: WeihanLi.Redis.ICacheClient
+- uid: WeihanLi.Redis.RedisManager.GetCounterClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetCounterClient
+  name: GetCounterClient
+  nameWithType: RedisManager.GetCounterClient
+  fullName: WeihanLi.Redis.RedisManager.GetCounterClient
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: WeihanLi.Redis.ICounterClient
+  commentId: T:WeihanLi.Redis.ICounterClient
+  parent: WeihanLi.Redis
+  name: ICounterClient
+  nameWithType: ICounterClient
+  fullName: WeihanLi.Redis.ICounterClient
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<TimeSpan>
+  nameWithType: Nullable<TimeSpan>
+  fullName: System.Nullable<System.TimeSpan>
+  nameWithType.vb: Nullable(Of TimeSpan)
+  fullName.vb: System.Nullable(Of System.TimeSpan)
+  name.vb: Nullable(Of TimeSpan)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.RedisManager.GetFirewallClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetFirewallClient
+  name: GetFirewallClient
+  nameWithType: RedisManager.GetFirewallClient
+  fullName: WeihanLi.Redis.RedisManager.GetFirewallClient
+- uid: WeihanLi.Redis.IFirewallClient
+  commentId: T:WeihanLi.Redis.IFirewallClient
+  parent: WeihanLi.Redis
+  name: IFirewallClient
+  nameWithType: IFirewallClient
+  fullName: WeihanLi.Redis.IFirewallClient
+- uid: WeihanLi.Redis.RedisManager.GetRedLockClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetRedLockClient
+  name: GetRedLockClient
+  nameWithType: RedisManager.GetRedLockClient
+  fullName: WeihanLi.Redis.RedisManager.GetRedLockClient
+- uid: WeihanLi.Redis.IRedLockClient
+  commentId: T:WeihanLi.Redis.IRedLockClient
+  parent: WeihanLi.Redis
+  name: IRedLockClient
+  nameWithType: IRedLockClient
+  fullName: WeihanLi.Redis.IRedLockClient
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: WeihanLi.Redis.RedisManager.HashClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.HashClient
+  name: HashClient
+  nameWithType: RedisManager.HashClient
+  fullName: WeihanLi.Redis.RedisManager.HashClient
+- uid: WeihanLi.Redis.IHashClient
+  commentId: T:WeihanLi.Redis.IHashClient
+  parent: WeihanLi.Redis
+  name: IHashClient
+  nameWithType: IHashClient
+  fullName: WeihanLi.Redis.IHashClient
+- uid: WeihanLi.Redis.RedisManager.GetHashCounterClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetHashCounterClient
+  name: GetHashCounterClient
+  nameWithType: RedisManager.GetHashCounterClient
+  fullName: WeihanLi.Redis.RedisManager.GetHashCounterClient
+- uid: WeihanLi.Redis.IHashCounterClient
+  commentId: T:WeihanLi.Redis.IHashCounterClient
+  parent: WeihanLi.Redis
+  name: IHashCounterClient
+  nameWithType: IHashCounterClient
+  fullName: WeihanLi.Redis.IHashCounterClient
+- uid: WeihanLi.Redis.RedisManager.GetDictionaryClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetDictionaryClient
+  name: GetDictionaryClient
+  nameWithType: RedisManager.GetDictionaryClient
+  fullName: WeihanLi.Redis.RedisManager.GetDictionaryClient
+- uid: WeihanLi.Redis.IDictionaryClient{{TKey},{TValue}}
+  commentId: T:WeihanLi.Redis.IDictionaryClient{``0,``1}
+  parent: WeihanLi.Redis
+  definition: WeihanLi.Redis.IDictionaryClient`2
+  name: IDictionaryClient<TKey, TValue>
+  nameWithType: IDictionaryClient<TKey, TValue>
+  fullName: WeihanLi.Redis.IDictionaryClient<TKey, TValue>
+  nameWithType.vb: IDictionaryClient(Of TKey, TValue)
+  fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue)
+  name.vb: IDictionaryClient(Of TKey, TValue)
+  spec.csharp:
+  - uid: WeihanLi.Redis.IDictionaryClient`2
+    name: IDictionaryClient
+    nameWithType: IDictionaryClient
+    fullName: WeihanLi.Redis.IDictionaryClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.IDictionaryClient`2
+    name: IDictionaryClient
+    nameWithType: IDictionaryClient
+    fullName: WeihanLi.Redis.IDictionaryClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IDictionaryClient`2
+  commentId: T:WeihanLi.Redis.IDictionaryClient`2
+  name: IDictionaryClient<TKey, TValue>
+  nameWithType: IDictionaryClient<TKey, TValue>
+  fullName: WeihanLi.Redis.IDictionaryClient<TKey, TValue>
+  nameWithType.vb: IDictionaryClient(Of TKey, TValue)
+  fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue)
+  name.vb: IDictionaryClient(Of TKey, TValue)
+  spec.csharp:
+  - uid: WeihanLi.Redis.IDictionaryClient`2
+    name: IDictionaryClient
+    nameWithType: IDictionaryClient
+    fullName: WeihanLi.Redis.IDictionaryClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.IDictionaryClient`2
+    name: IDictionaryClient
+    nameWithType: IDictionaryClient
+    fullName: WeihanLi.Redis.IDictionaryClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<DateTime>
+  nameWithType: Nullable<DateTime>
+  fullName: System.Nullable<System.DateTime>
+  nameWithType.vb: Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of System.DateTime)
+  name.vb: Nullable(Of DateTime)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.RedisManager.GetListClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetListClient
+  name: GetListClient
+  nameWithType: RedisManager.GetListClient
+  fullName: WeihanLi.Redis.RedisManager.GetListClient
+- uid: WeihanLi.Redis.IListClient{{T}}
+  commentId: T:WeihanLi.Redis.IListClient{``0}
+  parent: WeihanLi.Redis
+  definition: WeihanLi.Redis.IListClient`1
+  name: IListClient<T>
+  nameWithType: IListClient<T>
+  fullName: WeihanLi.Redis.IListClient<T>
+  nameWithType.vb: IListClient(Of T)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T)
+  name.vb: IListClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.IListClient`1
+    name: IListClient
+    nameWithType: IListClient
+    fullName: WeihanLi.Redis.IListClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.IListClient`1
+    name: IListClient
+    nameWithType: IListClient
+    fullName: WeihanLi.Redis.IListClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IListClient`1
+  commentId: T:WeihanLi.Redis.IListClient`1
+  name: IListClient<T>
+  nameWithType: IListClient<T>
+  fullName: WeihanLi.Redis.IListClient<T>
+  nameWithType.vb: IListClient(Of T)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T)
+  name.vb: IListClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.IListClient`1
+    name: IListClient
+    nameWithType: IListClient
+    fullName: WeihanLi.Redis.IListClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.IListClient`1
+    name: IListClient
+    nameWithType: IListClient
+    fullName: WeihanLi.Redis.IListClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.RedisManager.GetQueueClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetQueueClient
+  name: GetQueueClient
+  nameWithType: RedisManager.GetQueueClient
+  fullName: WeihanLi.Redis.RedisManager.GetQueueClient
+- uid: WeihanLi.Redis.IQueueClient{{T}}
+  commentId: T:WeihanLi.Redis.IQueueClient{``0}
+  parent: WeihanLi.Redis
+  definition: WeihanLi.Redis.IQueueClient`1
+  name: IQueueClient<T>
+  nameWithType: IQueueClient<T>
+  fullName: WeihanLi.Redis.IQueueClient<T>
+  nameWithType.vb: IQueueClient(Of T)
+  fullName.vb: WeihanLi.Redis.IQueueClient(Of T)
+  name.vb: IQueueClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.IQueueClient`1
+    name: IQueueClient
+    nameWithType: IQueueClient
+    fullName: WeihanLi.Redis.IQueueClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.IQueueClient`1
+    name: IQueueClient
+    nameWithType: IQueueClient
+    fullName: WeihanLi.Redis.IQueueClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IQueueClient`1
+  commentId: T:WeihanLi.Redis.IQueueClient`1
+  name: IQueueClient<T>
+  nameWithType: IQueueClient<T>
+  fullName: WeihanLi.Redis.IQueueClient<T>
+  nameWithType.vb: IQueueClient(Of T)
+  fullName.vb: WeihanLi.Redis.IQueueClient(Of T)
+  name.vb: IQueueClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.IQueueClient`1
+    name: IQueueClient
+    nameWithType: IQueueClient
+    fullName: WeihanLi.Redis.IQueueClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.IQueueClient`1
+    name: IQueueClient
+    nameWithType: IQueueClient
+    fullName: WeihanLi.Redis.IQueueClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.RedisManager.GetStackClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetStackClient
+  name: GetStackClient
+  nameWithType: RedisManager.GetStackClient
+  fullName: WeihanLi.Redis.RedisManager.GetStackClient
+- uid: WeihanLi.Redis.IStackClient{{T}}
+  commentId: T:WeihanLi.Redis.IStackClient{``0}
+  parent: WeihanLi.Redis
+  definition: WeihanLi.Redis.IStackClient`1
+  name: IStackClient<T>
+  nameWithType: IStackClient<T>
+  fullName: WeihanLi.Redis.IStackClient<T>
+  nameWithType.vb: IStackClient(Of T)
+  fullName.vb: WeihanLi.Redis.IStackClient(Of T)
+  name.vb: IStackClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.IStackClient`1
+    name: IStackClient
+    nameWithType: IStackClient
+    fullName: WeihanLi.Redis.IStackClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.IStackClient`1
+    name: IStackClient
+    nameWithType: IStackClient
+    fullName: WeihanLi.Redis.IStackClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IStackClient`1
+  commentId: T:WeihanLi.Redis.IStackClient`1
+  name: IStackClient<T>
+  nameWithType: IStackClient<T>
+  fullName: WeihanLi.Redis.IStackClient<T>
+  nameWithType.vb: IStackClient(Of T)
+  fullName.vb: WeihanLi.Redis.IStackClient(Of T)
+  name.vb: IStackClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.IStackClient`1
+    name: IStackClient
+    nameWithType: IStackClient
+    fullName: WeihanLi.Redis.IStackClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.IStackClient`1
+    name: IStackClient
+    nameWithType: IStackClient
+    fullName: WeihanLi.Redis.IStackClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.RedisManager.GetRankClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetRankClient
+  name: GetRankClient
+  nameWithType: RedisManager.GetRankClient
+  fullName: WeihanLi.Redis.RedisManager.GetRankClient
+- uid: WeihanLi.Redis.IRankClient{{T}}
+  commentId: T:WeihanLi.Redis.IRankClient{``0}
+  parent: WeihanLi.Redis
+  definition: WeihanLi.Redis.IRankClient`1
+  name: IRankClient<T>
+  nameWithType: IRankClient<T>
+  fullName: WeihanLi.Redis.IRankClient<T>
+  nameWithType.vb: IRankClient(Of T)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T)
+  name.vb: IRankClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.IRankClient`1
+    name: IRankClient
+    nameWithType: IRankClient
+    fullName: WeihanLi.Redis.IRankClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.IRankClient`1
+    name: IRankClient
+    nameWithType: IRankClient
+    fullName: WeihanLi.Redis.IRankClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IRankClient`1
+  commentId: T:WeihanLi.Redis.IRankClient`1
+  name: IRankClient<T>
+  nameWithType: IRankClient<T>
+  fullName: WeihanLi.Redis.IRankClient<T>
+  nameWithType.vb: IRankClient(Of T)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T)
+  name.vb: IRankClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.IRankClient`1
+    name: IRankClient
+    nameWithType: IRankClient
+    fullName: WeihanLi.Redis.IRankClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.IRankClient`1
+    name: IRankClient
+    nameWithType: IRankClient
+    fullName: WeihanLi.Redis.IRankClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.RedisManager.GetSetClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetSetClient
+  name: GetSetClient
+  nameWithType: RedisManager.GetSetClient
+  fullName: WeihanLi.Redis.RedisManager.GetSetClient
+- uid: WeihanLi.Redis.ISetClient{{T}}
+  commentId: T:WeihanLi.Redis.ISetClient{``0}
+  parent: WeihanLi.Redis
+  definition: WeihanLi.Redis.ISetClient`1
+  name: ISetClient<T>
+  nameWithType: ISetClient<T>
+  fullName: WeihanLi.Redis.ISetClient<T>
+  nameWithType.vb: ISetClient(Of T)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T)
+  name.vb: ISetClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.ISetClient`1
+    name: ISetClient
+    nameWithType: ISetClient
+    fullName: WeihanLi.Redis.ISetClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.ISetClient`1
+    name: ISetClient
+    nameWithType: ISetClient
+    fullName: WeihanLi.Redis.ISetClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.ISetClient`1
+  commentId: T:WeihanLi.Redis.ISetClient`1
+  name: ISetClient<T>
+  nameWithType: ISetClient<T>
+  fullName: WeihanLi.Redis.ISetClient<T>
+  nameWithType.vb: ISetClient(Of T)
+  fullName.vb: WeihanLi.Redis.ISetClient(Of T)
+  name.vb: ISetClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.ISetClient`1
+    name: ISetClient
+    nameWithType: ISetClient
+    fullName: WeihanLi.Redis.ISetClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.ISetClient`1
+    name: ISetClient
+    nameWithType: ISetClient
+    fullName: WeihanLi.Redis.ISetClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.RedisManager.GetSortedSetClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.GetSortedSetClient
+  name: GetSortedSetClient
+  nameWithType: RedisManager.GetSortedSetClient
+  fullName: WeihanLi.Redis.RedisManager.GetSortedSetClient
+- uid: WeihanLi.Redis.ISortedSetClient{{T}}
+  commentId: T:WeihanLi.Redis.ISortedSetClient{``0}
+  parent: WeihanLi.Redis
+  definition: WeihanLi.Redis.ISortedSetClient`1
+  name: ISortedSetClient<T>
+  nameWithType: ISortedSetClient<T>
+  fullName: WeihanLi.Redis.ISortedSetClient<T>
+  nameWithType.vb: ISortedSetClient(Of T)
+  fullName.vb: WeihanLi.Redis.ISortedSetClient(Of T)
+  name.vb: ISortedSetClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.ISortedSetClient`1
+    name: ISortedSetClient
+    nameWithType: ISortedSetClient
+    fullName: WeihanLi.Redis.ISortedSetClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.ISortedSetClient`1
+    name: ISortedSetClient
+    nameWithType: ISortedSetClient
+    fullName: WeihanLi.Redis.ISortedSetClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.ISortedSetClient`1
+  commentId: T:WeihanLi.Redis.ISortedSetClient`1
+  name: ISortedSetClient<T>
+  nameWithType: ISortedSetClient<T>
+  fullName: WeihanLi.Redis.ISortedSetClient<T>
+  nameWithType.vb: ISortedSetClient(Of T)
+  fullName.vb: WeihanLi.Redis.ISortedSetClient(Of T)
+  name.vb: ISortedSetClient(Of T)
+  spec.csharp:
+  - uid: WeihanLi.Redis.ISortedSetClient`1
+    name: ISortedSetClient
+    nameWithType: ISortedSetClient
+    fullName: WeihanLi.Redis.ISortedSetClient
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: WeihanLi.Redis.ISortedSetClient`1
+    name: ISortedSetClient
+    nameWithType: ISortedSetClient
+    fullName: WeihanLi.Redis.ISortedSetClient
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.RedisManager.PubSubClient*
+  commentId: Overload:WeihanLi.Redis.RedisManager.PubSubClient
+  name: PubSubClient
+  nameWithType: RedisManager.PubSubClient
+  fullName: WeihanLi.Redis.RedisManager.PubSubClient
+- uid: WeihanLi.Redis.IPubSubClient
+  commentId: T:WeihanLi.Redis.IPubSubClient
+  parent: WeihanLi.Redis
+  name: IPubSubClient
+  nameWithType: IPubSubClient
+  fullName: WeihanLi.Redis.IPubSubClient

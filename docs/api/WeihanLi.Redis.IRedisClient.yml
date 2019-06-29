@@ -1,0 +1,40 @@
+### YamlMime:ManagedReference
+items:
+- uid: WeihanLi.Redis.IRedisClient
+  commentId: T:WeihanLi.Redis.IRedisClient
+  id: IRedisClient
+  parent: WeihanLi.Redis
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IRedisClient
+  nameWithType: IRedisClient
+  fullName: WeihanLi.Redis.IRedisClient
+  type: Interface
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: IRedisClient
+    path: src/WeihanLi.Redis/RedisClient.cs
+    startLine: 5
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public interface IRedisClient
+    content.vb: Public Interface IRedisClient
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+references:
+- uid: WeihanLi.Redis
+  commentId: N:WeihanLi.Redis
+  name: WeihanLi.Redis
+  nameWithType: WeihanLi.Redis
+  fullName: WeihanLi.Redis

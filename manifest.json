@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/projects/sources/WeihanLi.Redis",
+  "source_base_path": "C:/projects/sources/weihanli.redis",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,19 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "BZBM/eP8LHoinLds8B192A=="
+          "hash": "iA03eqyYb44q3YLBgQ/PAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/ReleaseNotes.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/ReleaseNotes.html",
+          "hash": "bDdfsURXTViz0C6y+3QfNg=="
         }
       },
       "is_incremental": true,
@@ -21,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.ICacheClient.html",
-          "hash": "j7lUUGPixqvQ+myz5m2yEQ=="
+          "hash": "yyrLXVMn+RxXMEKkiv3QAg=="
         }
       },
       "is_incremental": true,
@@ -33,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.ICommonRedisClient.html",
-          "hash": "fQszTjGHn6gzDvW0ifyejQ=="
+          "hash": "ugItMPPosYCSGIqKzRnlLQ=="
         }
       },
       "is_incremental": true,
@@ -45,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.ICounterClient.html",
-          "hash": "xzU4yhWJIkW8ns9DWk2y3Q=="
+          "hash": "gDfhQWQHmU0r1FgJTX9i+Q=="
         }
       },
       "is_incremental": true,
@@ -57,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IDictionaryClient-2.html",
-          "hash": "ly7Y89JKhm5s1xJCfwGrNw=="
+          "hash": "8EzizDXTOS9euG9/R/CUrA=="
         }
       },
       "is_incremental": true,
@@ -69,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IFirewallClient.html",
-          "hash": "qEkWoVAW3fUVZOhC/gsI/g=="
+          "hash": "lmMfBz4TMAUN+4ZSDn/ZGw=="
         }
       },
       "is_incremental": true,
@@ -81,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IHashClient.html",
-          "hash": "7pK540708N6LvyDNihBNQw=="
+          "hash": "BCfytnLW6hTyvSbFpOYRdQ=="
         }
       },
       "is_incremental": true,
@@ -93,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IHashCounterClient.html",
-          "hash": "OWcGjEPOuoxpVnKsxW0SFA=="
+          "hash": "FeVoC3NLv2xQjO0TQ/NLVg=="
         }
       },
       "is_incremental": true,
@@ -105,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IListClient-1.html",
-          "hash": "PdCv8R9RTivjPP/PBcdOAg=="
+          "hash": "kSZLSpmFQ85ClcJ6vzk6gA=="
         }
       },
       "is_incremental": true,
@@ -117,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IPubSubClient.html",
-          "hash": "10gbvWP6GQF1YP7jfOw61Q=="
+          "hash": "T2O7kv2F6l3xHN5juXsD+w=="
         }
       },
       "is_incremental": true,
@@ -129,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IPubSubMessage.html",
-          "hash": "JKlGW5k04HxaRycMiaZNUg=="
+          "hash": "wS+/nC29sMAxWyMRvKtiYA=="
         }
       },
       "is_incremental": true,
@@ -141,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IQueueClient-1.html",
-          "hash": "oQ1vPefi9074G9AQjFWGOA=="
+          "hash": "6czq3B7r1tdZG5zCMu/v9Q=="
         }
       },
       "is_incremental": true,
@@ -153,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IRankClient-1.html",
-          "hash": "FbNcuDTeGD7wcdtdH+JNlA=="
+          "hash": "K+9qcMIdd+bjkOo4xaLJwA=="
         }
       },
       "is_incremental": true,
@@ -165,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IRedLockClient.html",
-          "hash": "lv5OD+WqpY7fbqKuHlniJw=="
+          "hash": "BGJligDr/g1e96dAGkILhA=="
         }
       },
       "is_incremental": true,
@@ -177,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IRedisClient.html",
-          "hash": "n+4zgI/B4WmCGzWlaWHaSg=="
+          "hash": "r2sCV580LLjCldqrARFc1Q=="
         }
       },
       "is_incremental": true,
@@ -189,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.ISetClient-1.html",
-          "hash": "2wv4Ea0LWExzP6FrUS0jfQ=="
+          "hash": "mgH/nTTb+yAbiyD0r65z6Q=="
         }
       },
       "is_incremental": true,
@@ -201,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.ISortedSetClient-1.html",
-          "hash": "SNDfCXMM1qn7IbWEzBf81g=="
+          "hash": "xC/88+uaOVtwXd8Hrou5aQ=="
         }
       },
       "is_incremental": true,
@@ -213,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IStackClient-1.html",
-          "hash": "46HQL/oLKtdxP+LaJ+Bokg=="
+          "hash": "voF3d4ebLYyCgGBlsziUlw=="
         }
       },
       "is_incremental": true,
@@ -225,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.PubSubMessageModel.html",
-          "hash": "/gKqG8QoDvdmMtEsuXgKYw=="
+          "hash": "57IAggx7Y2HXNkdTMR/61Q=="
         }
       },
       "is_incremental": true,
@@ -237,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.RedisConfigurationOptions.html",
-          "hash": "MHMD2sYil2HbbwylBX8qJA=="
+          "hash": "yannVd2s1eplIqM1WT4jWw=="
         }
       },
       "is_incremental": true,
@@ -249,10 +261,10 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.RedisDataType.html",
-          "hash": "jinxXNUJjKnsRwkrIeW+Sw=="
+          "hash": "WqHP0/qUuCgKSbnqzYcDPg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -261,10 +273,10 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.RedisManager.html",
-          "hash": "1w7/sVCt19AaBt+X7L32Qg=="
+          "hash": "x7Kjhd+mQaXcPm9ZCCfR1A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -273,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.RedisServerConfiguration.html",
-          "hash": "rikcmmz47GZU8zDB30Ffqg=="
+          "hash": "TsVAY1p8QnldKIgUmdOWtA=="
         }
       },
       "is_incremental": true,
@@ -285,10 +297,10 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.html",
-          "hash": "e1/PsqqPThNUmnWWCfI9mw=="
+          "hash": "mSf5Fry9uRrtbRczEMD5yA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -309,22 +321,19 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "+zmIMCq5/YGXKnnj/Se3mg=="
+          "hash": "mdbjHeNTCnEf+8BcP1uiWA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "TMOKfCS2WQWfKLIVQQBjuQ=="
+          "hash": "N5dVOBFy30IwGr7GMD+A9Q=="
         }
       },
       "is_incremental": false,
@@ -350,14 +359,14 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 2,
-          "skipped_file_count": 2
+          "total_file_count": 3,
+          "skipped_file_count": 1
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 23,
-          "skipped_file_count": 23
+          "skipped_file_count": 22
         }
       }
     },

@@ -1,0 +1,55 @@
+### YamlMime:TableOfContent
+- uid: WeihanLi.Redis
+  name: WeihanLi.Redis
+  items:
+  - uid: WeihanLi.Redis.ICacheClient
+    name: ICacheClient
+  - uid: WeihanLi.Redis.ICommonRedisClient
+    name: ICommonRedisClient
+  - uid: WeihanLi.Redis.ICounterClient
+    name: ICounterClient
+  - uid: WeihanLi.Redis.IDictionaryClient`2
+    name: IDictionaryClient<TKey, TValue>
+    name.vb: IDictionaryClient(Of TKey, TValue)
+  - uid: WeihanLi.Redis.IFirewallClient
+    name: IFirewallClient
+  - uid: WeihanLi.Redis.IHashClient
+    name: IHashClient
+  - uid: WeihanLi.Redis.IHashCounterClient
+    name: IHashCounterClient
+  - uid: WeihanLi.Redis.IListClient`1
+    name: IListClient<T>
+    name.vb: IListClient(Of T)
+  - uid: WeihanLi.Redis.IPubSubClient
+    name: IPubSubClient
+  - uid: WeihanLi.Redis.IPubSubMessage
+    name: IPubSubMessage
+  - uid: WeihanLi.Redis.IQueueClient`1
+    name: IQueueClient<T>
+    name.vb: IQueueClient(Of T)
+  - uid: WeihanLi.Redis.IRankClient`1
+    name: IRankClient<T>
+    name.vb: IRankClient(Of T)
+  - uid: WeihanLi.Redis.IRedisClient
+    name: IRedisClient
+  - uid: WeihanLi.Redis.IRedLockClient
+    name: IRedLockClient
+  - uid: WeihanLi.Redis.ISetClient`1
+    name: ISetClient<T>
+    name.vb: ISetClient(Of T)
+  - uid: WeihanLi.Redis.ISortedSetClient`1
+    name: ISortedSetClient<T>
+    name.vb: ISortedSetClient(Of T)
+  - uid: WeihanLi.Redis.IStackClient`1
+    name: IStackClient<T>
+    name.vb: IStackClient(Of T)
+  - uid: WeihanLi.Redis.PubSubMessageModel
+    name: PubSubMessageModel
+  - uid: WeihanLi.Redis.RedisConfigurationOptions
+    name: RedisConfigurationOptions
+  - uid: WeihanLi.Redis.RedisDataType
+    name: RedisDataType
+  - uid: WeihanLi.Redis.RedisManager
+    name: RedisManager
+  - uid: WeihanLi.Redis.RedisServerConfiguration
+    name: RedisServerConfiguration

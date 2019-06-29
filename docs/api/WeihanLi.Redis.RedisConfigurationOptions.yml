@@ -1,0 +1,1509 @@
+### YamlMime:ManagedReference
+items:
+- uid: WeihanLi.Redis.RedisConfigurationOptions
+  commentId: T:WeihanLi.Redis.RedisConfigurationOptions
+  id: RedisConfigurationOptions
+  parent: WeihanLi.Redis
+  children:
+  - WeihanLi.Redis.RedisConfigurationOptions.AbortOnConnectFail
+  - WeihanLi.Redis.RedisConfigurationOptions.AllowAdmin
+  - WeihanLi.Redis.RedisConfigurationOptions.AllowNoExpiry
+  - WeihanLi.Redis.RedisConfigurationOptions.AsyncTimeout
+  - WeihanLi.Redis.RedisConfigurationOptions.CachePrefix
+  - WeihanLi.Redis.RedisConfigurationOptions.ChannelPrefix
+  - WeihanLi.Redis.RedisConfigurationOptions.ClientName
+  - WeihanLi.Redis.RedisConfigurationOptions.CommandMap
+  - WeihanLi.Redis.RedisConfigurationOptions.ConnectRetry
+  - WeihanLi.Redis.RedisConfigurationOptions.ConnectTimeout
+  - WeihanLi.Redis.RedisConfigurationOptions.DefaultDatabase
+  - WeihanLi.Redis.RedisConfigurationOptions.EnableCompress
+  - WeihanLi.Redis.RedisConfigurationOptions.KeySeparator
+  - WeihanLi.Redis.RedisConfigurationOptions.LockRetryDelay
+  - WeihanLi.Redis.RedisConfigurationOptions.MaxCacheExpiry
+  - WeihanLi.Redis.RedisConfigurationOptions.MaxLockExpiry
+  - WeihanLi.Redis.RedisConfigurationOptions.MaxRandomCacheExpiry
+  - WeihanLi.Redis.RedisConfigurationOptions.Password
+  - WeihanLi.Redis.RedisConfigurationOptions.Proxy
+  - WeihanLi.Redis.RedisConfigurationOptions.RedisServers
+  - WeihanLi.Redis.RedisConfigurationOptions.Ssl
+  - WeihanLi.Redis.RedisConfigurationOptions.SyncTimeout
+  langs:
+  - csharp
+  - vb
+  name: RedisConfigurationOptions
+  nameWithType: RedisConfigurationOptions
+  fullName: WeihanLi.Redis.RedisConfigurationOptions
+  type: Class
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RedisConfigurationOptions
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 13
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRedisConfigurationOption\nhttps://weihanli.github.io/StackExchange.Redis-docs-zh-cn/Configuration.html\n"
+  example: []
+  syntax:
+    content: public class RedisConfigurationOptions
+    content.vb: Public Class RedisConfigurationOptions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: WeihanLi.Redis.RedisConfigurationOptions.RedisServers
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.RedisServers
+  id: RedisServers
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: RedisServers
+  nameWithType: RedisConfigurationOptions.RedisServers
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.RedisServers
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RedisServers
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 22
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public IReadOnlyCollection<RedisServerConfiguration> RedisServers { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyCollection{WeihanLi.Redis.RedisServerConfiguration}
+    content.vb: Public Property RedisServers As IReadOnlyCollection(Of RedisServerConfiguration)
+  overload: WeihanLi.Redis.RedisConfigurationOptions.RedisServers*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.Password
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.Password
+  id: Password
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: Password
+  nameWithType: RedisConfigurationOptions.Password
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.Password
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Password
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 28
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public string Password { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Password As String
+  overload: WeihanLi.Redis.RedisConfigurationOptions.Password*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.ClientName
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.ClientName
+  id: ClientName
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: ClientName
+  nameWithType: RedisConfigurationOptions.ClientName
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.ClientName
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: ClientName
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 33
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nIdentification for the connection within redis\n"
+  example: []
+  syntax:
+    content: public string ClientName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ClientName As String
+  overload: WeihanLi.Redis.RedisConfigurationOptions.ClientName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.ChannelPrefix
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.ChannelPrefix
+  id: ChannelPrefix
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: ChannelPrefix
+  nameWithType: RedisConfigurationOptions.ChannelPrefix
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.ChannelPrefix
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: ChannelPrefix
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 38
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nOptional channel prefix for all pub/sub operations\n"
+  example: []
+  syntax:
+    content: public string ChannelPrefix { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ChannelPrefix As String
+  overload: WeihanLi.Redis.RedisConfigurationOptions.ChannelPrefix*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.CachePrefix
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.CachePrefix
+  id: CachePrefix
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: CachePrefix
+  nameWithType: RedisConfigurationOptions.CachePrefix
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.CachePrefix
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: CachePrefix
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 43
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nCachePrefix\n"
+  example: []
+  syntax:
+    content: public string CachePrefix { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CachePrefix As String
+  overload: WeihanLi.Redis.RedisConfigurationOptions.CachePrefix*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.KeySeparator
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.KeySeparator
+  id: KeySeparator
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: KeySeparator
+  nameWithType: RedisConfigurationOptions.KeySeparator
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.KeySeparator
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: KeySeparator
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 48
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nKeySeparator\n"
+  example: []
+  syntax:
+    content: public string KeySeparator { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property KeySeparator As String
+  overload: WeihanLi.Redis.RedisConfigurationOptions.KeySeparator*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.EnableCompress
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.EnableCompress
+  id: EnableCompress
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: EnableCompress
+  nameWithType: RedisConfigurationOptions.EnableCompress
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.EnableCompress
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: EnableCompress
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 60
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public bool EnableCompress { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EnableCompress As Boolean
+  overload: WeihanLi.Redis.RedisConfigurationOptions.EnableCompress*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.DefaultDatabase
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.DefaultDatabase
+  id: DefaultDatabase
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: DefaultDatabase
+  nameWithType: RedisConfigurationOptions.DefaultDatabase
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.DefaultDatabase
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: DefaultDatabase
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 62
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public int DefaultDatabase { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property DefaultDatabase As Integer
+  overload: WeihanLi.Redis.RedisConfigurationOptions.DefaultDatabase*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.Ssl
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.Ssl
+  id: Ssl
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: Ssl
+  nameWithType: RedisConfigurationOptions.Ssl
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.Ssl
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Ssl
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 64
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public bool Ssl { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Ssl As Boolean
+  overload: WeihanLi.Redis.RedisConfigurationOptions.Ssl*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.AllowAdmin
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.AllowAdmin
+  id: AllowAdmin
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: AllowAdmin
+  nameWithType: RedisConfigurationOptions.AllowAdmin
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.AllowAdmin
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: AllowAdmin
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 66
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public bool AllowAdmin { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AllowAdmin As Boolean
+  overload: WeihanLi.Redis.RedisConfigurationOptions.AllowAdmin*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.AbortOnConnectFail
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.AbortOnConnectFail
+  id: AbortOnConnectFail
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: AbortOnConnectFail
+  nameWithType: RedisConfigurationOptions.AbortOnConnectFail
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.AbortOnConnectFail
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: AbortOnConnectFail
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 68
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public bool AbortOnConnectFail { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AbortOnConnectFail As Boolean
+  overload: WeihanLi.Redis.RedisConfigurationOptions.AbortOnConnectFail*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.SyncTimeout
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.SyncTimeout
+  id: SyncTimeout
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: SyncTimeout
+  nameWithType: RedisConfigurationOptions.SyncTimeout
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.SyncTimeout
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: SyncTimeout
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 70
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public int SyncTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property SyncTimeout As Integer
+  overload: WeihanLi.Redis.RedisConfigurationOptions.SyncTimeout*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.AsyncTimeout
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.AsyncTimeout
+  id: AsyncTimeout
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: AsyncTimeout
+  nameWithType: RedisConfigurationOptions.AsyncTimeout
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.AsyncTimeout
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: AsyncTimeout
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 72
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public int AsyncTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property AsyncTimeout As Integer
+  overload: WeihanLi.Redis.RedisConfigurationOptions.AsyncTimeout*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.ConnectRetry
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.ConnectRetry
+  id: ConnectRetry
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: ConnectRetry
+  nameWithType: RedisConfigurationOptions.ConnectRetry
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.ConnectRetry
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: ConnectRetry
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 74
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public int ConnectRetry { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ConnectRetry As Integer
+  overload: WeihanLi.Redis.RedisConfigurationOptions.ConnectRetry*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.ConnectTimeout
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.ConnectTimeout
+  id: ConnectTimeout
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: ConnectTimeout
+  nameWithType: RedisConfigurationOptions.ConnectTimeout
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.ConnectTimeout
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: ConnectTimeout
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 79
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nTimeout (ms) for connect operations\n"
+  example: []
+  syntax:
+    content: public int ConnectTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ConnectTimeout As Integer
+  overload: WeihanLi.Redis.RedisConfigurationOptions.ConnectTimeout*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.Proxy
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.Proxy
+  id: Proxy
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: Proxy
+  nameWithType: RedisConfigurationOptions.Proxy
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.Proxy
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Proxy
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 84
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nType of proxy in use (if any); for example “twemproxy”\n"
+  example: []
+  syntax:
+    content: public Proxy Proxy { get; set; }
+    parameters: []
+    return:
+      type: StackExchange.Redis.Proxy
+    content.vb: Public Property Proxy As Proxy
+  overload: WeihanLi.Redis.RedisConfigurationOptions.Proxy*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.CommandMap
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.CommandMap
+  id: CommandMap
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: CommandMap
+  nameWithType: RedisConfigurationOptions.CommandMap
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.CommandMap
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: CommandMap
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 90
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nA slightly unusual feature of redis is that you can disable and/or rename individual commands\nhttps://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Configuration.md#renaming-commands\n"
+  example: []
+  syntax:
+    content: public Dictionary<string, string> CommandMap { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+    content.vb: Public Property CommandMap As Dictionary(Of String, String)
+  overload: WeihanLi.Redis.RedisConfigurationOptions.CommandMap*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.AllowNoExpiry
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.AllowNoExpiry
+  id: AllowNoExpiry
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: AllowNoExpiry
+  nameWithType: RedisConfigurationOptions.AllowNoExpiry
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.AllowNoExpiry
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: AllowNoExpiry
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 96
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nAllowNoExpiry\n是否允许永不过期\n"
+  example: []
+  syntax:
+    content: public bool AllowNoExpiry { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AllowNoExpiry As Boolean
+  overload: WeihanLi.Redis.RedisConfigurationOptions.AllowNoExpiry*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.MaxCacheExpiry
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.MaxCacheExpiry
+  id: MaxCacheExpiry
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: MaxCacheExpiry
+  nameWithType: RedisConfigurationOptions.MaxCacheExpiry
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.MaxCacheExpiry
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: MaxCacheExpiry
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 102
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nMaxCacheExpiry\n缓存最长过期时间，默认30天\n"
+  example: []
+  syntax:
+    content: public TimeSpan MaxCacheExpiry { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property MaxCacheExpiry As TimeSpan
+  overload: WeihanLi.Redis.RedisConfigurationOptions.MaxCacheExpiry*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.MaxRandomCacheExpiry
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.MaxRandomCacheExpiry
+  id: MaxRandomCacheExpiry
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: MaxRandomCacheExpiry
+  nameWithType: RedisConfigurationOptions.MaxRandomCacheExpiry
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.MaxRandomCacheExpiry
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: MaxRandomCacheExpiry
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 108
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nMaxRandomCacheExpiry(seconds)\n最多随机缓存过期时间(缓存雪崩)秒\n"
+  example: []
+  syntax:
+    content: public int MaxRandomCacheExpiry { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxRandomCacheExpiry As Integer
+  overload: WeihanLi.Redis.RedisConfigurationOptions.MaxRandomCacheExpiry*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.LockRetryDelay
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.LockRetryDelay
+  id: LockRetryDelay
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: LockRetryDelay
+  nameWithType: RedisConfigurationOptions.LockRetryDelay
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.LockRetryDelay
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: LockRetryDelay
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 114
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nLockRetryDelay in seconds\n锁重试延迟时间（毫秒）\n"
+  example: []
+  syntax:
+    content: public int LockRetryDelay { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property LockRetryDelay As Integer
+  overload: WeihanLi.Redis.RedisConfigurationOptions.LockRetryDelay*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisConfigurationOptions.MaxLockExpiry
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.MaxLockExpiry
+  id: MaxLockExpiry
+  parent: WeihanLi.Redis.RedisConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: MaxLockExpiry
+  nameWithType: RedisConfigurationOptions.MaxLockExpiry
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.MaxLockExpiry
+  type: Property
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: MaxLockExpiry
+    path: src/WeihanLi.Redis/RedisConfigurationOptions.cs
+    startLine: 120
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nMaxLockCacheExpiry in seconds\n最多锁过期时间（秒），默认 30min\n"
+  example: []
+  syntax:
+    content: public int MaxLockExpiry { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxLockExpiry As Integer
+  overload: WeihanLi.Redis.RedisConfigurationOptions.MaxLockExpiry*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: WeihanLi.Redis
+  commentId: N:WeihanLi.Redis
+  name: WeihanLi.Redis
+  nameWithType: WeihanLi.Redis
+  fullName: WeihanLi.Redis
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: WeihanLi.Redis.RedisConfigurationOptions.RedisServers*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.RedisServers
+  name: RedisServers
+  nameWithType: RedisConfigurationOptions.RedisServers
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.RedisServers
+- uid: System.Collections.Generic.IReadOnlyCollection{WeihanLi.Redis.RedisServerConfiguration}
+  commentId: T:System.Collections.Generic.IReadOnlyCollection{WeihanLi.Redis.RedisServerConfiguration}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyCollection`1
+  name: IReadOnlyCollection<RedisServerConfiguration>
+  nameWithType: IReadOnlyCollection<RedisServerConfiguration>
+  fullName: System.Collections.Generic.IReadOnlyCollection<WeihanLi.Redis.RedisServerConfiguration>
+  nameWithType.vb: IReadOnlyCollection(Of RedisServerConfiguration)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of WeihanLi.Redis.RedisServerConfiguration)
+  name.vb: IReadOnlyCollection(Of RedisServerConfiguration)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: WeihanLi.Redis.RedisServerConfiguration
+    name: RedisServerConfiguration
+    nameWithType: RedisServerConfiguration
+    fullName: WeihanLi.Redis.RedisServerConfiguration
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: WeihanLi.Redis.RedisServerConfiguration
+    name: RedisServerConfiguration
+    nameWithType: RedisServerConfiguration
+    fullName: WeihanLi.Redis.RedisServerConfiguration
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IReadOnlyCollection`1
+  commentId: T:System.Collections.Generic.IReadOnlyCollection`1
+  isExternal: true
+  name: IReadOnlyCollection<T>
+  nameWithType: IReadOnlyCollection<T>
+  fullName: System.Collections.Generic.IReadOnlyCollection<T>
+  nameWithType.vb: IReadOnlyCollection(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of T)
+  name.vb: IReadOnlyCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: WeihanLi.Redis.RedisConfigurationOptions.Password*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.Password
+  name: Password
+  nameWithType: RedisConfigurationOptions.Password
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.Password
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: WeihanLi.Redis.RedisConfigurationOptions.ClientName*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.ClientName
+  name: ClientName
+  nameWithType: RedisConfigurationOptions.ClientName
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.ClientName
+- uid: WeihanLi.Redis.RedisConfigurationOptions.ChannelPrefix*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.ChannelPrefix
+  name: ChannelPrefix
+  nameWithType: RedisConfigurationOptions.ChannelPrefix
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.ChannelPrefix
+- uid: WeihanLi.Redis.RedisConfigurationOptions.CachePrefix*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.CachePrefix
+  name: CachePrefix
+  nameWithType: RedisConfigurationOptions.CachePrefix
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.CachePrefix
+- uid: WeihanLi.Redis.RedisConfigurationOptions.KeySeparator*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.KeySeparator
+  name: KeySeparator
+  nameWithType: RedisConfigurationOptions.KeySeparator
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.KeySeparator
+- uid: WeihanLi.Redis.RedisConfigurationOptions.EnableCompress*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.EnableCompress
+  name: EnableCompress
+  nameWithType: RedisConfigurationOptions.EnableCompress
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.EnableCompress
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: WeihanLi.Redis.RedisConfigurationOptions.DefaultDatabase*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.DefaultDatabase
+  name: DefaultDatabase
+  nameWithType: RedisConfigurationOptions.DefaultDatabase
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.DefaultDatabase
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: WeihanLi.Redis.RedisConfigurationOptions.Ssl*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.Ssl
+  name: Ssl
+  nameWithType: RedisConfigurationOptions.Ssl
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.Ssl
+- uid: WeihanLi.Redis.RedisConfigurationOptions.AllowAdmin*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.AllowAdmin
+  name: AllowAdmin
+  nameWithType: RedisConfigurationOptions.AllowAdmin
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.AllowAdmin
+- uid: WeihanLi.Redis.RedisConfigurationOptions.AbortOnConnectFail*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.AbortOnConnectFail
+  name: AbortOnConnectFail
+  nameWithType: RedisConfigurationOptions.AbortOnConnectFail
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.AbortOnConnectFail
+- uid: WeihanLi.Redis.RedisConfigurationOptions.SyncTimeout*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.SyncTimeout
+  name: SyncTimeout
+  nameWithType: RedisConfigurationOptions.SyncTimeout
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.SyncTimeout
+- uid: WeihanLi.Redis.RedisConfigurationOptions.AsyncTimeout*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.AsyncTimeout
+  name: AsyncTimeout
+  nameWithType: RedisConfigurationOptions.AsyncTimeout
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.AsyncTimeout
+- uid: WeihanLi.Redis.RedisConfigurationOptions.ConnectRetry*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.ConnectRetry
+  name: ConnectRetry
+  nameWithType: RedisConfigurationOptions.ConnectRetry
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.ConnectRetry
+- uid: WeihanLi.Redis.RedisConfigurationOptions.ConnectTimeout*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.ConnectTimeout
+  name: ConnectTimeout
+  nameWithType: RedisConfigurationOptions.ConnectTimeout
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.ConnectTimeout
+- uid: WeihanLi.Redis.RedisConfigurationOptions.Proxy*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.Proxy
+  name: Proxy
+  nameWithType: RedisConfigurationOptions.Proxy
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.Proxy
+- uid: StackExchange.Redis.Proxy
+  commentId: T:StackExchange.Redis.Proxy
+  parent: StackExchange.Redis
+  isExternal: true
+  name: Proxy
+  nameWithType: Proxy
+  fullName: StackExchange.Redis.Proxy
+- uid: StackExchange.Redis
+  commentId: N:StackExchange.Redis
+  isExternal: true
+  name: StackExchange.Redis
+  nameWithType: StackExchange.Redis
+  fullName: StackExchange.Redis
+- uid: WeihanLi.Redis.RedisConfigurationOptions.CommandMap*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.CommandMap
+  name: CommandMap
+  nameWithType: RedisConfigurationOptions.CommandMap
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.CommandMap
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<String, String>
+  nameWithType: Dictionary<String, String>
+  fullName: System.Collections.Generic.Dictionary<System.String, System.String>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, System.String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.RedisConfigurationOptions.AllowNoExpiry*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.AllowNoExpiry
+  name: AllowNoExpiry
+  nameWithType: RedisConfigurationOptions.AllowNoExpiry
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.AllowNoExpiry
+- uid: WeihanLi.Redis.RedisConfigurationOptions.MaxCacheExpiry*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.MaxCacheExpiry
+  name: MaxCacheExpiry
+  nameWithType: RedisConfigurationOptions.MaxCacheExpiry
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.MaxCacheExpiry
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: WeihanLi.Redis.RedisConfigurationOptions.MaxRandomCacheExpiry*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.MaxRandomCacheExpiry
+  name: MaxRandomCacheExpiry
+  nameWithType: RedisConfigurationOptions.MaxRandomCacheExpiry
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.MaxRandomCacheExpiry
+- uid: WeihanLi.Redis.RedisConfigurationOptions.LockRetryDelay*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.LockRetryDelay
+  name: LockRetryDelay
+  nameWithType: RedisConfigurationOptions.LockRetryDelay
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.LockRetryDelay
+- uid: WeihanLi.Redis.RedisConfigurationOptions.MaxLockExpiry*
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.MaxLockExpiry
+  name: MaxLockExpiry
+  nameWithType: RedisConfigurationOptions.MaxLockExpiry
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.MaxLockExpiry

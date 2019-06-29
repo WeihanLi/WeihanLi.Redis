@@ -1,0 +1,1763 @@
+### YamlMime:ManagedReference
+items:
+- uid: WeihanLi.Redis.IListClient`1
+  commentId: T:WeihanLi.Redis.IListClient`1
+  id: IListClient`1
+  parent: WeihanLi.Redis
+  children:
+  - WeihanLi.Redis.IListClient`1.Count(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.CountAsync(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.Get(System.Int64,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.GetAsync(System.Int64,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.InsertAfter(`0,`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.InsertAfterAsync(`0,`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.InsertBefore(`0,`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.InsertBeforeAsync(`0,`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.LeftPop(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.LeftPopAsync(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.LeftPush(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.LeftPush(`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.LeftPushAsync(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.LeftPushAsync(`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.ListRange(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.ListRangeAsync(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.Pop(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.PopAsync(StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.Push(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.Push(`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.PushAsync(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.PushAsync(`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.Remove(`0,System.Int64,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.RemoveAsync(`0,System.Int64,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.RightPopLeftPush(System.String,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.RightPopLeftPushAsync(System.String,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.Set(System.Int64,`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.SetAsync(System.Int64,`0,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.Sort(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.SortAndStore(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.Trim(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  - WeihanLi.Redis.IListClient`1.TrimAsync(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  langs:
+  - csharp
+  - vb
+  name: IListClient<T>
+  nameWithType: IListClient<T>
+  fullName: WeihanLi.Redis.IListClient<T>
+  type: Interface
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: IListClient
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 6
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: 'public interface IListClient<T> : IRedisClient'
+    typeParameters:
+    - id: T
+    content.vb: >-
+      Public Interface IListClient(Of T)
+          Inherits IRedisClient
+  nameWithType.vb: IListClient(Of T)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: WeihanLi.Redis.IListClient(Of T)
+  name.vb: IListClient(Of T)
+- uid: WeihanLi.Redis.IListClient`1.Get(System.Int64,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.Get(System.Int64,StackExchange.Redis.CommandFlags)
+  id: Get(System.Int64,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: Get(Int64, CommandFlags)
+  nameWithType: IListClient<T>.Get(Int64, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.Get(System.Int64, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Get
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 20
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: T Get(long index, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: index
+      type: System.Int64
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}'
+    content.vb: Function Get(index As Long, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T
+  overload: WeihanLi.Redis.IListClient`1.Get*
+  nameWithType.vb: IListClient(Of T).Get(Int64, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Get(System.Int64, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.GetAsync(System.Int64,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.GetAsync(System.Int64,StackExchange.Redis.CommandFlags)
+  id: GetAsync(System.Int64,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(Int64, CommandFlags)
+  nameWithType: IListClient<T>.GetAsync(Int64, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.GetAsync(System.Int64, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: GetAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 22
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<T> GetAsync(long index, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: index
+      type: System.Int64
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function GetAsync(index As Long, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T)
+  overload: WeihanLi.Redis.IListClient`1.GetAsync*
+  nameWithType.vb: IListClient(Of T).GetAsync(Int64, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).GetAsync(System.Int64, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.InsertAfter(`0,`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.InsertAfter(`0,`0,StackExchange.Redis.CommandFlags)
+  id: InsertAfter(`0,`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: InsertAfter(T, T, CommandFlags)
+  nameWithType: IListClient<T>.InsertAfter(T, T, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.InsertAfter(T, T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: InsertAfter
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 36
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: long InsertAfter(T pivot, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: pivot
+      type: '{T}'
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+    content.vb: Function InsertAfter(pivot As T, value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.IListClient`1.InsertAfter*
+  nameWithType.vb: IListClient(Of T).InsertAfter(T, T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).InsertAfter(T, T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.InsertAfterAsync(`0,`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.InsertAfterAsync(`0,`0,StackExchange.Redis.CommandFlags)
+  id: InsertAfterAsync(`0,`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: InsertAfterAsync(T, T, CommandFlags)
+  nameWithType: IListClient<T>.InsertAfterAsync(T, T, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.InsertAfterAsync(T, T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: InsertAfterAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 38
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<long> InsertAfterAsync(T pivot, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: pivot
+      type: '{T}'
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+    content.vb: Function InsertAfterAsync(pivot As T, value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.IListClient`1.InsertAfterAsync*
+  nameWithType.vb: IListClient(Of T).InsertAfterAsync(T, T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).InsertAfterAsync(T, T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.InsertBefore(`0,`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.InsertBefore(`0,`0,StackExchange.Redis.CommandFlags)
+  id: InsertBefore(`0,`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: InsertBefore(T, T, CommandFlags)
+  nameWithType: IListClient<T>.InsertBefore(T, T, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.InsertBefore(T, T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: InsertBefore
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 52
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: long InsertBefore(T pivot, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: pivot
+      type: '{T}'
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+    content.vb: Function InsertBefore(pivot As T, value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.IListClient`1.InsertBefore*
+  nameWithType.vb: IListClient(Of T).InsertBefore(T, T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).InsertBefore(T, T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.InsertBeforeAsync(`0,`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.InsertBeforeAsync(`0,`0,StackExchange.Redis.CommandFlags)
+  id: InsertBeforeAsync(`0,`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: InsertBeforeAsync(T, T, CommandFlags)
+  nameWithType: IListClient<T>.InsertBeforeAsync(T, T, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.InsertBeforeAsync(T, T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: InsertBeforeAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 54
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<long> InsertBeforeAsync(T pivot, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: pivot
+      type: '{T}'
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+    content.vb: Function InsertBeforeAsync(pivot As T, value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.IListClient`1.InsertBeforeAsync*
+  nameWithType.vb: IListClient(Of T).InsertBeforeAsync(T, T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).InsertBeforeAsync(T, T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.LeftPop(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.LeftPop(StackExchange.Redis.CommandFlags)
+  id: LeftPop(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: LeftPop(CommandFlags)
+  nameWithType: IListClient<T>.LeftPop(CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.LeftPop(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: LeftPop
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 65
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: T LeftPop(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}'
+    content.vb: Function LeftPop(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T
+  overload: WeihanLi.Redis.IListClient`1.LeftPop*
+  nameWithType.vb: IListClient(Of T).LeftPop(CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).LeftPop(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.LeftPopAsync(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.LeftPopAsync(StackExchange.Redis.CommandFlags)
+  id: LeftPopAsync(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: LeftPopAsync(CommandFlags)
+  nameWithType: IListClient<T>.LeftPopAsync(CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.LeftPopAsync(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: LeftPopAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 67
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<T> LeftPopAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function LeftPopAsync(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T)
+  overload: WeihanLi.Redis.IListClient`1.LeftPopAsync*
+  nameWithType.vb: IListClient(Of T).LeftPopAsync(CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).LeftPopAsync(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.LeftPush(`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.LeftPush(`0[],StackExchange.Redis.CommandFlags)
+  id: LeftPush(`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: LeftPush(T[], CommandFlags)
+  nameWithType: IListClient<T>.LeftPush(T[], CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.LeftPush(T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: LeftPush
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 83
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: long LeftPush(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: values
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+    content.vb: Function LeftPush(values As T(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.IListClient`1.LeftPush*
+  nameWithType.vb: IListClient(Of T).LeftPush(T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).LeftPush(T(), StackExchange.Redis.CommandFlags)
+  name.vb: LeftPush(T(), CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.LeftPushAsync(`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.LeftPushAsync(`0[],StackExchange.Redis.CommandFlags)
+  id: LeftPushAsync(`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: LeftPushAsync(T[], CommandFlags)
+  nameWithType: IListClient<T>.LeftPushAsync(T[], CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.LeftPushAsync(T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: LeftPushAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 85
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<long> LeftPushAsync(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: values
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+    content.vb: Function LeftPushAsync(values As T(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.IListClient`1.LeftPushAsync*
+  nameWithType.vb: IListClient(Of T).LeftPushAsync(T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).LeftPushAsync(T(), StackExchange.Redis.CommandFlags)
+  name.vb: LeftPushAsync(T(), CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.LeftPush(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.LeftPush(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  id: LeftPush(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: LeftPush(T, When, CommandFlags)
+  nameWithType: IListClient<T>.LeftPush(T, When, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.LeftPush(T, StackExchange.Redis.When, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: LeftPush
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 97
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: long LeftPush(T value, When when = When.Always, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: when
+      type: StackExchange.Redis.When
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+    content.vb: Function LeftPush(value As T, when As  When  =  When.Always, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.IListClient`1.LeftPush*
+  nameWithType.vb: IListClient(Of T).LeftPush(T, When, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).LeftPush(T, StackExchange.Redis.When, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.LeftPushAsync(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.LeftPushAsync(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  id: LeftPushAsync(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: LeftPushAsync(T, When, CommandFlags)
+  nameWithType: IListClient<T>.LeftPushAsync(T, When, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.LeftPushAsync(T, StackExchange.Redis.When, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: LeftPushAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 99
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<long> LeftPushAsync(T value, When when = When.Always, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: when
+      type: StackExchange.Redis.When
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+    content.vb: Function LeftPushAsync(value As T, when As  When  =  When.Always, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.IListClient`1.LeftPushAsync*
+  nameWithType.vb: IListClient(Of T).LeftPushAsync(T, When, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).LeftPushAsync(T, StackExchange.Redis.When, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.Count(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.Count(StackExchange.Redis.CommandFlags)
+  id: Count(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: Count(CommandFlags)
+  nameWithType: IListClient<T>.Count(CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.Count(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Count
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 111
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: long Count(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+    content.vb: Function Count(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.IListClient`1.Count*
+  nameWithType.vb: IListClient(Of T).Count(CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Count(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.CountAsync(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.CountAsync(StackExchange.Redis.CommandFlags)
+  id: CountAsync(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: CountAsync(CommandFlags)
+  nameWithType: IListClient<T>.CountAsync(CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.CountAsync(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: CountAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 113
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<long> CountAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+    content.vb: Function CountAsync(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.IListClient`1.CountAsync*
+  nameWithType.vb: IListClient(Of T).CountAsync(CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).CountAsync(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.ListRange(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.ListRange(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  id: ListRange(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: ListRange(Int64, Int64, CommandFlags)
+  nameWithType: IListClient<T>.ListRange(Int64, Int64, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.ListRange(System.Int64, System.Int64, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: ListRange
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 130
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: T[] ListRange(long start = 0L, long stop = -1L, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: start
+      type: System.Int64
+    - id: stop
+      type: System.Int64
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}[]'
+    content.vb: Function ListRange(start As Long = 0L, stop As Long = -1L, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T()
+  overload: WeihanLi.Redis.IListClient`1.ListRange*
+  nameWithType.vb: IListClient(Of T).ListRange(Int64, Int64, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).ListRange(System.Int64, System.Int64, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.ListRangeAsync(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.ListRangeAsync(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  id: ListRangeAsync(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: ListRangeAsync(Int64, Int64, CommandFlags)
+  nameWithType: IListClient<T>.ListRangeAsync(Int64, Int64, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.ListRangeAsync(System.Int64, System.Int64, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: ListRangeAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 132
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<T[]> ListRangeAsync(long start = 0L, long stop = -1L, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: start
+      type: System.Int64
+    - id: stop
+      type: System.Int64
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+    content.vb: Function ListRangeAsync(start As Long = 0L, stop As Long = -1L, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T())
+  overload: WeihanLi.Redis.IListClient`1.ListRangeAsync*
+  nameWithType.vb: IListClient(Of T).ListRangeAsync(Int64, Int64, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).ListRangeAsync(System.Int64, System.Int64, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.Remove(`0,System.Int64,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.Remove(`0,System.Int64,StackExchange.Redis.CommandFlags)
+  id: Remove(`0,System.Int64,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T, Int64, CommandFlags)
+  nameWithType: IListClient<T>.Remove(T, Int64, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.Remove(T, System.Int64, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Remove
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 147
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: long Remove(T value, long count = 0L, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: count
+      type: System.Int64
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+    content.vb: Function Remove(value As T, count As Long = 0L, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.IListClient`1.Remove*
+  nameWithType.vb: IListClient(Of T).Remove(T, Int64, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Remove(T, System.Int64, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.RemoveAsync(`0,System.Int64,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.RemoveAsync(`0,System.Int64,StackExchange.Redis.CommandFlags)
+  id: RemoveAsync(`0,System.Int64,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAsync(T, Int64, CommandFlags)
+  nameWithType: IListClient<T>.RemoveAsync(T, Int64, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.RemoveAsync(T, System.Int64, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RemoveAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 149
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<long> RemoveAsync(T value, long count = 0L, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: count
+      type: System.Int64
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+    content.vb: Function RemoveAsync(value As T, count As Long = 0L, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.IListClient`1.RemoveAsync*
+  nameWithType.vb: IListClient(Of T).RemoveAsync(T, Int64, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).RemoveAsync(T, System.Int64, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.Pop(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.Pop(StackExchange.Redis.CommandFlags)
+  id: Pop(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: Pop(CommandFlags)
+  nameWithType: IListClient<T>.Pop(CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.Pop(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Pop
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 157
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: T Pop(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}'
+    content.vb: Function Pop(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T
+  overload: WeihanLi.Redis.IListClient`1.Pop*
+  nameWithType.vb: IListClient(Of T).Pop(CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Pop(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.PopAsync(StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.PopAsync(StackExchange.Redis.CommandFlags)
+  id: PopAsync(StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: PopAsync(CommandFlags)
+  nameWithType: IListClient<T>.PopAsync(CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.PopAsync(StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: PopAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 159
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<T> PopAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function PopAsync(flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T)
+  overload: WeihanLi.Redis.IListClient`1.PopAsync*
+  nameWithType.vb: IListClient(Of T).PopAsync(CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).PopAsync(StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.RightPopLeftPush(System.String,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.RightPopLeftPush(System.String,StackExchange.Redis.CommandFlags)
+  id: RightPopLeftPush(System.String,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: RightPopLeftPush(String, CommandFlags)
+  nameWithType: IListClient<T>.RightPopLeftPush(String, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.RightPopLeftPush(System.String, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RightPopLeftPush
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 172
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: T RightPopLeftPush(string destination, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: destination
+      type: System.String
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}'
+    content.vb: Function RightPopLeftPush(destination As String, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T
+  overload: WeihanLi.Redis.IListClient`1.RightPopLeftPush*
+  nameWithType.vb: IListClient(Of T).RightPopLeftPush(String, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).RightPopLeftPush(System.String, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.RightPopLeftPushAsync(System.String,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.RightPopLeftPushAsync(System.String,StackExchange.Redis.CommandFlags)
+  id: RightPopLeftPushAsync(System.String,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: RightPopLeftPushAsync(String, CommandFlags)
+  nameWithType: IListClient<T>.RightPopLeftPushAsync(String, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.RightPopLeftPushAsync(System.String, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RightPopLeftPushAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 174
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<T> RightPopLeftPushAsync(string destination, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: destination
+      type: System.String
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+    content.vb: Function RightPopLeftPushAsync(destination As String, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of T)
+  overload: WeihanLi.Redis.IListClient`1.RightPopLeftPushAsync*
+  nameWithType.vb: IListClient(Of T).RightPopLeftPushAsync(String, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).RightPopLeftPushAsync(System.String, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.Push(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.Push(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  id: Push(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: Push(T, When, CommandFlags)
+  nameWithType: IListClient<T>.Push(T, When, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.Push(T, StackExchange.Redis.When, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Push
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 186
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: long Push(T value, When when = When.Always, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: when
+      type: StackExchange.Redis.When
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+    content.vb: Function Push(value As T, when As  When  =  When.Always, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.IListClient`1.Push*
+  nameWithType.vb: IListClient(Of T).Push(T, When, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Push(T, StackExchange.Redis.When, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.PushAsync(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.PushAsync(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  id: PushAsync(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: PushAsync(T, When, CommandFlags)
+  nameWithType: IListClient<T>.PushAsync(T, When, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.PushAsync(T, StackExchange.Redis.When, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: PushAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 188
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<long> PushAsync(T value, When when = When.Always, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: value
+      type: '{T}'
+    - id: when
+      type: StackExchange.Redis.When
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+    content.vb: Function PushAsync(value As T, when As  When  =  When.Always, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.IListClient`1.PushAsync*
+  nameWithType.vb: IListClient(Of T).PushAsync(T, When, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).PushAsync(T, StackExchange.Redis.When, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.Push(`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.Push(`0[],StackExchange.Redis.CommandFlags)
+  id: Push(`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: Push(T[], CommandFlags)
+  nameWithType: IListClient<T>.Push(T[], CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.Push(T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Push
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 204
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: long Push(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: values
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+    content.vb: Function Push(values As T(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.IListClient`1.Push*
+  nameWithType.vb: IListClient(Of T).Push(T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Push(T(), StackExchange.Redis.CommandFlags)
+  name.vb: Push(T(), CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.PushAsync(`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.PushAsync(`0[],StackExchange.Redis.CommandFlags)
+  id: PushAsync(`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: PushAsync(T[], CommandFlags)
+  nameWithType: IListClient<T>.PushAsync(T[], CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.PushAsync(T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: PushAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 206
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<long> PushAsync(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: values
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+    content.vb: Function PushAsync(values As T(), flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Long)
+  overload: WeihanLi.Redis.IListClient`1.PushAsync*
+  nameWithType.vb: IListClient(Of T).PushAsync(T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).PushAsync(T(), StackExchange.Redis.CommandFlags)
+  name.vb: PushAsync(T(), CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.Set(System.Int64,`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.Set(System.Int64,`0,StackExchange.Redis.CommandFlags)
+  id: Set(System.Int64,`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: Set(Int64, T, CommandFlags)
+  nameWithType: IListClient<T>.Set(Int64, T, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.Set(System.Int64, T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Set
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 215
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: bool Set(long index, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: index
+      type: System.Int64
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Boolean
+    content.vb: Function Set(index As Long, value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Boolean
+  overload: WeihanLi.Redis.IListClient`1.Set*
+  nameWithType.vb: IListClient(Of T).Set(Int64, T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Set(System.Int64, T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.SetAsync(System.Int64,`0,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.SetAsync(System.Int64,`0,StackExchange.Redis.CommandFlags)
+  id: SetAsync(System.Int64,`0,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: SetAsync(Int64, T, CommandFlags)
+  nameWithType: IListClient<T>.SetAsync(Int64, T, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.SetAsync(System.Int64, T, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: SetAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 217
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<bool> SetAsync(long index, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: index
+      type: System.Int64
+    - id: value
+      type: '{T}'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Function SetAsync(index As Long, value As T, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Boolean)
+  overload: WeihanLi.Redis.IListClient`1.SetAsync*
+  nameWithType.vb: IListClient(Of T).SetAsync(Int64, T, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).SetAsync(System.Int64, T, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.Trim(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.Trim(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  id: Trim(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: Trim(Int64, Int64, CommandFlags)
+  nameWithType: IListClient<T>.Trim(Int64, Int64, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.Trim(System.Int64, System.Int64, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Trim
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 231
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: bool Trim(long start, long stop, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: start
+      type: System.Int64
+    - id: stop
+      type: System.Int64
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Boolean
+    content.vb: Function Trim(start As Long, stop As Long, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Boolean
+  overload: WeihanLi.Redis.IListClient`1.Trim*
+  nameWithType.vb: IListClient(Of T).Trim(Int64, Int64, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Trim(System.Int64, System.Int64, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.TrimAsync(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.TrimAsync(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  id: TrimAsync(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: TrimAsync(Int64, Int64, CommandFlags)
+  nameWithType: IListClient<T>.TrimAsync(Int64, Int64, CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.TrimAsync(System.Int64, System.Int64, StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: TrimAsync
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 233
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Task<bool> TrimAsync(long start, long stop, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: start
+      type: System.Int64
+    - id: stop
+      type: System.Int64
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Function TrimAsync(start As Long, stop As Long, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Task(Of Boolean)
+  overload: WeihanLi.Redis.IListClient`1.TrimAsync*
+  nameWithType.vb: IListClient(Of T).TrimAsync(Int64, Int64, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).TrimAsync(System.Int64, System.Int64, StackExchange.Redis.CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.Sort(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.Sort(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  id: Sort(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: Sort(Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  nameWithType: IListClient<T>.Sort(Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.Sort(System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Sort
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 244
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nSorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be\nused to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can\nbe performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).\nReferring to the <a href=\"http://redis.io/commands/sort\">redis SORT documentation </a> for examples is recommended. When used in hashes, <code>by</code> and <code>get</code>\ncan be used to specify fields using <code>-></code> notation (again, refer to redis documentation).\n"
+  remarks: http://redis.io/commands/sort
+  example: []
+  syntax:
+    content: T[] Sort(long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: skip
+      type: System.Int64
+    - id: take
+      type: System.Int64
+    - id: order
+      type: StackExchange.Redis.Order
+    - id: sortType
+      type: StackExchange.Redis.SortType
+    - id: by
+      type: '{T}'
+    - id: get
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: '{T}[]'
+      description: Returns the sorted elements, or the external values if <code>get</code> is specified
+    content.vb: Function Sort(skip As Long = 0L, take As Long = -1L, order As Order = Order.Ascending, sortType As SortType = SortType.Numeric, by As T = Nothing, get As T() = Nothing, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As T()
+  overload: WeihanLi.Redis.IListClient`1.Sort*
+  nameWithType.vb: IListClient(Of T).Sort(Int64, Int64, Order, SortType, T, T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Sort(System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T(), StackExchange.Redis.CommandFlags)
+  name.vb: Sort(Int64, Int64, Order, SortType, T, T(), CommandFlags)
+- uid: WeihanLi.Redis.IListClient`1.SortAndStore(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  commentId: M:WeihanLi.Redis.IListClient`1.SortAndStore(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  id: SortAndStore(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)
+  parent: WeihanLi.Redis.IListClient`1
+  langs:
+  - csharp
+  - vb
+  name: SortAndStore(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  nameWithType: IListClient<T>.SortAndStore(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)
+  fullName: WeihanLi.Redis.IListClient<T>.SortAndStore(System.String, System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T[], StackExchange.Redis.CommandFlags)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/List/IListClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: SortAndStore
+    path: src/WeihanLi.Redis/List/IListClient.cs
+    startLine: 255
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nSorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be\nused to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can\nbe performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).\nReferring to the <a href=\"http://redis.io/commands/sort\">redis SORT documentation </a> for examples is recommended. When used in hashes, <code>by</code> and <code>get</code>\ncan be used to specify fields using <code>-></code> notation (again, refer to redis documentation).\n"
+  remarks: http://redis.io/commands/sort
+  example: []
+  syntax:
+    content: long SortAndStore(string destination, long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)
+    parameters:
+    - id: destination
+      type: System.String
+    - id: skip
+      type: System.Int64
+    - id: take
+      type: System.Int64
+    - id: order
+      type: StackExchange.Redis.Order
+    - id: sortType
+      type: StackExchange.Redis.SortType
+    - id: by
+      type: '{T}'
+    - id: get
+      type: '{T}[]'
+    - id: flags
+      type: StackExchange.Redis.CommandFlags
+    return:
+      type: System.Int64
+      description: Returns the number of elements stored in the new list
+    content.vb: Function SortAndStore(destination As String, skip As Long = 0L, take As Long = -1L, order As Order = Order.Ascending, sortType As SortType = SortType.Numeric, by As T = Nothing, get As T() = Nothing, flags As CommandFlags = CommandFlags.None Or CommandFlags.PreferMaster) As Long
+  overload: WeihanLi.Redis.IListClient`1.SortAndStore*
+  nameWithType.vb: IListClient(Of T).SortAndStore(String, Int64, Int64, Order, SortType, T, T(), CommandFlags)
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).SortAndStore(System.String, System.Int64, System.Int64, StackExchange.Redis.Order, StackExchange.Redis.SortType, T, T(), StackExchange.Redis.CommandFlags)
+  name.vb: SortAndStore(String, Int64, Int64, Order, SortType, T, T(), CommandFlags)
+references:
+- uid: WeihanLi.Redis
+  commentId: N:WeihanLi.Redis
+  name: WeihanLi.Redis
+  nameWithType: WeihanLi.Redis
+  fullName: WeihanLi.Redis
+- uid: WeihanLi.Redis.IListClient`1.Get*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.Get
+  name: Get
+  nameWithType: IListClient<T>.Get
+  fullName: WeihanLi.Redis.IListClient<T>.Get
+  nameWithType.vb: IListClient(Of T).Get
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Get
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: StackExchange.Redis.CommandFlags
+  commentId: T:StackExchange.Redis.CommandFlags
+  parent: StackExchange.Redis
+  isExternal: true
+  name: CommandFlags
+  nameWithType: CommandFlags
+  fullName: StackExchange.Redis.CommandFlags
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: StackExchange.Redis
+  commentId: N:StackExchange.Redis
+  isExternal: true
+  name: StackExchange.Redis
+  nameWithType: StackExchange.Redis
+  fullName: StackExchange.Redis
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: WeihanLi.Redis.IListClient`1.GetAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.GetAsync
+  name: GetAsync
+  nameWithType: IListClient<T>.GetAsync
+  fullName: WeihanLi.Redis.IListClient<T>.GetAsync
+  nameWithType.vb: IListClient(Of T).GetAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).GetAsync
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: WeihanLi.Redis.IListClient`1.InsertAfter*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.InsertAfter
+  name: InsertAfter
+  nameWithType: IListClient<T>.InsertAfter
+  fullName: WeihanLi.Redis.IListClient<T>.InsertAfter
+  nameWithType.vb: IListClient(Of T).InsertAfter
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).InsertAfter
+- uid: WeihanLi.Redis.IListClient`1.InsertAfterAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.InsertAfterAsync
+  name: InsertAfterAsync
+  nameWithType: IListClient<T>.InsertAfterAsync
+  fullName: WeihanLi.Redis.IListClient<T>.InsertAfterAsync
+  nameWithType.vb: IListClient(Of T).InsertAfterAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).InsertAfterAsync
+- uid: System.Threading.Tasks.Task{System.Int64}
+  commentId: T:System.Threading.Tasks.Task{System.Int64}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Int64>
+  nameWithType: Task<Int64>
+  fullName: System.Threading.Tasks.Task<System.Int64>
+  nameWithType.vb: Task(Of Int64)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Int64)
+  name.vb: Task(Of Int64)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IListClient`1.InsertBefore*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.InsertBefore
+  name: InsertBefore
+  nameWithType: IListClient<T>.InsertBefore
+  fullName: WeihanLi.Redis.IListClient<T>.InsertBefore
+  nameWithType.vb: IListClient(Of T).InsertBefore
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).InsertBefore
+- uid: WeihanLi.Redis.IListClient`1.InsertBeforeAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.InsertBeforeAsync
+  name: InsertBeforeAsync
+  nameWithType: IListClient<T>.InsertBeforeAsync
+  fullName: WeihanLi.Redis.IListClient<T>.InsertBeforeAsync
+  nameWithType.vb: IListClient(Of T).InsertBeforeAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).InsertBeforeAsync
+- uid: WeihanLi.Redis.IListClient`1.LeftPop*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.LeftPop
+  name: LeftPop
+  nameWithType: IListClient<T>.LeftPop
+  fullName: WeihanLi.Redis.IListClient<T>.LeftPop
+  nameWithType.vb: IListClient(Of T).LeftPop
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).LeftPop
+- uid: WeihanLi.Redis.IListClient`1.LeftPopAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.LeftPopAsync
+  name: LeftPopAsync
+  nameWithType: IListClient<T>.LeftPopAsync
+  fullName: WeihanLi.Redis.IListClient<T>.LeftPopAsync
+  nameWithType.vb: IListClient(Of T).LeftPopAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).LeftPopAsync
+- uid: WeihanLi.Redis.IListClient`1.LeftPush*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.LeftPush
+  name: LeftPush
+  nameWithType: IListClient<T>.LeftPush
+  fullName: WeihanLi.Redis.IListClient<T>.LeftPush
+  nameWithType.vb: IListClient(Of T).LeftPush
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).LeftPush
+- uid: '{T}[]'
+  isExternal: true
+  name: T[]
+  nameWithType: T[]
+  fullName: T[]
+  nameWithType.vb: T()
+  fullName.vb: T()
+  name.vb: T()
+  spec.csharp:
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: WeihanLi.Redis.IListClient`1.LeftPushAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.LeftPushAsync
+  name: LeftPushAsync
+  nameWithType: IListClient<T>.LeftPushAsync
+  fullName: WeihanLi.Redis.IListClient<T>.LeftPushAsync
+  nameWithType.vb: IListClient(Of T).LeftPushAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).LeftPushAsync
+- uid: StackExchange.Redis.When
+  commentId: T:StackExchange.Redis.When
+  parent: StackExchange.Redis
+  isExternal: true
+  name: When
+  nameWithType: When
+  fullName: StackExchange.Redis.When
+- uid: WeihanLi.Redis.IListClient`1.Count*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.Count
+  name: Count
+  nameWithType: IListClient<T>.Count
+  fullName: WeihanLi.Redis.IListClient<T>.Count
+  nameWithType.vb: IListClient(Of T).Count
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Count
+- uid: WeihanLi.Redis.IListClient`1.CountAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.CountAsync
+  name: CountAsync
+  nameWithType: IListClient<T>.CountAsync
+  fullName: WeihanLi.Redis.IListClient<T>.CountAsync
+  nameWithType.vb: IListClient(Of T).CountAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).CountAsync
+- uid: WeihanLi.Redis.IListClient`1.ListRange*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.ListRange
+  name: ListRange
+  nameWithType: IListClient<T>.ListRange
+  fullName: WeihanLi.Redis.IListClient<T>.ListRange
+  nameWithType.vb: IListClient(Of T).ListRange
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).ListRange
+- uid: WeihanLi.Redis.IListClient`1.ListRangeAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.ListRangeAsync
+  name: ListRangeAsync
+  nameWithType: IListClient<T>.ListRangeAsync
+  fullName: WeihanLi.Redis.IListClient<T>.ListRangeAsync
+  nameWithType.vb: IListClient(Of T).ListRangeAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).ListRangeAsync
+- uid: System.Threading.Tasks.Task{{T}[]}
+  commentId: T:System.Threading.Tasks.Task{``0[]}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<T[]>
+  nameWithType: Task<T[]>
+  fullName: System.Threading.Tasks.Task<T[]>
+  nameWithType.vb: Task(Of T())
+  fullName.vb: System.Threading.Tasks.Task(Of T())
+  name.vb: Task(Of T())
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IListClient`1.Remove*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.Remove
+  name: Remove
+  nameWithType: IListClient<T>.Remove
+  fullName: WeihanLi.Redis.IListClient<T>.Remove
+  nameWithType.vb: IListClient(Of T).Remove
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Remove
+- uid: WeihanLi.Redis.IListClient`1.RemoveAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.RemoveAsync
+  name: RemoveAsync
+  nameWithType: IListClient<T>.RemoveAsync
+  fullName: WeihanLi.Redis.IListClient<T>.RemoveAsync
+  nameWithType.vb: IListClient(Of T).RemoveAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).RemoveAsync
+- uid: WeihanLi.Redis.IListClient`1.Pop*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.Pop
+  name: Pop
+  nameWithType: IListClient<T>.Pop
+  fullName: WeihanLi.Redis.IListClient<T>.Pop
+  nameWithType.vb: IListClient(Of T).Pop
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Pop
+- uid: WeihanLi.Redis.IListClient`1.PopAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.PopAsync
+  name: PopAsync
+  nameWithType: IListClient<T>.PopAsync
+  fullName: WeihanLi.Redis.IListClient<T>.PopAsync
+  nameWithType.vb: IListClient(Of T).PopAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).PopAsync
+- uid: WeihanLi.Redis.IListClient`1.RightPopLeftPush*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.RightPopLeftPush
+  name: RightPopLeftPush
+  nameWithType: IListClient<T>.RightPopLeftPush
+  fullName: WeihanLi.Redis.IListClient<T>.RightPopLeftPush
+  nameWithType.vb: IListClient(Of T).RightPopLeftPush
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).RightPopLeftPush
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: WeihanLi.Redis.IListClient`1.RightPopLeftPushAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.RightPopLeftPushAsync
+  name: RightPopLeftPushAsync
+  nameWithType: IListClient<T>.RightPopLeftPushAsync
+  fullName: WeihanLi.Redis.IListClient<T>.RightPopLeftPushAsync
+  nameWithType.vb: IListClient(Of T).RightPopLeftPushAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).RightPopLeftPushAsync
+- uid: WeihanLi.Redis.IListClient`1.Push*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.Push
+  name: Push
+  nameWithType: IListClient<T>.Push
+  fullName: WeihanLi.Redis.IListClient<T>.Push
+  nameWithType.vb: IListClient(Of T).Push
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Push
+- uid: WeihanLi.Redis.IListClient`1.PushAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.PushAsync
+  name: PushAsync
+  nameWithType: IListClient<T>.PushAsync
+  fullName: WeihanLi.Redis.IListClient<T>.PushAsync
+  nameWithType.vb: IListClient(Of T).PushAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).PushAsync
+- uid: WeihanLi.Redis.IListClient`1.Set*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.Set
+  name: Set
+  nameWithType: IListClient<T>.Set
+  fullName: WeihanLi.Redis.IListClient<T>.Set
+  nameWithType.vb: IListClient(Of T).Set
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Set
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: WeihanLi.Redis.IListClient`1.SetAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.SetAsync
+  name: SetAsync
+  nameWithType: IListClient<T>.SetAsync
+  fullName: WeihanLi.Redis.IListClient<T>.SetAsync
+  nameWithType.vb: IListClient(Of T).SetAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).SetAsync
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Boolean>
+  nameWithType: Task<Boolean>
+  fullName: System.Threading.Tasks.Task<System.Boolean>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IListClient`1.Trim*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.Trim
+  name: Trim
+  nameWithType: IListClient<T>.Trim
+  fullName: WeihanLi.Redis.IListClient<T>.Trim
+  nameWithType.vb: IListClient(Of T).Trim
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Trim
+- uid: WeihanLi.Redis.IListClient`1.TrimAsync*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.TrimAsync
+  name: TrimAsync
+  nameWithType: IListClient<T>.TrimAsync
+  fullName: WeihanLi.Redis.IListClient<T>.TrimAsync
+  nameWithType.vb: IListClient(Of T).TrimAsync
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).TrimAsync
+- uid: WeihanLi.Redis.IListClient`1.Sort*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.Sort
+  name: Sort
+  nameWithType: IListClient<T>.Sort
+  fullName: WeihanLi.Redis.IListClient<T>.Sort
+  nameWithType.vb: IListClient(Of T).Sort
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).Sort
+- uid: StackExchange.Redis.Order
+  commentId: T:StackExchange.Redis.Order
+  parent: StackExchange.Redis
+  isExternal: true
+  name: Order
+  nameWithType: Order
+  fullName: StackExchange.Redis.Order
+- uid: StackExchange.Redis.SortType
+  commentId: T:StackExchange.Redis.SortType
+  parent: StackExchange.Redis
+  isExternal: true
+  name: SortType
+  nameWithType: SortType
+  fullName: StackExchange.Redis.SortType
+- uid: WeihanLi.Redis.IListClient`1.SortAndStore*
+  commentId: Overload:WeihanLi.Redis.IListClient`1.SortAndStore
+  name: SortAndStore
+  nameWithType: IListClient<T>.SortAndStore
+  fullName: WeihanLi.Redis.IListClient<T>.SortAndStore
+  nameWithType.vb: IListClient(Of T).SortAndStore
+  fullName.vb: WeihanLi.Redis.IListClient(Of T).SortAndStore

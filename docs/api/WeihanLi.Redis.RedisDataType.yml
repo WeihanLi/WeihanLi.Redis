@@ -1,0 +1,477 @@
+### YamlMime:ManagedReference
+items:
+- uid: WeihanLi.Redis.RedisDataType
+  commentId: T:WeihanLi.Redis.RedisDataType
+  id: RedisDataType
+  parent: WeihanLi.Redis
+  children:
+  - WeihanLi.Redis.RedisDataType.Cache
+  - WeihanLi.Redis.RedisDataType.Counter
+  - WeihanLi.Redis.RedisDataType.Dictionary
+  - WeihanLi.Redis.RedisDataType.Firewall
+  - WeihanLi.Redis.RedisDataType.Hash
+  - WeihanLi.Redis.RedisDataType.HashCounter
+  - WeihanLi.Redis.RedisDataType.List
+  - WeihanLi.Redis.RedisDataType.Queue
+  - WeihanLi.Redis.RedisDataType.Rank
+  - WeihanLi.Redis.RedisDataType.RedLock
+  - WeihanLi.Redis.RedisDataType.Set
+  - WeihanLi.Redis.RedisDataType.SortedSet
+  - WeihanLi.Redis.RedisDataType.Stack
+  langs:
+  - csharp
+  - vb
+  name: RedisDataType
+  nameWithType: RedisDataType
+  fullName: WeihanLi.Redis.RedisDataType
+  type: Enum
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RedisDataType
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 5
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRedis Data Type\n"
+  example: []
+  syntax:
+    content: 'public enum RedisDataType : byte'
+    content.vb: Public Enum RedisDataType As Byte
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: WeihanLi.Redis.RedisDataType.Cache
+  commentId: F:WeihanLi.Redis.RedisDataType.Cache
+  id: Cache
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: Cache
+  nameWithType: RedisDataType.Cache
+  fullName: WeihanLi.Redis.RedisDataType.Cache
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Cache
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 7
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Cache = 0
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.Counter
+  commentId: F:WeihanLi.Redis.RedisDataType.Counter
+  id: Counter
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: Counter
+  nameWithType: RedisDataType.Counter
+  fullName: WeihanLi.Redis.RedisDataType.Counter
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Counter
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 8
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Counter = 1
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.Firewall
+  commentId: F:WeihanLi.Redis.RedisDataType.Firewall
+  id: Firewall
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: Firewall
+  nameWithType: RedisDataType.Firewall
+  fullName: WeihanLi.Redis.RedisDataType.Firewall
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Firewall
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 9
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Firewall = 2
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.RedLock
+  commentId: F:WeihanLi.Redis.RedisDataType.RedLock
+  id: RedLock
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: RedLock
+  nameWithType: RedisDataType.RedLock
+  fullName: WeihanLi.Redis.RedisDataType.RedLock
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RedLock
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 10
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: RedLock = 3
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.Hash
+  commentId: F:WeihanLi.Redis.RedisDataType.Hash
+  id: Hash
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: Hash
+  nameWithType: RedisDataType.Hash
+  fullName: WeihanLi.Redis.RedisDataType.Hash
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Hash
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 11
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Hash = 4
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.Dictionary
+  commentId: F:WeihanLi.Redis.RedisDataType.Dictionary
+  id: Dictionary
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: Dictionary
+  nameWithType: RedisDataType.Dictionary
+  fullName: WeihanLi.Redis.RedisDataType.Dictionary
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Dictionary
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 12
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Dictionary = 5
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.List
+  commentId: F:WeihanLi.Redis.RedisDataType.List
+  id: List
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: List
+  nameWithType: RedisDataType.List
+  fullName: WeihanLi.Redis.RedisDataType.List
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: List
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 13
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: List = 6
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.Queue
+  commentId: F:WeihanLi.Redis.RedisDataType.Queue
+  id: Queue
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: Queue
+  nameWithType: RedisDataType.Queue
+  fullName: WeihanLi.Redis.RedisDataType.Queue
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Queue
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 14
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Queue = 7
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.Stack
+  commentId: F:WeihanLi.Redis.RedisDataType.Stack
+  id: Stack
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: Stack
+  nameWithType: RedisDataType.Stack
+  fullName: WeihanLi.Redis.RedisDataType.Stack
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Stack
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 15
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Stack = 8
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.Set
+  commentId: F:WeihanLi.Redis.RedisDataType.Set
+  id: Set
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: Set
+  nameWithType: RedisDataType.Set
+  fullName: WeihanLi.Redis.RedisDataType.Set
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Set
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 16
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Set = 9
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.SortedSet
+  commentId: F:WeihanLi.Redis.RedisDataType.SortedSet
+  id: SortedSet
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: SortedSet
+  nameWithType: RedisDataType.SortedSet
+  fullName: WeihanLi.Redis.RedisDataType.SortedSet
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: SortedSet
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 17
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: SortedSet = 10
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.Rank
+  commentId: F:WeihanLi.Redis.RedisDataType.Rank
+  id: Rank
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: Rank
+  nameWithType: RedisDataType.Rank
+  fullName: WeihanLi.Redis.RedisDataType.Rank
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Rank
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 18
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: Rank = 11
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: WeihanLi.Redis.RedisDataType.HashCounter
+  commentId: F:WeihanLi.Redis.RedisDataType.HashCounter
+  id: HashCounter
+  parent: WeihanLi.Redis.RedisDataType
+  langs:
+  - csharp
+  - vb
+  name: HashCounter
+  nameWithType: RedisDataType.HashCounter
+  fullName: WeihanLi.Redis.RedisDataType.HashCounter
+  type: Field
+  source:
+    remote:
+      path: src/WeihanLi.Redis/RedisDataType.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: HashCounter
+    path: src/WeihanLi.Redis/RedisDataType.cs
+    startLine: 19
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: HashCounter = 12
+    return:
+      type: WeihanLi.Redis.RedisDataType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: WeihanLi.Redis
+  commentId: N:WeihanLi.Redis
+  name: WeihanLi.Redis
+  nameWithType: WeihanLi.Redis
+  fullName: WeihanLi.Redis
+- uid: WeihanLi.Redis.RedisDataType
+  commentId: T:WeihanLi.Redis.RedisDataType
+  parent: WeihanLi.Redis
+  name: RedisDataType
+  nameWithType: RedisDataType
+  fullName: WeihanLi.Redis.RedisDataType

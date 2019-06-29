@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface ICommonRedisClient
    ">
-    <meta name="generator" content="docfx 2.40.10.0">
+    <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -76,22 +76,27 @@
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WeihanLi.Redis.html">WeihanLi.Redis</a></h6>
-  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h6><strong>Assembly</strong>: WeihanLi.Redis.dll</h6>
   <h5 id="WeihanLi_Redis_ICommonRedisClient_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface ICommonRedisClient : IRedisClient</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyDelete_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyDelete(System.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L40">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyDelete_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDelete*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyDelete_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDelete(System.String,CommandFlags)">KeyDelete(String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyDelete_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDelete(System.String,StackExchange.Redis.CommandFlags)">KeyDelete(String, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool KeyDelete(string key, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">bool KeyDelete(string key, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -109,7 +114,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -130,15 +135,20 @@
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyDelete_System_String___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyDelete(System.String%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L42">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyDelete_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDelete*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyDelete_System_String___CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDelete(System.String[],CommandFlags)">KeyDelete(String[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyDelete_System_String___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDelete(System.String[],StackExchange.Redis.CommandFlags)">KeyDelete(String[], CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long KeyDelete(string[] keys, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">long KeyDelete(string[] keys, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -156,7 +166,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -177,15 +187,20 @@
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyDeleteAsync_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyDeleteAsync(System.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L44">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyDeleteAsync_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDeleteAsync*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyDeleteAsync_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDeleteAsync(System.String,CommandFlags)">KeyDeleteAsync(String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyDeleteAsync_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDeleteAsync(System.String,StackExchange.Redis.CommandFlags)">KeyDeleteAsync(String, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; KeyDeleteAsync(string key, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; KeyDeleteAsync(string key, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -203,7 +218,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -219,20 +234,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyDeleteAsync_System_String___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyDeleteAsync(System.String%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L46">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyDeleteAsync_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDeleteAsync*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyDeleteAsync_System_String___CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDeleteAsync(System.String[],CommandFlags)">KeyDeleteAsync(String[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyDeleteAsync_System_String___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyDeleteAsync(System.String[],StackExchange.Redis.CommandFlags)">KeyDeleteAsync(String[], CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; KeyDeleteAsync(string[] keys, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; KeyDeleteAsync(string[] keys, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -250,7 +270,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -266,20 +286,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyExists_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyExists(System.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L12">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyExists_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExists*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExists_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExists(System.String,CommandFlags)">KeyExists(String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExists_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExists(System.String,StackExchange.Redis.CommandFlags)">KeyExists(String, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool KeyExists(string key, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">bool KeyExists(string key, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -297,7 +322,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -318,15 +343,20 @@
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyExistsAsync_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyExistsAsync(System.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L14">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyExistsAsync_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExistsAsync*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExistsAsync_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExistsAsync(System.String,CommandFlags)">KeyExistsAsync(String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExistsAsync_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExistsAsync(System.String,StackExchange.Redis.CommandFlags)">KeyExistsAsync(String, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; KeyExistsAsync(string key, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; KeyExistsAsync(string key, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -344,7 +374,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -360,20 +390,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyExpire_System_String_System_Nullable_System_DateTime__StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String%2CSystem.Nullable%7BSystem.DateTime%7D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L22">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyExpire_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpire*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExpire_System_String_System_Nullable_System_DateTime__CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{System.DateTime},CommandFlags)">KeyExpire(String, Nullable&lt;DateTime&gt;, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExpire_System_String_System_Nullable_System_DateTime__StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{System.DateTime},StackExchange.Redis.CommandFlags)">KeyExpire(String, Nullable&lt;DateTime&gt;, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool KeyExpire(string key, DateTime? expiry, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">bool KeyExpire(string key, DateTime? expiry, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -396,7 +431,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -417,15 +452,20 @@
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyExpire_System_String_System_Nullable_System_TimeSpan__StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String%2CSystem.Nullable%7BSystem.TimeSpan%7D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L20">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyExpire_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpire*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExpire_System_String_System_Nullable_System_TimeSpan__CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{System.TimeSpan},CommandFlags)">KeyExpire(String, Nullable&lt;TimeSpan&gt;, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExpire_System_String_System_Nullable_System_TimeSpan__StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{System.TimeSpan},StackExchange.Redis.CommandFlags)">KeyExpire(String, Nullable&lt;TimeSpan&gt;, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool KeyExpire(string key, TimeSpan? expiresIn, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">bool KeyExpire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -448,7 +488,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -469,15 +509,20 @@
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_System_String_System_Nullable_System_DateTime__StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String%2CSystem.Nullable%7BSystem.DateTime%7D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L26">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_System_String_System_Nullable_System_DateTime__CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{System.DateTime},CommandFlags)">KeyExpireAsync(String, Nullable&lt;DateTime&gt;, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_System_String_System_Nullable_System_DateTime__StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{System.DateTime},StackExchange.Redis.CommandFlags)">KeyExpireAsync(String, Nullable&lt;DateTime&gt;, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; KeyExpireAsync(string key, DateTime? expiry, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; KeyExpireAsync(string key, DateTime? expiry, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -500,7 +545,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -516,20 +561,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_System_String_System_Nullable_System_TimeSpan__StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String%2CSystem.Nullable%7BSystem.TimeSpan%7D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L24">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_System_String_System_Nullable_System_TimeSpan__CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{System.TimeSpan},CommandFlags)">KeyExpireAsync(String, Nullable&lt;TimeSpan&gt;, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_System_String_System_Nullable_System_TimeSpan__StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{System.TimeSpan},StackExchange.Redis.CommandFlags)">KeyExpireAsync(String, Nullable&lt;TimeSpan&gt;, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; KeyExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; KeyExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -552,7 +602,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -568,20 +618,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyPersist_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyPersist(System.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L32">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyPersist_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyPersist*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyPersist_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyPersist(System.String,CommandFlags)">KeyPersist(String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyPersist_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyPersist(System.String,StackExchange.Redis.CommandFlags)">KeyPersist(String, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool KeyPersist(string key, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">bool KeyPersist(string key, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -599,7 +654,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -620,15 +675,20 @@
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyPersistAsync_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyPersistAsync(System.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L34">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyPersistAsync_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyPersistAsync*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyPersistAsync_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyPersistAsync(System.String,CommandFlags)">KeyPersistAsync(String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyPersistAsync_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyPersistAsync(System.String,StackExchange.Redis.CommandFlags)">KeyPersistAsync(String, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; KeyPersistAsync(string key, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; KeyPersistAsync(string key, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -646,7 +706,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -662,21 +722,26 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyTimeToLive_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyTimeToLive(System.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L57">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyTimeToLive_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyTimeToLive*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyTimeToLive_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyTimeToLive(System.String,CommandFlags)">KeyTimeToLive(String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyTimeToLive_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyTimeToLive(System.String,StackExchange.Redis.CommandFlags)">KeyTimeToLive(String, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns the remaining time to live of a key that has a timeout.  This introspection capability allows a Redis client to check how many seconds a given key will continue to be part of the dataset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TimeSpan? KeyTimeToLive(string key, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">TimeSpan? KeyTimeToLive(string key, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -694,7 +759,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -716,19 +781,24 @@
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ICommonRedisClient_KeyTimeToLive_System_String_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ICommonRedisClient_KeyTimeToLive_System_String_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/ttl">http://redis.io/commands/ttl</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_KeyType_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.KeyType(System.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L68">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_KeyType_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyType*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyType_System_String_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyType(System.String,CommandFlags)">KeyType(String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_KeyType_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.KeyType(System.String,StackExchange.Redis.CommandFlags)">KeyType(String, CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Returns the string representation of the type of the value stored at key. The different types that can be returned are: string, list, set, zset and hash.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">RedisType KeyType(string key, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">RedisType KeyType(string key, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -746,7 +816,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -762,24 +832,29 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">RedisType</span></td>
+        <td><span class="xref">StackExchange.Redis.RedisType</span></td>
         <td><p>type of key, or none when key does not exist.</p>
 </td>
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_ICommonRedisClient_KeyType_System_String_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_ICommonRedisClient_KeyType_System_String_StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/type">http://redis.io/commands/type</a></p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_ScriptEvaluate__1_System_String_System_String_____0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.ScriptEvaluate%60%601(System.String%2CSystem.String%5B%5D%2C%60%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L74">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_ScriptEvaluate_" data-uid="WeihanLi.Redis.ICommonRedisClient.ScriptEvaluate*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_ScriptEvaluate__1_System_String_System_String_____0___CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.ScriptEvaluate``1(System.String,System.String[],``0[],CommandFlags)">ScriptEvaluate&lt;TValue&gt;(String, String[], TValue[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_ScriptEvaluate__1_System_String_System_String_____0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.ScriptEvaluate``1(System.String,System.String[],``0[],StackExchange.Redis.CommandFlags)">ScriptEvaluate&lt;TValue&gt;(String, String[], TValue[], CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">RedisResult ScriptEvaluate&lt;TValue&gt;(string script, string[] keys = null, TValue[] values = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">RedisResult ScriptEvaluate&lt;TValue&gt;(string script, string[] keys = null, TValue[] values = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -807,7 +882,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -823,7 +898,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">RedisResult</span></td>
+        <td><span class="xref">StackExchange.Redis.RedisResult</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -843,15 +918,20 @@
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient_ScriptEvaluateAsync__1_System_String_System_String_____0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient.ScriptEvaluateAsync%60%601(System.String%2CSystem.String%5B%5D%2C%60%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L77">View Source</a>
+  </span>
   <a id="WeihanLi_Redis_ICommonRedisClient_ScriptEvaluateAsync_" data-uid="WeihanLi.Redis.ICommonRedisClient.ScriptEvaluateAsync*"></a>
-  <h4 id="WeihanLi_Redis_ICommonRedisClient_ScriptEvaluateAsync__1_System_String_System_String_____0___CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.ScriptEvaluateAsync``1(System.String,System.String[],``0[],CommandFlags)">ScriptEvaluateAsync&lt;TValue&gt;(String, String[], TValue[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_ICommonRedisClient_ScriptEvaluateAsync__1_System_String_System_String_____0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.ICommonRedisClient.ScriptEvaluateAsync``1(System.String,System.String[],``0[],StackExchange.Redis.CommandFlags)">ScriptEvaluateAsync&lt;TValue&gt;(String, String[], TValue[], CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;RedisResult&gt; ScriptEvaluateAsync&lt;TValue&gt;(string script, string[] keys = null, TValue[] values = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;RedisResult&gt; ScriptEvaluateAsync&lt;TValue&gt;(string script, string[] keys = null, TValue[] values = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -879,7 +959,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CommandFlags</span></td>
+        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -895,7 +975,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">RedisResult</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">StackExchange.Redis.RedisResult</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -922,6 +1002,12 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WeihanLi/weihanli.redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_ICommonRedisClient.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.ICommonRedisClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/WeihanLi/weihanli.redis/blob/dev/src/WeihanLi.Redis/Common/ICommonRedisClient.cs/#L8" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

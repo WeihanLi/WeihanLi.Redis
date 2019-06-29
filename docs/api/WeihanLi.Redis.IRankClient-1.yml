@@ -1,0 +1,1644 @@
+### YamlMime:ManagedReference
+items:
+- uid: WeihanLi.Redis.IRankClient`1
+  commentId: T:WeihanLi.Redis.IRankClient`1
+  id: IRankClient`1
+  parent: WeihanLi.Redis
+  children:
+  - WeihanLi.Redis.IRankClient`1.Add(`0,System.Double,StackExchange.Redis.When)
+  - WeihanLi.Redis.IRankClient`1.Add(System.Collections.Generic.IDictionary{`0,System.Double},StackExchange.Redis.When)
+  - WeihanLi.Redis.IRankClient`1.AddAsync(`0,System.Double,StackExchange.Redis.When)
+  - WeihanLi.Redis.IRankClient`1.AddAsync(System.Collections.Generic.IDictionary{`0,System.Double},StackExchange.Redis.When)
+  - WeihanLi.Redis.IRankClient`1.Decrement(`0,System.Double)
+  - WeihanLi.Redis.IRankClient`1.DecrementAsync(`0,System.Double)
+  - WeihanLi.Redis.IRankClient`1.Increment(`0,System.Double)
+  - WeihanLi.Redis.IRankClient`1.IncrementAsync(`0,System.Double)
+  - WeihanLi.Redis.IRankClient`1.Length(System.Double,System.Double,StackExchange.Redis.Exclude)
+  - WeihanLi.Redis.IRankClient`1.LengthAsync(System.Double,System.Double,StackExchange.Redis.Exclude)
+  - WeihanLi.Redis.IRankClient`1.RangeByScore(System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64)
+  - WeihanLi.Redis.IRankClient`1.RangeByScoreAsync(System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64)
+  - WeihanLi.Redis.IRankClient`1.Remove(`0)
+  - WeihanLi.Redis.IRankClient`1.Remove(`0[])
+  - WeihanLi.Redis.IRankClient`1.RemoveAsync(`0)
+  - WeihanLi.Redis.IRankClient`1.RemoveAsync(`0[])
+  - WeihanLi.Redis.IRankClient`1.RemoveRangeByRank(System.Int64,System.Int64)
+  - WeihanLi.Redis.IRankClient`1.RemoveRangeByRankAsync(System.Int64,System.Int64)
+  - WeihanLi.Redis.IRankClient`1.RemoveRangeByScore(System.Double,System.Double,StackExchange.Redis.Exclude)
+  - WeihanLi.Redis.IRankClient`1.RemoveRangeByScoreAsync(System.Double,System.Double,StackExchange.Redis.Exclude)
+  - WeihanLi.Redis.IRankClient`1.Score(`0)
+  - WeihanLi.Redis.IRankClient`1.ScoreAsync(`0)
+  langs:
+  - csharp
+  - vb
+  name: IRankClient<T>
+  nameWithType: IRankClient<T>
+  fullName: WeihanLi.Redis.IRankClient<T>
+  type: Interface
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: IRankClient
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 7
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: 'public interface IRankClient<T> : IRedisClient'
+    typeParameters:
+    - id: T
+    content.vb: >-
+      Public Interface IRankClient(Of T)
+          Inherits IRedisClient
+  nameWithType.vb: IRankClient(Of T)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T)
+  name.vb: IRankClient(Of T)
+- uid: WeihanLi.Redis.IRankClient`1.Add(`0,System.Double,StackExchange.Redis.When)
+  commentId: M:WeihanLi.Redis.IRankClient`1.Add(`0,System.Double,StackExchange.Redis.When)
+  id: Add(`0,System.Double,StackExchange.Redis.When)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: Add(T, Double, When)
+  nameWithType: IRankClient<T>.Add(T, Double, When)
+  fullName: WeihanLi.Redis.IRankClient<T>.Add(T, System.Double, StackExchange.Redis.When)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Add
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 14
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nAdds the specified member with the specified score to the sorted set stored at key. If the specified member is already a member of the sorted set, the score is updated and the element reinserted at the right position to ensure the correct ordering.\n"
+  remarks: http://redis.io/commands/zadd
+  example: []
+  syntax:
+    content: bool Add(T member, double score, When when = When.Always)
+    parameters:
+    - id: member
+      type: '{T}'
+    - id: score
+      type: System.Double
+    - id: when
+      type: StackExchange.Redis.When
+    return:
+      type: System.Boolean
+      description: True if the value was added, False if it already existed (the score is still updated)
+    content.vb: Function Add(member As T, score As Double, when As  When  =  When.Always) As Boolean
+  overload: WeihanLi.Redis.IRankClient`1.Add*
+  nameWithType.vb: IRankClient(Of T).Add(T, Double, When)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Add(T, System.Double, StackExchange.Redis.When)
+- uid: WeihanLi.Redis.IRankClient`1.AddAsync(`0,System.Double,StackExchange.Redis.When)
+  commentId: M:WeihanLi.Redis.IRankClient`1.AddAsync(`0,System.Double,StackExchange.Redis.When)
+  id: AddAsync(`0,System.Double,StackExchange.Redis.When)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: AddAsync(T, Double, When)
+  nameWithType: IRankClient<T>.AddAsync(T, Double, When)
+  fullName: WeihanLi.Redis.IRankClient<T>.AddAsync(T, System.Double, StackExchange.Redis.When)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: AddAsync
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 21
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nAdds the specified member with the specified score to the sorted set stored at key. If the specified member is already a member of the sorted set, the score is updated and the element reinserted at the right position to ensure the correct ordering.\n"
+  remarks: http://redis.io/commands/zadd
+  example: []
+  syntax:
+    content: Task<bool> AddAsync(T member, double score, When when = When.Always)
+    parameters:
+    - id: member
+      type: '{T}'
+    - id: score
+      type: System.Double
+    - id: when
+      type: StackExchange.Redis.When
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: True if the value was added, False if it already existed (the score is still updated)
+    content.vb: Function AddAsync(member As T, score As Double, when As  When  =  When.Always) As Task(Of Boolean)
+  overload: WeihanLi.Redis.IRankClient`1.AddAsync*
+  nameWithType.vb: IRankClient(Of T).AddAsync(T, Double, When)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).AddAsync(T, System.Double, StackExchange.Redis.When)
+- uid: WeihanLi.Redis.IRankClient`1.Add(System.Collections.Generic.IDictionary{`0,System.Double},StackExchange.Redis.When)
+  commentId: M:WeihanLi.Redis.IRankClient`1.Add(System.Collections.Generic.IDictionary{`0,System.Double},StackExchange.Redis.When)
+  id: Add(System.Collections.Generic.IDictionary{`0,System.Double},StackExchange.Redis.When)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: Add(IDictionary<T, Double>, When)
+  nameWithType: IRankClient<T>.Add(IDictionary<T, Double>, When)
+  fullName: WeihanLi.Redis.IRankClient<T>.Add(System.Collections.Generic.IDictionary<T, System.Double>, StackExchange.Redis.When)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Add
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 28
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nAdds all the specified members with the specified scores to the sorted set stored at key. If a specified member is already a member of the sorted set, the score is updated and the element reinserted at the right position to ensure the correct ordering.\n"
+  remarks: http://redis.io/commands/zadd
+  example: []
+  syntax:
+    content: long Add(IDictionary<T, double> values, When when = When.Always)
+    parameters:
+    - id: values
+      type: System.Collections.Generic.IDictionary{{T},System.Double}
+    - id: when
+      type: StackExchange.Redis.When
+    return:
+      type: System.Int64
+      description: The number of elements added to the sorted sets, not including elements already existing for which the score was updated.
+    content.vb: Function Add(values As IDictionary(Of T, Double), when As  When  =  When.Always) As Long
+  overload: WeihanLi.Redis.IRankClient`1.Add*
+  nameWithType.vb: IRankClient(Of T).Add(IDictionary(Of T, Double), When)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Add(System.Collections.Generic.IDictionary(Of T, System.Double), StackExchange.Redis.When)
+  name.vb: Add(IDictionary(Of T, Double), When)
+- uid: WeihanLi.Redis.IRankClient`1.AddAsync(System.Collections.Generic.IDictionary{`0,System.Double},StackExchange.Redis.When)
+  commentId: M:WeihanLi.Redis.IRankClient`1.AddAsync(System.Collections.Generic.IDictionary{`0,System.Double},StackExchange.Redis.When)
+  id: AddAsync(System.Collections.Generic.IDictionary{`0,System.Double},StackExchange.Redis.When)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: AddAsync(IDictionary<T, Double>, When)
+  nameWithType: IRankClient<T>.AddAsync(IDictionary<T, Double>, When)
+  fullName: WeihanLi.Redis.IRankClient<T>.AddAsync(System.Collections.Generic.IDictionary<T, System.Double>, StackExchange.Redis.When)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: AddAsync
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 35
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nAdds all the specified members with the specified scores to the sorted set stored at key. If a specified member is already a member of the sorted set, the score is updated and the element reinserted at the right position to ensure the correct ordering.\n"
+  remarks: http://redis.io/commands/zadd
+  example: []
+  syntax:
+    content: Task<long> AddAsync(IDictionary<T, double> values, When when = When.Always)
+    parameters:
+    - id: values
+      type: System.Collections.Generic.IDictionary{{T},System.Double}
+    - id: when
+      type: StackExchange.Redis.When
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: The number of elements added to the sorted sets, not including elements already existing for which the score was updated.
+    content.vb: Function AddAsync(values As IDictionary(Of T, Double), when As  When  =  When.Always) As Task(Of Long)
+  overload: WeihanLi.Redis.IRankClient`1.AddAsync*
+  nameWithType.vb: IRankClient(Of T).AddAsync(IDictionary(Of T, Double), When)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).AddAsync(System.Collections.Generic.IDictionary(Of T, System.Double), StackExchange.Redis.When)
+  name.vb: AddAsync(IDictionary(Of T, Double), When)
+- uid: WeihanLi.Redis.IRankClient`1.Decrement(`0,System.Double)
+  commentId: M:WeihanLi.Redis.IRankClient`1.Decrement(`0,System.Double)
+  id: Decrement(`0,System.Double)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: Decrement(T, Double)
+  nameWithType: IRankClient<T>.Decrement(T, Double)
+  fullName: WeihanLi.Redis.IRankClient<T>.Decrement(T, System.Double)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Decrement
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 43
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nDecrements the score of member in the sorted set stored at key by decrement. If member does not exist in the sorted set, it is added with -decrement as its score (as if its previous score was 0.0).\n"
+  remarks: http://redis.io/commands/zincrby
+  example: []
+  syntax:
+    content: double Decrement(T member, double value)
+    parameters:
+    - id: member
+      type: '{T}'
+    - id: value
+      type: System.Double
+    return:
+      type: System.Double
+      description: the new score of member
+    content.vb: Function Decrement(member As T, value As Double) As Double
+  overload: WeihanLi.Redis.IRankClient`1.Decrement*
+  nameWithType.vb: IRankClient(Of T).Decrement(T, Double)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Decrement(T, System.Double)
+- uid: WeihanLi.Redis.IRankClient`1.DecrementAsync(`0,System.Double)
+  commentId: M:WeihanLi.Redis.IRankClient`1.DecrementAsync(`0,System.Double)
+  id: DecrementAsync(`0,System.Double)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: DecrementAsync(T, Double)
+  nameWithType: IRankClient<T>.DecrementAsync(T, Double)
+  fullName: WeihanLi.Redis.IRankClient<T>.DecrementAsync(T, System.Double)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: DecrementAsync
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 50
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nDecrements the score of member in the sorted set stored at key by decrement. If member does not exist in the sorted set, it is added with -decrement as its score (as if its previous score was 0.0).\n"
+  remarks: http://redis.io/commands/zincrby
+  example: []
+  syntax:
+    content: Task<double> DecrementAsync(T member, double value)
+    parameters:
+    - id: member
+      type: '{T}'
+    - id: value
+      type: System.Double
+    return:
+      type: System.Threading.Tasks.Task{System.Double}
+      description: the new score of member
+    content.vb: Function DecrementAsync(member As T, value As Double) As Task(Of Double)
+  overload: WeihanLi.Redis.IRankClient`1.DecrementAsync*
+  nameWithType.vb: IRankClient(Of T).DecrementAsync(T, Double)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).DecrementAsync(T, System.Double)
+- uid: WeihanLi.Redis.IRankClient`1.Increment(`0,System.Double)
+  commentId: M:WeihanLi.Redis.IRankClient`1.Increment(`0,System.Double)
+  id: Increment(`0,System.Double)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: Increment(T, Double)
+  nameWithType: IRankClient<T>.Increment(T, Double)
+  fullName: WeihanLi.Redis.IRankClient<T>.Increment(T, System.Double)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Increment
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 57
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nIncrements the score of member in the sorted set stored at key by increment. If member does not exist in the sorted set, it is added with increment as its score (as if its previous score was 0.0).\n"
+  remarks: http://redis.io/commands/zincrby
+  example: []
+  syntax:
+    content: double Increment(T member, double value)
+    parameters:
+    - id: member
+      type: '{T}'
+    - id: value
+      type: System.Double
+    return:
+      type: System.Double
+      description: the new score of member
+    content.vb: Function Increment(member As T, value As Double) As Double
+  overload: WeihanLi.Redis.IRankClient`1.Increment*
+  nameWithType.vb: IRankClient(Of T).Increment(T, Double)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Increment(T, System.Double)
+- uid: WeihanLi.Redis.IRankClient`1.IncrementAsync(`0,System.Double)
+  commentId: M:WeihanLi.Redis.IRankClient`1.IncrementAsync(`0,System.Double)
+  id: IncrementAsync(`0,System.Double)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: IncrementAsync(T, Double)
+  nameWithType: IRankClient<T>.IncrementAsync(T, Double)
+  fullName: WeihanLi.Redis.IRankClient<T>.IncrementAsync(T, System.Double)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: IncrementAsync
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 64
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nIncrements the score of member in the sorted set stored at key by increment. If member does not exist in the sorted set, it is added with increment as its score (as if its previous score was 0.0).\n"
+  remarks: http://redis.io/commands/zincrby
+  example: []
+  syntax:
+    content: Task<double> IncrementAsync(T member, double value)
+    parameters:
+    - id: member
+      type: '{T}'
+    - id: value
+      type: System.Double
+    return:
+      type: System.Threading.Tasks.Task{System.Double}
+      description: the new score of member
+    content.vb: Function IncrementAsync(member As T, value As Double) As Task(Of Double)
+  overload: WeihanLi.Redis.IRankClient`1.IncrementAsync*
+  nameWithType.vb: IRankClient(Of T).IncrementAsync(T, Double)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).IncrementAsync(T, System.Double)
+- uid: WeihanLi.Redis.IRankClient`1.Length(System.Double,System.Double,StackExchange.Redis.Exclude)
+  commentId: M:WeihanLi.Redis.IRankClient`1.Length(System.Double,System.Double,StackExchange.Redis.Exclude)
+  id: Length(System.Double,System.Double,StackExchange.Redis.Exclude)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: Length(Double, Double, Exclude)
+  nameWithType: IRankClient<T>.Length(Double, Double, Exclude)
+  fullName: WeihanLi.Redis.IRankClient<T>.Length(System.Double, System.Double, StackExchange.Redis.Exclude)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Length
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 71
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the sorted set cardinality (number of elements) of the sorted set stored at key.\n"
+  remarks: http://redis.io/commands/zcard
+  example: []
+  syntax:
+    content: long Length(double min = -Infinity, double max = Infinity, Exclude exclude = Exclude.None)
+    parameters:
+    - id: min
+      type: System.Double
+    - id: max
+      type: System.Double
+    - id: exclude
+      type: StackExchange.Redis.Exclude
+    return:
+      type: System.Int64
+      description: the cardinality (number of elements) of the sorted set, or 0 if key does not exist.
+    content.vb: Function Length(min As Double = -Infinity, max As Double = Infinity, exclude As Exclude = Exclude.None) As Long
+  overload: WeihanLi.Redis.IRankClient`1.Length*
+  nameWithType.vb: IRankClient(Of T).Length(Double, Double, Exclude)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Length(System.Double, System.Double, StackExchange.Redis.Exclude)
+- uid: WeihanLi.Redis.IRankClient`1.LengthAsync(System.Double,System.Double,StackExchange.Redis.Exclude)
+  commentId: M:WeihanLi.Redis.IRankClient`1.LengthAsync(System.Double,System.Double,StackExchange.Redis.Exclude)
+  id: LengthAsync(System.Double,System.Double,StackExchange.Redis.Exclude)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: LengthAsync(Double, Double, Exclude)
+  nameWithType: IRankClient<T>.LengthAsync(Double, Double, Exclude)
+  fullName: WeihanLi.Redis.IRankClient<T>.LengthAsync(System.Double, System.Double, StackExchange.Redis.Exclude)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: LengthAsync
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 78
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the sorted set cardinality (number of elements) of the sorted set stored at key.\n"
+  remarks: http://redis.io/commands/zcard
+  example: []
+  syntax:
+    content: Task<long> LengthAsync(double min = -Infinity, double max = Infinity, Exclude exclude = Exclude.None)
+    parameters:
+    - id: min
+      type: System.Double
+    - id: max
+      type: System.Double
+    - id: exclude
+      type: StackExchange.Redis.Exclude
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: the cardinality (number of elements) of the sorted set, or 0 if key does not exist.
+    content.vb: Function LengthAsync(min As Double = -Infinity, max As Double = Infinity, exclude As Exclude = Exclude.None) As Task(Of Long)
+  overload: WeihanLi.Redis.IRankClient`1.LengthAsync*
+  nameWithType.vb: IRankClient(Of T).LengthAsync(Double, Double, Exclude)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).LengthAsync(System.Double, System.Double, StackExchange.Redis.Exclude)
+- uid: WeihanLi.Redis.IRankClient`1.RangeByScore(System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64)
+  commentId: M:WeihanLi.Redis.IRankClient`1.RangeByScore(System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64)
+  id: RangeByScore(System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: RangeByScore(Double, Double, Exclude, Order, Int64, Int64)
+  nameWithType: IRankClient<T>.RangeByScore(Double, Double, Exclude, Order, Int64, Int64)
+  fullName: WeihanLi.Redis.IRankClient<T>.RangeByScore(System.Double, System.Double, StackExchange.Redis.Exclude, StackExchange.Redis.Order, System.Int64, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RangeByScore
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 87
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the specified range of elements in the sorted set stored at key. By default the elements are considered to be ordered from the lowest to the highest score. Lexicographical order is used for elements with equal score.\nStart and stop are used to specify the min and max range for score values. Similar to other range methods the values are inclusive.\n"
+  remarks: http://redis.io/commands/zrangebyscore
+  example: []
+  syntax:
+    content: T[] RangeByScore(double start = -Infinity, double stop = Infinity, Exclude exclude = Exclude.None, Order order = Order.Ascending, long skip = 0L, long take = -1L)
+    parameters:
+    - id: start
+      type: System.Double
+    - id: stop
+      type: System.Double
+    - id: exclude
+      type: StackExchange.Redis.Exclude
+    - id: order
+      type: StackExchange.Redis.Order
+    - id: skip
+      type: System.Int64
+    - id: take
+      type: System.Int64
+    return:
+      type: '{T}[]'
+      description: list of elements in the specified score range
+    content.vb: Function RangeByScore(start As Double = -Infinity, stop As Double = Infinity, exclude As Exclude = Exclude.None, order As Order = Order.Ascending, skip As Long = 0L, take As Long = -1L) As T()
+  overload: WeihanLi.Redis.IRankClient`1.RangeByScore*
+  nameWithType.vb: IRankClient(Of T).RangeByScore(Double, Double, Exclude, Order, Int64, Int64)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RangeByScore(System.Double, System.Double, StackExchange.Redis.Exclude, StackExchange.Redis.Order, System.Int64, System.Int64)
+- uid: WeihanLi.Redis.IRankClient`1.RangeByScoreAsync(System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64)
+  commentId: M:WeihanLi.Redis.IRankClient`1.RangeByScoreAsync(System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64)
+  id: RangeByScoreAsync(System.Double,System.Double,StackExchange.Redis.Exclude,StackExchange.Redis.Order,System.Int64,System.Int64)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: RangeByScoreAsync(Double, Double, Exclude, Order, Int64, Int64)
+  nameWithType: IRankClient<T>.RangeByScoreAsync(Double, Double, Exclude, Order, Int64, Int64)
+  fullName: WeihanLi.Redis.IRankClient<T>.RangeByScoreAsync(System.Double, System.Double, StackExchange.Redis.Exclude, StackExchange.Redis.Order, System.Int64, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RangeByScoreAsync
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 96
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the specified range of elements in the sorted set stored at key. By default the elements are considered to be ordered from the lowest to the highest score. Lexicographical order is used for elements with equal score.\nStart and stop are used to specify the min and max range for score values. Similar to other range methods the values are inclusive.\n"
+  remarks: http://redis.io/commands/zrangebyscore
+  example: []
+  syntax:
+    content: Task<T[]> RangeByScoreAsync(double start = -Infinity, double stop = Infinity, Exclude exclude = Exclude.None, Order order = Order.Ascending, long skip = 0L, long take = -1L)
+    parameters:
+    - id: start
+      type: System.Double
+    - id: stop
+      type: System.Double
+    - id: exclude
+      type: StackExchange.Redis.Exclude
+    - id: order
+      type: StackExchange.Redis.Order
+    - id: skip
+      type: System.Int64
+    - id: take
+      type: System.Int64
+    return:
+      type: System.Threading.Tasks.Task{{T}[]}
+      description: list of elements in the specified score range
+    content.vb: Function RangeByScoreAsync(start As Double = -Infinity, stop As Double = Infinity, exclude As Exclude = Exclude.None, order As Order = Order.Ascending, skip As Long = 0L, take As Long = -1L) As Task(Of T())
+  overload: WeihanLi.Redis.IRankClient`1.RangeByScoreAsync*
+  nameWithType.vb: IRankClient(Of T).RangeByScoreAsync(Double, Double, Exclude, Order, Int64, Int64)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RangeByScoreAsync(System.Double, System.Double, StackExchange.Redis.Exclude, StackExchange.Redis.Order, System.Int64, System.Int64)
+- uid: WeihanLi.Redis.IRankClient`1.Remove(`0)
+  commentId: M:WeihanLi.Redis.IRankClient`1.Remove(`0)
+  id: Remove(`0)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T)
+  nameWithType: IRankClient<T>.Remove(T)
+  fullName: WeihanLi.Redis.IRankClient<T>.Remove(T)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Remove
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 103
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemoves the specified member from the sorted set stored at key. Non existing members are ignored.\n"
+  remarks: http://redis.io/commands/zrem
+  example: []
+  syntax:
+    content: bool Remove(T member)
+    parameters:
+    - id: member
+      type: '{T}'
+    return:
+      type: System.Boolean
+      description: True if the member existed in the sorted set and was removed; False otherwise.
+    content.vb: Function Remove(member As T) As Boolean
+  overload: WeihanLi.Redis.IRankClient`1.Remove*
+  nameWithType.vb: IRankClient(Of T).Remove(T)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Remove(T)
+- uid: WeihanLi.Redis.IRankClient`1.RemoveAsync(`0)
+  commentId: M:WeihanLi.Redis.IRankClient`1.RemoveAsync(`0)
+  id: RemoveAsync(`0)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAsync(T)
+  nameWithType: IRankClient<T>.RemoveAsync(T)
+  fullName: WeihanLi.Redis.IRankClient<T>.RemoveAsync(T)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RemoveAsync
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 110
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemoves the specified member from the sorted set stored at key. Non existing members are ignored.\n"
+  remarks: http://redis.io/commands/zrem
+  example: []
+  syntax:
+    content: Task<bool> RemoveAsync(T member)
+    parameters:
+    - id: member
+      type: '{T}'
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: True if the member existed in the sorted set and was removed; False otherwise.
+    content.vb: Function RemoveAsync(member As T) As Task(Of Boolean)
+  overload: WeihanLi.Redis.IRankClient`1.RemoveAsync*
+  nameWithType.vb: IRankClient(Of T).RemoveAsync(T)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RemoveAsync(T)
+- uid: WeihanLi.Redis.IRankClient`1.Remove(`0[])
+  commentId: M:WeihanLi.Redis.IRankClient`1.Remove(`0[])
+  id: Remove(`0[])
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(T[])
+  nameWithType: IRankClient<T>.Remove(T[])
+  fullName: WeihanLi.Redis.IRankClient<T>.Remove(T[])
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Remove
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 117
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemoves the specified members from the sorted set stored at key. Non existing members are ignored.\n"
+  remarks: http://redis.io/commands/zrem
+  example: []
+  syntax:
+    content: long Remove(T[] members)
+    parameters:
+    - id: members
+      type: '{T}[]'
+    return:
+      type: System.Int64
+      description: The number of members removed from the sorted set, not including non existing members.
+    content.vb: Function Remove(members As T()) As Long
+  overload: WeihanLi.Redis.IRankClient`1.Remove*
+  nameWithType.vb: IRankClient(Of T).Remove(T())
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Remove(T())
+  name.vb: Remove(T())
+- uid: WeihanLi.Redis.IRankClient`1.RemoveAsync(`0[])
+  commentId: M:WeihanLi.Redis.IRankClient`1.RemoveAsync(`0[])
+  id: RemoveAsync(`0[])
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAsync(T[])
+  nameWithType: IRankClient<T>.RemoveAsync(T[])
+  fullName: WeihanLi.Redis.IRankClient<T>.RemoveAsync(T[])
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RemoveAsync
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 124
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemoves the specified members from the sorted set stored at key. Non existing members are ignored.\n"
+  remarks: http://redis.io/commands/zrem
+  example: []
+  syntax:
+    content: Task<long> RemoveAsync(T[] members)
+    parameters:
+    - id: members
+      type: '{T}[]'
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: The number of members removed from the sorted set, not including non existing members.
+    content.vb: Function RemoveAsync(members As T()) As Task(Of Long)
+  overload: WeihanLi.Redis.IRankClient`1.RemoveAsync*
+  nameWithType.vb: IRankClient(Of T).RemoveAsync(T())
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RemoveAsync(T())
+  name.vb: RemoveAsync(T())
+- uid: WeihanLi.Redis.IRankClient`1.RemoveRangeByScore(System.Double,System.Double,StackExchange.Redis.Exclude)
+  commentId: M:WeihanLi.Redis.IRankClient`1.RemoveRangeByScore(System.Double,System.Double,StackExchange.Redis.Exclude)
+  id: RemoveRangeByScore(System.Double,System.Double,StackExchange.Redis.Exclude)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveRangeByScore(Double, Double, Exclude)
+  nameWithType: IRankClient<T>.RemoveRangeByScore(Double, Double, Exclude)
+  fullName: WeihanLi.Redis.IRankClient<T>.RemoveRangeByScore(System.Double, System.Double, StackExchange.Redis.Exclude)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RemoveRangeByScore
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 131
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemoves all elements in the sorted set stored at key with a score between min and max (inclusive by default).\n"
+  remarks: http://redis.io/commands/zremrangebyscore
+  example: []
+  syntax:
+    content: long RemoveRangeByScore(double start, double stop, Exclude exclude = Exclude.None)
+    parameters:
+    - id: start
+      type: System.Double
+    - id: stop
+      type: System.Double
+    - id: exclude
+      type: StackExchange.Redis.Exclude
+    return:
+      type: System.Int64
+      description: the number of elements removed.
+    content.vb: Function RemoveRangeByScore(start As Double, stop As Double, exclude As Exclude = Exclude.None) As Long
+  overload: WeihanLi.Redis.IRankClient`1.RemoveRangeByScore*
+  nameWithType.vb: IRankClient(Of T).RemoveRangeByScore(Double, Double, Exclude)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RemoveRangeByScore(System.Double, System.Double, StackExchange.Redis.Exclude)
+- uid: WeihanLi.Redis.IRankClient`1.RemoveRangeByScoreAsync(System.Double,System.Double,StackExchange.Redis.Exclude)
+  commentId: M:WeihanLi.Redis.IRankClient`1.RemoveRangeByScoreAsync(System.Double,System.Double,StackExchange.Redis.Exclude)
+  id: RemoveRangeByScoreAsync(System.Double,System.Double,StackExchange.Redis.Exclude)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveRangeByScoreAsync(Double, Double, Exclude)
+  nameWithType: IRankClient<T>.RemoveRangeByScoreAsync(Double, Double, Exclude)
+  fullName: WeihanLi.Redis.IRankClient<T>.RemoveRangeByScoreAsync(System.Double, System.Double, StackExchange.Redis.Exclude)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RemoveRangeByScoreAsync
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 138
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemoves all elements in the sorted set stored at key with a score between min and max (inclusive by default).\n"
+  remarks: http://redis.io/commands/zremrangebyscore
+  example: []
+  syntax:
+    content: Task<long> RemoveRangeByScoreAsync(double start, double stop, Exclude exclude = Exclude.None)
+    parameters:
+    - id: start
+      type: System.Double
+    - id: stop
+      type: System.Double
+    - id: exclude
+      type: StackExchange.Redis.Exclude
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: the number of elements removed.
+    content.vb: Function RemoveRangeByScoreAsync(start As Double, stop As Double, exclude As Exclude = Exclude.None) As Task(Of Long)
+  overload: WeihanLi.Redis.IRankClient`1.RemoveRangeByScoreAsync*
+  nameWithType.vb: IRankClient(Of T).RemoveRangeByScoreAsync(Double, Double, Exclude)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RemoveRangeByScoreAsync(System.Double, System.Double, StackExchange.Redis.Exclude)
+- uid: WeihanLi.Redis.IRankClient`1.RemoveRangeByRank(System.Int64,System.Int64)
+  commentId: M:WeihanLi.Redis.IRankClient`1.RemoveRangeByRank(System.Int64,System.Int64)
+  id: RemoveRangeByRank(System.Int64,System.Int64)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveRangeByRank(Int64, Int64)
+  nameWithType: IRankClient<T>.RemoveRangeByRank(Int64, Int64)
+  fullName: WeihanLi.Redis.IRankClient<T>.RemoveRangeByRank(System.Int64, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RemoveRangeByRank
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 145
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemoves all elements in the sorted set stored at key with rank between start and stop. Both start and stop are 0 -based indexes with 0 being the element with the lowest score. These indexes can be negative numbers, where they indicate offsets starting at the element with the highest score. For example: -1 is the element with the highest score, -2 the element with the second highest score and so forth.\n"
+  remarks: http://redis.io/commands/zremrangebyrank
+  example: []
+  syntax:
+    content: long RemoveRangeByRank(long start, long stop)
+    parameters:
+    - id: start
+      type: System.Int64
+    - id: stop
+      type: System.Int64
+    return:
+      type: System.Int64
+      description: the number of elements removed.
+    content.vb: Function RemoveRangeByRank(start As Long, stop As Long) As Long
+  overload: WeihanLi.Redis.IRankClient`1.RemoveRangeByRank*
+  nameWithType.vb: IRankClient(Of T).RemoveRangeByRank(Int64, Int64)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RemoveRangeByRank(System.Int64, System.Int64)
+- uid: WeihanLi.Redis.IRankClient`1.RemoveRangeByRankAsync(System.Int64,System.Int64)
+  commentId: M:WeihanLi.Redis.IRankClient`1.RemoveRangeByRankAsync(System.Int64,System.Int64)
+  id: RemoveRangeByRankAsync(System.Int64,System.Int64)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveRangeByRankAsync(Int64, Int64)
+  nameWithType: IRankClient<T>.RemoveRangeByRankAsync(Int64, Int64)
+  fullName: WeihanLi.Redis.IRankClient<T>.RemoveRangeByRankAsync(System.Int64, System.Int64)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: RemoveRangeByRankAsync
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 152
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nRemoves all elements in the sorted set stored at key with rank between start and stop. Both start and stop are 0 -based indexes with 0 being the element with the lowest score. These indexes can be negative numbers, where they indicate offsets starting at the element with the highest score. For example: -1 is the element with the highest score, -2 the element with the second highest score and so forth.\n"
+  remarks: http://redis.io/commands/zremrangebyrank
+  example: []
+  syntax:
+    content: Task<long> RemoveRangeByRankAsync(long start, long stop)
+    parameters:
+    - id: start
+      type: System.Int64
+    - id: stop
+      type: System.Int64
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: the number of elements removed.
+    content.vb: Function RemoveRangeByRankAsync(start As Long, stop As Long) As Task(Of Long)
+  overload: WeihanLi.Redis.IRankClient`1.RemoveRangeByRankAsync*
+  nameWithType.vb: IRankClient(Of T).RemoveRangeByRankAsync(Int64, Int64)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RemoveRangeByRankAsync(System.Int64, System.Int64)
+- uid: WeihanLi.Redis.IRankClient`1.Score(`0)
+  commentId: M:WeihanLi.Redis.IRankClient`1.Score(`0)
+  id: Score(`0)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: Score(T)
+  nameWithType: IRankClient<T>.Score(T)
+  fullName: WeihanLi.Redis.IRankClient<T>.Score(T)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: Score
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 159
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the score of member in the sorted set at key; If member does not exist in the sorted set, or key does not exist, nil is returned.\n"
+  remarks: http://redis.io/commands/zscore
+  example: []
+  syntax:
+    content: double? Score(T member)
+    parameters:
+    - id: member
+      type: '{T}'
+    return:
+      type: System.Nullable{System.Double}
+      description: the score of member
+    content.vb: Function Score(member As T) As Double?
+  overload: WeihanLi.Redis.IRankClient`1.Score*
+  nameWithType.vb: IRankClient(Of T).Score(T)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Score(T)
+- uid: WeihanLi.Redis.IRankClient`1.ScoreAsync(`0)
+  commentId: M:WeihanLi.Redis.IRankClient`1.ScoreAsync(`0)
+  id: ScoreAsync(`0)
+  parent: WeihanLi.Redis.IRankClient`1
+  langs:
+  - csharp
+  - vb
+  name: ScoreAsync(T)
+  nameWithType: IRankClient<T>.ScoreAsync(T)
+  fullName: WeihanLi.Redis.IRankClient<T>.ScoreAsync(T)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/weihanli.redis.git
+    id: ScoreAsync
+    path: src/WeihanLi.Redis/SortedSet/IRankClient.cs
+    startLine: 166
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  summary: "\nReturns the score of member in the sorted set at key; If member does not exist in the sorted set, or key does not exist, nil is returned.\n"
+  remarks: http://redis.io/commands/zscore
+  example: []
+  syntax:
+    content: Task<double? > ScoreAsync(T member)
+    parameters:
+    - id: member
+      type: '{T}'
+    return:
+      type: System.Threading.Tasks.Task{System.Nullable{System.Double}}
+      description: the score of member
+    content.vb: Function ScoreAsync(member As T) As Task(Of Double?)
+  overload: WeihanLi.Redis.IRankClient`1.ScoreAsync*
+  nameWithType.vb: IRankClient(Of T).ScoreAsync(T)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).ScoreAsync(T)
+references:
+- uid: WeihanLi.Redis
+  commentId: N:WeihanLi.Redis
+  name: WeihanLi.Redis
+  nameWithType: WeihanLi.Redis
+  fullName: WeihanLi.Redis
+- uid: WeihanLi.Redis.IRankClient`1.Add*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.Add
+  name: Add
+  nameWithType: IRankClient<T>.Add
+  fullName: WeihanLi.Redis.IRankClient<T>.Add
+  nameWithType.vb: IRankClient(Of T).Add
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Add
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: StackExchange.Redis.When
+  commentId: T:StackExchange.Redis.When
+  parent: StackExchange.Redis
+  isExternal: true
+  name: When
+  nameWithType: When
+  fullName: StackExchange.Redis.When
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: StackExchange.Redis
+  commentId: N:StackExchange.Redis
+  isExternal: true
+  name: StackExchange.Redis
+  nameWithType: StackExchange.Redis
+  fullName: StackExchange.Redis
+- uid: WeihanLi.Redis.IRankClient`1.AddAsync*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.AddAsync
+  name: AddAsync
+  nameWithType: IRankClient<T>.AddAsync
+  fullName: WeihanLi.Redis.IRankClient<T>.AddAsync
+  nameWithType.vb: IRankClient(Of T).AddAsync
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).AddAsync
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Boolean>
+  nameWithType: Task<Boolean>
+  fullName: System.Threading.Tasks.Task<System.Boolean>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: System.Collections.Generic.IDictionary{{T},System.Double}
+  commentId: T:System.Collections.Generic.IDictionary{`0,System.Double}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  name: IDictionary<T, Double>
+  nameWithType: IDictionary<T, Double>
+  fullName: System.Collections.Generic.IDictionary<T, System.Double>
+  nameWithType.vb: IDictionary(Of T, Double)
+  fullName.vb: System.Collections.Generic.IDictionary(Of T, System.Double)
+  name.vb: IDictionary(Of T, Double)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Threading.Tasks.Task{System.Int64}
+  commentId: T:System.Threading.Tasks.Task{System.Int64}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Int64>
+  nameWithType: Task<Int64>
+  fullName: System.Threading.Tasks.Task<System.Int64>
+  nameWithType.vb: Task(Of Int64)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Int64)
+  name.vb: Task(Of Int64)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IRankClient`1.Decrement*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.Decrement
+  name: Decrement
+  nameWithType: IRankClient<T>.Decrement
+  fullName: WeihanLi.Redis.IRankClient<T>.Decrement
+  nameWithType.vb: IRankClient(Of T).Decrement
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Decrement
+- uid: WeihanLi.Redis.IRankClient`1.DecrementAsync*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.DecrementAsync
+  name: DecrementAsync
+  nameWithType: IRankClient<T>.DecrementAsync
+  fullName: WeihanLi.Redis.IRankClient<T>.DecrementAsync
+  nameWithType.vb: IRankClient(Of T).DecrementAsync
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).DecrementAsync
+- uid: System.Threading.Tasks.Task{System.Double}
+  commentId: T:System.Threading.Tasks.Task{System.Double}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Double>
+  nameWithType: Task<Double>
+  fullName: System.Threading.Tasks.Task<System.Double>
+  nameWithType.vb: Task(Of Double)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Double)
+  name.vb: Task(Of Double)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IRankClient`1.Increment*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.Increment
+  name: Increment
+  nameWithType: IRankClient<T>.Increment
+  fullName: WeihanLi.Redis.IRankClient<T>.Increment
+  nameWithType.vb: IRankClient(Of T).Increment
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Increment
+- uid: WeihanLi.Redis.IRankClient`1.IncrementAsync*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.IncrementAsync
+  name: IncrementAsync
+  nameWithType: IRankClient<T>.IncrementAsync
+  fullName: WeihanLi.Redis.IRankClient<T>.IncrementAsync
+  nameWithType.vb: IRankClient(Of T).IncrementAsync
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).IncrementAsync
+- uid: WeihanLi.Redis.IRankClient`1.Length*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.Length
+  name: Length
+  nameWithType: IRankClient<T>.Length
+  fullName: WeihanLi.Redis.IRankClient<T>.Length
+  nameWithType.vb: IRankClient(Of T).Length
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Length
+- uid: StackExchange.Redis.Exclude
+  commentId: T:StackExchange.Redis.Exclude
+  parent: StackExchange.Redis
+  isExternal: true
+  name: Exclude
+  nameWithType: Exclude
+  fullName: StackExchange.Redis.Exclude
+- uid: WeihanLi.Redis.IRankClient`1.LengthAsync*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.LengthAsync
+  name: LengthAsync
+  nameWithType: IRankClient<T>.LengthAsync
+  fullName: WeihanLi.Redis.IRankClient<T>.LengthAsync
+  nameWithType.vb: IRankClient(Of T).LengthAsync
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).LengthAsync
+- uid: WeihanLi.Redis.IRankClient`1.RangeByScore*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.RangeByScore
+  name: RangeByScore
+  nameWithType: IRankClient<T>.RangeByScore
+  fullName: WeihanLi.Redis.IRankClient<T>.RangeByScore
+  nameWithType.vb: IRankClient(Of T).RangeByScore
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RangeByScore
+- uid: StackExchange.Redis.Order
+  commentId: T:StackExchange.Redis.Order
+  parent: StackExchange.Redis
+  isExternal: true
+  name: Order
+  nameWithType: Order
+  fullName: StackExchange.Redis.Order
+- uid: '{T}[]'
+  isExternal: true
+  name: T[]
+  nameWithType: T[]
+  fullName: T[]
+  nameWithType.vb: T()
+  fullName.vb: T()
+  name.vb: T()
+  spec.csharp:
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: WeihanLi.Redis.IRankClient`1.RangeByScoreAsync*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.RangeByScoreAsync
+  name: RangeByScoreAsync
+  nameWithType: IRankClient<T>.RangeByScoreAsync
+  fullName: WeihanLi.Redis.IRankClient<T>.RangeByScoreAsync
+  nameWithType.vb: IRankClient(Of T).RangeByScoreAsync
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RangeByScoreAsync
+- uid: System.Threading.Tasks.Task{{T}[]}
+  commentId: T:System.Threading.Tasks.Task{``0[]}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<T[]>
+  nameWithType: Task<T[]>
+  fullName: System.Threading.Tasks.Task<T[]>
+  nameWithType.vb: Task(Of T())
+  fullName.vb: System.Threading.Tasks.Task(Of T())
+  name.vb: Task(Of T())
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IRankClient`1.Remove*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.Remove
+  name: Remove
+  nameWithType: IRankClient<T>.Remove
+  fullName: WeihanLi.Redis.IRankClient<T>.Remove
+  nameWithType.vb: IRankClient(Of T).Remove
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Remove
+- uid: WeihanLi.Redis.IRankClient`1.RemoveAsync*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.RemoveAsync
+  name: RemoveAsync
+  nameWithType: IRankClient<T>.RemoveAsync
+  fullName: WeihanLi.Redis.IRankClient<T>.RemoveAsync
+  nameWithType.vb: IRankClient(Of T).RemoveAsync
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RemoveAsync
+- uid: WeihanLi.Redis.IRankClient`1.RemoveRangeByScore*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.RemoveRangeByScore
+  name: RemoveRangeByScore
+  nameWithType: IRankClient<T>.RemoveRangeByScore
+  fullName: WeihanLi.Redis.IRankClient<T>.RemoveRangeByScore
+  nameWithType.vb: IRankClient(Of T).RemoveRangeByScore
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RemoveRangeByScore
+- uid: WeihanLi.Redis.IRankClient`1.RemoveRangeByScoreAsync*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.RemoveRangeByScoreAsync
+  name: RemoveRangeByScoreAsync
+  nameWithType: IRankClient<T>.RemoveRangeByScoreAsync
+  fullName: WeihanLi.Redis.IRankClient<T>.RemoveRangeByScoreAsync
+  nameWithType.vb: IRankClient(Of T).RemoveRangeByScoreAsync
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RemoveRangeByScoreAsync
+- uid: WeihanLi.Redis.IRankClient`1.RemoveRangeByRank*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.RemoveRangeByRank
+  name: RemoveRangeByRank
+  nameWithType: IRankClient<T>.RemoveRangeByRank
+  fullName: WeihanLi.Redis.IRankClient<T>.RemoveRangeByRank
+  nameWithType.vb: IRankClient(Of T).RemoveRangeByRank
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RemoveRangeByRank
+- uid: WeihanLi.Redis.IRankClient`1.RemoveRangeByRankAsync*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.RemoveRangeByRankAsync
+  name: RemoveRangeByRankAsync
+  nameWithType: IRankClient<T>.RemoveRangeByRankAsync
+  fullName: WeihanLi.Redis.IRankClient<T>.RemoveRangeByRankAsync
+  nameWithType.vb: IRankClient(Of T).RemoveRangeByRankAsync
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).RemoveRangeByRankAsync
+- uid: WeihanLi.Redis.IRankClient`1.Score*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.Score
+  name: Score
+  nameWithType: IRankClient<T>.Score
+  fullName: WeihanLi.Redis.IRankClient<T>.Score
+  nameWithType.vb: IRankClient(Of T).Score
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Score
+- uid: System.Nullable{System.Double}
+  commentId: T:System.Nullable{System.Double}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Double>
+  nameWithType: Nullable<Double>
+  fullName: System.Nullable<System.Double>
+  nameWithType.vb: Nullable(Of Double)
+  fullName.vb: System.Nullable(Of System.Double)
+  name.vb: Nullable(Of Double)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.IRankClient`1.ScoreAsync*
+  commentId: Overload:WeihanLi.Redis.IRankClient`1.ScoreAsync
+  name: ScoreAsync
+  nameWithType: IRankClient<T>.ScoreAsync
+  fullName: WeihanLi.Redis.IRankClient<T>.ScoreAsync
+  nameWithType.vb: IRankClient(Of T).ScoreAsync
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).ScoreAsync
+- uid: System.Threading.Tasks.Task{System.Nullable{System.Double}}
+  commentId: T:System.Threading.Tasks.Task{System.Nullable{System.Double}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Nullable<Double>>
+  nameWithType: Task<Nullable<Double>>
+  fullName: System.Threading.Tasks.Task<System.Nullable<System.Double>>
+  nameWithType.vb: Task(Of Nullable(Of Double))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Nullable(Of System.Double))
+  name.vb: Task(Of Nullable(Of Double))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )

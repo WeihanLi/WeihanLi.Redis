@@ -10,7 +10,7 @@ namespace WeihanLi.Redis
     internal abstract class BaseRedisClient
     {
         /// <summary>
-        /// 随机数生成器
+        /// RandomGenerator
         /// </summary>
         protected readonly Random Random = new Random();
 

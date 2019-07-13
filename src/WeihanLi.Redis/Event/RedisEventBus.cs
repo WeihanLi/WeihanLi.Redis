@@ -27,7 +27,7 @@ namespace WeihanLi.Redis
         public bool Publish<TEvent>(TEvent @event) where TEvent : EventBase
         {
             var channelName = GetChannelName<TEvent>();
-            var result = _subscriber.Publish(channel: channelName, @event.ToJson());
+            var result = _subscriber.Publish(channelName, @event.ToJson());
             return result > 0;
         }
 

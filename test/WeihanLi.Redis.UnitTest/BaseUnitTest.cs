@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using WeihanLi.Common;
+using WeihanLi.Common.Event;
 
 namespace WeihanLi.Redis.UnitTest
 {
@@ -19,6 +20,9 @@ namespace WeihanLi.Redis.UnitTest
                 config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
                 config.EnableCompress = false;
             });
+            serviceCollection.AddSingleton<IEventStore, EventStoreInMemory>();
+            serviceCollection.AddSingleton<IEventBus, RedisEventBus>();
+
             DependencyResolver.SetDependencyResolver(serviceCollection);
         }
     }

@@ -1,7 +1,4 @@
-<Project>  
-  <Import Project="analyzer.props" />
-  <Import Project="sign.props" />
-  <Import Project="version.props" />
+<Project>
   <Import Project="document.props" />
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>

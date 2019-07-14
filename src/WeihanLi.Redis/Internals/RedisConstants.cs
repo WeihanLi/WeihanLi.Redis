@@ -14,6 +14,8 @@
 
         public const string HashPrefix = "Hash:Cache";
 
+        public const string HashCounterPrefix = "Hash:HashCounter";
+
         public const string DictionaryPrefix = "Hash:Dictionary";
 
         public const string ListPrefix = "List:Cache";

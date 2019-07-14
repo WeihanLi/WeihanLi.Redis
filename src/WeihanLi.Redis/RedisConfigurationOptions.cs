@@ -9,7 +9,7 @@ namespace WeihanLi.Redis
 {
     /// <summary>
     /// RedisConfigurationOption
-    /// https://weihanli.github.io/StackExchange.Redis-docs-cn/Configuration.html
+    /// https://weihanli.github.io/StackExchange.Redis-docs-zh-cn/Configuration.html
     /// </summary>
     public class RedisConfigurationOptions
     {
@@ -27,6 +27,26 @@ namespace WeihanLi.Redis
         }
 
         public string Password { get; set; }
+
+        /// <summary>
+        /// Identification for the connection within redis
+        /// </summary>
+        public string ClientName { get; set; } = ApplicationHelper.ApplicationName;
+
+        /// <summary>
+        /// Optional channel prefix for all pub/sub operations
+        /// </summary>
+        public string ChannelPrefix { get; set; } = ApplicationHelper.ApplicationName;
+
+        /// <summary>
+        /// EVentBus channel prefix
+        /// </summary>
+        public string EventBusChannelPrefix { get; set; } = "WeihanLi.Redis.EventBus";
+
+        /// <summary>
+        /// CachePrefix
+        /// </summary>
+        public string CachePrefix { get; set; } = ApplicationHelper.ApplicationName;
 
         /// <summary>
         /// KeySeparator
@@ -53,7 +73,9 @@ namespace WeihanLi.Redis
 
         public bool AbortOnConnectFail { get; set; } = true;
 
-        public int SyncTimeout { get; set; } = 1000;
+        public int SyncTimeout { get; set; } = 3000;
+
+        public int AsyncTimeout { get; set; } = 3000;
 
         public int ConnectRetry { get; set; } = 3;
 
@@ -68,14 +90,10 @@ namespace WeihanLi.Redis
         public Proxy Proxy { get; set; } = Proxy.None;
 
         /// <summary>
-        /// Optional channel prefix for all pub/sub operations
+        /// A slightly unusual feature of redis is that you can disable and/or rename individual commands
+        /// https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Configuration.md#renaming-commands
         /// </summary>
-        public string ChannelPrefix { get; set; } = ApplicationHelper.ApplicationName;
-
-        /// <summary>
-        /// CachePrefix
-        /// </summary>
-        public string CachePrefix { get; set; } = ApplicationHelper.ApplicationName;
+        public Dictionary<string, string> CommandMap { get; set; }
 
         /// <summary>
         /// AllowNoExpiry

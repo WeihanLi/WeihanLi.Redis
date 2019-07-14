@@ -21,6 +21,7 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <param name="keyName">keyName</param>
         /// <param name="expiry">过期时间</param>
+        /// <param name="logger"></param>
         public DictionaryClient(string keyName, TimeSpan? expiry, ILogger<DictionaryClient<TKey, TValue>> logger) : this(keyName, expiry, true, logger)
         {
         }
@@ -30,6 +31,7 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <param name="keyName">keyName</param>
         /// <param name="expiry">过期时间</param>
+        /// <param name="logger"></param>
         public DictionaryClient(string keyName, DateTime? expiry, ILogger<DictionaryClient<TKey, TValue>> logger) : base(logger, new RedisWrapper(RedisConstants.DictionaryPrefix))
         {
             _realKey = Wrapper.GetRealKey(keyName);
@@ -54,7 +56,7 @@ namespace WeihanLi.Redis
 
         public bool Add(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None)
         {
-            var result = Wrapper.Database.Value.HashSet(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), When.NotExists, flags);
+            var result = Wrapper.Database.HashSet(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), When.NotExists, flags);
             if (result)
             {
                 Expire(flags);
@@ -64,7 +66,7 @@ namespace WeihanLi.Redis
 
         public async Task<bool> AddAsync(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None)
         {
-            var result = await Wrapper.Database.Value.HashSetAsync(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), When.NotExists, flags);
+            var result = await Wrapper.Database.HashSetAsync(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), When.NotExists, flags);
             if (result)
             {
                 await ExpireAsync(flags);
@@ -74,35 +76,35 @@ namespace WeihanLi.Redis
 
         public bool Add(IDictionary<TKey, TValue> values, CommandFlags flags = CommandFlags.None)
         {
-            Wrapper.Database.Value.HashSet(_realKey, values.Select(_ => new HashEntry(Wrapper.Wrap(_.Key), Wrapper.Wrap(_.Value))).ToArray(), flags);
+            Wrapper.Database.HashSet(_realKey, values.Select(_ => new HashEntry(Wrapper.Wrap(_.Key), Wrapper.Wrap(_.Value))).ToArray(), flags);
             Expire(flags);
             return true;
         }
 
         public async Task<bool> AddAsync(IDictionary<TKey, TValue> values, CommandFlags flags = CommandFlags.None)
         {
-            await Wrapper.Database.Value
+            await Wrapper.Database
                 .HashSetAsync(_realKey,
                     values.Select(_ => new HashEntry(Wrapper.Wrap(_.Key), Wrapper.Wrap(_.Value))).ToArray(), flags)
                 .ContinueWith(_ => ExpireAsync(flags));
             return true;
         }
 
-        public bool Clear(CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.KeyDelete(_realKey, flags);
+        public bool Clear(CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDelete(_realKey, flags);
 
-        public Task<bool> ClearAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.KeyDeleteAsync(_realKey, flags);
+        public Task<bool> ClearAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDeleteAsync(_realKey, flags);
 
-        public long Count(CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashLength(_realKey, flags);
+        public long Count(CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashLength(_realKey, flags);
 
-        public Task<long> CountAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashLengthAsync(_realKey, flags);
+        public Task<long> CountAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashLengthAsync(_realKey, flags);
 
-        public bool Exists(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashExists(_realKey, Wrapper.Wrap(fieldName), flags);
+        public bool Exists(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashExists(_realKey, Wrapper.Wrap(fieldName), flags);
 
-        public Task<bool> ExistsAsync(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.Value.HashExistsAsync(_realKey, Wrapper.Wrap(fieldName), flags);
+        public Task<bool> ExistsAsync(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Database.HashExistsAsync(_realKey, Wrapper.Wrap(fieldName), flags);
 
-        public TValue Get(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(Wrapper.Database.Value.HashGet(_realKey, Wrapper.Wrap(fieldName), flags));
+        public TValue Get(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(Wrapper.Database.HashGet(_realKey, Wrapper.Wrap(fieldName), flags));
 
-        public async Task<TValue> GetAsync(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(await Wrapper.Database.Value.HashGetAsync(_realKey, Wrapper.Wrap(fieldName), flags));
+        public async Task<TValue> GetAsync(TKey fieldName, CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(await Wrapper.Database.HashGetAsync(_realKey, Wrapper.Wrap(fieldName), flags));
 
         public TValue GetOrAdd(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None)
         {
@@ -147,13 +149,13 @@ namespace WeihanLi.Redis
             return result ? value : await GetAsync(fieldName, flags);
         }
 
-        public TKey[] Keys(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TKey>(Wrapper.Database.Value.HashKeys(_realKey, flags));
+        public TKey[] Keys(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TKey>(Wrapper.Database.HashKeys(_realKey, flags));
 
-        public async Task<TKey[]> KeysAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TKey>(await Wrapper.Database.Value.HashKeysAsync(_realKey, flags));
+        public async Task<TKey[]> KeysAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TKey>(await Wrapper.Database.HashKeysAsync(_realKey, flags));
 
         public bool Remove(TKey fieldName, CommandFlags flags = CommandFlags.None)
         {
-            var result = Wrapper.Database.Value.HashDelete(_realKey, Wrapper.Wrap(fieldName), flags);
+            var result = Wrapper.Database.HashDelete(_realKey, Wrapper.Wrap(fieldName), flags);
             if (result)
             {
                 Expire(flags, false);
@@ -163,7 +165,7 @@ namespace WeihanLi.Redis
 
         public async Task<bool> RemoveAsync(TKey fieldName, CommandFlags flags = CommandFlags.None)
         {
-            var result = await Wrapper.Database.Value.HashDeleteAsync(_realKey, Wrapper.Wrap(fieldName), flags);
+            var result = await Wrapper.Database.HashDeleteAsync(_realKey, Wrapper.Wrap(fieldName), flags);
             if (result)
             {
                 await ExpireAsync(flags, false);
@@ -173,7 +175,7 @@ namespace WeihanLi.Redis
 
         public bool Set(TKey fieldName, TValue value, When when = When.Always, CommandFlags flags = CommandFlags.None)
         {
-            var result = Wrapper.Database.Value.HashSet(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), when, flags);
+            var result = Wrapper.Database.HashSet(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), when, flags);
             if (result)
             {
                 Expire(flags);
@@ -183,7 +185,7 @@ namespace WeihanLi.Redis
 
         public async Task<bool> SetAsync(TKey fieldName, TValue value, When when = When.Always, CommandFlags flags = CommandFlags.None)
         {
-            var result = await Wrapper.Database.Value.HashSetAsync(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), when, flags);
+            var result = await Wrapper.Database.HashSetAsync(_realKey, Wrapper.Wrap(fieldName), Wrapper.Wrap(value), when, flags);
             if (result)
             {
                 await ExpireAsync(flags);
@@ -191,9 +193,9 @@ namespace WeihanLi.Redis
             return result;
         }
 
-        public TValue[] Values(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(Wrapper.Database.Value.HashValues(_realKey, flags));
+        public TValue[] Values(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(Wrapper.Database.HashValues(_realKey, flags));
 
-        public async Task<TValue[]> ValuesAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(await Wrapper.Database.Value.HashValuesAsync(_realKey, flags));
+        public async Task<TValue[]> ValuesAsync(CommandFlags flags = CommandFlags.None) => Wrapper.Unwrap<TValue>(await Wrapper.Database.HashValuesAsync(_realKey, flags));
 
         #region Expire
 
@@ -203,13 +205,13 @@ namespace WeihanLi.Redis
         {
             if (_isSlidingExpired && _expiry.HasValue)
             {
-                Wrapper.Database.Value.KeyExpire(_realKey, _expiry, flags);
+                Wrapper.Database.KeyExpire(_realKey, _expiry, flags);
             }
             else
             {
-                if (isSet && _expiresAt.HasValue && null == Wrapper.Database.Value.KeyTimeToLive(_realKey, flags))
+                if (isSet && _expiresAt.HasValue && null == Wrapper.Database.KeyTimeToLive(_realKey, flags))
                 {
-                    Wrapper.Database.Value.KeyExpire(_realKey, _expiresAt, flags);
+                    Wrapper.Database.KeyExpire(_realKey, _expiresAt, flags);
                 }
             }
         }
@@ -220,13 +222,13 @@ namespace WeihanLi.Redis
         {
             if (_isSlidingExpired && _expiry.HasValue)
             {
-                await Wrapper.Database.Value.KeyExpireAsync(_realKey, _expiry, flags);
+                await Wrapper.Database.KeyExpireAsync(_realKey, _expiry, flags);
             }
             else
             {
-                if (isSet && _expiresAt.HasValue && null == Wrapper.Database.Value.KeyTimeToLive(_realKey, flags))
+                if (isSet && _expiresAt.HasValue && null == Wrapper.Database.KeyTimeToLive(_realKey, flags))
                 {
-                    await Wrapper.Database.Value.KeyExpireAsync(_realKey, _expiresAt, flags);
+                    await Wrapper.Database.KeyExpireAsync(_realKey, _expiresAt, flags);
                 }
             }
         }

@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="../../build/common.props" />
   <ItemGroup>
-    <PackageReference Include="StackExchange.Redis" Version="2.0.600" />
-    <PackageReference Include="WeihanLi.Common" Version="1.0.16" />
+    <PackageReference Include="StackExchange.Redis" Version="2.0.601" />
+    <PackageReference Include="WeihanLi.Common" Version="1.0.23-preview-20190713-081837" />
   </ItemGroup>
 
   <ItemGroup>

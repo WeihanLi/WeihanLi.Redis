@@ -1,7 +1,5 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
-using StackExchange.Redis;
-using WeihanLi.Common;
 
 namespace WeihanLi.Redis
 {
@@ -12,7 +10,7 @@ namespace WeihanLi.Redis
     internal abstract class BaseRedisClient
     {
         /// <summary>
-        /// 随机数生成器
+        /// RandomGenerator
         /// </summary>
         protected readonly Random Random = new Random();
 
@@ -37,8 +35,6 @@ namespace WeihanLi.Redis
         {
             Logger = logger;
             Wrapper = redisWrapper;
-            Wrapper.Database = new Lazy<IDatabase>(() => DependencyResolver.Current.ResolveService<IConnectionMultiplexer>().GetDatabase());
-            Wrapper.Subscriber = new Lazy<ISubscriber>(() => DependencyResolver.Current.ResolveService<IConnectionMultiplexer>().GetSubscriber());
         }
     }
 }

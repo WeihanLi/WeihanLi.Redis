@@ -19,7 +19,7 @@ namespace WeihanLi.Redis
         private string GetChannelName<TEvent>() where TEvent : EventBase
         {
             var eventKey = _eventStore.GetEventKey<TEvent>();
-            var channelName = $"{RedisManager.RedisConfiguration.ChannelPrefix}{RedisManager.RedisConfiguration.KeySeparator}{eventKey}";
+            var channelName = $"{RedisManager.RedisConfiguration.EventBusChannelPrefix}{RedisManager.RedisConfiguration.KeySeparator}{eventKey}";
 
             return channelName;
         }
@@ -45,8 +45,7 @@ namespace WeihanLi.Redis
                 }
             });
 
-            _eventStore.AddSubscription<TEvent, TEventHandler>();
-            return true;
+            return _eventStore.AddSubscription<TEvent, TEventHandler>();
         }
 
         public bool Unsubscribe<TEvent, TEventHandler>()
@@ -56,8 +55,7 @@ namespace WeihanLi.Redis
             var channelName = GetChannelName<TEvent>();
             _subscriber.Unsubscribe(channelName);
 
-            _eventStore.RemoveSubscription<TEvent, TEventHandler>();
-            return true;
+            return _eventStore.RemoveSubscription<TEvent, TEventHandler>();
         }
     }
 }

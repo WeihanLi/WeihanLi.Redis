@@ -13,15 +13,17 @@ namespace WeihanLi.Redis.UnitTest
             var counter = 0;
             RedisManager.PubSubClient.Subscribe(channelName, _ => Interlocked.Increment(ref counter));
             RedisManager.PubSubClient.Publish(channelName, new PubSubMessageModel { SubscribeType = "AA", SubscribeMessage = "Hahaha" });
-            await Task.Delay(200);
+            await Task.Delay(10000);
             Assert.Equal(1, counter);
+
             RedisManager.PubSubClient.Unsubscribe(channelName);
             RedisManager.PubSubClient.Publish(channelName, new PubSubMessageModel { SubscribeType = "AA", SubscribeMessage = "Hahaha" });
-            await Task.Delay(200);
+            await Task.Delay(10000);
             Assert.Equal(1, counter);
+
             RedisManager.PubSubClient.Subscribe(channelName, _ => Interlocked.Increment(ref counter));
             RedisManager.PubSubClient.Publish(channelName, new PubSubMessageModel { SubscribeType = "AA", SubscribeMessage = "Hahaha" });
-            await Task.Delay(200);
+            await Task.Delay(10000);
             Assert.Equal(2, counter);
             RedisManager.PubSubClient.Unsubscribe(channelName);
         }

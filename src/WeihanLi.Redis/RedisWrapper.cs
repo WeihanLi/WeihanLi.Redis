@@ -8,7 +8,7 @@ using WeihanLi.Extensions;
 
 namespace WeihanLi.Redis
 {
-    internal interface IRedisWrapper
+    public interface IRedisWrapper
     {
         /// <summary>
         /// DataSerializer

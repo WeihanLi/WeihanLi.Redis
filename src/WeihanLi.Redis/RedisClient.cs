@@ -7,7 +7,7 @@ namespace WeihanLi.Redis
     {
     }
 
-    internal abstract class BaseRedisClient
+    public abstract class BaseRedisClient
     {
         /// <summary>
         /// RandomGenerator

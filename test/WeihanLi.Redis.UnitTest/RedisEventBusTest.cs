@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WeihanLi.Common;
 using WeihanLi.Common.Event;
 using WeihanLi.Extensions;
+using WeihanLi.Redis.Event;
 using Xunit;
 
 namespace WeihanLi.Redis.UnitTest
@@ -29,7 +30,7 @@ namespace WeihanLi.Redis.UnitTest
                 config.EnableCompress = false;
                 config.DefaultDatabase = dbIndex;
             });
-            serviceCollection.AddSingleton<IEventStore, EventStoreInMemory>();
+            serviceCollection.AddSingleton<IEventStore, RedisEventStore>();
             serviceCollection.AddSingleton<IEventBus, RedisEventBus>();
             serviceCollection.AddSingleton<CounterEventHandler>();
             serviceCollection.AddSingleton<CounterEventHandler2>();
@@ -63,7 +64,7 @@ namespace WeihanLi.Redis.UnitTest
 
         private class CounterEventHandler : IEventHandler<CounterEvent>
         {
-            public Task Handle(CounterEvent @event)
+            public Task Handle(CounterEvent @event, CancellationToken cancellationToken = default)
             {
                 System.Console.WriteLine($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
                 Interlocked.Increment(ref counter);
@@ -73,7 +74,7 @@ namespace WeihanLi.Redis.UnitTest
 
         private class CounterEventHandler2 : IEventHandler<CounterEvent>
         {
-            public Task Handle(CounterEvent @event)
+            public Task Handle(CounterEvent @event, CancellationToken cancellationToken = default)
             {
                 System.Console.WriteLine($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
                 Interlocked.Increment(ref counter);

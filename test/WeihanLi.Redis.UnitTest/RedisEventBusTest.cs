@@ -30,7 +30,7 @@ namespace WeihanLi.Redis.UnitTest
                 config.EnableCompress = false;
                 config.DefaultDatabase = dbIndex;
             });
-            serviceCollection.AddSingleton<IEventStore, RedisEventStore>();
+            serviceCollection.AddSingleton<IEventStore, EventStoreInRedis>();
             serviceCollection.AddSingleton<IEventBus, RedisEventBus>();
             serviceCollection.AddSingleton<CounterEventHandler>();
             serviceCollection.AddSingleton<CounterEventHandler2>();

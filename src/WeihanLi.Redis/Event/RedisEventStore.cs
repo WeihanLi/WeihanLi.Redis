@@ -5,12 +5,12 @@ using WeihanLi.Common.Event;
 
 namespace WeihanLi.Redis.Event
 {
-    public class RedisEventStore : BaseRedisClient, IEventStore
+    public class EventStoreInRedis : BaseRedisClient, IEventStore
     {
         private const string EventsCacheKey = "Events";
 
-        public RedisEventStore(ILoggerFactory loggerFactory)
-            : base(loggerFactory.CreateLogger<RedisEventStore>(), new RedisWrapper("EventStore"))
+        public EventStoreInRedis(ILoggerFactory loggerFactory)
+            : base(loggerFactory.CreateLogger<EventStoreInRedis>(), new RedisWrapper("EventStore"))
         {
         }
 

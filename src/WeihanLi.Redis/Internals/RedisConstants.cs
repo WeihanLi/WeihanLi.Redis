@@ -18,6 +18,8 @@
 
         public const string DictionaryPrefix = "Hash:Dictionary";
 
+        public const string EventStorePrefix = "Hash:EventStore";
+
         public const string ListPrefix = "List:Cache";
 
         public const string QueuePrefix = "List:Queue";

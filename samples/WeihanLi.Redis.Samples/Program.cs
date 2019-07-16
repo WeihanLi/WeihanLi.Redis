@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
@@ -25,7 +24,7 @@ namespace WeihanLi.Redis.Samples
             });
             // custom serializer
             services.AddSingleton<IDataSerializer, BinaryDataSerializer>();
-            services.AddSingleton<IDataCompressor, MockDataCompressor>();
+            services.AddSingleton<IDataCompressor, NullDataCompressor>();
             DependencyResolver.SetDependencyResolver(services);
 
             //var cacheClient = DependencyResolver.Current.ResolveService<ICacheClient>();
@@ -43,29 +42,6 @@ namespace WeihanLi.Redis.Samples
             ConfigurationChangedEventSample.MainTest();
 
             Console.ReadLine();
-        }
-
-        private class MockDataCompressor : IDataCompressor
-        {
-            public byte[] Compress(byte[] sourceData)
-            {
-                return sourceData;
-            }
-
-            public Task<byte[]> CompressAsync(byte[] sourceData)
-            {
-                return Task.FromResult(sourceData);
-            }
-
-            public byte[] Decompress(byte[] compressedData)
-            {
-                return compressedData;
-            }
-
-            public Task<byte[]> DecompressAsync(byte[] compressedData)
-            {
-                return Task.FromResult(compressedData);
-            }
         }
     }
 }

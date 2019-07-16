@@ -1,7 +1,7 @@
 ﻿namespace WeihanLi.Redis
 {
     /// <summary>
-    /// Redis 数据类型
+    /// Redis Data Type
     /// </summary>
     public enum RedisDataType : byte
     {

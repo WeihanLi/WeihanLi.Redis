@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
 using WeihanLi.Common;
 
 namespace WeihanLi.Redis.UnitTest
@@ -7,6 +8,8 @@ namespace WeihanLi.Redis.UnitTest
     {
         static BaseUnitTest()
         {
+            var dbIndex = 7;
+
             IServiceCollection serviceCollection = new ServiceCollection();
             serviceCollection.AddRedisConfig(config =>
             {
@@ -18,8 +21,19 @@ namespace WeihanLi.Redis.UnitTest
                 config.CachePrefix = "WeihanLi.Redis.UnitTest";
                 config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
                 config.EnableCompress = false;
+                config.DefaultDatabase = dbIndex;
             });
+
             DependencyResolver.SetDependencyResolver(serviceCollection);
+
+            // clear keys
+            var connection = DependencyResolver.Current.ResolveService<IConnectionMultiplexer>();
+            var server = connection.GetServer("127.0.0.1", 6379);
+            var db = connection.GetDatabase(dbIndex);
+            foreach (var key in server.Keys(dbIndex, "WeihanLi.Redis.UnitTest:*"))
+            {
+                db.KeyDelete(key);
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using WeihanLi.Common.Event;
+using WeihanLi.Redis.Internals;
 
 namespace WeihanLi.Redis.Event
 {
@@ -10,7 +11,7 @@ namespace WeihanLi.Redis.Event
         private const string EventsCacheKey = "Events";
 
         public EventStoreInRedis(ILoggerFactory loggerFactory)
-            : base(loggerFactory.CreateLogger<EventStoreInRedis>(), new RedisWrapper("EventStore"))
+            : base(loggerFactory.CreateLogger<EventStoreInRedis>(), new RedisWrapper(RedisConstants.EventStorePrefix))
         {
         }
 

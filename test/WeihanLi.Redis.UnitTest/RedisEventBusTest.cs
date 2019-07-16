@@ -44,6 +44,7 @@ namespace WeihanLi.Redis.UnitTest
             try
             {
                 var eventBus = DependencyResolver.Current.ResolveService<IEventBus>();
+
                 eventBus.Subscribe<CounterEvent, CounterEventHandler>();
                 eventBus.Subscribe<CounterEvent, CounterEventHandler2>();
                 eventBus.Publish(new CounterEvent { Counter = 123 });
@@ -53,6 +54,8 @@ namespace WeihanLi.Redis.UnitTest
             }
             finally
             {
+                DependencyResolver.Current.GetRequiredService<IEventStore>()
+                    .Clear();
                 RedisManager.PubSubClient.UnsubscribeAll();
             }
         }

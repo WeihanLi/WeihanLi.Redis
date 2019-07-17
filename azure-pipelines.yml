@@ -22,7 +22,7 @@ jobs:
   #     - 6379/tcp
 
   steps:
-  - bash: ./build.sh
+  - script: bash build.sh
     displayName: 'Build Script'
 
 - job: Windows

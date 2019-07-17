@@ -10,7 +10,7 @@ var srcProjects  = GetFiles("./src/**/*.csproj");
 var testProjects  = GetFiles("./test/**/*.csproj");
 
 var artifacts = "./artifacts/packages";
-var isWindowsAgent = (EnvironmentVariable("Agent_OS") ?? "Windows_NT") == "Windows_NT";
+var isWindowsAgent = EnvironmentVariable("Agent_OS") == "Windows_NT";
 var branchName = EnvironmentVariable("BUILD_SOURCEBRANCHNAME") ?? "local";
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <IsPackable>false</IsPackable>
+    <!-- <IsTestProject Condition="'$(OS)' != 'Windows_NT'">true</IsTestProject> -->
   </PropertyGroup>
 
   <ItemGroup>

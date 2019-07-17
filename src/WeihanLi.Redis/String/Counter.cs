@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using StackExchange.Redis;
 using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
@@ -44,7 +45,8 @@ namespace WeihanLi.Redis
             _keyName = Wrapper.GetRealKey(counterName);
             Base = baseCount;
             _expiresIn = expiresIn;
-            Reset();
+
+            Wrapper.Database.StringSet(_keyName, Base, _expiresIn, When.NotExists);
         }
 
         public CounterClient(string counterName, TimeSpan? expiresIn, ILogger<CounterClient> logger) : this(counterName, 0, expiresIn, logger)

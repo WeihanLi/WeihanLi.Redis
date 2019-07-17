@@ -4,18 +4,25 @@ using Microsoft.Extensions.Logging;
 using WeihanLi.Common.Event;
 using WeihanLi.Redis.Internals;
 
-namespace WeihanLi.Redis.Event
+// ReSharper disable once CheckNamespace
+namespace WeihanLi.Redis
 {
-    public class EventStoreInRedis : BaseRedisClient, IEventStore
+    public class EventStoreInRedis : IEventStore
     {
-        private const string EventsCacheKey = "Events";
+        protected readonly string EventsCacheKey;
+        protected readonly ILogger Logger;
 
-        public EventStoreInRedis(ILoggerFactory loggerFactory)
-            : base(loggerFactory.CreateLogger<EventStoreInRedis>(), new RedisWrapper(RedisConstants.EventStorePrefix))
+        private readonly IRedisWrapper Wrapper;
+
+        public EventStoreInRedis(ILogger<EventStoreInRedis> logger)
         {
+            Logger = logger;
+            Wrapper = new RedisWrapper(RedisConstants.EventStorePrefix);
+
+            EventsCacheKey = RedisManager.RedisConfiguration.EventStoreCacheKey;
         }
 
-        public bool IsEmpty => Wrapper.Database.KeyExists(Wrapper.GetRealKey(EventsCacheKey));
+        public bool IsEmpty => Wrapper.Database.KeyExists(EventsCacheKey);
 
         public bool AddSubscription<TEvent, TEventHandler>()
             where TEvent : EventBase
@@ -23,32 +30,32 @@ namespace WeihanLi.Redis.Event
         {
             var eventKey = GetEventKey<TEvent>();
             var handlerType = typeof(TEventHandler);
-            if (Wrapper.Database.HashExists(Wrapper.GetRealKey(EventsCacheKey), eventKey))
+            if (Wrapper.Database.HashExists(EventsCacheKey, eventKey))
             {
-                var handlers = Wrapper.Unwrap<List<Type>>(Wrapper.Database.HashGet(Wrapper.GetRealKey(EventsCacheKey), eventKey));
+                var handlers = Wrapper.Unwrap<List<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
 
                 if (handlers.Contains(handlerType))
                 {
                     return false;
                 }
                 handlers.Add(handlerType);
-                return Wrapper.Database.HashSet(Wrapper.GetRealKey(EventsCacheKey), eventKey, Wrapper.Wrap(handlers));
+                return Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(handlers));
             }
             else
             {
-                return Wrapper.Database.HashSet(Wrapper.GetRealKey(EventsCacheKey), eventKey, Wrapper.Wrap(new List<Type> { handlerType }), StackExchange.Redis.When.NotExists);
+                return Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(new List<Type> { handlerType }), StackExchange.Redis.When.NotExists);
             }
         }
 
         public bool Clear()
         {
-            return Wrapper.Database.KeyDelete(Wrapper.GetRealKey(EventsCacheKey));
+            return Wrapper.Database.KeyDelete(EventsCacheKey);
         }
 
         public ICollection<Type> GetEventHandlerTypes<TEvent>() where TEvent : EventBase
         {
             var eventKey = GetEventKey<TEvent>();
-            return Wrapper.Unwrap<List<Type>>(Wrapper.Database.HashGet(Wrapper.GetRealKey(EventsCacheKey), eventKey));
+            return Wrapper.Unwrap<List<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
         }
 
         public string GetEventKey<TEvent>()
@@ -59,7 +66,7 @@ namespace WeihanLi.Redis.Event
         public bool HasSubscriptionsForEvent<TEvent>() where TEvent : EventBase
         {
             var eventKey = GetEventKey<TEvent>();
-            return Wrapper.Database.HashExists(Wrapper.GetRealKey(EventsCacheKey), eventKey);
+            return Wrapper.Database.HashExists(EventsCacheKey, eventKey);
         }
 
         public bool RemoveSubscription<TEvent, TEventHandler>()
@@ -68,16 +75,16 @@ namespace WeihanLi.Redis.Event
         {
             var eventKey = GetEventKey<TEvent>();
             var handlerType = typeof(TEventHandler);
-            if (Wrapper.Database.HashExists(Wrapper.GetRealKey(EventsCacheKey), eventKey))
+            if (Wrapper.Database.HashExists(EventsCacheKey, eventKey))
             {
-                var handlers = Wrapper.Unwrap<List<Type>>(Wrapper.Database.HashGet(Wrapper.GetRealKey(EventsCacheKey), eventKey));
+                var handlers = Wrapper.Unwrap<List<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
 
                 if (!handlers.Contains(handlerType))
                 {
                     return false;
                 }
                 handlers.Remove(handlerType);
-                return Wrapper.Database.HashSet(Wrapper.GetRealKey(EventsCacheKey), eventKey, Wrapper.Wrap(handlers));
+                return Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(handlers));
             }
             else
             {

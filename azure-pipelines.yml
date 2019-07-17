@@ -7,11 +7,7 @@ trigger:
 - '*'
 
 jobs:
-- job: Linux
-
-  pool:
-    vmImage: 'ubuntu-16.04'
-  
+- job: Linux  
   # resources:
   #   containers:
   #   - container: redis
@@ -20,6 +16,9 @@ jobs:
   #   redis: redis
   #   ports:
   #     - 6379/tcp
+
+  pool:
+    vmImage: 'ubuntu-16.04'
 
   steps:
   - script: bash build.sh

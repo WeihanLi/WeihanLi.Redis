@@ -12,15 +12,14 @@ jobs:
   pool:
     vmImage: 'ubuntu-16.04'
   
-  resources:
-    containers:
-    - container: redis
-      image: redis
-
-  services:
-    redis: redis
-    ports:
-      - 6379/tcp
+  # resources:
+  #   containers:
+  #   - container: redis
+  #     image: 'redis:alpine'
+  # services:
+  #   redis: redis
+  #   ports:
+  #     - 6379/tcp
 
   steps:
   - bash: ./build.sh

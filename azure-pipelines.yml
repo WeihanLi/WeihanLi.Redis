@@ -6,8 +6,16 @@
 trigger:
 - '*'
 
+resources:
+  containers:
+  - container: redis
+    image: redis
+
 pool:
   vmImage: 'vs2017-win2016'
+
+services:
+  redis: redis
 
 steps:
 - script: dotnet --info

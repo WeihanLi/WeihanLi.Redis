@@ -44,6 +44,11 @@ namespace WeihanLi.Redis
         public string EventBusChannelPrefix { get; set; } = "WeihanLi.Redis.EventBus";
 
         /// <summary>
+        /// EVentStore CachePrefix
+        /// </summary>
+        public string EventStoreCacheKey { get; set; } = "WeihanLi.Redis.Events";
+
+        /// <summary>
         /// CachePrefix
         /// </summary>
         public string CachePrefix { get; set; } = ApplicationHelper.ApplicationName;

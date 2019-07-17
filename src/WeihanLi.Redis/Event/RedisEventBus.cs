@@ -3,6 +3,7 @@ using WeihanLi.Common;
 using WeihanLi.Common.Event;
 using WeihanLi.Extensions;
 
+// ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
     public class RedisEventBus : IEventBus
@@ -36,14 +37,14 @@ namespace WeihanLi.Redis
             where TEventHandler : IEventHandler<TEvent>
         {
             var channelName = GetChannelName<TEvent>();
-            _subscriber.Subscribe(channelName, (channel, eventMessage) =>
-            {
-                var eventData = eventMessage.ToString().JsonToType<TEvent>();
-                if (DependencyResolver.Current.TryResolveService<TEventHandler>(out var handler))
-                {
-                    handler.Handle(eventData).ConfigureAwait(false);
-                }
-            });
+            _subscriber.Subscribe(channelName, async (channel, eventMessage) =>
+           {
+               var eventData = eventMessage.ToString().JsonToType<TEvent>();
+               if (DependencyResolver.Current.TryResolveService<TEventHandler>(out var handler))
+               {
+                   await handler.Handle(eventData).ConfigureAwait(false);
+               }
+           });
 
             return _eventStore.AddSubscription<TEvent, TEventHandler>();
         }

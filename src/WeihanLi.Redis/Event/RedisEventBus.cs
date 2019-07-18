@@ -20,7 +20,7 @@ namespace WeihanLi.Redis
             _subscriber = connectionMultiplexer.GetSubscriber();
         }
 
-        private string GetChannelName<TEvent>() where TEvent : EventBase
+        private string GetChannelName<TEvent>() where TEvent : IEventBase
         {
             var eventKey = _eventStore.GetEventKey<TEvent>();
             var channelName = $"{RedisManager.RedisConfiguration.EventBusChannelPrefix}{RedisManager.RedisConfiguration.KeySeparator}{eventKey}";
@@ -28,7 +28,7 @@ namespace WeihanLi.Redis
             return channelName;
         }
 
-        public bool Publish<TEvent>(TEvent @event) where TEvent : EventBase
+        public bool Publish<TEvent>(TEvent @event) where TEvent : IEventBase
         {
             var channelName = GetChannelName<TEvent>();
             var result = _subscriber.Publish(channelName, @event.ToJson());
@@ -36,7 +36,7 @@ namespace WeihanLi.Redis
         }
 
         public bool Subscribe<TEvent, TEventHandler>()
-            where TEvent : EventBase
+            where TEvent : IEventBase
             where TEventHandler : IEventHandler<TEvent>
         {
             var channelName = GetChannelName<TEvent>();
@@ -54,7 +54,7 @@ namespace WeihanLi.Redis
         }
 
         public bool Unsubscribe<TEvent, TEventHandler>()
-            where TEvent : EventBase
+            where TEvent : IEventBase
             where TEventHandler : IEventHandler<TEvent>
         {
             var channelName = GetChannelName<TEvent>();

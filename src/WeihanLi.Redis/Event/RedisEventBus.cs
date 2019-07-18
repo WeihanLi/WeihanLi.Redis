@@ -1,6 +1,7 @@
-﻿using StackExchange.Redis;
-using WeihanLi.Common;
+﻿using System;
+using StackExchange.Redis;
 using WeihanLi.Common.Event;
+using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 
 // ReSharper disable once CheckNamespace
@@ -10,10 +11,12 @@ namespace WeihanLi.Redis
     {
         private readonly IEventStore _eventStore;
         private readonly ISubscriber _subscriber;
+        private readonly IServiceProvider _serviceProvider;
 
-        public RedisEventBus(IEventStore eventStore, IConnectionMultiplexer connectionMultiplexer)
+        public RedisEventBus(IEventStore eventStore, IConnectionMultiplexer connectionMultiplexer, IServiceProvider serviceProvider)
         {
             _eventStore = eventStore;
+            _serviceProvider = serviceProvider;
             _subscriber = connectionMultiplexer.GetSubscriber();
         }
 
@@ -40,7 +43,8 @@ namespace WeihanLi.Redis
             _subscriber.Subscribe(channelName, async (channel, eventMessage) =>
            {
                var eventData = eventMessage.ToString().JsonToType<TEvent>();
-               if (DependencyResolver.Current.TryResolveService<TEventHandler>(out var handler))
+               var handler = _serviceProvider.GetServiceOrCreateInstance<TEventHandler>();
+               if (null != handler)
                {
                    await handler.Handle(eventData).ConfigureAwait(false);
                }

@@ -24,6 +24,7 @@ jobs:
   - script: bash build.sh
     displayName: 'Build Script'
 
+
 - job: Windows
 
   pool:

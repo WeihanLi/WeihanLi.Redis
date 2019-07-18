@@ -256,6 +256,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool AddSubscription&lt;TEvent, TEventHandler&gt;()
+
     where TEvent : EventBase where TEventHandler : IEventHandler&lt;TEvent&gt;</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
@@ -336,6 +337,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ICollection&lt;Type&gt; GetEventHandlerTypes&lt;TEvent&gt;()
+
     where TEvent : EventBase</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
@@ -427,6 +429,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool HasSubscriptionsForEvent&lt;TEvent&gt;()
+
     where TEvent : EventBase</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
@@ -473,6 +476,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool RemoveSubscription&lt;TEvent, TEventHandler&gt;()
+
     where TEvent : EventBase where TEventHandler : IEventHandler&lt;TEvent&gt;</code></pre>
   </div>
   <h5 class="returns">Returns</h5>

@@ -1,0 +1,739 @@
+### YamlMime:ManagedReference
+items:
+- uid: WeihanLi.Redis.RedisEventBus
+  commentId: T:WeihanLi.Redis.RedisEventBus
+  id: RedisEventBus
+  parent: WeihanLi.Redis
+  children:
+  - WeihanLi.Redis.RedisEventBus.#ctor(WeihanLi.Common.Event.IEventStore,StackExchange.Redis.IConnectionMultiplexer,System.IServiceProvider)
+  - WeihanLi.Redis.RedisEventBus.Publish``1(``0)
+  - WeihanLi.Redis.RedisEventBus.Subscribe``2
+  - WeihanLi.Redis.RedisEventBus.Unsubscribe``2
+  langs:
+  - csharp
+  - vb
+  name: RedisEventBus
+  nameWithType: RedisEventBus
+  fullName: WeihanLi.Redis.RedisEventBus
+  type: Class
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Event/RedisEventBus.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/WeihanLi.Redis.git
+    id: RedisEventBus
+    path: src/WeihanLi.Redis/Event/RedisEventBus.cs
+    startLine: 9
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: 'public class RedisEventBus : IEventBus'
+    content.vb: >-
+      Public Class RedisEventBus
+          Implements IEventBus
+  inheritance:
+  - System.Object
+  implements:
+  - WeihanLi.Common.Event.IEventBus
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: WeihanLi.Redis.RedisEventBus.#ctor(WeihanLi.Common.Event.IEventStore,StackExchange.Redis.IConnectionMultiplexer,System.IServiceProvider)
+  commentId: M:WeihanLi.Redis.RedisEventBus.#ctor(WeihanLi.Common.Event.IEventStore,StackExchange.Redis.IConnectionMultiplexer,System.IServiceProvider)
+  id: '#ctor(WeihanLi.Common.Event.IEventStore,StackExchange.Redis.IConnectionMultiplexer,System.IServiceProvider)'
+  parent: WeihanLi.Redis.RedisEventBus
+  langs:
+  - csharp
+  - vb
+  name: RedisEventBus(IEventStore, IConnectionMultiplexer, IServiceProvider)
+  nameWithType: RedisEventBus.RedisEventBus(IEventStore, IConnectionMultiplexer, IServiceProvider)
+  fullName: WeihanLi.Redis.RedisEventBus.RedisEventBus(WeihanLi.Common.Event.IEventStore, StackExchange.Redis.IConnectionMultiplexer, System.IServiceProvider)
+  type: Constructor
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Event/RedisEventBus.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/WeihanLi.Redis.git
+    id: .ctor
+    path: src/WeihanLi.Redis/Event/RedisEventBus.cs
+    startLine: 15
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: public RedisEventBus(IEventStore eventStore, IConnectionMultiplexer connectionMultiplexer, IServiceProvider serviceProvider)
+    parameters:
+    - id: eventStore
+      type: WeihanLi.Common.Event.IEventStore
+    - id: connectionMultiplexer
+      type: StackExchange.Redis.IConnectionMultiplexer
+    - id: serviceProvider
+      type: System.IServiceProvider
+    content.vb: Public Sub New(eventStore As IEventStore, connectionMultiplexer As IConnectionMultiplexer, serviceProvider As IServiceProvider)
+  overload: WeihanLi.Redis.RedisEventBus.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: WeihanLi.Redis.RedisEventBus.Publish``1(``0)
+  commentId: M:WeihanLi.Redis.RedisEventBus.Publish``1(``0)
+  id: Publish``1(``0)
+  parent: WeihanLi.Redis.RedisEventBus
+  langs:
+  - csharp
+  - vb
+  name: Publish<TEvent>(TEvent)
+  nameWithType: RedisEventBus.Publish<TEvent>(TEvent)
+  fullName: WeihanLi.Redis.RedisEventBus.Publish<TEvent>(TEvent)
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Event/RedisEventBus.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/WeihanLi.Redis.git
+    id: Publish
+    path: src/WeihanLi.Redis/Event/RedisEventBus.cs
+    startLine: 30
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: >-
+      public bool Publish<TEvent>(TEvent event)
+          where TEvent : EventBase
+    parameters:
+    - id: event
+      type: '{TEvent}'
+    typeParameters:
+    - id: TEvent
+    return:
+      type: System.Boolean
+    content.vb: Public Function Publish(Of TEvent As EventBase)(event As TEvent) As Boolean
+  overload: WeihanLi.Redis.RedisEventBus.Publish*
+  implements:
+  - WeihanLi.Common.Event.IEventBus.Publish``1({TEvent})
+  nameWithType.vb: RedisEventBus.Publish(Of TEvent)(TEvent)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: WeihanLi.Redis.RedisEventBus.Publish(Of TEvent)(TEvent)
+  name.vb: Publish(Of TEvent)(TEvent)
+- uid: WeihanLi.Redis.RedisEventBus.Subscribe``2
+  commentId: M:WeihanLi.Redis.RedisEventBus.Subscribe``2
+  id: Subscribe``2
+  parent: WeihanLi.Redis.RedisEventBus
+  langs:
+  - csharp
+  - vb
+  name: Subscribe<TEvent, TEventHandler>()
+  nameWithType: RedisEventBus.Subscribe<TEvent, TEventHandler>()
+  fullName: WeihanLi.Redis.RedisEventBus.Subscribe<TEvent, TEventHandler>()
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Event/RedisEventBus.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/WeihanLi.Redis.git
+    id: Subscribe
+    path: src/WeihanLi.Redis/Event/RedisEventBus.cs
+    startLine: 37
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: >-
+      public bool Subscribe<TEvent, TEventHandler>()
+          where TEvent : EventBase where TEventHandler : IEventHandler<TEvent>
+    typeParameters:
+    - id: TEvent
+    - id: TEventHandler
+    return:
+      type: System.Boolean
+    content.vb: Public Function Subscribe(Of TEvent As EventBase, TEventHandler As IEventHandler(Of TEvent)) As Boolean
+  overload: WeihanLi.Redis.RedisEventBus.Subscribe*
+  implements:
+  - WeihanLi.Common.Event.IEventBus.Subscribe``2
+  nameWithType.vb: RedisEventBus.Subscribe(Of TEvent, TEventHandler)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: WeihanLi.Redis.RedisEventBus.Subscribe(Of TEvent, TEventHandler)()
+  name.vb: Subscribe(Of TEvent, TEventHandler)()
+- uid: WeihanLi.Redis.RedisEventBus.Unsubscribe``2
+  commentId: M:WeihanLi.Redis.RedisEventBus.Unsubscribe``2
+  id: Unsubscribe``2
+  parent: WeihanLi.Redis.RedisEventBus
+  langs:
+  - csharp
+  - vb
+  name: Unsubscribe<TEvent, TEventHandler>()
+  nameWithType: RedisEventBus.Unsubscribe<TEvent, TEventHandler>()
+  fullName: WeihanLi.Redis.RedisEventBus.Unsubscribe<TEvent, TEventHandler>()
+  type: Method
+  source:
+    remote:
+      path: src/WeihanLi.Redis/Event/RedisEventBus.cs
+      branch: dev
+      repo: https://github.com/WeihanLi/WeihanLi.Redis.git
+    id: Unsubscribe
+    path: src/WeihanLi.Redis/Event/RedisEventBus.cs
+    startLine: 55
+  assemblies:
+  - WeihanLi.Redis
+  namespace: WeihanLi.Redis
+  syntax:
+    content: >-
+      public bool Unsubscribe<TEvent, TEventHandler>()
+          where TEvent : EventBase where TEventHandler : IEventHandler<TEvent>
+    typeParameters:
+    - id: TEvent
+    - id: TEventHandler
+    return:
+      type: System.Boolean
+    content.vb: Public Function Unsubscribe(Of TEvent As EventBase, TEventHandler As IEventHandler(Of TEvent)) As Boolean
+  overload: WeihanLi.Redis.RedisEventBus.Unsubscribe*
+  implements:
+  - WeihanLi.Common.Event.IEventBus.Unsubscribe``2
+  nameWithType.vb: RedisEventBus.Unsubscribe(Of TEvent, TEventHandler)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: WeihanLi.Redis.RedisEventBus.Unsubscribe(Of TEvent, TEventHandler)()
+  name.vb: Unsubscribe(Of TEvent, TEventHandler)()
+references:
+- uid: WeihanLi.Redis
+  commentId: N:WeihanLi.Redis
+  name: WeihanLi.Redis
+  nameWithType: WeihanLi.Redis
+  fullName: WeihanLi.Redis
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: WeihanLi.Common.Event.IEventBus
+  commentId: T:WeihanLi.Common.Event.IEventBus
+  parent: WeihanLi.Common.Event
+  isExternal: true
+  name: IEventBus
+  nameWithType: IEventBus
+  fullName: WeihanLi.Common.Event.IEventBus
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: WeihanLi.Common.Event
+  commentId: N:WeihanLi.Common.Event
+  isExternal: true
+  name: WeihanLi.Common.Event
+  nameWithType: WeihanLi.Common.Event
+  fullName: WeihanLi.Common.Event
+- uid: WeihanLi.Redis.RedisEventBus.#ctor*
+  commentId: Overload:WeihanLi.Redis.RedisEventBus.#ctor
+  name: RedisEventBus
+  nameWithType: RedisEventBus.RedisEventBus
+  fullName: WeihanLi.Redis.RedisEventBus.RedisEventBus
+- uid: WeihanLi.Common.Event.IEventStore
+  commentId: T:WeihanLi.Common.Event.IEventStore
+  parent: WeihanLi.Common.Event
+  isExternal: true
+  name: IEventStore
+  nameWithType: IEventStore
+  fullName: WeihanLi.Common.Event.IEventStore
+- uid: StackExchange.Redis.IConnectionMultiplexer
+  commentId: T:StackExchange.Redis.IConnectionMultiplexer
+  parent: StackExchange.Redis
+  isExternal: true
+  name: IConnectionMultiplexer
+  nameWithType: IConnectionMultiplexer
+  fullName: StackExchange.Redis.IConnectionMultiplexer
+- uid: System.IServiceProvider
+  commentId: T:System.IServiceProvider
+  parent: System
+  isExternal: true
+  name: IServiceProvider
+  nameWithType: IServiceProvider
+  fullName: System.IServiceProvider
+- uid: StackExchange.Redis
+  commentId: N:StackExchange.Redis
+  isExternal: true
+  name: StackExchange.Redis
+  nameWithType: StackExchange.Redis
+  fullName: StackExchange.Redis
+- uid: WeihanLi.Redis.RedisEventBus.Publish*
+  commentId: Overload:WeihanLi.Redis.RedisEventBus.Publish
+  name: Publish
+  nameWithType: RedisEventBus.Publish
+  fullName: WeihanLi.Redis.RedisEventBus.Publish
+- uid: WeihanLi.Common.Event.IEventBus.Publish``1({TEvent})
+  commentId: M:WeihanLi.Common.Event.IEventBus.Publish``1(``0)
+  parent: WeihanLi.Common.Event.IEventBus
+  definition: WeihanLi.Common.Event.IEventBus.Publish``1(``0)
+  name: Publish<TEvent>(TEvent)
+  nameWithType: IEventBus.Publish<TEvent>(TEvent)
+  fullName: WeihanLi.Common.Event.IEventBus.Publish<TEvent>(TEvent)
+  nameWithType.vb: IEventBus.Publish(Of TEvent)(TEvent)
+  fullName.vb: WeihanLi.Common.Event.IEventBus.Publish(Of TEvent)(TEvent)
+  name.vb: Publish(Of TEvent)(TEvent)
+  spec.csharp:
+  - uid: WeihanLi.Common.Event.IEventBus.Publish``1(``0)
+    name: Publish<TEvent>
+    nameWithType: IEventBus.Publish<TEvent>
+    fullName: WeihanLi.Common.Event.IEventBus.Publish<TEvent>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TEvent
+    nameWithType: TEvent
+    fullName: TEvent
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: WeihanLi.Common.Event.IEventBus.Publish``1(``0)
+    name: Publish(Of TEvent)
+    nameWithType: IEventBus.Publish(Of TEvent)
+    fullName: WeihanLi.Common.Event.IEventBus.Publish(Of TEvent)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TEvent
+    nameWithType: TEvent
+    fullName: TEvent
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{TEvent}'
+  commentId: '!:TEvent'
+  definition: TEvent
+  name: TEvent
+  nameWithType: TEvent
+  fullName: TEvent
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: WeihanLi.Common.Event.IEventBus.Publish``1(``0)
+  commentId: M:WeihanLi.Common.Event.IEventBus.Publish``1(``0)
+  isExternal: true
+  name: Publish<TEvent>(TEvent)
+  nameWithType: IEventBus.Publish<TEvent>(TEvent)
+  fullName: WeihanLi.Common.Event.IEventBus.Publish<TEvent>(TEvent)
+  nameWithType.vb: IEventBus.Publish(Of TEvent)(TEvent)
+  fullName.vb: WeihanLi.Common.Event.IEventBus.Publish(Of TEvent)(TEvent)
+  name.vb: Publish(Of TEvent)(TEvent)
+  spec.csharp:
+  - uid: WeihanLi.Common.Event.IEventBus.Publish``1(``0)
+    name: Publish<TEvent>
+    nameWithType: IEventBus.Publish<TEvent>
+    fullName: WeihanLi.Common.Event.IEventBus.Publish<TEvent>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TEvent
+    nameWithType: TEvent
+    fullName: TEvent
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: WeihanLi.Common.Event.IEventBus.Publish``1(``0)
+    name: Publish(Of TEvent)
+    nameWithType: IEventBus.Publish(Of TEvent)
+    fullName: WeihanLi.Common.Event.IEventBus.Publish(Of TEvent)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TEvent
+    nameWithType: TEvent
+    fullName: TEvent
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TEvent
+  name: TEvent
+  nameWithType: TEvent
+  fullName: TEvent
+- uid: WeihanLi.Redis.RedisEventBus.Subscribe*
+  commentId: Overload:WeihanLi.Redis.RedisEventBus.Subscribe
+  name: Subscribe
+  nameWithType: RedisEventBus.Subscribe
+  fullName: WeihanLi.Redis.RedisEventBus.Subscribe
+- uid: WeihanLi.Common.Event.IEventBus.Subscribe``2
+  commentId: M:WeihanLi.Common.Event.IEventBus.Subscribe``2
+  parent: WeihanLi.Common.Event.IEventBus
+  isExternal: true
+  name: Subscribe<TEvent, TEventHandler>()
+  nameWithType: IEventBus.Subscribe<TEvent, TEventHandler>()
+  fullName: WeihanLi.Common.Event.IEventBus.Subscribe<TEvent, TEventHandler>()
+  nameWithType.vb: IEventBus.Subscribe(Of TEvent, TEventHandler)()
+  fullName.vb: WeihanLi.Common.Event.IEventBus.Subscribe(Of TEvent, TEventHandler)()
+  name.vb: Subscribe(Of TEvent, TEventHandler)()
+  spec.csharp:
+  - uid: WeihanLi.Common.Event.IEventBus.Subscribe``2
+    name: Subscribe<TEvent, TEventHandler>
+    nameWithType: IEventBus.Subscribe<TEvent, TEventHandler>
+    fullName: WeihanLi.Common.Event.IEventBus.Subscribe<TEvent, TEventHandler>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: WeihanLi.Common.Event.IEventBus.Subscribe``2
+    name: Subscribe(Of TEvent, TEventHandler)
+    nameWithType: IEventBus.Subscribe(Of TEvent, TEventHandler)
+    fullName: WeihanLi.Common.Event.IEventBus.Subscribe(Of TEvent, TEventHandler)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: WeihanLi.Redis.RedisEventBus.Unsubscribe*
+  commentId: Overload:WeihanLi.Redis.RedisEventBus.Unsubscribe
+  name: Unsubscribe
+  nameWithType: RedisEventBus.Unsubscribe
+  fullName: WeihanLi.Redis.RedisEventBus.Unsubscribe
+- uid: WeihanLi.Common.Event.IEventBus.Unsubscribe``2
+  commentId: M:WeihanLi.Common.Event.IEventBus.Unsubscribe``2
+  parent: WeihanLi.Common.Event.IEventBus
+  isExternal: true
+  name: Unsubscribe<TEvent, TEventHandler>()
+  nameWithType: IEventBus.Unsubscribe<TEvent, TEventHandler>()
+  fullName: WeihanLi.Common.Event.IEventBus.Unsubscribe<TEvent, TEventHandler>()
+  nameWithType.vb: IEventBus.Unsubscribe(Of TEvent, TEventHandler)()
+  fullName.vb: WeihanLi.Common.Event.IEventBus.Unsubscribe(Of TEvent, TEventHandler)()
+  name.vb: Unsubscribe(Of TEvent, TEventHandler)()
+  spec.csharp:
+  - uid: WeihanLi.Common.Event.IEventBus.Unsubscribe``2
+    name: Unsubscribe<TEvent, TEventHandler>
+    nameWithType: IEventBus.Unsubscribe<TEvent, TEventHandler>
+    fullName: WeihanLi.Common.Event.IEventBus.Unsubscribe<TEvent, TEventHandler>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: WeihanLi.Common.Event.IEventBus.Unsubscribe``2
+    name: Unsubscribe(Of TEvent, TEventHandler)
+    nameWithType: IEventBus.Unsubscribe(Of TEvent, TEventHandler)
+    fullName: WeihanLi.Common.Event.IEventBus.Unsubscribe(Of TEvent, TEventHandler)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -7,6 +7,146 @@ references:
   commentId: N:WeihanLi.Redis
   fullName: WeihanLi.Redis
   nameWithType: WeihanLi.Redis
+- uid: WeihanLi.Redis.EventStoreInRedis
+  name: EventStoreInRedis
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html
+  commentId: T:WeihanLi.Redis.EventStoreInRedis
+  fullName: WeihanLi.Redis.EventStoreInRedis
+  nameWithType: EventStoreInRedis
+- uid: WeihanLi.Redis.EventStoreInRedis.#ctor(Microsoft.Extensions.Logging.ILogger{WeihanLi.Redis.EventStoreInRedis})
+  name: EventStoreInRedis(ILogger<EventStoreInRedis>)
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis__ctor_Microsoft_Extensions_Logging_ILogger_WeihanLi_Redis_EventStoreInRedis__
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.#ctor(Microsoft.Extensions.Logging.ILogger{WeihanLi.Redis.EventStoreInRedis})
+  name.vb: EventStoreInRedis(ILogger(Of EventStoreInRedis))
+  fullName: WeihanLi.Redis.EventStoreInRedis.EventStoreInRedis(Microsoft.Extensions.Logging.ILogger<WeihanLi.Redis.EventStoreInRedis>)
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.EventStoreInRedis(Microsoft.Extensions.Logging.ILogger(Of WeihanLi.Redis.EventStoreInRedis))
+  nameWithType: EventStoreInRedis.EventStoreInRedis(ILogger<EventStoreInRedis>)
+  nameWithType.vb: EventStoreInRedis.EventStoreInRedis(ILogger(Of EventStoreInRedis))
+- uid: WeihanLi.Redis.EventStoreInRedis.#ctor*
+  name: EventStoreInRedis
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis__ctor_
+  commentId: Overload:WeihanLi.Redis.EventStoreInRedis.#ctor
+  isSpec: "True"
+  fullName: WeihanLi.Redis.EventStoreInRedis.EventStoreInRedis
+  nameWithType: EventStoreInRedis.EventStoreInRedis
+- uid: WeihanLi.Redis.EventStoreInRedis.AddSubscription*
+  name: AddSubscription
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_AddSubscription_
+  commentId: Overload:WeihanLi.Redis.EventStoreInRedis.AddSubscription
+  isSpec: "True"
+  fullName: WeihanLi.Redis.EventStoreInRedis.AddSubscription
+  nameWithType: EventStoreInRedis.AddSubscription
+- uid: WeihanLi.Redis.EventStoreInRedis.AddSubscription``2
+  name: AddSubscription<TEvent, TEventHandler>()
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_AddSubscription__2
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.AddSubscription``2
+  name.vb: AddSubscription(Of TEvent, TEventHandler)()
+  fullName: WeihanLi.Redis.EventStoreInRedis.AddSubscription<TEvent, TEventHandler>()
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.AddSubscription(Of TEvent, TEventHandler)()
+  nameWithType: EventStoreInRedis.AddSubscription<TEvent, TEventHandler>()
+  nameWithType.vb: EventStoreInRedis.AddSubscription(Of TEvent, TEventHandler)()
+- uid: WeihanLi.Redis.EventStoreInRedis.Clear
+  name: Clear()
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_Clear
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.Clear
+  fullName: WeihanLi.Redis.EventStoreInRedis.Clear()
+  nameWithType: EventStoreInRedis.Clear()
+- uid: WeihanLi.Redis.EventStoreInRedis.Clear*
+  name: Clear
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_Clear_
+  commentId: Overload:WeihanLi.Redis.EventStoreInRedis.Clear
+  isSpec: "True"
+  fullName: WeihanLi.Redis.EventStoreInRedis.Clear
+  nameWithType: EventStoreInRedis.Clear
+- uid: WeihanLi.Redis.EventStoreInRedis.EventsCacheKey
+  name: EventsCacheKey
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_EventsCacheKey
+  commentId: F:WeihanLi.Redis.EventStoreInRedis.EventsCacheKey
+  fullName: WeihanLi.Redis.EventStoreInRedis.EventsCacheKey
+  nameWithType: EventStoreInRedis.EventsCacheKey
+- uid: WeihanLi.Redis.EventStoreInRedis.GetEventHandlerTypes*
+  name: GetEventHandlerTypes
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_GetEventHandlerTypes_
+  commentId: Overload:WeihanLi.Redis.EventStoreInRedis.GetEventHandlerTypes
+  isSpec: "True"
+  fullName: WeihanLi.Redis.EventStoreInRedis.GetEventHandlerTypes
+  nameWithType: EventStoreInRedis.GetEventHandlerTypes
+- uid: WeihanLi.Redis.EventStoreInRedis.GetEventHandlerTypes``1
+  name: GetEventHandlerTypes<TEvent>()
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_GetEventHandlerTypes__1
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.GetEventHandlerTypes``1
+  name.vb: GetEventHandlerTypes(Of TEvent)()
+  fullName: WeihanLi.Redis.EventStoreInRedis.GetEventHandlerTypes<TEvent>()
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.GetEventHandlerTypes(Of TEvent)()
+  nameWithType: EventStoreInRedis.GetEventHandlerTypes<TEvent>()
+  nameWithType.vb: EventStoreInRedis.GetEventHandlerTypes(Of TEvent)()
+- uid: WeihanLi.Redis.EventStoreInRedis.GetEventKey*
+  name: GetEventKey
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_GetEventKey_
+  commentId: Overload:WeihanLi.Redis.EventStoreInRedis.GetEventKey
+  isSpec: "True"
+  fullName: WeihanLi.Redis.EventStoreInRedis.GetEventKey
+  nameWithType: EventStoreInRedis.GetEventKey
+- uid: WeihanLi.Redis.EventStoreInRedis.GetEventKey``1
+  name: GetEventKey<TEvent>()
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_GetEventKey__1
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.GetEventKey``1
+  name.vb: GetEventKey(Of TEvent)()
+  fullName: WeihanLi.Redis.EventStoreInRedis.GetEventKey<TEvent>()
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.GetEventKey(Of TEvent)()
+  nameWithType: EventStoreInRedis.GetEventKey<TEvent>()
+  nameWithType.vb: EventStoreInRedis.GetEventKey(Of TEvent)()
+- uid: WeihanLi.Redis.EventStoreInRedis.HasSubscriptionsForEvent*
+  name: HasSubscriptionsForEvent
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_HasSubscriptionsForEvent_
+  commentId: Overload:WeihanLi.Redis.EventStoreInRedis.HasSubscriptionsForEvent
+  isSpec: "True"
+  fullName: WeihanLi.Redis.EventStoreInRedis.HasSubscriptionsForEvent
+  nameWithType: EventStoreInRedis.HasSubscriptionsForEvent
+- uid: WeihanLi.Redis.EventStoreInRedis.HasSubscriptionsForEvent``1
+  name: HasSubscriptionsForEvent<TEvent>()
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_HasSubscriptionsForEvent__1
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.HasSubscriptionsForEvent``1
+  name.vb: HasSubscriptionsForEvent(Of TEvent)()
+  fullName: WeihanLi.Redis.EventStoreInRedis.HasSubscriptionsForEvent<TEvent>()
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.HasSubscriptionsForEvent(Of TEvent)()
+  nameWithType: EventStoreInRedis.HasSubscriptionsForEvent<TEvent>()
+  nameWithType.vb: EventStoreInRedis.HasSubscriptionsForEvent(Of TEvent)()
+- uid: WeihanLi.Redis.EventStoreInRedis.IsEmpty
+  name: IsEmpty
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_IsEmpty
+  commentId: P:WeihanLi.Redis.EventStoreInRedis.IsEmpty
+  fullName: WeihanLi.Redis.EventStoreInRedis.IsEmpty
+  nameWithType: EventStoreInRedis.IsEmpty
+- uid: WeihanLi.Redis.EventStoreInRedis.IsEmpty*
+  name: IsEmpty
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_IsEmpty_
+  commentId: Overload:WeihanLi.Redis.EventStoreInRedis.IsEmpty
+  isSpec: "True"
+  fullName: WeihanLi.Redis.EventStoreInRedis.IsEmpty
+  nameWithType: EventStoreInRedis.IsEmpty
+- uid: WeihanLi.Redis.EventStoreInRedis.Logger
+  name: Logger
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_Logger
+  commentId: F:WeihanLi.Redis.EventStoreInRedis.Logger
+  fullName: WeihanLi.Redis.EventStoreInRedis.Logger
+  nameWithType: EventStoreInRedis.Logger
+- uid: WeihanLi.Redis.EventStoreInRedis.RemoveSubscription*
+  name: RemoveSubscription
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_RemoveSubscription_
+  commentId: Overload:WeihanLi.Redis.EventStoreInRedis.RemoveSubscription
+  isSpec: "True"
+  fullName: WeihanLi.Redis.EventStoreInRedis.RemoveSubscription
+  nameWithType: EventStoreInRedis.RemoveSubscription
+- uid: WeihanLi.Redis.EventStoreInRedis.RemoveSubscription``2
+  name: RemoveSubscription<TEvent, TEventHandler>()
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_RemoveSubscription__2
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.RemoveSubscription``2
+  name.vb: RemoveSubscription(Of TEvent, TEventHandler)()
+  fullName: WeihanLi.Redis.EventStoreInRedis.RemoveSubscription<TEvent, TEventHandler>()
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.RemoveSubscription(Of TEvent, TEventHandler)()
+  nameWithType: EventStoreInRedis.RemoveSubscription<TEvent, TEventHandler>()
+  nameWithType.vb: EventStoreInRedis.RemoveSubscription(Of TEvent, TEventHandler)()
 - uid: WeihanLi.Redis.ICacheClient
   name: ICacheClient
   href: docs/api/WeihanLi.Redis.ICacheClient.html
@@ -4351,6 +4491,32 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.RedisConfigurationOptions.EnableCompress
   nameWithType: RedisConfigurationOptions.EnableCompress
+- uid: WeihanLi.Redis.RedisConfigurationOptions.EventBusChannelPrefix
+  name: EventBusChannelPrefix
+  href: docs/api/WeihanLi.Redis.RedisConfigurationOptions.html#WeihanLi_Redis_RedisConfigurationOptions_EventBusChannelPrefix
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.EventBusChannelPrefix
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.EventBusChannelPrefix
+  nameWithType: RedisConfigurationOptions.EventBusChannelPrefix
+- uid: WeihanLi.Redis.RedisConfigurationOptions.EventBusChannelPrefix*
+  name: EventBusChannelPrefix
+  href: docs/api/WeihanLi.Redis.RedisConfigurationOptions.html#WeihanLi_Redis_RedisConfigurationOptions_EventBusChannelPrefix_
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.EventBusChannelPrefix
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.EventBusChannelPrefix
+  nameWithType: RedisConfigurationOptions.EventBusChannelPrefix
+- uid: WeihanLi.Redis.RedisConfigurationOptions.EventStoreCacheKey
+  name: EventStoreCacheKey
+  href: docs/api/WeihanLi.Redis.RedisConfigurationOptions.html#WeihanLi_Redis_RedisConfigurationOptions_EventStoreCacheKey
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.EventStoreCacheKey
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.EventStoreCacheKey
+  nameWithType: RedisConfigurationOptions.EventStoreCacheKey
+- uid: WeihanLi.Redis.RedisConfigurationOptions.EventStoreCacheKey*
+  name: EventStoreCacheKey
+  href: docs/api/WeihanLi.Redis.RedisConfigurationOptions.html#WeihanLi_Redis_RedisConfigurationOptions_EventStoreCacheKey_
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.EventStoreCacheKey
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.EventStoreCacheKey
+  nameWithType: RedisConfigurationOptions.EventStoreCacheKey
 - uid: WeihanLi.Redis.RedisConfigurationOptions.KeySeparator
   name: KeySeparator
   href: docs/api/WeihanLi.Redis.RedisConfigurationOptions.html#WeihanLi_Redis_RedisConfigurationOptions_KeySeparator
@@ -4565,6 +4731,73 @@ references:
   commentId: F:WeihanLi.Redis.RedisDataType.Stack
   fullName: WeihanLi.Redis.RedisDataType.Stack
   nameWithType: RedisDataType.Stack
+- uid: WeihanLi.Redis.RedisEventBus
+  name: RedisEventBus
+  href: docs/api/WeihanLi.Redis.RedisEventBus.html
+  commentId: T:WeihanLi.Redis.RedisEventBus
+  fullName: WeihanLi.Redis.RedisEventBus
+  nameWithType: RedisEventBus
+- uid: WeihanLi.Redis.RedisEventBus.#ctor(WeihanLi.Common.Event.IEventStore,StackExchange.Redis.IConnectionMultiplexer,System.IServiceProvider)
+  name: RedisEventBus(IEventStore, IConnectionMultiplexer, IServiceProvider)
+  href: docs/api/WeihanLi.Redis.RedisEventBus.html#WeihanLi_Redis_RedisEventBus__ctor_WeihanLi_Common_Event_IEventStore_StackExchange_Redis_IConnectionMultiplexer_System_IServiceProvider_
+  commentId: M:WeihanLi.Redis.RedisEventBus.#ctor(WeihanLi.Common.Event.IEventStore,StackExchange.Redis.IConnectionMultiplexer,System.IServiceProvider)
+  fullName: WeihanLi.Redis.RedisEventBus.RedisEventBus(WeihanLi.Common.Event.IEventStore, StackExchange.Redis.IConnectionMultiplexer, System.IServiceProvider)
+  nameWithType: RedisEventBus.RedisEventBus(IEventStore, IConnectionMultiplexer, IServiceProvider)
+- uid: WeihanLi.Redis.RedisEventBus.#ctor*
+  name: RedisEventBus
+  href: docs/api/WeihanLi.Redis.RedisEventBus.html#WeihanLi_Redis_RedisEventBus__ctor_
+  commentId: Overload:WeihanLi.Redis.RedisEventBus.#ctor
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisEventBus.RedisEventBus
+  nameWithType: RedisEventBus.RedisEventBus
+- uid: WeihanLi.Redis.RedisEventBus.Publish*
+  name: Publish
+  href: docs/api/WeihanLi.Redis.RedisEventBus.html#WeihanLi_Redis_RedisEventBus_Publish_
+  commentId: Overload:WeihanLi.Redis.RedisEventBus.Publish
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisEventBus.Publish
+  nameWithType: RedisEventBus.Publish
+- uid: WeihanLi.Redis.RedisEventBus.Publish``1(``0)
+  name: Publish<TEvent>(TEvent)
+  href: docs/api/WeihanLi.Redis.RedisEventBus.html#WeihanLi_Redis_RedisEventBus_Publish__1___0_
+  commentId: M:WeihanLi.Redis.RedisEventBus.Publish``1(``0)
+  name.vb: Publish(Of TEvent)(TEvent)
+  fullName: WeihanLi.Redis.RedisEventBus.Publish<TEvent>(TEvent)
+  fullName.vb: WeihanLi.Redis.RedisEventBus.Publish(Of TEvent)(TEvent)
+  nameWithType: RedisEventBus.Publish<TEvent>(TEvent)
+  nameWithType.vb: RedisEventBus.Publish(Of TEvent)(TEvent)
+- uid: WeihanLi.Redis.RedisEventBus.Subscribe*
+  name: Subscribe
+  href: docs/api/WeihanLi.Redis.RedisEventBus.html#WeihanLi_Redis_RedisEventBus_Subscribe_
+  commentId: Overload:WeihanLi.Redis.RedisEventBus.Subscribe
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisEventBus.Subscribe
+  nameWithType: RedisEventBus.Subscribe
+- uid: WeihanLi.Redis.RedisEventBus.Subscribe``2
+  name: Subscribe<TEvent, TEventHandler>()
+  href: docs/api/WeihanLi.Redis.RedisEventBus.html#WeihanLi_Redis_RedisEventBus_Subscribe__2
+  commentId: M:WeihanLi.Redis.RedisEventBus.Subscribe``2
+  name.vb: Subscribe(Of TEvent, TEventHandler)()
+  fullName: WeihanLi.Redis.RedisEventBus.Subscribe<TEvent, TEventHandler>()
+  fullName.vb: WeihanLi.Redis.RedisEventBus.Subscribe(Of TEvent, TEventHandler)()
+  nameWithType: RedisEventBus.Subscribe<TEvent, TEventHandler>()
+  nameWithType.vb: RedisEventBus.Subscribe(Of TEvent, TEventHandler)()
+- uid: WeihanLi.Redis.RedisEventBus.Unsubscribe*
+  name: Unsubscribe
+  href: docs/api/WeihanLi.Redis.RedisEventBus.html#WeihanLi_Redis_RedisEventBus_Unsubscribe_
+  commentId: Overload:WeihanLi.Redis.RedisEventBus.Unsubscribe
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisEventBus.Unsubscribe
+  nameWithType: RedisEventBus.Unsubscribe
+- uid: WeihanLi.Redis.RedisEventBus.Unsubscribe``2
+  name: Unsubscribe<TEvent, TEventHandler>()
+  href: docs/api/WeihanLi.Redis.RedisEventBus.html#WeihanLi_Redis_RedisEventBus_Unsubscribe__2
+  commentId: M:WeihanLi.Redis.RedisEventBus.Unsubscribe``2
+  name.vb: Unsubscribe(Of TEvent, TEventHandler)()
+  fullName: WeihanLi.Redis.RedisEventBus.Unsubscribe<TEvent, TEventHandler>()
+  fullName.vb: WeihanLi.Redis.RedisEventBus.Unsubscribe(Of TEvent, TEventHandler)()
+  nameWithType: RedisEventBus.Unsubscribe<TEvent, TEventHandler>()
+  nameWithType.vb: RedisEventBus.Unsubscribe(Of TEvent, TEventHandler)()
 - uid: WeihanLi.Redis.RedisManager
   name: RedisManager
   href: docs/api/WeihanLi.Redis.RedisManager.html

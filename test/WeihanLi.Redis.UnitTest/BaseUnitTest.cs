@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
 using WeihanLi.Common;
 
@@ -25,6 +26,9 @@ namespace WeihanLi.Redis.UnitTest
             });
 
             DependencyResolver.SetDependencyResolver(serviceCollection);
+
+            var loggerFactory = DependencyResolver.Current.ResolveService<ILoggerFactory>();
+            loggerFactory.AddLog4Net();
 
             // clear keys
             var connection = DependencyResolver.Current.ResolveService<IConnectionMultiplexer>();

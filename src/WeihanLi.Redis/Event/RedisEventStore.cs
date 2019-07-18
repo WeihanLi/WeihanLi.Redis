@@ -75,21 +75,21 @@ namespace WeihanLi.Redis
         {
             var eventKey = GetEventKey<TEvent>();
             var handlerType = typeof(TEventHandler);
-            if (Wrapper.Database.HashExists(EventsCacheKey, eventKey))
-            {
-                var handlers = Wrapper.Unwrap<List<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
 
-                if (!handlers.Contains(handlerType))
-                {
-                    return false;
-                }
-                handlers.Remove(handlerType);
-                return Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(handlers));
-            }
-            else
+            if (!Wrapper.Database.HashExists(EventsCacheKey, eventKey))
             {
                 return false;
             }
+
+            var handlers = Wrapper.Unwrap<List<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
+
+            if (!handlers.Contains(handlerType))
+            {
+                return false;
+            }
+
+            handlers.Remove(handlerType);
+            return Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(handlers));
         }
     }
 }

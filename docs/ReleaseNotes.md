@@ -1,6 +1,6 @@
 # `WeihanLi.Redis` ReleaseNotes
 
-## [WeihanLi.Redis 1.5.6.2](https://www.nuget.org/packages/WeihanLi.Redis/1.5.6.2)
+## [WeihanLi.Redis 1.5.6.6](https://www.nuget.org/packages/WeihanLi.Redis/1.5.6.6)
 
 - Add `RedisEventBus` and `RedisEventStore`
 - Optimize `Counter`/`Firewall`

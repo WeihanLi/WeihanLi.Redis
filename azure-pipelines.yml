@@ -6,15 +6,36 @@
 trigger:
 - '*'
 
-pool:
-  vmImage: 'vs2017-win2016'
+jobs:
+- job: Linux  
+  # resources:
+  #   containers:
+  #   - container: redis
+  #     image: 'redis:alpine'
+  # services:
+  #   redis: redis
+  #   ports:
+  #     - 6379/tcp
 
-steps:
-- script: dotnet --info
-  displayName: 'dotnet info'
+  pool:
+    vmImage: 'ubuntu-16.04'
 
-- powershell: ./build.ps1
-  displayName: 'Powershell Script'
-  env:
-    Nuget__ApiKey: $(nugetApiKey)
-    Nuget__SourceUrl: $(nugetSourceUrl)
+  steps:
+  - script: bash build.sh
+    displayName: 'Build Script'
+
+
+- job: Windows
+
+  pool:
+    vmImage: 'windows-2019'
+
+  steps:
+  - script: dotnet --info
+    displayName: 'dotnet info'
+
+  - powershell: ./build.ps1
+    displayName: 'Build Script'
+    env:
+      Nuget__ApiKey: $(nugetApiKey)
+      Nuget__SourceUrl: $(nugetSourceUrl)

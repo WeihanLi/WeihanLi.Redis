@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using StackExchange.Redis;
 using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
@@ -20,13 +21,15 @@ namespace WeihanLi.Redis
 
     internal class FirewallClient : BaseRedisClient, IFirewallClient
     {
-        private readonly TimeSpan? _expiresIn;
         private readonly string _firewallName;
 
         internal FirewallClient(string firewallName, long limit, TimeSpan? expiresIn, ILogger<FirewallClient> logger) : base(logger, new RedisWrapper(RedisConstants.FirewallPrefix))
         {
             _firewallName = Wrapper.GetRealKey(firewallName);
-            _expiresIn = expiresIn;
+            if (expiresIn.HasValue)
+            {
+                Wrapper.Database.StringSet(_firewallName, 0, expiresIn, When.NotExists);
+            }
             Limit = limit;
         }
 
@@ -44,38 +47,8 @@ namespace WeihanLi.Redis
 
         public long Limit { get; }
 
-        public bool Hit()
-        {
-            if (Wrapper.Database.KeyExists(_firewallName))
-            {
-                if (Convert.ToInt64(Wrapper.Database.StringGet(_firewallName)) >= Limit)
-                {
-                    return false;
-                }
-                Wrapper.Database.StringIncrement(_firewallName);
-            }
-            else
-            {
-                Wrapper.Database.StringSet(_firewallName, 1, _expiresIn, StackExchange.Redis.When.NotExists);
-            }
-            return true;
-        }
+        public bool Hit() => Wrapper.Database.StringIncrement(_firewallName) <= Limit;
 
-        public async Task<bool> HitAsync()
-        {
-            if (await Wrapper.Database.KeyExistsAsync(_firewallName))
-            {
-                if (Convert.ToInt64(await Wrapper.Database.StringGetAsync(_firewallName)) >= Limit)
-                {
-                    return false;
-                }
-                await Wrapper.Database.StringIncrementAsync(_firewallName);
-            }
-            else
-            {
-                await Wrapper.Database.StringSetAsync(_firewallName, 1, _expiresIn, StackExchange.Redis.When.NotExists);
-            }
-            return true;
-        }
+        public async Task<bool> HitAsync() => await Wrapper.Database.StringIncrementAsync(_firewallName).ContinueWith(r => r.Result <= Limit);
     }
 }

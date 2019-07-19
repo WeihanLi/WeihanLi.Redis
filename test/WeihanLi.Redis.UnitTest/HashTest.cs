@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using StackExchange.Redis;
 using Xunit;
 
@@ -24,6 +26,38 @@ namespace WeihanLi.Redis.UnitTest
             Assert.True(10 == result);
             Assert.True(commonClient.KeyDelete(key));
             Assert.False(commonClient.KeyExists(key));
+        }
+
+        [Theory]
+        [InlineData(10)]
+        [InlineData(20)]
+        [InlineData(50)]
+        public async Task CounterConcurrentTest(int taskCount)
+        {
+            var counterName = "concurrentCounterTest";
+            var fieldName = $"testField1_{taskCount}";
+
+            RedisManager.GetCommonRedisClient(RedisDataType.Counter).KeyDelete(counterName);
+            try
+            {
+                var tasks = new List<Task>();
+                Func<Task> func = () =>
+                {
+                    var counter = RedisManager.GetHashCounterClient(counterName);
+                    return counter.IncreaseAsync(fieldName);
+                };
+                for (var i = 0; i < taskCount; i++)
+                {
+                    tasks.Add(func());
+                }
+                await Task.WhenAll(tasks);
+
+                Assert.Equal(taskCount, RedisManager.GetHashCounterClient(counterName).Count(fieldName));
+            }
+            finally
+            {
+                RedisManager.GetCommonRedisClient(RedisDataType.Counter).KeyDelete(counterName);
+            }
         }
 
         [Fact]

@@ -1,8 +1,11 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using WeihanLi.Common;
 using WeihanLi.Common.Event;
+using WeihanLi.Common.Logging;
+using WeihanLi.Common.Logging.Log4Net;
 using WeihanLi.Extensions;
 using Xunit;
 
@@ -34,7 +37,18 @@ namespace WeihanLi.Redis.UnitTest
             serviceCollection.AddSingleton<CounterEventHandler>();
             serviceCollection.AddSingleton<CounterEventHandler2>();
 
+            serviceCollection.AddSingleton(
+                DelegateEventHandler.FromAction<CounterEvent2>(@event =>
+                    Log4NetHelper.GetLogger("DelegateEventHandler+CounterEvents").Info($"{@event.ToJson()}")
+                    )
+                );
+
             DependencyResolver.SetDependencyResolver(serviceCollection);
+            DependencyResolver.Current.ResolveService<ILoggerFactory>().AddLog4Net();
+
+            DependencyResolver.Current.GetRequiredService<IEventStore>()
+                .Clear();
+            RedisManager.PubSubClient.UnsubscribeAll();
         }
 
         [Fact]
@@ -43,13 +57,24 @@ namespace WeihanLi.Redis.UnitTest
             try
             {
                 var eventBus = DependencyResolver.Current.ResolveService<IEventBus>();
+                Assert.True(eventBus.Subscribe<CounterEvent, CounterEventHandler>());
+                Assert.True(eventBus.Subscribe<CounterEvent, CounterEventHandler2>());
 
-                eventBus.Subscribe<CounterEvent, CounterEventHandler>();
-                eventBus.Subscribe<CounterEvent, CounterEventHandler2>();
+                Assert.False(eventBus.Subscribe<CounterEvent, CounterEventHandler2>());
+                Assert.True(eventBus.Publish(new CounterEvent { Counter = 123 }));
+
+                Assert.True(eventBus.Subscribe<CounterEvent2, DelegateEventHandler<CounterEvent2>>());
+                Assert.False(eventBus.Subscribe<CounterEvent2, DelegateEventHandler<CounterEvent2>>());
+                Assert.True(eventBus.Publish(new CounterEvent2 { Counter = 123 }));
+
+                await Task.Delay(15 * 1000);
+                Assert.Equal(2, counter);
+
+                eventBus.Unsubscribe<CounterEvent, CounterEventHandler2>();
                 eventBus.Publish(new CounterEvent { Counter = 123 });
 
                 await Task.Delay(10 * 1000);
-                Assert.Equal(2, counter);
+                Assert.Equal(3, counter);
             }
             finally
             {
@@ -64,11 +89,16 @@ namespace WeihanLi.Redis.UnitTest
             public int Counter { get; set; }
         }
 
+        private class CounterEvent2 : EventBase
+        {
+            public int Counter { get; set; }
+        }
+
         private class CounterEventHandler : IEventHandler<CounterEvent>
         {
             public Task Handle(CounterEvent @event)
             {
-                System.Console.WriteLine($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
+                DependencyResolver.Current.ResolveService<ILogger<CounterEventHandler>>().Info($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
                 Interlocked.Increment(ref counter);
                 return Task.CompletedTask;
             }
@@ -78,7 +108,7 @@ namespace WeihanLi.Redis.UnitTest
         {
             public Task Handle(CounterEvent @event)
             {
-                System.Console.WriteLine($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
+                DependencyResolver.Current.ResolveService<ILogger<CounterEventHandler>>().Info($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
                 Interlocked.Increment(ref counter);
 
                 return Task.CompletedTask;

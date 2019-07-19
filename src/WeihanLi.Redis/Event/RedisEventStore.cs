@@ -22,8 +22,6 @@ namespace WeihanLi.Redis
             EventsCacheKey = RedisManager.RedisConfiguration.EventStoreCacheKey;
         }
 
-        public bool IsEmpty => Wrapper.Database.KeyExists(EventsCacheKey);
-
         public bool AddSubscription<TEvent, TEventHandler>()
             where TEvent : IEventBase
             where TEventHandler : IEventHandler<TEvent>
@@ -32,18 +30,19 @@ namespace WeihanLi.Redis
             var handlerType = typeof(TEventHandler);
             if (Wrapper.Database.HashExists(EventsCacheKey, eventKey))
             {
-                var handlers = Wrapper.Unwrap<List<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
+                var handlers = Wrapper.Unwrap<HashSet<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
 
                 if (handlers.Contains(handlerType))
                 {
                     return false;
                 }
                 handlers.Add(handlerType);
-                return Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(handlers));
+                Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(handlers));
+                return true;
             }
             else
             {
-                return Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(new List<Type> { handlerType }), StackExchange.Redis.When.NotExists);
+                return Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(new HashSet<Type> { handlerType }), StackExchange.Redis.When.NotExists);
             }
         }
 
@@ -55,7 +54,7 @@ namespace WeihanLi.Redis
         public ICollection<Type> GetEventHandlerTypes<TEvent>() where TEvent : IEventBase
         {
             var eventKey = GetEventKey<TEvent>();
-            return Wrapper.Unwrap<List<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
+            return Wrapper.Unwrap<HashSet<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
         }
 
         public string GetEventKey<TEvent>()
@@ -81,7 +80,7 @@ namespace WeihanLi.Redis
                 return false;
             }
 
-            var handlers = Wrapper.Unwrap<List<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
+            var handlers = Wrapper.Unwrap<HashSet<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
 
             if (!handlers.Contains(handlerType))
             {
@@ -89,7 +88,8 @@ namespace WeihanLi.Redis
             }
 
             handlers.Remove(handlerType);
-            return Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(handlers));
+            Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(handlers));
+            return true;
         }
     }
 }

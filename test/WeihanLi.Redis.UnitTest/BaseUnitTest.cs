@@ -27,8 +27,7 @@ namespace WeihanLi.Redis.UnitTest
 
             DependencyResolver.SetDependencyResolver(serviceCollection);
 
-            var loggerFactory = DependencyResolver.Current.ResolveService<ILoggerFactory>();
-            loggerFactory.AddLog4Net();
+            DependencyResolver.Current.ResolveService<ILoggerFactory>().AddLog4Net();
 
             // clear keys
             var connection = DependencyResolver.Current.ResolveService<IConnectionMultiplexer>();

@@ -112,19 +112,6 @@ references:
   fullName.vb: WeihanLi.Redis.EventStoreInRedis.HasSubscriptionsForEvent(Of TEvent)()
   nameWithType: EventStoreInRedis.HasSubscriptionsForEvent<TEvent>()
   nameWithType.vb: EventStoreInRedis.HasSubscriptionsForEvent(Of TEvent)()
-- uid: WeihanLi.Redis.EventStoreInRedis.IsEmpty
-  name: IsEmpty
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_IsEmpty
-  commentId: P:WeihanLi.Redis.EventStoreInRedis.IsEmpty
-  fullName: WeihanLi.Redis.EventStoreInRedis.IsEmpty
-  nameWithType: EventStoreInRedis.IsEmpty
-- uid: WeihanLi.Redis.EventStoreInRedis.IsEmpty*
-  name: IsEmpty
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_IsEmpty_
-  commentId: Overload:WeihanLi.Redis.EventStoreInRedis.IsEmpty
-  isSpec: "True"
-  fullName: WeihanLi.Redis.EventStoreInRedis.IsEmpty
-  nameWithType: EventStoreInRedis.IsEmpty
 - uid: WeihanLi.Redis.EventStoreInRedis.Logger
   name: Logger
   href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_Logger

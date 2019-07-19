@@ -45,9 +45,10 @@ namespace WeihanLi.Redis.UnitTest
         [Theory]
         [InlineData(10)]
         [InlineData(20)]
+        [InlineData(50)]
         public async Task CounterConcurrentTest(int taskCount)
         {
-            var counterName = "concurrentCounterTest";
+            var counterName = $"concurrentCounterTest_{taskCount}";
 
             RedisManager.GetCommonRedisClient(RedisDataType.Counter).KeyDelete(counterName);
             var tasks = new List<Task>();
@@ -79,9 +80,10 @@ namespace WeihanLi.Redis.UnitTest
         [Theory]
         [InlineData(1, 10)]
         [InlineData(3, 20)]
+        [InlineData(1, 50)]
         public async Task StringFirewallConcurrentTest(int limit, int taskCount)
         {
-            var firewallName = "concurrentFirewallTest";
+            var firewallName = $"concurrentFirewallTest_{limit}_{taskCount}";
             var tasks = new List<Task<bool>>();
             RedisManager.GetCommonRedisClient(RedisDataType.Firewall).KeyDelete(firewallName);
             Func<Task<bool>> func = () =>

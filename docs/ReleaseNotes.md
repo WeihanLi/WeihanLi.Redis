@@ -4,6 +4,7 @@
 
 - Add `RedisEventBus` and `RedisEventStore`
 - Optimize `Counter`/`Firewall`
+- Add [sourceLink](https://github.com/dotnet/sourcelink) support
 
 ## [WeihanLi.Redis 1.5.4](https://www.nuget.org/packages/WeihanLi.Redis/1.5.4)
 

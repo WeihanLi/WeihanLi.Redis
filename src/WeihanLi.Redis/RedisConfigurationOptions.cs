@@ -36,12 +36,12 @@ namespace WeihanLi.Redis
         /// <summary>
         /// Optional channel prefix for all pub/sub operations
         /// </summary>
-        public string ChannelPrefix { get; set; } = ApplicationHelper.ApplicationName;
+        public string ChannelPrefix { get; set; } = "__WeihanLi.Redis.PubSub";
 
         /// <summary>
         /// EVentBus channel prefix
         /// </summary>
-        public string EventBusChannelPrefix { get; set; } = "WeihanLi.Redis.EventBus";
+        public string EventBusChannelPrefix { get; set; } = "__WeihanLi.Redis.EventBus";
 
         /// <summary>
         /// EVentStore CachePrefix

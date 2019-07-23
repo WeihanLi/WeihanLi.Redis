@@ -55,9 +55,11 @@ namespace WeihanLi.Redis
             where TEvent : IEventBase
             where TEventHandler : IEventHandler<TEvent>
         {
-            if (_eventStore.AddSubscription<TEvent, TEventHandler>())
+            _eventStore.AddSubscription<TEvent, TEventHandler>();
+
+            var channelName = GetChannelName<TEvent, TEventHandler>();
+            if (!_subscriber.IsConnected(channelName))
             {
-                var channelName = GetChannelName<TEvent, TEventHandler>();
                 _subscriber.Subscribe(channelName, async (channel, eventMessage) =>
                 {
                     var eventData = eventMessage.ToString().JsonToType<TEvent>();
@@ -69,6 +71,7 @@ namespace WeihanLi.Redis
                 });
                 return true;
             }
+
             return false;
         }
 
@@ -76,11 +79,12 @@ namespace WeihanLi.Redis
             where TEvent : IEventBase
             where TEventHandler : IEventHandler<TEvent>
         {
-            if (_eventStore.RemoveSubscription<TEvent, TEventHandler>())
-            {
-                var channelName = GetChannelName<TEvent, TEventHandler>();
-                _subscriber.Unsubscribe(channelName);
+            _eventStore.RemoveSubscription<TEvent, TEventHandler>();
 
+            var channelName = GetChannelName<TEvent, TEventHandler>();
+            if (_subscriber.IsConnected(channelName))
+            {
+                _subscriber.Unsubscribe(channelName);
                 return true;
             }
             return false;

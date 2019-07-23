@@ -29,6 +29,8 @@ namespace WeihanLi.Redis.UnitTest
                 //};
                 config.CachePrefix = "WeihanLi.Redis.UnitTest";
                 config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
+                config.ClientName = "WeihanLi.Redis.UnitTest";
+
                 config.EnableCompress = false;
                 config.DefaultDatabase = dbIndex;
             });
@@ -46,8 +48,6 @@ namespace WeihanLi.Redis.UnitTest
             DependencyResolver.SetDependencyResolver(serviceCollection);
             DependencyResolver.Current.ResolveService<ILoggerFactory>().AddLog4Net();
 
-            DependencyResolver.Current.GetRequiredService<IEventStore>()
-                .Clear();
             RedisManager.PubSubClient.UnsubscribeAll();
         }
 

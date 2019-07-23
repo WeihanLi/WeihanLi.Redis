@@ -20,14 +20,22 @@ namespace WeihanLi.Redis
             _subscriber = connectionMultiplexer.GetSubscriber();
         }
 
+        private string GetChannelPrefix<TEvent>() where TEvent : IEventBase
+        {
+            var eventKey = _eventStore.GetEventKey<TEvent>();
+            var channelPrefix =
+                $"{RedisManager.RedisConfiguration.EventBusChannelPrefix}{RedisManager.RedisConfiguration.KeySeparator}{eventKey}{RedisManager.RedisConfiguration.KeySeparator}";
+            return channelPrefix;
+        }
+
         private string GetChannelName<TEvent, TEventHandler>() where TEvent : IEventBase
             where TEventHandler : IEventHandler<TEvent>
             => GetChannelName<TEvent>(typeof(TEventHandler));
 
         private string GetChannelName<TEvent>(Type eventHandlerType) where TEvent : IEventBase
         {
-            var eventKey = _eventStore.GetEventKey<TEvent>();
-            var channelName = $"{RedisManager.RedisConfiguration.EventBusChannelPrefix}{RedisManager.RedisConfiguration.KeySeparator}{eventKey}{RedisManager.RedisConfiguration.KeySeparator}{eventHandlerType.FullName}";
+            var channelPrefix = GetChannelPrefix<TEvent>();
+            var channelName = $"{channelPrefix}{eventHandlerType.FullName}";
 
             return channelName;
         }
@@ -38,14 +46,9 @@ namespace WeihanLi.Redis
             {
                 return false;
             }
-            var handlerTypes = _eventStore.GetEventHandlerTypes<TEvent>();
             var eventData = @event.ToJson();
-            foreach (var handlerType in handlerTypes)
-            {
-                var channelName = GetChannelName<TEvent>(handlerType);
-                _subscriber.Publish(channelName, eventData);
-            }
-            return true;
+            var channelName = $"{GetChannelPrefix<TEvent>()}*";
+            return _subscriber.Publish(channelName, eventData) > 0;
         }
 
         public bool Subscribe<TEvent, TEventHandler>()

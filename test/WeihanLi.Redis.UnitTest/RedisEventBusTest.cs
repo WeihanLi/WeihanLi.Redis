@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -14,8 +15,9 @@ namespace WeihanLi.Redis.UnitTest
     public class RedisEventBusTest
     {
         public static int counter = 0;
+        private readonly IServiceProvider _serviceProvider;
 
-        static RedisEventBusTest()
+        public RedisEventBusTest()
         {
             var dbIndex = 7;
 
@@ -45,26 +47,25 @@ namespace WeihanLi.Redis.UnitTest
                     )
                 );
 
-            DependencyResolver.SetDependencyResolver(serviceCollection);
-            DependencyResolver.Current.ResolveService<ILoggerFactory>().AddLog4Net();
-
-            RedisManager.PubSubClient.UnsubscribeAll();
+            _serviceProvider = serviceCollection.BuildServiceProvider();
+            _serviceProvider.GetRequiredService<ILoggerFactory>().AddLog4Net();
         }
 
         [Fact]
         public async Task MainTest()
         {
+            var eventBus = _serviceProvider.GetRequiredService<IEventBus>();
+
             try
             {
-                var eventBus = DependencyResolver.Current.ResolveService<IEventBus>();
                 Assert.True(eventBus.Subscribe<CounterEvent, CounterEventHandler>());
                 Assert.True(eventBus.Subscribe<CounterEvent, CounterEventHandler2>());
 
-                Assert.False(eventBus.Subscribe<CounterEvent, CounterEventHandler2>());
+                // Assert.False(eventBus.Subscribe<CounterEvent, CounterEventHandler2>());
                 Assert.True(eventBus.Publish(new CounterEvent { Counter = 123 }));
 
                 Assert.True(eventBus.Subscribe<CounterEvent2, DelegateEventHandler<CounterEvent2>>());
-                Assert.False(eventBus.Subscribe<CounterEvent2, DelegateEventHandler<CounterEvent2>>());
+                // Assert.False(eventBus.Subscribe<CounterEvent2, DelegateEventHandler<CounterEvent2>>());
                 Assert.True(eventBus.Publish(new CounterEvent2 { Counter = 123 }));
 
                 await Task.Delay(15 * 1000);
@@ -78,9 +79,9 @@ namespace WeihanLi.Redis.UnitTest
             }
             finally
             {
-                DependencyResolver.Current.GetRequiredService<IEventStore>()
-                    .Clear();
-                RedisManager.PubSubClient.UnsubscribeAll();
+                eventBus.Unsubscribe<CounterEvent, CounterEventHandler>();
+                eventBus.Unsubscribe<CounterEvent, CounterEventHandler2>();
+                eventBus.Unsubscribe<CounterEvent2, DelegateEventHandler<CounterEvent2>>();
             }
         }
 

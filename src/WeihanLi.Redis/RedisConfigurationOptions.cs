@@ -31,17 +31,17 @@ namespace WeihanLi.Redis
         /// <summary>
         /// Identification for the connection within redis
         /// </summary>
-        public string ClientName { get; set; } = ApplicationHelper.ApplicationName;
+        public string ClientName { get; set; } = $"{ApplicationHelper.ApplicationName}-{Environment.MachineName}";
 
         /// <summary>
         /// Optional channel prefix for all pub/sub operations
         /// </summary>
-        public string ChannelPrefix { get; set; } = ApplicationHelper.ApplicationName;
+        public string ChannelPrefix { get; set; } = "__WeihanLi.Redis.PubSub";
 
         /// <summary>
         /// EVentBus channel prefix
         /// </summary>
-        public string EventBusChannelPrefix { get; set; } = "WeihanLi.Redis.EventBus";
+        public string EventBusChannelPrefix { get; set; } = "__WeihanLi.Redis.EventBus";
 
         /// <summary>
         /// EVentStore CachePrefix

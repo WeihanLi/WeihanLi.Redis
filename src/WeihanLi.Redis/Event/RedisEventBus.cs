@@ -20,14 +20,22 @@ namespace WeihanLi.Redis
             _subscriber = connectionMultiplexer.GetSubscriber();
         }
 
+        private string GetChannelPrefix<TEvent>() where TEvent : IEventBase
+        {
+            var eventKey = _eventStore.GetEventKey<TEvent>();
+            var channelPrefix =
+                $"{RedisManager.RedisConfiguration.EventBusChannelPrefix}{RedisManager.RedisConfiguration.KeySeparator}{eventKey}{RedisManager.RedisConfiguration.KeySeparator}";
+            return channelPrefix;
+        }
+
         private string GetChannelName<TEvent, TEventHandler>() where TEvent : IEventBase
             where TEventHandler : IEventHandler<TEvent>
             => GetChannelName<TEvent>(typeof(TEventHandler));
 
         private string GetChannelName<TEvent>(Type eventHandlerType) where TEvent : IEventBase
         {
-            var eventKey = _eventStore.GetEventKey<TEvent>();
-            var channelName = $"{RedisManager.RedisConfiguration.EventBusChannelPrefix}{RedisManager.RedisConfiguration.KeySeparator}{eventKey}{RedisManager.RedisConfiguration.KeySeparator}{eventHandlerType.FullName}";
+            var channelPrefix = GetChannelPrefix<TEvent>();
+            var channelName = $"{channelPrefix}{eventHandlerType.FullName}";
 
             return channelName;
         }
@@ -38,13 +46,15 @@ namespace WeihanLi.Redis
             {
                 return false;
             }
-            var handlerTypes = _eventStore.GetEventHandlerTypes<TEvent>();
+
             var eventData = @event.ToJson();
+            var handlerTypes = _eventStore.GetEventHandlerTypes<TEvent>();
             foreach (var handlerType in handlerTypes)
             {
-                var channelName = GetChannelName<TEvent>(handlerType);
-                _subscriber.Publish(channelName, eventData);
+                var handlerChannelName = GetChannelName<TEvent>(handlerType);
+                _subscriber.Publish(handlerChannelName, eventData);
             }
+
             return true;
         }
 
@@ -52,35 +62,44 @@ namespace WeihanLi.Redis
             where TEvent : IEventBase
             where TEventHandler : IEventHandler<TEvent>
         {
-            if (_eventStore.AddSubscription<TEvent, TEventHandler>())
+            _eventStore.AddSubscription<TEvent, TEventHandler>();
+
+            var channelName = GetChannelName<TEvent, TEventHandler>();
+
+            //// TODO: if current client subscribed the channel
+            //if (true)
+            //{
+            _subscriber.Subscribe(channelName, async (channel, eventMessage) =>
             {
-                var channelName = GetChannelName<TEvent, TEventHandler>();
-                _subscriber.Subscribe(channelName, async (channel, eventMessage) =>
+                var eventData = eventMessage.ToString().JsonToType<TEvent>();
+                var handler = _serviceProvider.GetServiceOrCreateInstance<TEventHandler>();
+                if (null != handler)
                 {
-                    var eventData = eventMessage.ToString().JsonToType<TEvent>();
-                    var handler = _serviceProvider.GetServiceOrCreateInstance<TEventHandler>();
-                    if (null != handler)
-                    {
-                        await handler.Handle(eventData).ConfigureAwait(false);
-                    }
-                });
-                return true;
-            }
-            return false;
+                    await handler.Handle(eventData).ConfigureAwait(false);
+                }
+            });
+            return true;
+            //}
+
+            //return false;
         }
 
         public bool Unsubscribe<TEvent, TEventHandler>()
             where TEvent : IEventBase
             where TEventHandler : IEventHandler<TEvent>
         {
-            if (_eventStore.RemoveSubscription<TEvent, TEventHandler>())
-            {
-                var channelName = GetChannelName<TEvent, TEventHandler>();
-                _subscriber.Unsubscribe(channelName);
+            _eventStore.RemoveSubscription<TEvent, TEventHandler>();
 
-                return true;
-            }
-            return false;
+            var channelName = GetChannelName<TEvent, TEventHandler>();
+
+            //// TODO: if current client subscribed the channel
+            //if (true)
+            //{
+            _subscriber.Unsubscribe(channelName);
+            return true;
+
+            //}
+            //return false;
         }
     }
 }

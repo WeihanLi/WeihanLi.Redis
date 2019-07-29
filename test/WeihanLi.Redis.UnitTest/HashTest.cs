@@ -37,7 +37,7 @@ namespace WeihanLi.Redis.UnitTest
             var counterName = "concurrentCounterTest";
             var fieldName = $"testField1_{taskCount}";
 
-            RedisManager.GetCommonRedisClient(RedisDataType.Counter).KeyDelete(counterName);
+            RedisManager.GetCommonRedisClient(RedisDataType.HashCounter).KeyDelete(counterName);
             try
             {
                 var tasks = new List<Task>();
@@ -56,7 +56,7 @@ namespace WeihanLi.Redis.UnitTest
             }
             finally
             {
-                RedisManager.GetCommonRedisClient(RedisDataType.Counter).KeyDelete(counterName);
+                RedisManager.GetCommonRedisClient(RedisDataType.HashCounter).KeyDelete(counterName);
             }
         }
 

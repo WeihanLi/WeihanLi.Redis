@@ -45,8 +45,6 @@ namespace WeihanLi.Redis
             _keyName = Wrapper.GetRealKey(counterName);
             Base = baseCount;
             _expiresIn = expiresIn;
-
-            Wrapper.Database.StringSet(_keyName, Base, _expiresIn, When.NotExists);
         }
 
         public CounterClient(string counterName, TimeSpan? expiresIn, ILogger<CounterClient> logger) : this(counterName, 0, expiresIn, logger)
@@ -61,17 +59,42 @@ namespace WeihanLi.Redis
         {
         }
 
+        private void SetExpiryIfNeed()
+        {
+            if (_expiresIn.HasValue)
+            {
+                Wrapper.Database.StringSet(_keyName, Base, _expiresIn, When.NotExists);
+            }
+        }
+
+        private Task SetExpiryIfNeedAsync()
+        {
+            if (_expiresIn.HasValue)
+            {
+                return Wrapper.Database.StringSetAsync(_keyName, Base, _expiresIn, When.NotExists);
+            }
+            return Task.CompletedTask;
+        }
+
         public long Count() => Convert.ToInt64(Wrapper.Database.StringGet(_keyName));
 
         public long Base { get; }
 
         public long Decrease() => Decrease(1);
 
-        public long Decrease(int step) => Wrapper.Database.StringDecrement(_keyName, step);
+        public long Decrease(int step)
+        {
+            SetExpiryIfNeed();
+            return Wrapper.Database.StringDecrement(_keyName, step);
+        }
 
         public long Increase() => Increase(1);
 
-        public long Increase(int step) => Wrapper.Database.StringIncrement(_keyName, step);
+        public long Increase(int step)
+        {
+            SetExpiryIfNeed();
+            return Wrapper.Database.StringIncrement(_keyName, step);
+        }
 
         public bool Reset() => Wrapper.Database.StringSet(_keyName, Base, _expiresIn);
 
@@ -81,8 +104,16 @@ namespace WeihanLi.Redis
 
         public Task<long> DecreaseAsync() => DecreaseAsync(1);
 
-        public Task<long> IncreaseAsync(int step) => Wrapper.Database.StringIncrementAsync(_keyName, step);
+        public async Task<long> IncreaseAsync(int step)
+        {
+            await SetExpiryIfNeedAsync();
+            return await Wrapper.Database.StringIncrementAsync(_keyName, step);
+        }
 
-        public Task<long> DecreaseAsync(int step) => Wrapper.Database.StringDecrementAsync(_keyName, step);
+        public async Task<long> DecreaseAsync(int step)
+        {
+            await SetExpiryIfNeedAsync();
+            return await Wrapper.Database.StringDecrementAsync(_keyName, step);
+        }
     }
 }

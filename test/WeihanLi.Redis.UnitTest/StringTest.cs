@@ -67,6 +67,19 @@ namespace WeihanLi.Redis.UnitTest
         }
 
         [Fact]
+        public async Task StringCounterExpiryTest()
+        {
+            var counterName = nameof(StringCounterExpiryTest);
+            var counter = RedisManager.GetCounterClient(counterName, TimeSpan.FromSeconds(5));
+            await Task.WhenAll(Enumerable.Range(0, 5).Select(x => counter.IncreaseAsync()));
+            Assert.Equal(5, counter.Count());
+            await Task.Delay(TimeSpan.FromSeconds(5));
+            Assert.Equal(1, counter.Increase());
+            await Task.Delay(TimeSpan.FromSeconds(5));
+            Assert.False(RedisManager.GetCommonRedisClient(RedisDataType.Counter).KeyExists(counterName));
+        }
+
+        [Fact]
         public async Task StringFirewallTest()
         {
             var firewallName = "firewallTest";
@@ -75,6 +88,9 @@ namespace WeihanLi.Redis.UnitTest
             Assert.False(firewallClient.Hit());
             await Task.Delay(TimeSpan.FromSeconds(3));
             Assert.True(firewallClient.Hit());
+
+            await Task.Delay(TimeSpan.FromSeconds(3));
+            Assert.False(RedisManager.GetCommonRedisClient(RedisDataType.Firewall).KeyExists(firewallName));
         }
 
         [Theory]

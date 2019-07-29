@@ -174,6 +174,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Publish&lt;TEvent&gt;(TEvent event)
+
     where TEvent : IEventBase</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -237,6 +238,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Subscribe&lt;TEvent, TEventHandler&gt;()
+
     where TEvent : IEventBase where TEventHandler : IEventHandler&lt;TEvent&gt;</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
@@ -287,6 +289,7 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Unsubscribe&lt;TEvent, TEventHandler&gt;()
+
     where TEvent : IEventBase where TEventHandler : IEventHandler&lt;TEvent&gt;</code></pre>
   </div>
   <h5 class="returns">Returns</h5>

@@ -66,9 +66,6 @@ namespace WeihanLi.Redis
 
             var channelName = GetChannelName<TEvent, TEventHandler>();
 
-            //// TODO: if current client subscribed the channel
-            //if (true)
-            //{
             _subscriber.Subscribe(channelName, async (channel, eventMessage) =>
             {
                 var eventData = eventMessage.ToString().JsonToType<TEvent>();
@@ -79,9 +76,6 @@ namespace WeihanLi.Redis
                 }
             });
             return true;
-            //}
-
-            //return false;
         }
 
         public bool Unsubscribe<TEvent, TEventHandler>()
@@ -92,14 +86,8 @@ namespace WeihanLi.Redis
 
             var channelName = GetChannelName<TEvent, TEventHandler>();
 
-            //// TODO: if current client subscribed the channel
-            //if (true)
-            //{
             _subscriber.Unsubscribe(channelName);
             return true;
-
-            //}
-            //return false;
         }
     }
 }

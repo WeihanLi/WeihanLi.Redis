@@ -53,7 +53,7 @@ namespace WeihanLi.Redis
     internal class RedLockClient : BaseRedisClient, IRedLockClient
     {
         private readonly string _realKey;
-        private readonly Guid _lockId;
+        private readonly string _lockId;
         private bool _released;
 
         private readonly int _maxRetryCount;
@@ -76,7 +76,7 @@ namespace WeihanLi.Redis
         public RedLockClient(string key, int maxRetryCount, ILogger<RedLockClient> logger) : base(logger, new RedisWrapper(RedisConstants.RedLockPrefix))
         {
             _realKey = Wrapper.GetRealKey(key);
-            _lockId = Guid.NewGuid();
+            _lockId = $"{Environment.MachineName}__{Guid.NewGuid():N}";
             _maxRetryCount = maxRetryCount;
         }
 

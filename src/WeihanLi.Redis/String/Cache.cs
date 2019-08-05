@@ -4,7 +4,6 @@ using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
 using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
-using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
@@ -79,7 +78,7 @@ namespace WeihanLi.Redis
 
     internal class CacheClient : BaseRedisClient, ICacheClient
     {
-        public CacheClient(ILogger<CacheClient> logger) : base(logger, new RedisWrapper(RedisConstants.CachePrefix))
+        public CacheClient(ILogger<CacheClient> logger) : base(logger, new RedisWrapper(RedisDataType.Cache))
         {
         }
 

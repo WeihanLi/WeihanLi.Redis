@@ -118,6 +118,14 @@ namespace WeihanLi.Redis
 
         #endregion Firewall
 
+        #region RateLimiter
+
+        public static IRateLimiterClient GetRateLimiterClient(string limiterName, TimeSpan? expiresIn) => new RateLimiterClient(limiterName, expiresIn, DependencyResolver.Current.ResolveService<ILogger<RateLimiterClient>>());
+
+        public static IRateLimiterClient GetRateLimiterClient(string limiterName, long limit, TimeSpan? expiresIn) => new RateLimiterClient(limiterName, limit, expiresIn, DependencyResolver.Current.ResolveService<ILogger<RateLimiterClient>>());
+
+        #endregion RateLimiter
+
         #region RedisLock
 
         /// <summary>

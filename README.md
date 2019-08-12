@@ -1,5 +1,7 @@
 # WeihanLi.Redis[![WeihanLi.Redis](https://img.shields.io/nuget/v/WeihanLi.Redis.svg)](https://www.nuget.org/packages/WeihanLi.Redis/)
 
+[English](./README.en.md)
+
 ## Build
 
 [![Build Status](https://weihanli.visualstudio.com/Pipelines/_apis/build/status/WeihanLi.WeihanLi.Redis?branchName=dev)](https://weihanli.visualstudio.com/Pipelines/_build/latest?definitionId=15&branchName=dev)

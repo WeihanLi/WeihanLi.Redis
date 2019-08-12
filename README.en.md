@@ -1,5 +1,7 @@
 # WeihanLi.Redis[![WeihanLi.Redis](https://img.shields.io/nuget/v/WeihanLi.Redis.svg)](https://www.nuget.org/packages/WeihanLi.Redis/)
 
+[中文](./README.md)
+
 ## Build
 
 [![Build Status](https://weihanli.visualstudio.com/Pipelines/_apis/build/status/WeihanLi.WeihanLi.Redis?branchName=dev)](https://weihanli.visualstudio.com/Pipelines/_build/latest?definitionId=15&branchName=dev)
@@ -49,9 +51,7 @@ extensions based on redis 5 basic types:
 dotnet add package WeihanLi.Redis
 ```
 
-### Configuration 配置
-
-对于 V1.0.6 及以下版本支持 .netframework4.5 配置参考：
+### Configuration
 
   1. Configue
 
@@ -74,7 +74,7 @@ dotnet add package WeihanLi.Redis
       });
   ```
 
-### Basic usage 基本用法
+### Basic usage
 
 1. Cache
 

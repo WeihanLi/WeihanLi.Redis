@@ -10,9 +10,7 @@
 
 RedisExtensions for StackExchange.Redis, much more easier for generic opeartions,and supply some extensions for your business logics.
 
-StackExchange.Redis 扩展，更简单的泛型操作，并提供一些的适用于业务场景中的扩展
-
-基于 Redis 的五种主要的数据类型做了一些扩展：
+extensions based on redis 5 basic types:
 
 1. String
 
@@ -45,20 +43,17 @@ StackExchange.Redis 扩展，更简单的泛型操作，并提供一些的适用
 
 ## GetStarted
 
-### Installation 安装
+### Install
 
-Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
-
-通过 Nuget 安装 `WeihanLi.Redis`
+``` bash
+dotnet add package WeihanLi.Redis
+```
 
 ### Configuration 配置
 
 对于 V1.0.6 及以下版本支持 .netframework4.5 配置参考：
 
-  1. 日志配置，日志基于 log4net 的配置，可以参考单元测试中的 `log4net.config` 的配置，将 `log4net.config` 放在项目根目录下【推荐】
-  如果不在项目根目录下或者文件名发生修改则需要自己手动调用 `LogHelper.LogInit("log4net.config");`
-  
-  2. Redis 配置
+  1. Configue
 
   ``` csharp
   RedisManager.AddRedisConfig(config =>
@@ -68,22 +63,9 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
       });
   ```
 
-  .net core 应用，还可以这样配置
+  or
 
   ``` csharp
-  serviceCollection.AddRedisConfig(config =>
-      {
-          config.CachePrefix = "WeihanLi.Redis.UnitTest";
-          config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
-          config.EnableCompress = false;// disable compress
-      });
-  ```
-
-对于 1.1* 及以上版本不再支持 dotnet framework，配置方式如下：
-
-  ``` csharp
-  // IServiceCollection serviceCollection = new ServiceCollection();
-
   serviceCollection.AddRedisConfig(config =>
       {
           config.CachePrefix = "WeihanLi.Redis.UnitTest";
@@ -94,11 +76,7 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
 
 ### Basic usage 基本用法
 
-1. Cache 缓存
-
-    缓存的基本操作主要是基于 `RedisManager.CacheClient`
-
-    缓存的基本操作定义在 `ICacheClient` 中，基本操作如下：
+1. Cache
 
     ``` csharp
     var key = "test111";
@@ -111,7 +89,7 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
     RedisManager.CacheClient.GetOrSet(key, () => value, TimeSpan.FromSeconds(10));
     ```
 
-1. Counter 计数器
+1. Counter
 
     ``` csharp
     var counterName = "counterTest";
@@ -128,7 +106,7 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
     Assert.Equal(0, counterClient.Count());
     ```
 
-1. Firewall 防火墙
+1. Firewall
 
     ``` csharp
     var firewallName = "firewallTest";
@@ -139,7 +117,7 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
     Assert.True(firewallClient.Hit());
     ```
 
-1. RedLock Redis分布式锁
+1. RedLock
 
     ``` csharp
     using (var client = RedisManager.GetRedLockClient("redLockTest"))
@@ -166,7 +144,7 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
     }
     ```
 
-1. Rank 排行榜
+1. Rank
 
     ``` csharp
     var rankClient = RedisManager.GetRankClient<string>("testRank");
@@ -184,10 +162,9 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
     Assert.True(common.KeyDelete("testRank"));
     ```
 
-1. 依赖注入
+1. DependencyResolver
 
     ``` csharp
-    // 在 asp.net core 中可以直接从构造器注入，这里使用的一个 ServiceLocator 模式获取注入的服务
     var cacheClient = DependencyResolver.Current.ResolveService<ICacheClient>();
     Assert.NotNull(cacheClient);
     var key = Guid.NewGuid().ToString("N");
@@ -199,7 +176,7 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
     Assert.NotNull(pubsubClient);
     ```
 
-1. 更多用法等你来发现...
+1. More fancy usage, wait for your explorer...
 
 ## Conatct
 

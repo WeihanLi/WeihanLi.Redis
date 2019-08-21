@@ -104,21 +104,19 @@ namespace WeihanLi.Redis
 
             if (!result && _maxRetryCount > 0)
             {
-                var overtimed = 0;
-                using (var timer = new Timer(
-                    (state) => { Interlocked.Increment(ref overtimed); }, null,
-                    TimeSpan.Zero,
-                    TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime)))
+                var cancellationTokenSource = new CancellationTokenSource();
+                var delayTask = Task.Delay(TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime), cancellationTokenSource.Token);
+                result = RetryHelper.TryInvoke(
+                    () =>
+                    {
+                        Thread.Sleep(RedisManager.RedisConfiguration.LockRetryDelay);
+                        return Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId),
+                            expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
+                            When.NotExists);
+                    }, r => r || delayTask.IsCompleted, _maxRetryCount);
+                if (!delayTask.IsCompleted)
                 {
-                    result = RetryHelper.TryInvoke(
-                        () =>
-                        {
-                            Thread.Sleep(RedisManager.RedisConfiguration.LockRetryDelay);
-                            return Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId),
-                                expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
-                                When.NotExists);
-                        }, r => r || overtimed > 0, _maxRetryCount);
-                    return overtimed == 0 && result;
+                    cancellationTokenSource.Cancel(false);
                 }
             }
 
@@ -133,7 +131,8 @@ namespace WeihanLi.Redis
 
             if (!result && _maxRetryCount > 0)
             {
-                var delayTask = Task.Delay(TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime));
+                var cancellationTokenSource = new CancellationTokenSource();
+                var delayTask = Task.Delay(TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime), cancellationTokenSource.Token);
                 var retryTask = RetryHelper.TryInvokeAsync(
                     async () =>
                     {
@@ -144,6 +143,11 @@ namespace WeihanLi.Redis
                     }, r => r || delayTask.IsCompleted, _maxRetryCount);
 
                 await Task.WhenAny(delayTask, retryTask);
+
+                if (!delayTask.IsCompleted)
+                {
+                    cancellationTokenSource.Cancel(false);
+                }
 
                 result = retryTask.IsCompleted && retryTask.Result;
             }

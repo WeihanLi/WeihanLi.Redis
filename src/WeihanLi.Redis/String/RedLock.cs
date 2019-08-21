@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using StackExchange.Redis;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
-using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Redis.Internals;
 
@@ -101,20 +101,24 @@ namespace WeihanLi.Redis
         public bool TryLock(TimeSpan? expiry)
         {
             var result = Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry), When.NotExists);
-
+            var overtimed = 0;
             if (!result && _maxRetryCount > 0)
             {
-                result = RetryHelper.TryInvoke(
-                    () =>
-                    {
-                        Thread.Sleep(RedisManager.RedisConfiguration.LockRetryDelay);
-                        return Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId),
-                            expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
-                            When.NotExists);
-                    }, r => r, _maxRetryCount);
+                using (var timer = new Timer((state) => { Interlocked.Increment(ref overtimed); }, null, TimeSpan.Zero, TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime)))
+                {
+                    result = RetryHelper.TryInvoke(
+                        () =>
+                        {
+                            Thread.Sleep(RedisManager.RedisConfiguration.LockRetryDelay);
+                            return Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId),
+                                expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
+                                When.NotExists);
+                        }, r => r || overtimed > 0, _maxRetryCount);
+                }
+                return result;
             }
 
-            return result;
+            return false;
         }
 
         public Task<bool> TryLockAsync() => TryLockAsync(null);
@@ -125,14 +129,24 @@ namespace WeihanLi.Redis
 
             if (!result && _maxRetryCount > 0)
             {
-                result = await RetryHelper.TryInvokeAsync(
+                var delayTask = Task.Delay(TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime));
+                var retryTask = RetryHelper.TryInvokeAsync(
                     async () =>
                     {
                         await Task.Delay(RedisManager.RedisConfiguration.LockRetryDelay);
                         return await Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId),
                             expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
                             When.NotExists);
-                    }, r => r, _maxRetryCount);
+                    }, r => r || delayTask.IsCompleted, _maxRetryCount);
+
+                var resultTask = Task.WhenAny(delayTask, retryTask);
+
+                if (resultTask == delayTask)
+                {
+                    return false;
+                }
+
+                result = retryTask.Result;
             }
 
             return result;

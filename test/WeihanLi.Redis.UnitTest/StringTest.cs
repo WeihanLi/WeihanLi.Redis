@@ -117,6 +117,43 @@ namespace WeihanLi.Redis.UnitTest
         }
 
         [Fact]
+        public async Task StringRateLimiterTest()
+        {
+            var rateLimiterName = "rateLimiterTest";
+            var rateLimiterClient = RedisManager.GetRateLimiterClient(rateLimiterName, TimeSpan.FromSeconds(3));
+            Assert.True(rateLimiterClient.Acquire());
+            Assert.False(rateLimiterClient.Acquire());
+            await Task.Delay(TimeSpan.FromSeconds(3));
+            Assert.True(rateLimiterClient.Acquire());
+
+            await Task.Delay(TimeSpan.FromSeconds(3));
+            Assert.False(RedisManager.GetCommonRedisClient(RedisDataType.RateLimiter).KeyExists(rateLimiterName));
+        }
+
+        [Theory]
+        [InlineData(1, 10)]
+        [InlineData(3, 20)]
+        [InlineData(1, 50)]
+        public async Task StringRateLimiterConcurrentTest(int limit, int taskCount)
+        {
+            var rateLimiterName = $"concurrentRateLimiterTest_{limit}_{taskCount}";
+            var tasks = new List<Task<bool>>();
+            RedisManager.GetCommonRedisClient(RedisDataType.RateLimiter).KeyDelete(rateLimiterName);
+            Func<Task<bool>> func = () =>
+            {
+                var rateLimiter = RedisManager.GetRateLimiterClient(rateLimiterName, limit, TimeSpan.FromSeconds(60));
+                return rateLimiter.AcquireAsync();
+            };
+            for (var i = 0; i < taskCount; i++)
+            {
+                tasks.Add(func());
+            }
+            await Task.WhenAll(tasks);
+
+            Assert.Equal(limit, tasks.Count(_ => _.Result));
+        }
+
+        [Fact]
         public void RedisLockTest()
         {
             using (var client = RedisManager.GetRedLockClient("redLockTest"))

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
+using System;
+using System.Threading.Tasks;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using StackExchange.Redis;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
-using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Redis.Internals;
 
@@ -53,7 +53,7 @@ namespace WeihanLi.Redis
     internal class RedLockClient : BaseRedisClient, IRedLockClient
     {
         private readonly string _realKey;
-        private readonly Guid _lockId;
+        private readonly string _lockId;
         private bool _released;
 
         private readonly int _maxRetryCount;
@@ -76,7 +76,7 @@ namespace WeihanLi.Redis
         public RedLockClient(string key, int maxRetryCount, ILogger<RedLockClient> logger) : base(logger, new RedisWrapper(RedisConstants.RedLockPrefix))
         {
             _realKey = Wrapper.GetRealKey(key);
-            _lockId = Guid.NewGuid();
+            _lockId = $"{Environment.MachineName}__{Guid.NewGuid():N}";
             _maxRetryCount = maxRetryCount;
         }
 
@@ -104,6 +104,8 @@ namespace WeihanLi.Redis
 
             if (!result && _maxRetryCount > 0)
             {
+                var cancellationTokenSource = new CancellationTokenSource();
+                var delayTask = Task.Delay(TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime), cancellationTokenSource.Token);
                 result = RetryHelper.TryInvoke(
                     () =>
                     {
@@ -111,7 +113,11 @@ namespace WeihanLi.Redis
                         return Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId),
                             expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
                             When.NotExists);
-                    }, r => r, _maxRetryCount);
+                    }, r => r || delayTask.IsCompleted, _maxRetryCount);
+                if (!delayTask.IsCompleted)
+                {
+                    cancellationTokenSource.Cancel(false);
+                }
             }
 
             return result;
@@ -125,14 +131,25 @@ namespace WeihanLi.Redis
 
             if (!result && _maxRetryCount > 0)
             {
-                result = await RetryHelper.TryInvokeAsync(
+                var cancellationTokenSource = new CancellationTokenSource();
+                var delayTask = Task.Delay(TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime), cancellationTokenSource.Token);
+                var retryTask = RetryHelper.TryInvokeAsync(
                     async () =>
                     {
                         await Task.Delay(RedisManager.RedisConfiguration.LockRetryDelay);
                         return await Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId),
                             expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
                             When.NotExists);
-                    }, r => r, _maxRetryCount);
+                    }, r => r || delayTask.IsCompleted, _maxRetryCount);
+
+                await Task.WhenAny(delayTask, retryTask);
+
+                if (!delayTask.IsCompleted)
+                {
+                    cancellationTokenSource.Cancel(false);
+                }
+
+                result = retryTask.IsCompleted && retryTask.Result;
             }
 
             return result;

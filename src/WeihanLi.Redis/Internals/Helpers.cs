@@ -47,6 +47,9 @@ namespace WeihanLi.Redis.Internals
                 case RedisDataType.HashCounter:
                     return RedisConstants.HashCounterPrefix;
 
+                case RedisDataType.RateLimiter:
+                    return RedisConstants.RateLimiterPrefix;
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(redisDataType), redisDataType, null);
             }

@@ -5,6 +5,7 @@ using StackExchange.Redis;
 using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
+using WeihanLi.Redis.Internals;
 
 namespace WeihanLi.Redis
 {
@@ -143,6 +144,10 @@ namespace WeihanLi.Redis
                 : DependencyResolver.Current.ResolveService<IDataSerializer>();
             Database = DependencyResolver.Current.ResolveService<IConnectionMultiplexer>().GetDatabase();
             Subscriber = new Lazy<ISubscriber>(() => DependencyResolver.Current.ResolveService<IConnectionMultiplexer>().GetSubscriber());
+        }
+
+        public RedisWrapper(RedisDataType redisDataType) : this(Helpers.GetCachePrefix(redisDataType))
+        {
         }
 
         public RedisValue Wrap<T>(T t)

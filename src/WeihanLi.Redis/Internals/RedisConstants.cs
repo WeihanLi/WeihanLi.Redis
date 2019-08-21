@@ -10,6 +10,8 @@
 
         public const string FirewallPrefix = "String:Firewall";
 
+        public const string RateLimiterPrefix = "String:RateLimiter";
+
         public const string RedLockPrefix = "String:RedLock";
 
         public const string HashPrefix = "Hash:Cache";

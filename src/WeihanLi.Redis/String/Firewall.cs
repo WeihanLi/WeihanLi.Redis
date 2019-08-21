@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
@@ -22,14 +21,13 @@ namespace WeihanLi.Redis
     internal class FirewallClient : BaseRedisClient, IFirewallClient
     {
         private readonly string _firewallName;
+        private readonly TimeSpan? _expiresIn;
 
-        internal FirewallClient(string firewallName, long limit, TimeSpan? expiresIn, ILogger<FirewallClient> logger) : base(logger, new RedisWrapper(RedisConstants.FirewallPrefix))
+        internal FirewallClient(string firewallName, long limit, TimeSpan? expiresIn, ILogger<FirewallClient> logger)
+            : base(logger, new RedisWrapper(RedisDataType.Firewall))
         {
             _firewallName = Wrapper.GetRealKey(firewallName);
-            if (expiresIn.HasValue)
-            {
-                Wrapper.Database.StringSet(_firewallName, 0, expiresIn, When.NotExists);
-            }
+            _expiresIn = expiresIn;
             Limit = limit;
         }
 
@@ -47,8 +45,23 @@ namespace WeihanLi.Redis
 
         public long Limit { get; }
 
-        public bool Hit() => Wrapper.Database.StringIncrement(_firewallName) <= Limit;
+        public bool Hit()
+        {
+            if (_expiresIn.HasValue)
+            {
+                Wrapper.Database.StringSet(_firewallName, 0, _expiresIn, When.NotExists);
+            }
 
-        public async Task<bool> HitAsync() => await Wrapper.Database.StringIncrementAsync(_firewallName).ContinueWith(r => r.Result <= Limit);
+            return Wrapper.Database.StringIncrement(_firewallName) <= Limit;
+        }
+
+        public async Task<bool> HitAsync()
+        {
+            if (_expiresIn.HasValue)
+            {
+                await Wrapper.Database.StringSetAsync(_firewallName, 0, _expiresIn, When.NotExists);
+            }
+            return await Wrapper.Database.StringIncrementAsync(_firewallName).ContinueWith(r => r.Result <= Limit);
+        }
     }
 }

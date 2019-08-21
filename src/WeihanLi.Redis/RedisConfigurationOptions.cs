@@ -1,7 +1,7 @@
-﻿using System;
+﻿using StackExchange.Redis;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 
@@ -36,12 +36,12 @@ namespace WeihanLi.Redis
         /// <summary>
         /// Optional channel prefix for all pub/sub operations
         /// </summary>
-        public string ChannelPrefix { get; set; } = ApplicationHelper.ApplicationName;
+        public string ChannelPrefix { get; set; } = "__WeihanLi.Redis.PubSub";
 
         /// <summary>
         /// EVentBus channel prefix
         /// </summary>
-        public string EventBusChannelPrefix { get; set; } = "WeihanLi.Redis.EventBus";
+        public string EventBusChannelPrefix { get; set; } = "__WeihanLi.Redis.EventBus";
 
         /// <summary>
         /// EVentStore CachePrefix
@@ -123,6 +123,12 @@ namespace WeihanLi.Redis
         /// 锁重试延迟时间（毫秒）
         /// </summary>
         public int LockRetryDelay { get; set; } = 400;
+
+        /// <summary>
+        /// MaxLockRetryTime in seconds
+        /// 获取锁最长时间（秒），默认3 min
+        /// </summary>
+        public int MaxLockRetryTime { get; set; } = 180;
 
         /// <summary>
         /// MaxLockCacheExpiry in seconds

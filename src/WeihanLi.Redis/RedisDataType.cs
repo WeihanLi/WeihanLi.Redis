@@ -18,5 +18,6 @@
         SortedSet = 10,
         Rank = 11,
         HashCounter = 12,
+        RateLimiter = 13,
     }
 }

@@ -101,10 +101,14 @@ namespace WeihanLi.Redis
         public bool TryLock(TimeSpan? expiry)
         {
             var result = Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId), expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry), When.NotExists);
-            var overtimed = 0;
+
             if (!result && _maxRetryCount > 0)
             {
-                using (var timer = new Timer((state) => { Interlocked.Increment(ref overtimed); }, null, TimeSpan.Zero, TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime)))
+                var overtimed = 0;
+                using (var timer = new Timer(
+                    (state) => { Interlocked.Increment(ref overtimed); }, null,
+                    TimeSpan.Zero,
+                    TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime)))
                 {
                     result = RetryHelper.TryInvoke(
                         () =>
@@ -114,11 +118,11 @@ namespace WeihanLi.Redis
                                 expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
                                 When.NotExists);
                         }, r => r || overtimed > 0, _maxRetryCount);
+                    return overtimed == 0 && result;
                 }
-                return result;
             }
 
-            return false;
+            return result;
         }
 
         public Task<bool> TryLockAsync() => TryLockAsync(null);
@@ -139,14 +143,9 @@ namespace WeihanLi.Redis
                             When.NotExists);
                     }, r => r || delayTask.IsCompleted, _maxRetryCount);
 
-                var resultTask = Task.WhenAny(delayTask, retryTask);
+                await Task.WhenAny(delayTask, retryTask);
 
-                if (resultTask == delayTask)
-                {
-                    return false;
-                }
-
-                result = retryTask.Result;
+                result = retryTask.IsCompleted && retryTask.Result;
             }
 
             return result;

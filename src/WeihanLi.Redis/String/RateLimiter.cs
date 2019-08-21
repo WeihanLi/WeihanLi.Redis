@@ -16,6 +16,10 @@ namespace WeihanLi.Redis
         bool Acquire();
 
         Task<bool> AcquireAsync();
+
+        bool Release();
+
+        Task<bool> ReleaseAsync();
     }
 
     internal class RateLimiterClient : BaseRedisClient, IRateLimiterClient
@@ -53,6 +57,32 @@ namespace WeihanLi.Redis
                 await Wrapper.Database.StringSetAsync(_limiterName, 0, _expiresIn, When.NotExists);
             }
             return await Wrapper.Database.StringIncrementAsync(_limiterName).ContinueWith(r => r.Result <= Limit);
+        }
+
+        public bool Release()
+        {
+            if (Wrapper.Database.KeyExists(_limiterName))
+            {
+                return Wrapper.Database.StringDecrement(_limiterName) >= 0;
+            }
+            if (_expiresIn.HasValue)
+            {
+                Wrapper.Database.StringSet(_limiterName, 0, _expiresIn, When.NotExists);
+            }
+            return false;
+        }
+
+        public async Task<bool> ReleaseAsync()
+        {
+            if (await Wrapper.Database.KeyExistsAsync(_limiterName))
+            {
+                return await Wrapper.Database.StringDecrementAsync(_limiterName).ContinueWith(r => r.Result > 0);
+            }
+            if (_expiresIn.HasValue)
+            {
+                await Wrapper.Database.StringSetAsync(_limiterName, 0, _expiresIn, When.NotExists).ConfigureAwait(false);
+            }
+            return false;
         }
     }
 }

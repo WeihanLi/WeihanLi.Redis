@@ -121,10 +121,13 @@ namespace WeihanLi.Redis.UnitTest
         {
             var rateLimiterName = "rateLimiterTest";
             var rateLimiterClient = RedisManager.GetRateLimiterClient(rateLimiterName, TimeSpan.FromSeconds(3));
+
             Assert.True(rateLimiterClient.Acquire());
             Assert.False(rateLimiterClient.Acquire());
             await Task.Delay(TimeSpan.FromSeconds(3));
             Assert.True(rateLimiterClient.Acquire());
+            Assert.True(rateLimiterClient.Release());
+            Assert.False(rateLimiterClient.Release());
 
             await Task.Delay(TimeSpan.FromSeconds(3));
             Assert.False(RedisManager.GetCommonRedisClient(RedisDataType.RateLimiter).KeyExists(rateLimiterName));

@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
 using System;
-using System.Threading;
-using System.Threading.Tasks;
 using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Common.Logging.Log4Net;
@@ -39,33 +38,38 @@ namespace WeihanLi.Redis.Samples
             //var result = cacheClient.Get<PagedListModel<int>>(customSerializerCacheKey);
             //Console.WriteLine(result.ToJson());
 
-            //var database = DependencyResolver.Current.GetRequiredService<IConnectionMultiplexer>().GetDatabase();
-            //var val = database.StringDecrement("test_counter");
-            //Console.WriteLine(val);
+            var database = DependencyResolver.Current.GetRequiredService<IConnectionMultiplexer>().GetDatabase();
+            var c_name = "test_counter";
+            database.StringSet(c_name, 0, TimeSpan.FromSeconds(10));
 
-            try
-            {
-                var cts = new CancellationTokenSource();
-                var task = Task.Delay(3000, cts.Token);
-                var task2 = Task.Delay(1000);
+            var val = database.StringDecrement(c_name);
+            Console.WriteLine(val);
+            val = database.StringIncrement(c_name);
+            Console.WriteLine(val);
 
-                cts.Cancel(true);
+            //try
+            //{
+            //    var cts = new CancellationTokenSource();
+            //    var task = Task.Delay(3000, cts.Token);
+            //    var task2 = Task.Delay(1000);
 
-                Thread.Sleep(1000);
+            //    cts.Cancel(true);
 
-                Console.WriteLine($"task.IsCompleted:{task.IsCompleted}, task.IsCanceled:{task.IsCanceled}");
-                Console.WriteLine($"task2.IsCompleted:{task2.IsCompleted}, task2.IsCanceled:{task2.IsCanceled}");
-            }
-            catch (TaskCanceledException ex)
-            {
-                Console.WriteLine($"task canceled, ex:{ex}");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            //    Thread.Sleep(1000);
 
-            ConfigurationChangedEventSample.MainTest();
+            //    Console.WriteLine($"task.IsCompleted:{task.IsCompleted}, task.IsCanceled:{task.IsCanceled}");
+            //    Console.WriteLine($"task2.IsCompleted:{task2.IsCompleted}, task2.IsCanceled:{task2.IsCanceled}");
+            //}
+            //catch (TaskCanceledException ex)
+            //{
+            //    Console.WriteLine($"task canceled, ex:{ex}");
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //}
+
+            //ConfigurationChangedEventSample.MainTest();
 
             Console.ReadLine();
         }

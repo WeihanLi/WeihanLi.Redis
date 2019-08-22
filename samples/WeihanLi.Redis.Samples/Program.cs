@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using StackExchange.Redis;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Common.Logging.Log4Net;
@@ -38,9 +39,31 @@ namespace WeihanLi.Redis.Samples
             //var result = cacheClient.Get<PagedListModel<int>>(customSerializerCacheKey);
             //Console.WriteLine(result.ToJson());
 
-            var database = DependencyResolver.Current.GetRequiredService<IConnectionMultiplexer>().GetDatabase();
-            var val = database.StringDecrement("test_counter");
-            Console.WriteLine(val);
+            //var database = DependencyResolver.Current.GetRequiredService<IConnectionMultiplexer>().GetDatabase();
+            //var val = database.StringDecrement("test_counter");
+            //Console.WriteLine(val);
+
+            try
+            {
+                var cts = new CancellationTokenSource();
+                var task = Task.Delay(3000, cts.Token);
+                var task2 = Task.Delay(1000);
+
+                cts.Cancel(true);
+
+                Thread.Sleep(1000);
+
+                Console.WriteLine($"task.IsCompleted:{task.IsCompleted}, task.IsCanceled:{task.IsCanceled}");
+                Console.WriteLine($"task2.IsCompleted:{task2.IsCompleted}, task2.IsCanceled:{task2.IsCanceled}");
+            }
+            catch (TaskCanceledException ex)
+            {
+                Console.WriteLine($"task canceled, ex:{ex}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
 
             ConfigurationChangedEventSample.MainTest();
 

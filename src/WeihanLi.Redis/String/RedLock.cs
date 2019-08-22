@@ -116,7 +116,7 @@ namespace WeihanLi.Redis
                     }, r => r || delayTask.IsCompleted, _maxRetryCount);
                 if (!delayTask.IsCompleted)
                 {
-                    cancellationTokenSource.Cancel(false);
+                    cancellationTokenSource.Cancel();
                 }
             }
 
@@ -146,10 +146,10 @@ namespace WeihanLi.Redis
 
                 if (!delayTask.IsCompleted)
                 {
-                    cancellationTokenSource.Cancel(false);
+                    cancellationTokenSource.Cancel();
                 }
 
-                result = retryTask.IsCompleted && retryTask.Result;
+                result = delayTask.IsCanceled && retryTask.Result;
             }
 
             return result;

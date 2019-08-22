@@ -45,9 +45,7 @@ namespace WeihanLi.Redis
                         _wrapper.Database.HashSet(_eventsCacheKey, eventKey, _wrapper.Wrap(handlers));
                         return true;
                     }
-                }
-                else
-                {
+
                     return _wrapper.Database.HashSet(_eventsCacheKey, eventKey, _wrapper.Wrap(new HashSet<Type> { handlerType }), StackExchange.Redis.When.NotExists);
                 }
             }

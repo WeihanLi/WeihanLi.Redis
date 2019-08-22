@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
-using Microsoft.Extensions.Logging;
 using WeihanLi.Common.Event;
 using WeihanLi.Redis.Internals;
 
@@ -9,17 +9,17 @@ namespace WeihanLi.Redis
 {
     public class EventStoreInRedis : IEventStore
     {
-        protected readonly string EventsCacheKey;
-        protected readonly ILogger Logger;
+        private readonly string _eventsCacheKey;
+        private readonly ILogger _logger;
 
-        private readonly IRedisWrapper Wrapper;
+        private readonly IRedisWrapper _wrapper;
 
         public EventStoreInRedis(ILogger<EventStoreInRedis> logger)
         {
-            Logger = logger;
-            Wrapper = new RedisWrapper(RedisConstants.EventStorePrefix);
+            _logger = logger;
+            _wrapper = new RedisWrapper(RedisConstants.EventStorePrefix);
 
-            EventsCacheKey = RedisManager.RedisConfiguration.EventStoreCacheKey;
+            _eventsCacheKey = RedisManager.RedisConfiguration.EventStoreCacheKey;
         }
 
         public bool AddSubscription<TEvent, TEventHandler>()
@@ -28,33 +28,39 @@ namespace WeihanLi.Redis
         {
             var eventKey = GetEventKey<TEvent>();
             var handlerType = typeof(TEventHandler);
-            if (Wrapper.Database.HashExists(EventsCacheKey, eventKey))
-            {
-                var handlers = Wrapper.Unwrap<HashSet<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
 
-                if (handlers.Contains(handlerType))
-                {
-                    return false;
-                }
-                handlers.Add(handlerType);
-                Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(handlers));
-                return true;
-            }
-            else
+            using (var redLock = RedisManager.GetRedLockClient($"eventStore_{eventKey}", 10 * 1000 / RedisManager.RedisConfiguration.LockRetryDelay))
             {
-                return Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(new HashSet<Type> { handlerType }), StackExchange.Redis.When.NotExists);
+                if (redLock.TryLock())
+                {
+                    if (_wrapper.Database.HashExists(_eventsCacheKey, eventKey))
+                    {
+                        var handlers = _wrapper.Unwrap<HashSet<Type>>(_wrapper.Database.HashGet(_eventsCacheKey, eventKey));
+
+                        if (handlers.Contains(handlerType))
+                        {
+                            return false;
+                        }
+                        handlers.Add(handlerType);
+                        _wrapper.Database.HashSet(_eventsCacheKey, eventKey, _wrapper.Wrap(handlers));
+                        return true;
+                    }
+
+                    return _wrapper.Database.HashSet(_eventsCacheKey, eventKey, _wrapper.Wrap(new HashSet<Type> { handlerType }), StackExchange.Redis.When.NotExists);
+                }
             }
+            return false;
         }
 
         public bool Clear()
         {
-            return Wrapper.Database.KeyDelete(EventsCacheKey);
+            return _wrapper.Database.KeyDelete(_eventsCacheKey);
         }
 
         public ICollection<Type> GetEventHandlerTypes<TEvent>() where TEvent : IEventBase
         {
             var eventKey = GetEventKey<TEvent>();
-            return Wrapper.Unwrap<HashSet<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
+            return _wrapper.Unwrap<HashSet<Type>>(_wrapper.Database.HashGet(_eventsCacheKey, eventKey));
         }
 
         public string GetEventKey<TEvent>()
@@ -65,7 +71,7 @@ namespace WeihanLi.Redis
         public bool HasSubscriptionsForEvent<TEvent>() where TEvent : IEventBase
         {
             var eventKey = GetEventKey<TEvent>();
-            return Wrapper.Database.HashExists(EventsCacheKey, eventKey);
+            return _wrapper.Database.HashExists(_eventsCacheKey, eventKey);
         }
 
         public bool RemoveSubscription<TEvent, TEventHandler>()
@@ -75,21 +81,29 @@ namespace WeihanLi.Redis
             var eventKey = GetEventKey<TEvent>();
             var handlerType = typeof(TEventHandler);
 
-            if (!Wrapper.Database.HashExists(EventsCacheKey, eventKey))
+            if (!_wrapper.Database.HashExists(_eventsCacheKey, eventKey))
             {
                 return false;
             }
 
-            var handlers = Wrapper.Unwrap<HashSet<Type>>(Wrapper.Database.HashGet(EventsCacheKey, eventKey));
-
-            if (!handlers.Contains(handlerType))
+            using (var redLock = RedisManager.GetRedLockClient($"eventStore_{eventKey}", 10 * 1000 / RedisManager.RedisConfiguration.LockRetryDelay))
             {
-                return false;
+                if (redLock.TryLock())
+                {
+                    var handlers = _wrapper.Unwrap<HashSet<Type>>(_wrapper.Database.HashGet(_eventsCacheKey, eventKey));
+
+                    if (handlers == null || !handlers.Contains(handlerType))
+                    {
+                        return false;
+                    }
+
+                    handlers.Remove(handlerType);
+                    _wrapper.Database.HashSet(_eventsCacheKey, eventKey, _wrapper.Wrap(handlers));
+                    return true;
+                }
             }
 
-            handlers.Remove(handlerType);
-            Wrapper.Database.HashSet(EventsCacheKey, eventKey, Wrapper.Wrap(handlers));
-            return true;
+            return false;
         }
     }
 }

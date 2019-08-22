@@ -1,7 +1,7 @@
-﻿using System;
+﻿using StackExchange.Redis;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 
@@ -123,6 +123,12 @@ namespace WeihanLi.Redis
         /// 锁重试延迟时间（毫秒）
         /// </summary>
         public int LockRetryDelay { get; set; } = 400;
+
+        /// <summary>
+        /// MaxLockRetryTime in seconds
+        /// 获取锁最长时间（秒），默认3 min
+        /// </summary>
+        public int MaxLockRetryTime { get; set; } = 180;
 
         /// <summary>
         /// MaxLockCacheExpiry in seconds

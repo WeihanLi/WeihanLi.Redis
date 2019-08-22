@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Linq;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
+using System;
+using System.Collections.Concurrent;
+using System.Linq;
 using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
@@ -84,7 +84,7 @@ namespace WeihanLi.Redis
         /// <param name="redisDataType">redisDataType</param>
         /// <returns></returns>
         public static ICommonRedisClient GetCommonRedisClient(RedisDataType redisDataType) => CommonRedisClients.GetOrAdd(redisDataType,
-            type => new CommonRedisClient(type, DependencyResolver.Current.ResolveService<ILogger<CommonRedisClient>>()));
+            type => new CommonRedisClient(type, DependencyResolver.Current.GetRequiredService<ILogger<CommonRedisClient>>()));
 
         #endregion Common
 
@@ -96,27 +96,35 @@ namespace WeihanLi.Redis
 
         #region Counter
 
-        public static ICounterClient GetCounterClient(string counterName) => new CounterClient(counterName, DependencyResolver.Current.ResolveService<ILogger<CounterClient>>());
+        public static ICounterClient GetCounterClient(string counterName) => new CounterClient(counterName, DependencyResolver.Current.GetRequiredService<ILogger<CounterClient>>());
 
-        public static ICounterClient GetCounterClient(string counterName, long baseCount) => new CounterClient(counterName, baseCount, DependencyResolver.Current.ResolveService<ILogger<CounterClient>>());
+        public static ICounterClient GetCounterClient(string counterName, long baseCount) => new CounterClient(counterName, baseCount, DependencyResolver.Current.GetRequiredService<ILogger<CounterClient>>());
 
-        public static ICounterClient GetCounterClient(string counterName, TimeSpan? expiresIn) => new CounterClient(counterName, expiresIn, DependencyResolver.Current.ResolveService<ILogger<CounterClient>>());
+        public static ICounterClient GetCounterClient(string counterName, TimeSpan? expiresIn) => new CounterClient(counterName, expiresIn, DependencyResolver.Current.GetRequiredService<ILogger<CounterClient>>());
 
-        public static ICounterClient GetCounterClient(string counterName, long baseCount, TimeSpan? expiresIn) => new CounterClient(counterName, baseCount, expiresIn, DependencyResolver.Current.ResolveService<ILogger<CounterClient>>());
+        public static ICounterClient GetCounterClient(string counterName, long baseCount, TimeSpan? expiresIn) => new CounterClient(counterName, baseCount, expiresIn, DependencyResolver.Current.GetRequiredService<ILogger<CounterClient>>());
 
         #endregion Counter
 
         #region Firewall
 
-        public static IFirewallClient GetFirewallClient(string firewallName) => new FirewallClient(firewallName, DependencyResolver.Current.ResolveService<ILogger<FirewallClient>>());
+        public static IFirewallClient GetFirewallClient(string firewallName) => new FirewallClient(firewallName, DependencyResolver.Current.GetRequiredService<ILogger<FirewallClient>>());
 
-        public static IFirewallClient GetFirewallClient(string firewallName, long limit) => new FirewallClient(firewallName, limit, DependencyResolver.Current.ResolveService<ILogger<FirewallClient>>());
+        public static IFirewallClient GetFirewallClient(string firewallName, long limit) => new FirewallClient(firewallName, limit, DependencyResolver.Current.GetRequiredService<ILogger<FirewallClient>>());
 
-        public static IFirewallClient GetFirewallClient(string firewallName, TimeSpan? expiresIn) => new FirewallClient(firewallName, expiresIn, DependencyResolver.Current.ResolveService<ILogger<FirewallClient>>());
+        public static IFirewallClient GetFirewallClient(string firewallName, TimeSpan? expiresIn) => new FirewallClient(firewallName, expiresIn, DependencyResolver.Current.GetRequiredService<ILogger<FirewallClient>>());
 
-        public static IFirewallClient GetFirewallClient(string firewallName, long limit, TimeSpan? expiresIn) => new FirewallClient(firewallName, limit, expiresIn, DependencyResolver.Current.ResolveService<ILogger<FirewallClient>>());
+        public static IFirewallClient GetFirewallClient(string firewallName, long limit, TimeSpan? expiresIn) => new FirewallClient(firewallName, limit, expiresIn, DependencyResolver.Current.GetRequiredService<ILogger<FirewallClient>>());
 
         #endregion Firewall
+
+        #region RateLimiter
+
+        public static IRateLimiterClient GetRateLimiterClient(string limiterName, TimeSpan? expiresIn) => new RateLimiterClient(limiterName, expiresIn, DependencyResolver.Current.GetRequiredService<ILogger<RateLimiterClient>>());
+
+        public static IRateLimiterClient GetRateLimiterClient(string limiterName, long limit, TimeSpan? expiresIn) => new RateLimiterClient(limiterName, limit, expiresIn, DependencyResolver.Current.GetRequiredService<ILogger<RateLimiterClient>>());
+
+        #endregion RateLimiter
 
         #region RedisLock
 
@@ -125,15 +133,15 @@ namespace WeihanLi.Redis
         /// </summary>
         /// <param name="key">key</param>
         /// <returns></returns>
-        public static IRedLockClient GetRedLockClient(string key) => new RedLockClient(key, DependencyResolver.Current.ResolveService<ILogger<RedLockClient>>());
+        public static IRedLockClient GetRedLockClient(string key) => new RedLockClient(key, DependencyResolver.Current.GetRequiredService<ILogger<RedLockClient>>());
 
         /// <summary>
         /// RedisLock
         /// </summary>
         /// <param name="key">key</param>
-        /// <param name="maxRetryCount">maxRetryCount</param>
+        /// <param name="maxRetryCount">maxRetryCount, 10 max</param>
         /// <returns></returns>
-        public static IRedLockClient GetRedLockClient(string key, int maxRetryCount) => new RedLockClient(key, maxRetryCount, DependencyResolver.Current.ResolveService<ILogger<RedLockClient>>());
+        public static IRedLockClient GetRedLockClient(string key, int maxRetryCount) => new RedLockClient(key, maxRetryCount, DependencyResolver.Current.GetRequiredService<ILogger<RedLockClient>>());
 
         #endregion RedisLock
 
@@ -151,7 +159,7 @@ namespace WeihanLi.Redis
 
         public static IHashCounterClient GetHashCounterClient(string hashCounterName, long @base)
             => new HashCounterClient(
-                DependencyResolver.Current.ResolveService<ILogger<HashCounterClient>>(),
+                DependencyResolver.Current.GetRequiredService<ILogger<HashCounterClient>>(),
                 new RedisWrapper(RedisConstants.HashCounterPrefix),
                 hashCounterName,
                 @base);
@@ -179,7 +187,7 @@ namespace WeihanLi.Redis
         /// <param name="keyName">keyName</param>
         /// <param name="expiry">过期时间(滑动过期)</param>
         /// <returns></returns>
-        public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, TimeSpan? expiry) => new DictionaryClient<TKey, TValue>(keyName, expiry, DependencyResolver.Current.ResolveService<ILogger<DictionaryClient<TKey, TValue>>>());
+        public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, TimeSpan? expiry) => new DictionaryClient<TKey, TValue>(keyName, expiry, DependencyResolver.Current.GetRequiredService<ILogger<DictionaryClient<TKey, TValue>>>());
 
         /// <summary>
         /// 获取一个 DictionaryClient
@@ -190,7 +198,7 @@ namespace WeihanLi.Redis
         /// <param name="expiry">过期时间</param>
         /// <param name="isSlidingExpiry">更新是否重置过期时间</param>
         /// <returns></returns>
-        public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, TimeSpan? expiry, bool isSlidingExpiry) => new DictionaryClient<TKey, TValue>(keyName, expiry, isSlidingExpiry, DependencyResolver.Current.ResolveService<ILogger<DictionaryClient<TKey, TValue>>>());
+        public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, TimeSpan? expiry, bool isSlidingExpiry) => new DictionaryClient<TKey, TValue>(keyName, expiry, isSlidingExpiry, DependencyResolver.Current.GetRequiredService<ILogger<DictionaryClient<TKey, TValue>>>());
 
         /// <summary>
         /// 获取一个 DictionaryClient
@@ -200,43 +208,43 @@ namespace WeihanLi.Redis
         /// <param name="keyName">keyName</param>
         /// <param name="expiry">绝对过期时间</param>
         /// <returns></returns>
-        public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, DateTime? expiry) => new DictionaryClient<TKey, TValue>(keyName, expiry, DependencyResolver.Current.ResolveService<ILogger<DictionaryClient<TKey, TValue>>>());
+        public static IDictionaryClient<TKey, TValue> GetDictionaryClient<TKey, TValue>(string keyName, DateTime? expiry) => new DictionaryClient<TKey, TValue>(keyName, expiry, DependencyResolver.Current.GetRequiredService<ILogger<DictionaryClient<TKey, TValue>>>());
 
         #endregion Dictionary
 
         #region List
 
-        public static IListClient<T> GetListClient<T>(string keyName) => new ListClient<T>(keyName, DependencyResolver.Current.ResolveService<ILogger<ListClient<T>>>());
+        public static IListClient<T> GetListClient<T>(string keyName) => new ListClient<T>(keyName, DependencyResolver.Current.GetRequiredService<ILogger<ListClient<T>>>());
 
         #endregion List
 
         #region Queue
 
-        public static IQueueClient<T> GetQueueClient<T>(string keyName) => new QueueClient<T>(keyName, DependencyResolver.Current.ResolveService<ILogger<QueueClient<T>>>());
+        public static IQueueClient<T> GetQueueClient<T>(string keyName) => new QueueClient<T>(keyName, DependencyResolver.Current.GetRequiredService<ILogger<QueueClient<T>>>());
 
         #endregion Queue
 
         #region Stack
 
-        public static IStackClient<T> GetStackClient<T>(string keyName) => new StackClient<T>(keyName, DependencyResolver.Current.ResolveService<ILogger<StackClient<T>>>());
+        public static IStackClient<T> GetStackClient<T>(string keyName) => new StackClient<T>(keyName, DependencyResolver.Current.GetRequiredService<ILogger<StackClient<T>>>());
 
         #endregion Stack
 
         #region Rank
 
-        public static IRankClient<T> GetRankClient<T>(string rankName) => new RankClient<T>(rankName, DependencyResolver.Current.ResolveService<ILogger<RankClient<T>>>());
+        public static IRankClient<T> GetRankClient<T>(string rankName) => new RankClient<T>(rankName, DependencyResolver.Current.GetRequiredService<ILogger<RankClient<T>>>());
 
         #endregion Rank
 
         #region Set
 
-        public static ISetClient<T> GetSetClient<T>(string keyName) => new SetClient<T>(keyName, DependencyResolver.Current.ResolveService<ILogger<SetClient<T>>>());
+        public static ISetClient<T> GetSetClient<T>(string keyName) => new SetClient<T>(keyName, DependencyResolver.Current.GetRequiredService<ILogger<SetClient<T>>>());
 
         #endregion Set
 
         #region SortedSet
 
-        public static ISortedSetClient<T> GetSortedSetClient<T>(string keyName) => new SortedSetClient<T>(keyName, DependencyResolver.Current.ResolveService<ILogger<SortedSetClient<T>>>());
+        public static ISortedSetClient<T> GetSortedSetClient<T>(string keyName) => new SortedSetClient<T>(keyName, DependencyResolver.Current.GetRequiredService<ILogger<SortedSetClient<T>>>());
 
         #endregion SortedSet
 

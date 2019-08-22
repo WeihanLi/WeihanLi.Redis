@@ -1,10 +1,11 @@
 # `WeihanLi.Redis` ReleaseNotes
 
-## [WeihanLi.Redis 1.5.6.6](https://www.nuget.org/packages/WeihanLi.Redis/1.5.6.6)
+## [WeihanLi.Redis 1.5.6.8](https://www.nuget.org/packages/WeihanLi.Redis/1.5.6.8)
 
-- Add `RedisEventBus` and `RedisEventStore`
-- Optimize `Counter`/`Firewall`
 - Add [sourceLink](https://github.com/dotnet/sourcelink) support
+- Add `RedisEventBus` and `RedisEventStore`
+- Optimize `Firewall`
+- fix `Counter` expiry bug
 
 ## [WeihanLi.Redis 1.5.4](https://www.nuget.org/packages/WeihanLi.Redis/1.5.4)
 

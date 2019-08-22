@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
-using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
@@ -40,7 +39,8 @@ namespace WeihanLi.Redis
 
         private readonly TimeSpan? _expiresIn;
 
-        public CounterClient(string counterName, long baseCount, TimeSpan? expiresIn, ILogger<CounterClient> logger) : base(logger, new RedisWrapper(RedisConstants.CounterPrefix))
+        public CounterClient(string counterName, long baseCount, TimeSpan? expiresIn, ILogger<CounterClient> logger)
+            : base(logger, new RedisWrapper(RedisDataType.Counter))
         {
             _keyName = Wrapper.GetRealKey(counterName);
             Base = baseCount;

@@ -104,19 +104,21 @@ namespace WeihanLi.Redis
 
             if (!result && _maxRetryCount > 0)
             {
-                var cancellationTokenSource = new CancellationTokenSource();
-                var delayTask = Task.Delay(TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime), cancellationTokenSource.Token);
-                result = RetryHelper.TryInvoke(
-                    () =>
-                    {
-                        Thread.Sleep(RedisManager.RedisConfiguration.LockRetryDelay);
-                        return Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId),
-                            expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
-                            When.NotExists);
-                    }, r => r || delayTask.IsCompleted, _maxRetryCount);
-                if (!delayTask.IsCompleted)
+                using (var cancellationTokenSource = new CancellationTokenSource())
                 {
-                    cancellationTokenSource.Cancel();
+                    var delayTask = Task.Delay(TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime), cancellationTokenSource.Token);
+                    result = RetryHelper.TryInvoke(
+                        () =>
+                        {
+                            Thread.Sleep(RedisManager.RedisConfiguration.LockRetryDelay);
+                            return Wrapper.Database.StringSet(_realKey, Wrapper.Wrap(_lockId),
+                                expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
+                                When.NotExists);
+                        }, r => r || delayTask.IsCompleted, _maxRetryCount);
+                    if (!delayTask.IsCompleted)
+                    {
+                        cancellationTokenSource.Cancel();
+                    }
                 }
             }
 
@@ -131,25 +133,27 @@ namespace WeihanLi.Redis
 
             if (!result && _maxRetryCount > 0)
             {
-                var cancellationTokenSource = new CancellationTokenSource();
-                var delayTask = Task.Delay(TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime), cancellationTokenSource.Token);
-                var retryTask = RetryHelper.TryInvokeAsync(
-                    async () =>
-                    {
-                        await Task.Delay(RedisManager.RedisConfiguration.LockRetryDelay);
-                        return await Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId),
-                            expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
-                            When.NotExists);
-                    }, r => r || delayTask.IsCompleted, _maxRetryCount);
-
-                await Task.WhenAny(delayTask, retryTask);
-
-                if (!delayTask.IsCompleted)
+                using (var cancellationTokenSource = new CancellationTokenSource())
                 {
-                    cancellationTokenSource.Cancel();
-                }
+                    var delayTask = Task.Delay(TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockRetryTime), cancellationTokenSource.Token);
+                    var retryTask = RetryHelper.TryInvokeAsync(
+                        async () =>
+                        {
+                            await Task.Delay(RedisManager.RedisConfiguration.LockRetryDelay);
+                            return await Wrapper.Database.StringSetAsync(_realKey, Wrapper.Wrap(_lockId),
+                                expiry ?? TimeSpan.FromSeconds(RedisManager.RedisConfiguration.MaxLockExpiry),
+                                When.NotExists);
+                        }, r => r || delayTask.IsCompleted, _maxRetryCount);
 
-                result = delayTask.IsCanceled && retryTask.Result;
+                    await Task.WhenAny(delayTask, retryTask);
+
+                    if (!delayTask.IsCompleted)
+                    {
+                        cancellationTokenSource.Cancel();
+                    }
+
+                    result = retryTask.Result;
+                }
             }
 
             return result;

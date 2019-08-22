@@ -1,5 +1,6 @@
-﻿using System;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
+using System;
 using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Common.Logging.Log4Net;
@@ -10,21 +11,19 @@ namespace WeihanLi.Redis.Samples
     {
         public static void Main(string[] args)
         {
-            LogHelper.AddLogProvider(new Log4NetLogHelperProvider());
+            LogHelper.LogFactory.AddLog4Net();
 
             IServiceCollection services = new ServiceCollection();
             services.AddRedisConfig(options =>
             {
-                options.EnableCompress = true;
                 options.RedisServers = new[]
                 {
-                    //new RedisServerConfiguration("127.0.0.1"),
-                    new RedisServerConfiguration("127.0.0.1", 16379),
+                    new RedisServerConfiguration("127.0.0.1"),
+                    //new RedisServerConfiguration("127.0.0.1", 16379),
                 };
             });
             // custom serializer
-            services.AddSingleton<IDataSerializer, BinaryDataSerializer>();
-            services.AddSingleton<IDataCompressor, NullDataCompressor>();
+            //services.AddSingleton<IDataSerializer, BinaryDataSerializer>();
             DependencyResolver.SetDependencyResolver(services);
 
             //var cacheClient = DependencyResolver.Current.ResolveService<ICacheClient>();
@@ -38,6 +37,10 @@ namespace WeihanLi.Redis.Samples
             //}, TimeSpan.FromMinutes(1));
             //var result = cacheClient.Get<PagedListModel<int>>(customSerializerCacheKey);
             //Console.WriteLine(result.ToJson());
+
+            var database = DependencyResolver.Current.GetRequiredService<IConnectionMultiplexer>().GetDatabase();
+            var val = database.StringDecrement("test_counter");
+            Console.WriteLine(val);
 
             ConfigurationChangedEventSample.MainTest();
 

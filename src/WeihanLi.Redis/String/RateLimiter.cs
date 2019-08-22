@@ -47,7 +47,13 @@ namespace WeihanLi.Redis
                 Wrapper.Database.StringSet(_limiterName, 0, _expiresIn, When.NotExists);
             }
 
-            return Wrapper.Database.StringIncrement(_limiterName) <= Limit;
+            var result = Wrapper.Database.StringIncrement(_limiterName);
+            if (result > Limit)
+            {
+                Wrapper.Database.StringDecrement(_limiterName);
+                return false;
+            }
+            return true;
         }
 
         public async Task<bool> AcquireAsync()
@@ -56,15 +62,28 @@ namespace WeihanLi.Redis
             {
                 await Wrapper.Database.StringSetAsync(_limiterName, 0, _expiresIn, When.NotExists);
             }
-            return await Wrapper.Database.StringIncrementAsync(_limiterName).ContinueWith(r => r.Result <= Limit);
+            var result = await Wrapper.Database.StringIncrementAsync(_limiterName);
+            if (result > Limit)
+            {
+                await Wrapper.Database.StringDecrementAsync(_limiterName).ConfigureAwait(false);
+                return false;
+            }
+            return true;
         }
 
         public bool Release()
         {
             if (Wrapper.Database.KeyExists(_limiterName))
             {
-                return Wrapper.Database.StringDecrement(_limiterName) >= 0;
+                var result = Wrapper.Database.StringDecrement(_limiterName);
+                if (result < 0)
+                {
+                    Wrapper.Database.StringIncrement(_limiterName);
+                    return false;
+                }
+                return true;
             }
+
             if (_expiresIn.HasValue)
             {
                 Wrapper.Database.StringSet(_limiterName, 0, _expiresIn, When.NotExists);
@@ -76,7 +95,13 @@ namespace WeihanLi.Redis
         {
             if (await Wrapper.Database.KeyExistsAsync(_limiterName))
             {
-                return await Wrapper.Database.StringDecrementAsync(_limiterName).ContinueWith(r => r.Result > 0);
+                var result = await Wrapper.Database.StringDecrementAsync(_limiterName);
+                if (result < 0)
+                {
+                    await Wrapper.Database.StringIncrementAsync(_limiterName).ConfigureAwait(false);
+                    return false;
+                }
+                return true;
             }
             if (_expiresIn.HasValue)
             {

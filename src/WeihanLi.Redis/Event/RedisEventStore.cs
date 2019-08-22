@@ -28,11 +28,12 @@ namespace WeihanLi.Redis
         {
             var eventKey = GetEventKey<TEvent>();
             var handlerType = typeof(TEventHandler);
-            if (_wrapper.Database.HashExists(_eventsCacheKey, eventKey))
+
+            using (var redLock = RedisManager.GetRedLockClient($"eventStore_{eventKey}", 10 * 1000 / RedisManager.RedisConfiguration.LockRetryDelay))
             {
-                using (var redLock = RedisManager.GetRedLockClient($"eventStore_{eventKey}", 10 * 1000 / RedisManager.RedisConfiguration.LockRetryDelay))
+                if (redLock.TryLock())
                 {
-                    if (redLock.TryLock())
+                    if (_wrapper.Database.HashExists(_eventsCacheKey, eventKey))
                     {
                         var handlers = _wrapper.Unwrap<HashSet<Type>>(_wrapper.Database.HashGet(_eventsCacheKey, eventKey));
 
@@ -44,13 +45,11 @@ namespace WeihanLi.Redis
                         _wrapper.Database.HashSet(_eventsCacheKey, eventKey, _wrapper.Wrap(handlers));
                         return true;
                     }
+
+                    return _wrapper.Database.HashSet(_eventsCacheKey, eventKey, _wrapper.Wrap(new HashSet<Type> { handlerType }), StackExchange.Redis.When.NotExists);
                 }
-                return false;
             }
-            else
-            {
-                return _wrapper.Database.HashSet(_eventsCacheKey, eventKey, _wrapper.Wrap(new HashSet<Type> { handlerType }), StackExchange.Redis.When.NotExists);
-            }
+            return false;
         }
 
         public bool Clear()
@@ -93,7 +92,7 @@ namespace WeihanLi.Redis
                 {
                     var handlers = _wrapper.Unwrap<HashSet<Type>>(_wrapper.Database.HashGet(_eventsCacheKey, eventKey));
 
-                    if (!handlers.Contains(handlerType))
+                    if (handlers == null || !handlers.Contains(handlerType))
                     {
                         return false;
                     }

@@ -16,13 +16,30 @@ namespace WeihanLi.Redis.UnitTest
             var cacheClient = RedisManager.CacheClient;
             Assert.False(cacheClient.Exists(key));
             Assert.Null(cacheClient.Get(key));
-            Assert.True(cacheClient.Set(key, 1));
+            Assert.True(cacheClient.Set(key, 1, TimeSpan.FromSeconds(10)));
             Assert.True(cacheClient.Set(key, value));
             Assert.True(cacheClient.Exists(key));
             Assert.Equal(value, cacheClient.Get(key));
             Assert.True(cacheClient.Remove(key));
             Assert.False(cacheClient.Exists(key));
             Assert.Null(cacheClient.GetOrSet("testGetOrSet", () => (string)null, TimeSpan.FromSeconds(20)));
+        }
+
+        [Fact]
+        public async Task StringCacheAsyncTest()
+        {
+            var key = "test111Async";
+            var value = "Hello WeihanLi.Redis";
+            var cacheClient = RedisManager.CacheClient;
+            Assert.False(await cacheClient.ExistsAsync(key));
+            Assert.Null(await cacheClient.GetAsync(key));
+            Assert.True(await cacheClient.SetAsync(key, 1, TimeSpan.FromSeconds(10)));
+            Assert.True(await cacheClient.SetAsync(key, value));
+            Assert.True(await cacheClient.ExistsAsync(key));
+            Assert.Equal(value, await cacheClient.GetAsync(key));
+            Assert.True(await cacheClient.RemoveAsync(key));
+            Assert.False(await cacheClient.ExistsAsync(key));
+            Assert.Null(await cacheClient.GetOrSetAsync("testGetOrSetAsync", () => Task.FromResult((string)null), TimeSpan.FromSeconds(20)));
         }
 
         [Fact]

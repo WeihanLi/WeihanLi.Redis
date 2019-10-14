@@ -162,7 +162,7 @@ namespace WeihanLi.Redis
 
         public string Host { get; }
 
-        public RedisServerConfiguration() : this("127.0.0.1")
+        public RedisServerConfiguration() : this("127.0.0.1", DefaultRedisPort)
         {
         }
 

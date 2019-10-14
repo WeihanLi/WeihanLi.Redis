@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
+using System;
+using System.Threading.Tasks;
 using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
 
@@ -84,17 +84,17 @@ namespace WeihanLi.Redis
 
         #region Exists
 
-        public bool Exists(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExists(key, flags);
+        public bool Exists(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExists(Wrapper.GetRealKey(key), flags);
 
-        public Task<bool> ExistsAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExistsAsync(key, flags);
+        public Task<bool> ExistsAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExistsAsync(Wrapper.GetRealKey(key), flags);
 
         #endregion Exists
 
         #region Expire
 
-        public bool Expire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExpire(key, expiresIn, flags);
+        public bool Expire(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExpire(Wrapper.GetRealKey(key), expiresIn, flags);
 
-        public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.KeyExpireAsync(key, expiresIn, flags);
+        public Task<bool> ExpireAsync(string key, TimeSpan? expiresIn, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyExpireAsync(Wrapper.GetRealKey(key), expiresIn, flags);
 
         #endregion Expire
 
@@ -128,9 +128,9 @@ namespace WeihanLi.Redis
             return await GetAsync<T>(key, flags);
         }
 
-        public bool Remove(string key, CommandFlags flags = CommandFlags.None) => Wrapper.KeyDelete(key, flags);
+        public bool Remove(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDelete(Wrapper.GetRealKey(key), flags);
 
-        public Task<bool> RemoveAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDeleteAsync(key, flags);
+        public Task<bool> RemoveAsync(string key, CommandFlags flags = CommandFlags.None) => Wrapper.Database.KeyDeleteAsync(Wrapper.GetRealKey(key), flags);
 
         public bool Set<T>(string key, T value) => Set(key, value, null);
 
@@ -144,7 +144,7 @@ namespace WeihanLi.Redis
         public bool Set<T>(string key, Func<T> func, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
         {
             var realKey = Wrapper.GetRealKey(key);
-            using (var locker = new RedLockClient(HashHelper.GetHashedString(HashType.MD5, realKey), DependencyResolver.Current.ResolveService<ILogger<RedLockClient>>()))
+            using (var locker = new RedLockClient(SecurityHelper.MD5(realKey), DependencyResolver.Current.ResolveService<ILogger<RedLockClient>>()))
             {
                 if (locker.TryLock())
                 {
@@ -171,7 +171,7 @@ namespace WeihanLi.Redis
         public async Task<bool> SetAsync<T>(string key, Func<T> func, TimeSpan? expiresIn, When when, CommandFlags commandFlags)
         {
             var realKey = Wrapper.GetRealKey(key);
-            using (var locker = new RedLockClient(HashHelper.GetHashedString(HashType.MD5, realKey), DependencyResolver.Current.ResolveService<ILogger<RedLockClient>>()))
+            using (var locker = new RedLockClient(SecurityHelper.MD5(realKey), DependencyResolver.Current.ResolveService<ILogger<RedLockClient>>()))
             {
                 if (await locker.TryLockAsync())
                 {

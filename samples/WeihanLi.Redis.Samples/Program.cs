@@ -39,10 +39,37 @@ namespace WeihanLi.Redis.Samples
             //Console.WriteLine(result.ToJson());
 
             var database = DependencyResolver.Current.GetRequiredService<IConnectionMultiplexer>().GetDatabase();
-            var val = database.StringDecrement("test_counter");
+            var c_name = "test_counter";
+            database.StringSet(c_name, 0, TimeSpan.FromSeconds(10));
+
+            var val = database.StringDecrement(c_name);
+            Console.WriteLine(val);
+            val = database.StringIncrement(c_name);
             Console.WriteLine(val);
 
-            ConfigurationChangedEventSample.MainTest();
+            //try
+            //{
+            //    var cts = new CancellationTokenSource();
+            //    var task = Task.Delay(3000, cts.Token);
+            //    var task2 = Task.Delay(1000);
+
+            //    cts.Cancel(true);
+
+            //    Thread.Sleep(1000);
+
+            //    Console.WriteLine($"task.IsCompleted:{task.IsCompleted}, task.IsCanceled:{task.IsCanceled}");
+            //    Console.WriteLine($"task2.IsCompleted:{task2.IsCompleted}, task2.IsCanceled:{task2.IsCanceled}");
+            //}
+            //catch (TaskCanceledException ex)
+            //{
+            //    Console.WriteLine($"task canceled, ex:{ex}");
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e);
+            //}
+
+            //ConfigurationChangedEventSample.MainTest();
 
             Console.ReadLine();
         }

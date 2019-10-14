@@ -156,6 +156,8 @@ namespace WeihanLi.Redis
 
     public class RedisServerConfiguration
     {
+        private const int DefaultRedisPort = 6379;
+
         public int Port { get; }
 
         public string Host { get; }
@@ -164,8 +166,24 @@ namespace WeihanLi.Redis
         {
         }
 
-        public RedisServerConfiguration(string host) : this(host, 6379)
+        public RedisServerConfiguration(string host)
         {
+            if (string.IsNullOrWhiteSpace(host))
+            {
+                throw new ArgumentNullException(Resource.InvalidParameter, nameof(host));
+            }
+
+            var lastIndex = host.LastIndexOf(':');
+            if (lastIndex > 0)
+            {
+                Host = host.Substring(0, lastIndex);
+                Port = int.TryParse(host.Substring(lastIndex + 1), out var port) ? port : DefaultRedisPort;
+            }
+            else
+            {
+                Host = host;
+                Port = DefaultRedisPort;
+            }
         }
 
         public RedisServerConfiguration(string host, int port)

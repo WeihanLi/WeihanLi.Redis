@@ -176,10 +176,14 @@ namespace WeihanLi.Redis
             var lastIndex = host.LastIndexOf(':');
             if (lastIndex > 0)
             {
-                Host = host.Substring(0, lastIndex);
-                Port = int.TryParse(host.Substring(lastIndex + 1), out var port) ? port : DefaultRedisPort;
+                if (int.TryParse(host.Substring(lastIndex + 1), out var port))
+                {
+                    Host = host.Substring(0, lastIndex);
+                    Port = port;
+                }
             }
-            else
+
+            if (string.IsNullOrEmpty(Host))
             {
                 Host = host;
                 Port = DefaultRedisPort;

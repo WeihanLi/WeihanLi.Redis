@@ -1,27 +1,24 @@
 language: csharp
-solution: WeihanLi.Redis.sln
+
 # runtime config
 mono: none
-dotnet: 2.0.0
-dist: trusty
+dotnet: 3.0.100
+dist: bionic
 
 # branch build config
 branches:
-  only:
-    - master
-    - dev
+    only:        
+        - master
+        - preview
+        - dev
 
-  except:
-    - gh-pages
-
+    except:
+        - gh-pages
 
 # git config
 git:
-  depth: 1
-  lfs_skip_smudge: true # disable the download of LFS objects when cloning
+    depth: 1
+    lfs_skip_smudge: true # disable the download of LFS objects when cloning
 
-install:
-  - dotnet restore
-  
 script:
-  - bash build.sh
+    - bash build.sh --target=build

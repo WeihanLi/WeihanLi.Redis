@@ -24,4 +24,4 @@ install:
   - dotnet restore
   
 script:
-  - dotnet build -c Release -f netstandard2.0 ./src/WeihanLi.Redis/WeihanLi.Redis.csproj
+  - bash build.sh

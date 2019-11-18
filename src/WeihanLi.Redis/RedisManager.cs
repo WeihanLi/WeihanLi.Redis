@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
 using System;
@@ -37,6 +38,28 @@ namespace WeihanLi.Redis
         {
             configAction?.Invoke(RedisConfiguration);
 
+            return serviceCollection.AddRedisConfigInternal();
+        }
+
+        /// <summary>
+        /// AddRedisServices
+        /// </summary>
+        /// <param name="serviceCollection">services</param>
+        /// <param name="configuration">configuration</param>
+        /// <param name="configAction">config RedisConfigurationOptions</param>
+        /// <returns></returns>
+        public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, IConfiguration configuration, Action<IConfiguration, RedisConfigurationOptions> configAction)
+        {
+            configAction?.Invoke(configuration, RedisConfiguration);
+
+            return serviceCollection.AddRedisConfigInternal();
+        }
+
+        /// <summary>
+        /// AddRedisConfigInternal
+        /// </summary>
+        private static IServiceCollection AddRedisConfigInternal(this IServiceCollection serviceCollection)
+        {
             var configurationOptions = new ConfigurationOptions
             {
                 Password = RedisConfiguration.Password,

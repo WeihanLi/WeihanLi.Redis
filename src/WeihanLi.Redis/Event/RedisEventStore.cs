@@ -23,7 +23,7 @@ namespace WeihanLi.Redis
         }
 
         public bool AddSubscription<TEvent, TEventHandler>()
-            where TEvent : IEventBase
+            where TEvent : class, IEventBase
             where TEventHandler : IEventHandler<TEvent>
         {
             var eventKey = GetEventKey<TEvent>();
@@ -57,7 +57,7 @@ namespace WeihanLi.Redis
             return _wrapper.Database.KeyDelete(_eventsCacheKey);
         }
 
-        public ICollection<Type> GetEventHandlerTypes<TEvent>() where TEvent : IEventBase
+        public ICollection<Type> GetEventHandlerTypes<TEvent>() where TEvent : class, IEventBase
         {
             var eventKey = GetEventKey<TEvent>();
             return _wrapper.Unwrap<HashSet<Type>>(_wrapper.Database.HashGet(_eventsCacheKey, eventKey));
@@ -68,14 +68,14 @@ namespace WeihanLi.Redis
             return typeof(TEvent).FullName;
         }
 
-        public bool HasSubscriptionsForEvent<TEvent>() where TEvent : IEventBase
+        public bool HasSubscriptionsForEvent<TEvent>() where TEvent : class, IEventBase
         {
             var eventKey = GetEventKey<TEvent>();
             return _wrapper.Database.HashExists(_eventsCacheKey, eventKey);
         }
 
         public bool RemoveSubscription<TEvent, TEventHandler>()
-            where TEvent : IEventBase
+            where TEvent : class, IEventBase
             where TEventHandler : IEventHandler<TEvent>
         {
             var eventKey = GetEventKey<TEvent>();

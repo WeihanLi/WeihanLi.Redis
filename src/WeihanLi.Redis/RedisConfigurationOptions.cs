@@ -76,7 +76,7 @@ namespace WeihanLi.Redis
 
         public bool AllowAdmin { get; set; }
 
-        public bool AbortOnConnectFail { get; set; } = true;
+        public bool AbortOnConnectFail { get; set; }
 
         public int SyncTimeout { get; set; } = 3000;
 
@@ -174,7 +174,7 @@ namespace WeihanLi.Redis
             }
 
             var lastIndex = host.LastIndexOf(':');
-            if (lastIndex > 0)
+            if (lastIndex > 0 && host.Length > (lastIndex + 1))
             {
                 if (int.TryParse(host.Substring(lastIndex + 1), out var port))
                 {

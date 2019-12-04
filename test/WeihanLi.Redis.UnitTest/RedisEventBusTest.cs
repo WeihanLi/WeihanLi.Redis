@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using WeihanLi.Common;
 using WeihanLi.Common.Event;
 using WeihanLi.Common.Logging;
@@ -95,9 +95,9 @@ namespace WeihanLi.Redis.UnitTest
             public int Counter { get; set; }
         }
 
-        private class CounterEventHandler : IEventHandler<CounterEvent>
+        private class CounterEventHandler : EventHandlerBase<CounterEvent>
         {
-            public Task Handle(CounterEvent @event)
+            public override Task Handle(CounterEvent @event)
             {
                 DependencyResolver.Current.ResolveService<ILogger<CounterEventHandler>>().Info($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
                 Interlocked.Increment(ref counter);
@@ -105,9 +105,9 @@ namespace WeihanLi.Redis.UnitTest
             }
         }
 
-        private class CounterEventHandler2 : IEventHandler<CounterEvent>
+        private class CounterEventHandler2 : EventHandlerBase<CounterEvent>
         {
-            public Task Handle(CounterEvent @event)
+            public override Task Handle(CounterEvent @event)
             {
                 DependencyResolver.Current.ResolveService<ILogger<CounterEventHandler>>().Info($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
                 Interlocked.Increment(ref counter);

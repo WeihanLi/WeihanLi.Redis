@@ -1,7 +1,7 @@
-﻿using System;
+﻿using StackExchange.Redis;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using StackExchange.Redis;
 using WeihanLi.Common;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
@@ -150,11 +150,13 @@ namespace WeihanLi.Redis
         {
         }
 
+        private const string NullValue = "\"(null)\"";
+
         public RedisValue Wrap<T>(T t)
         {
             if (t == null)
             {
-                return RedisValue.Null;
+                return RedisManager.RedisConfiguration.EnableNullValue ? (RedisValue)NullValue : RedisValue.Null;
             }
             var type = typeof(T);
             if (type.IsBasicType())
@@ -175,7 +177,7 @@ namespace WeihanLi.Redis
 
         public T Unwrap<T>(RedisValue redisValue)
         {
-            if (redisValue.IsNull)
+            if (redisValue.IsNull || redisValue == NullValue)
             {
                 return default(T);
             }

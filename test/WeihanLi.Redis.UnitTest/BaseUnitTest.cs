@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
+using System;
 using WeihanLi.Common;
 
 namespace WeihanLi.Redis.UnitTest
@@ -17,13 +18,15 @@ namespace WeihanLi.Redis.UnitTest
                 //
                 config.RedisServers = new[]
                 {
-                   new RedisServerConfiguration("127.0.0.1", 6379),
+                   new RedisServerConfiguration("127.0.0.1", 16379),
                 };
                 config.CachePrefix = "WeihanLi.Redis.UnitTest";
                 config.ClientName = "WeihanLi.Redis.UnitTest";
 
                 // config.EnableCompress = false;
                 config.DefaultDatabase = dbIndex;
+
+                // config.DefaultVersion = new Version(3, 0, 0);
             });
 
             DependencyResolver.SetDependencyResolver(serviceCollection);

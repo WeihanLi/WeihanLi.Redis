@@ -75,8 +75,9 @@ namespace WeihanLi.Redis
                 AsyncTimeout = RedisConfiguration.AsyncTimeout,
                 ChannelPrefix = RedisConfiguration.ChannelPrefix,
                 ClientName = RedisConfiguration.ClientName,
+                DefaultVersion = RedisConfiguration.DefaultVersion,
             };
-            if (RedisConfiguration.CommandMap != null)
+            if (RedisConfiguration.CommandMap != null && RedisConfiguration.CommandMap.Count > 0)
             {
                 configurationOptions.CommandMap = CommandMap.Create(RedisConfiguration.CommandMap);
             }

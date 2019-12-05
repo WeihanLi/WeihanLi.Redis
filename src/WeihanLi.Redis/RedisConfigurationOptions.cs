@@ -70,7 +70,7 @@ namespace WeihanLi.Redis
 
         public bool EnableCompress { get; set; }
 
-        public int DefaultDatabase { get; set; }
+        public int DefaultDatabase { get; set; } = -1;
 
         public bool Ssl { get; set; }
 
@@ -78,9 +78,9 @@ namespace WeihanLi.Redis
 
         public bool AbortOnConnectFail { get; set; }
 
-        public int SyncTimeout { get; set; } = 3000;
+        public int SyncTimeout { get; set; } = 5000;
 
-        public int AsyncTimeout { get; set; } = 3000;
+        public int AsyncTimeout { get; set; } = 5000;
 
         public int ConnectRetry { get; set; } = 3;
 
@@ -135,6 +135,18 @@ namespace WeihanLi.Redis
         /// 最多锁过期时间（秒），默认 30min
         /// </summary>
         public int MaxLockExpiry { get; set; } = 1800;
+
+        /// <summary>
+        /// default redis server version
+        /// 默认 redis-server 版本
+        /// </summary>
+        public Version DefaultVersion { get; set; }
+
+        /// <summary>
+        /// save null into redis
+        /// 是否要保存 null
+        /// </summary>
+        public bool EnableNullValue { get; set; }
 
         private class RedisServerConfigurationComparer : IEqualityComparer<RedisServerConfiguration>
         {

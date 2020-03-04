@@ -11,7 +11,10 @@ namespace WeihanLi.Redis.Samples
     {
         public static void Main(string[] args)
         {
-            LogHelper.LogFactory.AddLog4Net();
+            LogHelper.ConfigureLogging(loggingBuilder =>
+            {
+                loggingBuilder.AddLog4Net();
+            });
 
             IServiceCollection services = new ServiceCollection();
             services.AddRedisConfig(options =>
@@ -38,7 +41,36 @@ namespace WeihanLi.Redis.Samples
             //var result = cacheClient.Get<PagedListModel<int>>(customSerializerCacheKey);
             //Console.WriteLine(result.ToJson());
 
-            var database = DependencyResolver.Current.GetRequiredService<IConnectionMultiplexer>().GetDatabase();
+            var database = DependencyResolver.Current.GetRequiredService<IConnectionMultiplexer>()
+                    .GetDatabase(0);
+            database.HashSet("testHash", 1, 1);
+            var hashVal = database.HashGet("testHash", 1);
+            Console.WriteLine(hashVal);
+
+            var updated = database.HashCompareAndExchange("testHash", 1, "2", "3");
+            Console.WriteLine(updated);
+            hashVal = database.HashGet("testHash", 1);
+            Console.WriteLine(hashVal);
+
+            updated = database.HashCompareAndExchange("testHash", 1, "1", "4");
+            Console.WriteLine(updated);
+            hashVal = database.HashGet("testHash", 1);
+            Console.WriteLine(hashVal);
+
+            database.StringSet("testString", 1);
+            var stringVal = database.StringGet("testString");
+            Console.WriteLine(stringVal);
+
+            updated = database.StringCompareAndExchange("testString", 2, 3);
+            Console.WriteLine(updated);
+            stringVal = database.StringGet("testString");
+            Console.WriteLine(stringVal);
+
+            updated = database.StringCompareAndExchange("testString", 1, 4);
+            Console.WriteLine(updated);
+            stringVal = database.StringGet("testString");
+            Console.WriteLine(stringVal);
+
             var c_name = "test_counter";
             database.StringSet(c_name, 0, TimeSpan.FromSeconds(10));
 

@@ -52,7 +52,7 @@ namespace WeihanLi.Redis.Samples
             hashVal = database.HashGet("testHash", 1);
             Console.WriteLine(hashVal);
 
-            updated = database.HashCompareAndExchange("testHash", 1, "1", "4");
+            updated = database.HashCompareAndExchange("testHash", 1, 4, 1);
             Console.WriteLine(updated);
             hashVal = database.HashGet("testHash", 1);
             Console.WriteLine(hashVal);
@@ -66,7 +66,7 @@ namespace WeihanLi.Redis.Samples
             stringVal = database.StringGet("testString");
             Console.WriteLine(stringVal);
 
-            updated = database.StringCompareAndExchange("testString", 1, 4);
+            updated = database.StringCompareAndExchange("testString", 4, 1);
             Console.WriteLine(updated);
             stringVal = database.StringGet("testString");
             Console.WriteLine(stringVal);

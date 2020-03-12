@@ -18,11 +18,11 @@ end
 ";
 
         /// <summary>
-        /// String Compare And Exchange
+        /// Hash Compare And Delete
         /// </summary>
-        private const string StringCasLuaScript = @"
-if redis.call(""get"", KEYS[1]) == ARGV[1] then
-    redis.call(""set"", KEYS[1], ARGV[2])
+        private const string HashCadLuaScript = @"
+if redis.call(""hget"", KEYS[1], ARGV[1]) == ARGV[2] then
+    redis.call(""hdel"", KEYS[1], ARGV[1])
     return 1
 else
     return 0
@@ -30,11 +30,11 @@ end
 ";
 
         /// <summary>
-        /// Hash Compare And Delete
+        /// String Compare And Exchange
         /// </summary>
-        private const string HashCadLuaScript = @"
-if redis.call(""hget"", KEYS[1], ARGV[1]) == ARGV[2] then
-    redis.call(""hdel"", KEYS[1], ARGV[1])
+        private const string StringCasLuaScript = @"
+if redis.call(""get"", KEYS[1]) == ARGV[1] then
+    redis.call(""set"", KEYS[1], ARGV[2])
     return 1
 else
     return 0

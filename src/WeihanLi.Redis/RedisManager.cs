@@ -1,10 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
 using System;
 using System.Collections.Concurrent;
 using System.Linq;
 using WeihanLi.Common;
+using WeihanLi.Common.Compressor;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 using WeihanLi.Redis.Internals;
@@ -37,6 +39,28 @@ namespace WeihanLi.Redis
         {
             configAction?.Invoke(RedisConfiguration);
 
+            return serviceCollection.AddRedisConfigInternal();
+        }
+
+        /// <summary>
+        /// AddRedisServices
+        /// </summary>
+        /// <param name="serviceCollection">services</param>
+        /// <param name="configuration">configuration</param>
+        /// <param name="configAction">config RedisConfigurationOptions</param>
+        /// <returns></returns>
+        public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, IConfiguration configuration, Action<IConfiguration, RedisConfigurationOptions> configAction)
+        {
+            configAction?.Invoke(configuration, RedisConfiguration);
+
+            return serviceCollection.AddRedisConfigInternal();
+        }
+
+        /// <summary>
+        /// AddRedisConfigInternal
+        /// </summary>
+        private static IServiceCollection AddRedisConfigInternal(this IServiceCollection serviceCollection)
+        {
             var configurationOptions = new ConfigurationOptions
             {
                 Password = RedisConfiguration.Password,
@@ -51,8 +75,9 @@ namespace WeihanLi.Redis
                 AsyncTimeout = RedisConfiguration.AsyncTimeout,
                 ChannelPrefix = RedisConfiguration.ChannelPrefix,
                 ClientName = RedisConfiguration.ClientName,
+                DefaultVersion = RedisConfiguration.DefaultVersion,
             };
-            if (RedisConfiguration.CommandMap != null)
+            if (RedisConfiguration.CommandMap != null && RedisConfiguration.CommandMap.Count > 0)
             {
                 configurationOptions.CommandMap = CommandMap.Create(RedisConfiguration.CommandMap);
             }

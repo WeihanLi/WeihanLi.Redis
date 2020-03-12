@@ -70,17 +70,17 @@ namespace WeihanLi.Redis
 
         public bool EnableCompress { get; set; }
 
-        public int DefaultDatabase { get; set; }
+        public int DefaultDatabase { get; set; } = -1;
 
         public bool Ssl { get; set; }
 
         public bool AllowAdmin { get; set; }
 
-        public bool AbortOnConnectFail { get; set; } = true;
+        public bool AbortOnConnectFail { get; set; }
 
-        public int SyncTimeout { get; set; } = 3000;
+        public int SyncTimeout { get; set; } = 5000;
 
-        public int AsyncTimeout { get; set; } = 3000;
+        public int AsyncTimeout { get; set; } = 5000;
 
         public int ConnectRetry { get; set; } = 3;
 
@@ -136,6 +136,18 @@ namespace WeihanLi.Redis
         /// </summary>
         public int MaxLockExpiry { get; set; } = 1800;
 
+        /// <summary>
+        /// default redis server version
+        /// 默认 redis-server 版本
+        /// </summary>
+        public Version DefaultVersion { get; set; }
+
+        /// <summary>
+        /// save null into redis
+        /// 是否要保存 null
+        /// </summary>
+        public bool EnableNullValue { get; set; }
+
         private class RedisServerConfigurationComparer : IEqualityComparer<RedisServerConfiguration>
         {
             public bool Equals(RedisServerConfiguration x, RedisServerConfiguration y)
@@ -174,7 +186,7 @@ namespace WeihanLi.Redis
             }
 
             var lastIndex = host.LastIndexOf(':');
-            if (lastIndex > 0)
+            if (lastIndex > 0 && host.Length > (lastIndex + 1))
             {
                 if (int.TryParse(host.Substring(lastIndex + 1), out var port))
                 {

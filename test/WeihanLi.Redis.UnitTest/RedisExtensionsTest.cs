@@ -48,5 +48,43 @@ namespace WeihanLi.Redis.UnitTest
 
             redis.KeyDelete(key);
         }
+
+        [Fact]
+        public void StringCompareAndDeleteTest()
+        {
+            var key = "test:String:cad";
+            var redis = DependencyResolver.Current
+                .GetRequiredService<IConnectionMultiplexer>()
+                .GetDatabase();
+            redis.StringSet(key, 1);
+
+            // delete if now is 2
+            Assert.False(redis.StringCompareAndDelete(key, 3));
+            Assert.True(redis.KeyExists(key));
+
+            // delete if now is 1
+            Assert.True(redis.StringCompareAndDelete(key, 1));
+            Assert.False(redis.KeyExists(key));
+        }
+
+        [Fact]
+        public void HashCompareAndDeleteTest()
+        {
+            var key = "test:Hash:cad";
+            var field = "testField";
+
+            var redis = DependencyResolver.Current
+                .GetRequiredService<IConnectionMultiplexer>()
+                .GetDatabase();
+            redis.HashSet(key, field, 1);
+
+            // delete field if now is 2
+            Assert.False(redis.HashCompareAndDelete(key, field, 2));
+            Assert.True(redis.HashExists(key, field));
+
+            // delete field if now is 1
+            Assert.True(redis.HashCompareAndDelete(key, field, 1));
+            Assert.False(redis.HashExists(key, field));
+        }
     }
 }

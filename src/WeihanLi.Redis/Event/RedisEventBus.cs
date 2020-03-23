@@ -89,7 +89,7 @@ namespace WeihanLi.Redis
 
             _subscriber.Subscribe(channelName, async (channel, eventMessage) =>
             {
-                var eventData = eventMessage.ToString().JsonToType<TEvent>();
+                var eventData = eventMessage.ToString().JsonToObject<TEvent>();
                 var handler = _serviceProvider.GetServiceOrCreateInstance<TEventHandler>();
                 if (null != handler)
                 {
@@ -108,7 +108,7 @@ namespace WeihanLi.Redis
 
             await _subscriber.SubscribeAsync(channelName, async (channel, eventMessage) =>
             {
-                var eventData = eventMessage.ToString().JsonToType<TEvent>();
+                var eventData = eventMessage.ToString().JsonToObject<TEvent>();
                 var handler = _serviceProvider.GetServiceOrCreateInstance<TEventHandler>();
                 if (null != handler)
                 {

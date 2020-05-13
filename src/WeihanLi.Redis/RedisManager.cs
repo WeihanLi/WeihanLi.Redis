@@ -84,7 +84,12 @@ namespace WeihanLi.Redis
             configurationOptions.EndPoints.AddRange(RedisConfiguration.RedisServers.Select(s => ConvertHelper.ToEndPoint(s.Host, s.Port)).ToArray());
 
             serviceCollection.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(configurationOptions));
-
+            serviceCollection.AddSingleton(sp => sp.GetRequiredService<IConnectionMultiplexer>()
+                    .GetDatabase(RedisConfiguration.DefaultDatabase)
+                );
+            serviceCollection.AddSingleton(sp => sp.GetRequiredService<IConnectionMultiplexer>()
+                .GetSubscriber()
+            );
             serviceCollection.AddSingleton<ICacheClient, CacheClient>();
             serviceCollection.AddSingleton<IHashClient, HashClient>();
             serviceCollection.AddSingleton<IPubSubClient, PubSubClient>();

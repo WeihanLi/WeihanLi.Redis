@@ -8,6 +8,7 @@ using WeihanLi.Common.Event;
 using WeihanLi.Common.Logging;
 using WeihanLi.Common.Logging.Log4Net;
 using WeihanLi.Extensions;
+using WeihanLi.Redis.Event;
 using Xunit;
 
 namespace WeihanLi.Redis.UnitTest
@@ -36,8 +37,10 @@ namespace WeihanLi.Redis.UnitTest
                 config.EnableCompress = false;
                 config.DefaultDatabase = dbIndex;
             });
-            serviceCollection.AddSingleton<IEventStore, EventStoreInRedis>();
-            serviceCollection.AddSingleton<IEventBus, RedisEventBus>();
+            serviceCollection.AddEvents()
+                .UseRedisBus()
+                ;
+
             serviceCollection.AddSingleton<CounterEventHandler>();
             serviceCollection.AddSingleton<CounterEventHandler2>();
 
@@ -71,7 +74,7 @@ namespace WeihanLi.Redis.UnitTest
                 await Task.Delay(15 * 1000);
                 Assert.Equal(2, counter);
 
-                eventBus.Unsubscribe<CounterEvent, CounterEventHandler2>();
+                eventBus.UnSubscribe<CounterEvent, CounterEventHandler2>();
                 eventBus.Publish(new CounterEvent { Counter = 123 });
 
                 await Task.Delay(10 * 1000);
@@ -79,9 +82,9 @@ namespace WeihanLi.Redis.UnitTest
             }
             finally
             {
-                eventBus.Unsubscribe<CounterEvent, CounterEventHandler>();
-                eventBus.Unsubscribe<CounterEvent, CounterEventHandler2>();
-                eventBus.Unsubscribe<CounterEvent2, DelegateEventHandler<CounterEvent2>>();
+                eventBus.UnSubscribe<CounterEvent, CounterEventHandler>();
+                eventBus.UnSubscribe<CounterEvent, CounterEventHandler2>();
+                eventBus.UnSubscribe<CounterEvent2, DelegateEventHandler<CounterEvent2>>();
             }
         }
 

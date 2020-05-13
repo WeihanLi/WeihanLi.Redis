@@ -39,14 +39,19 @@ namespace WeihanLi.Redis
         public string ChannelPrefix { get; set; } = "__WeihanLi.Redis.PubSub";
 
         /// <summary>
-        /// EVentBus channel prefix
+        /// EventBus channel prefix
         /// </summary>
         public string EventBusChannelPrefix { get; set; } = "__WeihanLi.Redis.EventBus";
 
         /// <summary>
-        /// EVentStore CachePrefix
+        /// EventStore CachePrefix
         /// </summary>
         public string EventStoreCacheKey { get; set; } = "WeihanLi.Redis.Events";
+
+        /// <summary>
+        /// EventQueue CachePrefix
+        /// </summary>
+        public string EventQueueStorePrefix { get; set; } = "WeihanLi.Redis.EventQueue";
 
         /// <summary>
         /// CachePrefix

@@ -12,24 +12,24 @@ namespace WeihanLi.Redis.UnitTest
             var channelName = "testChannel";
 
             var counter = 0;
-            RedisManager.PubSubClient.Subscribe(channelName, _ => Interlocked.Increment(ref counter));
+            await RedisManager.PubSubClient.SubscribeAsync(channelName, _ => Interlocked.Increment(ref counter));
 
-            RedisManager.PubSubClient.Publish(channelName, new PubSubMessage { SubscribeType = "AA", SubscribeMessage = "Hahaha" });
+            await RedisManager.PubSubClient.PublishAsync(channelName, new PubSubMessage { SubscribeType = "AA", SubscribeMessage = "Hahaha" });
             await Task.Delay(10000);
             Assert.Equal(1, counter);
 
-            RedisManager.PubSubClient.Unsubscribe(channelName);
+            await RedisManager.PubSubClient.UnsubscribeAsync(channelName);
             await Task.Delay(3000);
-            RedisManager.PubSubClient.Publish(channelName, new PubSubMessage { SubscribeType = "AA", SubscribeMessage = "Hahaha" });
+            await RedisManager.PubSubClient.PublishAsync(channelName, new PubSubMessage { SubscribeType = "AA", SubscribeMessage = "Hahaha" });
             await Task.Delay(10000);
             Assert.Equal(1, counter);
 
             await Task.Delay(3000);
-            RedisManager.PubSubClient.Subscribe(channelName, _ => Interlocked.Increment(ref counter));
-            RedisManager.PubSubClient.Publish(channelName, new PubSubMessage { SubscribeType = "AA", SubscribeMessage = "Hahaha" });
+            await RedisManager.PubSubClient.SubscribeAsync(channelName, _ => Interlocked.Increment(ref counter));
+            await RedisManager.PubSubClient.PublishAsync(channelName, new PubSubMessage { SubscribeType = "AA", SubscribeMessage = "Hahaha" });
             await Task.Delay(10000);
             Assert.Equal(2, counter);
-            RedisManager.PubSubClient.Unsubscribe(channelName);
+            await RedisManager.PubSubClient.UnsubscribeAsync(channelName);
         }
     }
 }

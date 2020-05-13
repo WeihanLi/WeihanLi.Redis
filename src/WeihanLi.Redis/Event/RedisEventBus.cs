@@ -14,11 +14,11 @@ namespace WeihanLi.Redis.Event
         private readonly IEventSubscriptionManager _subscriptionManager;
         private readonly IServiceProvider _serviceProvider;
 
-        public RedisEventBus(IEventSubscriptionManager eventSubscriptionManager, IConnectionMultiplexer connectionMultiplexer, IServiceProvider serviceProvider)
+        public RedisEventBus(IEventSubscriptionManager eventSubscriptionManager, ISubscriber subscriber, IServiceProvider serviceProvider)
         {
             _subscriptionManager = eventSubscriptionManager;
+            _subscriber = subscriber;
             _serviceProvider = serviceProvider;
-            _subscriber = connectionMultiplexer.GetSubscriber();
         }
 
         private static string GetChannelPrefix<TEvent>() where TEvent : class, IEventBase

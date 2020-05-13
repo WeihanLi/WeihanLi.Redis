@@ -142,8 +142,8 @@ namespace WeihanLi.Redis
             DataSerializer = RedisManager.RedisConfiguration.EnableCompress ?
                 DependencyResolver.Current.ResolveService<CompressDataSerializer>()
                 : DependencyResolver.Current.ResolveService<IDataSerializer>();
-            Database = DependencyResolver.Current.ResolveService<IConnectionMultiplexer>().GetDatabase();
-            Subscriber = new Lazy<ISubscriber>(() => DependencyResolver.Current.ResolveService<IConnectionMultiplexer>().GetSubscriber());
+            Database = DependencyResolver.Current.ResolveService<IDatabase>();
+            Subscriber = new Lazy<ISubscriber>(() => DependencyResolver.Current.ResolveService<ISubscriber>());
         }
 
         public RedisWrapper(RedisDataType redisDataType) : this(Helpers.GetCachePrefix(redisDataType))

@@ -1,10 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
-using StackExchange.Redis;
+﻿using StackExchange.Redis;
 using System.Linq;
 using System.Threading.Tasks;
 using WeihanLi.Common.Event;
 using WeihanLi.Extensions;
-using WeihanLi.Redis.Internals;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
@@ -12,15 +10,11 @@ namespace WeihanLi.Redis
     public sealed class EventStoreInRedis : IEventStore
     {
         private readonly string _eventsCacheKey;
-        private readonly ILogger _logger;
+        private readonly IDatabase _database;
 
-        private readonly IRedisWrapper _wrapper;
-
-        public EventStoreInRedis(ILogger<EventStoreInRedis> logger)
+        public EventStoreInRedis(IDatabase database)
         {
-            _logger = logger;
-            _wrapper = new RedisWrapper(RedisConstants.EventStorePrefix);
-
+            _database = database;
             _eventsCacheKey = RedisManager.RedisConfiguration.EventStoreCacheKey;
         }
 
@@ -29,7 +23,11 @@ namespace WeihanLi.Redis
             if (null == events || events.Length == 0)
                 return 0;
 
-            _wrapper.Database.HashSet(_eventsCacheKey, events.Select(e => new HashEntry(e.EventId, e.ToJson())).ToArray());
+            _database.HashSet(_eventsCacheKey,
+                events.Select(e => new HashEntry(e.EventId, e.ToJson())
+                    )
+                    .ToArray()
+                );
 
             return events.Length;
         }
@@ -39,8 +37,9 @@ namespace WeihanLi.Redis
             if (null == events || events.Length == 0)
                 return 0;
 
-            await _wrapper.Database.HashSetAsync(_eventsCacheKey,
-                events.Select(e => new HashEntry(e.EventId, e.ToJson())).ToArray()
+            await _database.HashSetAsync(_eventsCacheKey,
+                events.Select(e => new HashEntry(e.EventId, e.ToJson()))
+                    .ToArray()
                 );
 
             return events.Length;
@@ -51,7 +50,10 @@ namespace WeihanLi.Redis
             if (null == events || events.Length == 0)
                 return 0;
 
-            _wrapper.Database.HashDelete(_eventsCacheKey, events.Select(x => (RedisValue)x).ToArray());
+            _database.HashDelete(_eventsCacheKey,
+                events.Select(x => (RedisValue)x)
+                    .ToArray()
+                );
 
             return events.Length;
         }
@@ -61,7 +63,10 @@ namespace WeihanLi.Redis
             if (null == events || events.Length == 0)
                 return 0;
 
-            await _wrapper.Database.HashDeleteAsync(_eventsCacheKey, events.Select(x => (RedisValue)x).ToArray());
+            await _database.HashDeleteAsync(_eventsCacheKey,
+                events.Select(x => (RedisValue)x)
+                    .ToArray()
+                );
 
             return events.Length;
         }

@@ -8,6 +8,7 @@ using WeihanLi.Common.Event;
 using WeihanLi.Common.Logging;
 using WeihanLi.Common.Logging.Log4Net;
 using WeihanLi.Extensions;
+using WeihanLi.Redis.Event;
 using Xunit;
 
 namespace WeihanLi.Redis.UnitTest

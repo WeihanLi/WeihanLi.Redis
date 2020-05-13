@@ -1,16 +1,14 @@
 ﻿using StackExchange.Redis;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WeihanLi.Common.Event;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 
-// ReSharper disable once CheckNamespace
-namespace WeihanLi.Redis
+namespace WeihanLi.Redis.Event
 {
-    public class RedisEventBus : IEventBus
+    public sealed class RedisEventBus : IEventBus
     {
         private readonly ISubscriber _subscriber;
         private readonly IEventSubscriptionManager _subscriptionManager;
@@ -23,7 +21,7 @@ namespace WeihanLi.Redis
             _subscriber = connectionMultiplexer.GetSubscriber();
         }
 
-        private string GetChannelPrefix<TEvent>() where TEvent : class, IEventBase
+        private static string GetChannelPrefix<TEvent>() where TEvent : class, IEventBase
         {
             var eventKey = typeof(TEvent).FullName;
             var channelPrefix =
@@ -31,17 +29,17 @@ namespace WeihanLi.Redis
             return channelPrefix;
         }
 
-        private string GetChannelName<TEvent, TEventHandler>() where TEvent : class, IEventBase
-            where TEventHandler : IEventHandler<TEvent>
-            => GetChannelName<TEvent>(typeof(TEventHandler));
-
-        private string GetChannelName<TEvent>(Type eventHandlerType) where TEvent : class, IEventBase
+        private static string GetChannelName<TEvent>(Type eventHandlerType) where TEvent : class, IEventBase
         {
             var channelPrefix = GetChannelPrefix<TEvent>();
             var channelName = $"{channelPrefix}{eventHandlerType.FullName}";
 
             return channelName;
         }
+
+        private static string GetChannelName<TEvent, TEventHandler>() where TEvent : class, IEventBase
+            where TEventHandler : IEventHandler<TEvent>
+            => GetChannelName<TEvent>(typeof(TEventHandler));
 
         public bool Publish<TEvent>(TEvent @event) where TEvent : class, IEventBase
         {
@@ -118,10 +116,18 @@ namespace WeihanLi.Redis
             return true;
         }
 
-        public bool UnSubscribe<TEvent, TEventHandler>() where TEvent : class, IEventBase where TEventHandler : IEventHandler<TEvent> => _subscriptionManager.UnSubscribe<TEvent, TEventHandler>();
+        public bool UnSubscribe<TEvent, TEventHandler>() where TEvent : class, IEventBase where TEventHandler : IEventHandler<TEvent>
+        {
+            var channelName = GetChannelName<TEvent, TEventHandler>();
+            _subscriber.Unsubscribe(channelName);
+            return _subscriptionManager.UnSubscribe<TEvent, TEventHandler>();
+        }
 
-        public Task<bool> UnSubscribeAsync<TEvent, TEventHandler>() where TEvent : class, IEventBase where TEventHandler : IEventHandler<TEvent> => _subscriptionManager.UnSubscribeAsync<TEvent, TEventHandler>();
-
-        public ICollection<Type> GetEventHandlerTypes<TEvent>() where TEvent : class, IEventBase => _subscriptionManager.GetEventHandlerTypes<TEvent>();
+        public async Task<bool> UnSubscribeAsync<TEvent, TEventHandler>() where TEvent : class, IEventBase where TEventHandler : IEventHandler<TEvent>
+        {
+            var channelName = GetChannelName<TEvent, TEventHandler>();
+            await _subscriber.UnsubscribeAsync(channelName);
+            return await _subscriptionManager.UnSubscribeAsync<TEvent, TEventHandler>();
+        }
     }
 }

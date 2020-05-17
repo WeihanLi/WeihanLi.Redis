@@ -6,7 +6,7 @@ namespace WeihanLi.Redis.Event
 {
     public static class DependencyInjectionExtensions
     {
-        public static IEventBuilder UseRedisBus(this IEventBuilder eventBuilder)
+        public static IEventBuilder UseRedisEventBus(this IEventBuilder eventBuilder)
         {
             if (null == eventBuilder)
             {
@@ -17,7 +17,7 @@ namespace WeihanLi.Redis.Event
             return eventBuilder;
         }
 
-        public static IEventBuilder UseRedisQueue(this IEventBuilder eventBuilder)
+        public static IEventBuilder UseRedisEventQueue(this IEventBuilder eventBuilder)
         {
             if (null == eventBuilder)
             {
@@ -28,7 +28,7 @@ namespace WeihanLi.Redis.Event
             return eventBuilder;
         }
 
-        public static IEventBuilder UseRedisStore(this IEventBuilder eventBuilder)
+        public static IEventBuilder UseRedisEventStore(this IEventBuilder eventBuilder)
         {
             if (null == eventBuilder)
             {

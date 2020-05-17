@@ -29,6 +29,14 @@ namespace WeihanLi.Redis.Event
             return channelPrefix;
         }
 
+        private static string GetChannelPrefix(Type eventType)
+        {
+            var eventKey = eventType.FullName;
+            var channelPrefix =
+                $"{RedisManager.RedisConfiguration.EventBusChannelPrefix}{RedisManager.RedisConfiguration.KeySeparator}{eventKey}{RedisManager.RedisConfiguration.KeySeparator}";
+            return channelPrefix;
+        }
+
         private static string GetChannelName<TEvent>(Type eventHandlerType) where TEvent : class, IEventBase
         {
             var channelPrefix = GetChannelPrefix<TEvent>();
@@ -37,9 +45,13 @@ namespace WeihanLi.Redis.Event
             return channelName;
         }
 
-        private static string GetChannelName<TEvent, TEventHandler>() where TEvent : class, IEventBase
-            where TEventHandler : IEventHandler<TEvent>
-            => GetChannelName<TEvent>(typeof(TEventHandler));
+        private static string GetChannelName(Type eventType, Type eventHandlerType)
+        {
+            var channelPrefix = GetChannelPrefix(eventType);
+            var channelName = $"{channelPrefix}{eventHandlerType.FullName}";
+
+            return channelName;
+        }
 
         public bool Publish<TEvent>(TEvent @event) where TEvent : class, IEventBase
         {
@@ -49,7 +61,7 @@ namespace WeihanLi.Redis.Event
                 return false;
             }
 
-            var eventData = @event.ToJson();
+            var eventData = @event.ToEventMsg();
             foreach (var handlerType in handlerTypes)
             {
                 var handlerChannelName = GetChannelName<TEvent>(handlerType);
@@ -67,7 +79,7 @@ namespace WeihanLi.Redis.Event
                 return false;
             }
 
-            var eventData = @event.ToJson();
+            var eventData = @event.ToEventMsg();
             await Task.WhenAll(handlerTypes.Select(handlerType =>
             {
                 var handlerChannelName = GetChannelName<TEvent>(handlerType);
@@ -77,57 +89,51 @@ namespace WeihanLi.Redis.Event
             return true;
         }
 
-        public bool Subscribe<TEvent, TEventHandler>()
-            where TEvent : class, IEventBase
-            where TEventHandler : IEventHandler<TEvent>
+        public bool Subscribe(Type eventType, Type eventHandlerType)
         {
-            _subscriptionManager.Subscribe<TEvent, TEventHandler>();
-
-            var channelName = GetChannelName<TEvent, TEventHandler>();
-
+            var channelName = GetChannelName(eventType, eventHandlerType);
             _subscriber.Subscribe(channelName, async (channel, eventMessage) =>
             {
-                var eventData = eventMessage.ToString().JsonToObject<TEvent>();
-                var handler = _serviceProvider.GetServiceOrCreateInstance<TEventHandler>();
+                var eventData = eventMessage.ToString().ToEvent();
+                var handler = (IEventHandler)_serviceProvider.GetServiceOrCreateInstance(eventHandlerType);
                 if (null != handler)
                 {
                     await handler.Handle(eventData).ConfigureAwait(false);
                 }
             });
-            return true;
+            return _subscriptionManager.Subscribe(eventType, eventHandlerType);
         }
 
-        public async Task<bool> SubscribeAsync<TEvent, TEventHandler>() where TEvent : class, IEventBase
-            where TEventHandler : IEventHandler<TEvent>
+        public async Task<bool> SubscribeAsync(Type eventType, Type eventHandlerType)
         {
-            var channelName = GetChannelName<TEvent, TEventHandler>();
+            var channelName = GetChannelName(eventType, eventHandlerType);
             await Task.WhenAll(
-                _subscriptionManager.SubscribeAsync<TEvent, TEventHandler>(),
+                _subscriptionManager.SubscribeAsync(eventType, eventHandlerType),
                 _subscriber.SubscribeAsync(channelName, async (channel, eventMessage) =>
+                {
+                    var eventData = eventMessage.ToString().ToEvent();
+                    var handler = (IEventHandler)_serviceProvider.GetServiceOrCreateInstance(eventHandlerType);
+                    if (null != handler)
                     {
-                        var eventData = eventMessage.ToString().JsonToObject<TEvent>();
-                        var handler = _serviceProvider.GetServiceOrCreateInstance<TEventHandler>();
-                        if (null != handler)
-                        {
-                            await handler.Handle(eventData).ConfigureAwait(false);
-                        }
-                    })
-                );
+                        await handler.Handle(eventData).ConfigureAwait(false);
+                    }
+                })
+            );
             return true;
         }
 
-        public bool UnSubscribe<TEvent, TEventHandler>() where TEvent : class, IEventBase where TEventHandler : IEventHandler<TEvent>
+        public bool UnSubscribe(Type eventType, Type eventHandlerType)
         {
-            var channelName = GetChannelName<TEvent, TEventHandler>();
+            var channelName = GetChannelName(eventType, eventHandlerType);
             _subscriber.Unsubscribe(channelName);
-            return _subscriptionManager.UnSubscribe<TEvent, TEventHandler>();
+            return _subscriptionManager.UnSubscribe(eventType, eventHandlerType);
         }
 
-        public async Task<bool> UnSubscribeAsync<TEvent, TEventHandler>() where TEvent : class, IEventBase where TEventHandler : IEventHandler<TEvent>
+        public async Task<bool> UnSubscribeAsync(Type eventType, Type eventHandlerType)
         {
-            var channelName = GetChannelName<TEvent, TEventHandler>();
+            var channelName = GetChannelName(eventType, eventHandlerType);
             await _subscriber.UnsubscribeAsync(channelName);
-            return await _subscriptionManager.UnSubscribeAsync<TEvent, TEventHandler>();
+            return await _subscriptionManager.UnSubscribeAsync(eventType, eventHandlerType);
         }
     }
 }

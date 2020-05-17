@@ -1,11 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using WeihanLi.Common.Event;
-using WeihanLi.Extensions;
 
 namespace WeihanLi.Redis.Event
 {
@@ -25,7 +23,8 @@ namespace WeihanLi.Redis.Event
         private string GetQueueCacheKey(string queueName) =>
             $"{_cacheKey}{RedisManager.RedisConfiguration.KeySeparator}{queueName}";
 
-        public bool Enqueue<TEvent>(string queueName, TEvent @event) where TEvent : IEventBase
+        public bool Enqueue<TEvent>(string queueName, TEvent @event)
+            where TEvent : class, IEventBase
         {
             if (null == queueName)
                 throw new ArgumentNullException(nameof(queueName));
@@ -37,14 +36,8 @@ namespace WeihanLi.Redis.Event
             {
                 _database.SetAdd(_cacheKey, queueName);
 
-                // ensure event type
-                var jObj = JObject.FromObject(@event);
-                if (!jObj.ContainsKey("Type"))
-                {
-                    jObj["Type"] = JToken.FromObject(@event.GetType());
-                }
-
-                _database.ListRightPush(GetQueueCacheKey(queueName), jObj.ToJson());
+                var eventMsg = @event.ToEventMsg();
+                _database.ListRightPush(GetQueueCacheKey(queueName), eventMsg);
             }
             catch (Exception e)
             {
@@ -54,43 +47,84 @@ namespace WeihanLi.Redis.Event
             return true;
         }
 
-        public bool TryDequeue(string queueName, out IEventBase @event)
+        public async Task<bool> EnqueueAsync<TEvent>(string queueName, TEvent @event)
+            where TEvent : class, IEventBase
         {
             if (null == queueName)
                 throw new ArgumentNullException(nameof(queueName));
 
-            @event = null;
+            if (null == @event)
+                return false;
+
+            try
+            {
+                var eventMsg = @event.ToEventMsg();
+
+                await Task.WhenAll(
+                    _database.SetAddAsync(_cacheKey, queueName),
+                    _database.ListRightPushAsync(GetQueueCacheKey(queueName), eventMsg)
+                    );
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, $"enqueue event exception, queueName{queueName}, eventId:{@event.EventId}");
+                return false;
+            }
+            return true;
+        }
+
+        public IEventBase Dequeue(string queueName)
+        {
+            if (null == queueName)
+                throw new ArgumentNullException(nameof(queueName));
 
             var result = _database.ListLeftPop(GetQueueCacheKey(queueName));
             if (result.HasValue)
             {
+                IEventBase @event = null;
                 try
                 {
-                    var jObj = JObject.Parse(result.ToString());
-                    var eventType = jObj["Type"].ToObject<Type>();
-                    @event = (IEventBase)jObj.ToObject(eventType, JsonSerializer.Create(JsonSerializeExtension.DefaultSerializerSettings));
+                    @event = result.ToString().ToEvent();
                 }
                 catch (Exception e)
                 {
                     _logger.LogError(e, $"dequeue event exception, queueName:{queueName}");
-                    return false;
                 }
 
-                return true;
+                return @event;
             }
 
-            return false;
+            return null;
         }
 
-        public bool TryRemoveQueue(string queueName)
+        public async Task<IEventBase> DequeueAsync(string queueName)
         {
             if (null == queueName)
                 throw new ArgumentNullException(nameof(queueName));
 
-            _database.SetRemove(_cacheKey, queueName);
-            return _database.KeyDelete(GetQueueCacheKey(queueName));
+            var result = await _database.ListLeftPopAsync(GetQueueCacheKey(queueName));
+            if (result.HasValue)
+            {
+                IEventBase @event = null;
+                try
+                {
+                    @event = result.ToString().ToEvent();
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError(e, $"dequeue event exception, queueName:{queueName}");
+                }
+
+                return @event;
+            }
+
+            return null;
         }
 
-        public ICollection<string> Queues => _database.SetMembers(_cacheKey).ToStringArray();
+        public ICollection<string> GetQueues() => _database.SetMembers(_cacheKey).ToStringArray();
+
+        public async Task<ICollection<string>> GetQueuesAsync() =>
+            await _database.SetMembersAsync(_cacheKey)
+            .ContinueWith(r => r.Result.ToStringArray());
     }
 }

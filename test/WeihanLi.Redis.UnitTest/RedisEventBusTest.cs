@@ -38,7 +38,7 @@ namespace WeihanLi.Redis.UnitTest
                 config.DefaultDatabase = dbIndex;
             });
             serviceCollection.AddEvents()
-                .UseRedisBus()
+                .UseRedisEventBus()
                 ;
 
             serviceCollection.AddSingleton<CounterEventHandler>();

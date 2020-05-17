@@ -24,7 +24,7 @@ namespace WeihanLi.Redis
                 return 0;
 
             _database.HashSet(_eventsCacheKey,
-                events.Select(e => new HashEntry(e.EventId, e.ToJson())
+                events.Select(e => new HashEntry(e.EventId, e.ToEventMsg())
                     )
                     .ToArray()
                 );
@@ -38,7 +38,7 @@ namespace WeihanLi.Redis
                 return 0;
 
             await _database.HashSetAsync(_eventsCacheKey,
-                events.Select(e => new HashEntry(e.EventId, e.ToJson()))
+                events.Select(e => new HashEntry(e.EventId, e.ToEventMsg()))
                     .ToArray()
                 );
 

@@ -12,11 +12,13 @@ namespace WeihanLi.Redis.Event
     {
         private readonly ISubscriber _subscriber;
         private readonly IEventSubscriptionManager _subscriptionManager;
+        private readonly IEventHandlerFactory _eventHandlerFactory;
         private readonly IServiceProvider _serviceProvider;
 
-        public RedisEventBus(IEventSubscriptionManager eventSubscriptionManager, ISubscriber subscriber, IServiceProvider serviceProvider)
+        public RedisEventBus(IEventSubscriptionManager eventSubscriptionManager, IEventHandlerFactory eventHandlerFactory, ISubscriber subscriber, IServiceProvider serviceProvider)
         {
             _subscriptionManager = eventSubscriptionManager;
+            _eventHandlerFactory = eventHandlerFactory;
             _subscriber = subscriber;
             _serviceProvider = serviceProvider;
         }
@@ -55,34 +57,35 @@ namespace WeihanLi.Redis.Event
 
         public bool Publish<TEvent>(TEvent @event) where TEvent : class, IEventBase
         {
-            var handlerTypes = _subscriptionManager.GetEventHandlerTypes<TEvent>();
-            if (handlerTypes == null || handlerTypes.Count == 0)
+            var handlers = _eventHandlerFactory.GetHandlers<TEvent>();
+            if (handlers == null || handlers.Count == 0)
             {
                 return false;
             }
 
             var eventData = @event.ToEventMsg();
-            foreach (var handlerType in handlerTypes)
+
+            Parallel.ForEach(handlers, handler =>
             {
-                var handlerChannelName = GetChannelName<TEvent>(handlerType);
+                var handlerChannelName = GetChannelName<TEvent>(handler.GetType());
                 _subscriber.Publish(handlerChannelName, eventData);
-            }
+            });
 
             return true;
         }
 
         public async Task<bool> PublishAsync<TEvent>(TEvent @event) where TEvent : class, IEventBase
         {
-            var handlerTypes = _subscriptionManager.GetEventHandlerTypes<TEvent>();
-            if (handlerTypes == null || handlerTypes.Count == 0)
+            var handlers = _eventHandlerFactory.GetHandlers<TEvent>();
+            if (handlers == null || handlers.Count == 0)
             {
                 return false;
             }
 
             var eventData = @event.ToEventMsg();
-            await Task.WhenAll(handlerTypes.Select(handlerType =>
+            await Task.WhenAll(handlers.Select(handler =>
             {
-                var handlerChannelName = GetChannelName<TEvent>(handlerType);
+                var handlerChannelName = GetChannelName<TEvent>(handler.GetType());
                 return _subscriber.PublishAsync(handlerChannelName, eventData);
             }));
 

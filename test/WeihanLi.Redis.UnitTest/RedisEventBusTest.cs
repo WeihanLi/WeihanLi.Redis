@@ -37,18 +37,21 @@ namespace WeihanLi.Redis.UnitTest
                 config.EnableCompress = false;
                 config.DefaultDatabase = dbIndex;
             });
+
+            var counter2EventHandler = DelegateEventHandler.FromAction<CounterEvent2>(@event =>
+                Log4NetHelper.GetLogger("DelegateEventHandler+CounterEvents").Info($"{@event.ToJson()}")
+            );
+
+            serviceCollection.AddSingleton(counter2EventHandler);
+
             serviceCollection.AddEvents()
                 .UseRedisEventBus()
+                .AddEventHandler<CounterEvent, CounterEventHandler>()
+                .AddEventHandler<CounterEvent, CounterEventHandler2>()
+                // .AddEventHandler<CounterEvent2, DelegateEventHandler<CounterEvent2>>()
                 ;
 
-            serviceCollection.AddSingleton<CounterEventHandler>();
-            serviceCollection.AddSingleton<CounterEventHandler2>();
-
-            serviceCollection.AddSingleton(
-                DelegateEventHandler.FromAction<CounterEvent2>(@event =>
-                    Log4NetHelper.GetLogger("DelegateEventHandler+CounterEvents").Info($"{@event.ToJson()}")
-                    )
-                );
+            serviceCollection.AddSingleton<IEventHandler<CounterEvent2>>(counter2EventHandler);
 
             _serviceProvider = serviceCollection.BuildServiceProvider();
             _serviceProvider.GetRequiredService<ILoggerFactory>().AddLog4Net();
@@ -61,30 +64,31 @@ namespace WeihanLi.Redis.UnitTest
 
             try
             {
-                Assert.True(eventBus.Subscribe<CounterEvent, CounterEventHandler>());
-                Assert.True(eventBus.Subscribe<CounterEvent, CounterEventHandler2>());
+                await eventBus.SubscribeAsync<CounterEvent, CounterEventHandler>();
+                await eventBus.SubscribeAsync<CounterEvent, CounterEventHandler2>();
 
-                // Assert.False(eventBus.Subscribe<CounterEvent, CounterEventHandler2>());
-                Assert.True(eventBus.Publish(new CounterEvent { Counter = 123 }));
+                Assert.True(await eventBus.PublishAsync(new CounterEvent { Counter = 123 }));
 
-                Assert.True(eventBus.Subscribe<CounterEvent2, DelegateEventHandler<CounterEvent2>>());
-                // Assert.False(eventBus.Subscribe<CounterEvent2, DelegateEventHandler<CounterEvent2>>());
-                Assert.True(eventBus.Publish(new CounterEvent2 { Counter = 123 }));
+                await eventBus.SubscribeAsync<CounterEvent2, DelegateEventHandler<CounterEvent2>>();
+
+                Assert.True(await eventBus.PublishAsync(new CounterEvent2 { Counter = 123 }));
 
                 await Task.Delay(15 * 1000);
                 Assert.Equal(2, counter);
 
-                eventBus.UnSubscribe<CounterEvent, CounterEventHandler2>();
-                eventBus.Publish(new CounterEvent { Counter = 123 });
+                await eventBus.UnSubscribeAsync<CounterEvent, CounterEventHandler2>();
+                await eventBus.PublishAsync(new CounterEvent { Counter = 123 });
 
                 await Task.Delay(10 * 1000);
                 Assert.Equal(3, counter);
             }
             finally
             {
-                eventBus.UnSubscribe<CounterEvent, CounterEventHandler>();
-                eventBus.UnSubscribe<CounterEvent, CounterEventHandler2>();
-                eventBus.UnSubscribe<CounterEvent2, DelegateEventHandler<CounterEvent2>>();
+                await Task.WhenAll(
+                    eventBus.UnSubscribeAsync<CounterEvent, CounterEventHandler>(),
+                    eventBus.UnSubscribeAsync<CounterEvent, CounterEventHandler2>(),
+                    eventBus.UnSubscribeAsync<CounterEvent2, DelegateEventHandler<CounterEvent2>>()
+                    );
             }
         }
 

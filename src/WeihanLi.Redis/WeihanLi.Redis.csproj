@@ -2,7 +2,7 @@
   <Import Project="../../build/common.props" />
   <ItemGroup>
     <PackageReference Include="StackExchange.Redis" Version="2.1.30" />
-    <PackageReference Include="WeihanLi.Common" Version="1.0.38-preview-20200520-154642" />
+    <PackageReference Include="WeihanLi.Common" Version="1.0.38" />
   </ItemGroup>
 
   <ItemGroup>

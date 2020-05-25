@@ -1,109 +1,74 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
+﻿using StackExchange.Redis;
+using System.Linq;
+using System.Threading.Tasks;
 using WeihanLi.Common.Event;
-using WeihanLi.Redis.Internals;
+using WeihanLi.Extensions;
 
 // ReSharper disable once CheckNamespace
 namespace WeihanLi.Redis
 {
-    public class EventStoreInRedis : IEventStore
+    public sealed class EventStoreInRedis : IEventStore
     {
         private readonly string _eventsCacheKey;
-        private readonly ILogger _logger;
+        private readonly IDatabase _database;
 
-        private readonly IRedisWrapper _wrapper;
-
-        public EventStoreInRedis(ILogger<EventStoreInRedis> logger)
+        public EventStoreInRedis(IDatabase database)
         {
-            _logger = logger;
-            _wrapper = new RedisWrapper(RedisConstants.EventStorePrefix);
-
+            _database = database;
             _eventsCacheKey = RedisManager.RedisConfiguration.EventStoreCacheKey;
         }
 
-        public bool AddSubscription<TEvent, TEventHandler>()
-            where TEvent : class, IEventBase
-            where TEventHandler : IEventHandler<TEvent>
+        public int SaveEvents(params IEventBase[] events)
         {
-            var eventKey = GetEventKey<TEvent>();
-            var handlerType = typeof(TEventHandler);
+            if (null == events || events.Length == 0)
+                return 0;
 
-            using (var redLock = RedisManager.GetRedLockClient($"eventStore_{eventKey}", 10 * 1000 / RedisManager.RedisConfiguration.LockRetryDelay))
-            {
-                if (redLock.TryLock())
-                {
-                    if (_wrapper.Database.HashExists(_eventsCacheKey, eventKey))
-                    {
-                        var handlers = _wrapper.Unwrap<HashSet<Type>>(_wrapper.Database.HashGet(_eventsCacheKey, eventKey));
+            _database.HashSet(_eventsCacheKey,
+                events.Select(e => new HashEntry(e.EventId, e.ToEventMsg())
+                    )
+                    .ToArray()
+                );
 
-                        if (handlers.Contains(handlerType))
-                        {
-                            return false;
-                        }
-                        handlers.Add(handlerType);
-                        _wrapper.Database.HashSet(_eventsCacheKey, eventKey, _wrapper.Wrap(handlers));
-                        return true;
-                    }
-
-                    return _wrapper.Database.HashSet(_eventsCacheKey, eventKey, _wrapper.Wrap(new HashSet<Type> { handlerType }), StackExchange.Redis.When.NotExists);
-                }
-            }
-            return false;
+            return events.Length;
         }
 
-        public bool Clear()
+        public async Task<int> SaveEventsAsync(params IEventBase[] events)
         {
-            return _wrapper.Database.KeyDelete(_eventsCacheKey);
+            if (null == events || events.Length == 0)
+                return 0;
+
+            await _database.HashSetAsync(_eventsCacheKey,
+                events.Select(e => new HashEntry(e.EventId, e.ToEventMsg()))
+                    .ToArray()
+                );
+
+            return events.Length;
         }
 
-        public ICollection<Type> GetEventHandlerTypes<TEvent>() where TEvent : class, IEventBase
+        public int DeleteEvents(params string[] events)
         {
-            var eventKey = GetEventKey<TEvent>();
-            return _wrapper.Unwrap<HashSet<Type>>(_wrapper.Database.HashGet(_eventsCacheKey, eventKey));
+            if (null == events || events.Length == 0)
+                return 0;
+
+            _database.HashDelete(_eventsCacheKey,
+                events.Select(x => (RedisValue)x)
+                    .ToArray()
+                );
+
+            return events.Length;
         }
 
-        public string GetEventKey<TEvent>()
+        public async Task<int> DeleteEventsAsync(params string[] events)
         {
-            return typeof(TEvent).FullName;
-        }
+            if (null == events || events.Length == 0)
+                return 0;
 
-        public bool HasSubscriptionsForEvent<TEvent>() where TEvent : class, IEventBase
-        {
-            var eventKey = GetEventKey<TEvent>();
-            return _wrapper.Database.HashExists(_eventsCacheKey, eventKey);
-        }
+            await _database.HashDeleteAsync(_eventsCacheKey,
+                events.Select(x => (RedisValue)x)
+                    .ToArray()
+                );
 
-        public bool RemoveSubscription<TEvent, TEventHandler>()
-            where TEvent : class, IEventBase
-            where TEventHandler : IEventHandler<TEvent>
-        {
-            var eventKey = GetEventKey<TEvent>();
-            var handlerType = typeof(TEventHandler);
-
-            if (!_wrapper.Database.HashExists(_eventsCacheKey, eventKey))
-            {
-                return false;
-            }
-
-            using (var redLock = RedisManager.GetRedLockClient($"eventStore_{eventKey}", 10 * 1000 / RedisManager.RedisConfiguration.LockRetryDelay))
-            {
-                if (redLock.TryLock())
-                {
-                    var handlers = _wrapper.Unwrap<HashSet<Type>>(_wrapper.Database.HashGet(_eventsCacheKey, eventKey));
-
-                    if (handlers == null || !handlers.Contains(handlerType))
-                    {
-                        return false;
-                    }
-
-                    handlers.Remove(handlerType);
-                    _wrapper.Database.HashSet(_eventsCacheKey, eventKey, _wrapper.Wrap(handlers));
-                    return true;
-                }
-            }
-
-            return false;
+            return events.Length;
         }
     }
 }

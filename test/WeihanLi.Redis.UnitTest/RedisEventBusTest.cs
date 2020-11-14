@@ -55,7 +55,7 @@ namespace WeihanLi.Redis.UnitTest
             _serviceProvider = serviceCollection.BuildServiceProvider();
         }
 
-        [Fact]
+        [Fact(Skip="RedisEventBus")]
         public async Task MainTest()
         {
             var eventBus = _serviceProvider.GetRequiredService<IEventBus>();

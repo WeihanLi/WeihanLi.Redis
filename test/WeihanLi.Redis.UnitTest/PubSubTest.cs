@@ -6,7 +6,7 @@ namespace WeihanLi.Redis.UnitTest
 {
     public class PubSubTest : BaseUnitTest
     {
-        [Fact]
+        [Fact(Skip="PubSub")]
         public async Task MainTest()
         {
             var channelName = "testChannel";

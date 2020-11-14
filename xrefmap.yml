@@ -4759,6 +4759,19 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.RedisConfigurationOptions.EnableNullValue
   nameWithType: RedisConfigurationOptions.EnableNullValue
+- uid: WeihanLi.Redis.RedisConfigurationOptions.EnableRandomExpiry
+  name: EnableRandomExpiry
+  href: docs/api/WeihanLi.Redis.RedisConfigurationOptions.html#WeihanLi_Redis_RedisConfigurationOptions_EnableRandomExpiry
+  commentId: P:WeihanLi.Redis.RedisConfigurationOptions.EnableRandomExpiry
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.EnableRandomExpiry
+  nameWithType: RedisConfigurationOptions.EnableRandomExpiry
+- uid: WeihanLi.Redis.RedisConfigurationOptions.EnableRandomExpiry*
+  name: EnableRandomExpiry
+  href: docs/api/WeihanLi.Redis.RedisConfigurationOptions.html#WeihanLi_Redis_RedisConfigurationOptions_EnableRandomExpiry_
+  commentId: Overload:WeihanLi.Redis.RedisConfigurationOptions.EnableRandomExpiry
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisConfigurationOptions.EnableRandomExpiry
+  nameWithType: RedisConfigurationOptions.EnableRandomExpiry
 - uid: WeihanLi.Redis.RedisConfigurationOptions.EventBusChannelPrefix
   name: EventBusChannelPrefix
   href: docs/api/WeihanLi.Redis.RedisConfigurationOptions.html#WeihanLi_Redis_RedisConfigurationOptions_EventBusChannelPrefix

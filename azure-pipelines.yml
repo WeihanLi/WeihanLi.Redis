@@ -18,9 +18,15 @@ jobs:
   #     - 6379/tcp
 
   pool:
-    vmImage: 'ubuntu-16.04'
+    vmImage: 'ubuntu-latest'
 
   steps:
+  - task: UseDotNet@2
+    displayName: 'Use .NET Core sdk'
+    inputs:
+      packageType: sdk
+      version: 5.0.x
+  
   - script: bash build.sh
     displayName: 'Build Script'
 
@@ -28,9 +34,15 @@ jobs:
 - job: Windows
 
   pool:
-    vmImage: 'windows-2019'
+    vmImage: 'windows-latest'
 
   steps:
+  - task: UseDotNet@2
+    displayName: 'Use .NET Core sdk'
+    inputs:
+      packageType: sdk
+      version: 5.0.x
+  
   - script: dotnet --info
     displayName: 'dotnet info'
 

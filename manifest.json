@@ -5,18 +5,6 @@
   "files": [
     {
       "type": "Conceptual",
-      "source_relative_path": "Index.md",
-      "output": {
-        ".html": {
-          "relative_path": "Index.html",
-          "hash": "kklx+g5CWHYfmNXLj9stAg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "README.en.md",
       "output": {
         ".html": {
@@ -406,6 +394,18 @@
         ".html": {
           "relative_path": "docs/api/toc.html",
           "hash": "bdXfwHuSDOKPytU2Q9KNHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "O/YOdZbcfwRsFjcMIm08ig=="
         }
       },
       "is_incremental": false,

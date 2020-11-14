@@ -5,7 +5,7 @@ using Xunit;
 
 namespace WeihanLi.Redis.UnitTest
 {
-    public class RedisExtensionsTest : BaseUnitTest
+    public class RedisExtensionsTest
     {
         [Fact]
         public void StringCompareAndExchangeTest()

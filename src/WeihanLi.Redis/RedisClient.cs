@@ -25,9 +25,14 @@ namespace WeihanLi.Redis
 
         protected TimeSpan GetRandomCacheExpiry() => GetRandomCacheExpiry(RedisManager.RedisConfiguration.MaxRandomCacheExpiry);
 
-        protected TimeSpan GetRandomCacheExpiry(int max) => TimeSpan.FromSeconds(Random.Next(max));
+        protected TimeSpan GetRandomCacheExpiry(int max)
+        {
+            return RedisManager.RedisConfiguration.EnableRandomExpiry 
+                ? TimeSpan.FromSeconds(Random.Next(max))
+                : TimeSpan.Zero
+                ;
+        }
 
-        protected TimeSpan GetRandomCacheExpiry(int min, int max) => TimeSpan.FromSeconds(Random.Next(min, max));
 
         #endregion GetRandomCacheExpiry
 

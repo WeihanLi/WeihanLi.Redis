@@ -75,6 +75,8 @@ namespace WeihanLi.Redis
 
         public bool EnableCompress { get; set; }
 
+        public bool EnableRandomExpiry { get; set; }
+
         public int DefaultDatabase { get; set; }
 
         public bool Ssl { get; set; }

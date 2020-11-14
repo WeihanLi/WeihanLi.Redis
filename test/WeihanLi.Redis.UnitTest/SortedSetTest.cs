@@ -3,7 +3,7 @@ using Xunit;
 
 namespace WeihanLi.Redis.UnitTest
 {
-    public class SortedSetTest : BaseUnitTest
+    public class SortedSetTest
     {
         [Fact]
         public void MainTest()

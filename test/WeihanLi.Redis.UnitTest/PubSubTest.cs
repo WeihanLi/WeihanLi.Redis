@@ -4,9 +4,9 @@ using Xunit;
 
 namespace WeihanLi.Redis.UnitTest
 {
-    public class PubSubTest : BaseUnitTest
+    public class PubSubTest
     {
-        [Fact(Skip="PubSub")]
+        [Fact(Skip = "PubSub")]
         public async Task MainTest()
         {
             var channelName = "testChannel";

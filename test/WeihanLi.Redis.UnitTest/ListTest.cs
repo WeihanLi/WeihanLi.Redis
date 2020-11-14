@@ -2,7 +2,7 @@
 
 namespace WeihanLi.Redis.UnitTest
 {
-    public class ListTest : BaseUnitTest
+    public class ListTest
     {
         [Fact]
         public void MainTest()

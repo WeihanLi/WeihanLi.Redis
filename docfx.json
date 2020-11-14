@@ -5,7 +5,7 @@
         {
           "files": [
             "src/**.csproj",
-            "src/WeihanLi.Redis/*.cs",
+            "src/WeihanLi.Redis/**/*.cs",
             "src/**/*.cs"
           ],
           "exclude": [ "**/bin/**", "**/obj/**" ]

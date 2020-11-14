@@ -1,0 +1,39 @@
+name: dotnetcore
+
+on: [push]
+
+jobs:
+  # Label of the container job
+  container-job:
+    # Containers must run in Linux based operating systems
+    runs-on: ubuntu-latest
+    # Docker Hub image that `container-job` executes in
+    container: mcr.microsoft.com/dotnet/sdk:5.0
+
+    # Service containers to run with `container-job`
+    # https://docs.github.com/en/free-pro-team@latest/actions/guides/creating-redis-service-containers
+    services:
+      # Label used to access the service container
+      redis:
+        # Docker Hub image
+        image: redis
+        # Set health checks to wait until redis has started
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps port 6379 on service container to the host
+          - 6379:6379
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: dotnet info
+      run: dotnet --info
+    - name: build
+      run: bash build.sh

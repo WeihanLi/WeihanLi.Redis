@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using WeihanLi.Common;
 using WeihanLi.Common.Event;
 using WeihanLi.Common.Logging;
-using WeihanLi.Common.Logging.Log4Net;
 using WeihanLi.Extensions;
 using WeihanLi.Redis.Event;
 using Xunit;
@@ -39,7 +38,7 @@ namespace WeihanLi.Redis.UnitTest
             });
 
             var counter2EventHandler = DelegateEventHandler.FromAction<CounterEvent2>(@event =>
-                Log4NetHelper.GetLogger("DelegateEventHandler+CounterEvents").Info($"{@event.ToJson()}")
+                Console.WriteLine($"{@event.ToJson()}")
             );
 
             serviceCollection.AddSingleton(counter2EventHandler);
@@ -54,7 +53,6 @@ namespace WeihanLi.Redis.UnitTest
             serviceCollection.AddSingleton<IEventHandler<CounterEvent2>>(counter2EventHandler);
 
             _serviceProvider = serviceCollection.BuildServiceProvider();
-            _serviceProvider.GetRequiredService<ILoggerFactory>().AddLog4Net();
         }
 
         [Fact]

@@ -7,8 +7,8 @@ jobs:
   container-job:
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
-    # Docker Hub image that `container-job` executes in
-    container: mcr.microsoft.com/dotnet/sdk:5.0
+    # # Docker Hub image that `container-job` executes in
+    # container: mcr.microsoft.com/dotnet/sdk:5.0
 
     # Service containers to run with `container-job`
     # https://docs.github.com/en/free-pro-team@latest/actions/guides/creating-redis-service-containers
@@ -16,7 +16,7 @@ jobs:
       # Label used to access the service container
       redis:
         # Docker Hub image
-        image: redis
+        image: redis:alpine
         # Set health checks to wait until redis has started
         options: >-
           --health-cmd "redis-cli ping"

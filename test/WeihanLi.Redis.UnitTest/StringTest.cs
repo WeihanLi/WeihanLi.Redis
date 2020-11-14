@@ -148,8 +148,10 @@ namespace WeihanLi.Redis.UnitTest
             Assert.True(rateLimiterClient.Release());
             Assert.False(rateLimiterClient.Release());
 
-            await Task.Delay(TimeSpan.FromSeconds(3));
-            Assert.False(RedisManager.GetCommonRedisClient(RedisDataType.RateLimiter).KeyExists(rateLimiterName));
+            await Task.Delay(TimeSpan.FromSeconds(5));
+            Assert.False(RedisManager.GetCommonRedisClient(RedisDataType.RateLimiter)
+                .KeyExists(rateLimiterName)
+            );
         }
 
         [Theory]

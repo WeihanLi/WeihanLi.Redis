@@ -118,7 +118,9 @@ namespace WeihanLi.Redis.UnitTest
         {
             var firewallName = $"concurrentFirewallTest_{limit}_{taskCount}";
             var tasks = new List<Task<bool>>();
-            RedisManager.GetCommonRedisClient(RedisDataType.Firewall).KeyDelete(firewallName);
+            RedisManager.GetCommonRedisClient(RedisDataType.Firewall)
+                .KeyDelete(firewallName);
+
             Func<Task<bool>> func = () =>
             {
                 var firewall = RedisManager.GetFirewallClient(firewallName, limit, TimeSpan.FromSeconds(60));

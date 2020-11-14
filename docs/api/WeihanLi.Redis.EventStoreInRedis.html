@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class EventStoreInRedis
    ">
-    <meta name="generator" content="docfx 2.42.4.0">
+    <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -80,56 +80,28 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">EventStoreInRedis</span></div>
   </div>
-  <div classs="implements">
-    <h5>Implements</h5>
-    <div><span class="xref">WeihanLi.Common.Event.IEventStore</span></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WeihanLi.Redis.html">WeihanLi.Redis</a></h6>
   <h6><strong>Assembly</strong>: WeihanLi.Redis.dll</h6>
   <h5 id="WeihanLi_Redis_EventStoreInRedis_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EventStoreInRedis : IEventStore</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class EventStoreInRedis : IEventStore</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis__ctor_Microsoft_Extensions_Logging_ILogger_WeihanLi_Redis_EventStoreInRedis__.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.%23ctor(Microsoft.Extensions.Logging.ILogger%7BWeihanLi.Redis.EventStoreInRedis%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis__ctor_IDatabase_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.%23ctor(IDatabase)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L17">View Source</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L15">View Source</a>
   </span>
   <a id="WeihanLi_Redis_EventStoreInRedis__ctor_" data-uid="WeihanLi.Redis.EventStoreInRedis.#ctor*"></a>
-  <h4 id="WeihanLi_Redis_EventStoreInRedis__ctor_Microsoft_Extensions_Logging_ILogger_WeihanLi_Redis_EventStoreInRedis__" data-uid="WeihanLi.Redis.EventStoreInRedis.#ctor(Microsoft.Extensions.Logging.ILogger{WeihanLi.Redis.EventStoreInRedis})">EventStoreInRedis(ILogger&lt;EventStoreInRedis&gt;)</h4>
+  <h4 id="WeihanLi_Redis_EventStoreInRedis__ctor_IDatabase_" data-uid="WeihanLi.Redis.EventStoreInRedis.#ctor(IDatabase)">EventStoreInRedis(IDatabase)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public EventStoreInRedis(ILogger&lt;EventStoreInRedis&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public EventStoreInRedis(IDatabase database)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -142,68 +114,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.Extensions.Logging.ILogger</span>&lt;<a class="xref" href="WeihanLi.Redis.EventStoreInRedis.html">EventStoreInRedis</a>&gt;</td>
-        <td><span class="parametername">logger</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="fields">Fields
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_EventsCacheKey.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.EventsCacheKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L12">View Source</a>
-  </span>
-  <h4 id="WeihanLi_Redis_EventStoreInRedis_EventsCacheKey" data-uid="WeihanLi.Redis.EventStoreInRedis.EventsCacheKey">EventsCacheKey</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly string EventsCacheKey</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_Logger.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.Logger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L13">View Source</a>
-  </span>
-  <h4 id="WeihanLi_Redis_EventStoreInRedis_Logger" data-uid="WeihanLi.Redis.EventStoreInRedis.Logger">Logger</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected readonly ILogger Logger</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.Extensions.Logging.ILogger</span></td>
+        <td><span class="xref">IDatabase</span></td>
+        <td><span class="parametername">database</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -212,70 +124,36 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_AddSubscription__2.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.AddSubscription%60%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_DeleteEvents_System_String___.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.DeleteEvents(System.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L25">View Source</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L48">View Source</a>
   </span>
-  <a id="WeihanLi_Redis_EventStoreInRedis_AddSubscription_" data-uid="WeihanLi.Redis.EventStoreInRedis.AddSubscription*"></a>
-  <h4 id="WeihanLi_Redis_EventStoreInRedis_AddSubscription__2" data-uid="WeihanLi.Redis.EventStoreInRedis.AddSubscription``2">AddSubscription&lt;TEvent, TEventHandler&gt;()</h4>
+  <a id="WeihanLi_Redis_EventStoreInRedis_DeleteEvents_" data-uid="WeihanLi.Redis.EventStoreInRedis.DeleteEvents*"></a>
+  <h4 id="WeihanLi_Redis_EventStoreInRedis_DeleteEvents_System_String___" data-uid="WeihanLi.Redis.EventStoreInRedis.DeleteEvents(System.String[])">DeleteEvents(String[])</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool AddSubscription&lt;TEvent, TEventHandler&gt;()
-
-    where TEvent : IEventBase where TEventHandler : IEventHandler&lt;TEvent&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public int DeleteEvents(params string[] events)</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
         <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="parametername">TEvent</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TEventHandler</span></td>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">events</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_Clear.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L49">View Source</a>
-  </span>
-  <a id="WeihanLi_Redis_EventStoreInRedis_Clear_" data-uid="WeihanLi.Redis.EventStoreInRedis.Clear*"></a>
-  <h4 id="WeihanLi_Redis_EventStoreInRedis_Clear" data-uid="WeihanLi.Redis.EventStoreInRedis.Clear">Clear()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Clear()</code></pre>
-  </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -286,73 +164,43 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">System.Int32</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_GetEventHandlerTypes__1.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.GetEventHandlerTypes%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_DeleteEventsAsync_System_String___.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(System.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L54">View Source</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L61">View Source</a>
   </span>
-  <a id="WeihanLi_Redis_EventStoreInRedis_GetEventHandlerTypes_" data-uid="WeihanLi.Redis.EventStoreInRedis.GetEventHandlerTypes*"></a>
-  <h4 id="WeihanLi_Redis_EventStoreInRedis_GetEventHandlerTypes__1" data-uid="WeihanLi.Redis.EventStoreInRedis.GetEventHandlerTypes``1">GetEventHandlerTypes&lt;TEvent&gt;()</h4>
+  <a id="WeihanLi_Redis_EventStoreInRedis_DeleteEventsAsync_" data-uid="WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync*"></a>
+  <h4 id="WeihanLi_Redis_EventStoreInRedis_DeleteEventsAsync_System_String___" data-uid="WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(System.String[])">DeleteEventsAsync(String[])</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICollection&lt;Type&gt; GetEventHandlerTypes&lt;TEvent&gt;()
-
-    where TEvent : IEventBase</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; DeleteEventsAsync(params string[] events)</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Type</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
         <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="parametername">TEvent</span></td>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">events</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_GetEventKey__1.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.GetEventKey%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L60">View Source</a>
-  </span>
-  <a id="WeihanLi_Redis_EventStoreInRedis_GetEventKey_" data-uid="WeihanLi.Redis.EventStoreInRedis.GetEventKey*"></a>
-  <h4 id="WeihanLi_Redis_EventStoreInRedis_GetEventKey__1" data-uid="WeihanLi.Redis.EventStoreInRedis.GetEventKey``1">GetEventKey&lt;TEvent&gt;()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string GetEventKey&lt;TEvent&gt;()</code></pre>
-  </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -363,43 +211,43 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TEvent</span></td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_HasSubscriptionsForEvent__1.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.HasSubscriptionsForEvent%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_SaveEvents_IEventBase___.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.SaveEvents(IEventBase%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L65">View Source</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L21">View Source</a>
   </span>
-  <a id="WeihanLi_Redis_EventStoreInRedis_HasSubscriptionsForEvent_" data-uid="WeihanLi.Redis.EventStoreInRedis.HasSubscriptionsForEvent*"></a>
-  <h4 id="WeihanLi_Redis_EventStoreInRedis_HasSubscriptionsForEvent__1" data-uid="WeihanLi.Redis.EventStoreInRedis.HasSubscriptionsForEvent``1">HasSubscriptionsForEvent&lt;TEvent&gt;()</h4>
+  <a id="WeihanLi_Redis_EventStoreInRedis_SaveEvents_" data-uid="WeihanLi.Redis.EventStoreInRedis.SaveEvents*"></a>
+  <h4 id="WeihanLi_Redis_EventStoreInRedis_SaveEvents_IEventBase___" data-uid="WeihanLi.Redis.EventStoreInRedis.SaveEvents(IEventBase[])">SaveEvents(IEventBase[])</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool HasSubscriptionsForEvent&lt;TEvent&gt;()
-
-    where TEvent : IEventBase</code></pre>
+    <pre><code class="lang-csharp hljs">public int SaveEvents(params IEventBase[] events)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEventBase</span>[]</td>
+        <td><span class="parametername">events</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -410,43 +258,43 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TEvent</span></td>
+        <td><span class="xref">System.Int32</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_RemoveSubscription__2.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.RemoveSubscription%60%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_EventStoreInRedis_SaveEventsAsync_IEventBase___.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(IEventBase%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L71">View Source</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventStore.cs/#L35">View Source</a>
   </span>
-  <a id="WeihanLi_Redis_EventStoreInRedis_RemoveSubscription_" data-uid="WeihanLi.Redis.EventStoreInRedis.RemoveSubscription*"></a>
-  <h4 id="WeihanLi_Redis_EventStoreInRedis_RemoveSubscription__2" data-uid="WeihanLi.Redis.EventStoreInRedis.RemoveSubscription``2">RemoveSubscription&lt;TEvent, TEventHandler&gt;()</h4>
+  <a id="WeihanLi_Redis_EventStoreInRedis_SaveEventsAsync_" data-uid="WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync*"></a>
+  <h4 id="WeihanLi_Redis_EventStoreInRedis_SaveEventsAsync_IEventBase___" data-uid="WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(IEventBase[])">SaveEventsAsync(IEventBase[])</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool RemoveSubscription&lt;TEvent, TEventHandler&gt;()
-
-    where TEvent : IEventBase where TEventHandler : IEventHandler&lt;TEvent&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; SaveEventsAsync(params IEventBase[] events)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEventBase</span>[]</td>
+        <td><span class="parametername">events</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -457,34 +305,11 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TEvent</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TEventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <span class="xref">WeihanLi.Common.Event.IEventStore</span>
-  </div>
 </article>
           </div>
           
@@ -501,7 +326,8 @@
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

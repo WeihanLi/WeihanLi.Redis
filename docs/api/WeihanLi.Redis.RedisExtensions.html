@@ -1,0 +1,629 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RedisExtensions
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RedisExtensions
+   ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WeihanLi.Redis.RedisExtensions">
+  
+  
+  <h1 id="WeihanLi_Redis_RedisExtensions" data-uid="WeihanLi.Redis.RedisExtensions" class="text-break">Class RedisExtensions
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">RedisExtensions</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WeihanLi.Redis.html">WeihanLi.Redis</a></h6>
+  <h6><strong>Assembly</strong>: WeihanLi.Redis.dll</h6>
+  <h5 id="WeihanLi_Redis_RedisExtensions_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class RedisExtensions : object</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_RedisExtensions_HashCompareAndDelete_IDatabase_RedisKey_RedisValue_RedisValue_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.RedisExtensions.HashCompareAndDelete(IDatabase%2CRedisKey%2CRedisValue%2CRedisValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/RedisExtensions.cs/#L76">View Source</a>
+  </span>
+  <a id="WeihanLi_Redis_RedisExtensions_HashCompareAndDelete_" data-uid="WeihanLi.Redis.RedisExtensions.HashCompareAndDelete*"></a>
+  <h4 id="WeihanLi_Redis_RedisExtensions_HashCompareAndDelete_IDatabase_RedisKey_RedisValue_RedisValue_" data-uid="WeihanLi.Redis.RedisExtensions.HashCompareAndDelete(IDatabase,RedisKey,RedisValue,RedisValue)">HashCompareAndDelete(IDatabase, RedisKey, RedisValue, RedisValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HashCompareAndDelete(this IDatabase db, RedisKey key, RedisValue field, RedisValue originValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDatabase</span></td>
+        <td><span class="parametername">db</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">field</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">originValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_RedisExtensions_HashCompareAndDeleteAsync_IDatabase_RedisKey_RedisValue_RedisValue_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.RedisExtensions.HashCompareAndDeleteAsync(IDatabase%2CRedisKey%2CRedisValue%2CRedisValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/RedisExtensions.cs/#L81">View Source</a>
+  </span>
+  <a id="WeihanLi_Redis_RedisExtensions_HashCompareAndDeleteAsync_" data-uid="WeihanLi.Redis.RedisExtensions.HashCompareAndDeleteAsync*"></a>
+  <h4 id="WeihanLi_Redis_RedisExtensions_HashCompareAndDeleteAsync_IDatabase_RedisKey_RedisValue_RedisValue_" data-uid="WeihanLi.Redis.RedisExtensions.HashCompareAndDeleteAsync(IDatabase,RedisKey,RedisValue,RedisValue)">HashCompareAndDeleteAsync(IDatabase, RedisKey, RedisValue, RedisValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;bool&gt; HashCompareAndDeleteAsync(this IDatabase db, RedisKey key, RedisValue field, RedisValue originValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDatabase</span></td>
+        <td><span class="parametername">db</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">field</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">originValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_RedisExtensions_HashCompareAndExchange_IDatabase_RedisKey_RedisValue_RedisValue_RedisValue_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.RedisExtensions.HashCompareAndExchange(IDatabase%2CRedisKey%2CRedisValue%2CRedisValue%2CRedisValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/RedisExtensions.cs/#L87">View Source</a>
+  </span>
+  <a id="WeihanLi_Redis_RedisExtensions_HashCompareAndExchange_" data-uid="WeihanLi.Redis.RedisExtensions.HashCompareAndExchange*"></a>
+  <h4 id="WeihanLi_Redis_RedisExtensions_HashCompareAndExchange_IDatabase_RedisKey_RedisValue_RedisValue_RedisValue_" data-uid="WeihanLi.Redis.RedisExtensions.HashCompareAndExchange(IDatabase,RedisKey,RedisValue,RedisValue,RedisValue)">HashCompareAndExchange(IDatabase, RedisKey, RedisValue, RedisValue, RedisValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HashCompareAndExchange(this IDatabase db, RedisKey key, RedisValue field, RedisValue newValue, RedisValue originValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDatabase</span></td>
+        <td><span class="parametername">db</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">field</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">newValue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">originValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_RedisExtensions_HashCompareAndExchangeAsync_IDatabase_RedisKey_RedisValue_RedisValue_RedisValue_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.RedisExtensions.HashCompareAndExchangeAsync(IDatabase%2CRedisKey%2CRedisValue%2CRedisValue%2CRedisValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/RedisExtensions.cs/#L92">View Source</a>
+  </span>
+  <a id="WeihanLi_Redis_RedisExtensions_HashCompareAndExchangeAsync_" data-uid="WeihanLi.Redis.RedisExtensions.HashCompareAndExchangeAsync*"></a>
+  <h4 id="WeihanLi_Redis_RedisExtensions_HashCompareAndExchangeAsync_IDatabase_RedisKey_RedisValue_RedisValue_RedisValue_" data-uid="WeihanLi.Redis.RedisExtensions.HashCompareAndExchangeAsync(IDatabase,RedisKey,RedisValue,RedisValue,RedisValue)">HashCompareAndExchangeAsync(IDatabase, RedisKey, RedisValue, RedisValue, RedisValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;bool&gt; HashCompareAndExchangeAsync(this IDatabase db, RedisKey key, RedisValue field, RedisValue newValue, RedisValue originValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDatabase</span></td>
+        <td><span class="parametername">db</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">field</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">newValue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">originValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_RedisExtensions_StringCompareAndDelete_IDatabase_RedisKey_RedisValue_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.RedisExtensions.StringCompareAndDelete(IDatabase%2CRedisKey%2CRedisValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/RedisExtensions.cs/#L54">View Source</a>
+  </span>
+  <a id="WeihanLi_Redis_RedisExtensions_StringCompareAndDelete_" data-uid="WeihanLi.Redis.RedisExtensions.StringCompareAndDelete*"></a>
+  <h4 id="WeihanLi_Redis_RedisExtensions_StringCompareAndDelete_IDatabase_RedisKey_RedisValue_" data-uid="WeihanLi.Redis.RedisExtensions.StringCompareAndDelete(IDatabase,RedisKey,RedisValue)">StringCompareAndDelete(IDatabase, RedisKey, RedisValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool StringCompareAndDelete(this IDatabase db, RedisKey key, RedisValue originValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDatabase</span></td>
+        <td><span class="parametername">db</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">originValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_RedisExtensions_StringCompareAndDeleteAsync_IDatabase_RedisKey_RedisValue_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.RedisExtensions.StringCompareAndDeleteAsync(IDatabase%2CRedisKey%2CRedisValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/RedisExtensions.cs/#L59">View Source</a>
+  </span>
+  <a id="WeihanLi_Redis_RedisExtensions_StringCompareAndDeleteAsync_" data-uid="WeihanLi.Redis.RedisExtensions.StringCompareAndDeleteAsync*"></a>
+  <h4 id="WeihanLi_Redis_RedisExtensions_StringCompareAndDeleteAsync_IDatabase_RedisKey_RedisValue_" data-uid="WeihanLi.Redis.RedisExtensions.StringCompareAndDeleteAsync(IDatabase,RedisKey,RedisValue)">StringCompareAndDeleteAsync(IDatabase, RedisKey, RedisValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;bool&gt; StringCompareAndDeleteAsync(this IDatabase db, RedisKey key, RedisValue originValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDatabase</span></td>
+        <td><span class="parametername">db</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">originValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_RedisExtensions_StringCompareAndExchange_IDatabase_RedisKey_RedisValue_RedisValue_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.RedisExtensions.StringCompareAndExchange(IDatabase%2CRedisKey%2CRedisValue%2CRedisValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/RedisExtensions.cs/#L65">View Source</a>
+  </span>
+  <a id="WeihanLi_Redis_RedisExtensions_StringCompareAndExchange_" data-uid="WeihanLi.Redis.RedisExtensions.StringCompareAndExchange*"></a>
+  <h4 id="WeihanLi_Redis_RedisExtensions_StringCompareAndExchange_IDatabase_RedisKey_RedisValue_RedisValue_" data-uid="WeihanLi.Redis.RedisExtensions.StringCompareAndExchange(IDatabase,RedisKey,RedisValue,RedisValue)">StringCompareAndExchange(IDatabase, RedisKey, RedisValue, RedisValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool StringCompareAndExchange(this IDatabase db, RedisKey key, RedisValue newValue, RedisValue originValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDatabase</span></td>
+        <td><span class="parametername">db</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">newValue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">originValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_RedisExtensions_StringCompareAndExchangeAsync_IDatabase_RedisKey_RedisValue_RedisValue_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.RedisExtensions.StringCompareAndExchangeAsync(IDatabase%2CRedisKey%2CRedisValue%2CRedisValue)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/RedisExtensions.cs/#L70">View Source</a>
+  </span>
+  <a id="WeihanLi_Redis_RedisExtensions_StringCompareAndExchangeAsync_" data-uid="WeihanLi.Redis.RedisExtensions.StringCompareAndExchangeAsync*"></a>
+  <h4 id="WeihanLi_Redis_RedisExtensions_StringCompareAndExchangeAsync_IDatabase_RedisKey_RedisValue_RedisValue_" data-uid="WeihanLi.Redis.RedisExtensions.StringCompareAndExchangeAsync(IDatabase,RedisKey,RedisValue,RedisValue)">StringCompareAndExchangeAsync(IDatabase, RedisKey, RedisValue, RedisValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;bool&gt; StringCompareAndExchangeAsync(this IDatabase db, RedisKey key, RedisValue newValue, RedisValue originValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDatabase</span></td>
+        <td><span class="parametername">db</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">newValue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">RedisValue</span></td>
+        <td><span class="parametername">originValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_RedisExtensions.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.RedisExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/RedisExtensions.cs/#L6" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

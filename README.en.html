@@ -8,7 +8,7 @@
     <title>WeihanLi.Redis </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="WeihanLi.Redis ">
-    <meta name="generator" content="docfx 2.42.4.0">
+    <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
@@ -62,13 +62,13 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="weihanliredisweihanliredis">WeihanLi.Redis<a href="https://www.nuget.org/packages/WeihanLi.Redis/"><img src="https://img.shields.io/nuget/v/WeihanLi.Redis.svg" alt="WeihanLi.Redis"></a></h1>
 
+<p><a href="README.html">中文</a></p>
 <h2 id="build">Build</h2>
 <p><a href="https://weihanli.visualstudio.com/Pipelines/_build/latest?definitionId=15&amp;branchName=dev"><img src="https://weihanli.visualstudio.com/Pipelines/_apis/build/status/WeihanLi.WeihanLi.Redis?branchName=dev" alt="Build Status"></a></p>
 <p><a href="https://travis-ci.org/WeihanLi/WeihanLi.Redis"><img src="https://travis-ci.org/WeihanLi/WeihanLi.Redis.svg?branch=dev" alt="Build Status"></a></p>
 <h2 id="intro">Intro</h2>
 <p>RedisExtensions for StackExchange.Redis, much more easier for generic opeartions,and supply some extensions for your business logics.</p>
-<p>StackExchange.Redis 扩展，更简单的泛型操作，并提供一些的适用于业务场景中的扩展</p>
-<p>基于 Redis 的五种主要的数据类型做了一些扩展：</p>
+<p>extensions based on redis 5 basic types:</p>
 <ol>
 <li><p>String</p>
 <ul>
@@ -76,6 +76,7 @@
 <li>Counter</li>
 <li>Firewall</li>
 <li>RedLock</li>
+<li>RateLimiter</li>
 </ul>
 </li>
 <li><p>Hash</p>
@@ -105,17 +106,12 @@
 </li>
 </ol>
 <h2 id="getstarted">GetStarted</h2>
-<h3 id="installation-安装">Installation 安装</h3>
-<p>Install from <a href="https://www.nuget.org/packages/WeihanLi.Redis/">Nuget</a></p>
-<p>通过 Nuget 安装 <code>WeihanLi.Redis</code></p>
-<h3 id="configuration-配置">Configuration 配置</h3>
-<p>对于 V1.0.6 及以下版本支持 .netframework4.5 配置参考：</p>
+<h3 id="install">Install</h3>
+<pre><code class="lang-bash">dotnet add package WeihanLi.Redis
+</code></pre>
+<h3 id="configuration">Configuration</h3>
 <ol>
-<li><p>日志配置，日志基于 log4net 的配置，可以参考单元测试中的 <code>log4net.config</code> 的配置，将 <code>log4net.config</code> 放在项目根目录下【推荐】
-如果不在项目根目录下或者文件名发生修改则需要自己手动调用 <code>LogHelper.LogInit(&quot;log4net.config&quot;);</code></p>
-</li>
-<li><p>Redis 配置</p>
-</li>
+<li>Configue</li>
 </ol>
 <pre><code class="lang-csharp">RedisManager.AddRedisConfig(config =&gt;
     {
@@ -123,7 +119,7 @@
         config.ChannelPrefix = &quot;WeihanLi.Redis.UnitTest&quot;;
     });
 </code></pre>
-<p>.net core 应用，还可以这样配置</p>
+<p>or</p>
 <pre><code class="lang-csharp">serviceCollection.AddRedisConfig(config =&gt;
     {
         config.CachePrefix = &quot;WeihanLi.Redis.UnitTest&quot;;
@@ -131,21 +127,9 @@
         config.EnableCompress = false;// disable compress
     });
 </code></pre>
-<p>对于 1.1* 及以上版本不再支持 dotnet framework，配置方式如下：</p>
-<pre><code class="lang-csharp">// IServiceCollection serviceCollection = new ServiceCollection();
-
-serviceCollection.AddRedisConfig(config =&gt;
-    {
-        config.CachePrefix = &quot;WeihanLi.Redis.UnitTest&quot;;
-        config.ChannelPrefix = &quot;WeihanLi.Redis.UnitTest&quot;;
-        config.EnableCompress = false;// disable compress
-    });
-</code></pre>
-<h3 id="basic-usage-基本用法">Basic usage 基本用法</h3>
+<h3 id="basic-usage">Basic usage</h3>
 <ol>
-<li><p>Cache 缓存</p>
-<p>缓存的基本操作主要是基于 <code>RedisManager.CacheClient</code></p>
-<p>缓存的基本操作定义在 <code>ICacheClient</code> 中，基本操作如下：</p>
+<li><p>Cache</p>
 <pre><code class="lang-csharp">var key = &quot;test111&quot;;
 var value = &quot;Hello WeihanLi.Redis&quot;;
 Assert.True(RedisManager.CacheClient.Set(key, value));
@@ -156,7 +140,7 @@ Assert.False(RedisManager.CacheClient.Exists(key));
 RedisManager.CacheClient.GetOrSet(key, () =&gt; value, TimeSpan.FromSeconds(10));
 </code></pre>
 </li>
-<li><p>Counter 计数器</p>
+<li><p>Counter</p>
 <pre><code class="lang-csharp">var counterName = &quot;counterTest&quot;;
 var counterClient = RedisManager.GetCounterClient(counterName, TimeSpan.FromSeconds(60));
 Assert.Equal(0, counterClient.Base);
@@ -171,7 +155,7 @@ Assert.True(counterClient.Reset());
 Assert.Equal(0, counterClient.Count());
 </code></pre>
 </li>
-<li><p>Firewall 防火墙</p>
+<li><p>Firewall</p>
 <pre><code class="lang-csharp">var firewallName = &quot;firewallTest&quot;;
 var firewallClient = RedisManager.GetFirewallClient(firewallName, TimeSpan.FromSeconds(3));
 Assert.True(firewallClient.Hit());
@@ -180,7 +164,7 @@ await Task.Delay(TimeSpan.FromSeconds(3));
 Assert.True(firewallClient.Hit());
 </code></pre>
 </li>
-<li><p>RedLock Redis分布式锁</p>
+<li><p>RedLock</p>
 <pre><code class="lang-csharp">using (var client = RedisManager.GetRedLockClient(&quot;redLockTest&quot;))
 {
     Assert.True(client.TryLock(TimeSpan.FromSeconds(10)));
@@ -205,7 +189,7 @@ using (var client = RedisManager.GetRedLockClient(key))
 }
 </code></pre>
 </li>
-<li><p>Rank 排行榜</p>
+<li><p>Rank</p>
 <pre><code class="lang-csharp">var rankClient = RedisManager.GetRankClient&lt;string&gt;(&quot;testRank&quot;);
 Assert.Equal(0, rankClient.Length());
 rankClient.Add(&quot;xiaoming&quot;, 100);
@@ -221,9 +205,8 @@ var common = RedisManager.GetCommonRedisClient(RedisDataType.Rank);
 Assert.True(common.KeyDelete(&quot;testRank&quot;));
 </code></pre>
 </li>
-<li><p>依赖注入</p>
-<pre><code class="lang-csharp">// 在 asp.net core 中可以直接从构造器注入，这里使用的一个 ServiceLocator 模式获取注入的服务
-var cacheClient = DependencyResolver.Current.ResolveService&lt;ICacheClient&gt;();
+<li><p>DependencyResolver</p>
+<pre><code class="lang-csharp">var cacheClient = DependencyResolver.Current.ResolveService&lt;ICacheClient&gt;();
 Assert.NotNull(cacheClient);
 var key = Guid.NewGuid().ToString(&quot;N&quot;);
 Assert.Equal(&quot;abcaaa&quot;, cacheClient.GetOrSet(key, () =&gt; &quot;abcaaa&quot;, TimeSpan.FromMinutes(10)));
@@ -234,7 +217,7 @@ var pubsubClient = DependencyResolver.Current.ResolveService&lt;IPubSubClient&gt
 Assert.NotNull(pubsubClient);
 </code></pre>
 </li>
-<li><p>更多用法等你来发现...</p>
+<li><p>More fancy usage, wait for your explorer...</p>
 </li>
 </ol>
 <h2 id="conatct">Conatct</h2>
@@ -247,12 +230,13 @@ Assert.NotNull(pubsubClient);
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/README.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/README.en.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

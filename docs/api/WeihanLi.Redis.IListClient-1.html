@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IListClient&lt;T&gt;
    ">
-    <meta name="generator" content="docfx 2.42.4.0">
+    <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -100,18 +100,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Count_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Count(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Count_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Count(CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L112">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_Count_" data-uid="WeihanLi.Redis.IListClient`1.Count*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_Count_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Count(StackExchange.Redis.CommandFlags)">Count(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_Count_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Count(CommandFlags)">Count(CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long Count(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">long Count(CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -124,7 +124,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -147,18 +147,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_CountAsync_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.CountAsync(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_CountAsync_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.CountAsync(CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L114">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_CountAsync_" data-uid="WeihanLi.Redis.IListClient`1.CountAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_CountAsync_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.CountAsync(StackExchange.Redis.CommandFlags)">CountAsync(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_CountAsync_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.CountAsync(CommandFlags)">CountAsync(CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; CountAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; CountAsync(CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -171,7 +171,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -187,25 +187,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Get_System_Int64_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Get(System.Int64%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Get_System_Int64_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Get(System.Int64%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L21">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_Get_" data-uid="WeihanLi.Redis.IListClient`1.Get*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_Get_System_Int64_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Get(System.Int64,StackExchange.Redis.CommandFlags)">Get(Int64, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_Get_System_Int64_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Get(System.Int64,CommandFlags)">Get(Int64, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T Get(long index, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">T Get(long index, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -223,7 +223,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -246,18 +246,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_GetAsync_System_Int64_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.GetAsync(System.Int64%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_GetAsync_System_Int64_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.GetAsync(System.Int64%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L23">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_GetAsync_" data-uid="WeihanLi.Redis.IListClient`1.GetAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_GetAsync_System_Int64_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.GetAsync(System.Int64,StackExchange.Redis.CommandFlags)">GetAsync(Int64, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_GetAsync_System_Int64_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.GetAsync(System.Int64,CommandFlags)">GetAsync(Int64, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T&gt; GetAsync(long index, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; GetAsync(long index, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -275,7 +275,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -291,25 +291,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><span class="xref">Task</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_InsertAfter__0__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.InsertAfter(%600%2C%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_InsertAfter__0__0_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.InsertAfter(%600%2C%600%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L37">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_InsertAfter_" data-uid="WeihanLi.Redis.IListClient`1.InsertAfter*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_InsertAfter__0__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.InsertAfter(`0,`0,StackExchange.Redis.CommandFlags)">InsertAfter(T, T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_InsertAfter__0__0_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.InsertAfter(`0,`0,CommandFlags)">InsertAfter(T, T, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long InsertAfter(T pivot, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">long InsertAfter(T pivot, T value, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -332,7 +332,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -355,18 +355,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_InsertAfterAsync__0__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.InsertAfterAsync(%600%2C%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_InsertAfterAsync__0__0_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.InsertAfterAsync(%600%2C%600%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L39">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_InsertAfterAsync_" data-uid="WeihanLi.Redis.IListClient`1.InsertAfterAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_InsertAfterAsync__0__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.InsertAfterAsync(`0,`0,StackExchange.Redis.CommandFlags)">InsertAfterAsync(T, T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_InsertAfterAsync__0__0_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.InsertAfterAsync(`0,`0,CommandFlags)">InsertAfterAsync(T, T, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; InsertAfterAsync(T pivot, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; InsertAfterAsync(T pivot, T value, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -389,7 +389,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -405,25 +405,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_InsertBefore__0__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.InsertBefore(%600%2C%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_InsertBefore__0__0_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.InsertBefore(%600%2C%600%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L53">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_InsertBefore_" data-uid="WeihanLi.Redis.IListClient`1.InsertBefore*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_InsertBefore__0__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.InsertBefore(`0,`0,StackExchange.Redis.CommandFlags)">InsertBefore(T, T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_InsertBefore__0__0_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.InsertBefore(`0,`0,CommandFlags)">InsertBefore(T, T, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long InsertBefore(T pivot, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">long InsertBefore(T pivot, T value, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -446,7 +446,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -469,18 +469,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_InsertBeforeAsync__0__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.InsertBeforeAsync(%600%2C%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_InsertBeforeAsync__0__0_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.InsertBeforeAsync(%600%2C%600%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L55">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_InsertBeforeAsync_" data-uid="WeihanLi.Redis.IListClient`1.InsertBeforeAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_InsertBeforeAsync__0__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.InsertBeforeAsync(`0,`0,StackExchange.Redis.CommandFlags)">InsertBeforeAsync(T, T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_InsertBeforeAsync__0__0_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.InsertBeforeAsync(`0,`0,CommandFlags)">InsertBeforeAsync(T, T, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; InsertBeforeAsync(T pivot, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; InsertBeforeAsync(T pivot, T value, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -503,7 +503,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -519,25 +519,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPop_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPop(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPop_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPop(CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L66">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_LeftPop_" data-uid="WeihanLi.Redis.IListClient`1.LeftPop*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_LeftPop_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPop(StackExchange.Redis.CommandFlags)">LeftPop(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_LeftPop_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPop(CommandFlags)">LeftPop(CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T LeftPop(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">T LeftPop(CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -550,7 +550,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -573,18 +573,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPopAsync_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPopAsync(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPopAsync_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPopAsync(CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L68">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_LeftPopAsync_" data-uid="WeihanLi.Redis.IListClient`1.LeftPopAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_LeftPopAsync_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPopAsync(StackExchange.Redis.CommandFlags)">LeftPopAsync(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_LeftPopAsync_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPopAsync(CommandFlags)">LeftPopAsync(CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T&gt; LeftPopAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; LeftPopAsync(CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -597,7 +597,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -613,25 +613,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><span class="xref">Task</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPush__0_StackExchange_Redis_When_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPush(%600%2CStackExchange.Redis.When%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPush__0_When_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPush(%600%2CWhen%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L98">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_LeftPush_" data-uid="WeihanLi.Redis.IListClient`1.LeftPush*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_LeftPush__0_StackExchange_Redis_When_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPush(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">LeftPush(T, When, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_LeftPush__0_When_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPush(`0,When,CommandFlags)">LeftPush(T, When, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long LeftPush(T value, When when = When.Always, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">long LeftPush(T value, When when = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -649,12 +649,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.When</span></td>
+        <td><span class="xref">When</span></td>
         <td><span class="parametername">when</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -677,18 +677,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPush__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPush(%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPush__0___CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPush(%600%5B%5D%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L84">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_LeftPush_" data-uid="WeihanLi.Redis.IListClient`1.LeftPush*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_LeftPush__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPush(`0[],StackExchange.Redis.CommandFlags)">LeftPush(T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_LeftPush__0___CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPush(`0[],CommandFlags)">LeftPush(T[], CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long LeftPush(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">long LeftPush(T[] values, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -706,7 +706,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -729,18 +729,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPushAsync__0_StackExchange_Redis_When_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPushAsync(%600%2CStackExchange.Redis.When%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPushAsync__0_When_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPushAsync(%600%2CWhen%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L100">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_LeftPushAsync_" data-uid="WeihanLi.Redis.IListClient`1.LeftPushAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_LeftPushAsync__0_StackExchange_Redis_When_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPushAsync(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">LeftPushAsync(T, When, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_LeftPushAsync__0_When_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPushAsync(`0,When,CommandFlags)">LeftPushAsync(T, When, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; LeftPushAsync(T value, When when = When.Always, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; LeftPushAsync(T value, When when = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -758,12 +758,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.When</span></td>
+        <td><span class="xref">When</span></td>
         <td><span class="parametername">when</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -779,25 +779,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPushAsync__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPushAsync(%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_LeftPushAsync__0___CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.LeftPushAsync(%600%5B%5D%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L86">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_LeftPushAsync_" data-uid="WeihanLi.Redis.IListClient`1.LeftPushAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_LeftPushAsync__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPushAsync(`0[],StackExchange.Redis.CommandFlags)">LeftPushAsync(T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_LeftPushAsync__0___CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.LeftPushAsync(`0[],CommandFlags)">LeftPushAsync(T[], CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; LeftPushAsync(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; LeftPushAsync(T[] values, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -815,7 +815,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -831,25 +831,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_ListRange_System_Int64_System_Int64_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.ListRange(System.Int64%2CSystem.Int64%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_ListRange_System_Int64_System_Int64_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.ListRange(System.Int64%2CSystem.Int64%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L131">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_ListRange_" data-uid="WeihanLi.Redis.IListClient`1.ListRange*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_ListRange_System_Int64_System_Int64_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.ListRange(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">ListRange(Int64, Int64, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_ListRange_System_Int64_System_Int64_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.ListRange(System.Int64,System.Int64,CommandFlags)">ListRange(Int64, Int64, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T[] ListRange(long start = 0L, long stop = -1L, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">T[] ListRange(long start = null, long stop = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -872,7 +872,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -895,18 +895,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_ListRangeAsync_System_Int64_System_Int64_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.ListRangeAsync(System.Int64%2CSystem.Int64%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_ListRangeAsync_System_Int64_System_Int64_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.ListRangeAsync(System.Int64%2CSystem.Int64%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L133">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_ListRangeAsync_" data-uid="WeihanLi.Redis.IListClient`1.ListRangeAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_ListRangeAsync_System_Int64_System_Int64_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.ListRangeAsync(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">ListRangeAsync(Int64, Int64, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_ListRangeAsync_System_Int64_System_Int64_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.ListRangeAsync(System.Int64,System.Int64,CommandFlags)">ListRangeAsync(Int64, Int64, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; ListRangeAsync(long start = 0L, long stop = -1L, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; ListRangeAsync(long start = null, long stop = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -929,7 +929,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -945,25 +945,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T[]&gt;</td>
+        <td><span class="xref">Task</span>&lt;T[]&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Pop_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Pop(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Pop_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Pop(CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L158">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_Pop_" data-uid="WeihanLi.Redis.IListClient`1.Pop*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_Pop_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Pop(StackExchange.Redis.CommandFlags)">Pop(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_Pop_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Pop(CommandFlags)">Pop(CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T Pop(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">T Pop(CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -976,7 +976,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -999,18 +999,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_PopAsync_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.PopAsync(StackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_PopAsync_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.PopAsync(CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L160">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_PopAsync_" data-uid="WeihanLi.Redis.IListClient`1.PopAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_PopAsync_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.PopAsync(StackExchange.Redis.CommandFlags)">PopAsync(CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_PopAsync_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.PopAsync(CommandFlags)">PopAsync(CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T&gt; PopAsync(CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; PopAsync(CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1023,7 +1023,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1039,25 +1039,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><span class="xref">Task</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Push__0_StackExchange_Redis_When_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Push(%600%2CStackExchange.Redis.When%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Push__0_When_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Push(%600%2CWhen%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L187">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_Push_" data-uid="WeihanLi.Redis.IListClient`1.Push*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_Push__0_StackExchange_Redis_When_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Push(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">Push(T, When, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_Push__0_When_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Push(`0,When,CommandFlags)">Push(T, When, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long Push(T value, When when = When.Always, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">long Push(T value, When when = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1075,12 +1075,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.When</span></td>
+        <td><span class="xref">When</span></td>
         <td><span class="parametername">when</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1103,18 +1103,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Push__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Push(%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Push__0___CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Push(%600%5B%5D%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L205">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_Push_" data-uid="WeihanLi.Redis.IListClient`1.Push*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_Push__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Push(`0[],StackExchange.Redis.CommandFlags)">Push(T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_Push__0___CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Push(`0[],CommandFlags)">Push(T[], CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long Push(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">long Push(T[] values, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1132,7 +1132,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1155,18 +1155,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_PushAsync__0_StackExchange_Redis_When_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.PushAsync(%600%2CStackExchange.Redis.When%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_PushAsync__0_When_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.PushAsync(%600%2CWhen%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L189">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_PushAsync_" data-uid="WeihanLi.Redis.IListClient`1.PushAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_PushAsync__0_StackExchange_Redis_When_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.PushAsync(`0,StackExchange.Redis.When,StackExchange.Redis.CommandFlags)">PushAsync(T, When, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_PushAsync__0_When_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.PushAsync(`0,When,CommandFlags)">PushAsync(T, When, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; PushAsync(T value, When when = When.Always, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; PushAsync(T value, When when = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1184,12 +1184,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.When</span></td>
+        <td><span class="xref">When</span></td>
         <td><span class="parametername">when</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1205,25 +1205,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_PushAsync__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.PushAsync(%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_PushAsync__0___CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.PushAsync(%600%5B%5D%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L207">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_PushAsync_" data-uid="WeihanLi.Redis.IListClient`1.PushAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_PushAsync__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.PushAsync(`0[],StackExchange.Redis.CommandFlags)">PushAsync(T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_PushAsync__0___CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.PushAsync(`0[],CommandFlags)">PushAsync(T[], CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; PushAsync(T[] values, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; PushAsync(T[] values, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1241,7 +1241,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1257,25 +1257,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Remove__0_System_Int64_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Remove(%600%2CSystem.Int64%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Remove__0_System_Int64_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Remove(%600%2CSystem.Int64%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L148">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_Remove_" data-uid="WeihanLi.Redis.IListClient`1.Remove*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_Remove__0_System_Int64_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Remove(`0,System.Int64,StackExchange.Redis.CommandFlags)">Remove(T, Int64, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_Remove__0_System_Int64_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Remove(`0,System.Int64,CommandFlags)">Remove(T, Int64, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long Remove(T value, long count = 0L, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">long Remove(T value, long count = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1298,7 +1298,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1321,18 +1321,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_RemoveAsync__0_System_Int64_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.RemoveAsync(%600%2CSystem.Int64%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_RemoveAsync__0_System_Int64_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.RemoveAsync(%600%2CSystem.Int64%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L150">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_RemoveAsync_" data-uid="WeihanLi.Redis.IListClient`1.RemoveAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_RemoveAsync__0_System_Int64_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.RemoveAsync(`0,System.Int64,StackExchange.Redis.CommandFlags)">RemoveAsync(T, Int64, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_RemoveAsync__0_System_Int64_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.RemoveAsync(`0,System.Int64,CommandFlags)">RemoveAsync(T, Int64, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; RemoveAsync(T value, long count = 0L, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; RemoveAsync(T value, long count = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1355,7 +1355,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1371,25 +1371,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_RightPopLeftPush_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.RightPopLeftPush(System.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_RightPopLeftPush_System_String_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.RightPopLeftPush(System.String%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L173">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_RightPopLeftPush_" data-uid="WeihanLi.Redis.IListClient`1.RightPopLeftPush*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_RightPopLeftPush_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.RightPopLeftPush(System.String,StackExchange.Redis.CommandFlags)">RightPopLeftPush(String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_RightPopLeftPush_System_String_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.RightPopLeftPush(System.String,CommandFlags)">RightPopLeftPush(String, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T RightPopLeftPush(string destination, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">T RightPopLeftPush(string destination, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1407,7 +1407,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1430,18 +1430,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_RightPopLeftPushAsync_System_String_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.RightPopLeftPushAsync(System.String%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_RightPopLeftPushAsync_System_String_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.RightPopLeftPushAsync(System.String%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L175">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_RightPopLeftPushAsync_" data-uid="WeihanLi.Redis.IListClient`1.RightPopLeftPushAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_RightPopLeftPushAsync_System_String_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.RightPopLeftPushAsync(System.String,StackExchange.Redis.CommandFlags)">RightPopLeftPushAsync(String, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_RightPopLeftPushAsync_System_String_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.RightPopLeftPushAsync(System.String,CommandFlags)">RightPopLeftPushAsync(String, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T&gt; RightPopLeftPushAsync(string destination, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; RightPopLeftPushAsync(string destination, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1459,7 +1459,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1475,25 +1475,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><span class="xref">Task</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Set_System_Int64__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Set(System.Int64%2C%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Set_System_Int64__0_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Set(System.Int64%2C%600%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L216">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_Set_" data-uid="WeihanLi.Redis.IListClient`1.Set*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_Set_System_Int64__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Set(System.Int64,`0,StackExchange.Redis.CommandFlags)">Set(Int64, T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_Set_System_Int64__0_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Set(System.Int64,`0,CommandFlags)">Set(Int64, T, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool Set(long index, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">bool Set(long index, T value, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1516,7 +1516,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1539,18 +1539,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_SetAsync_System_Int64__0_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.SetAsync(System.Int64%2C%600%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_SetAsync_System_Int64__0_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.SetAsync(System.Int64%2C%600%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L218">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_SetAsync_" data-uid="WeihanLi.Redis.IListClient`1.SetAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_SetAsync_System_Int64__0_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.SetAsync(System.Int64,`0,StackExchange.Redis.CommandFlags)">SetAsync(Int64, T, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_SetAsync_System_Int64__0_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.SetAsync(System.Int64,`0,CommandFlags)">SetAsync(Int64, T, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; SetAsync(long index, T value, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; SetAsync(long index, T value, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1573,7 +1573,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1589,20 +1589,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Sort_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Sort(System.Int64%2CSystem.Int64%2CStackExchange.Redis.Order%2CStackExchange.Redis.SortType%2C%600%2C%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Sort_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Sort(System.Int64%2CSystem.Int64%2COrder%2CSortType%2C%600%2C%600%5B%5D%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L245">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_Sort_" data-uid="WeihanLi.Redis.IListClient`1.Sort*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_Sort_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Sort(System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)">Sort(Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_Sort_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Sort(System.Int64,System.Int64,Order,SortType,`0,`0[],CommandFlags)">Sort(Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Sorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be
 used to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can
 be performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).
@@ -1612,7 +1612,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T[] Sort(long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">T[] Sort(long skip = null, long take = null, Order order = null, SortType sortType = null, T by = null, T[] get = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1635,12 +1635,12 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.Order</span></td>
+        <td><span class="xref">Order</span></td>
         <td><span class="parametername">order</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.SortType</span></td>
+        <td><span class="xref">SortType</span></td>
         <td><span class="parametername">sortType</span></td>
         <td></td>
       </tr>
@@ -1655,7 +1655,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1677,18 +1677,18 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_IListClient_1_Sort_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_IListClient_1_Sort_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sort">http://redis.io/commands/sort</a></p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_SortAndStore_System_String_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.SortAndStore(System.String%2CSystem.Int64%2CSystem.Int64%2CStackExchange.Redis.Order%2CStackExchange.Redis.SortType%2C%600%2C%600%5B%5D%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_SortAndStore_System_String_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.SortAndStore(System.String%2CSystem.Int64%2CSystem.Int64%2COrder%2CSortType%2C%600%2C%600%5B%5D%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L256">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_SortAndStore_" data-uid="WeihanLi.Redis.IListClient`1.SortAndStore*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_SortAndStore_System_String_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.SortAndStore(System.String,System.Int64,System.Int64,StackExchange.Redis.Order,StackExchange.Redis.SortType,`0,`0[],StackExchange.Redis.CommandFlags)">SortAndStore(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_SortAndStore_System_String_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.SortAndStore(System.String,System.Int64,System.Int64,Order,SortType,`0,`0[],CommandFlags)">SortAndStore(String, Int64, Int64, Order, SortType, T, T[], CommandFlags)</h4>
   <div class="markdown level1 summary"><p>Sorts a list, set or sorted set (numerically or alphabetically, ascending by default); By default, the elements themselves are compared, but the values can also be
 used to perform external key-lookups using the <code>by</code> parameter. By default, the elements themselves are returned, but external key-lookups (one or many) can
 be performed instead by specifying the <code>get</code> parameter (note that <code>#</code> specifies the element itself, when used in <code>get</code>).
@@ -1698,7 +1698,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long SortAndStore(string destination, long skip = 0L, long take = -1L, Order order = Order.Ascending, SortType sortType = SortType.Numeric, T by = null, T[] get = null, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">long SortAndStore(string destination, long skip = null, long take = null, Order order = null, SortType sortType = null, T by = null, T[] get = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1726,12 +1726,12 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.Order</span></td>
+        <td><span class="xref">Order</span></td>
         <td><span class="parametername">order</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.SortType</span></td>
+        <td><span class="xref">SortType</span></td>
         <td><span class="parametername">sortType</span></td>
         <td></td>
       </tr>
@@ -1746,7 +1746,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1768,23 +1768,23 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
       </tr>
     </tbody>
   </table>
-  <h5 id="WeihanLi_Redis_IListClient_1_SortAndStore_System_String_System_Int64_System_Int64_StackExchange_Redis_Order_StackExchange_Redis_SortType__0__0___StackExchange_Redis_CommandFlags__remarks">Remarks</h5>
+  <h5 id="WeihanLi_Redis_IListClient_1_SortAndStore_System_String_System_Int64_System_Int64_Order_SortType__0__0___CommandFlags__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p><a href="http://redis.io/commands/sort">http://redis.io/commands/sort</a></p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Trim_System_Int64_System_Int64_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Trim(System.Int64%2CSystem.Int64%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_Trim_System_Int64_System_Int64_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.Trim(System.Int64%2CSystem.Int64%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L232">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_Trim_" data-uid="WeihanLi.Redis.IListClient`1.Trim*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_Trim_System_Int64_System_Int64_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Trim(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">Trim(Int64, Int64, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_Trim_System_Int64_System_Int64_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.Trim(System.Int64,System.Int64,CommandFlags)">Trim(Int64, Int64, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool Trim(long start, long stop, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">bool Trim(long start, long stop, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1807,7 +1807,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1830,18 +1830,18 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_TrimAsync_System_Int64_System_Int64_StackExchange_Redis_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.TrimAsync(System.Int64%2CSystem.Int64%2CStackExchange.Redis.CommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_IListClient_1_TrimAsync_System_Int64_System_Int64_CommandFlags_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.IListClient%601.TrimAsync(System.Int64%2CSystem.Int64%2CCommandFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/List/IListClient.cs/#L234">View Source</a>
   </span>
   <a id="WeihanLi_Redis_IListClient_1_TrimAsync_" data-uid="WeihanLi.Redis.IListClient`1.TrimAsync*"></a>
-  <h4 id="WeihanLi_Redis_IListClient_1_TrimAsync_System_Int64_System_Int64_StackExchange_Redis_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.TrimAsync(System.Int64,System.Int64,StackExchange.Redis.CommandFlags)">TrimAsync(Int64, Int64, CommandFlags)</h4>
+  <h4 id="WeihanLi_Redis_IListClient_1_TrimAsync_System_Int64_System_Int64_CommandFlags_" data-uid="WeihanLi.Redis.IListClient`1.TrimAsync(System.Int64,System.Int64,CommandFlags)">TrimAsync(Int64, Int64, CommandFlags)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; TrimAsync(long start, long stop, CommandFlags flags = CommandFlags.None | CommandFlags.PreferMaster)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; TrimAsync(long start, long stop, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1864,7 +1864,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">StackExchange.Redis.CommandFlags</span></td>
+        <td><span class="xref">CommandFlags</span></td>
         <td><span class="parametername">flags</span></td>
         <td></td>
       </tr>
@@ -1880,7 +1880,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1901,7 +1901,8 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

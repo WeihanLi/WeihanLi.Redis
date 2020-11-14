@@ -4,10 +4,10 @@ on: [push]
 
 jobs:
   # Label of the container job
-  container-job:
+  redis-integration-test:
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
-    # # Docker Hub image that `container-job` executes in
+    # # Docker image that `job` executes in
     # container: mcr.microsoft.com/dotnet/sdk:5.0
 
     # Service containers to run with `container-job`

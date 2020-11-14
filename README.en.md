@@ -178,6 +178,6 @@ dotnet add package WeihanLi.Redis
 
 1. More fancy usage, wait for your explorer...
 
-## Conatct
+## Contact
 
-Contact me: <weihanli@outlook.com>
+Contact me if you need: <weihanli@outlook.com>

@@ -30,6 +30,18 @@ end
 ";
 
         /// <summary>
+        /// Hash Set Only When Value changed
+        /// </summary>
+        private const string HashSetWhenValueChangedLuaScript = @"
+if redis.call(""hget"", KEYS[1], ARGV[1]) == ARGV[2] then
+    return 0
+else
+    redis.call(""hset"", KEYS[1], ARGV[1], ARGV[2])
+    return 1
+end
+";
+
+        /// <summary>
         /// String Compare And Exchange
         /// </summary>
         private const string StringCasLuaScript = @"
@@ -50,6 +62,18 @@ end
             else
                 return 0
             end";
+
+        /// <summary>
+        /// String Set only when value changed
+        /// </summary>
+        private const string StringSetWhenValueChangedLuaScript = @"
+            if redis.call(""get"", KEYS[1]) == ARGV[1] then
+                return 0
+            else
+                redis.call(""set"", KEYS[1], ARGV[1])
+                return 1
+            end
+            ";
 
         public static bool StringCompareAndDelete(this IDatabase db, RedisKey key, RedisValue originValue)
         {

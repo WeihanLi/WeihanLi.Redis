@@ -119,7 +119,7 @@ namespace WeihanLi.Redis.UnitTest
             Assert.False(redis.HashSetWhenValueChanged(key, field, 1));
             Assert.Equal(1, redis.HashGet(key, field));
 
-            Assert.True(redis.HashCompareAndDelete(key, field, 2));
+            Assert.True(redis.HashSetWhenValueChanged(key, field, 2));
             Assert.Equal(2, redis.HashGet(key, field));
         }
     }

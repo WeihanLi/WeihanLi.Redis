@@ -45,8 +45,8 @@ end
         /// String Compare And Exchange
         /// </summary>
         private const string StringCasLuaScript = @"
-if redis.call(""HGET"", KEYS[1]) == ARGV[1] then
-    redis.call(""HSET"", KEYS[1], ARGV[2])
+if redis.call(""GET"", KEYS[1]) == ARGV[1] then
+    redis.call(""SET"", KEYS[1], ARGV[2])
     return 1
 else
     return 0

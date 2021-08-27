@@ -86,6 +86,17 @@ end
                 .ContinueWith(r => (int)r.Result == 1);
         }
 
+        public static bool StringSetWhenValueChanged(this IDatabase db, RedisKey key, RedisValue value)
+        {
+            return (int)db.ScriptEvaluate(StringSetWhenValueChangedLuaScript, new[] { key }, new[] { value }) == 1;
+        }
+
+        public static async Task<bool> StringSetWhenValueChangedAsync(this IDatabase db, RedisKey key, RedisValue value)
+        {
+            return await db.ScriptEvaluateAsync(StringSetWhenValueChangedLuaScript, new[] { key }, new[] { value })
+                .ContinueWith(r => (int)r.Result == 1);
+        }
+
         public static bool StringCompareAndExchange(this IDatabase db, RedisKey key, RedisValue newValue, RedisValue originValue)
         {
             return (int)db.ScriptEvaluate(StringCasLuaScript, new[] { key }, new[] { originValue, newValue }) == 1;
@@ -105,6 +116,17 @@ end
         public static async Task<bool> HashCompareAndDeleteAsync(this IDatabase db, RedisKey key, RedisValue field, RedisValue originValue)
         {
             return await db.ScriptEvaluateAsync(HashCadLuaScript, new[] { key }, new[] { field, originValue })
+                .ContinueWith(r => (int)r.Result == 1);
+        }
+
+        public static bool HashSetWhenValueChanged(this IDatabase db, RedisKey key, RedisValue field, RedisValue value)
+        {
+            return (int)db.ScriptEvaluate(HashSetWhenValueChangedLuaScript, new[] { key }, new[] { field, value }) == 1;
+        }
+
+        public static async Task<bool> HashSetWhenValueChangedAsync(this IDatabase db, RedisKey key, RedisValue field, RedisValue value)
+        {
+            return await db.ScriptEvaluateAsync(HashSetWhenValueChangedLuaScript, new[] { key }, new[] { field, value })
                 .ContinueWith(r => (int)r.Result == 1);
         }
 

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class RedisEventQueue
    ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.58.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -187,7 +187,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IEventBase&gt; DequeueAsync(string queueName)</code></pre>
+    <pre><code class="lang-csharp hljs">public async Task&lt;IEventBase&gt; DequeueAsync(string queueName)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -302,7 +302,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; EnqueueAsync&lt;TEvent&gt;(string queueName, TEvent event)
+    <pre><code class="lang-csharp hljs">public async Task&lt;bool&gt; EnqueueAsync&lt;TEvent&gt;(string queueName, TEvent event)
     where TEvent : class, IEventBase</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -400,7 +400,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;ICollection&lt;string&gt;&gt; GetQueuesAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">public async Task&lt;ICollection&lt;string&gt;&gt; GetQueuesAsync()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">

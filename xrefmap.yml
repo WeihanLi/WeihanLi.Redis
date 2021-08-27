@@ -5102,6 +5102,32 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.RedisExtensions.HashCompareAndExchangeAsync
   nameWithType: RedisExtensions.HashCompareAndExchangeAsync
+- uid: WeihanLi.Redis.RedisExtensions.HashSetWhenValueChanged(IDatabase,RedisKey,RedisValue,RedisValue)
+  name: HashSetWhenValueChanged(IDatabase, RedisKey, RedisValue, RedisValue)
+  href: docs/api/WeihanLi.Redis.RedisExtensions.html#WeihanLi_Redis_RedisExtensions_HashSetWhenValueChanged_IDatabase_RedisKey_RedisValue_RedisValue_
+  commentId: M:WeihanLi.Redis.RedisExtensions.HashSetWhenValueChanged(IDatabase,RedisKey,RedisValue,RedisValue)
+  fullName: WeihanLi.Redis.RedisExtensions.HashSetWhenValueChanged(IDatabase, RedisKey, RedisValue, RedisValue)
+  nameWithType: RedisExtensions.HashSetWhenValueChanged(IDatabase, RedisKey, RedisValue, RedisValue)
+- uid: WeihanLi.Redis.RedisExtensions.HashSetWhenValueChanged*
+  name: HashSetWhenValueChanged
+  href: docs/api/WeihanLi.Redis.RedisExtensions.html#WeihanLi_Redis_RedisExtensions_HashSetWhenValueChanged_
+  commentId: Overload:WeihanLi.Redis.RedisExtensions.HashSetWhenValueChanged
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisExtensions.HashSetWhenValueChanged
+  nameWithType: RedisExtensions.HashSetWhenValueChanged
+- uid: WeihanLi.Redis.RedisExtensions.HashSetWhenValueChangedAsync(IDatabase,RedisKey,RedisValue,RedisValue)
+  name: HashSetWhenValueChangedAsync(IDatabase, RedisKey, RedisValue, RedisValue)
+  href: docs/api/WeihanLi.Redis.RedisExtensions.html#WeihanLi_Redis_RedisExtensions_HashSetWhenValueChangedAsync_IDatabase_RedisKey_RedisValue_RedisValue_
+  commentId: M:WeihanLi.Redis.RedisExtensions.HashSetWhenValueChangedAsync(IDatabase,RedisKey,RedisValue,RedisValue)
+  fullName: WeihanLi.Redis.RedisExtensions.HashSetWhenValueChangedAsync(IDatabase, RedisKey, RedisValue, RedisValue)
+  nameWithType: RedisExtensions.HashSetWhenValueChangedAsync(IDatabase, RedisKey, RedisValue, RedisValue)
+- uid: WeihanLi.Redis.RedisExtensions.HashSetWhenValueChangedAsync*
+  name: HashSetWhenValueChangedAsync
+  href: docs/api/WeihanLi.Redis.RedisExtensions.html#WeihanLi_Redis_RedisExtensions_HashSetWhenValueChangedAsync_
+  commentId: Overload:WeihanLi.Redis.RedisExtensions.HashSetWhenValueChangedAsync
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisExtensions.HashSetWhenValueChangedAsync
+  nameWithType: RedisExtensions.HashSetWhenValueChangedAsync
 - uid: WeihanLi.Redis.RedisExtensions.StringCompareAndDelete(IDatabase,RedisKey,RedisValue)
   name: StringCompareAndDelete(IDatabase, RedisKey, RedisValue)
   href: docs/api/WeihanLi.Redis.RedisExtensions.html#WeihanLi_Redis_RedisExtensions_StringCompareAndDelete_IDatabase_RedisKey_RedisValue_
@@ -5154,6 +5180,32 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.RedisExtensions.StringCompareAndExchangeAsync
   nameWithType: RedisExtensions.StringCompareAndExchangeAsync
+- uid: WeihanLi.Redis.RedisExtensions.StringSetWhenValueChanged(IDatabase,RedisKey,RedisValue)
+  name: StringSetWhenValueChanged(IDatabase, RedisKey, RedisValue)
+  href: docs/api/WeihanLi.Redis.RedisExtensions.html#WeihanLi_Redis_RedisExtensions_StringSetWhenValueChanged_IDatabase_RedisKey_RedisValue_
+  commentId: M:WeihanLi.Redis.RedisExtensions.StringSetWhenValueChanged(IDatabase,RedisKey,RedisValue)
+  fullName: WeihanLi.Redis.RedisExtensions.StringSetWhenValueChanged(IDatabase, RedisKey, RedisValue)
+  nameWithType: RedisExtensions.StringSetWhenValueChanged(IDatabase, RedisKey, RedisValue)
+- uid: WeihanLi.Redis.RedisExtensions.StringSetWhenValueChanged*
+  name: StringSetWhenValueChanged
+  href: docs/api/WeihanLi.Redis.RedisExtensions.html#WeihanLi_Redis_RedisExtensions_StringSetWhenValueChanged_
+  commentId: Overload:WeihanLi.Redis.RedisExtensions.StringSetWhenValueChanged
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisExtensions.StringSetWhenValueChanged
+  nameWithType: RedisExtensions.StringSetWhenValueChanged
+- uid: WeihanLi.Redis.RedisExtensions.StringSetWhenValueChangedAsync(IDatabase,RedisKey,RedisValue)
+  name: StringSetWhenValueChangedAsync(IDatabase, RedisKey, RedisValue)
+  href: docs/api/WeihanLi.Redis.RedisExtensions.html#WeihanLi_Redis_RedisExtensions_StringSetWhenValueChangedAsync_IDatabase_RedisKey_RedisValue_
+  commentId: M:WeihanLi.Redis.RedisExtensions.StringSetWhenValueChangedAsync(IDatabase,RedisKey,RedisValue)
+  fullName: WeihanLi.Redis.RedisExtensions.StringSetWhenValueChangedAsync(IDatabase, RedisKey, RedisValue)
+  nameWithType: RedisExtensions.StringSetWhenValueChangedAsync(IDatabase, RedisKey, RedisValue)
+- uid: WeihanLi.Redis.RedisExtensions.StringSetWhenValueChangedAsync*
+  name: StringSetWhenValueChangedAsync
+  href: docs/api/WeihanLi.Redis.RedisExtensions.html#WeihanLi_Redis_RedisExtensions_StringSetWhenValueChangedAsync_
+  commentId: Overload:WeihanLi.Redis.RedisExtensions.StringSetWhenValueChangedAsync
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisExtensions.StringSetWhenValueChangedAsync
+  nameWithType: RedisExtensions.StringSetWhenValueChangedAsync
 - uid: WeihanLi.Redis.RedisManager
   name: RedisManager
   href: docs/api/WeihanLi.Redis.RedisManager.html

@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  devcontainer:
+    image: mcr.microsoft.com/dotnet/sdk:6.0-alpine
+    volumes:
+      - ..:/workspace:cached
+    depends_on:
+      - redis
+      - redisearch
+    links:
+      - "redis:redis"
+      - "redisearch:redisearch"
+    command: /bin/sh -c "while sleep 1000; do :; done"
+  redis:
+    image: redis:6.2-alpine
+  redisearch:
+    image: redislabs/redisearch:latest

@@ -7,12 +7,10 @@ services:
       - ..:/workspace:cached
     depends_on:
       - redis
-      - redisearch
     links:
       - "redis:redis"
-      - "redisearch:redisearch"
+    environment:
+      - 'App_ConnectionStrings__Redis=redis'   
     command: /bin/sh -c "while sleep 1000; do :; done"
   redis:
     image: redis:6.2-alpine
-  redisearch:
-    image: redislabs/redisearch:latest

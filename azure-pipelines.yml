@@ -7,16 +7,7 @@ trigger:
 - '*'
 
 jobs:
-- job: Linux  
-  # resources:
-  #   containers:
-  #   - container: redis
-  #     image: 'redis:alpine'
-  # services:
-  #   redis: redis
-  #   ports:
-  #     - 6379/tcp
-
+- job: Linux
   pool:
     vmImage: 'ubuntu-latest'
 
@@ -25,7 +16,7 @@ jobs:
     displayName: 'Use .NET Core sdk'
     inputs:
       packageType: sdk
-      version: 5.0.x
+      version: 6.0.x
   
   - script: bash build.sh
     displayName: 'Build Script'
@@ -38,10 +29,11 @@ jobs:
 
   steps:
   - task: UseDotNet@2
-    displayName: 'Use .NET Core sdk'
+    displayName: 'Use .NET sdk'
     inputs:
       packageType: sdk
-      version: 5.0.x
+      version: 6.0.x
+      includePreviewVersions: true # Required for preview versions
   
   - script: dotnet --info
     displayName: 'dotnet info'

@@ -1,0 +1,11 @@
+{
+    "name": "CodeSpace",
+    "service": "dev-container",
+    "dockerComposeFile": [    
+      "docker-compose.yml"
+    ],
+    // Install needed extensions
+    "extensions": [
+        "ms-dotnettools.csharp"
+    ]
+}

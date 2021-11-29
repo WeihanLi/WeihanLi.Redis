@@ -86,5 +86,41 @@ namespace WeihanLi.Redis.UnitTest
             Assert.True(redis.HashCompareAndDelete(key, field, 1));
             Assert.False(redis.HashExists(key, field));
         }
+
+        [Fact]
+        public void StringSetWhenValueChangedTest()
+        {
+            var key = $"{nameof(StringSetWhenValueChangedTest)}";
+            var redis = DependencyResolver.Current
+                .GetRequiredService<IConnectionMultiplexer>()
+                .GetDatabase();
+            redis.StringSet(key, 1);
+
+            // update to 1 if now is not 1
+            Assert.False(redis.StringSetWhenValueChanged(key, 1));
+            Assert.Equal(1, redis.StringGet(key));
+
+            // update to 2 if now is not 2
+            Assert.True(redis.StringSetWhenValueChanged(key, 2));
+            Assert.Equal(2, redis.StringGet(key));
+        }
+
+        [Fact]
+        public void HashSetWhenValueChangedTest()
+        {
+            var key = $"{nameof(HashSetWhenValueChangedTest)}";
+            var field = "testField";
+
+            var redis = DependencyResolver.Current
+                .GetRequiredService<IConnectionMultiplexer>()
+                .GetDatabase();
+            redis.HashSet(key, field, 1);
+
+            Assert.False(redis.HashSetWhenValueChanged(key, field, 1));
+            Assert.Equal(1, redis.HashGet(key, field));
+
+            Assert.True(redis.HashSetWhenValueChanged(key, field, 2));
+            Assert.Equal(2, redis.HashGet(key, field));
+        }
     }
 }

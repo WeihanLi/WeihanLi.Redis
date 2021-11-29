@@ -13,7 +13,7 @@ namespace WeihanLi.Redis.UnitTest
         public void ConfigureHost(IHostBuilder hostBuilder)
         {
             hostBuilder.ConfigureHostConfiguration(builder =>
-              builder.AddEnvironmentVariables("App")
+              builder.AddEnvironmentVariables("App_")
             );
         }
 

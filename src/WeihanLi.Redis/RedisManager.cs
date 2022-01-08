@@ -5,6 +5,7 @@ using StackExchange.Redis;
 using System;
 using System.Collections.Concurrent;
 using System.Linq;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using WeihanLi.Common;
 using WeihanLi.Common.Compressor;
 using WeihanLi.Common.Helpers;
@@ -49,6 +50,19 @@ namespace WeihanLi.Redis
         /// <param name="configuration">configuration</param>
         /// <param name="configAction">config RedisConfigurationOptions</param>
         /// <returns></returns>
+        public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, string configuration, Action<RedisConfigurationOptions> configAction = null)
+        {
+            configAction?.Invoke(RedisConfiguration);
+            return serviceCollection.AddRedisConfigInternal(ConfigurationOptions.Parse(configuration));
+        }
+
+        /// <summary>
+        /// AddRedisServices
+        /// </summary>
+        /// <param name="serviceCollection">services</param>
+        /// <param name="configuration">configuration</param>
+        /// <param name="configAction">config RedisConfigurationOptions</param>
+        /// <returns></returns>
         public static IServiceCollection AddRedisConfig(this IServiceCollection serviceCollection, IConfiguration configuration, Action<IConfiguration, RedisConfigurationOptions> configAction)
         {
             configAction?.Invoke(configuration, RedisConfiguration);
@@ -77,25 +91,29 @@ namespace WeihanLi.Redis
                 ClientName = RedisConfiguration.ClientName,
                 DefaultVersion = RedisConfiguration.DefaultVersion,
             };
-            if (RedisConfiguration.CommandMap != null && RedisConfiguration.CommandMap.Count > 0)
+            if (RedisConfiguration.CommandMap is { Count: > 0 })
             {
                 configurationOptions.CommandMap = CommandMap.Create(RedisConfiguration.CommandMap);
             }
             configurationOptions.EndPoints.AddRange(RedisConfiguration.RedisServers.Select(s => ConvertHelper.ToEndPoint(s.Host, s.Port)).ToArray());
-
-            serviceCollection.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(configurationOptions));
-            serviceCollection.AddSingleton(sp => sp.GetRequiredService<IConnectionMultiplexer>()
+            return AddRedisConfigInternal(serviceCollection, configurationOptions);
+        }
+        
+        private static IServiceCollection AddRedisConfigInternal(this IServiceCollection serviceCollection, ConfigurationOptions configurationOptions)
+        {
+            serviceCollection.TryAddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(configurationOptions));
+            serviceCollection.TryAddSingleton(sp => sp.GetRequiredService<IConnectionMultiplexer>()
                     .GetDatabase(RedisConfiguration.DefaultDatabase)
                 );
-            serviceCollection.AddSingleton(sp => sp.GetRequiredService<IConnectionMultiplexer>()
+            serviceCollection.TryAddSingleton(sp => sp.GetRequiredService<IConnectionMultiplexer>()
                 .GetSubscriber()
             );
-            serviceCollection.AddSingleton<ICacheClient, CacheClient>();
-            serviceCollection.AddSingleton<IHashClient, HashClient>();
-            serviceCollection.AddSingleton<IPubSubClient, PubSubClient>();
-            serviceCollection.AddSingleton<IDataSerializer, JsonDataSerializer>();
-            serviceCollection.AddSingleton<IDataCompressor, GZipDataCompressor>();
-            serviceCollection.AddSingleton<CompressDataSerializer>();
+            serviceCollection.TryAddSingleton<ICacheClient, CacheClient>();
+            serviceCollection.TryAddSingleton<IHashClient, HashClient>();
+            serviceCollection.TryAddSingleton<IPubSubClient, PubSubClient>();
+            serviceCollection.TryAddSingleton<IDataSerializer, JsonDataSerializer>();
+            serviceCollection.TryAddSingleton<IDataCompressor, GZipDataCompressor>();
+            serviceCollection.TryAddSingleton<CompressDataSerializer>();
 
             serviceCollection.AddLogging();
 

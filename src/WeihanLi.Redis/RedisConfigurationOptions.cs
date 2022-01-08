@@ -198,7 +198,7 @@ namespace WeihanLi.Redis
                 if (int.TryParse(host.Substring(lastIndex + 1), out var port))
                 {
                     Host = host.Substring(0, lastIndex);
-                    Port = port;
+                    Port = port > 0 ? port : DefaultRedisPort;
                 }
             }
 
@@ -217,7 +217,9 @@ namespace WeihanLi.Redis
             }
 
             Host = host;
-            Port = port;
+            Port = port > 0 ? port: DefaultRedisPort;
         }
+
+        public override string ToString() => $"{Host}:{Port}";
     }
 }

@@ -1,11 +1,11 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using StackExchange.Redis;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
+using StackExchange.Redis;
 using WeihanLi.Common;
 using WeihanLi.Common.Compressor;
 using WeihanLi.Common.Helpers;
@@ -98,7 +98,7 @@ namespace WeihanLi.Redis
             configurationOptions.EndPoints.AddRange(RedisConfiguration.RedisServers.Select(s => ConvertHelper.ToEndPoint(s.Host, s.Port)).ToArray());
             return AddRedisConfigInternal(serviceCollection, configurationOptions);
         }
-        
+
         private static IServiceCollection AddRedisConfigInternal(this IServiceCollection serviceCollection, ConfigurationOptions configurationOptions)
         {
             serviceCollection.TryAddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(configurationOptions));

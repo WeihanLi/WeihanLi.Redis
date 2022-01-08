@@ -1,7 +1,7 @@
-﻿using StackExchange.Redis;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using StackExchange.Redis;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;
 
@@ -217,7 +217,7 @@ namespace WeihanLi.Redis
             }
 
             Host = host;
-            Port = port > 0 ? port: DefaultRedisPort;
+            Port = port > 0 ? port : DefaultRedisPort;
         }
 
         public override string ToString() => $"{Host}:{Port}";

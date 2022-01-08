@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using WeihanLi.Common;
 using WeihanLi.Common.Event;
 using WeihanLi.Common.Logging;
@@ -55,7 +55,7 @@ namespace WeihanLi.Redis.UnitTest
             _serviceProvider = serviceCollection.BuildServiceProvider();
         }
 
-        [Fact(Skip="RedisEventBus")]
+        [Fact(Skip = "RedisEventBus")]
         public async Task MainTest()
         {
             var eventBus = _serviceProvider.GetRequiredService<IEventBus>();

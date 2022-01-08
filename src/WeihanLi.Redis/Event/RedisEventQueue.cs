@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
-using StackExchange.Redis;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using StackExchange.Redis;
 using WeihanLi.Common.Event;
 
 namespace WeihanLi.Redis.Event

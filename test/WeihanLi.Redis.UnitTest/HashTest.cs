@@ -1,7 +1,7 @@
-﻿using StackExchange.Redis;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using StackExchange.Redis;
 using Xunit;
 
 namespace WeihanLi.Redis.UnitTest

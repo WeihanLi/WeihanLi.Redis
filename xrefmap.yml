@@ -5236,6 +5236,15 @@ references:
   fullName.vb: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, IConfiguration, Action(Of IConfiguration, WeihanLi.Redis.RedisConfigurationOptions))
   nameWithType: RedisManager.AddRedisConfig(IServiceCollection, IConfiguration, Action<IConfiguration, RedisConfigurationOptions>)
   nameWithType.vb: RedisManager.AddRedisConfig(IServiceCollection, IConfiguration, Action(Of IConfiguration, RedisConfigurationOptions))
+- uid: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,System.String,Action{WeihanLi.Redis.RedisConfigurationOptions})
+  name: AddRedisConfig(IServiceCollection, String, Action<RedisConfigurationOptions>)
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_AddRedisConfig_IServiceCollection_System_String_Action_WeihanLi_Redis_RedisConfigurationOptions__
+  commentId: M:WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,System.String,Action{WeihanLi.Redis.RedisConfigurationOptions})
+  name.vb: AddRedisConfig(IServiceCollection, String, Action(Of RedisConfigurationOptions))
+  fullName: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, System.String, Action<WeihanLi.Redis.RedisConfigurationOptions>)
+  fullName.vb: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, System.String, Action(Of WeihanLi.Redis.RedisConfigurationOptions))
+  nameWithType: RedisManager.AddRedisConfig(IServiceCollection, String, Action<RedisConfigurationOptions>)
+  nameWithType.vb: RedisManager.AddRedisConfig(IServiceCollection, String, Action(Of RedisConfigurationOptions))
 - uid: WeihanLi.Redis.RedisManager.AddRedisConfig*
   name: AddRedisConfig
   href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_AddRedisConfig_
@@ -5641,3 +5650,16 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.RedisServerConfiguration.Port
   nameWithType: RedisServerConfiguration.Port
+- uid: WeihanLi.Redis.RedisServerConfiguration.ToString
+  name: ToString()
+  href: docs/api/WeihanLi.Redis.RedisServerConfiguration.html#WeihanLi_Redis_RedisServerConfiguration_ToString
+  commentId: M:WeihanLi.Redis.RedisServerConfiguration.ToString
+  fullName: WeihanLi.Redis.RedisServerConfiguration.ToString()
+  nameWithType: RedisServerConfiguration.ToString()
+- uid: WeihanLi.Redis.RedisServerConfiguration.ToString*
+  name: ToString
+  href: docs/api/WeihanLi.Redis.RedisServerConfiguration.html#WeihanLi_Redis_RedisServerConfiguration_ToString_
+  commentId: Overload:WeihanLi.Redis.RedisServerConfiguration.ToString
+  isSpec: "True"
+  fullName: WeihanLi.Redis.RedisServerConfiguration.ToString
+  nameWithType: RedisServerConfiguration.ToString

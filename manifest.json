@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "README.en.html",
-          "hash": "X9wZzw8mpa1ZzrFiwemuMIOp6KFPnT+JuMqkmHFEWJQ="
+          "hash": "/YuP6Iq4szc6F3UwtJgReHFNJl2kKNx154QyEKbLO+s="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "/DMrrPT3SkC7A/BBEOxm1NQHHhEXtNFCw8NPrXCrDFQ="
+          "hash": "cv9TiU+cyDzOmjTtS/55v411KgiOrM9oVTMqTka+38w="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/ReleaseNotes.html",
-          "hash": "gH+iKtgACekNxHV1e5QHqODUYvD9y0JTFr0fH92fWIE="
+          "hash": "tyQU0vyoTkzKtxJfXmaZCT3xylNdLHWR4BeWCOMSgk0="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.Event.DependencyInjectionExtensions.html",
-          "hash": "5QhHSsc9IiwFredD6U3R6UtgWaiZff6RhsaO9TWNv54="
+          "hash": "Elx2DPIKfo6UWOkM4oangdElEoXDKrZ0X3p+Png1uyg="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.Event.RedisEventBus.html",
-          "hash": "wBHSph7jBXflCIuggWNLe/+QZBAMnoPYRBi8TZ7rn1s="
+          "hash": "rsiiI9d/tN08SLZYLe1fKPb08vXt1YT32nAe4C521kM="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.Event.RedisEventQueue.html",
-          "hash": "iDBph9PaK9F+v4exLhXJkb7c/hYJkWKDJHpVSfPdisk="
+          "hash": "Hp+lUedW0kDUMcfjilA/s297IHznJGoUcyWe+GrLQO4="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.Event.html",
-          "hash": "XZC35tsSrVo9KG4Ccju8K/nkaSY2E8IUYXIk4DB44JA="
+          "hash": "aK9Z3y+jSGQO1h4Iwq0Whz10vWQ4+qUwL7pVnN96ADQ="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.EventStoreInRedis.html",
-          "hash": "UGGDegoR40czl94vPPqHJIPJ9ns/ABfXqpOZ5Byd0nU="
+          "hash": "akDMGPZu6r+++oN/kHL/BRs40NODLh6pN/V31kD6JRI="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.ICacheClient.html",
-          "hash": "8zG/XorpX0JeRFWmcDd381ldzE++/FNTimIaIVGNgi0="
+          "hash": "v4yf6H2EmlDtA0K3MgRAxJAk46yhsCoshMm+1CyeSSY="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.ICommonRedisClient.html",
-          "hash": "BD7eezN0BC7bVkTnyhhSjR4Az2z6Z4QCNJzebpK3/Zg="
+          "hash": "nTxnB8tBpeTyEaRI/k32dN7TxxWjLOBNy4XTGC7fgJ8="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.ICounterClient.html",
-          "hash": "EZV6yylI/t/oJgoIP48N8Itsc2IvXjcPHrJN5XfKV1M="
+          "hash": "tenJIb9uE0buTt0c0exvPlr7di0Pv5qt9/YsyLkdOzU="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IDictionaryClient-2.html",
-          "hash": "vyCcQ+wIyudF+bu12z1YyEvRS2Qb3tZJuJuA8PEuhSw="
+          "hash": "wjxBL++1sVd+lEV7w1abYRSpkdpiXgOj+So53IMMVls="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IFirewallClient.html",
-          "hash": "zaHX4UHMjq1OC0qBrpKjOgKJe6TyssiGCKntS0xpgbU="
+          "hash": "eZBH3iWhhXjsO6Pxku8PeWUX/R6vvfZyHM9OXUKqAOA="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IHashClient.html",
-          "hash": "YlslzQ5+53rPZwa0avFWtLCEqYR/cLUyb+FGAWXN3kY="
+          "hash": "Ac/oMdonBq7J7FosD2XEZ69yjTa9Knmomd5fuxywDu4="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IHashCounterClient.html",
-          "hash": "qXC235U6LiWiNkFJervNPwy+bw/Clrt5R4bgXd3fZeU="
+          "hash": "+z399FPUKpuVDT70evXO+UEy4ChGJz27vv6ObQfVSxk="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IListClient-1.html",
-          "hash": "aeostXA1AaeEBqYjzruNbsOgPORpPn8S9rmWhzLr8/M="
+          "hash": "A2JT+Yoe6Bg5GwgiUb/1lKuEw9zm+5PbeP+ejqo16iM="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IPubSubClient.html",
-          "hash": "o2VapEUdm0U1cBa0AkrDqTCNAyYZOvjwq2vYymt1G54="
+          "hash": "lab7v9umadCrb8UJwojEpVnCgMiZ3f9vHmx53fHPszI="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IQueueClient-1.html",
-          "hash": "qpmsVzS5HZ+rDzsrjMi4DL0WZXIx++8/qcisDZCa3XM="
+          "hash": "OEDIDFnsvcT2fIB8MIwJ21Cjbh8Id6GtcsAejCTg8kg="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IRankClient-1.html",
-          "hash": "2mbLj85ZeObqi0bGRntcLbXhCwAHQuy2Jl/g5j0H73g="
+          "hash": "8AFl4JAGcprrhsIANDoZv0RKCyiGckFRvjYPU89wS0c="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IRateLimiterClient.html",
-          "hash": "kfrbDQIcvdwHj6Gdb/jVHgxBL7s0nm/dxm5R7dM8RHo="
+          "hash": "CXpOYoQAhdK0V8t7oG1fsx3RfIpQUx4a3xtsnyR00yc="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IRedLockClient.html",
-          "hash": "EjPxX7ZXRATmN60skhxkAboVNAUbzIwi6oBdVDnsLjs="
+          "hash": "9ZP/L0KFtcGGNcyxIkx4sSjVe8vuIDcjLY2HyPsO9LM="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IRedisClient.html",
-          "hash": "yrROGoC5b9Z90ejAPC3A/xi7vahTVYUzqdhsOBrQ9q0="
+          "hash": "n+TksLo0rzjR9XZaAVGOZF75yoxEXZUvxC+LLsRxRRs="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.ISetClient-1.html",
-          "hash": "0ZaEWITQJyU7LSMk2NOISnRU2WtfiPE2r19Jgc9AiXQ="
+          "hash": "wmhBll8nT9xsdg+0xkec4BqBQQfonhc+smiAW8r9QBg="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.ISortedSetClient-1.html",
-          "hash": "XdgspM1WM6d354phpSTrnxb4ky6LVW0UqaG+9dQ7VBM="
+          "hash": "fSWLBCJyPF0uyEo//TPzuLqBkNdIlT85c6mvbG6ZymA="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.IStackClient-1.html",
-          "hash": "zSSUKzUA9493aZ1ylHAWAUUDvqxqdeQ1fPpV0dxMkbc="
+          "hash": "KzI+7buhcUUdHGEFViN/LFJLK3FS75KCiFAoXY/Ky20="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.PubSubMessage.html",
-          "hash": "jWrxTaw9/ha0QhmQKuN1uDXeG6huaQ+gNy735jsrohQ="
+          "hash": "oC3cKPjoVnzlKEJ3ktuy6NnNgtnaiOaVdzbUrvpuiYs="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.RedisConfigurationOptions.html",
-          "hash": "m9sNcjtjL1j+7zbfv5Bm+9tmmHcwWnFtD2qoe3IrQ1A="
+          "hash": "uTYvfBrIWxDKhyttWWqF5Q5LTomIH7sdyCzVv9D4qW8="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.RedisDataType.html",
-          "hash": "h8rPCjloEnfkwUxBNTPstJ0aKF8U1KGpKK0Z9llqqdc="
+          "hash": "X9Xyr3jxdQMCW2xdPvYptTDQyZhS+o1Pg4HAgdvlaNE="
         }
       },
       "is_incremental": false,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.RedisExtensions.html",
-          "hash": "Vsn2jeQWJ1p2mfR9pvC5AT2ZCDrKtQVSDntALUxZBOI="
+          "hash": "vMLXKdVw1s2uw6z8gSg10ORdDurdRNaMiWMtLETxszs="
         }
       },
       "is_incremental": false,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.RedisManager.html",
-          "hash": "7WWuti5z5oauOZAmK7B9vrs01hZguBe9LH0ke+AyYjo="
+          "hash": "8bFVuv13EYEzQ+8EyVE2fLo9AaMoj4i4rpOK6eZQe8w="
         }
       },
       "is_incremental": false,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.RedisServerConfiguration.html",
-          "hash": "SDWM0Yye9NDclICgqiFNoIBPeHhckHJxYl0BCuIJdKA="
+          "hash": "Wc1xws+7vMbdclokgLuw+TFlsd+1l7EJ/pPGbv0lFXw="
         }
       },
       "is_incremental": false,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/WeihanLi.Redis.html",
-          "hash": "oBHvxLSjG4h/Eq2bYFC/zrTWxC//Bbm5ipTdnbFT7B4="
+          "hash": "8CcZcf0BQ2BKshK0RYfOAOwoYvuY8sVvjk9IPU1Dr88="
         }
       },
       "is_incremental": false,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "nW7m9RolfkTLzVIs2bv4da/XWWz/FAY7fNdmUVAkfm8="
+          "hash": "HxQ2xTQkY6O4JbGhLMMZbdJQkeMizwGqq4vqTBW01MM="
         }
       },
       "is_incremental": false,

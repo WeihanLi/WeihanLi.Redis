@@ -1,6 +1,7 @@
-﻿using StackExchange.Redis;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using StackExchange.Redis;
 using WeihanLi.Common.Event;
 using WeihanLi.Extensions;
 
@@ -18,9 +19,9 @@ namespace WeihanLi.Redis
             _eventsCacheKey = RedisManager.RedisConfiguration.EventStoreCacheKey;
         }
 
-        public int SaveEvents(params IEventBase[] events)
+        public int SaveEvents(ICollection<IEventBase> events)
         {
-            if (null == events || events.Length == 0)
+            if (events.IsNullOrEmpty())
                 return 0;
 
             _database.HashSet(_eventsCacheKey,
@@ -29,12 +30,12 @@ namespace WeihanLi.Redis
                     .ToArray()
                 );
 
-            return events.Length;
+            return events.Count;
         }
 
-        public async Task<int> SaveEventsAsync(params IEventBase[] events)
+        public async Task<int> SaveEventsAsync(ICollection<IEventBase> events)
         {
-            if (null == events || events.Length == 0)
+            if (events.IsNullOrEmpty())
                 return 0;
 
             await _database.HashSetAsync(_eventsCacheKey,
@@ -42,12 +43,12 @@ namespace WeihanLi.Redis
                     .ToArray()
                 );
 
-            return events.Length;
+            return events.Count;
         }
 
-        public int DeleteEvents(params string[] events)
+        public int DeleteEvents(ICollection<string> events)
         {
-            if (null == events || events.Length == 0)
+            if (events.IsNullOrEmpty())
                 return 0;
 
             _database.HashDelete(_eventsCacheKey,
@@ -55,12 +56,12 @@ namespace WeihanLi.Redis
                     .ToArray()
                 );
 
-            return events.Length;
+            return events.Count;
         }
 
-        public async Task<int> DeleteEventsAsync(params string[] events)
+        public async Task<int> DeleteEventsAsync(ICollection<string> events)
         {
-            if (null == events || events.Length == 0)
+            if (events.IsNullOrEmpty())
                 return 0;
 
             await _database.HashDeleteAsync(_eventsCacheKey,
@@ -68,7 +69,7 @@ namespace WeihanLi.Redis
                     .ToArray()
                 );
 
-            return events.Length;
+            return events.Count;
         }
     }
 }

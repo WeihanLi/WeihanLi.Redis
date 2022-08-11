@@ -1,7 +1,7 @@
-﻿using StackExchange.Redis;
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using StackExchange.Redis;
 using WeihanLi.Common.Event;
 using WeihanLi.Common.Helpers;
 using WeihanLi.Extensions;

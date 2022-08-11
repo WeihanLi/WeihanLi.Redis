@@ -286,15 +286,15 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.EventStoreInRedis.EventStoreInRedis
   nameWithType: EventStoreInRedis.EventStoreInRedis
-- uid: WeihanLi.Redis.EventStoreInRedis.DeleteEvents(System.String[])
-  name: DeleteEvents(String[])
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_DeleteEvents_System_String___
-  commentId: M:WeihanLi.Redis.EventStoreInRedis.DeleteEvents(System.String[])
-  name.vb: DeleteEvents(String())
-  fullName: WeihanLi.Redis.EventStoreInRedis.DeleteEvents(System.String[])
-  fullName.vb: WeihanLi.Redis.EventStoreInRedis.DeleteEvents(System.String())
-  nameWithType: EventStoreInRedis.DeleteEvents(String[])
-  nameWithType.vb: EventStoreInRedis.DeleteEvents(String())
+- uid: WeihanLi.Redis.EventStoreInRedis.DeleteEvents(ICollection{System.String})
+  name: DeleteEvents(ICollection<String>)
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_DeleteEvents_ICollection_System_String__
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.DeleteEvents(ICollection{System.String})
+  name.vb: DeleteEvents(ICollection(Of String))
+  fullName: WeihanLi.Redis.EventStoreInRedis.DeleteEvents(ICollection<System.String>)
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.DeleteEvents(ICollection(Of System.String))
+  nameWithType: EventStoreInRedis.DeleteEvents(ICollection<String>)
+  nameWithType.vb: EventStoreInRedis.DeleteEvents(ICollection(Of String))
 - uid: WeihanLi.Redis.EventStoreInRedis.DeleteEvents*
   name: DeleteEvents
   href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_DeleteEvents_
@@ -302,15 +302,15 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.EventStoreInRedis.DeleteEvents
   nameWithType: EventStoreInRedis.DeleteEvents
-- uid: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(System.String[])
-  name: DeleteEventsAsync(String[])
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_DeleteEventsAsync_System_String___
-  commentId: M:WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(System.String[])
-  name.vb: DeleteEventsAsync(String())
-  fullName: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(System.String[])
-  fullName.vb: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(System.String())
-  nameWithType: EventStoreInRedis.DeleteEventsAsync(String[])
-  nameWithType.vb: EventStoreInRedis.DeleteEventsAsync(String())
+- uid: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(ICollection{System.String})
+  name: DeleteEventsAsync(ICollection<String>)
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_DeleteEventsAsync_ICollection_System_String__
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(ICollection{System.String})
+  name.vb: DeleteEventsAsync(ICollection(Of String))
+  fullName: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(ICollection<System.String>)
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(ICollection(Of System.String))
+  nameWithType: EventStoreInRedis.DeleteEventsAsync(ICollection<String>)
+  nameWithType.vb: EventStoreInRedis.DeleteEventsAsync(ICollection(Of String))
 - uid: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync*
   name: DeleteEventsAsync
   href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_DeleteEventsAsync_
@@ -318,15 +318,15 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync
   nameWithType: EventStoreInRedis.DeleteEventsAsync
-- uid: WeihanLi.Redis.EventStoreInRedis.SaveEvents(IEventBase[])
-  name: SaveEvents(IEventBase[])
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_SaveEvents_IEventBase___
-  commentId: M:WeihanLi.Redis.EventStoreInRedis.SaveEvents(IEventBase[])
-  name.vb: SaveEvents(IEventBase())
-  fullName: WeihanLi.Redis.EventStoreInRedis.SaveEvents(IEventBase[])
-  fullName.vb: WeihanLi.Redis.EventStoreInRedis.SaveEvents(IEventBase())
-  nameWithType: EventStoreInRedis.SaveEvents(IEventBase[])
-  nameWithType.vb: EventStoreInRedis.SaveEvents(IEventBase())
+- uid: WeihanLi.Redis.EventStoreInRedis.SaveEvents(ICollection{IEventBase})
+  name: SaveEvents(ICollection<IEventBase>)
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_SaveEvents_ICollection_IEventBase__
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.SaveEvents(ICollection{IEventBase})
+  name.vb: SaveEvents(ICollection(Of IEventBase))
+  fullName: WeihanLi.Redis.EventStoreInRedis.SaveEvents(ICollection<IEventBase>)
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.SaveEvents(ICollection(Of IEventBase))
+  nameWithType: EventStoreInRedis.SaveEvents(ICollection<IEventBase>)
+  nameWithType.vb: EventStoreInRedis.SaveEvents(ICollection(Of IEventBase))
 - uid: WeihanLi.Redis.EventStoreInRedis.SaveEvents*
   name: SaveEvents
   href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_SaveEvents_
@@ -334,15 +334,15 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.EventStoreInRedis.SaveEvents
   nameWithType: EventStoreInRedis.SaveEvents
-- uid: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(IEventBase[])
-  name: SaveEventsAsync(IEventBase[])
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_SaveEventsAsync_IEventBase___
-  commentId: M:WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(IEventBase[])
-  name.vb: SaveEventsAsync(IEventBase())
-  fullName: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(IEventBase[])
-  fullName.vb: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(IEventBase())
-  nameWithType: EventStoreInRedis.SaveEventsAsync(IEventBase[])
-  nameWithType.vb: EventStoreInRedis.SaveEventsAsync(IEventBase())
+- uid: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(ICollection{IEventBase})
+  name: SaveEventsAsync(ICollection<IEventBase>)
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_SaveEventsAsync_ICollection_IEventBase__
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(ICollection{IEventBase})
+  name.vb: SaveEventsAsync(ICollection(Of IEventBase))
+  fullName: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(ICollection<IEventBase>)
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(ICollection(Of IEventBase))
+  nameWithType: EventStoreInRedis.SaveEventsAsync(ICollection<IEventBase>)
+  nameWithType.vb: EventStoreInRedis.SaveEventsAsync(ICollection(Of IEventBase))
 - uid: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync*
   name: SaveEventsAsync
   href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_SaveEventsAsync_

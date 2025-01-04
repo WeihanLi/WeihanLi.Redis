@@ -8,6 +8,8 @@
 
 [![Build Status](https://weihanli.visualstudio.com/Pipelines/_apis/build/status/WeihanLi.WeihanLi.Redis?branchName=dev)](https://weihanli.visualstudio.com/Pipelines/_build/latest?definitionId=15&branchName=dev)
 
+[![dotnet Build Status](https://github.com/WeihanLi/WeihanLi.Redis/actions/workflows/dotnet.yml/badge.svg)](https://github.com/WeihanLi/WeihanLi.Redis/actions/workflows/dotnet.yml)
+
 ## Intro
 
 RedisExtensions for StackExchange.Redis, much more easier for generic opeartions,and supply some extensions for your business logics.

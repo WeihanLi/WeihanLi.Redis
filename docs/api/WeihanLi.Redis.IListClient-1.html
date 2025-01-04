@@ -187,7 +187,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -291,7 +291,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -405,7 +405,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -519,7 +519,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -613,7 +613,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -779,7 +779,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -831,7 +831,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -849,7 +849,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T[] ListRange(long start = null, long stop = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">T[] ListRange(long start = 0L, long stop = -1L, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -906,7 +906,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; ListRangeAsync(long start = null, long stop = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;T[]&gt; ListRangeAsync(long start = 0L, long stop = -1L, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -945,7 +945,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T[]&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T[]&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1039,7 +1039,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1205,7 +1205,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1257,7 +1257,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1275,7 +1275,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long Remove(T value, long count = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">long Remove(T value, long count = 0L, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1332,7 +1332,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;long&gt; RemoveAsync(T value, long count = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;long&gt; RemoveAsync(T value, long count = 0L, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1371,7 +1371,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1475,7 +1475,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1589,7 +1589,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1612,7 +1612,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">T[] Sort(long skip = null, long take = null, Order order = null, SortType sortType = null, T by = null, T[] get = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">T[] Sort(long skip = 0L, long take = -1L, Order order = null, SortType sortType = null, T by = null, T[] get = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1698,7 +1698,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">long SortAndStore(string destination, long skip = null, long take = null, Order order = null, SortType sortType = null, T by = null, T[] get = null, CommandFlags flags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">long SortAndStore(string destination, long skip = 0L, long take = -1L, Order order = null, SortType sortType = null, T by = null, T[] get = null, CommandFlags flags = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1880,7 +1880,7 @@ can be used to specify fields using <code>-&gt;</code> notation (again, refer to
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>

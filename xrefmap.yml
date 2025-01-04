@@ -64,11 +64,11 @@ references:
   commentId: T:WeihanLi.Redis.Event.RedisEventBus
   fullName: WeihanLi.Redis.Event.RedisEventBus
   nameWithType: RedisEventBus
-- uid: WeihanLi.Redis.Event.RedisEventBus.#ctor(IEventSubscriptionManager,IEventHandlerFactory,ISubscriber,IServiceProvider)
+- uid: WeihanLi.Redis.Event.RedisEventBus.#ctor(IEventSubscriptionManager,IEventHandlerFactory,ISubscriber,System.IServiceProvider)
   name: RedisEventBus(IEventSubscriptionManager, IEventHandlerFactory, ISubscriber, IServiceProvider)
-  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus__ctor_IEventSubscriptionManager_IEventHandlerFactory_ISubscriber_IServiceProvider_
-  commentId: M:WeihanLi.Redis.Event.RedisEventBus.#ctor(IEventSubscriptionManager,IEventHandlerFactory,ISubscriber,IServiceProvider)
-  fullName: WeihanLi.Redis.Event.RedisEventBus.RedisEventBus(IEventSubscriptionManager, IEventHandlerFactory, ISubscriber, IServiceProvider)
+  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus__ctor_IEventSubscriptionManager_IEventHandlerFactory_ISubscriber_System_IServiceProvider_
+  commentId: M:WeihanLi.Redis.Event.RedisEventBus.#ctor(IEventSubscriptionManager,IEventHandlerFactory,ISubscriber,System.IServiceProvider)
+  fullName: WeihanLi.Redis.Event.RedisEventBus.RedisEventBus(IEventSubscriptionManager, IEventHandlerFactory, ISubscriber, System.IServiceProvider)
   nameWithType: RedisEventBus.RedisEventBus(IEventSubscriptionManager, IEventHandlerFactory, ISubscriber, IServiceProvider)
 - uid: WeihanLi.Redis.Event.RedisEventBus.#ctor*
   name: RedisEventBus
@@ -77,22 +77,6 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.Event.RedisEventBus.RedisEventBus
   nameWithType: RedisEventBus.RedisEventBus
-- uid: WeihanLi.Redis.Event.RedisEventBus.Publish*
-  name: Publish
-  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_Publish_
-  commentId: Overload:WeihanLi.Redis.Event.RedisEventBus.Publish
-  isSpec: "True"
-  fullName: WeihanLi.Redis.Event.RedisEventBus.Publish
-  nameWithType: RedisEventBus.Publish
-- uid: WeihanLi.Redis.Event.RedisEventBus.Publish``1(``0)
-  name: Publish<TEvent>(TEvent)
-  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_Publish__1___0_
-  commentId: M:WeihanLi.Redis.Event.RedisEventBus.Publish``1(``0)
-  name.vb: Publish(Of TEvent)(TEvent)
-  fullName: WeihanLi.Redis.Event.RedisEventBus.Publish<TEvent>(TEvent)
-  fullName.vb: WeihanLi.Redis.Event.RedisEventBus.Publish(Of TEvent)(TEvent)
-  nameWithType: RedisEventBus.Publish<TEvent>(TEvent)
-  nameWithType.vb: RedisEventBus.Publish(Of TEvent)(TEvent)
 - uid: WeihanLi.Redis.Event.RedisEventBus.PublishAsync*
   name: PublishAsync
   href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_PublishAsync_
@@ -100,33 +84,20 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.Event.RedisEventBus.PublishAsync
   nameWithType: RedisEventBus.PublishAsync
-- uid: WeihanLi.Redis.Event.RedisEventBus.PublishAsync``1(``0)
-  name: PublishAsync<TEvent>(TEvent)
-  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_PublishAsync__1___0_
-  commentId: M:WeihanLi.Redis.Event.RedisEventBus.PublishAsync``1(``0)
-  name.vb: PublishAsync(Of TEvent)(TEvent)
-  fullName: WeihanLi.Redis.Event.RedisEventBus.PublishAsync<TEvent>(TEvent)
-  fullName.vb: WeihanLi.Redis.Event.RedisEventBus.PublishAsync(Of TEvent)(TEvent)
-  nameWithType: RedisEventBus.PublishAsync<TEvent>(TEvent)
-  nameWithType.vb: RedisEventBus.PublishAsync(Of TEvent)(TEvent)
-- uid: WeihanLi.Redis.Event.RedisEventBus.Subscribe(Type,Type)
-  name: Subscribe(Type, Type)
-  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_Subscribe_Type_Type_
-  commentId: M:WeihanLi.Redis.Event.RedisEventBus.Subscribe(Type,Type)
-  fullName: WeihanLi.Redis.Event.RedisEventBus.Subscribe(Type, Type)
-  nameWithType: RedisEventBus.Subscribe(Type, Type)
-- uid: WeihanLi.Redis.Event.RedisEventBus.Subscribe*
-  name: Subscribe
-  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_Subscribe_
-  commentId: Overload:WeihanLi.Redis.Event.RedisEventBus.Subscribe
-  isSpec: "True"
-  fullName: WeihanLi.Redis.Event.RedisEventBus.Subscribe
-  nameWithType: RedisEventBus.Subscribe
-- uid: WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync(Type,Type)
+- uid: WeihanLi.Redis.Event.RedisEventBus.PublishAsync``1(``0,EventProperties)
+  name: PublishAsync<TEvent>(TEvent, EventProperties)
+  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_PublishAsync__1___0_EventProperties_
+  commentId: M:WeihanLi.Redis.Event.RedisEventBus.PublishAsync``1(``0,EventProperties)
+  name.vb: PublishAsync(Of TEvent)(TEvent, EventProperties)
+  fullName: WeihanLi.Redis.Event.RedisEventBus.PublishAsync<TEvent>(TEvent, EventProperties)
+  fullName.vb: WeihanLi.Redis.Event.RedisEventBus.PublishAsync(Of TEvent)(TEvent, EventProperties)
+  nameWithType: RedisEventBus.PublishAsync<TEvent>(TEvent, EventProperties)
+  nameWithType.vb: RedisEventBus.PublishAsync(Of TEvent)(TEvent, EventProperties)
+- uid: WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync(System.Type,System.Type)
   name: SubscribeAsync(Type, Type)
-  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_SubscribeAsync_Type_Type_
-  commentId: M:WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync(Type,Type)
-  fullName: WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync(Type, Type)
+  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_SubscribeAsync_System_Type_System_Type_
+  commentId: M:WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync(System.Type,System.Type)
+  fullName: WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync(System.Type, System.Type)
   nameWithType: RedisEventBus.SubscribeAsync(Type, Type)
 - uid: WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync*
   name: SubscribeAsync
@@ -135,24 +106,20 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync
   nameWithType: RedisEventBus.SubscribeAsync
-- uid: WeihanLi.Redis.Event.RedisEventBus.UnSubscribe(Type,Type)
-  name: UnSubscribe(Type, Type)
-  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_UnSubscribe_Type_Type_
-  commentId: M:WeihanLi.Redis.Event.RedisEventBus.UnSubscribe(Type,Type)
-  fullName: WeihanLi.Redis.Event.RedisEventBus.UnSubscribe(Type, Type)
-  nameWithType: RedisEventBus.UnSubscribe(Type, Type)
-- uid: WeihanLi.Redis.Event.RedisEventBus.UnSubscribe*
-  name: UnSubscribe
-  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_UnSubscribe_
-  commentId: Overload:WeihanLi.Redis.Event.RedisEventBus.UnSubscribe
-  isSpec: "True"
-  fullName: WeihanLi.Redis.Event.RedisEventBus.UnSubscribe
-  nameWithType: RedisEventBus.UnSubscribe
-- uid: WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync(Type,Type)
+- uid: WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync``1(IEventHandler{``0})
+  name: SubscribeAsync<TEvent>(IEventHandler<TEvent>)
+  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_SubscribeAsync__1_IEventHandler___0__
+  commentId: M:WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync``1(IEventHandler{``0})
+  name.vb: SubscribeAsync(Of TEvent)(IEventHandler(Of TEvent))
+  fullName: WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync<TEvent>(IEventHandler<TEvent>)
+  fullName.vb: WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync(Of TEvent)(IEventHandler(Of TEvent))
+  nameWithType: RedisEventBus.SubscribeAsync<TEvent>(IEventHandler<TEvent>)
+  nameWithType.vb: RedisEventBus.SubscribeAsync(Of TEvent)(IEventHandler(Of TEvent))
+- uid: WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync(System.Type,System.Type)
   name: UnSubscribeAsync(Type, Type)
-  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_UnSubscribeAsync_Type_Type_
-  commentId: M:WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync(Type,Type)
-  fullName: WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync(Type, Type)
+  href: docs/api/WeihanLi.Redis.Event.RedisEventBus.html#WeihanLi_Redis_Event_RedisEventBus_UnSubscribeAsync_System_Type_System_Type_
+  commentId: M:WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync(System.Type,System.Type)
+  fullName: WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync(System.Type, System.Type)
   nameWithType: RedisEventBus.UnSubscribeAsync(Type, Type)
 - uid: WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync*
   name: UnSubscribeAsync
@@ -183,25 +150,6 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.Event.RedisEventQueue.RedisEventQueue
   nameWithType: RedisEventQueue.RedisEventQueue
-- uid: WeihanLi.Redis.Event.RedisEventQueue.Dequeue(System.String)
-  name: Dequeue(String)
-  href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_Dequeue_System_String_
-  commentId: M:WeihanLi.Redis.Event.RedisEventQueue.Dequeue(System.String)
-  fullName: WeihanLi.Redis.Event.RedisEventQueue.Dequeue(System.String)
-  nameWithType: RedisEventQueue.Dequeue(String)
-- uid: WeihanLi.Redis.Event.RedisEventQueue.Dequeue*
-  name: Dequeue
-  href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_Dequeue_
-  commentId: Overload:WeihanLi.Redis.Event.RedisEventQueue.Dequeue
-  isSpec: "True"
-  fullName: WeihanLi.Redis.Event.RedisEventQueue.Dequeue
-  nameWithType: RedisEventQueue.Dequeue
-- uid: WeihanLi.Redis.Event.RedisEventQueue.DequeueAsync(System.String)
-  name: DequeueAsync(String)
-  href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_DequeueAsync_System_String_
-  commentId: M:WeihanLi.Redis.Event.RedisEventQueue.DequeueAsync(System.String)
-  fullName: WeihanLi.Redis.Event.RedisEventQueue.DequeueAsync(System.String)
-  nameWithType: RedisEventQueue.DequeueAsync(String)
 - uid: WeihanLi.Redis.Event.RedisEventQueue.DequeueAsync*
   name: DequeueAsync
   href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_DequeueAsync_
@@ -209,22 +157,15 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.Event.RedisEventQueue.DequeueAsync
   nameWithType: RedisEventQueue.DequeueAsync
-- uid: WeihanLi.Redis.Event.RedisEventQueue.Enqueue*
-  name: Enqueue
-  href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_Enqueue_
-  commentId: Overload:WeihanLi.Redis.Event.RedisEventQueue.Enqueue
-  isSpec: "True"
-  fullName: WeihanLi.Redis.Event.RedisEventQueue.Enqueue
-  nameWithType: RedisEventQueue.Enqueue
-- uid: WeihanLi.Redis.Event.RedisEventQueue.Enqueue``1(System.String,``0)
-  name: Enqueue<TEvent>(String, TEvent)
-  href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_Enqueue__1_System_String___0_
-  commentId: M:WeihanLi.Redis.Event.RedisEventQueue.Enqueue``1(System.String,``0)
-  name.vb: Enqueue(Of TEvent)(String, TEvent)
-  fullName: WeihanLi.Redis.Event.RedisEventQueue.Enqueue<TEvent>(System.String, TEvent)
-  fullName.vb: WeihanLi.Redis.Event.RedisEventQueue.Enqueue(Of TEvent)(System.String, TEvent)
-  nameWithType: RedisEventQueue.Enqueue<TEvent>(String, TEvent)
-  nameWithType.vb: RedisEventQueue.Enqueue(Of TEvent)(String, TEvent)
+- uid: WeihanLi.Redis.Event.RedisEventQueue.DequeueAsync``1(System.String)
+  name: DequeueAsync<TEvent>(String)
+  href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_DequeueAsync__1_System_String_
+  commentId: M:WeihanLi.Redis.Event.RedisEventQueue.DequeueAsync``1(System.String)
+  name.vb: DequeueAsync(Of TEvent)(String)
+  fullName: WeihanLi.Redis.Event.RedisEventQueue.DequeueAsync<TEvent>(System.String)
+  fullName.vb: WeihanLi.Redis.Event.RedisEventQueue.DequeueAsync(Of TEvent)(System.String)
+  nameWithType: RedisEventQueue.DequeueAsync<TEvent>(String)
+  nameWithType.vb: RedisEventQueue.DequeueAsync(Of TEvent)(String)
 - uid: WeihanLi.Redis.Event.RedisEventQueue.EnqueueAsync*
   name: EnqueueAsync
   href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_EnqueueAsync_
@@ -232,15 +173,15 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.Event.RedisEventQueue.EnqueueAsync
   nameWithType: RedisEventQueue.EnqueueAsync
-- uid: WeihanLi.Redis.Event.RedisEventQueue.EnqueueAsync``1(System.String,``0)
-  name: EnqueueAsync<TEvent>(String, TEvent)
-  href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_EnqueueAsync__1_System_String___0_
-  commentId: M:WeihanLi.Redis.Event.RedisEventQueue.EnqueueAsync``1(System.String,``0)
-  name.vb: EnqueueAsync(Of TEvent)(String, TEvent)
-  fullName: WeihanLi.Redis.Event.RedisEventQueue.EnqueueAsync<TEvent>(System.String, TEvent)
-  fullName.vb: WeihanLi.Redis.Event.RedisEventQueue.EnqueueAsync(Of TEvent)(System.String, TEvent)
-  nameWithType: RedisEventQueue.EnqueueAsync<TEvent>(String, TEvent)
-  nameWithType.vb: RedisEventQueue.EnqueueAsync(Of TEvent)(String, TEvent)
+- uid: WeihanLi.Redis.Event.RedisEventQueue.EnqueueAsync``1(System.String,``0,EventProperties)
+  name: EnqueueAsync<TEvent>(String, TEvent, EventProperties)
+  href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_EnqueueAsync__1_System_String___0_EventProperties_
+  commentId: M:WeihanLi.Redis.Event.RedisEventQueue.EnqueueAsync``1(System.String,``0,EventProperties)
+  name.vb: EnqueueAsync(Of TEvent)(String, TEvent, EventProperties)
+  fullName: WeihanLi.Redis.Event.RedisEventQueue.EnqueueAsync<TEvent>(System.String, TEvent, EventProperties)
+  fullName.vb: WeihanLi.Redis.Event.RedisEventQueue.EnqueueAsync(Of TEvent)(System.String, TEvent, EventProperties)
+  nameWithType: RedisEventQueue.EnqueueAsync<TEvent>(String, TEvent, EventProperties)
+  nameWithType.vb: RedisEventQueue.EnqueueAsync(Of TEvent)(String, TEvent, EventProperties)
 - uid: WeihanLi.Redis.Event.RedisEventQueue.GetQueues
   name: GetQueues()
   href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_GetQueues
@@ -267,6 +208,19 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.Event.RedisEventQueue.GetQueuesAsync
   nameWithType: RedisEventQueue.GetQueuesAsync
+- uid: WeihanLi.Redis.Event.RedisEventQueue.ReadAllAsync(System.String,System.Threading.CancellationToken)
+  name: ReadAllAsync(String, CancellationToken)
+  href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_ReadAllAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:WeihanLi.Redis.Event.RedisEventQueue.ReadAllAsync(System.String,System.Threading.CancellationToken)
+  fullName: WeihanLi.Redis.Event.RedisEventQueue.ReadAllAsync(System.String, System.Threading.CancellationToken)
+  nameWithType: RedisEventQueue.ReadAllAsync(String, CancellationToken)
+- uid: WeihanLi.Redis.Event.RedisEventQueue.ReadAllAsync*
+  name: ReadAllAsync
+  href: docs/api/WeihanLi.Redis.Event.RedisEventQueue.html#WeihanLi_Redis_Event_RedisEventQueue_ReadAllAsync_
+  commentId: Overload:WeihanLi.Redis.Event.RedisEventQueue.ReadAllAsync
+  isSpec: "True"
+  fullName: WeihanLi.Redis.Event.RedisEventQueue.ReadAllAsync
+  nameWithType: RedisEventQueue.ReadAllAsync
 - uid: WeihanLi.Redis.EventStoreInRedis
   name: EventStoreInRedis
   href: docs/api/WeihanLi.Redis.EventStoreInRedis.html
@@ -286,29 +240,13 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.EventStoreInRedis.EventStoreInRedis
   nameWithType: EventStoreInRedis.EventStoreInRedis
-- uid: WeihanLi.Redis.EventStoreInRedis.DeleteEvents(ICollection{System.String})
-  name: DeleteEvents(ICollection<String>)
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_DeleteEvents_ICollection_System_String__
-  commentId: M:WeihanLi.Redis.EventStoreInRedis.DeleteEvents(ICollection{System.String})
-  name.vb: DeleteEvents(ICollection(Of String))
-  fullName: WeihanLi.Redis.EventStoreInRedis.DeleteEvents(ICollection<System.String>)
-  fullName.vb: WeihanLi.Redis.EventStoreInRedis.DeleteEvents(ICollection(Of System.String))
-  nameWithType: EventStoreInRedis.DeleteEvents(ICollection<String>)
-  nameWithType.vb: EventStoreInRedis.DeleteEvents(ICollection(Of String))
-- uid: WeihanLi.Redis.EventStoreInRedis.DeleteEvents*
-  name: DeleteEvents
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_DeleteEvents_
-  commentId: Overload:WeihanLi.Redis.EventStoreInRedis.DeleteEvents
-  isSpec: "True"
-  fullName: WeihanLi.Redis.EventStoreInRedis.DeleteEvents
-  nameWithType: EventStoreInRedis.DeleteEvents
-- uid: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(ICollection{System.String})
+- uid: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(System.Collections.Generic.ICollection{System.String})
   name: DeleteEventsAsync(ICollection<String>)
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_DeleteEventsAsync_ICollection_System_String__
-  commentId: M:WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(ICollection{System.String})
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_DeleteEventsAsync_System_Collections_Generic_ICollection_System_String__
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(System.Collections.Generic.ICollection{System.String})
   name.vb: DeleteEventsAsync(ICollection(Of String))
-  fullName: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(ICollection<System.String>)
-  fullName.vb: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(ICollection(Of System.String))
+  fullName: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(System.Collections.Generic.ICollection<System.String>)
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync(System.Collections.Generic.ICollection(Of System.String))
   nameWithType: EventStoreInRedis.DeleteEventsAsync(ICollection<String>)
   nameWithType.vb: EventStoreInRedis.DeleteEventsAsync(ICollection(Of String))
 - uid: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync*
@@ -318,31 +256,15 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.EventStoreInRedis.DeleteEventsAsync
   nameWithType: EventStoreInRedis.DeleteEventsAsync
-- uid: WeihanLi.Redis.EventStoreInRedis.SaveEvents(ICollection{IEventBase})
-  name: SaveEvents(ICollection<IEventBase>)
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_SaveEvents_ICollection_IEventBase__
-  commentId: M:WeihanLi.Redis.EventStoreInRedis.SaveEvents(ICollection{IEventBase})
-  name.vb: SaveEvents(ICollection(Of IEventBase))
-  fullName: WeihanLi.Redis.EventStoreInRedis.SaveEvents(ICollection<IEventBase>)
-  fullName.vb: WeihanLi.Redis.EventStoreInRedis.SaveEvents(ICollection(Of IEventBase))
-  nameWithType: EventStoreInRedis.SaveEvents(ICollection<IEventBase>)
-  nameWithType.vb: EventStoreInRedis.SaveEvents(ICollection(Of IEventBase))
-- uid: WeihanLi.Redis.EventStoreInRedis.SaveEvents*
-  name: SaveEvents
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_SaveEvents_
-  commentId: Overload:WeihanLi.Redis.EventStoreInRedis.SaveEvents
-  isSpec: "True"
-  fullName: WeihanLi.Redis.EventStoreInRedis.SaveEvents
-  nameWithType: EventStoreInRedis.SaveEvents
-- uid: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(ICollection{IEventBase})
-  name: SaveEventsAsync(ICollection<IEventBase>)
-  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_SaveEventsAsync_ICollection_IEventBase__
-  commentId: M:WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(ICollection{IEventBase})
-  name.vb: SaveEventsAsync(ICollection(Of IEventBase))
-  fullName: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(ICollection<IEventBase>)
-  fullName.vb: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(ICollection(Of IEventBase))
-  nameWithType: EventStoreInRedis.SaveEventsAsync(ICollection<IEventBase>)
-  nameWithType.vb: EventStoreInRedis.SaveEventsAsync(ICollection(Of IEventBase))
+- uid: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(System.Collections.Generic.ICollection{IEvent})
+  name: SaveEventsAsync(ICollection<IEvent>)
+  href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_SaveEventsAsync_System_Collections_Generic_ICollection_IEvent__
+  commentId: M:WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(System.Collections.Generic.ICollection{IEvent})
+  name.vb: SaveEventsAsync(ICollection(Of IEvent))
+  fullName: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(System.Collections.Generic.ICollection<IEvent>)
+  fullName.vb: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync(System.Collections.Generic.ICollection(Of IEvent))
+  nameWithType: EventStoreInRedis.SaveEventsAsync(ICollection<IEvent>)
+  nameWithType.vb: EventStoreInRedis.SaveEventsAsync(ICollection(Of IEvent))
 - uid: WeihanLi.Redis.EventStoreInRedis.SaveEventsAsync*
   name: SaveEventsAsync
   href: docs/api/WeihanLi.Redis.EventStoreInRedis.html#WeihanLi_Redis_EventStoreInRedis_SaveEventsAsync_
@@ -382,13 +304,13 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.ICacheClient.ExistsAsync
   nameWithType: ICacheClient.ExistsAsync
-- uid: WeihanLi.Redis.ICacheClient.Expire(System.String,System.Nullable{TimeSpan},CommandFlags)
+- uid: WeihanLi.Redis.ICacheClient.Expire(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name: Expire(String, Nullable<TimeSpan>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_Expire_System_String_System_Nullable_TimeSpan__CommandFlags_
-  commentId: M:WeihanLi.Redis.ICacheClient.Expire(System.String,System.Nullable{TimeSpan},CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_Expire_System_String_System_Nullable_System_TimeSpan__CommandFlags_
+  commentId: M:WeihanLi.Redis.ICacheClient.Expire(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name.vb: Expire(String, Nullable(Of TimeSpan), CommandFlags)
-  fullName: WeihanLi.Redis.ICacheClient.Expire(System.String, System.Nullable<TimeSpan>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICacheClient.Expire(System.String, System.Nullable(Of TimeSpan), CommandFlags)
+  fullName: WeihanLi.Redis.ICacheClient.Expire(System.String, System.Nullable<System.TimeSpan>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICacheClient.Expire(System.String, System.Nullable(Of System.TimeSpan), CommandFlags)
   nameWithType: ICacheClient.Expire(String, Nullable<TimeSpan>, CommandFlags)
   nameWithType.vb: ICacheClient.Expire(String, Nullable(Of TimeSpan), CommandFlags)
 - uid: WeihanLi.Redis.ICacheClient.Expire*
@@ -398,13 +320,13 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.ICacheClient.Expire
   nameWithType: ICacheClient.Expire
-- uid: WeihanLi.Redis.ICacheClient.ExpireAsync(System.String,System.Nullable{TimeSpan},CommandFlags)
+- uid: WeihanLi.Redis.ICacheClient.ExpireAsync(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name: ExpireAsync(String, Nullable<TimeSpan>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_ExpireAsync_System_String_System_Nullable_TimeSpan__CommandFlags_
-  commentId: M:WeihanLi.Redis.ICacheClient.ExpireAsync(System.String,System.Nullable{TimeSpan},CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_ExpireAsync_System_String_System_Nullable_System_TimeSpan__CommandFlags_
+  commentId: M:WeihanLi.Redis.ICacheClient.ExpireAsync(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name.vb: ExpireAsync(String, Nullable(Of TimeSpan), CommandFlags)
-  fullName: WeihanLi.Redis.ICacheClient.ExpireAsync(System.String, System.Nullable<TimeSpan>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICacheClient.ExpireAsync(System.String, System.Nullable(Of TimeSpan), CommandFlags)
+  fullName: WeihanLi.Redis.ICacheClient.ExpireAsync(System.String, System.Nullable<System.TimeSpan>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICacheClient.ExpireAsync(System.String, System.Nullable(Of System.TimeSpan), CommandFlags)
   nameWithType: ICacheClient.ExpireAsync(String, Nullable<TimeSpan>, CommandFlags)
   nameWithType.vb: ICacheClient.ExpireAsync(String, Nullable(Of TimeSpan), CommandFlags)
 - uid: WeihanLi.Redis.ICacheClient.ExpireAsync*
@@ -465,13 +387,13 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.ICacheClient.GetOrSet
   nameWithType: ICacheClient.GetOrSet
-- uid: WeihanLi.Redis.ICacheClient.GetOrSet``1(System.String,Func{``0},System.Nullable{TimeSpan},CommandFlags)
+- uid: WeihanLi.Redis.ICacheClient.GetOrSet``1(System.String,System.Func{``0},System.Nullable{System.TimeSpan},CommandFlags)
   name: GetOrSet<T>(String, Func<T>, Nullable<TimeSpan>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_GetOrSet__1_System_String_Func___0__System_Nullable_TimeSpan__CommandFlags_
-  commentId: M:WeihanLi.Redis.ICacheClient.GetOrSet``1(System.String,Func{``0},System.Nullable{TimeSpan},CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_GetOrSet__1_System_String_System_Func___0__System_Nullable_System_TimeSpan__CommandFlags_
+  commentId: M:WeihanLi.Redis.ICacheClient.GetOrSet``1(System.String,System.Func{``0},System.Nullable{System.TimeSpan},CommandFlags)
   name.vb: GetOrSet(Of T)(String, Func(Of T), Nullable(Of TimeSpan), CommandFlags)
-  fullName: WeihanLi.Redis.ICacheClient.GetOrSet<T>(System.String, Func<T>, System.Nullable<TimeSpan>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICacheClient.GetOrSet(Of T)(System.String, Func(Of T), System.Nullable(Of TimeSpan), CommandFlags)
+  fullName: WeihanLi.Redis.ICacheClient.GetOrSet<T>(System.String, System.Func<T>, System.Nullable<System.TimeSpan>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICacheClient.GetOrSet(Of T)(System.String, System.Func(Of T), System.Nullable(Of System.TimeSpan), CommandFlags)
   nameWithType: ICacheClient.GetOrSet<T>(String, Func<T>, Nullable<TimeSpan>, CommandFlags)
   nameWithType.vb: ICacheClient.GetOrSet(Of T)(String, Func(Of T), Nullable(Of TimeSpan), CommandFlags)
 - uid: WeihanLi.Redis.ICacheClient.GetOrSetAsync*
@@ -481,13 +403,13 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.ICacheClient.GetOrSetAsync
   nameWithType: ICacheClient.GetOrSetAsync
-- uid: WeihanLi.Redis.ICacheClient.GetOrSetAsync``1(System.String,Func{Task{``0}},System.Nullable{TimeSpan},CommandFlags)
+- uid: WeihanLi.Redis.ICacheClient.GetOrSetAsync``1(System.String,System.Func{System.Threading.Tasks.Task{``0}},System.Nullable{System.TimeSpan},CommandFlags)
   name: GetOrSetAsync<T>(String, Func<Task<T>>, Nullable<TimeSpan>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_GetOrSetAsync__1_System_String_Func_Task___0___System_Nullable_TimeSpan__CommandFlags_
-  commentId: M:WeihanLi.Redis.ICacheClient.GetOrSetAsync``1(System.String,Func{Task{``0}},System.Nullable{TimeSpan},CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_GetOrSetAsync__1_System_String_System_Func_System_Threading_Tasks_Task___0___System_Nullable_System_TimeSpan__CommandFlags_
+  commentId: M:WeihanLi.Redis.ICacheClient.GetOrSetAsync``1(System.String,System.Func{System.Threading.Tasks.Task{``0}},System.Nullable{System.TimeSpan},CommandFlags)
   name.vb: GetOrSetAsync(Of T)(String, Func(Of Task(Of T)), Nullable(Of TimeSpan), CommandFlags)
-  fullName: WeihanLi.Redis.ICacheClient.GetOrSetAsync<T>(System.String, Func<Task<T>>, System.Nullable<TimeSpan>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICacheClient.GetOrSetAsync(Of T)(System.String, Func(Of Task(Of T)), System.Nullable(Of TimeSpan), CommandFlags)
+  fullName: WeihanLi.Redis.ICacheClient.GetOrSetAsync<T>(System.String, System.Func<System.Threading.Tasks.Task<T>>, System.Nullable<System.TimeSpan>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICacheClient.GetOrSetAsync(Of T)(System.String, System.Func(Of System.Threading.Tasks.Task(Of T)), System.Nullable(Of System.TimeSpan), CommandFlags)
   nameWithType: ICacheClient.GetOrSetAsync<T>(String, Func<Task<T>>, Nullable<TimeSpan>, CommandFlags)
   nameWithType.vb: ICacheClient.GetOrSetAsync(Of T)(String, Func(Of Task(Of T)), Nullable(Of TimeSpan), CommandFlags)
 - uid: WeihanLi.Redis.ICacheClient.Remove(System.String,CommandFlags)
@@ -532,22 +454,22 @@ references:
   fullName.vb: WeihanLi.Redis.ICacheClient.Set(Of T)(System.String, T)
   nameWithType: ICacheClient.Set<T>(String, T)
   nameWithType.vb: ICacheClient.Set(Of T)(String, T)
-- uid: WeihanLi.Redis.ICacheClient.Set``1(System.String,``0,System.Nullable{TimeSpan},When,CommandFlags)
+- uid: WeihanLi.Redis.ICacheClient.Set``1(System.String,``0,System.Nullable{System.TimeSpan},When,CommandFlags)
   name: Set<T>(String, T, Nullable<TimeSpan>, When, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_Set__1_System_String___0_System_Nullable_TimeSpan__When_CommandFlags_
-  commentId: M:WeihanLi.Redis.ICacheClient.Set``1(System.String,``0,System.Nullable{TimeSpan},When,CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_Set__1_System_String___0_System_Nullable_System_TimeSpan__When_CommandFlags_
+  commentId: M:WeihanLi.Redis.ICacheClient.Set``1(System.String,``0,System.Nullable{System.TimeSpan},When,CommandFlags)
   name.vb: Set(Of T)(String, T, Nullable(Of TimeSpan), When, CommandFlags)
-  fullName: WeihanLi.Redis.ICacheClient.Set<T>(System.String, T, System.Nullable<TimeSpan>, When, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICacheClient.Set(Of T)(System.String, T, System.Nullable(Of TimeSpan), When, CommandFlags)
+  fullName: WeihanLi.Redis.ICacheClient.Set<T>(System.String, T, System.Nullable<System.TimeSpan>, When, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICacheClient.Set(Of T)(System.String, T, System.Nullable(Of System.TimeSpan), When, CommandFlags)
   nameWithType: ICacheClient.Set<T>(String, T, Nullable<TimeSpan>, When, CommandFlags)
   nameWithType.vb: ICacheClient.Set(Of T)(String, T, Nullable(Of TimeSpan), When, CommandFlags)
-- uid: WeihanLi.Redis.ICacheClient.Set``1(System.String,Func{``0},System.Nullable{TimeSpan},When,CommandFlags)
+- uid: WeihanLi.Redis.ICacheClient.Set``1(System.String,System.Func{``0},System.Nullable{System.TimeSpan},When,CommandFlags)
   name: Set<T>(String, Func<T>, Nullable<TimeSpan>, When, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_Set__1_System_String_Func___0__System_Nullable_TimeSpan__When_CommandFlags_
-  commentId: M:WeihanLi.Redis.ICacheClient.Set``1(System.String,Func{``0},System.Nullable{TimeSpan},When,CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_Set__1_System_String_System_Func___0__System_Nullable_System_TimeSpan__When_CommandFlags_
+  commentId: M:WeihanLi.Redis.ICacheClient.Set``1(System.String,System.Func{``0},System.Nullable{System.TimeSpan},When,CommandFlags)
   name.vb: Set(Of T)(String, Func(Of T), Nullable(Of TimeSpan), When, CommandFlags)
-  fullName: WeihanLi.Redis.ICacheClient.Set<T>(System.String, Func<T>, System.Nullable<TimeSpan>, When, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICacheClient.Set(Of T)(System.String, Func(Of T), System.Nullable(Of TimeSpan), When, CommandFlags)
+  fullName: WeihanLi.Redis.ICacheClient.Set<T>(System.String, System.Func<T>, System.Nullable<System.TimeSpan>, When, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICacheClient.Set(Of T)(System.String, System.Func(Of T), System.Nullable(Of System.TimeSpan), When, CommandFlags)
   nameWithType: ICacheClient.Set<T>(String, Func<T>, Nullable<TimeSpan>, When, CommandFlags)
   nameWithType.vb: ICacheClient.Set(Of T)(String, Func(Of T), Nullable(Of TimeSpan), When, CommandFlags)
 - uid: WeihanLi.Redis.ICacheClient.SetAsync*
@@ -566,31 +488,31 @@ references:
   fullName.vb: WeihanLi.Redis.ICacheClient.SetAsync(Of T)(System.String, T)
   nameWithType: ICacheClient.SetAsync<T>(String, T)
   nameWithType.vb: ICacheClient.SetAsync(Of T)(String, T)
-- uid: WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,``0,System.Nullable{TimeSpan},When,CommandFlags)
+- uid: WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,``0,System.Nullable{System.TimeSpan},When,CommandFlags)
   name: SetAsync<T>(String, T, Nullable<TimeSpan>, When, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_SetAsync__1_System_String___0_System_Nullable_TimeSpan__When_CommandFlags_
-  commentId: M:WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,``0,System.Nullable{TimeSpan},When,CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_SetAsync__1_System_String___0_System_Nullable_System_TimeSpan__When_CommandFlags_
+  commentId: M:WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,``0,System.Nullable{System.TimeSpan},When,CommandFlags)
   name.vb: SetAsync(Of T)(String, T, Nullable(Of TimeSpan), When, CommandFlags)
-  fullName: WeihanLi.Redis.ICacheClient.SetAsync<T>(System.String, T, System.Nullable<TimeSpan>, When, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICacheClient.SetAsync(Of T)(System.String, T, System.Nullable(Of TimeSpan), When, CommandFlags)
+  fullName: WeihanLi.Redis.ICacheClient.SetAsync<T>(System.String, T, System.Nullable<System.TimeSpan>, When, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICacheClient.SetAsync(Of T)(System.String, T, System.Nullable(Of System.TimeSpan), When, CommandFlags)
   nameWithType: ICacheClient.SetAsync<T>(String, T, Nullable<TimeSpan>, When, CommandFlags)
   nameWithType.vb: ICacheClient.SetAsync(Of T)(String, T, Nullable(Of TimeSpan), When, CommandFlags)
-- uid: WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,Func{``0},System.Nullable{TimeSpan},When,CommandFlags)
+- uid: WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,System.Func{``0},System.Nullable{System.TimeSpan},When,CommandFlags)
   name: SetAsync<T>(String, Func<T>, Nullable<TimeSpan>, When, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_SetAsync__1_System_String_Func___0__System_Nullable_TimeSpan__When_CommandFlags_
-  commentId: M:WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,Func{``0},System.Nullable{TimeSpan},When,CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_SetAsync__1_System_String_System_Func___0__System_Nullable_System_TimeSpan__When_CommandFlags_
+  commentId: M:WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,System.Func{``0},System.Nullable{System.TimeSpan},When,CommandFlags)
   name.vb: SetAsync(Of T)(String, Func(Of T), Nullable(Of TimeSpan), When, CommandFlags)
-  fullName: WeihanLi.Redis.ICacheClient.SetAsync<T>(System.String, Func<T>, System.Nullable<TimeSpan>, When, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICacheClient.SetAsync(Of T)(System.String, Func(Of T), System.Nullable(Of TimeSpan), When, CommandFlags)
+  fullName: WeihanLi.Redis.ICacheClient.SetAsync<T>(System.String, System.Func<T>, System.Nullable<System.TimeSpan>, When, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICacheClient.SetAsync(Of T)(System.String, System.Func(Of T), System.Nullable(Of System.TimeSpan), When, CommandFlags)
   nameWithType: ICacheClient.SetAsync<T>(String, Func<T>, Nullable<TimeSpan>, When, CommandFlags)
   nameWithType.vb: ICacheClient.SetAsync(Of T)(String, Func(Of T), Nullable(Of TimeSpan), When, CommandFlags)
-- uid: WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,Func{Task{``0}},System.Nullable{TimeSpan},When,CommandFlags)
+- uid: WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,System.Func{System.Threading.Tasks.Task{``0}},System.Nullable{System.TimeSpan},When,CommandFlags)
   name: SetAsync<T>(String, Func<Task<T>>, Nullable<TimeSpan>, When, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_SetAsync__1_System_String_Func_Task___0___System_Nullable_TimeSpan__When_CommandFlags_
-  commentId: M:WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,Func{Task{``0}},System.Nullable{TimeSpan},When,CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICacheClient.html#WeihanLi_Redis_ICacheClient_SetAsync__1_System_String_System_Func_System_Threading_Tasks_Task___0___System_Nullable_System_TimeSpan__When_CommandFlags_
+  commentId: M:WeihanLi.Redis.ICacheClient.SetAsync``1(System.String,System.Func{System.Threading.Tasks.Task{``0}},System.Nullable{System.TimeSpan},When,CommandFlags)
   name.vb: SetAsync(Of T)(String, Func(Of Task(Of T)), Nullable(Of TimeSpan), When, CommandFlags)
-  fullName: WeihanLi.Redis.ICacheClient.SetAsync<T>(System.String, Func<Task<T>>, System.Nullable<TimeSpan>, When, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICacheClient.SetAsync(Of T)(System.String, Func(Of Task(Of T)), System.Nullable(Of TimeSpan), When, CommandFlags)
+  fullName: WeihanLi.Redis.ICacheClient.SetAsync<T>(System.String, System.Func<System.Threading.Tasks.Task<T>>, System.Nullable<System.TimeSpan>, When, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICacheClient.SetAsync(Of T)(System.String, System.Func(Of System.Threading.Tasks.Task(Of T)), System.Nullable(Of System.TimeSpan), When, CommandFlags)
   nameWithType: ICacheClient.SetAsync<T>(String, Func<Task<T>>, Nullable<TimeSpan>, When, CommandFlags)
   nameWithType.vb: ICacheClient.SetAsync(Of T)(String, Func(Of Task(Of T)), Nullable(Of TimeSpan), When, CommandFlags)
 - uid: WeihanLi.Redis.ICommonRedisClient
@@ -669,22 +591,22 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.ICommonRedisClient.KeyExistsAsync
   nameWithType: ICommonRedisClient.KeyExistsAsync
-- uid: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{DateTime},CommandFlags)
+- uid: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{System.DateTime},CommandFlags)
   name: KeyExpire(String, Nullable<DateTime>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICommonRedisClient.html#WeihanLi_Redis_ICommonRedisClient_KeyExpire_System_String_System_Nullable_DateTime__CommandFlags_
-  commentId: M:WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{DateTime},CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICommonRedisClient.html#WeihanLi_Redis_ICommonRedisClient_KeyExpire_System_String_System_Nullable_System_DateTime__CommandFlags_
+  commentId: M:WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{System.DateTime},CommandFlags)
   name.vb: KeyExpire(String, Nullable(Of DateTime), CommandFlags)
-  fullName: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String, System.Nullable<DateTime>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String, System.Nullable(Of DateTime), CommandFlags)
+  fullName: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String, System.Nullable<System.DateTime>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String, System.Nullable(Of System.DateTime), CommandFlags)
   nameWithType: ICommonRedisClient.KeyExpire(String, Nullable<DateTime>, CommandFlags)
   nameWithType.vb: ICommonRedisClient.KeyExpire(String, Nullable(Of DateTime), CommandFlags)
-- uid: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{TimeSpan},CommandFlags)
+- uid: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name: KeyExpire(String, Nullable<TimeSpan>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICommonRedisClient.html#WeihanLi_Redis_ICommonRedisClient_KeyExpire_System_String_System_Nullable_TimeSpan__CommandFlags_
-  commentId: M:WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{TimeSpan},CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICommonRedisClient.html#WeihanLi_Redis_ICommonRedisClient_KeyExpire_System_String_System_Nullable_System_TimeSpan__CommandFlags_
+  commentId: M:WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name.vb: KeyExpire(String, Nullable(Of TimeSpan), CommandFlags)
-  fullName: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String, System.Nullable<TimeSpan>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String, System.Nullable(Of TimeSpan), CommandFlags)
+  fullName: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String, System.Nullable<System.TimeSpan>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICommonRedisClient.KeyExpire(System.String, System.Nullable(Of System.TimeSpan), CommandFlags)
   nameWithType: ICommonRedisClient.KeyExpire(String, Nullable<TimeSpan>, CommandFlags)
   nameWithType.vb: ICommonRedisClient.KeyExpire(String, Nullable(Of TimeSpan), CommandFlags)
 - uid: WeihanLi.Redis.ICommonRedisClient.KeyExpire*
@@ -694,22 +616,22 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.ICommonRedisClient.KeyExpire
   nameWithType: ICommonRedisClient.KeyExpire
-- uid: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{DateTime},CommandFlags)
+- uid: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{System.DateTime},CommandFlags)
   name: KeyExpireAsync(String, Nullable<DateTime>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICommonRedisClient.html#WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_System_String_System_Nullable_DateTime__CommandFlags_
-  commentId: M:WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{DateTime},CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICommonRedisClient.html#WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_System_String_System_Nullable_System_DateTime__CommandFlags_
+  commentId: M:WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{System.DateTime},CommandFlags)
   name.vb: KeyExpireAsync(String, Nullable(Of DateTime), CommandFlags)
-  fullName: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String, System.Nullable<DateTime>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String, System.Nullable(Of DateTime), CommandFlags)
+  fullName: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String, System.Nullable<System.DateTime>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String, System.Nullable(Of System.DateTime), CommandFlags)
   nameWithType: ICommonRedisClient.KeyExpireAsync(String, Nullable<DateTime>, CommandFlags)
   nameWithType.vb: ICommonRedisClient.KeyExpireAsync(String, Nullable(Of DateTime), CommandFlags)
-- uid: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{TimeSpan},CommandFlags)
+- uid: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name: KeyExpireAsync(String, Nullable<TimeSpan>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.ICommonRedisClient.html#WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_System_String_System_Nullable_TimeSpan__CommandFlags_
-  commentId: M:WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{TimeSpan},CommandFlags)
+  href: docs/api/WeihanLi.Redis.ICommonRedisClient.html#WeihanLi_Redis_ICommonRedisClient_KeyExpireAsync_System_String_System_Nullable_System_TimeSpan__CommandFlags_
+  commentId: M:WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name.vb: KeyExpireAsync(String, Nullable(Of TimeSpan), CommandFlags)
-  fullName: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String, System.Nullable<TimeSpan>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String, System.Nullable(Of TimeSpan), CommandFlags)
+  fullName: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String, System.Nullable<System.TimeSpan>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync(System.String, System.Nullable(Of System.TimeSpan), CommandFlags)
   nameWithType: ICommonRedisClient.KeyExpireAsync(String, Nullable<TimeSpan>, CommandFlags)
   nameWithType.vb: ICommonRedisClient.KeyExpireAsync(String, Nullable(Of TimeSpan), CommandFlags)
 - uid: WeihanLi.Redis.ICommonRedisClient.KeyExpireAsync*
@@ -954,13 +876,13 @@ references:
   fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).Add(TKey, TValue, CommandFlags)
   nameWithType: IDictionaryClient<TKey, TValue>.Add(TKey, TValue, CommandFlags)
   nameWithType.vb: IDictionaryClient(Of TKey, TValue).Add(TKey, TValue, CommandFlags)
-- uid: WeihanLi.Redis.IDictionaryClient`2.Add(IDictionary{`0,`1},CommandFlags)
+- uid: WeihanLi.Redis.IDictionaryClient`2.Add(System.Collections.Generic.IDictionary{`0,`1},CommandFlags)
   name: Add(IDictionary<TKey, TValue>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IDictionaryClient-2.html#WeihanLi_Redis_IDictionaryClient_2_Add_IDictionary__0__1__CommandFlags_
-  commentId: M:WeihanLi.Redis.IDictionaryClient`2.Add(IDictionary{`0,`1},CommandFlags)
+  href: docs/api/WeihanLi.Redis.IDictionaryClient-2.html#WeihanLi_Redis_IDictionaryClient_2_Add_System_Collections_Generic_IDictionary__0__1__CommandFlags_
+  commentId: M:WeihanLi.Redis.IDictionaryClient`2.Add(System.Collections.Generic.IDictionary{`0,`1},CommandFlags)
   name.vb: Add(IDictionary(Of TKey, TValue), CommandFlags)
-  fullName: WeihanLi.Redis.IDictionaryClient<TKey, TValue>.Add(IDictionary<TKey, TValue>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).Add(IDictionary(Of TKey, TValue), CommandFlags)
+  fullName: WeihanLi.Redis.IDictionaryClient<TKey, TValue>.Add(System.Collections.Generic.IDictionary<TKey, TValue>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).Add(System.Collections.Generic.IDictionary(Of TKey, TValue), CommandFlags)
   nameWithType: IDictionaryClient<TKey, TValue>.Add(IDictionary<TKey, TValue>, CommandFlags)
   nameWithType.vb: IDictionaryClient(Of TKey, TValue).Add(IDictionary(Of TKey, TValue), CommandFlags)
 - uid: WeihanLi.Redis.IDictionaryClient`2.Add*
@@ -980,13 +902,13 @@ references:
   fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).AddAsync(TKey, TValue, CommandFlags)
   nameWithType: IDictionaryClient<TKey, TValue>.AddAsync(TKey, TValue, CommandFlags)
   nameWithType.vb: IDictionaryClient(Of TKey, TValue).AddAsync(TKey, TValue, CommandFlags)
-- uid: WeihanLi.Redis.IDictionaryClient`2.AddAsync(IDictionary{`0,`1},CommandFlags)
+- uid: WeihanLi.Redis.IDictionaryClient`2.AddAsync(System.Collections.Generic.IDictionary{`0,`1},CommandFlags)
   name: AddAsync(IDictionary<TKey, TValue>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IDictionaryClient-2.html#WeihanLi_Redis_IDictionaryClient_2_AddAsync_IDictionary__0__1__CommandFlags_
-  commentId: M:WeihanLi.Redis.IDictionaryClient`2.AddAsync(IDictionary{`0,`1},CommandFlags)
+  href: docs/api/WeihanLi.Redis.IDictionaryClient-2.html#WeihanLi_Redis_IDictionaryClient_2_AddAsync_System_Collections_Generic_IDictionary__0__1__CommandFlags_
+  commentId: M:WeihanLi.Redis.IDictionaryClient`2.AddAsync(System.Collections.Generic.IDictionary{`0,`1},CommandFlags)
   name.vb: AddAsync(IDictionary(Of TKey, TValue), CommandFlags)
-  fullName: WeihanLi.Redis.IDictionaryClient<TKey, TValue>.AddAsync(IDictionary<TKey, TValue>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).AddAsync(IDictionary(Of TKey, TValue), CommandFlags)
+  fullName: WeihanLi.Redis.IDictionaryClient<TKey, TValue>.AddAsync(System.Collections.Generic.IDictionary<TKey, TValue>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).AddAsync(System.Collections.Generic.IDictionary(Of TKey, TValue), CommandFlags)
   nameWithType: IDictionaryClient<TKey, TValue>.AddAsync(IDictionary<TKey, TValue>, CommandFlags)
   nameWithType.vb: IDictionaryClient(Of TKey, TValue).AddAsync(IDictionary(Of TKey, TValue), CommandFlags)
 - uid: WeihanLi.Redis.IDictionaryClient`2.AddAsync*
@@ -1142,13 +1064,13 @@ references:
   fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).GetOrAdd(TKey, TValue, CommandFlags)
   nameWithType: IDictionaryClient<TKey, TValue>.GetOrAdd(TKey, TValue, CommandFlags)
   nameWithType.vb: IDictionaryClient(Of TKey, TValue).GetOrAdd(TKey, TValue, CommandFlags)
-- uid: WeihanLi.Redis.IDictionaryClient`2.GetOrAdd(`0,Func{`0,`1},CommandFlags)
+- uid: WeihanLi.Redis.IDictionaryClient`2.GetOrAdd(`0,System.Func{`0,`1},CommandFlags)
   name: GetOrAdd(TKey, Func<TKey, TValue>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IDictionaryClient-2.html#WeihanLi_Redis_IDictionaryClient_2_GetOrAdd__0_Func__0__1__CommandFlags_
-  commentId: M:WeihanLi.Redis.IDictionaryClient`2.GetOrAdd(`0,Func{`0,`1},CommandFlags)
+  href: docs/api/WeihanLi.Redis.IDictionaryClient-2.html#WeihanLi_Redis_IDictionaryClient_2_GetOrAdd__0_System_Func__0__1__CommandFlags_
+  commentId: M:WeihanLi.Redis.IDictionaryClient`2.GetOrAdd(`0,System.Func{`0,`1},CommandFlags)
   name.vb: GetOrAdd(TKey, Func(Of TKey, TValue), CommandFlags)
-  fullName: WeihanLi.Redis.IDictionaryClient<TKey, TValue>.GetOrAdd(TKey, Func<TKey, TValue>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).GetOrAdd(TKey, Func(Of TKey, TValue), CommandFlags)
+  fullName: WeihanLi.Redis.IDictionaryClient<TKey, TValue>.GetOrAdd(TKey, System.Func<TKey, TValue>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).GetOrAdd(TKey, System.Func(Of TKey, TValue), CommandFlags)
   nameWithType: IDictionaryClient<TKey, TValue>.GetOrAdd(TKey, Func<TKey, TValue>, CommandFlags)
   nameWithType.vb: IDictionaryClient(Of TKey, TValue).GetOrAdd(TKey, Func(Of TKey, TValue), CommandFlags)
 - uid: WeihanLi.Redis.IDictionaryClient`2.GetOrAdd*
@@ -1168,13 +1090,13 @@ references:
   fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).GetOrAddAsync(TKey, TValue, CommandFlags)
   nameWithType: IDictionaryClient<TKey, TValue>.GetOrAddAsync(TKey, TValue, CommandFlags)
   nameWithType.vb: IDictionaryClient(Of TKey, TValue).GetOrAddAsync(TKey, TValue, CommandFlags)
-- uid: WeihanLi.Redis.IDictionaryClient`2.GetOrAddAsync(`0,Func{`0,Task{`1}},CommandFlags)
+- uid: WeihanLi.Redis.IDictionaryClient`2.GetOrAddAsync(`0,System.Func{`0,System.Threading.Tasks.Task{`1}},CommandFlags)
   name: GetOrAddAsync(TKey, Func<TKey, Task<TValue>>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IDictionaryClient-2.html#WeihanLi_Redis_IDictionaryClient_2_GetOrAddAsync__0_Func__0_Task__1___CommandFlags_
-  commentId: M:WeihanLi.Redis.IDictionaryClient`2.GetOrAddAsync(`0,Func{`0,Task{`1}},CommandFlags)
+  href: docs/api/WeihanLi.Redis.IDictionaryClient-2.html#WeihanLi_Redis_IDictionaryClient_2_GetOrAddAsync__0_System_Func__0_System_Threading_Tasks_Task__1___CommandFlags_
+  commentId: M:WeihanLi.Redis.IDictionaryClient`2.GetOrAddAsync(`0,System.Func{`0,System.Threading.Tasks.Task{`1}},CommandFlags)
   name.vb: GetOrAddAsync(TKey, Func(Of TKey, Task(Of TValue)), CommandFlags)
-  fullName: WeihanLi.Redis.IDictionaryClient<TKey, TValue>.GetOrAddAsync(TKey, Func<TKey, Task<TValue>>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).GetOrAddAsync(TKey, Func(Of TKey, Task(Of TValue)), CommandFlags)
+  fullName: WeihanLi.Redis.IDictionaryClient<TKey, TValue>.GetOrAddAsync(TKey, System.Func<TKey, System.Threading.Tasks.Task<TValue>>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IDictionaryClient(Of TKey, TValue).GetOrAddAsync(TKey, System.Func(Of TKey, System.Threading.Tasks.Task(Of TValue)), CommandFlags)
   nameWithType: IDictionaryClient<TKey, TValue>.GetOrAddAsync(TKey, Func<TKey, Task<TValue>>, CommandFlags)
   nameWithType.vb: IDictionaryClient(Of TKey, TValue).GetOrAddAsync(TKey, Func(Of TKey, Task(Of TValue)), CommandFlags)
 - uid: WeihanLi.Redis.IDictionaryClient`2.GetOrAddAsync*
@@ -1399,13 +1321,13 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.IHashClient.ExistsAsync
   nameWithType: IHashClient.ExistsAsync
-- uid: WeihanLi.Redis.IHashClient.Expire(System.String,System.Nullable{TimeSpan},CommandFlags)
+- uid: WeihanLi.Redis.IHashClient.Expire(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name: Expire(String, Nullable<TimeSpan>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_Expire_System_String_System_Nullable_TimeSpan__CommandFlags_
-  commentId: M:WeihanLi.Redis.IHashClient.Expire(System.String,System.Nullable{TimeSpan},CommandFlags)
+  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_Expire_System_String_System_Nullable_System_TimeSpan__CommandFlags_
+  commentId: M:WeihanLi.Redis.IHashClient.Expire(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name.vb: Expire(String, Nullable(Of TimeSpan), CommandFlags)
-  fullName: WeihanLi.Redis.IHashClient.Expire(System.String, System.Nullable<TimeSpan>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IHashClient.Expire(System.String, System.Nullable(Of TimeSpan), CommandFlags)
+  fullName: WeihanLi.Redis.IHashClient.Expire(System.String, System.Nullable<System.TimeSpan>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IHashClient.Expire(System.String, System.Nullable(Of System.TimeSpan), CommandFlags)
   nameWithType: IHashClient.Expire(String, Nullable<TimeSpan>, CommandFlags)
   nameWithType.vb: IHashClient.Expire(String, Nullable(Of TimeSpan), CommandFlags)
 - uid: WeihanLi.Redis.IHashClient.Expire*
@@ -1415,13 +1337,13 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.IHashClient.Expire
   nameWithType: IHashClient.Expire
-- uid: WeihanLi.Redis.IHashClient.ExpireAsync(System.String,System.Nullable{TimeSpan},CommandFlags)
+- uid: WeihanLi.Redis.IHashClient.ExpireAsync(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name: ExpireAsync(String, Nullable<TimeSpan>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_ExpireAsync_System_String_System_Nullable_TimeSpan__CommandFlags_
-  commentId: M:WeihanLi.Redis.IHashClient.ExpireAsync(System.String,System.Nullable{TimeSpan},CommandFlags)
+  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_ExpireAsync_System_String_System_Nullable_System_TimeSpan__CommandFlags_
+  commentId: M:WeihanLi.Redis.IHashClient.ExpireAsync(System.String,System.Nullable{System.TimeSpan},CommandFlags)
   name.vb: ExpireAsync(String, Nullable(Of TimeSpan), CommandFlags)
-  fullName: WeihanLi.Redis.IHashClient.ExpireAsync(System.String, System.Nullable<TimeSpan>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IHashClient.ExpireAsync(System.String, System.Nullable(Of TimeSpan), CommandFlags)
+  fullName: WeihanLi.Redis.IHashClient.ExpireAsync(System.String, System.Nullable<System.TimeSpan>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IHashClient.ExpireAsync(System.String, System.Nullable(Of System.TimeSpan), CommandFlags)
   nameWithType: IHashClient.ExpireAsync(String, Nullable<TimeSpan>, CommandFlags)
   nameWithType.vb: IHashClient.ExpireAsync(String, Nullable(Of TimeSpan), CommandFlags)
 - uid: WeihanLi.Redis.IHashClient.ExpireAsync*
@@ -1518,13 +1440,13 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.IHashClient.GetOrSet
   nameWithType: IHashClient.GetOrSet
-- uid: WeihanLi.Redis.IHashClient.GetOrSet``1(System.String,RedisValue,Func{``0},CommandFlags)
+- uid: WeihanLi.Redis.IHashClient.GetOrSet``1(System.String,RedisValue,System.Func{``0},CommandFlags)
   name: GetOrSet<T>(String, RedisValue, Func<T>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_GetOrSet__1_System_String_RedisValue_Func___0__CommandFlags_
-  commentId: M:WeihanLi.Redis.IHashClient.GetOrSet``1(System.String,RedisValue,Func{``0},CommandFlags)
+  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_GetOrSet__1_System_String_RedisValue_System_Func___0__CommandFlags_
+  commentId: M:WeihanLi.Redis.IHashClient.GetOrSet``1(System.String,RedisValue,System.Func{``0},CommandFlags)
   name.vb: GetOrSet(Of T)(String, RedisValue, Func(Of T), CommandFlags)
-  fullName: WeihanLi.Redis.IHashClient.GetOrSet<T>(System.String, RedisValue, Func<T>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IHashClient.GetOrSet(Of T)(System.String, RedisValue, Func(Of T), CommandFlags)
+  fullName: WeihanLi.Redis.IHashClient.GetOrSet<T>(System.String, RedisValue, System.Func<T>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IHashClient.GetOrSet(Of T)(System.String, RedisValue, System.Func(Of T), CommandFlags)
   nameWithType: IHashClient.GetOrSet<T>(String, RedisValue, Func<T>, CommandFlags)
   nameWithType.vb: IHashClient.GetOrSet(Of T)(String, RedisValue, Func(Of T), CommandFlags)
 - uid: WeihanLi.Redis.IHashClient.GetOrSetAsync*
@@ -1534,13 +1456,13 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.IHashClient.GetOrSetAsync
   nameWithType: IHashClient.GetOrSetAsync
-- uid: WeihanLi.Redis.IHashClient.GetOrSetAsync``1(System.String,RedisValue,Func{Task{``0}},CommandFlags)
+- uid: WeihanLi.Redis.IHashClient.GetOrSetAsync``1(System.String,RedisValue,System.Func{System.Threading.Tasks.Task{``0}},CommandFlags)
   name: GetOrSetAsync<T>(String, RedisValue, Func<Task<T>>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_GetOrSetAsync__1_System_String_RedisValue_Func_Task___0___CommandFlags_
-  commentId: M:WeihanLi.Redis.IHashClient.GetOrSetAsync``1(System.String,RedisValue,Func{Task{``0}},CommandFlags)
+  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_GetOrSetAsync__1_System_String_RedisValue_System_Func_System_Threading_Tasks_Task___0___CommandFlags_
+  commentId: M:WeihanLi.Redis.IHashClient.GetOrSetAsync``1(System.String,RedisValue,System.Func{System.Threading.Tasks.Task{``0}},CommandFlags)
   name.vb: GetOrSetAsync(Of T)(String, RedisValue, Func(Of Task(Of T)), CommandFlags)
-  fullName: WeihanLi.Redis.IHashClient.GetOrSetAsync<T>(System.String, RedisValue, Func<Task<T>>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IHashClient.GetOrSetAsync(Of T)(System.String, RedisValue, Func(Of Task(Of T)), CommandFlags)
+  fullName: WeihanLi.Redis.IHashClient.GetOrSetAsync<T>(System.String, RedisValue, System.Func<System.Threading.Tasks.Task<T>>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IHashClient.GetOrSetAsync(Of T)(System.String, RedisValue, System.Func(Of System.Threading.Tasks.Task(Of T)), CommandFlags)
   nameWithType: IHashClient.GetOrSetAsync<T>(String, RedisValue, Func<Task<T>>, CommandFlags)
   nameWithType.vb: IHashClient.GetOrSetAsync(Of T)(String, RedisValue, Func(Of Task(Of T)), CommandFlags)
 - uid: WeihanLi.Redis.IHashClient.Keys(System.String,CommandFlags)
@@ -1628,15 +1550,6 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.IHashClient.Set
   nameWithType: IHashClient.Set
-- uid: WeihanLi.Redis.IHashClient.Set``1(System.String,IEnumerable{KeyValuePair{System.String,``0}},CommandFlags)
-  name: Set<T>(String, IEnumerable<KeyValuePair<String, T>>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_Set__1_System_String_IEnumerable_KeyValuePair_System_String___0___CommandFlags_
-  commentId: M:WeihanLi.Redis.IHashClient.Set``1(System.String,IEnumerable{KeyValuePair{System.String,``0}},CommandFlags)
-  name.vb: Set(Of T)(String, IEnumerable(Of KeyValuePair(Of String, T)), CommandFlags)
-  fullName: WeihanLi.Redis.IHashClient.Set<T>(System.String, IEnumerable<KeyValuePair<System.String, T>>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IHashClient.Set(Of T)(System.String, IEnumerable(Of KeyValuePair(Of System.String, T)), CommandFlags)
-  nameWithType: IHashClient.Set<T>(String, IEnumerable<KeyValuePair<String, T>>, CommandFlags)
-  nameWithType.vb: IHashClient.Set(Of T)(String, IEnumerable(Of KeyValuePair(Of String, T)), CommandFlags)
 - uid: WeihanLi.Redis.IHashClient.Set``1(System.String,RedisValue,``0,When,CommandFlags)
   name: Set<T>(String, RedisValue, T, When, CommandFlags)
   href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_Set__1_System_String_RedisValue___0_When_CommandFlags_
@@ -1646,6 +1559,15 @@ references:
   fullName.vb: WeihanLi.Redis.IHashClient.Set(Of T)(System.String, RedisValue, T, When, CommandFlags)
   nameWithType: IHashClient.Set<T>(String, RedisValue, T, When, CommandFlags)
   nameWithType.vb: IHashClient.Set(Of T)(String, RedisValue, T, When, CommandFlags)
+- uid: WeihanLi.Redis.IHashClient.Set``1(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,``0}},CommandFlags)
+  name: Set<T>(String, IEnumerable<KeyValuePair<String, T>>, CommandFlags)
+  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_Set__1_System_String_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_String___0___CommandFlags_
+  commentId: M:WeihanLi.Redis.IHashClient.Set``1(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,``0}},CommandFlags)
+  name.vb: Set(Of T)(String, IEnumerable(Of KeyValuePair(Of String, T)), CommandFlags)
+  fullName: WeihanLi.Redis.IHashClient.Set<T>(System.String, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, T>>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IHashClient.Set(Of T)(System.String, System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, T)), CommandFlags)
+  nameWithType: IHashClient.Set<T>(String, IEnumerable<KeyValuePair<String, T>>, CommandFlags)
+  nameWithType.vb: IHashClient.Set(Of T)(String, IEnumerable(Of KeyValuePair(Of String, T)), CommandFlags)
 - uid: WeihanLi.Redis.IHashClient.SetAsync*
   name: SetAsync
   href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_SetAsync_
@@ -1653,15 +1575,6 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.IHashClient.SetAsync
   nameWithType: IHashClient.SetAsync
-- uid: WeihanLi.Redis.IHashClient.SetAsync``1(System.String,IEnumerable{KeyValuePair{System.String,``0}},CommandFlags)
-  name: SetAsync<T>(String, IEnumerable<KeyValuePair<String, T>>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_SetAsync__1_System_String_IEnumerable_KeyValuePair_System_String___0___CommandFlags_
-  commentId: M:WeihanLi.Redis.IHashClient.SetAsync``1(System.String,IEnumerable{KeyValuePair{System.String,``0}},CommandFlags)
-  name.vb: SetAsync(Of T)(String, IEnumerable(Of KeyValuePair(Of String, T)), CommandFlags)
-  fullName: WeihanLi.Redis.IHashClient.SetAsync<T>(System.String, IEnumerable<KeyValuePair<System.String, T>>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IHashClient.SetAsync(Of T)(System.String, IEnumerable(Of KeyValuePair(Of System.String, T)), CommandFlags)
-  nameWithType: IHashClient.SetAsync<T>(String, IEnumerable<KeyValuePair<String, T>>, CommandFlags)
-  nameWithType.vb: IHashClient.SetAsync(Of T)(String, IEnumerable(Of KeyValuePair(Of String, T)), CommandFlags)
 - uid: WeihanLi.Redis.IHashClient.SetAsync``1(System.String,RedisValue,``0,When,CommandFlags)
   name: SetAsync<T>(String, RedisValue, T, When, CommandFlags)
   href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_SetAsync__1_System_String_RedisValue___0_When_CommandFlags_
@@ -1671,6 +1584,15 @@ references:
   fullName.vb: WeihanLi.Redis.IHashClient.SetAsync(Of T)(System.String, RedisValue, T, When, CommandFlags)
   nameWithType: IHashClient.SetAsync<T>(String, RedisValue, T, When, CommandFlags)
   nameWithType.vb: IHashClient.SetAsync(Of T)(String, RedisValue, T, When, CommandFlags)
+- uid: WeihanLi.Redis.IHashClient.SetAsync``1(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,``0}},CommandFlags)
+  name: SetAsync<T>(String, IEnumerable<KeyValuePair<String, T>>, CommandFlags)
+  href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_SetAsync__1_System_String_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_String___0___CommandFlags_
+  commentId: M:WeihanLi.Redis.IHashClient.SetAsync``1(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,``0}},CommandFlags)
+  name.vb: SetAsync(Of T)(String, IEnumerable(Of KeyValuePair(Of String, T)), CommandFlags)
+  fullName: WeihanLi.Redis.IHashClient.SetAsync<T>(System.String, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, T>>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IHashClient.SetAsync(Of T)(System.String, System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, T)), CommandFlags)
+  nameWithType: IHashClient.SetAsync<T>(String, IEnumerable<KeyValuePair<String, T>>, CommandFlags)
+  nameWithType.vb: IHashClient.SetAsync(Of T)(String, IEnumerable(Of KeyValuePair(Of String, T)), CommandFlags)
 - uid: WeihanLi.Redis.IHashClient.Values*
   name: Values
   href: docs/api/WeihanLi.Redis.IHashClient.html#WeihanLi_Redis_IHashClient_Values_
@@ -2405,13 +2327,13 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.IPubSubClient.PublishAsync
   nameWithType: IPubSubClient.PublishAsync
-- uid: WeihanLi.Redis.IPubSubClient.Subscribe(System.String,Action{WeihanLi.Redis.PubSubMessage},CommandFlags)
+- uid: WeihanLi.Redis.IPubSubClient.Subscribe(System.String,System.Action{WeihanLi.Redis.PubSubMessage},CommandFlags)
   name: Subscribe(String, Action<PubSubMessage>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IPubSubClient.html#WeihanLi_Redis_IPubSubClient_Subscribe_System_String_Action_WeihanLi_Redis_PubSubMessage__CommandFlags_
-  commentId: M:WeihanLi.Redis.IPubSubClient.Subscribe(System.String,Action{WeihanLi.Redis.PubSubMessage},CommandFlags)
+  href: docs/api/WeihanLi.Redis.IPubSubClient.html#WeihanLi_Redis_IPubSubClient_Subscribe_System_String_System_Action_WeihanLi_Redis_PubSubMessage__CommandFlags_
+  commentId: M:WeihanLi.Redis.IPubSubClient.Subscribe(System.String,System.Action{WeihanLi.Redis.PubSubMessage},CommandFlags)
   name.vb: Subscribe(String, Action(Of PubSubMessage), CommandFlags)
-  fullName: WeihanLi.Redis.IPubSubClient.Subscribe(System.String, Action<WeihanLi.Redis.PubSubMessage>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IPubSubClient.Subscribe(System.String, Action(Of WeihanLi.Redis.PubSubMessage), CommandFlags)
+  fullName: WeihanLi.Redis.IPubSubClient.Subscribe(System.String, System.Action<WeihanLi.Redis.PubSubMessage>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IPubSubClient.Subscribe(System.String, System.Action(Of WeihanLi.Redis.PubSubMessage), CommandFlags)
   nameWithType: IPubSubClient.Subscribe(String, Action<PubSubMessage>, CommandFlags)
   nameWithType.vb: IPubSubClient.Subscribe(String, Action(Of PubSubMessage), CommandFlags)
 - uid: WeihanLi.Redis.IPubSubClient.Subscribe*
@@ -2421,13 +2343,13 @@ references:
   isSpec: "True"
   fullName: WeihanLi.Redis.IPubSubClient.Subscribe
   nameWithType: IPubSubClient.Subscribe
-- uid: WeihanLi.Redis.IPubSubClient.SubscribeAsync(System.String,Action{WeihanLi.Redis.PubSubMessage},CommandFlags)
+- uid: WeihanLi.Redis.IPubSubClient.SubscribeAsync(System.String,System.Action{WeihanLi.Redis.PubSubMessage},CommandFlags)
   name: SubscribeAsync(String, Action<PubSubMessage>, CommandFlags)
-  href: docs/api/WeihanLi.Redis.IPubSubClient.html#WeihanLi_Redis_IPubSubClient_SubscribeAsync_System_String_Action_WeihanLi_Redis_PubSubMessage__CommandFlags_
-  commentId: M:WeihanLi.Redis.IPubSubClient.SubscribeAsync(System.String,Action{WeihanLi.Redis.PubSubMessage},CommandFlags)
+  href: docs/api/WeihanLi.Redis.IPubSubClient.html#WeihanLi_Redis_IPubSubClient_SubscribeAsync_System_String_System_Action_WeihanLi_Redis_PubSubMessage__CommandFlags_
+  commentId: M:WeihanLi.Redis.IPubSubClient.SubscribeAsync(System.String,System.Action{WeihanLi.Redis.PubSubMessage},CommandFlags)
   name.vb: SubscribeAsync(String, Action(Of PubSubMessage), CommandFlags)
-  fullName: WeihanLi.Redis.IPubSubClient.SubscribeAsync(System.String, Action<WeihanLi.Redis.PubSubMessage>, CommandFlags)
-  fullName.vb: WeihanLi.Redis.IPubSubClient.SubscribeAsync(System.String, Action(Of WeihanLi.Redis.PubSubMessage), CommandFlags)
+  fullName: WeihanLi.Redis.IPubSubClient.SubscribeAsync(System.String, System.Action<WeihanLi.Redis.PubSubMessage>, CommandFlags)
+  fullName.vb: WeihanLi.Redis.IPubSubClient.SubscribeAsync(System.String, System.Action(Of WeihanLi.Redis.PubSubMessage), CommandFlags)
   nameWithType: IPubSubClient.SubscribeAsync(String, Action<PubSubMessage>, CommandFlags)
   nameWithType.vb: IPubSubClient.SubscribeAsync(String, Action(Of PubSubMessage), CommandFlags)
 - uid: WeihanLi.Redis.IPubSubClient.SubscribeAsync*
@@ -2653,13 +2575,13 @@ references:
   fullName.vb: WeihanLi.Redis.IRankClient(Of T).Add(T, System.Double, When)
   nameWithType: IRankClient<T>.Add(T, Double, When)
   nameWithType.vb: IRankClient(Of T).Add(T, Double, When)
-- uid: WeihanLi.Redis.IRankClient`1.Add(IDictionary{`0,System.Double},When)
+- uid: WeihanLi.Redis.IRankClient`1.Add(System.Collections.Generic.IDictionary{`0,System.Double},When)
   name: Add(IDictionary<T, Double>, When)
-  href: docs/api/WeihanLi.Redis.IRankClient-1.html#WeihanLi_Redis_IRankClient_1_Add_IDictionary__0_System_Double__When_
-  commentId: M:WeihanLi.Redis.IRankClient`1.Add(IDictionary{`0,System.Double},When)
+  href: docs/api/WeihanLi.Redis.IRankClient-1.html#WeihanLi_Redis_IRankClient_1_Add_System_Collections_Generic_IDictionary__0_System_Double__When_
+  commentId: M:WeihanLi.Redis.IRankClient`1.Add(System.Collections.Generic.IDictionary{`0,System.Double},When)
   name.vb: Add(IDictionary(Of T, Double), When)
-  fullName: WeihanLi.Redis.IRankClient<T>.Add(IDictionary<T, System.Double>, When)
-  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Add(IDictionary(Of T, System.Double), When)
+  fullName: WeihanLi.Redis.IRankClient<T>.Add(System.Collections.Generic.IDictionary<T, System.Double>, When)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).Add(System.Collections.Generic.IDictionary(Of T, System.Double), When)
   nameWithType: IRankClient<T>.Add(IDictionary<T, Double>, When)
   nameWithType.vb: IRankClient(Of T).Add(IDictionary(Of T, Double), When)
 - uid: WeihanLi.Redis.IRankClient`1.Add*
@@ -2679,13 +2601,13 @@ references:
   fullName.vb: WeihanLi.Redis.IRankClient(Of T).AddAsync(T, System.Double, When)
   nameWithType: IRankClient<T>.AddAsync(T, Double, When)
   nameWithType.vb: IRankClient(Of T).AddAsync(T, Double, When)
-- uid: WeihanLi.Redis.IRankClient`1.AddAsync(IDictionary{`0,System.Double},When)
+- uid: WeihanLi.Redis.IRankClient`1.AddAsync(System.Collections.Generic.IDictionary{`0,System.Double},When)
   name: AddAsync(IDictionary<T, Double>, When)
-  href: docs/api/WeihanLi.Redis.IRankClient-1.html#WeihanLi_Redis_IRankClient_1_AddAsync_IDictionary__0_System_Double__When_
-  commentId: M:WeihanLi.Redis.IRankClient`1.AddAsync(IDictionary{`0,System.Double},When)
+  href: docs/api/WeihanLi.Redis.IRankClient-1.html#WeihanLi_Redis_IRankClient_1_AddAsync_System_Collections_Generic_IDictionary__0_System_Double__When_
+  commentId: M:WeihanLi.Redis.IRankClient`1.AddAsync(System.Collections.Generic.IDictionary{`0,System.Double},When)
   name.vb: AddAsync(IDictionary(Of T, Double), When)
-  fullName: WeihanLi.Redis.IRankClient<T>.AddAsync(IDictionary<T, System.Double>, When)
-  fullName.vb: WeihanLi.Redis.IRankClient(Of T).AddAsync(IDictionary(Of T, System.Double), When)
+  fullName: WeihanLi.Redis.IRankClient<T>.AddAsync(System.Collections.Generic.IDictionary<T, System.Double>, When)
+  fullName.vb: WeihanLi.Redis.IRankClient(Of T).AddAsync(System.Collections.Generic.IDictionary(Of T, System.Double), When)
   nameWithType: IRankClient<T>.AddAsync(IDictionary<T, Double>, When)
   nameWithType.vb: IRankClient(Of T).AddAsync(IDictionary(Of T, Double), When)
 - uid: WeihanLi.Redis.IRankClient`1.AddAsync*
@@ -3102,13 +3024,13 @@ references:
   commentId: M:WeihanLi.Redis.IRedLockClient.TryLock
   fullName: WeihanLi.Redis.IRedLockClient.TryLock()
   nameWithType: IRedLockClient.TryLock()
-- uid: WeihanLi.Redis.IRedLockClient.TryLock(System.Nullable{TimeSpan})
+- uid: WeihanLi.Redis.IRedLockClient.TryLock(System.Nullable{System.TimeSpan})
   name: TryLock(Nullable<TimeSpan>)
-  href: docs/api/WeihanLi.Redis.IRedLockClient.html#WeihanLi_Redis_IRedLockClient_TryLock_System_Nullable_TimeSpan__
-  commentId: M:WeihanLi.Redis.IRedLockClient.TryLock(System.Nullable{TimeSpan})
+  href: docs/api/WeihanLi.Redis.IRedLockClient.html#WeihanLi_Redis_IRedLockClient_TryLock_System_Nullable_System_TimeSpan__
+  commentId: M:WeihanLi.Redis.IRedLockClient.TryLock(System.Nullable{System.TimeSpan})
   name.vb: TryLock(Nullable(Of TimeSpan))
-  fullName: WeihanLi.Redis.IRedLockClient.TryLock(System.Nullable<TimeSpan>)
-  fullName.vb: WeihanLi.Redis.IRedLockClient.TryLock(System.Nullable(Of TimeSpan))
+  fullName: WeihanLi.Redis.IRedLockClient.TryLock(System.Nullable<System.TimeSpan>)
+  fullName.vb: WeihanLi.Redis.IRedLockClient.TryLock(System.Nullable(Of System.TimeSpan))
   nameWithType: IRedLockClient.TryLock(Nullable<TimeSpan>)
   nameWithType.vb: IRedLockClient.TryLock(Nullable(Of TimeSpan))
 - uid: WeihanLi.Redis.IRedLockClient.TryLock*
@@ -3124,13 +3046,13 @@ references:
   commentId: M:WeihanLi.Redis.IRedLockClient.TryLockAsync
   fullName: WeihanLi.Redis.IRedLockClient.TryLockAsync()
   nameWithType: IRedLockClient.TryLockAsync()
-- uid: WeihanLi.Redis.IRedLockClient.TryLockAsync(System.Nullable{TimeSpan})
+- uid: WeihanLi.Redis.IRedLockClient.TryLockAsync(System.Nullable{System.TimeSpan})
   name: TryLockAsync(Nullable<TimeSpan>)
-  href: docs/api/WeihanLi.Redis.IRedLockClient.html#WeihanLi_Redis_IRedLockClient_TryLockAsync_System_Nullable_TimeSpan__
-  commentId: M:WeihanLi.Redis.IRedLockClient.TryLockAsync(System.Nullable{TimeSpan})
+  href: docs/api/WeihanLi.Redis.IRedLockClient.html#WeihanLi_Redis_IRedLockClient_TryLockAsync_System_Nullable_System_TimeSpan__
+  commentId: M:WeihanLi.Redis.IRedLockClient.TryLockAsync(System.Nullable{System.TimeSpan})
   name.vb: TryLockAsync(Nullable(Of TimeSpan))
-  fullName: WeihanLi.Redis.IRedLockClient.TryLockAsync(System.Nullable<TimeSpan>)
-  fullName.vb: WeihanLi.Redis.IRedLockClient.TryLockAsync(System.Nullable(Of TimeSpan))
+  fullName: WeihanLi.Redis.IRedLockClient.TryLockAsync(System.Nullable<System.TimeSpan>)
+  fullName.vb: WeihanLi.Redis.IRedLockClient.TryLockAsync(System.Nullable(Of System.TimeSpan))
   nameWithType: IRedLockClient.TryLockAsync(Nullable<TimeSpan>)
   nameWithType.vb: IRedLockClient.TryLockAsync(Nullable(Of TimeSpan))
 - uid: WeihanLi.Redis.IRedLockClient.TryLockAsync*
@@ -5218,31 +5140,31 @@ references:
   commentId: M:WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection)
   fullName: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection)
   nameWithType: RedisManager.AddRedisConfig(IServiceCollection)
-- uid: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,Action{WeihanLi.Redis.RedisConfigurationOptions})
-  name: AddRedisConfig(IServiceCollection, Action<RedisConfigurationOptions>)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_AddRedisConfig_IServiceCollection_Action_WeihanLi_Redis_RedisConfigurationOptions__
-  commentId: M:WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,Action{WeihanLi.Redis.RedisConfigurationOptions})
-  name.vb: AddRedisConfig(IServiceCollection, Action(Of RedisConfigurationOptions))
-  fullName: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, Action<WeihanLi.Redis.RedisConfigurationOptions>)
-  fullName.vb: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, Action(Of WeihanLi.Redis.RedisConfigurationOptions))
-  nameWithType: RedisManager.AddRedisConfig(IServiceCollection, Action<RedisConfigurationOptions>)
-  nameWithType.vb: RedisManager.AddRedisConfig(IServiceCollection, Action(Of RedisConfigurationOptions))
-- uid: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,IConfiguration,Action{IConfiguration,WeihanLi.Redis.RedisConfigurationOptions})
+- uid: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,IConfiguration,System.Action{IConfiguration,WeihanLi.Redis.RedisConfigurationOptions})
   name: AddRedisConfig(IServiceCollection, IConfiguration, Action<IConfiguration, RedisConfigurationOptions>)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_AddRedisConfig_IServiceCollection_IConfiguration_Action_IConfiguration_WeihanLi_Redis_RedisConfigurationOptions__
-  commentId: M:WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,IConfiguration,Action{IConfiguration,WeihanLi.Redis.RedisConfigurationOptions})
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_AddRedisConfig_IServiceCollection_IConfiguration_System_Action_IConfiguration_WeihanLi_Redis_RedisConfigurationOptions__
+  commentId: M:WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,IConfiguration,System.Action{IConfiguration,WeihanLi.Redis.RedisConfigurationOptions})
   name.vb: AddRedisConfig(IServiceCollection, IConfiguration, Action(Of IConfiguration, RedisConfigurationOptions))
-  fullName: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, IConfiguration, Action<IConfiguration, WeihanLi.Redis.RedisConfigurationOptions>)
-  fullName.vb: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, IConfiguration, Action(Of IConfiguration, WeihanLi.Redis.RedisConfigurationOptions))
+  fullName: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, IConfiguration, System.Action<IConfiguration, WeihanLi.Redis.RedisConfigurationOptions>)
+  fullName.vb: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, IConfiguration, System.Action(Of IConfiguration, WeihanLi.Redis.RedisConfigurationOptions))
   nameWithType: RedisManager.AddRedisConfig(IServiceCollection, IConfiguration, Action<IConfiguration, RedisConfigurationOptions>)
   nameWithType.vb: RedisManager.AddRedisConfig(IServiceCollection, IConfiguration, Action(Of IConfiguration, RedisConfigurationOptions))
-- uid: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,System.String,Action{WeihanLi.Redis.RedisConfigurationOptions})
+- uid: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,System.Action{WeihanLi.Redis.RedisConfigurationOptions})
+  name: AddRedisConfig(IServiceCollection, Action<RedisConfigurationOptions>)
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_AddRedisConfig_IServiceCollection_System_Action_WeihanLi_Redis_RedisConfigurationOptions__
+  commentId: M:WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,System.Action{WeihanLi.Redis.RedisConfigurationOptions})
+  name.vb: AddRedisConfig(IServiceCollection, Action(Of RedisConfigurationOptions))
+  fullName: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, System.Action<WeihanLi.Redis.RedisConfigurationOptions>)
+  fullName.vb: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, System.Action(Of WeihanLi.Redis.RedisConfigurationOptions))
+  nameWithType: RedisManager.AddRedisConfig(IServiceCollection, Action<RedisConfigurationOptions>)
+  nameWithType.vb: RedisManager.AddRedisConfig(IServiceCollection, Action(Of RedisConfigurationOptions))
+- uid: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,System.String,System.Action{WeihanLi.Redis.RedisConfigurationOptions})
   name: AddRedisConfig(IServiceCollection, String, Action<RedisConfigurationOptions>)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_AddRedisConfig_IServiceCollection_System_String_Action_WeihanLi_Redis_RedisConfigurationOptions__
-  commentId: M:WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,System.String,Action{WeihanLi.Redis.RedisConfigurationOptions})
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_AddRedisConfig_IServiceCollection_System_String_System_Action_WeihanLi_Redis_RedisConfigurationOptions__
+  commentId: M:WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection,System.String,System.Action{WeihanLi.Redis.RedisConfigurationOptions})
   name.vb: AddRedisConfig(IServiceCollection, String, Action(Of RedisConfigurationOptions))
-  fullName: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, System.String, Action<WeihanLi.Redis.RedisConfigurationOptions>)
-  fullName.vb: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, System.String, Action(Of WeihanLi.Redis.RedisConfigurationOptions))
+  fullName: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, System.String, System.Action<WeihanLi.Redis.RedisConfigurationOptions>)
+  fullName.vb: WeihanLi.Redis.RedisManager.AddRedisConfig(IServiceCollection, System.String, System.Action(Of WeihanLi.Redis.RedisConfigurationOptions))
   nameWithType: RedisManager.AddRedisConfig(IServiceCollection, String, Action<RedisConfigurationOptions>)
   nameWithType.vb: RedisManager.AddRedisConfig(IServiceCollection, String, Action(Of RedisConfigurationOptions))
 - uid: WeihanLi.Redis.RedisManager.AddRedisConfig*
@@ -5290,22 +5212,22 @@ references:
   commentId: M:WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Int64)
   fullName: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Int64)
   nameWithType: RedisManager.GetCounterClient(String, Int64)
-- uid: WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Int64,System.Nullable{TimeSpan})
+- uid: WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
   name: GetCounterClient(String, Int64, Nullable<TimeSpan>)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetCounterClient_System_String_System_Int64_System_Nullable_TimeSpan__
-  commentId: M:WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Int64,System.Nullable{TimeSpan})
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetCounterClient_System_String_System_Int64_System_Nullable_System_TimeSpan__
+  commentId: M:WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
   name.vb: GetCounterClient(String, Int64, Nullable(Of TimeSpan))
-  fullName: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Int64, System.Nullable<TimeSpan>)
-  fullName.vb: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Int64, System.Nullable(Of TimeSpan))
+  fullName: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Int64, System.Nullable<System.TimeSpan>)
+  fullName.vb: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Int64, System.Nullable(Of System.TimeSpan))
   nameWithType: RedisManager.GetCounterClient(String, Int64, Nullable<TimeSpan>)
   nameWithType.vb: RedisManager.GetCounterClient(String, Int64, Nullable(Of TimeSpan))
-- uid: WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Nullable{TimeSpan})
+- uid: WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Nullable{System.TimeSpan})
   name: GetCounterClient(String, Nullable<TimeSpan>)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetCounterClient_System_String_System_Nullable_TimeSpan__
-  commentId: M:WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Nullable{TimeSpan})
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetCounterClient_System_String_System_Nullable_System_TimeSpan__
+  commentId: M:WeihanLi.Redis.RedisManager.GetCounterClient(System.String,System.Nullable{System.TimeSpan})
   name.vb: GetCounterClient(String, Nullable(Of TimeSpan))
-  fullName: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Nullable<TimeSpan>)
-  fullName.vb: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Nullable(Of TimeSpan))
+  fullName: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Nullable<System.TimeSpan>)
+  fullName.vb: WeihanLi.Redis.RedisManager.GetCounterClient(System.String, System.Nullable(Of System.TimeSpan))
   nameWithType: RedisManager.GetCounterClient(String, Nullable<TimeSpan>)
   nameWithType.vb: RedisManager.GetCounterClient(String, Nullable(Of TimeSpan))
 - uid: WeihanLi.Redis.RedisManager.GetCounterClient*
@@ -5331,31 +5253,31 @@ references:
   fullName.vb: WeihanLi.Redis.RedisManager.GetDictionaryClient(Of TKey, TValue)(System.String)
   nameWithType: RedisManager.GetDictionaryClient<TKey, TValue>(String)
   nameWithType.vb: RedisManager.GetDictionaryClient(Of TKey, TValue)(String)
-- uid: WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{DateTime})
+- uid: WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.DateTime})
   name: GetDictionaryClient<TKey, TValue>(String, Nullable<DateTime>)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetDictionaryClient__2_System_String_System_Nullable_DateTime__
-  commentId: M:WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{DateTime})
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetDictionaryClient__2_System_String_System_Nullable_System_DateTime__
+  commentId: M:WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.DateTime})
   name.vb: GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of DateTime))
-  fullName: WeihanLi.Redis.RedisManager.GetDictionaryClient<TKey, TValue>(System.String, System.Nullable<DateTime>)
-  fullName.vb: WeihanLi.Redis.RedisManager.GetDictionaryClient(Of TKey, TValue)(System.String, System.Nullable(Of DateTime))
+  fullName: WeihanLi.Redis.RedisManager.GetDictionaryClient<TKey, TValue>(System.String, System.Nullable<System.DateTime>)
+  fullName.vb: WeihanLi.Redis.RedisManager.GetDictionaryClient(Of TKey, TValue)(System.String, System.Nullable(Of System.DateTime))
   nameWithType: RedisManager.GetDictionaryClient<TKey, TValue>(String, Nullable<DateTime>)
   nameWithType.vb: RedisManager.GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of DateTime))
-- uid: WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{TimeSpan})
+- uid: WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan})
   name: GetDictionaryClient<TKey, TValue>(String, Nullable<TimeSpan>)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetDictionaryClient__2_System_String_System_Nullable_TimeSpan__
-  commentId: M:WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{TimeSpan})
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetDictionaryClient__2_System_String_System_Nullable_System_TimeSpan__
+  commentId: M:WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan})
   name.vb: GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of TimeSpan))
-  fullName: WeihanLi.Redis.RedisManager.GetDictionaryClient<TKey, TValue>(System.String, System.Nullable<TimeSpan>)
-  fullName.vb: WeihanLi.Redis.RedisManager.GetDictionaryClient(Of TKey, TValue)(System.String, System.Nullable(Of TimeSpan))
+  fullName: WeihanLi.Redis.RedisManager.GetDictionaryClient<TKey, TValue>(System.String, System.Nullable<System.TimeSpan>)
+  fullName.vb: WeihanLi.Redis.RedisManager.GetDictionaryClient(Of TKey, TValue)(System.String, System.Nullable(Of System.TimeSpan))
   nameWithType: RedisManager.GetDictionaryClient<TKey, TValue>(String, Nullable<TimeSpan>)
   nameWithType.vb: RedisManager.GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of TimeSpan))
-- uid: WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{TimeSpan},System.Boolean)
+- uid: WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan},System.Boolean)
   name: GetDictionaryClient<TKey, TValue>(String, Nullable<TimeSpan>, Boolean)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetDictionaryClient__2_System_String_System_Nullable_TimeSpan__System_Boolean_
-  commentId: M:WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{TimeSpan},System.Boolean)
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetDictionaryClient__2_System_String_System_Nullable_System_TimeSpan__System_Boolean_
+  commentId: M:WeihanLi.Redis.RedisManager.GetDictionaryClient``2(System.String,System.Nullable{System.TimeSpan},System.Boolean)
   name.vb: GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of TimeSpan), Boolean)
-  fullName: WeihanLi.Redis.RedisManager.GetDictionaryClient<TKey, TValue>(System.String, System.Nullable<TimeSpan>, System.Boolean)
-  fullName.vb: WeihanLi.Redis.RedisManager.GetDictionaryClient(Of TKey, TValue)(System.String, System.Nullable(Of TimeSpan), System.Boolean)
+  fullName: WeihanLi.Redis.RedisManager.GetDictionaryClient<TKey, TValue>(System.String, System.Nullable<System.TimeSpan>, System.Boolean)
+  fullName.vb: WeihanLi.Redis.RedisManager.GetDictionaryClient(Of TKey, TValue)(System.String, System.Nullable(Of System.TimeSpan), System.Boolean)
   nameWithType: RedisManager.GetDictionaryClient<TKey, TValue>(String, Nullable<TimeSpan>, Boolean)
   nameWithType.vb: RedisManager.GetDictionaryClient(Of TKey, TValue)(String, Nullable(Of TimeSpan), Boolean)
 - uid: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String)
@@ -5370,22 +5292,22 @@ references:
   commentId: M:WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Int64)
   fullName: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Int64)
   nameWithType: RedisManager.GetFirewallClient(String, Int64)
-- uid: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Int64,System.Nullable{TimeSpan})
+- uid: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
   name: GetFirewallClient(String, Int64, Nullable<TimeSpan>)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetFirewallClient_System_String_System_Int64_System_Nullable_TimeSpan__
-  commentId: M:WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Int64,System.Nullable{TimeSpan})
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetFirewallClient_System_String_System_Int64_System_Nullable_System_TimeSpan__
+  commentId: M:WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
   name.vb: GetFirewallClient(String, Int64, Nullable(Of TimeSpan))
-  fullName: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Int64, System.Nullable<TimeSpan>)
-  fullName.vb: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Int64, System.Nullable(Of TimeSpan))
+  fullName: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Int64, System.Nullable<System.TimeSpan>)
+  fullName.vb: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Int64, System.Nullable(Of System.TimeSpan))
   nameWithType: RedisManager.GetFirewallClient(String, Int64, Nullable<TimeSpan>)
   nameWithType.vb: RedisManager.GetFirewallClient(String, Int64, Nullable(Of TimeSpan))
-- uid: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Nullable{TimeSpan})
+- uid: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Nullable{System.TimeSpan})
   name: GetFirewallClient(String, Nullable<TimeSpan>)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetFirewallClient_System_String_System_Nullable_TimeSpan__
-  commentId: M:WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Nullable{TimeSpan})
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetFirewallClient_System_String_System_Nullable_System_TimeSpan__
+  commentId: M:WeihanLi.Redis.RedisManager.GetFirewallClient(System.String,System.Nullable{System.TimeSpan})
   name.vb: GetFirewallClient(String, Nullable(Of TimeSpan))
-  fullName: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Nullable<TimeSpan>)
-  fullName.vb: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Nullable(Of TimeSpan))
+  fullName: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Nullable<System.TimeSpan>)
+  fullName.vb: WeihanLi.Redis.RedisManager.GetFirewallClient(System.String, System.Nullable(Of System.TimeSpan))
   nameWithType: RedisManager.GetFirewallClient(String, Nullable<TimeSpan>)
   nameWithType.vb: RedisManager.GetFirewallClient(String, Nullable(Of TimeSpan))
 - uid: WeihanLi.Redis.RedisManager.GetFirewallClient*
@@ -5462,22 +5384,22 @@ references:
   fullName.vb: WeihanLi.Redis.RedisManager.GetRankClient(Of T)(System.String)
   nameWithType: RedisManager.GetRankClient<T>(String)
   nameWithType.vb: RedisManager.GetRankClient(Of T)(String)
-- uid: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String,System.Int64,System.Nullable{TimeSpan})
+- uid: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
   name: GetRateLimiterClient(String, Int64, Nullable<TimeSpan>)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetRateLimiterClient_System_String_System_Int64_System_Nullable_TimeSpan__
-  commentId: M:WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String,System.Int64,System.Nullable{TimeSpan})
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetRateLimiterClient_System_String_System_Int64_System_Nullable_System_TimeSpan__
+  commentId: M:WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String,System.Int64,System.Nullable{System.TimeSpan})
   name.vb: GetRateLimiterClient(String, Int64, Nullable(Of TimeSpan))
-  fullName: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String, System.Int64, System.Nullable<TimeSpan>)
-  fullName.vb: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String, System.Int64, System.Nullable(Of TimeSpan))
+  fullName: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String, System.Int64, System.Nullable<System.TimeSpan>)
+  fullName.vb: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String, System.Int64, System.Nullable(Of System.TimeSpan))
   nameWithType: RedisManager.GetRateLimiterClient(String, Int64, Nullable<TimeSpan>)
   nameWithType.vb: RedisManager.GetRateLimiterClient(String, Int64, Nullable(Of TimeSpan))
-- uid: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String,System.Nullable{TimeSpan})
+- uid: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String,System.Nullable{System.TimeSpan})
   name: GetRateLimiterClient(String, Nullable<TimeSpan>)
-  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetRateLimiterClient_System_String_System_Nullable_TimeSpan__
-  commentId: M:WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String,System.Nullable{TimeSpan})
+  href: docs/api/WeihanLi.Redis.RedisManager.html#WeihanLi_Redis_RedisManager_GetRateLimiterClient_System_String_System_Nullable_System_TimeSpan__
+  commentId: M:WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String,System.Nullable{System.TimeSpan})
   name.vb: GetRateLimiterClient(String, Nullable(Of TimeSpan))
-  fullName: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String, System.Nullable<TimeSpan>)
-  fullName.vb: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String, System.Nullable(Of TimeSpan))
+  fullName: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String, System.Nullable<System.TimeSpan>)
+  fullName.vb: WeihanLi.Redis.RedisManager.GetRateLimiterClient(System.String, System.Nullable(Of System.TimeSpan))
   nameWithType: RedisManager.GetRateLimiterClient(String, Nullable<TimeSpan>)
   nameWithType.vb: RedisManager.GetRateLimiterClient(String, Nullable(Of TimeSpan))
 - uid: WeihanLi.Redis.RedisManager.GetRateLimiterClient*

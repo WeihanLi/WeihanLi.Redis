@@ -90,13 +90,13 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus__ctor_IEventSubscriptionManager_IEventHandlerFactory_ISubscriber_IServiceProvider_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.%23ctor(IEventSubscriptionManager%2CIEventHandlerFactory%2CISubscriber%2CIServiceProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus__ctor_IEventSubscriptionManager_IEventHandlerFactory_ISubscriber_System_IServiceProvider_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.%23ctor(IEventSubscriptionManager%2CIEventHandlerFactory%2CISubscriber%2CSystem.IServiceProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L18">View Source</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L17">View Source</a>
   </span>
   <a id="WeihanLi_Redis_Event_RedisEventBus__ctor_" data-uid="WeihanLi.Redis.Event.RedisEventBus.#ctor*"></a>
-  <h4 id="WeihanLi_Redis_Event_RedisEventBus__ctor_IEventSubscriptionManager_IEventHandlerFactory_ISubscriber_IServiceProvider_" data-uid="WeihanLi.Redis.Event.RedisEventBus.#ctor(IEventSubscriptionManager,IEventHandlerFactory,ISubscriber,IServiceProvider)">RedisEventBus(IEventSubscriptionManager, IEventHandlerFactory, ISubscriber, IServiceProvider)</h4>
+  <h4 id="WeihanLi_Redis_Event_RedisEventBus__ctor_IEventSubscriptionManager_IEventHandlerFactory_ISubscriber_System_IServiceProvider_" data-uid="WeihanLi.Redis.Event.RedisEventBus.#ctor(IEventSubscriptionManager,IEventHandlerFactory,ISubscriber,System.IServiceProvider)">RedisEventBus(IEventSubscriptionManager, IEventHandlerFactory, ISubscriber, IServiceProvider)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -129,7 +129,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">IServiceProvider</span></td>
+        <td><span class="xref">System.IServiceProvider</span></td>
         <td><span class="parametername">serviceProvider</span></td>
         <td></td>
       </tr>
@@ -139,82 +139,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus_Publish__1___0_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.Publish%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus_PublishAsync__1___0_EventProperties_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.PublishAsync%60%601(%60%600%2CEventProperties)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L58">View Source</a>
-  </span>
-  <a id="WeihanLi_Redis_Event_RedisEventBus_Publish_" data-uid="WeihanLi.Redis.Event.RedisEventBus.Publish*"></a>
-  <h4 id="WeihanLi_Redis_Event_RedisEventBus_Publish__1___0_" data-uid="WeihanLi.Redis.Event.RedisEventBus.Publish``1(``0)">Publish&lt;TEvent&gt;(TEvent)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Publish&lt;TEvent&gt;(TEvent event)
-    where TEvent : class, IEventBase</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TEvent</span></td>
-        <td><span class="parametername">event</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TEvent</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus_PublishAsync__1___0_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.PublishAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L77">View Source</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L57">View Source</a>
   </span>
   <a id="WeihanLi_Redis_Event_RedisEventBus_PublishAsync_" data-uid="WeihanLi.Redis.Event.RedisEventBus.PublishAsync*"></a>
-  <h4 id="WeihanLi_Redis_Event_RedisEventBus_PublishAsync__1___0_" data-uid="WeihanLi.Redis.Event.RedisEventBus.PublishAsync``1(``0)">PublishAsync&lt;TEvent&gt;(TEvent)</h4>
+  <h4 id="WeihanLi_Redis_Event_RedisEventBus_PublishAsync__1___0_EventProperties_" data-uid="WeihanLi.Redis.Event.RedisEventBus.PublishAsync``1(``0,EventProperties)">PublishAsync&lt;TEvent&gt;(TEvent, EventProperties)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public async Task&lt;bool&gt; PublishAsync&lt;TEvent&gt;(TEvent event)
-    where TEvent : class, IEventBase</code></pre>
+    <pre><code class="lang-csharp hljs">public async Task&lt;bool&gt; PublishAsync&lt;TEvent&gt;(TEvent event, EventProperties eventProperties)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -231,6 +167,11 @@
         <td><span class="parametername">event</span></td>
         <td></td>
       </tr>
+      <tr>
+        <td><span class="xref">EventProperties</span></td>
+        <td><span class="parametername">eventProperties</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -243,7 +184,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -265,65 +206,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus_Subscribe_Type_Type_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.Subscribe(Type%2CType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus_SubscribeAsync_System_Type_System_Type_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync(System.Type%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L95">View Source</a>
-  </span>
-  <a id="WeihanLi_Redis_Event_RedisEventBus_Subscribe_" data-uid="WeihanLi.Redis.Event.RedisEventBus.Subscribe*"></a>
-  <h4 id="WeihanLi_Redis_Event_RedisEventBus_Subscribe_Type_Type_" data-uid="WeihanLi.Redis.Event.RedisEventBus.Subscribe(Type,Type)">Subscribe(Type, Type)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Subscribe(Type eventType, Type eventHandlerType)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Type</span></td>
-        <td><span class="parametername">eventType</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Type</span></td>
-        <td><span class="parametername">eventHandlerType</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus_SubscribeAsync_Type_Type_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync(Type%2CType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L110">View Source</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L75">View Source</a>
   </span>
   <a id="WeihanLi_Redis_Event_RedisEventBus_SubscribeAsync_" data-uid="WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync*"></a>
-  <h4 id="WeihanLi_Redis_Event_RedisEventBus_SubscribeAsync_Type_Type_" data-uid="WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync(Type,Type)">SubscribeAsync(Type, Type)</h4>
+  <h4 id="WeihanLi_Redis_Event_RedisEventBus_SubscribeAsync_System_Type_System_Type_" data-uid="WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync(System.Type,System.Type)">SubscribeAsync(Type, Type)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -341,12 +230,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Type</span></td>
+        <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">eventType</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Type</span></td>
+        <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">eventHandlerType</span></td>
         <td></td>
       </tr>
@@ -362,25 +251,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus_UnSubscribe_Type_Type_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.UnSubscribe(Type%2CType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus_SubscribeAsync__1_IEventHandler___0__.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync%60%601(IEventHandler%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L128">View Source</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L93">View Source</a>
   </span>
-  <a id="WeihanLi_Redis_Event_RedisEventBus_UnSubscribe_" data-uid="WeihanLi.Redis.Event.RedisEventBus.UnSubscribe*"></a>
-  <h4 id="WeihanLi_Redis_Event_RedisEventBus_UnSubscribe_Type_Type_" data-uid="WeihanLi.Redis.Event.RedisEventBus.UnSubscribe(Type,Type)">UnSubscribe(Type, Type)</h4>
+  <a id="WeihanLi_Redis_Event_RedisEventBus_SubscribeAsync_" data-uid="WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync*"></a>
+  <h4 id="WeihanLi_Redis_Event_RedisEventBus_SubscribeAsync__1_IEventHandler___0__" data-uid="WeihanLi.Redis.Event.RedisEventBus.SubscribeAsync``1(IEventHandler{``0})">SubscribeAsync&lt;TEvent&gt;(IEventHandler&lt;TEvent&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool UnSubscribe(Type eventType, Type eventHandlerType)</code></pre>
+    <pre><code class="lang-csharp hljs">public async Task&lt;bool&gt; SubscribeAsync&lt;TEvent&gt;(IEventHandler&lt;TEvent&gt; eventHandler)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -393,13 +282,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Type</span></td>
-        <td><span class="parametername">eventType</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Type</span></td>
-        <td><span class="parametername">eventHandlerType</span></td>
+        <td><span class="xref">IEventHandler</span>&lt;TEvent&gt;</td>
+        <td><span class="parametername">eventHandler</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -414,20 +298,35 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEvent</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus_UnSubscribeAsync_Type_Type_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync(Type%2CType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus_UnSubscribeAsync_System_Type_System_Type_.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync(System.Type%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L135">View Source</a>
+    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L106">View Source</a>
   </span>
   <a id="WeihanLi_Redis_Event_RedisEventBus_UnSubscribeAsync_" data-uid="WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync*"></a>
-  <h4 id="WeihanLi_Redis_Event_RedisEventBus_UnSubscribeAsync_Type_Type_" data-uid="WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync(Type,Type)">UnSubscribeAsync(Type, Type)</h4>
+  <h4 id="WeihanLi_Redis_Event_RedisEventBus_UnSubscribeAsync_System_Type_System_Type_" data-uid="WeihanLi.Redis.Event.RedisEventBus.UnSubscribeAsync(System.Type,System.Type)">UnSubscribeAsync(Type, Type)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -445,12 +344,12 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Type</span></td>
+        <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">eventType</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Type</span></td>
+        <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">eventHandlerType</span></td>
         <td></td>
       </tr>
@@ -466,7 +365,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -482,7 +381,7 @@
                     <a href="https://github.com/WeihanLi/WeihanLi.Redis/new/dev/apiSpec/new?filename=WeihanLi_Redis_Event_RedisEventBus.md&amp;value=---%0Auid%3A%20WeihanLi.Redis.Event.RedisEventBus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/WeihanLi/WeihanLi.Redis/blob/dev/src/WeihanLi.Redis/Event/RedisEventBus.cs/#L10" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

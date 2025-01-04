@@ -53,7 +53,7 @@ namespace WeihanLi.Redis.Event
         public async Task<IEvent<TEvent>> DequeueAsync<TEvent>(string queueName)
         {
             ArgumentNullException.ThrowIfNull(queueName);
-            
+
             var result = await _database.ListLeftPopAsync(GetQueueCacheKey(queueName));
             if (result.HasValue)
             {
@@ -67,13 +67,13 @@ namespace WeihanLi.Redis.Event
                     _logger.LogError(e, $"dequeue event exception, queueName:{queueName}");
                 }
             }
-            
+
             return null;
         }
 
         public async IAsyncEnumerable<IEvent> ReadAllAsync(
-            string queueName, 
-            [EnumeratorCancellation]CancellationToken cancellationToken = default
+            string queueName,
+            [EnumeratorCancellation] CancellationToken cancellationToken = default
             )
         {
             ArgumentNullException.ThrowIfNull(queueName);
@@ -92,7 +92,7 @@ namespace WeihanLi.Redis.Event
                 }
             }
         }
-        
+
         public ICollection<string> GetQueues() => _database.SetMembers(_cacheKey).ToStringArray();
 
         public async Task<ICollection<string>> GetQueuesAsync() =>

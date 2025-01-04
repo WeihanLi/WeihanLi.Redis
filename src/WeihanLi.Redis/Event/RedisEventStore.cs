@@ -31,7 +31,7 @@ namespace WeihanLi.Redis
 
             return events.Count;
         }
-        
+
         public async Task<int> DeleteEventsAsync(ICollection<string> events)
         {
             if (events.IsNullOrEmpty())

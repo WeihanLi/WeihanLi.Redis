@@ -53,7 +53,7 @@ namespace WeihanLi.Redis.Event
 
             return channelName;
         }
-        
+
         public async Task<bool> PublishAsync<TEvent>(TEvent @event, EventProperties eventProperties)
         {
             var handlers = _eventHandlerFactory.GetHandlers<TEvent>();
@@ -71,7 +71,7 @@ namespace WeihanLi.Redis.Event
 
             return true;
         }
-        
+
         public async Task<bool> SubscribeAsync(Type eventType, Type eventHandlerType)
         {
             var channelName = GetChannelName(eventType, eventHandlerType);

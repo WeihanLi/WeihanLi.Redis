@@ -21,10 +21,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <ContinuousIntegrationBuild Condition="'$(CI)' == 'true' or '$(TF_BUILD)' == 'true' or '$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
     <Authors>WeihanLi</Authors>
-    <Copyright>Copyright 2017-2024 (c) WeihanLi</Copyright>
+    <Copyright>Copyright 2017-2025 (c) WeihanLi</Copyright>
     <NoWarn>$(NoWarn);NU5048;</NoWarn>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2024.3.0" PrivateAssets="All" />
-  </ItemGroup>
 </Project>

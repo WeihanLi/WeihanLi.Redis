@@ -32,19 +32,19 @@ namespace WeihanLi.Redis
         }
 
         public bool IsConnected(string channelName = null)
-            => channelName.IsNullOrWhiteSpace() ? Wrapper.Subscriber.Value.IsConnected() : Wrapper.Subscriber.Value.IsConnected(GetRealChannelName(channelName));
+            => channelName.IsNullOrWhiteSpace() ? Wrapper.Subscriber.Value.IsConnected() : Wrapper.Subscriber.Value.IsConnected(RedisChannel.Literal(GetRealChannelName(channelName)));
 
-        public long Publish(string channelName, PubSubMessage message, CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.Value.Publish(GetRealChannelName(channelName), Wrapper.Wrap(message), flags);
+        public long Publish(string channelName, PubSubMessage message, CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.Value.Publish(RedisChannel.Literal(GetRealChannelName(channelName)), Wrapper.Wrap(message), flags);
 
-        public Task<long> PublishAsync(string channelName, PubSubMessage message, CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.Value.PublishAsync(GetRealChannelName(channelName), Wrapper.Wrap(message), flags);
+        public Task<long> PublishAsync(string channelName, PubSubMessage message, CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.Value.PublishAsync(RedisChannel.Literal(GetRealChannelName(channelName)), Wrapper.Wrap(message), flags);
 
-        public void Subscribe(string channelName, Action<PubSubMessage> action, CommandFlags flag = CommandFlags.None) => Wrapper.Subscriber.Value.Subscribe(GetRealChannelName(channelName), (c, v) => action(Wrapper.Unwrap<PubSubMessage>(v)));
+        public void Subscribe(string channelName, Action<PubSubMessage> action, CommandFlags flag = CommandFlags.None) => Wrapper.Subscriber.Value.Subscribe(RedisChannel.Literal(GetRealChannelName(channelName)), (c, v) => action(Wrapper.Unwrap<PubSubMessage>(v)));
 
-        public Task SubscribeAsync(string channelName, Action<PubSubMessage> action, CommandFlags flag = CommandFlags.None) => Wrapper.Subscriber.Value.SubscribeAsync(GetRealChannelName(channelName), (c, v) => action(Wrapper.Unwrap<PubSubMessage>(v)));
+        public Task SubscribeAsync(string channelName, Action<PubSubMessage> action, CommandFlags flag = CommandFlags.None) => Wrapper.Subscriber.Value.SubscribeAsync(RedisChannel.Literal(GetRealChannelName(channelName)), (c, v) => action(Wrapper.Unwrap<PubSubMessage>(v)));
 
-        public void Unsubscribe(string channelName, CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.Value.Unsubscribe(GetRealChannelName(channelName), flags: flags);
+        public void Unsubscribe(string channelName, CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.Value.Unsubscribe(RedisChannel.Literal(GetRealChannelName(channelName)), flags: flags);
 
-        public Task UnsubscribeAsync(string channelName, CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.Value.UnsubscribeAsync(GetRealChannelName(channelName), flags: flags);
+        public Task UnsubscribeAsync(string channelName, CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.Value.UnsubscribeAsync(RedisChannel.Literal(GetRealChannelName(channelName)), flags: flags);
 
         public void UnsubscribeAll(CommandFlags flags = CommandFlags.None) => Wrapper.Subscriber.Value.UnsubscribeAll(flags);
 

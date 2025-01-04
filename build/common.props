@@ -1,7 +1,7 @@
 <Project>
   <Import Project="document.props" />
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Product>WeihanLi.Redis</Product>
     <Title>WeihanLi.Redis</Title>
     <PackageId>WeihanLi.Redis</PackageId>
@@ -18,5 +18,6 @@
     <Copyright>WeihanLi</Copyright>
     <PackageProjectUrl>https://github.com/WeihanLi/WeihanLi.Redis</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <NuGetAuditMode>direct</NuGetAuditMode>
   </PropertyGroup>
 </Project>

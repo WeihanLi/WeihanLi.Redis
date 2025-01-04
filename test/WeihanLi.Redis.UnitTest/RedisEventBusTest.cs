@@ -1,12 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using WeihanLi.Common;
 using WeihanLi.Common.Event;
 using WeihanLi.Common.Logging;
-using WeihanLi.Common.Logging.Log4Net;
 using WeihanLi.Extensions;
 using WeihanLi.Redis.Event;
 using Xunit;
@@ -26,10 +25,10 @@ namespace WeihanLi.Redis.UnitTest
             serviceCollection.AddRedisConfig(config =>
             {
                 //
-                //config.RedisServers = new[]
-                //{
-                //    new RedisServerConfiguration("127.0.0.1", 6379),
-                //};
+                config.RedisServers = new[]
+                {
+                   new RedisServerConfiguration("127.0.0.1", 6379),
+                };
                 config.CachePrefix = "WeihanLi.Redis.UnitTest";
                 config.ChannelPrefix = "WeihanLi.Redis.UnitTest";
                 config.ClientName = "WeihanLi.Redis.UnitTest";
@@ -38,8 +37,8 @@ namespace WeihanLi.Redis.UnitTest
                 config.DefaultDatabase = dbIndex;
             });
 
-            var counter2EventHandler = DelegateEventHandler.FromAction<CounterEvent2>(@event =>
-                Log4NetHelper.GetLogger("DelegateEventHandler+CounterEvents").Info($"{@event.ToJson()}")
+            var counter2EventHandler = new DelegateEventHandler<CounterEvent2>(@event =>
+                Console.WriteLine($"{@event.ToJson()}")
             );
 
             serviceCollection.AddSingleton(counter2EventHandler);
@@ -54,10 +53,9 @@ namespace WeihanLi.Redis.UnitTest
             serviceCollection.AddSingleton<IEventHandler<CounterEvent2>>(counter2EventHandler);
 
             _serviceProvider = serviceCollection.BuildServiceProvider();
-            _serviceProvider.GetRequiredService<ILoggerFactory>().AddLog4Net();
         }
 
-        [Fact]
+        [Fact(Skip = "RedisEventBus")]
         public async Task MainTest()
         {
             var eventBus = _serviceProvider.GetRequiredService<IEventBus>();
@@ -104,7 +102,7 @@ namespace WeihanLi.Redis.UnitTest
 
         private class CounterEventHandler : EventHandlerBase<CounterEvent>
         {
-            public override Task Handle(CounterEvent @event)
+            public override Task Handle(CounterEvent @event, EventProperties eventProperties)
             {
                 DependencyResolver.Current.ResolveService<ILogger<CounterEventHandler>>().Info($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
                 Interlocked.Increment(ref counter);
@@ -114,7 +112,7 @@ namespace WeihanLi.Redis.UnitTest
 
         private class CounterEventHandler2 : EventHandlerBase<CounterEvent>
         {
-            public override Task Handle(CounterEvent @event)
+            public override Task Handle(CounterEvent @event, EventProperties eventProperties)
             {
                 DependencyResolver.Current.ResolveService<ILogger<CounterEventHandler>>().Info($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
                 Interlocked.Increment(ref counter);

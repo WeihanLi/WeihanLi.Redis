@@ -6,7 +6,7 @@ using Xunit;
 
 namespace WeihanLi.Redis.UnitTest
 {
-    public class HashTest : BaseUnitTest
+    public class HashTest
     {
         [Fact]
         public void HashCounterTest()

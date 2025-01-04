@@ -3,7 +3,7 @@ using Xunit;
 
 namespace WeihanLi.Redis.UnitTest
 {
-    public class CommonTest : BaseUnitTest
+    public class CommonTest
     {
         [Fact]
         public void CacheTest()

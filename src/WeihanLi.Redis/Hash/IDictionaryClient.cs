@@ -42,7 +42,7 @@ namespace WeihanLi.Redis
 
         Task<bool> AddAsync(TKey fieldName, TValue value, CommandFlags flags = CommandFlags.None);
 
-        bool Add(IDictionary<TKey,TValue> values, CommandFlags flags = CommandFlags.None);
+        bool Add(IDictionary<TKey, TValue> values, CommandFlags flags = CommandFlags.None);
 
         Task<bool> AddAsync(IDictionary<TKey, TValue> values, CommandFlags flags = CommandFlags.None);
 

@@ -176,8 +176,4 @@ dotnet add package WeihanLi.Redis
     Assert.NotNull(pubsubClient);
     ```
 
-1. More fancy usage, wait for your explorer...
-
-## Contact
-
-Contact me if you need: <weihanli@outlook.com>
+1. More fancy usage, wait for your explore...

@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   dev-container:
-    image: mcr.microsoft.com/dotnet/sdk:6.0-alpine
+    image: mcr.microsoft.com/dotnet/sdk:8.0-alpine
     volumes:
       - ..:/workspace:cached
     depends_on:

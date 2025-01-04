@@ -66,7 +66,7 @@ namespace WeihanLi.Redis.Event
             await Task.WhenAll(handlers.Select(handler =>
             {
                 var handlerChannelName = GetChannelName<TEvent>(handler.GetType());
-                return _subscriber.PublishAsync(handlerChannelName, eventData);
+                return _subscriber.PublishAsync(RedisChannel.Literal(handlerChannelName), eventData);
             }));
 
             return true;

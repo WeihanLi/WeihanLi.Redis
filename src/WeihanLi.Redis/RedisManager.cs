@@ -87,7 +87,7 @@ namespace WeihanLi.Redis
                 AbortOnConnectFail = RedisConfiguration.AbortOnConnectFail,
                 SyncTimeout = RedisConfiguration.SyncTimeout,
                 AsyncTimeout = RedisConfiguration.AsyncTimeout,
-                ChannelPrefix = RedisConfiguration.ChannelPrefix,
+                ChannelPrefix = RedisChannel.Literal(RedisConfiguration.ChannelPrefix),
                 ClientName = RedisConfiguration.ClientName,
                 DefaultVersion = RedisConfiguration.DefaultVersion,
             };

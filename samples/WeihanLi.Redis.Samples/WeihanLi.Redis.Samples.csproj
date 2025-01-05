@@ -2,12 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="WeihanLi.Common.Logging.Log4Net" Version="1.0.53" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\WeihanLi.Redis\WeihanLi.Redis.csproj" />

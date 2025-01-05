@@ -1,4 +1,6 @@
-# WeihanLi.Redis[![WeihanLi.Redis](https://img.shields.io/nuget/v/WeihanLi.Redis.svg)](https://www.nuget.org/packages/WeihanLi.Redis/)
+# WeihanLi.Redis
+
+[![WeihanLi.Redis](https://img.shields.io/nuget/v/WeihanLi.Redis.svg)](https://www.nuget.org/packages/WeihanLi.Redis/)
 
 [English](./README.en.md)
 
@@ -6,7 +8,7 @@
 
 [![Build Status](https://weihanli.visualstudio.com/Pipelines/_apis/build/status/WeihanLi.WeihanLi.Redis?branchName=dev)](https://weihanli.visualstudio.com/Pipelines/_build/latest?definitionId=15&branchName=dev)
 
-[![Build Status](https://travis-ci.org/WeihanLi/WeihanLi.Redis.svg?branch=dev)](https://travis-ci.org/WeihanLi/WeihanLi.Redis)
+[![dotnet Build Status](https://github.com/WeihanLi/WeihanLi.Redis/actions/workflows/dotnet.yml/badge.svg)](https://github.com/WeihanLi/WeihanLi.Redis/actions/workflows/dotnet.yml)
 
 ## Intro
 
@@ -202,7 +204,3 @@ Install from [Nuget](https://www.nuget.org/packages/WeihanLi.Redis/)
     ```
 
 1. 更多用法等你来发现...
-
-## Contact
-
-Contact me if you need: <weihanli@outlook.com>

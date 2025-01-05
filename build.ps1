@@ -1,8 +1,8 @@
-[string]$SCRIPT       = '.\build.cake'
+[string]$SCRIPT = '.\build.cs'
  
-# Install cake.tool
-dotnet tool install --global cake.tool
+# Install dotnet tool
+dotnet tool update --global dotnet-execute
 
-Write-Host "dotnet cake $SCRIPT $ARGS" -ForegroundColor GREEN
+Write-Host "dotnet-exec $SCRIPT --args $ARGS" -ForegroundColor GREEN
  
-dotnet cake $SCRIPT $CAKE_ARGS $ARGS
+dotnet-exec $SCRIPT --args $ARGS

@@ -37,7 +37,7 @@ namespace WeihanLi.Redis.UnitTest
                 config.DefaultDatabase = dbIndex;
             });
 
-            var counter2EventHandler = DelegateEventHandler.FromAction<CounterEvent2>(@event =>
+            var counter2EventHandler = new DelegateEventHandler<CounterEvent2>(@event =>
                 Console.WriteLine($"{@event.ToJson()}")
             );
 
@@ -102,7 +102,7 @@ namespace WeihanLi.Redis.UnitTest
 
         private class CounterEventHandler : EventHandlerBase<CounterEvent>
         {
-            public override Task Handle(CounterEvent @event)
+            public override Task Handle(CounterEvent @event, EventProperties eventProperties)
             {
                 DependencyResolver.Current.ResolveService<ILogger<CounterEventHandler>>().Info($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
                 Interlocked.Increment(ref counter);
@@ -112,7 +112,7 @@ namespace WeihanLi.Redis.UnitTest
 
         private class CounterEventHandler2 : EventHandlerBase<CounterEvent>
         {
-            public override Task Handle(CounterEvent @event)
+            public override Task Handle(CounterEvent @event, EventProperties eventProperties)
             {
                 DependencyResolver.Current.ResolveService<ILogger<CounterEventHandler>>().Info($"Event:{@event.ToJson()}, HandlerType:{GetType().FullName}");
                 Interlocked.Increment(ref counter);

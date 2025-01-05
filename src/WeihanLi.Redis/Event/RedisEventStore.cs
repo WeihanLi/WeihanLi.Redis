@@ -19,40 +19,13 @@ namespace WeihanLi.Redis
             _eventsCacheKey = RedisManager.RedisConfiguration.EventStoreCacheKey;
         }
 
-        public int SaveEvents(ICollection<IEventBase> events)
-        {
-            if (events.IsNullOrEmpty())
-                return 0;
-
-            _database.HashSet(_eventsCacheKey,
-                events.Select(e => new HashEntry(e.EventId, e.ToEventMsg())
-                    )
-                    .ToArray()
-                );
-
-            return events.Count;
-        }
-
-        public async Task<int> SaveEventsAsync(ICollection<IEventBase> events)
+        public async Task<int> SaveEventsAsync(ICollection<IEvent> events)
         {
             if (events.IsNullOrEmpty())
                 return 0;
 
             await _database.HashSetAsync(_eventsCacheKey,
-                events.Select(e => new HashEntry(e.EventId, e.ToEventMsg()))
-                    .ToArray()
-                );
-
-            return events.Count;
-        }
-
-        public int DeleteEvents(ICollection<string> events)
-        {
-            if (events.IsNullOrEmpty())
-                return 0;
-
-            _database.HashDelete(_eventsCacheKey,
-                events.Select(x => (RedisValue)x)
+                events.Select(e => new HashEntry(e.Properties.EventId, e.ToJson()))
                     .ToArray()
                 );
 

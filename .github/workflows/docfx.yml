@@ -10,7 +10,7 @@ jobs:
     steps:
       # Check out the branch that triggered this workflow to the 'source' subdirectory
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
         with:
           ref: dev
           path: source
@@ -22,7 +22,7 @@ jobs:
         working-directory: ./source
       # Check out gh-pages branch to the 'docs' subdirectory
       - name: Checkout docs
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           path: docs

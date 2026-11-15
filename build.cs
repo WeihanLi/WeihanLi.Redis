@@ -4,7 +4,7 @@ var stable = CommandLineParser.BooleanVal("stable", args);
 var noPush = CommandLineParser.BooleanVal("noPush", args);
 var branchName = EnvHelper.Val("BUILD_SOURCEBRANCHNAME", "local");
 
-var solutionPath = "./WeihanLi.Redis.sln";
+var solutionPath = "./WeihanLi.Redis.slnx";
 string[] srcProjects = [ 
     "./src/WeihanLi.Redis/WeihanLi.Redis.csproj"
 ];

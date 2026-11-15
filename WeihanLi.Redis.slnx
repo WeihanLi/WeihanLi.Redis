@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/sample/">
+    <Project Path="samples/WeihanLi.Redis.Samples/WeihanLi.Redis.Samples.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/WeihanLi.Redis/WeihanLi.Redis.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/WeihanLi.Redis.UnitTest/WeihanLi.Redis.UnitTest.csproj" />
+  </Folder>
+</Solution>

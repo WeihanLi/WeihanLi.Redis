@@ -1,7 +1,7 @@
 <Project>
   <Import Project="document.props" />
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Product>WeihanLi.Redis</Product>
     <Title>WeihanLi.Redis</Title>
     <PackageId>WeihanLi.Redis</PackageId>

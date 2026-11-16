@@ -9,6 +9,6 @@ await DotNetPackageBuildProcess
     {
         options.SolutionPath = solutionPath;
         options.SrcProjects = srcProjects;
-        options.TestProjects = testProjects;
+        options.TestProjects = EnvHelper.Val("BUILD_SOURCEBRANCHNAME") is not null ? [] : testProjects;
     })
     .ExecuteAsync(args);

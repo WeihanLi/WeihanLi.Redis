@@ -2,7 +2,7 @@ name: docfx build
 on:
   push:
     branches:
-      - dev
+      - docs
 jobs:
   build:
     name: Build

@@ -34,4 +34,4 @@ jobs:
       with:
         dotnet-version: '10.0.x'
     - name: build
-      run: bash build.sh --target=test
+      run: dotnet test --report-github

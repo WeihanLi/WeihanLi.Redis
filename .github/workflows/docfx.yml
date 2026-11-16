@@ -2,7 +2,7 @@ name: docfx build
 on:
   push:
     branches:
-      - dev
+      - docs
 jobs:
   build:
     name: Build
@@ -10,19 +10,21 @@ jobs:
     steps:
       # Check out the branch that triggered this workflow to the 'source' subdirectory
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
         with:
           ref: dev
           path: source
-      - name: install DocFX
-        run: "& choco install docfx -y"
+      - name: .NET SDK
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
       # Run a build
       - name: Build docs
-        run: "& docfx ./docfx.json"
+        run: "dnx docfx ./docfx.json"
         working-directory: ./source
       # Check out gh-pages branch to the 'docs' subdirectory
       - name: Checkout docs
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           path: docs

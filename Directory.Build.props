@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-		<VersionMajor>2</VersionMajor>
+		<VersionMajor>3</VersionMajor>
 		<VersionMinor>0</VersionMinor>
 		<VersionPatch>0</VersionPatch>
 		<VersionRevision>0</VersionRevision>
@@ -10,6 +10,7 @@
 	</PropertyGroup>
   
   <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/WeihanLi/WeihanLi.Redis</RepositoryUrl>
@@ -21,7 +22,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <ContinuousIntegrationBuild Condition="'$(CI)' == 'true' or '$(TF_BUILD)' == 'true' or '$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
     <Authors>WeihanLi</Authors>
-    <Copyright>Copyright 2017-2025 (c) WeihanLi</Copyright>
+    <Copyright>Copyright 2017-2026 (c) WeihanLi</Copyright>
     <NoWarn>$(NoWarn);NU5048;</NoWarn>
   </PropertyGroup>
 </Project>

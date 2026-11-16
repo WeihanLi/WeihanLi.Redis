@@ -23,7 +23,7 @@ namespace WeihanLi.Redis
 
         public long Count(RedisValue field, CommandFlags flags = CommandFlags.None)
         {
-            return long.TryParse(Wrapper.Database.HashGet(_realKey, field, flags), out var count)
+            return long.TryParse((string)Wrapper.Database.HashGet(_realKey, field, flags), out var count)
                 ? count
                 : Base;
         }

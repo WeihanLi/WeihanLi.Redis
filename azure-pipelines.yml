@@ -7,23 +7,7 @@ trigger:
 - '*'
 
 jobs:
-- job: Linux
-  pool:
-    vmImage: 'ubuntu-latest'
-
-  steps:
-  - task: UseDotNet@2
-    displayName: 'Use .NET Core sdk'
-    inputs:
-      packageType: sdk
-      version: 10.0.x
-  
-  - script: bash build.sh
-    displayName: 'Build Script'
-
-
 - job: Windows
-
   pool:
     vmImage: 'windows-latest'
 
@@ -41,5 +25,4 @@ jobs:
   - powershell: ./build.ps1
     displayName: 'Build Script'
     env:
-      Nuget__ApiKey: $(nugetApiKey)
-      Nuget__SourceUrl: $(nugetSourceUrl)
+      NuGet__ApiKey: $(nugetApiKey)
